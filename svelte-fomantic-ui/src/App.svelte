@@ -40,6 +40,15 @@
     <Section style="active">Person Information</Section>
   </Breadcrumb>
 
+  <Button style="labeled">
+    <Button>
+      <Icon style="heart"/> Like
+    </Button>
+    <Label ui style="basic">
+      2,048
+    </Label>
+  </Button>
+
 
   <Button style="top attached fluid">Button before grid</Button>
 
@@ -105,7 +114,7 @@
         </Dropdown>
       </Field>
 
-      <Button name={"submit"} on:click={processForm} type="submit">Submit</Button>
+      <Button name="submit" on:click={processForm} type="submit">Submit</Button>
     </Form>
 
 
