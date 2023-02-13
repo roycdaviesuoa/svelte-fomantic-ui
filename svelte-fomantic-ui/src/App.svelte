@@ -2,7 +2,7 @@
     import { construct_svelte_component } from 'svelte/internal';
   import { Container, Emoji, Input, Label, Image, Content, Flag, Header, Divider, Button, Buttons, Icon } from './lib/fomantic-ui/Core.svelte';
   import { List, Item, Description, Segment, Dimmer, Loader, Placeholder, Line, Paragraph, Reveal, Breadcrumb, Link, Section } from './lib/fomantic-ui/Core.svelte';
-  import { Form, Field, Fields, Checkbox, Textarea, Radio, Dropdown, Option} from './lib/fomantic-ui/Core.svelte';
+  import { Form, Field, Fields, Checkbox, Textarea, Radio, Dropdown, Option, Grid, Column} from './lib/fomantic-ui/Core.svelte';
 
   let doSomething = (e) =>
   {
@@ -21,12 +21,12 @@
   }
 
   let data = {
-    firstname : "",
+    firstname : "Firstname",
     surname: "",
-    agree: true,
-    description: "",
-    fruit: "apples",
-    gender: "female"
+    agree: false,
+    description: "test",
+    fruit: "oranges",
+    gender: "male"
   }
 </script>
 
@@ -39,6 +39,22 @@
     <Icon style="right chevron divider"/>
     <Section style="active">Person Information</Section>
   </Breadcrumb>
+
+
+  <Button style="top attached fluid">Button before grid</Button>
+
+  <Grid>
+    <Column style = "four wide centered">
+      Hello
+    </Column>
+    <Column style = "four wide">
+      World
+    </Column>
+    <Column style = "four wide">
+      Here
+    </Column>
+  </Grid>
+
 
     <Form>
       <Fields>

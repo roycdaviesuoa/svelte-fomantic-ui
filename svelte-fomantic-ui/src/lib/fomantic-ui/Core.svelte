@@ -34,12 +34,15 @@
     // Collections
     export {default as Breadcrumb} from './Breadcrumb.svelte';
     export {default as Checkbox} from './Checkbox.svelte';
+    export {default as Column} from './Column.svelte';
     export {default as Dropdown} from './Dropdown.svelte';
     export {default as Field} from './Field.svelte';
     export {default as Fields} from './Fields.svelte';
     export {default as Form} from './Form.svelte';
+    export {default as Grid} from './Grid.svelte';
     export {default as Option} from './Option.svelte';
     export {default as Radio} from './Radio.svelte';
+    export {default as Row} from './Row.svelte';
     export {default as Section} from './Section.svelte';
     export {default as Textarea} from './Textarea.svelte';
     
