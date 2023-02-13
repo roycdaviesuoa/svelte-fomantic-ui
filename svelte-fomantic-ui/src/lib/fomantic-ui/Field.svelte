@@ -2,6 +2,6 @@
     export let style: string = "";
 </script>
 
-<div class={"ui " + style + " divider"}>
+<div class={style + " field"}>
     <slot />
 </div>
