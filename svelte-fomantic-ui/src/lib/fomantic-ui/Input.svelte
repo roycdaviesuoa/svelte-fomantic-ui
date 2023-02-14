@@ -1,22 +1,13 @@
 <script lang="ts">
-    export let style: string = "";
-    export let placeholder: string="";
-    export let name: string="";
     export let value: string="";
+    export let password: boolean=false;
 
-    import { createEventDispatcher } from 'svelte';
-
-    const dispatch = createEventDispatcher();
+    // TODO: Add other events such as key presses etc
 
 </script>
 
-{#if style.includes("file")}
-    <div class={"ui " + style + " input"}>
-        <input type="file" {name}>
-    </div>
+{#if password}
+    <input type="password" bind:value={value} {...$$restProps}/>
 {:else}
-    <div class={"ui " + style + " input"}>
-        <slot/>
-        <input type="text" {placeholder} {name} bind:value={value}>
-    </div>
+    <input type="text" bind:value={value} {...$$restProps}/>
 {/if}

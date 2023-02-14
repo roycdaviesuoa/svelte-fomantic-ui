@@ -1,9 +1,8 @@
 <script lang="ts">
     export let style: string = "";
-    export let name: string = "";
+    export let ui: boolean=false;
 
     import { createEventDispatcher } from 'svelte';
-
     const dispatch = createEventDispatcher();
 
     function doClick(event) {
@@ -11,6 +10,6 @@
     }
 </script>
 
-<div on:click={doClick} on:keydown on:keypress on:keyup class={"ui " + style + " buttons"}>
+<div on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + style + " buttons"} {...$$restProps}>
     <slot/>
 </div>
