@@ -282,6 +282,7 @@
 <Button ui style="right floated">Right Floated</Button>
 <Button ui style="left floated">Left Floated</Button>
 <br/>
+
 <h4>Colored</h4>
 <Button ui style="red">Red</Button>
 <Button ui style="orange">Orange</Button>
@@ -311,8 +312,8 @@
 
 
 <h4>Toggle</h4>
-<Button ui style="toggle">
-  <Content style="positive" slot="on">Voted</Content>
+<Button ui style="toggle" active={false} on_style="active" off_style="grey">
+  <Content slot="on">Voted</Content>
   <Content slot="off">Vote</Content>
 </Button>
 
@@ -381,4 +382,17 @@
   <Button ui>Messages</Button>
   <Button ui>Events</Button>
   <Button ui>Photos</Button>
+</Buttons>
+
+<h4>Icon Buttons</h4>
+<Buttons ui style="icon">
+  <Button ui><Icon style="align left"/></Button>
+  <Button ui><Icon style="align center"/></Button>
+  <Button ui><Icon style="align right"/></Button>
+  <Button ui><Icon style="align justify"/></Button>
+</Buttons>
+<Buttons ui style="icon">
+  <Button ui><Icon style="bold"/></Button>
+  <Button ui><Icon style="underline"/></Button>
+  <Button ui><Icon style="text width"/></Button>
 </Buttons>

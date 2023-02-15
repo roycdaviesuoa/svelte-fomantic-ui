@@ -26,16 +26,16 @@ All the button types, groups, variations and group variations can be used with t
 becomes:
 
 ```html
-<Buttons style="icon">
-    <Button><Icon style="align left"/></Button>
-    <Button><Icon style="align center"/></Button>
-    <Button><Icon style="align right"/></Button>
-    <Button><Icon style="align justify"/></Button>
+<Buttons ui style="icon">
+    <Button ui><Icon style="align left"/></Button>
+    <Button ui><Icon style="align center"/></Button>
+    <Button ui><Icon style="align right"/></Button>
+    <Button ui><Icon style="align justify"/></Button>
 </Buttons>
-<Buttons style="icon">
-    <Button><Icon style="bold"/></Button>
-    <Button><Icon style="underline"/></Button>
-    <Button><Icon style="text width"/></Button>
+<Buttons ui style="icon">
+    <Button ui><Icon style="bold"/></Button>
+    <Button ui><Icon style="underline"/></Button>
+    <Button ui><Icon style="text width"/></Button>
 </Buttons>
 ```
 

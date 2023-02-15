@@ -80,8 +80,8 @@ where `e` is the event and `e.detail` contains information about the event that 
 
 ```json
 {
-    "name": "submit",  # The name of the button (in this case)
-    "target": { ... }  # The target object
+    "name": "submit",  // The name of the button (in this case, 'submit')
+    "target": { }      // The target object
 }
 ```
 
