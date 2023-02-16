@@ -1,6 +1,7 @@
 <script lang="ts">
     export let style: string = "";
     export let ui: boolean = false;
+    export let name: string = "";
 
     import { createEventDispatcher } from 'svelte';
 

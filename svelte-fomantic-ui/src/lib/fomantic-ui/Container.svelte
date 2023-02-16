@@ -2,6 +2,6 @@
     export let style: string = "";
 </script>
 
-<div class={"ui " + style + " container"}>
+<div class={(ui?"ui ":"") + style + " container"}>
     <slot />
 </div>

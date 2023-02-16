@@ -43,15 +43,15 @@ Note the use of `Buttons` here for a group of buttons.
 
 One difference compared to Fomantic UI is the way a toggle button is described, namely:
 ```html
-<Button ui style="toggle">
-  <Content style="positive" slot="on">Voted</Content>
-  <Content style="negative" slot="off">Vote</Content>
+<Button ui style="toggle" on_style="purple" off_style="orange">
+    <Content slot="on">On</Content>
+    <Content slot="off">Off</Content>
 </Button>
 ```
 
 ### Parameters
 
-In addition to `style` parameters such as `name` and `type`are passed through (see example below), so setting type to `password` creates a password text box.
+In addition to `style` parameters such as `name` and `type`are passed through (see example below).
 
 ### Interactivity
 
@@ -74,10 +74,10 @@ function processForm (e)
 
 where `e` is the event and `e.detail` contains information about the event that has occurred in the form of:
 
-```
+```json
 {
-    "name": "submit",  # The name of the button (in this case)
-    "target": { ... }  # The target object
+    "name": "submit",   // The name of the button (in this case)
+    "target": { }       // The target object
 }
 ```
 
