@@ -2,6 +2,6 @@
     export let style: string = "";
 </script>
 
-<div class={style + " column"}>
+<div class={style + " column"} {...$$restProps}>
     <slot />
 </div>
