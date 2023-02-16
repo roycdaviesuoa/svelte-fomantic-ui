@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Button, Buttons, Content, Icon, Segment, Link } from "../fomantic-ui/Core.svelte";
+    import { Button, Buttons, Content, Icon, Segment, Link, Divider } from "../fomantic-ui/Core.svelte";
 </script>
 
 <h3>To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/Button.html">here</a></h3>
@@ -169,13 +169,13 @@
 </Buttons>
 
 <h4>Icon Buttons</h4>
-<Buttons style="icon">
+<Buttons ui style="icon">
   <Button ui><Icon style="align left"/></Button>
   <Button ui><Icon style="align center"/></Button>
   <Button ui><Icon style="align right"/></Button>
   <Button ui><Icon style="align justify"/></Button>
 </Buttons>
-<Buttons style="icon">
+<Buttons ui style="icon">
   <Button ui><Icon style="bold"/></Button>
   <Button ui><Icon style="underline"/></Button>
   <Button ui><Icon style="text width"/></Button>
@@ -253,28 +253,28 @@
 </Button>
 
 <h4>Size</h4>
-<Button style="mini ui">
+<Button ui style="mini">
   Mini
 </Button>
-<Button style="tiny ui">
+<Button ui style="tiny">
   Tiny
 </Button>
-<Button style="small ui">
+<Button ui style="small">
   Small
 </Button>
-<Button style="medium ui">
+<Button ui style="medium">
   Medium
 </Button>
-<Button style="large ui">
+<Button ui style="large">
   Large
 </Button>
-<Button style="big ui">
+<Button ui style="big">
   Big
 </Button>
-<Button style="huge ui">
+<Button ui style="huge">
   Huge
 </Button>
-<Button style="massive ui">
+<Button ui style="massive">
   Massive
 </Button>
 
@@ -299,7 +299,7 @@
 <Button ui style="black">Black</Button>
 
 <h4>Compact</h4>
-<Button style="compact ui">
+<Button ui style="compact">
   Hold
 </Button>
 <Button ui style="compact icon">
@@ -395,4 +395,144 @@
   <Button ui><Icon style="bold"/></Button>
   <Button ui><Icon style="underline"/></Button>
   <Button ui><Icon style="text width"/></Button>
+</Buttons>
+
+<h4>Labeled Icon Buttons</h4>
+<Buttons ui style="vertical labeled icon">
+  <Button ui>
+    <Icon style="pause"/>
+    Pause
+  </Button>
+  <Button ui>
+    <Icon style="play"/>
+    Play
+  </Button>
+  <Button ui>
+    <Icon style="shuffle"/>
+    Shuffle
+  </Button>
+</Buttons>
+
+<h4>Mixed Group</h4>
+<Buttons ui>
+  <Button ui style="labeled icon">
+      <Icon style="left chevron"/>
+      Back
+  </Button>
+  <Button ui>
+      <Icon style="stop icon"/>
+      Stop
+  </Button>
+  <Button ui style="right labeled icon">
+      Forward
+      <Icon style="right chevron icon"/>
+  </Button>
+</Buttons>
+
+<h4>Equal Width</h4>
+<Buttons ui style="five">
+  <Button ui>Overview</Button>
+  <Button ui>Specs</Button>
+  <Button ui>Warranty</Button>
+  <Button ui>Reviews</Button>
+  <Button ui>Support</Button>
+</Buttons>
+<Buttons ui style="three">
+  <Button ui>Overview</Button>
+  <Button ui>Specs</Button>
+  <Button ui>Support</Button>
+</Buttons>
+
+<h4>Colored Buttons</h4>
+<Buttons ui style="blue">
+  <Button ui>One</Button>
+  <Button ui>Two</Button>
+  <Button ui>Three</Button>
+</Buttons>
+
+<h4>Basic Buttons</h4>
+<Buttons ui style="basic">
+  <Button ui>One</Button>
+  <Button ui>Two</Button>
+  <Button ui>Three</Button>
+</Buttons>
+<Divider ui/>
+<Buttons ui style="vertical basic">
+  <Button ui>One</Button>
+  <Button ui>Two</Button>
+  <Button ui>Three</Button>
+</Buttons>
+<Divider ui/>
+<Buttons ui>
+  <Button ui style="red basic">One</Button>
+  <Button ui style="blue basic">Two</Button>
+  <Button ui style="green basic">Three</Button>
+</Buttons>
+
+<h4>Group Sizes</h4>
+<Buttons ui style="large">
+  <Button ui>One</Button>
+  <Button ui>Two</Button>
+  <Button ui>Three</Button>
+</Buttons>
+<br/><br/>
+<Buttons ui style="small basic icon">
+  <Button ui><Icon style="file"/></Button>
+  <Button ui><Icon style="save"/></Button>
+  <Button ui><Icon style="upload"/></Button>
+  <Button ui><Icon style="download"/></Button>
+</Buttons>
+<br/><br/>
+<Buttons ui>
+  <Button ui>One</Button>
+  <div class="or"></div>
+  <Button ui>Two</Button>
+</Buttons>
+
+<h4>Wrapping Buttons</h4>
+<Buttons ui style="wrapped wrapping">
+  <Button ui>One</Button>
+  <Button ui>Two</Button>
+  <Button ui>Three</Button>
+  <Button ui>Four</Button>
+  <Button ui>Five</Button>
+  <Button ui>Six</Button>
+  <Button ui>Seven</Button>
+  <Button ui>Eight</Button>
+  <Button ui>Nine</Button>
+  <Button ui>Ten</Button>
+  <Button ui>Eleven</Button>
+  <Button ui>Twelve</Button>
+  <Button ui>Thirteen</Button>
+  <Button ui>Fourteen</Button>
+  <Button ui>Fifteen</Button>
+  <Button ui>Sixteen</Button>
+  <Button ui>Seventeen</Button>
+  <Button ui>Eighteen</Button>
+  <Button ui>Nineteen</Button>
+  <Button ui>Twenty</Button>
+</Buttons>
+
+<h4>Spaced Buttons</h4>
+<Buttons ui style="spaced wrapping">
+  <Button ui>One</Button>
+  <Button ui>Two</Button>
+  <Button ui>Three</Button>
+  <Button ui>Four</Button>
+  <Button ui>Five</Button>
+  <Button ui>Six</Button>
+  <Button ui>Seven</Button>
+  <Button ui>Eight</Button>
+  <Button ui>Nine</Button>
+  <Button ui>Ten</Button>
+  <Button ui>Eleven</Button>
+  <Button ui>Twelve</Button>
+  <Button ui>Thirteen</Button>
+  <Button ui>Fourteen</Button>
+  <Button ui>Fifteen</Button>
+  <Button ui>Sixteen</Button>
+  <Button ui>Seventeen</Button>
+  <Button ui>Eighteen</Button>
+  <Button ui>Nineteen</Button>
+  <Button ui>Twenty</Button>
 </Buttons>
