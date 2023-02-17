@@ -4,6 +4,6 @@
     export let value: string = "";
 </script>
 
-<option class={(ui?"ui":"") + uiProps($$restProps)} {value} {...otherProps($$restProps)}>
+<option class={(ui?"ui ":"") + uiProps($$restProps)} {value} {...otherProps($$restProps)}>
     <slot />
 </option>

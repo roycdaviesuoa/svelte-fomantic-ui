@@ -32,7 +32,7 @@ becomes:
     <Button ui><Icon align right/></Button>
     <Button ui><Icon align justify/></Button>
 </Buttons>
-<Buttons ui style="icon">
+<Buttons ui icon>
     <Button ui><Icon bold/></Button>
     <Button ui><Icon underline/></Button>
     <Button ui><Icon text width/></Button>
@@ -87,7 +87,7 @@ where `e` is the event and `e.detail` contains information about the event that 
 
 ### Overview
 
-The `Container` tag follows the same process as for `Button` using the `style` parameter to contain the class names except `ui` and `container`, for example:
+The `Container` tag follows the same process as for `Button`, for example:
 
 ```html
 <div class="ui four column doubling stackable grid container">
@@ -113,7 +113,7 @@ The `Container` tag follows the same process as for `Button` using the `style` p
 becomes:
 
 ```html
-<Container style="four column doubling stackable grid">
+<Container ui four column doubling stackable grid>
     <Column>
         <p></p>
         <p></p>
@@ -138,7 +138,7 @@ Note the use of the `Column` tag which also needs to be imported along with `Con
 Other classes flow on through as expected:
 
 ```html
-<Container style="fluid text">
+<Container ui fluid text>
     Fluid Text
 </Container>
 ```
@@ -151,12 +151,12 @@ Creates a text container that has no maximum width.
 
 ### Overview
 
-The `Divider` tag allows all the nuances of the fomantic UI divider style, for example:
+The `Divider` tag allows all the nuances of the fomantic UI divider classes, for example:
 
 ```html
-<Divider style="section"/>
-<Divider style="fitted"/>
-<Divider style="horizontal">
+<Divider ui section/>
+<Divider ui fitted/>
+<Divider ui horizontal>
     OR
 </Divider>
 ```
@@ -170,10 +170,10 @@ The `Divider` tag allows all the nuances of the fomantic UI divider style, for e
 The `Emoji` tag allows all the capabilities of the fomantic UI emoji class, for example:
 
 ```html
-<Emoji style="large loading" dataEmoji="angel"/>
+<Emoji large loading angel/>
 ```
 
-Produces a large, rotating Angel emoji.  Note that the `data-emoji` class of fomantic UI becomes `dataEmoji`.
+Produces a large, rotating Angel emoji.  Note that the `data-emoji` class of fomantic UI becomes is not required.
 
 [top](#fomantic-ui-elements)
 ## Flag

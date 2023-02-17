@@ -4,4 +4,4 @@
     export let value: string="";
 </script>
 
-<textarea class={(ui?"ui":"") + uiProps($$restProps)} bind:value={value} {...otherProps($$restProps)}/>
+<textarea class={(ui?"ui ":"") + uiProps($$restProps)} bind:value={value} {...otherProps($$restProps)}/>

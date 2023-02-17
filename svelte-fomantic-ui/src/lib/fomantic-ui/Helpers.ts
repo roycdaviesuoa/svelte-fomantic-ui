@@ -1,8 +1,8 @@
 export function uiProps (restProps:{}):string {
     let the_class = "";
-    Object.keys(restProps).forEach((key) => {
+    Object.keys(restProps).forEach((key, i) => {
         if ((typeof(restProps[key]) === "boolean") && restProps[key]) {
-            the_class = the_class + (" " + key);
+            the_class = the_class + ((i>0?" ":"") + key);
         }
     });
     if (restProps.hasOwnProperty("_"))

@@ -6,6 +6,6 @@
     console.log($$restProps);
 </script>
 
-<i class={(ui?"ui":"") + uiProps($$restProps) + " icon"} {...otherProps($$restProps)}>
+<i class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} {...otherProps($$restProps)}>
     <slot />
 </i>

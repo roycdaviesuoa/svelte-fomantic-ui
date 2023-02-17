@@ -14,7 +14,7 @@
     }
 </script>
 
-<div class={(ui?"ui":"") + uiProps($$restProps) + " checkbox"}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " checkbox"}>
     <input type="checkbox" {placeholder} {name} bind:checked bind:value on:click={doClick} {...otherProps($$restProps)}>
     <slot/>
 </div>

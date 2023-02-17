@@ -3,6 +3,6 @@
     export let ui: boolean=false;
 </script>
 
-<thead class={(ui?"ui":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
+<thead class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
     <slot />
 </thead>

@@ -6,13 +6,13 @@
 
 <h4>A text container</h4>
 <br/>
-<Container ui style="text">
+<Container ui text>
     This is some text
 </Container>
 
 <h4>Container with grids</h4>
 <br/>
-<Container ui style="four column doubling stackable grid">
+<Container ui four column doubling stackable grid>
     <Column>
         <Placeholder ui>
             <Image header>

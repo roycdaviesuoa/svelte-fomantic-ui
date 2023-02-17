@@ -10,7 +10,7 @@
         <slot />
     </label>
 {:else}
-<div class={(ui?"ui":"") + uiProps($$restProps) + " label"} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " label"} {...otherProps($$restProps)}>
     <slot />
     </div>
 {/if}

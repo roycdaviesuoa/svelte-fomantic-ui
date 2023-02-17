@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { Divider, Column, Placeholder, Line, Paragraph, Segment, Button, Icon, Form, Field, Label, Input, Input_Wrapper, Table, Table_Body, Table_Row, Table_Col, Table_Head } from "../fomantic-ui/Core.svelte";
-    import Grid from "../fomantic-ui/Grid.svelte";
+    import { Divider, Grid, Column, Placeholder, Line, Paragraph, Segment, Button, Icon, Form, Field, Label, Input, Input_Wrapper, Table, Table_Body, Table_Row, Table_Col, Table_Head } from "../fomantic-ui/Core.svelte";
 </script>
 
 <h3>To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/collections/divider.html">here</a></h3>

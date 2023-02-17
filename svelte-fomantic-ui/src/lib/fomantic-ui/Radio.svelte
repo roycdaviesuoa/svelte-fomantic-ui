@@ -9,12 +9,12 @@
 </script>
 
 {#if single}
-    <div class={(ui?"ui":"") + uiProps($$restProps) + " radio checkbox"} {...otherProps($$restProps)}>
+    <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio checkbox"} {...otherProps($$restProps)}>
         <input type="radio" {placeholder} {name} {value} >
         <slot/>
     </div>
 {:else}
-    <div class={(ui?"ui":"") + uiProps($$restProps) + " radio  checkbox"} {...otherProps($$restProps)}>
+    <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio  checkbox"} {...otherProps($$restProps)}>
         <input type="radio" {placeholder} {name} {value} bind:group>
         <slot/>
     </div>

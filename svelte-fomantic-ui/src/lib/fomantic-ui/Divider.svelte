@@ -3,6 +3,6 @@
     export let ui: boolean=false;
 </script>
 
-<div class={(ui?"ui":"") + uiProps($$restProps) + " divider"} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " divider"} {...otherProps($$restProps)}>
     <slot />
 </div>

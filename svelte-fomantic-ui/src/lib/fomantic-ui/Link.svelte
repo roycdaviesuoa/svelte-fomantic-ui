@@ -12,6 +12,6 @@
     }
 </script>
 
-<a class={(ui?"ui":"") + uiProps($$restProps)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
+<a class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
     <slot />
 </a>

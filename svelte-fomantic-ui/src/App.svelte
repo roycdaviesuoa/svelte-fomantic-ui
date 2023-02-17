@@ -7,6 +7,7 @@
   import CheckboxInteractive from './lib/fomantic-ui-tests/CheckboxInteractive.svelte';
   import ContainerTest from './lib/fomantic-ui-tests/Container.svelte';
   import DividerTest from './lib/fomantic-ui-tests/Divider.svelte';
+  import EmojiTest from './lib/fomantic-ui-tests/Emoji.svelte';
 
 
   let currentRoute: any;
@@ -28,6 +29,8 @@
       currentRoute = ContainerTest; break;
     case '/Divider':
       currentRoute = DividerTest; break;
+    case '/Emoji':
+      currentRoute = EmojiTest; break;
     default:
       break;
       // currentRoute = NotFound;
