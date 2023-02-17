@@ -2,6 +2,6 @@
     export let style: string = "";
 </script>
 
-<div class={style + " step"}>
+<div class={style + " step"} {...$$restProps}>
     <slot />
 </div>

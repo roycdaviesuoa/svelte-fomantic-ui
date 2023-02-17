@@ -110,16 +110,16 @@ It does make sense, however, to use the Svelte versions where events and variabl
 
 Presently, this has not been packaged to be installed as a module with yarn or npm, so you will need to add the code to your project by hand.  The pieces you need are:
 
-1. Installion of fomantic UI with ```yarn add fomantic-ui```
+1. Installion of fomantic UI with `yarn add fomantic-ui`
 1. The following line added to your index.html head section:
 ```html
 <link rel="stylesheet" href="node_modules/fomantic-ui/dist/semantic.min.css" />
 ```
-1. And the contents of the ```lib/fomantic-ui``` folder copied to the lib folder of your project.
+1. And the contents of the `lib/fomantic-ui` folder copied to the lib folder of your project.
 
 ## Usage
 
-To use fomantic UI in your project, import the required elements from ```Core.svelte``` in the script section, and then use them below, for example:
+To use fomantic UI in your project, import the required elements from `Core.svelte` in the script section, and then use them below, for example:
 
 ```html
 <script lang="ts">

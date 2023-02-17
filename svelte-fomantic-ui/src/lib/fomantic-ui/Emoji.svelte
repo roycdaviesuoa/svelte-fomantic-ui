@@ -3,6 +3,6 @@
     export let dataEmoji: string = "";
 </script>
 
-<em class={style} data-emoji={dataEmoji}>
+<em class={style} data-emoji={dataEmoji} {...$$restProps}>
     <slot />
 </em>

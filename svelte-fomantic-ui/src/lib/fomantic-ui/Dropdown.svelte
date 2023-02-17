@@ -12,6 +12,6 @@
     }
 </script>
 
-<select bind:value on:click={doClick} on:keydown on:keypress on:keyup class={"ui " + style + " dropdown"}>
+<select bind:value on:click={doClick} on:keydown on:keypress on:keyup class={"ui " + style + " dropdown"} {...$$restProps}>
     <slot/>
 </select>

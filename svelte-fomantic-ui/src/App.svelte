@@ -2,10 +2,11 @@
   import AppMenu from './AppMenu.svelte';
   import ButtonTest from './lib/fomantic-ui-tests/Button.svelte';
   import ButtonInteractive from './lib/fomantic-ui-tests/ButtonInteractive.svelte';
-  import BreadcrumbTest from './lib/fomantic-ui-tests/Container.svelte';
+  import BreadcrumbTest from './lib/fomantic-ui-tests/Breadcrumb.svelte';
   import BreadcrumbInteractive from './lib/fomantic-ui-tests/BreadcrumbInteractive.svelte';
   import CheckboxInteractive from './lib/fomantic-ui-tests/CheckboxInteractive.svelte';
   import ContainerTest from './lib/fomantic-ui-tests/Container.svelte';
+  import DividerTest from './lib/fomantic-ui-tests/Divider.svelte';
 
 
   let currentRoute: any;
@@ -25,6 +26,8 @@
       currentRoute = CheckboxInteractive; break;
     case '/Container':
       currentRoute = ContainerTest; break;
+    case '/Divider':
+      currentRoute = DividerTest; break;
     default:
       break;
       // currentRoute = NotFound;

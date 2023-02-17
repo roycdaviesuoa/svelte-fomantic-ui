@@ -5,4 +5,4 @@
     export let value: string="";
 </script>
 
-<textarea {placeholder} {name} bind:value={value}></textarea>
+<textarea {placeholder} {name} bind:value={value} {...$$restProps}></textarea>

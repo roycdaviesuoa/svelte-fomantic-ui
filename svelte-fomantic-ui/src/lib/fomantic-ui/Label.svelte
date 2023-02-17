@@ -5,6 +5,7 @@
 </script>
 
 {#if checkbox}
+    <!-- Used with Checkbox only -->
     <label>
         <slot />
     </label>

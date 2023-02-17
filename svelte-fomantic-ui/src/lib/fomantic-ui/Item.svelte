@@ -3,6 +3,6 @@
     export let value: string = "";
 </script>
 
-<div data-value={value} class={style + " item"}>
+<div data-value={value} class={style + " item"} {...$$restProps}>
     <slot />
 </div>

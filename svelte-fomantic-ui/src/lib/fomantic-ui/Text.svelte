@@ -1,7 +1,8 @@
 <script lang="ts">
     export let style: string = "";
+    export let ui: boolean = false;
 </script>
 
-<span class={"ui " + style + " text"}>
+<div class={(ui?"ui ":"") + style + " text"} {...$$restProps}>
     <slot />
-</span>
+</div>

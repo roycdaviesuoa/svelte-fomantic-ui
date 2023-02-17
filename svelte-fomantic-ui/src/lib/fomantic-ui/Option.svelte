@@ -3,6 +3,6 @@
     export let value: string = "";
 </script>
 
-<option class={style} {value}>
+<option class={style} {value} {...$$restProps}>
     <slot />
 </option>

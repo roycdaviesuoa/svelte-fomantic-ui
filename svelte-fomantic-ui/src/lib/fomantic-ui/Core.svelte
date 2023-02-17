@@ -51,5 +51,10 @@
     export {default as Option} from './Option.svelte';
     export {default as Row} from './Row.svelte';
     export {default as Section} from './Section.svelte';
+    export {default as Table} from './Table.svelte';
+    export {default as TableBody} from './TableBody.svelte';
+    export {default as TableHead} from './TableHead.svelte';
+    export {default as TableRow} from './TableRow.svelte';
+    export {default as TableCol} from './TableCol.svelte';
     
 </script>

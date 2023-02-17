@@ -6,6 +6,7 @@
     export let placeholder: string="";
     export let name: string="";
     export let value: string="";
+    export let ui: boolean=false;
 
     import { createEventDispatcher } from 'svelte';
 
@@ -13,6 +14,6 @@
 
 </script>
 
-<div class={"ui " + style + " input"}>
+<div class={(ui?"ui ":"") + style + " input"} {...$$restProps}>
     <input type="file" {name}>
 </div>
