@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let style: string = "";
+    import {uiProps, otherProps} from "./Helpers"
     export let ui: boolean = false;
     export let checkbox: boolean = false;
 </script>
@@ -10,7 +10,7 @@
         <slot />
     </label>
 {:else}
-    <div class={(ui?"ui ":"") + style + " label"} {...$$restProps}>
-        <slot />
+<div class={(ui?"ui":"") + uiProps($$restProps) + " label"} {...otherProps($$restProps)}>
+    <slot />
     </div>
 {/if}

@@ -1,6 +1,8 @@
 <script lang="ts">
-    export let style: string = "";
+    import {uiProps, otherProps} from "./Helpers"
+
     export let ui: boolean=false;
+    export let toggle: boolean=false;
     export let name: string = "";
     export let active: boolean = false;
     export let on_style: string = "";
@@ -18,8 +20,8 @@
     }
 </script>
 
-{#if style.includes("toggle")}
-    <div on:click={doToggle} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + style + " " + (active?on_style:off_style) + " button"} {...$$restProps}>
+{#if toggle}
+    <div on:click={doToggle} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " " + (active?on_style:off_style) + " button"} {...otherProps($$restProps)}>
         {#if active}
             <slot name="on"/>
         {:else}
@@ -27,7 +29,7 @@
         {/if}
     </div>
 {:else}
-    <div on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + style + " button"} {...$$restProps}>
+    <div on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " button"} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

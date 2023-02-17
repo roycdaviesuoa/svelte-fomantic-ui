@@ -1,4 +1,7 @@
 <script lang="ts">
+
+    // NOT YET COMPLETE
+
     export let value: string = "";
     export let name: string = "";
     export let style: string = "";

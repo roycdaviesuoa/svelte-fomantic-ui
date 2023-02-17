@@ -8,157 +8,157 @@
 <Button ui>Follow</Button>
 
 <h4>Emphasis</h4>
-<Button ui style="primary">Primary</Button>
-<Button ui style="secondary">Secondary</Button>
+<Button ui primary>Primary</Button>
+<Button ui secondary>Secondary</Button>
 
 <h4>Animated</h4>
-<Button ui style="animated">
-    <Content style="visible">Next</Content>
-    <Content style="hidden">
-        <Icon style="right arrow"/>
+<Button ui animated>
+    <Content visible>Next</Content>
+    <Content hidden>
+        <Icon right arrow/>
     </Content>
 </Button>
-<Button ui style="vertical animated">
-    <Content style="hidden">Shop</Content>
-    <Content style="visible">
-        <Icon style="shop"/>
+<Button ui vertical animated>
+    <Content hidden>Shop</Content>
+    <Content visible>
+        <Icon shop/>
     </Content>
 </Button>
-<Button ui style="animated fade">
-    <Content style="visible">Sign-up for a Pro account</Content>
-    <Content style="hidden">
+<Button ui animated fade>
+    <Content visible>Sign-up for a Pro account</Content>
+    <Content hidden>
         $12.99 a month
     </Content>
 </Button>
 
 <h4>Labeled</h4>
-<Button ui style="labeled">
+<Button ui labeled>
     <Button ui>
-        <Icon style="heart"/> Like
+        <Icon heart/> Like
     </Button>
-    <Link ui style="basic label">
+    <Link ui basic label>
         2,048
     </Link>
 </Button>
-<Button ui style="left labeled">
-    <Link ui style="basic right pointing label">
+<Button ui left labeled>
+    <Link ui basic right pointing label>
       2,048
     </Link>
     <Button ui>
-      <Icon style="heart"/> Like
+      <Icon heart/> Like
     </Button>
 </Button>
-<Button ui style="left labeled">
-    <Link ui style="basic label">
+<Button ui left labeled>
+    <Link ui basic label>
       1,048
     </Link>
-    <Button ui style="icon">
-      <Icon style="fork"/>
+    <Button ui icon>
+      <Icon fork/>
     </Button>
 </Button>
 
 <h4>Icon</h4>
-<Button ui style="icon">
-  <Icon style="cloud"/>
+<Button ui icon>
+  <Icon cloud/>
 </Button>
 
 <h4>Labeled Icon</h4>
-<Button ui style="labeled icon">
-  <Icon style="pause"/>
+<Button ui labeled icon>
+  <Icon pause/>
   Pause
 </Button>
-<Button ui style="right labeled icon">
-  <Icon style="right arrow"/>
+<Button ui right labeled icon>
+  <Icon right arrow/>
   Next
 </Button>
-<Button ui style="labeled icon">
-  <Icon style="loading spinner"/>
+<Button ui labeled icon>
+  <Icon loading spinner/>
   Loading
 </Button>
 
 <h4>Basic</h4>
-<Button ui style="basic">
-  <Icon style="user"/>
+<Button ui basic>
+  <Icon user/>
   Add Friend
 </Button>
 <br/><br/>
-<Button ui style="primary basic">Primary</Button>
-<Button ui style="secondary basic">Secondary</Button>
-<Button ui style="positive basic">Positive</Button>
-<Button ui style="negative basic">Negative</Button>
+<Button ui primary basic>Primary</Button>
+<Button ui secondary basic>Secondary</Button>
+<Button ui positive basic>Positive</Button>
+<Button ui negative basic>Negative</Button>
 <br/><br/>
-<Button ui style="red basic">Red</Button>
-<Button ui style="orange basic">Orange</Button>
-<Button ui style="yellow basic">Yellow</Button>
-<Button ui style="olive basic">Olive</Button>
-<Button ui style="green basic">Green</Button>
-<Button ui style="teal basic">Teal</Button>
-<Button ui style="blue basic">Blue</Button>
-<Button ui style="violet basic">Violet</Button>
-<Button ui style="purple basic">Purple</Button>
-<Button ui style="pink basic">Pink</Button>
-<Button ui style="brown basic">Brown</Button>
-<Button ui style="grey basic">Grey</Button>
-<Button ui style="black basic">Black</Button>
+<Button ui red basic>Red</Button>
+<Button ui orange basic>Orange</Button>
+<Button ui yellow basic>Yellow</Button>
+<Button ui olive basic>Olive</Button>
+<Button ui green basic>Green</Button>
+<Button ui teal basic>Teal</Button>
+<Button ui blue basic>Blue</Button>
+<Button ui violet basic>Violet</Button>
+<Button ui purple basic>Purple</Button>
+<Button ui pink basic>Pink</Button>
+<Button ui brown basic>Brown</Button>
+<Button ui grey basic>Grey</Button>
+<Button ui black basic>Black</Button>
 
 <h4>Tertiary</h4>
-<Button ui style="tertiary">
+<Button ui tertiary>
   Cancel Action
 </Button>
 <br/><br/>
-<Button ui style="primary tertiary">Primary</Button>
-<Button ui style="secondary tertiary">Secondary</Button>
-<Button ui style="red tertiary">Red</Button>
-<Button ui style="orange tertiary">Orange</Button>
-<Button ui style="yellow tertiary">Yellow</Button>
-<Button ui style="olive tertiary">Olive</Button>
-<Button ui style="green tertiary">Green</Button>
-<Button ui style="teal tertiary">Teal</Button>
-<Button ui style="blue tertiary">Blue</Button>
-<Button ui style="violet tertiary">Violet</Button>
-<Button ui style="purple tertiary">Purple</Button>
-<Button ui style="pink tertiary">Pink</Button>
-<Button ui style="brown tertiary">Brown</Button>
-<Button ui style="grey tertiary">Grey</Button>
-<Button ui style="black tertiary">Black</Button>
+<Button ui primary tertiary>Primary</Button>
+<Button ui secondary tertiary>Secondary</Button>
+<Button ui red tertiary>Red</Button>
+<Button ui orange tertiary>Orange</Button>
+<Button ui yellow tertiary>Yellow</Button>
+<Button ui olive tertiary>Olive</Button>
+<Button ui green tertiary>Green</Button>
+<Button ui teal tertiary>Teal</Button>
+<Button ui blue tertiary>Blue</Button>
+<Button ui violet tertiary>Violet</Button>
+<Button ui purple tertiary>Purple</Button>
+<Button ui pink tertiary>Pink</Button>
+<Button ui brown tertiary>Brown</Button>
+<Button ui grey tertiary>Grey</Button>
+<Button ui black tertiary>Black</Button>
 
 <h4>Inverted</h4>
-<Segment ui style="inverted">
-  <Button ui style="inverted">Standard</Button>
-  <Button ui style="inverted primary">Primary</Button>
-  <Button ui style="inverted secondary">Secondary</Button>
-  <Button ui style="inverted red">Red</Button>
-  <Button ui style="inverted orange">Orange</Button>
-  <Button ui style="inverted yellow">Yellow</Button>
-  <Button ui style="inverted olive">Olive</Button>
-  <Button ui style="inverted green">Green</Button>
-  <Button ui style="inverted teal">Teal</Button>
-  <Button ui style="inverted blue">Blue</Button>
-  <Button ui style="inverted violet">Violet</Button>
-  <Button ui style="inverted purple">Purple</Button>
-  <Button ui style="inverted pink">Pink</Button>
-  <Button ui style="inverted brown">Brown</Button>
-  <Button ui style="inverted grey">Grey</Button>
-  <Button ui style="inverted black">Black</Button>
+<Segment ui inverted>
+  <Button ui inverted>Standard</Button>
+  <Button ui inverted primary>Primary</Button>
+  <Button ui inverted secondary>Secondary</Button>
+  <Button ui inverted red>Red</Button>
+  <Button ui inverted orange>Orange</Button>
+  <Button ui inverted yellow>Yellow</Button>
+  <Button ui inverted olive>Olive</Button>
+  <Button ui inverted green>Green</Button>
+  <Button ui inverted teal>Teal</Button>
+  <Button ui inverted blue>Blue</Button>
+  <Button ui inverted violet>Violet</Button>
+  <Button ui inverted purple>Purple</Button>
+  <Button ui inverted pink>Pink</Button>
+  <Button ui inverted brown>Brown</Button>
+  <Button ui inverted grey>Grey</Button>
+  <Button ui inverted black>Black</Button>
 </Segment>
 <br/><br/>
-<Segment ui style="inverted">
-  <Button ui style="inverted basic">Basic</Button>
-  <Button ui style="inverted primary basic">Primary</Button>
-  <Button ui style="inverted secondary basic">Secondary</Button>
-  <Button ui style="inverted red basic">Basic Red</Button>
-  <Button ui style="inverted orange basic">Basic Orange</Button>
-  <Button ui style="inverted yellow basic">Basic Yellow</Button>
-  <Button ui style="inverted olive basic">Basic Olive</Button>
-  <Button ui style="inverted green basic">Basic Green</Button>
-  <Button ui style="inverted teal basic">Basic Teal</Button>
-  <Button ui style="inverted blue basic">Basic Blue</Button>
-  <Button ui style="inverted violet basic">Basic Violet</Button>
-  <Button ui style="inverted purple basic">Basic Purple</Button>
-  <Button ui style="inverted pink basic">Basic Pink</Button>
-  <Button ui style="inverted brown basic">Basic Brown</Button>
-  <Button ui style="inverted grey basic">Basic Grey</Button>
-  <Button ui style="inverted black basic">Basic Black</Button>
+<Segment ui inverted>
+  <Button ui inverted basic>Basic</Button>
+  <Button ui inverted primary basic>Primary</Button>
+  <Button ui inverted secondary basic>Secondary</Button>
+  <Button ui inverted red basic>Basic Red</Button>
+  <Button ui inverted orange basic>Basic Orange</Button>
+  <Button ui inverted yellow basic>Basic Yellow</Button>
+  <Button ui inverted olive basic>Basic Olive</Button>
+  <Button ui inverted green basic>Basic Green</Button>
+  <Button ui inverted teal basic>Basic Teal</Button>
+  <Button ui inverted blue basic>Basic Blue</Button>
+  <Button ui inverted violet basic>Basic Violet</Button>
+  <Button ui inverted purple basic>Basic Purple</Button>
+  <Button ui inverted pink basic>Basic Pink</Button>
+  <Button ui inverted brown basic>Basic Brown</Button>
+  <Button ui inverted grey basic>Basic Grey</Button>
+  <Button ui inverted black basic>Basic Black</Button>
 </Segment>
 
 <h4>Groups</h4>
@@ -169,207 +169,207 @@
 </Buttons>
 
 <h4>Icon Buttons</h4>
-<Buttons ui style="icon">
-  <Button ui><Icon style="align left"/></Button>
-  <Button ui><Icon style="align center"/></Button>
-  <Button ui><Icon style="align right"/></Button>
-  <Button ui><Icon style="align justify"/></Button>
+<Buttons ui icon>
+  <Button ui><Icon align left/></Button>
+  <Button ui><Icon align center/></Button>
+  <Button ui><Icon align right/></Button>
+  <Button ui><Icon align justify/></Button>
 </Buttons>
-<Buttons ui style="icon">
-  <Button ui><Icon style="bold"/></Button>
-  <Button ui><Icon style="underline"/></Button>
-  <Button ui><Icon style="text width"/></Button>
+<Buttons ui icon>
+  <Button ui><Icon bold/></Button>
+  <Button ui><Icon underline/></Button>
+  <Button ui><Icon text width/></Button>
 </Buttons>
 
 <h4>Conditionals</h4>
 <Buttons ui>
   <Button ui>Cancel</Button>
   <div class="or"></div>
-  <Button ui style="positive">Save</Button>
+  <Button ui positive>Save</Button>
 </Buttons>
 
 <h4>Active State</h4>
-<Button ui style="active">
-  <Icon style="user"/>
+<Button ui active>
+  <Icon user/>
   Follow
 </Button>
 
 <h4>Disabled</h4>
-<Button ui style="disabled">
-  <Icon style="user"/>
+<Button ui disabled>
+  <Icon user/>
   Followed
 </Button>
 
 <h4>Loading</h4>
-<Button ui style="loading">Loading</Button>
-<Button ui style="basic loading">Loading</Button>
-<Button ui style="primary loading">Loading</Button>
-<Button ui style="secondary loading">Loading</Button><br/><br/>
-<Button ui style="double loading">Loading</Button>
-<Button ui style="basic double loading">Loading</Button>
-<Button ui style="primary double loading">Loading</Button>
-<Button ui style="secondary double loading">Loading</Button><br/><br/>
-<Button ui style="elastic loading">Loading</Button>
-<Button ui style="basic elastic loading">Loading</Button>
-<Button ui style="primary elastic loading">Loading</Button>
-<Button ui style="secondary elastic loading">Loading</Button>
+<Button ui loading>Loading</Button>
+<Button ui basic loading>Loading</Button>
+<Button ui primary loading>Loading</Button>
+<Button ui secondary loading>Loading</Button><br/><br/>
+<Button ui double loading>Loading</Button>
+<Button ui basic double loading>Loading</Button>
+<Button ui primary double loading>Loading</Button>
+<Button ui secondary double loading>Loading</Button><br/><br/>
+<Button ui elastic loading>Loading</Button>
+<Button ui basic elastic loading>Loading</Button>
+<Button ui primary elastic loading>Loading</Button>
+<Button ui secondary elastic loading>Loading</Button>
 
 <h4>Social</h4>
-<Button ui style="facebook">
-  <Icon style="facebook"/>
+<Button ui facebook>
+  <Icon facebook/>
   Facebook
 </Button>
-<Button ui style="twitter">
-  <Icon style="twitter"/>
+<Button ui twitter>
+  <Icon twitter/>
   Twitter
 </Button>
-<Button ui style="google plus">
-  <Icon style="google plus"/>
+<Button ui google plus>
+  <Icon google plus/>
   Google Plus
 </Button>
-<Button ui style="vk">
-  <Icon style="vk"/>
+<Button ui vk>
+  <Icon vk/>
   VK
 </Button>
-<Button ui style="linkedin">
-  <Icon style="linkedin"/>
+<Button ui linkedin>
+  <Icon linkedin/>
   LinkedIn
 </Button>
-<Button ui style="instagram">
-  <Icon style="instagram"/>
+<Button ui instagram>
+  <Icon instagram/>
   Instagram
 </Button>
-<Button ui style="youtube">
-  <Icon style="youtube"/>
+<Button ui youtube>
+  <Icon youtube/>
   YouTube
 </Button>
-<Button ui style="whatsapp">
-  <Icon style="whatsapp"/>
+<Button ui whatsapp>
+  <Icon whatsapp/>
   WhatsApp
 </Button>
-<Button ui style="telegram">
-  <Icon style="telegram"/>
+<Button ui telegram>
+  <Icon telegram/>
   Telegram
 </Button>
 
 <h4>Size</h4>
-<Button ui style="mini">
+<Button ui mini>
   Mini
 </Button>
-<Button ui style="tiny">
+<Button ui tiny>
   Tiny
 </Button>
-<Button ui style="small">
+<Button ui small>
   Small
 </Button>
-<Button ui style="medium">
+<Button ui medium>
   Medium
 </Button>
-<Button ui style="large">
+<Button ui large>
   Large
 </Button>
-<Button ui style="big">
+<Button ui big>
   Big
 </Button>
-<Button ui style="huge">
+<Button ui huge>
   Huge
 </Button>
-<Button ui style="massive">
+<Button ui massive>
   Massive
 </Button>
 
 <h4>Floated</h4>
-<Button ui style="right floated">Right Floated</Button>
-<Button ui style="left floated">Left Floated</Button>
+<Button ui right floated>Right Floated</Button>
+<Button ui left floated>Left Floated</Button>
 <br/>
 
 <h4>Colored</h4>
-<Button ui style="red">Red</Button>
-<Button ui style="orange">Orange</Button>
-<Button ui style="yellow">Yellow</Button>
-<Button ui style="olive">Olive</Button>
-<Button ui style="green">Green</Button>
-<Button ui style="teal">Teal</Button>
-<Button ui style="blue">Blue</Button>
-<Button ui style="violet">Violet</Button>
-<Button ui style="purple">Purple</Button>
-<Button ui style="pink">Pink</Button>
-<Button ui style="brown">Brown</Button>
-<Button ui style="grey">Grey</Button>
-<Button ui style="black">Black</Button>
+<Button ui red>Red</Button>
+<Button ui orange>Orange</Button>
+<Button ui yellow>Yellow</Button>
+<Button ui olive>Olive</Button>
+<Button ui green>Green</Button>
+<Button ui teal>Teal</Button>
+<Button ui blue>Blue</Button>
+<Button ui violet>Violet</Button>
+<Button ui purple>Purple</Button>
+<Button ui pink>Pink</Button>
+<Button ui brown>Brown</Button>
+<Button ui grey>Grey</Button>
+<Button ui black>Black</Button>
 
 <h4>Compact</h4>
-<Button ui style="compact">
+<Button ui compact>
   Hold
 </Button>
-<Button ui style="compact icon">
-  <Icon style="pause icon"/>
+<Button ui compact icon>
+  <Icon pause icon/>
 </Button>
-<Button ui style="compact labeled icon">
-  <Icon style="pause icon"/>
+<Button ui compact labeled icon>
+  <Icon pause icon/>
   Pause
 </Button>
 
 
 <h4>Toggle</h4>
-<Button ui style="toggle" active={false} on_style="active" off_style="grey">
+<Button ui toggle active={false} on_style="active" off_style="grey">
   <Content slot="on">Voted</Content>
   <Content slot="off">Vote</Content>
 </Button>
 
 
 <h4>Positive</h4>
-<Button ui style="positive">Positive Button</Button>
+<Button ui positive>Positive Button</Button>
 
 <h4>Negative</h4>
-<Button ui style="negative">Negative Button</Button>
+<Button ui negative>Negative Button</Button>
 
 <h4>Fluid</h4>
-<Button ui style="fluid">Fits container</Button>
+<Button ui fluid>Fits container</Button>
 
 <h4>Circular</h4>
-<Button ui style="circular icon">
-  <Icon style="icon settings"/>
+<Button ui circular icon>
+  <Icon settings/>
 </Button>
 <br/>
-<Button ui style="circular facebook icon">
-  <Icon style="facebook icon"/>
+<Button ui circular facebook icon>
+  <Icon facebook/>
 </Button>
-<Button ui style="circular twitter icon">
-  <Icon style="twitter icon"/>
+<Button ui circular twitter icon>
+  <Icon twitter/>
 </Button>
-<Button ui style="circular linkedin icon">
-  <Icon style="linkedin icon"/>
+<Button ui circular linkedin icon>
+  <Icon linkedin/>
 </Button>
-<Button ui style="circular google plus icon">
-  <Icon style="google plus icon"/>
+<Button ui circular google plus icon>
+  <Icon google plus/>
 </Button>
 
 <h4>Vertically Attached</h4>
-<Button ui style="top attached">Top</Button>
-<Segment ui style="attached">
+<Button ui top attached>Top</Button>
+<Segment ui attached>
   <p>blah blah blah</p>
 </Segment>
-<Button ui style="bottom attached">Bottom</Button>
+<Button ui bottom attached>Bottom</Button>
 <br/>
-<Buttons ui style="two top attached">
+<Buttons ui two top attached>
   <Button ui>One</Button>
   <Button ui>Two</Button>
 </Buttons>
-<Segment ui style="attached">
+<Segment ui attached>
 <p>Hello World</p>
 </Segment>
-<Buttons ui style="two bottom attached">
+<Buttons ui two bottom attached>
   <Button ui>One</Button>
   <Button ui>Two</Button>
 </Buttons>
 
 <h4>Horizontally Attached</h4>
-<Button ui style="left attached">Left</Button>
-<Button ui style="right attached">Right</Button>
+<Button ui left attached>Left</Button>
+<Button ui right attached>Right</Button>
   
 <h4>Vertical Buttons</h4>
-<Buttons ui style="vertical">
+<Buttons ui vertical>
   <Button ui>Feed</Button>
   <Button ui>Messages</Button>
   <Button ui>Events</Button>
@@ -377,7 +377,7 @@
 </Buttons>
 
 <h4>Stackable</h4>
-<Buttons ui style="stackable">
+<Buttons ui stackable>
   <Button ui>Feed</Button>
   <Button ui>Messages</Button>
   <Button ui>Events</Button>
@@ -385,102 +385,102 @@
 </Buttons>
 
 <h4>Icon Buttons</h4>
-<Buttons ui style="icon">
-  <Button ui><Icon style="align left"/></Button>
-  <Button ui><Icon style="align center"/></Button>
-  <Button ui><Icon style="align right"/></Button>
-  <Button ui><Icon style="align justify"/></Button>
+<Buttons ui icon>
+  <Button ui><Icon align left/></Button>
+  <Button ui><Icon align center/></Button>
+  <Button ui><Icon align right/></Button>
+  <Button ui><Icon align justify/></Button>
 </Buttons>
-<Buttons ui style="icon">
-  <Button ui><Icon style="bold"/></Button>
-  <Button ui><Icon style="underline"/></Button>
-  <Button ui><Icon style="text width"/></Button>
+<Buttons ui icon>
+  <Button ui><Icon bold/></Button>
+  <Button ui><Icon underline/></Button>
+  <Button ui><Icon text width/></Button>
 </Buttons>
 
 <h4>Labeled Icon Buttons</h4>
-<Buttons ui style="vertical labeled icon">
+<Buttons ui vertical labeled icon>
   <Button ui>
-    <Icon style="pause"/>
+    <Icon pause/>
     Pause
   </Button>
   <Button ui>
-    <Icon style="play"/>
+    <Icon play/>
     Play
   </Button>
   <Button ui>
-    <Icon style="shuffle"/>
+    <Icon shuffle/>
     Shuffle
   </Button>
 </Buttons>
 
 <h4>Mixed Group</h4>
 <Buttons ui>
-  <Button ui style="labeled icon">
-      <Icon style="left chevron"/>
+  <Button ui labeled icon>
+      <Icon left chevron/>
       Back
   </Button>
   <Button ui>
-      <Icon style="stop icon"/>
+      <Icon stop/>
       Stop
   </Button>
-  <Button ui style="right labeled icon">
+  <Button ui right labeled icon>
       Forward
-      <Icon style="right chevron icon"/>
+      <Icon right chevron/>
   </Button>
 </Buttons>
 
 <h4>Equal Width</h4>
-<Buttons ui style="five">
+<Buttons ui five>
   <Button ui>Overview</Button>
   <Button ui>Specs</Button>
   <Button ui>Warranty</Button>
   <Button ui>Reviews</Button>
   <Button ui>Support</Button>
 </Buttons>
-<Buttons ui style="three">
+<Buttons ui three>
   <Button ui>Overview</Button>
   <Button ui>Specs</Button>
   <Button ui>Support</Button>
 </Buttons>
 
 <h4>Colored Buttons</h4>
-<Buttons ui style="blue">
+<Buttons ui blue>
   <Button ui>One</Button>
   <Button ui>Two</Button>
   <Button ui>Three</Button>
 </Buttons>
 
 <h4>Basic Buttons</h4>
-<Buttons ui style="basic">
+<Buttons ui basic>
   <Button ui>One</Button>
   <Button ui>Two</Button>
   <Button ui>Three</Button>
 </Buttons>
 <Divider ui/>
-<Buttons ui style="vertical basic">
+<Buttons ui vertical basic>
   <Button ui>One</Button>
   <Button ui>Two</Button>
   <Button ui>Three</Button>
 </Buttons>
 <Divider ui/>
 <Buttons ui>
-  <Button ui style="red basic">One</Button>
-  <Button ui style="blue basic">Two</Button>
-  <Button ui style="green basic">Three</Button>
+  <Button ui red basic>One</Button>
+  <Button ui blue basic>Two</Button>
+  <Button ui green basic>Three</Button>
 </Buttons>
 
 <h4>Group Sizes</h4>
-<Buttons ui style="large">
+<Buttons ui large>
   <Button ui>One</Button>
   <Button ui>Two</Button>
   <Button ui>Three</Button>
 </Buttons>
 <br/><br/>
-<Buttons ui style="small basic icon">
-  <Button ui><Icon style="file"/></Button>
-  <Button ui><Icon style="save"/></Button>
-  <Button ui><Icon style="upload"/></Button>
-  <Button ui><Icon style="download"/></Button>
+<Buttons ui small basic icon>
+  <Button ui><Icon file/></Button>
+  <Button ui><Icon save/></Button>
+  <Button ui><Icon upload/></Button>
+  <Button ui><Icon download/></Button>
 </Buttons>
 <br/><br/>
 <Buttons ui>
@@ -490,7 +490,7 @@
 </Buttons>
 
 <h4>Wrapping Buttons</h4>
-<Buttons ui style="wrapped wrapping">
+<Buttons ui wrapped wrapping>
   <Button ui>One</Button>
   <Button ui>Two</Button>
   <Button ui>Three</Button>
@@ -514,7 +514,7 @@
 </Buttons>
 
 <h4>Spaced Buttons</h4>
-<Buttons ui style="spaced wrapping">
+<Buttons ui spaced wrapping>
   <Button ui>One</Button>
   <Button ui>Two</Button>
   <Button ui>Three</Button>

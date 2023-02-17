@@ -1,8 +1,9 @@
 <script lang="ts">
-    export let style: string = "";
+    import {uiProps, otherProps} from "./Helpers"
+    export let ui: boolean=false;
     export let value: string = "";
 </script>
 
-<option class={style} {value} {...$$restProps}>
+<option class={(ui?"ui":"") + uiProps($$restProps)} {value} {...otherProps($$restProps)}>
     <slot />
 </option>

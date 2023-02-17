@@ -1,6 +1,6 @@
 <script lang="ts">
-    export let style: string = "";
-    export let ui: boolean = false;
+    import {uiProps, otherProps} from "./Helpers"
+    export let ui: boolean=false;
     export let name: string = "";
 
     import { createEventDispatcher } from 'svelte';
@@ -12,6 +12,6 @@
     }
 </script>
 
-<a class={(ui?"ui ":"") + style} on:click={doClick} on:keydown on:keypress on:keyup {...$$restProps}>
+<a class={(ui?"ui":"") + uiProps($$restProps)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
     <slot />
 </a>

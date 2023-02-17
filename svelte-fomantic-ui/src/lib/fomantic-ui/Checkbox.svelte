@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let style: string = "";
+    import {uiProps, otherProps} from "./Helpers"
     export let name: string="";
     export let value: string="";
     export let placeholder: string="";
@@ -14,8 +14,8 @@
     }
 </script>
 
-<div class={(ui?"ui ":"") + style + " checkbox"}>
-    <input type="checkbox" {placeholder} {name} bind:checked bind:value on:click={doClick} {...$$restProps}>
+<div class={(ui?"ui":"") + uiProps($$restProps) + " checkbox"}>
+    <input type="checkbox" {placeholder} {name} bind:checked bind:value on:click={doClick} {...otherProps($$restProps)}>
     <slot/>
 </div>
 

@@ -21,17 +21,17 @@
 </script>
 
 <h4>Interactive Buttons</h4>
-<Buttons ui style="wrapping spaced fluid">
+<Buttons ui wrapping spaced fluid>
     <Button ui on:click={processClick} name="button1">Button 1</Button>
-    <Button ui style="red" on:click={processClick} name="button2">Button 2</Button>
-    <Button ui style="toggle" on:toggle={processToggle} name="toggle_button" on_style="purple" off_style="orange">
+    <Button ui red on:click={processClick} name="button2">Button 2</Button>
+    <Button ui toggle on:toggle={processToggle} name="toggle_button" on_style="purple" off_style="orange">
         <Content slot="on">On</Content>
         <Content slot="off">Off</Content>
     </Button>
-    <Button ui style="black" on:click={processClick} name="button3">Button 3</Button>
-    <Buttons ui style="icon" name="edit_buttons" >
+    <Button ui black on:click={processClick} name="button3">Button 3</Button>
+    <Buttons ui icon name="edit_buttons" >
         {#each items as item}
-            <Button ui name={item} style={(item === selected)?"green":""} on:click={processClick}><Icon style={"align " + item}/></Button>
+            <Button ui name={item} green={item === selected} on:click={processClick}><Icon align _={item}/></Button>
         {/each}
     </Buttons>
 </Buttons>

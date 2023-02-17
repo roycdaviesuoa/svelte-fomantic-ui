@@ -1,8 +1,7 @@
 <script lang="ts">
-    export let style: string = "";
-    export let placeholder: string="";
-    export let name: string="";
+    import {uiProps, otherProps} from "./Helpers"
+    export let ui: boolean=false;
     export let value: string="";
 </script>
 
-<textarea {placeholder} {name} bind:value={value} {...$$restProps}></textarea>
+<textarea class={(ui?"ui":"") + uiProps($$restProps)} bind:value={value} {...otherProps($$restProps)}/>

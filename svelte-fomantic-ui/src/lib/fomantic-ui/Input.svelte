@@ -1,4 +1,5 @@
 <script lang="ts">
+    import {uiProps, otherProps} from "./Helpers"
     export let value: string="";
     export let password: boolean=false;
 
@@ -7,7 +8,7 @@
 </script>
 
 {#if password}
-    <input type="password" bind:value={value} {...$$restProps}/>
+    <input type="password" class={uiProps($$restProps)} bind:value={value} {...otherProps($$restProps)}/>
 {:else}
-    <input type="text" bind:value={value} {...$$restProps}/>
+    <input type="text" class={uiProps($$restProps)} bind:value={value} {...otherProps($$restProps)}/>
 {/if}

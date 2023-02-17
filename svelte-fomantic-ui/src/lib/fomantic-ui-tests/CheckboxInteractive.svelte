@@ -22,7 +22,7 @@
 <Fields>
   {#each items as item}
     <Field>
-      <Checkbox ui bind:value={selected} name={item} checked={item === selected} style={(item === selected)?"green":""} on:click={select_group}>
+      <Checkbox ui green={item === selected} bind:value={selected} name={item} checked={item === selected} on:click={select_group}>
         <Label checkbox>{item}</Label>
       </Checkbox>
     </Field>

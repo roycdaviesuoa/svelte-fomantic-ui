@@ -3,6 +3,6 @@
     export let ui: boolean=false;
 </script>
 
-<div class={(ui?"ui":"") + uiProps($$restProps) + " form"} {...otherProps($$restProps)}>
+<thead class={(ui?"ui":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
     <slot />
-</div>
+</thead>

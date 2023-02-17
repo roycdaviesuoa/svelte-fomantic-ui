@@ -16,15 +16,15 @@
 <Breadcrumb ui>
   {#each items as item, i}
     {#if i === (items.length-1)}
-      <Icon style="right arrow divider"/>
+      <Icon right arrow divider/>
     {:else if i !== 0}
-      <Icon style="right chevron divider"/>
+      <Icon right chevron divider/>
     {/if}
 
     {#if selected === item}
-      <Section style="active">{item}</Section>
+      <Section active>{item}</Section>
     {:else}
-      <Link on:click={select} name={item} style="section">{item}</Link>
+      <Link section on:click={select} name={item}>{item}</Link>
     {/if}
   {/each}
 </Breadcrumb>

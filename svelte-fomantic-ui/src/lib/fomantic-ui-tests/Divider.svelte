@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Divider, Column, Placeholder, Line, Paragraph, Segment, Button, Icon, Form, Field, Label, Input, Inputwrapper, Table, TableBody, TableRow, TableCol, TableHead } from "../fomantic-ui/Core.svelte";
+    import { Divider, Column, Placeholder, Line, Paragraph, Segment, Button, Icon, Form, Field, Label, Input, Input_Wrapper, Table, Table_Body, Table_Row, Table_Col, Table_Head } from "../fomantic-ui/Core.svelte";
     import Grid from "../fomantic-ui/Grid.svelte";
 </script>
 
@@ -13,7 +13,7 @@
 
 <h4>A vertical divider</h4>
 <Segment ui>
-    <Grid ui style="two column very relaxed">
+    <Grid ui two column very relaxed>
         <Column>
             <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Column>
@@ -21,92 +21,116 @@
             <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Column>
     </Grid>
-    <Divider ui style="vertical"> and </Divider>
+    <Divider ui vertical> and </Divider>
 </Segment>
 
 <h4>Stackable Grid Vertical Divider</h4>
-<Segment ui style="placeholder">
-    <Grid ui style="two column very relaxed stackable">
+<Segment ui placeholder>
+    <Grid ui two column very relaxed stackable>
         <Column>
             <Form ui>
                 <Field>
-                        <Label checkbox>Username</Label>
-                        <Inputwrapper ui style="left icon">
-                            <Input type="text" placeholder='Username'/>
-                            <Icon style="user"/>
-                        </Inputwrapper>
+                    <Label checkbox>Username</Label>
+                    <Input_Wrapper ui left icon>
+                        <Input type="text" placeholder='Username'/>
+                        <Icon user/>
+                    </Input_Wrapper>
                 </Field>
                 <Field>
                     <Label checkbox>Password</Label>
-                    <Inputwrapper ui style="left icon">
+                    <Input_Wrapper ui left icon>
                         <Input type="password"/>
-                        <Icon style="lock"/>
-                    </Inputwrapper>
+                        <Icon lock/>
+                    </Input_Wrapper>
                 </Field>
-                <Button ui style="blue submit">Login</Button>
+                <Button ui blue submit>Login</Button>
             </Form>
         </Column>
-        <Column style="middle aligned">
-            <Button ui style="big">
-                <Icon style="signup"/>
+        <Column middle aligned>
+            <Button ui big>
+                <Icon signup/>
                 Sign Up
             </Button>
         </Column>
     </Grid>
-    <Divider ui style="vertical">
+    <Divider ui vertical>
       Or
     </Divider>
 </Segment>
 
 <h4>Horizontal Divider</h4>
-<Segment ui style="center aligned basic">
-    <Inputwrapper ui style="left icon action">
-        <Icon style="search"/>
+<Segment ui center aligned basic>
+    <Input_Wrapper ui left icon action>
+        <Icon search/>
         <Input type="text" placeholder="Order #"/>
-        <Button ui style="blue submit">Search</Button>
-    </Inputwrapper>
-    <Divider ui style="horizontal">
+        <Button ui blue submit>Search</Button>
+    </Input_Wrapper>
+    <Divider ui horizontal>
         Or
     </Divider>
-    <Button ui style="teal labeled icon">
+    <Button ui teal labeled icon>
         Create New Order
-        <Icon style="add"/>
+        <Icon add/>
     </Button>
 </Segment>
 <br/><br/>
-<Divider ui style="small horizontal header">
-    <Icon style="tag"/>
+<Divider ui small horizontal header>
+    <Icon tag/>
     Description
 </Divider>
-    <p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>
-    <Divider ui style="small horizontal header">
-        <Icon style="bar chart"/>
-        Specifications
-    </Divider>
-    <Table ui style="definition">
-        <TableHead>
-            <TableRow>
-                <TableCol head style="two wide column"></TableCol>
-                <TableCol head>Details</TableCol>
-            </TableRow>
-        </TableHead>
-        <TableBody>
-            <TableRow>
-                <TableCol>Size</TableCol>
-                <TableCol>1" x 2"</TableCol>
-            </TableRow>
-            <TableRow>
-                <TableCol>Weight</TableCol>
-                <TableCol>6 ounces</TableCol>
-            </TableRow>
-            <TableRow>
-                <TableCol>Color</TableCol>
-                <TableCol>Yellowish</TableCol>
-            </TableRow>
-            <TableRow>
-                <TableCol>Odor</TableCol>
-                <TableCol>Not Much Usually</TableCol>
-            </TableRow>
-        </TableBody>
+<p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>
+<Divider ui small horizontal header>
+    <Icon bar chart/>
+    Specifications
+</Divider>
+<Table ui definition>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head two wide column></Table_Col>
+            <Table_Col head>Details</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>Size</Table_Col>
+            <Table_Col>1" x 2"</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Weight</Table_Col>
+            <Table_Col>6 ounces</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Color</Table_Col>
+            <Table_Col>Yellowish</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Odor</Table_Col>
+            <Table_Col>Not Much Usually</Table_Col>
+        </Table_Row>
+    </Table_Body>
 </Table>
+
+<h4>Horizontal Alginment</h4>
+<Divider ui small horizontal left aligned header>
+    <Icon left align/>
+    Left Aligned
+</Divider>
+<Divider ui small horizontal center aligned header>
+    <Icon center align/>
+    Center Aligned
+</Divider>
+<Divider ui small horizontal right aligned header>
+    <Icon right align/>
+    Right Aligned
+</Divider>
+
+<h4>Inverted</h4>
+<Segment ui inverted>
+    <Placeholder ui inverted> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+    <Divider ui inverted/>
+    <Placeholder ui inverted> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+    <Divider ui horizontal inverted>
+      Horizontal
+    </Divider>
+</Segment>
 

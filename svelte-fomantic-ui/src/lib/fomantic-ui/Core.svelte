@@ -35,7 +35,7 @@
     export {default as Fileinput} from './Fileinput.svelte';
     export {default as Form} from './Form.svelte';
     export {default as Input} from './Input.svelte';
-    export {default as Inputwrapper} from './Inputwrapper.svelte';
+    export {default as Input_Wrapper} from './Input_Wrapper.svelte';
     export {default as Radio} from './Radio.svelte';
     export {default as Text} from './Text.svelte';
     export {default as Textarea} from './Textarea.svelte';
@@ -52,9 +52,9 @@
     export {default as Row} from './Row.svelte';
     export {default as Section} from './Section.svelte';
     export {default as Table} from './Table.svelte';
-    export {default as TableBody} from './TableBody.svelte';
-    export {default as TableHead} from './TableHead.svelte';
-    export {default as TableRow} from './TableRow.svelte';
-    export {default as TableCol} from './TableCol.svelte';
+    export {default as Table_Body} from './Table_Body.svelte';
+    export {default as Table_Head} from './Table_Head.svelte';
+    export {default as Table_Row} from './Table_Row.svelte';
+    export {default as Table_Col} from './Table_Col.svelte';
     
 </script>

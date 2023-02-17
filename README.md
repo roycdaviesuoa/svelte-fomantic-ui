@@ -9,7 +9,7 @@ The following links contain examples of [Elements](Elements.md) | [Collections](
 
 ## Overview
 
-The majority of the elements, collections, views and modules are wrapped in a single layer, with a svelte-style tag used to represent the primary fomantic-ui element.  For example:
+The majority of the elements, collections, views and modules are wrapped in a single layer, with props used to represent the primary fomantic-ui element.  For example:
 
 ```html
 <button class="ui primary button">
@@ -23,7 +23,7 @@ The majority of the elements, collections, views and modules are wrapped in a si
 Would be written as:
 
 ```html
-<Button ui style="primary">
+<Button ui primary>
   Save
 </Button>
 <Button ui>
@@ -31,7 +31,7 @@ Would be written as:
 </Button>
 ```
 
-As can be seem from the example, the parameter `style` contains the classes that would be used by fomantic-ui, except `ui` and the main class, in this case `button`.  Any tags that would have had `ui` in the class list need to have `ui` in the parameter list as above.  This is mainly for consistancy with tags that may or may not use `ui` depending on context.
+As can be seem from the example, the props contains the classes that would be used by fomantic-ui, except the main class, in this case `button`.
 
 More complex structures are similarly translated, for example:
 
@@ -49,20 +49,35 @@ More complex structures are similarly translated, for example:
 becomes:
 
 ```html
-<Button ui style="labeled">
+<Button ui labeled>
   <Button ui>
-    <Icon style="heart"/> Like
+    <Icon heart/> Like
   </Button>
-  <Link ui style="basic">
+  <Link ui basic>
     2,048
   </Link>
 </Button>
 ```
 
+Sometimes, you might want to send some Fomantic UI classes as text, in which case use the underscore prop, for example:
+```html
+<Buttons ui icon>
+    {#each items as item}
+        <Button ui name={item} green={item === selected} on:click={processClick}>
+            <Icon align _={item}/>
+        </Button>
+    {/each}
+</Buttons>
+```
+where
+```json
+items=["left", "center", "right", "justify"]
+```
+
 Interaction with an element and variables are achieved in the standard svelte way, using binding.  For example:
 
 ```html
-<Button ui name="submit" on:click={processForm} type="submit">
+<Button ui submit on:click={processForm} type="submit">
     Submit
 </Button>
 ```
@@ -94,7 +109,7 @@ Similarly, to get data from an input field, the following may be used:
 </Field>
 ```
 
-which binds the value of the input to the variable ```firstname```.  This means also that the default value shown in the input can be set by setting firstname to a default value.
+which binds the value of the input to the variable `firstname`.  This means also that the default value shown in the input can be set by setting firstname to a default value.
 
 Note that the 'svelte-ised' versions can be mixed with the Fomantic UI class versions without problem, for example:
 ```html
@@ -126,7 +141,7 @@ To use fomantic UI in your project, import the required elements from `Core.svel
     import { Button } from './fomantic-ui/Core.svelte';
 </script>
 
-<Button style="simple red fluid">Hello World</Button>
+<Button ui simple red fluid>Hello World</Button>
 
 <style>
 </style>

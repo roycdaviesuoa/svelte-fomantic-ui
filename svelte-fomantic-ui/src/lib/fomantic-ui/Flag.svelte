@@ -1,7 +1,8 @@
 <script lang="ts">
-    export let style: string = "";
+    import {uiProps, otherProps} from "./Helpers"
+    export let ui: boolean=false;
 </script>
 
-<i class={style + " flag"} {...$$restProps}>
+<i class={(ui?"ui":"") + uiProps($$restProps) + " flag"} {...otherProps($$restProps)}>
     <slot />
 </i>

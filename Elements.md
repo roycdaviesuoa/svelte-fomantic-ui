@@ -5,7 +5,7 @@
 ## Button
 [Fomantic UI Button](https://fomantic-ui.com/elements/button.html)
 
-All the button types, groups, variations and group variations can be used with the style parameter.  For example:
+All the button types, groups, variations and group variations can be used as props.  For example:
 
 ### Overview
 
@@ -26,16 +26,16 @@ All the button types, groups, variations and group variations can be used with t
 becomes:
 
 ```html
-<Buttons ui style="icon">
-    <Button ui><Icon style="align left"/></Button>
-    <Button ui><Icon style="align center"/></Button>
-    <Button ui><Icon style="align right"/></Button>
-    <Button ui><Icon style="align justify"/></Button>
+<Buttons ui icon>
+    <Button ui><Icon align left/></Button>
+    <Button ui><Icon align center/></Button>
+    <Button ui><Icon align right/></Button>
+    <Button ui><Icon align justify/></Button>
 </Buttons>
 <Buttons ui style="icon">
-    <Button ui><Icon style="bold"/></Button>
-    <Button ui><Icon style="underline"/></Button>
-    <Button ui><Icon style="text width"/></Button>
+    <Button ui><Icon bold/></Button>
+    <Button ui><Icon underline/></Button>
+    <Button ui><Icon text width/></Button>
 </Buttons>
 ```
 
@@ -43,7 +43,7 @@ Note the use of `Buttons` here for a group of buttons.
 
 One difference compared to Fomantic UI is the way a toggle button is described, namely:
 ```html
-<Button ui style="toggle" on_style="purple" off_style="orange">
+<Button ui toggle on_style="purple" off_style="orange">
     <Content slot="on">On</Content>
     <Content slot="off">Off</Content>
 </Button>
@@ -51,14 +51,14 @@ One difference compared to Fomantic UI is the way a toggle button is described, 
 
 ### Parameters
 
-In addition to `style` parameters such as `name` and `type`are passed through (see example below).
+In addition to Fomantic UI class-name props, other props such as `name` and `type`are passed through (see example below).
 
 ### Interactivity
 
 The click event may be trapped with `on:click`, for example:
 
 ```html
-<Button name="submit" on:click={processForm} type="submit">
+<Button ui blue name="submit" on:click={processForm} type="submit">
     Submit
 </Button>
 ```

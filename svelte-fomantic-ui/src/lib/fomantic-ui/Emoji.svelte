@@ -1,8 +1,9 @@
 <script lang="ts">
-    export let style: string = "";
+    import {uiProps, otherProps} from "./Helpers"
+    export let ui: boolean = false;
     export let dataEmoji: string = "";
 </script>
 
-<em class={style} data-emoji={dataEmoji} {...$$restProps}>
+<em class={(ui?"ui":"") + uiProps($$restProps)} data-emoji={dataEmoji} {...otherProps($$restProps)}>
     <slot />
 </em>

@@ -1,5 +1,6 @@
 <script lang="ts">
-    export let style: string = "";
+    import {uiProps, otherProps} from "./Helpers"
+
     export let ui: boolean=false;
     export let name: string="";
 
@@ -11,6 +12,6 @@
     }
 </script>
 
-<div on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + style + " buttons"} {...$$restProps}>
+<div on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " buttons"} {...otherProps($$restProps)}>
     <slot />
 </div>
