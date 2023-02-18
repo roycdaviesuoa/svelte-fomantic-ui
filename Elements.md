@@ -173,7 +173,7 @@ The `Emoji` tag allows all the capabilities of the fomantic UI emoji class, for 
 <Emoji large loading angel/>
 ```
 
-Produces a large, rotating Angel emoji.  Note that the `data-emoji` class of fomantic UI becomes is not required.
+Produces a large, rotating Angel emoji.  Note that the `data-emoji` property of fomantic UI is not required.
 
 [top](#fomantic-ui-elements)
 ## Flag
@@ -182,7 +182,7 @@ Produces a large, rotating Angel emoji.  Note that the `data-emoji` class of fom
 The `Flag` tag passes through all the capabilities of the fomantic UI flag class, for example:
 
 ```html
-<Flag style="medium se"/>
+<Flag medium se/>
 ```
 
 Creates a medium-sized Swedish flag.
@@ -194,33 +194,31 @@ Creates a medium-sized Swedish flag.
 The `Header` tag equates to the fomantic UI header class, for example:
 
 ```html
-<Segment style="clearing">
-    <Header style="right floated">
+<Segment clearing>
+    <Header right floated>
         Go Forward
     </Header>
-    <Header style="left floated">
+    <Header left floated>
         Go Back
     </Header>
 </Segment>
 ```
 
-Note that in this implementation, we don't add new tags for page headers such as:
+For Document headers, user Header hx where x is the level of header required, for example:
 
 ```html
-<h1 class="ui header">First header</h1>
-<h2 class="ui header">Second header</h2>
-<h3 class="ui header">Third header</h3>
-<h4 class="ui header">Fourth header</h4>
-<h5 class="ui header">Fifth header</h5>
+<Header h1 ui>First header</Header>
+<Header h2 ui>Second header</Header>
+<Header h3 ui>Third header</Header>
+<Header h4 ui>Fourth header</Header>
+<Header h5 ui>Fifth header</Header>
 ```
 
-But rather use the content header style, such as:
+Further, there is the content header style, such as:
 
 ```html
-<Header style="huge">Huge Header</Header>
+<Header huge>A Huge Header</Header>
 ```
-
-You can still use the page header style directly as above.
 
 [top](#fomantic-ui-elements)
 ## Icon
@@ -235,16 +233,27 @@ In Fomantic UI, Icons are included using the `i` tag, but here we use `Icon`. Fo
 becomes:
 
 ```html
-<Icon style="spinner loading"/>
+<Icon spinner loading/>
 ```
 
 Icons are often used together with other tags, for example in buttons:
 
 ```html
-<Button style="labeled icon">
-    <Icon style="pause"/>
+<Button ui labeled icon>
+    <Icon pause/>
     Pause
 </Button>
+```
+
+Icons can be combined using `icons`:
+```html
+<Header h2 ui>
+    <Icons large>
+        <Icon twitter/>
+        <Icon inverted corner add/>
+    </Icons>
+    Add on Twitter
+</Header>
 ```
 
 Again, this is a direct translation from the Fomantic UI classes.
@@ -253,19 +262,17 @@ Again, this is a direct translation from the Fomantic UI classes.
 ## Image
 [Fomantic UI Image](https://fomantic-ui.com/elements/image.html)
 
-The ```Image``` tag is used in many places, so there are a variety of ways the parameters guide that usage.  At its simplest, this is a UI element, for example:
+The `Image` tag is used in many places, so there are a variety of ways the parameters guide that usage.  At its simplest, this is a UI element, for example:
 
 ```html
-<Image ui style="small" src="/images/wireframe/image.png" alt="A small image"/>
+<Image ui small src="/images/wireframe/image.png" alt="A small image"/>
 ```
 
-Note here the `ui` parameter as `Image` is also often used without the `ui` class, but sometimes with.
-
 [top](#fomantic-ui-elements)
-## Input and Inputwrapper
+## Input and Input_Wrapper
 [Fomantic UI Input](https://fomantic-ui.com/elements/input.html)
 
-Translating the Fomantic UI `input` class to Svelte is complex, and has to date resulted in several tags such as `Input` for text, `Radio` and `Checbox` - which are covered elsewhere.  Here we cover the `Input` tag.  In order to cover the various possibilities that the Fomantic UI input class allows, this has been split into two parts, namely `Inputwrapper` and `Input` to be used together, for example:
+Translating the Fomantic UI `input` class to Svelte is complex, and has to date resulted in several tags such as `Input` for text, `Radio` and `Checkbox` - which are covered elsewhere.  Here we cover the text `Input` tag.  In order to cover the various possibilities that the Fomantic UI input class allows, this has been split into two parts, namely `Input_Wrapper` and `Input` to be used together, for example:
 
 ```html
 <div class="ui labeled input">
@@ -279,12 +286,12 @@ Translating the Fomantic UI `input` class to Svelte is complex, and has to date 
 translates to:
 
 ```html
-<Inputwrapper style="labeled">
-    <Label>
+<Input_Wrapper ui labeled>
+    <Label ui>
         https://
     </Label>
     <Input placeholder="mysite.com"/>
-</Inputwrapper>
+</Input_Wapper>
 ```
 
 whereas:
@@ -307,18 +314,18 @@ whereas:
 translates to:
 
 ```html
-<Inputwrapper style="right labeled">
+<Input_Wrapper right labeled>
     <Input placeholder="Find domain">
     <Label style="dropdown">
         <Text>.com</Text>
-        <Icon style="dropdown"/>
+        <Icon dropdown/>
         <Menu>
             <Item>.com</Item>
             <Item>.net</Item>
             <Item>.org</Item>
         </Menu>
     </Label>
-</Inputwrapper>
+</Input_Wrapper>
 ```
 
 [top](#fomantic-ui-elements)

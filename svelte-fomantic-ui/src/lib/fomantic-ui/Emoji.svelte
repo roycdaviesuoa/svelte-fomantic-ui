@@ -7,15 +7,26 @@
     export let medium: boolean = false;
     export let large: boolean = false;
     export let big: boolean = false;
-    export let relaxed: boolean = false;
     export let link: boolean = false;
+    export let name: string="";
 
-    console.log(uiProps($$restProps));
-    console.log(otherProps($$restProps));
-    console.log((ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (relaxed?"relaxed ":"") + (link?"lnk ":""));
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
+    function doClick(event) {
+        console.log("here");
+        dispatch('click', {name: name, target: event.target});
+    }
 </script>
 
-<em class       ={(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (relaxed?"relaxed ":"") + (link?"lnk ":"")} 
-    data-emoji  ={uiProps($$restProps)}>
-    <slot />
-</em>
+{#if link} 
+    <em class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
+        data-emoji = {uiProps($$restProps)} on:click={doClick} on:keydown on:keyup on:keypress on:click={doClick}>
+        <slot />
+    </em>
+{:else}
+    <em class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
+        data-emoji = {uiProps($$restProps)}>
+        <slot />
+    </em>
+{/if}

@@ -3,6 +3,6 @@
     export let ui: boolean=false;
 </script>
 
-<span class={(ui?"ui ":"") + uiProps($$restProps) + " text"} {...otherProps($$restProps)}>
+<i class={(ui?"ui ":"") + uiProps($$restProps) + " icons"} {...otherProps($$restProps)}>
     <slot />
-</span>
+</i>

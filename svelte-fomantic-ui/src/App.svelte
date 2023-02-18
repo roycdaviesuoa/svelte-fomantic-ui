@@ -8,6 +8,9 @@
   import ContainerTest from './lib/fomantic-ui-tests/Container.svelte';
   import DividerTest from './lib/fomantic-ui-tests/Divider.svelte';
   import EmojiTest from './lib/fomantic-ui-tests/Emoji.svelte';
+  import FlagTest from './lib/fomantic-ui-tests/Flag.svelte';
+  import HeaderTest from './lib/fomantic-ui-tests/Header.svelte';
+  import IconTest from './lib/fomantic-ui-tests/Icon.svelte';
 
 
   let currentRoute: any;
@@ -31,6 +34,12 @@
       currentRoute = DividerTest; break;
     case '/Emoji':
       currentRoute = EmojiTest; break;
+    case '/Flag':
+      currentRoute = FlagTest; break;
+    case '/Header':
+      currentRoute = HeaderTest; break;
+    case '/Icon':
+      currentRoute = IconTest; break;
     default:
       break;
       // currentRoute = NotFound;

@@ -10,6 +10,9 @@
         <li> <h4><a href="/Container">Container</a> </h4> </li>
         <li> <h4><a href="/Divider">Divider</a> </h4> </li>
         <li> <h4><a href="/Emoji">Emoji</a> </h4> </li>
+        <li> <h4><a href="/Flag">Flag</a> </h4> </li>
+        <li> <h4><a href="/Header">Header</a> </h4> </li>
+        <li> <h4><a href="/Icon">Icon</a> </h4> </li>
     </ul>
     <li> <h3>Collections</h3></li>
     <ul>

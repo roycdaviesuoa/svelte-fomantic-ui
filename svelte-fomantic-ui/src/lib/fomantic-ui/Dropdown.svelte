@@ -1,10 +1,10 @@
 <script lang="ts">
+    import {uiProps, otherProps} from "./Helpers"
 
     // NOT YET COMPLETE
-
+    export let ui: boolean=false;
     export let value: string = "";
     export let name: string = "";
-    export let style: string = "";
 
     import { createEventDispatcher } from 'svelte';
 
@@ -15,6 +15,7 @@
     }
 </script>
 
-<select bind:value on:click={doClick} on:keydown on:keypress on:keyup class={"ui " + style + " dropdown"} {...$$restProps}>
+<select class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} bind:value on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}>
     <slot/>
 </select>
+

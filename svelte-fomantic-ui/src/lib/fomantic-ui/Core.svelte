@@ -12,6 +12,7 @@
     export {default as Flag} from './Flag.svelte';
     export {default as Header} from './Header.svelte';
     export {default as Icon} from './Icon.svelte';
+    export {default as Icons} from './Icons.svelte';
     export {default as Image} from './Image.svelte';
     export {default as Item} from './Item.svelte';
     export {default as Label} from './Label.svelte';
