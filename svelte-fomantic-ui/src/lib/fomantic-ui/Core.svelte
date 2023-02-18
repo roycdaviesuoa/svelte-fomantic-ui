@@ -14,6 +14,7 @@
     export {default as Icon} from './Icon.svelte';
     export {default as Icons} from './Icons.svelte';
     export {default as Image} from './Image.svelte';
+    export {default as Images} from './Images.svelte';
     export {default as Item} from './Item.svelte';
     export {default as Label} from './Label.svelte';
     export {default as Labels} from './Labels.svelte';

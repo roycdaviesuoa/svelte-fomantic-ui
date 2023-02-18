@@ -11,6 +11,7 @@
   import FlagTest from './lib/fomantic-ui-tests/Flag.svelte';
   import HeaderTest from './lib/fomantic-ui-tests/Header.svelte';
   import IconTest from './lib/fomantic-ui-tests/Icon.svelte';
+  import ImageTest from './lib/fomantic-ui-tests/Image.svelte';
 
 
   let currentRoute: any;
@@ -40,6 +41,8 @@
       currentRoute = HeaderTest; break;
     case '/Icon':
       currentRoute = IconTest; break;
+    case '/Image':
+      currentRoute = ImageTest; break;
     default:
       break;
       // currentRoute = NotFound;

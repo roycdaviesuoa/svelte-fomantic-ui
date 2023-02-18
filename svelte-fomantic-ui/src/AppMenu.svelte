@@ -13,6 +13,7 @@
         <li> <h4><a href="/Flag">Flag</a> </h4> </li>
         <li> <h4><a href="/Header">Header</a> </h4> </li>
         <li> <h4><a href="/Icon">Icon</a> </h4> </li>
+        <li> <h4><a href="/Image">Image</a> </h4> </li>
     </ul>
     <li> <h3>Collections</h3></li>
     <ul>
