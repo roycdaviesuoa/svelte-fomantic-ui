@@ -1,6 +1,6 @@
 # Fomantic Ui Elements
 
-[Button](#button) | [Container](#container) | [Divider](#divider)
+[Button](#button) | [Container](#container) | [Divider](#divider) | [Emoji](#emoji) | [Flag](#flag) | [Header](#header) | [Icon](#icon) | [Image](#image)
 
 ## Button
 [Fomantic UI Button](https://fomantic-ui.com/elements/button.html)

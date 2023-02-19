@@ -1,42 +1,63 @@
+<!--
+******************************************************************************************************************************************************
+* By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
+******************************************************************************************************************************************************
+-->
+
 <script lang="ts">
     import { Emoji, Segment, Header, Button, Label, Text } from "../fomantic-ui/Core.svelte";
+    import "./examplestyles.css";
 </script>
 
-<h3>To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/collections/emoji.html">here</a></h3>
+<div class="example-document">
+    <h3 class="document-header">Emoji examples and tests</h3>
+    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/collections/emoji.html">here</a></div>
+  
+    <div class="example">
+        <h4 class="example-header">A disabled emoji</h4>
+        <Segment ui basic massive>
+            <Emoji anguished disabled/>
+        </Segment>
+    </div>
 
-<h4>A disabled Emoji</h4>
-<Segment ui basic massive>
-    <Emoji anguished disabled/>
-</Segment>
-<h4>Loading</h4>
-<Segment ui basic massive>
-    <Emoji angel loading/>
-    <Emoji blush loading/>
-    <Emoji grin loading/>
-</Segment>
+    <div class="example">
+        <h4 class="example-header">Loading</h4>
+        <Segment ui basic massive>
+            <Emoji angel loading/>
+            <Emoji blush loading/>
+            <Emoji grin loading/>
+        </Segment>
+    </div>
 
-<h4>Size</h4>
-<Segment ui basic massive>
-    <Emoji relaxed small/>Small
-    <br>
-    <Emoji relaxed medium/>Medium
-    <br>
-    <Emoji relaxed large/>Large
-    <br>
-    <Emoji relaxed big/>Big
-</Segment>
+    <div class="example">
+        <h4 class="example-header">Size</h4>
+        <Segment ui basic massive>
+            <Emoji relaxed small/>Small
+            <br>
+            <Emoji relaxed medium/>Medium
+            <br>
+            <Emoji relaxed large/>Large
+            <br>
+            <Emoji relaxed big/>Big
+        </Segment>
+    </div>
 
-<h4>Autosizing</h4>
-<Segment ui basic>
-    <Header ui small>Within a header <Emoji relaxed/></Header>
-    <Button ui large>Within a button <Emoji relaxed/></Button>
-    <br><br>
-    <Label ui massive>Within a label <Emoji relaxed/></Label>
-    <br><br>
-    <Text ui small orange>Within a text <Emoji relaxed/></Text>
-</Segment>
+    <div class="example">
+        <h4 class="example-header">Autosizing</h4>
+        <Segment ui basic>
+            <Header ui small>Within a header <Emoji relaxed/></Header>
+            <Button ui large>Within a button <Emoji relaxed/></Button>
+            <br><br>
+            <Label ui massive>Within a label <Emoji relaxed/></Label>
+            <br><br>
+            <Text ui small orange>Within a text <Emoji relaxed/></Text>
+        </Segment>
+    </div>
 
-<h4>Link</h4>
-<Segment ui basic massive>
-    <Emoji slight_smile link/>
-</Segment>
+    <div class="example">
+        <h4 class="example-header">Link</h4>
+        <Segment ui basic massive>
+            <Emoji slight_smile link/>
+        </Segment>
+    </div>
+</div>

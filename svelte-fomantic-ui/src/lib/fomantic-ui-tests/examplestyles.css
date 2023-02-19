@@ -1,0 +1,43 @@
+.example {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    max-width: 1024px;
+    border: 1px;
+    border-color: lightgrey;
+    border-style:solid;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+.example-header {
+    background-color: rgb(244, 244, 244);
+    padding:20px;
+    margin-bottom:20px;
+    border-radius: 10px;
+}
+.document-header {
+    background-color: lightgrey;
+    padding:20px;
+    margin-bottom:20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.document-description {
+    background-color:beige;
+    padding:20px;
+    margin-bottom:20px;
+}
+.example-document {
+    border: 1px;
+    border-color: lightgrey;
+    border-style:solid;
+    max-width: 1124px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+}

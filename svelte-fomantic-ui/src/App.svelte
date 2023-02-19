@@ -1,3 +1,10 @@
+<!--
+******************************************************************************************************************************************************
+* By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
+* A simple app to allow one to try the unit tests.
+******************************************************************************************************************************************************
+-->
+
 <script lang='ts'>
   import AppMenu from './AppMenu.svelte';
   import ButtonTest from './lib/fomantic-ui-tests/Button.svelte';
@@ -12,6 +19,7 @@
   import HeaderTest from './lib/fomantic-ui-tests/Header.svelte';
   import IconTest from './lib/fomantic-ui-tests/Icon.svelte';
   import ImageTest from './lib/fomantic-ui-tests/Image.svelte';
+  import LabelTest from './lib/fomantic-ui-tests/Label.svelte';
 
 
   let currentRoute: any;
@@ -43,6 +51,8 @@
       currentRoute = IconTest; break;
     case '/Image':
       currentRoute = ImageTest; break;
+    case '/Label':
+      currentRoute = LabelTest; break;
     default:
       break;
       // currentRoute = NotFound;
