@@ -11,7 +11,7 @@
 
 <div class="example-document">
     <h3 class="document-header">Container Examples</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/collections/container.html">here</a></div>
+    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/container.html">here</a></div>
   
     <div class="example">
       <h4 class="example-header">A Text Container</h4>

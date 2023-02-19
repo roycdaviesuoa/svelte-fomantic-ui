@@ -10,8 +10,8 @@
 </script>
 
 <div class="example-document">
-    <h3 class="document-header">Emoji examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/collections/flag.html">here</a></div>
+    <h3 class="document-header">Flag examples and tests</h3>
+    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/flag.html">here</a></div>
   
     <div class="example">
         <h4 class="example-header">Some large flags</h4>

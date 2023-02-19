@@ -11,7 +11,7 @@
 
 <div class="example-document">
     <h3 class="document-header">Emoji examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/collections/emoji.html">here</a></div>
+    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/emoji.html">here</a></div>
   
     <div class="example">
         <h4 class="example-header">A disabled emoji</h4>
