@@ -1,7 +1,7 @@
 {
-  "name": "fomantic-svelte",
-  "private": true,
-  "version": "0.0.0",
+  "name": "svelte-fomantic-ui",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
