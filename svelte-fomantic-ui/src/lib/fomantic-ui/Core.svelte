@@ -67,6 +67,7 @@
 
     // Modules
     export {default as Dimmer} from './modules/Dimmer.svelte';
+    export {default as Calendar} from './modules/Calendar.svelte';
 
     // Views
     export {default as Advertisement} from './views/Advertisement.svelte';

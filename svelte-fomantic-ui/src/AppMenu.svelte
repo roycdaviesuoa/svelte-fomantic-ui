@@ -7,15 +7,12 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import "../src/lib/fomantic-ui-tests/examplestyles.css";
-    import jq from 'jquery';
-    import 'fomantic-ui-css/semantic.css';
-    import 'fomantic-ui-css/semantic.js';
-    import 'fomantic-ui-css/components/calendar.css'
-    import 'fomantic-ui-css/components/calendar.js'
+
+    import {Icon, Input, Input_Wrapper, Calendar} from './lib/fomantic-ui/Core.svelte';
+
 
 
     onMount(() => {
-        console.log(jq('#standard_calendar').calendar());
 
     });
 </script>
@@ -46,23 +43,11 @@
             <li> <h3>Collections</h3></li>
             <ul>
                 <li> <h4><a href="/Breadcrumb">Breadcrumb</a> | <a href="/BreadcrumbInteractive">Interactive Breadcrumb</a></h4> </li>
+                <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
             </ul>
             <li> <h3>Modules</h3></li>
             <ul>
             </ul>
         </ul>
     </div>
-
-    <div class="example">
-        <h4 class="example-header">Testing interactive calendar</h4>
-        <div class="ui calendar" id="standard_calendar">
-            <div class="ui fluid input left icon">
-                <i class="calendar icon"></i>
-                <input type="text" placeholder="Date/Time">
-            </div>
-        </div>
-    </div>
 </div>
-
-
-
