@@ -10,6 +10,6 @@
     export let ui: boolean=false;
 </script>
 
-<div data-value={value} class={(ui?"ui ":"") + uiProps($$restProps) + " statistic"} {...otherProps($$restProps)}>
+<div data-value={value} class={(ui?"ui ":"") + uiProps($$restProps) + " card"} {...otherProps($$restProps)}>
     <slot />
 </div>

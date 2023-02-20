@@ -69,7 +69,14 @@
     export {default as Dimmer} from './modules/Dimmer.svelte';
 
     // Views
+    export {default as Advertisement} from './views/Advertisement.svelte';
+    export {default as Card} from './views/Card.svelte';
+    export {default as Cards} from './views/Cards.svelte';
+    export {default as Feed} from './views/Feed.svelte';
     export {default as Item} from './views/Item.svelte';
+    export {default as Items} from './views/Items.svelte';
+    export {default as Statistic} from './views/Statistic.svelte';
+    export {default as Statistics} from './views/Statistics.svelte';
 
     
 </script>

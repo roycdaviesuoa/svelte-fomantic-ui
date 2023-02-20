@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Label, Icon, Link, Image, Image_Wrapper, Detail, Form, Field, Divider, Input, Grid, Column, Row, Segment, Placeholder, Paragraph, Line, Content, List, Menu} from "../fomantic-ui/Core.svelte";
+    import { Label, Labels, Icon, Link, Image, Image_Wrapper, Detail, Form, Field, Divider, Input, Grid, Column, Row, Segment, Placeholder, Paragraph, Line, Content, List, Menu} from "../fomantic-ui/Core.svelte";
 
     import "./examplestyles.css";
 </script>
@@ -420,7 +420,7 @@
 
     <div class="example">
         <h4 class="example-header">Inverted</h4>
-        <div class="ui inverted segment">
+        <Segment ui inverted>
             <Label ui primary inverted>Primary</Label>
             <Label ui secondary inverted>Secondary</Label>
             <Label ui red inverted>Red</Label>
@@ -469,7 +469,7 @@
             <Label ui brown inverted tag>Brown</Label>
             <Label ui grey inverted tag>Grey</Label>
             <Label ui black inverted tag>Black</Label>
-        </div>
+        </Segment>
     </div>
 
     <div class="example">
@@ -556,5 +556,240 @@
             23
             <Link detail>View Mail</Link>
         </Label>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Link</h4>
+        <Link ui disabled label>
+            Disabled Label
+        </Link>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Fluid</h4>
+        <Link ui fluid label>
+            Fits container
+        </Link>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Centered</h4>
+        <Link ui fluid centered label>
+            Fits container
+        </Link>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Circular</h4>
+        <Link ui red circular label>2</Link>
+        <Link ui orange circular label>2</Link>
+        <Link ui yellow circular label>2</Link>
+        <Link ui olive circular label>2</Link>
+        <Link ui green circular label>2</Link>
+        <Link ui teal circular label>2</Link>
+        <Link ui blue circular label>2</Link>
+        <Link ui violet circular label>2</Link>
+        <Link ui purple circular label>2</Link>
+        <Link ui pink circular label>2</Link>
+        <Link ui brown circular label>2</Link>
+        <Link ui grey circular label>2</Link>
+        <Link ui black circular label>2</Link>
+        <br/><br/>
+        <Link ui red empty circular label/>
+        <Link ui orange empty circular label/>
+        <Link ui yellow empty circular label/>
+        <Link ui olive empty circular label/>
+        <Link ui green empty circular label/>
+        <Link ui teal empty circular label/>
+        <Link ui blue empty circular label/>
+        <Link ui violet empty circular label/>
+        <Link ui purple empty circular label/>
+        <Link ui pink empty circular label/>
+        <Link ui brown empty circular label/>
+        <Link ui grey empty circular label/>
+        <Link ui black empty circular label/>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Basic</h4>
+        <Link ui basic label>Basic</Link>
+        <Link ui pointing basic label>Pointing</Link>
+        <Link ui basic image label>
+            <Image src="/images/elliot.jpg"/>
+            Elliot
+        </Link>
+        <Link ui pointing red basic label>Red Pointing</Link>
+        <Link ui blue basic label>Blue</Link>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Colored</h4>
+        <Link ui primary label>Primary</Link>
+        <Link ui secondary label>Secondary</Link>
+        <Link ui red label>Red</Link>
+        <Link ui orange label>Orange</Link>
+        <Link ui yellow label>Yellow</Link>
+        <Link ui olive label>Olive</Link>
+        <Link ui green label>Green</Link>
+        <Link ui teal label>Teal</Link>
+        <Link ui blue label>Blue</Link>
+        <Link ui violet label>Violet</Link>
+        <Link ui purple label>Purple</Link>
+        <Link ui pink label>Pink</Link>
+        <Link ui brown label>Brown</Link>
+        <Link ui grey label>Grey</Link>
+        <Link ui black label>Black</Link>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Basic tag labels</h4>
+        <Link ui basic tag label>Standard Tag</Link>
+        <Link ui primary basic tag label>Primary</Link>
+        <Link ui secondary basic tag label>Secondary</Link>
+        <Link ui red basic tag label>Red</Link>
+        <Link ui orange basic tag label>Orange</Link>
+        <Link ui yellow basic tag label>Yellow</Link>
+        <Link ui olive basic tag label>Olive</Link>
+        <Link ui green basic tag label>Green</Link>
+        <Link ui teal basic tag label>Teal</Link>
+        <Link ui blue basic tag label>Blue</Link>
+        <Link ui violet basic tag label>Violet</Link>
+        <Link ui purple basic tag label>Purple</Link>
+        <Link ui pink basic tag label>Pink</Link>
+        <Link ui brown basic tag label>Brown</Link>
+        <Link ui grey basic tag label>Grey</Link>
+        <Link ui black basic tag label>Black</Link>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Size</h4>
+        <Label ui mini>
+            Mini
+        </Label>
+        <Label ui tiny>
+            Tiny
+        </Label>
+        <Label ui small>
+            Small
+        </Label>
+        <Label ui>
+            Medium
+        </Label>
+        <Label ui large>
+            Large
+        </Label>
+        <Label ui big>
+            Big
+        </Label>
+        <Label ui huge>
+            Huge
+        </Label>
+        <Label ui massive>
+            Massive
+        </Label>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Group size</h4>
+        <Labels ui huge>
+            <Label ui>
+            Fun
+            </Label>
+            <Label ui>
+            Happy
+            </Label>
+            <Label ui>
+            Smart
+            </Label>
+            <Label ui>
+            Witty
+            </Label>
+        </Labels>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Colored group</h4>
+        <Labels ui blue>
+            <Link ui label>
+              Fun <Icon close/>
+            </Link>
+            <Link ui label>
+              Happy
+              <Detail>22</Detail>
+            </Link>
+            <Link ui label>
+              Smart
+            </Link>
+            <Link ui label>
+              Insane
+            </Link>
+            <Link ui label>
+              Exciting
+            </Link>
+        </Labels>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Basic group</h4>
+        <Labels ui basic>
+            <Link ui label>
+              Fun <Icon close/>
+            </Link>
+            <Link ui label>
+              Happy
+              <Detail>22</Detail>
+            </Link>
+            <Link ui label>
+              Smart
+            </Link>
+            <Link ui label>
+              Insane
+            </Link>
+            <Link ui label>
+              Exciting
+            </Link>
+        </Labels>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Tag group</h4>
+        <Labels ui tag>
+            <Link ui label>
+                $10
+            </Link>
+            <Link ui label>
+                $19.99
+            </Link>
+            <Link ui label>
+                $24.99
+            </Link>
+            <Link ui label>
+                $30.99
+            </Link>
+            <Link ui label>
+                $10.25
+            </Link>
+        </Labels>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Circular group</h4>
+        <Labels ui circular>
+            <Link ui label>
+                11
+            </Link>
+            <Link ui label>
+                22
+            </Link>
+            <Link ui label>
+                33
+            </Link>
+            <Link ui label>
+                44
+            </Link>
+            <Link ui label>
+                141
+            </Link>
+        </Labels>
     </div>
 </div>

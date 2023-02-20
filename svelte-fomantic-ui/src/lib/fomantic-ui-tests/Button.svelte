@@ -7,6 +7,8 @@
 <script lang="ts">
     import { Button, Buttons, Content, Icon, Segment, Link, Divider } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
+    // import 'fomantic-ui-css/semantic.min.css';
+    // import 'fomantic-ui-css/semantic.min.js';
 
 </script>
 

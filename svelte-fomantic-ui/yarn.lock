@@ -1627,6 +1627,13 @@ flush-write-stream@^1.0.2:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+fomantic-ui-css@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/fomantic-ui-css/-/fomantic-ui-css-2.9.2.tgz#b445206bb0c1547ff05abbecc4725107749f7f54"
+  integrity sha512-D2KogymuA0t7z7zLoekSorgpOKil+q8y09sfYmWP1LcEA1WYRcMKdm5okjnxn4eopl8j45WBnWrkgtobNSbY2w==
+  dependencies:
+    jquery "^3.4.0"
+
 fomantic-ui@^2.9.2:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/fomantic-ui/-/fomantic-ui-2.9.2.tgz#a1b353127dce9f75c80b411d08b00e896d523021"
