@@ -5,9 +5,21 @@
 -->
 
 <script lang="ts">
-    import { Dropdown, Input, Text, Menu, Icon, Item, Fields, Field, Label } from "../fomantic-ui/Core.svelte";
+    import { Dropdown, Input, Text, Menu, Icon, Item, Fields, Field, Label, Button } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import {update} from "../fomantic-ui/modules/Dropdown.js"
+
+    let changed:boolean = false;
+
+    function changeMenu (id:string) {
+      if (changed) {
+        update(id, {placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]});
+      }
+      else {
+        update(id, {placeholder:"Species", values:[{name:"Species", type:"header"}, {name:"Cat", value:"cat"}, {name:"Dog", value:"dog"}, {name:"Horse", value:"horse"}]});
+      }
+      changed=!changed;
+    }
 </script>
 
 <div class="example-document">
@@ -17,7 +29,7 @@
 
     <div class="example">
         <h4 class="example-header">Simple Dropdown</h4>
-        <Dropdown ui id="test">
+        <Dropdown ui>
             <Input type="hidden" name="gender"/>
             <Icon dropdown/>
             <Text default>Gender</Text>
@@ -26,7 +38,6 @@
                 <Item value="female">Female</Item>
             </Menu>
         </Dropdown>
-        {update("test", {values:[{name:"boy", value:"boy"}, {name:"girl", value:"girl"}]})}
     </div>
 
     <div class="example">
@@ -44,6 +55,26 @@
               }
             ]
           }}>
+            <Text/>
+            <Icon dropdown/>
+        </Dropdown>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Changing settings after initialisation</h4>
+        <Button ui on:click={()=>changeMenu("test")}>Click to change</Button>
+        <br/>
+        <Dropdown ui id="test" parameters={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
+            <Text/>
+            <Icon dropdown/>
+        </Dropdown>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Changing settings after initialisation with formatting</h4>
+        <Button ui on:click={()=>changeMenu("test2")}>Click to change</Button>
+        <br/>
+        <Dropdown ui fluid selection id="test2" parameters={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
             <Text/>
             <Icon dropdown/>
         </Dropdown>

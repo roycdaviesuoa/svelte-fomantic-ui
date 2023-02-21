@@ -1,47 +1,148 @@
-# Svelte + TS + Vite
+# Svelte Fomantic UI Wrapper
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+## This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
+## If you are interested in the project, feel free to download, assess, and give me frank feedback...
 
-## Recommended IDE Setup
+A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+The following links contain examples of [Elements](Elements.md) | [Collections](Collection.md) | [Views](Views.md) | [Modules](Modules.md)
 
-## Need an official Svelte framework?
+## Overview
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+The majority of the elements, collections, views and modules are wrapped in a single layer, with props used to represent the primary fomantic-ui element.  For example:
 
-## Technical considerations
+```html
+<button class="ui primary button">
+  Save
+</button>
+<button class="ui button">
+  Discard
+</button>
+```
 
-**Why use this over SvelteKit?**
+Would be written as:
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+```html
+<Button ui primary>
+  Save
+</Button>
+<Button ui>
+  Discard
+</Button>
+```
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+As can be seem from the example, the props contains the classes that would be used by fomantic-ui, except the main class, in this case `button`.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+More complex structures are similarly translated, for example:
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+```html
+<div class="ui labeled button">
+  <div class="ui button">
+    <i class="heart icon"></i> Like
+  </div>
+  <a class="ui basic label">
+    2,048
+  </a>
+</div>
+```
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+becomes:
 
-**Why include `.vscode/extensions.json`?**
+```html
+<Button ui labeled>
+  <Button ui>
+    <Icon heart/> Like
+  </Button>
+  <Link ui basic>
+    2,048
+  </Link>
+</Button>
+```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+Sometimes, you might want to send some Fomantic UI classes as text, in which case use the underscore prop, for example:
+```html
+<Buttons ui icon>
+    {#each items as item}
+        <Button ui name={item} green={item === selected} on:click={processClick}>
+            <Icon align _={item}/>
+        </Button>
+    {/each}
+</Buttons>
+```
+where
+```json
+items=["left", "center", "right", "justify"]
+```
 
-**Why enable `allowJs` in the TS template?**
+Interaction with an element and variables are achieved in the standard svelte way, using binding.  For example:
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+```html
+<Button ui submit on:click={processForm} type="submit">
+    Submit
+</Button>
+```
 
-**Why is HMR not preserving my local component state?**
+binds the click event to the function `processForm` in the `script` section such as:
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
+```typescript
+function processForm (e)
+{
+    console.log(e.detail);
+}
+```
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+where `e` is the event and `e.detail` contains information about the event that has occurred in the form of:
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+```json
+{
+    "name": "submit",  // The name of the button (in this case, 'submit')
+    "target": { }      // The target object
+}
+```
+
+Similarly, to get data from an input field, the following may be used:
+
+```html
+<Field>
+    <Label ui>First Name</Label>
+    <Input ui name="first-name" placeholder="First Name" bind:value={firstname}/>
+</Field>
+```
+
+which binds the value of the input to the variable `firstname`.  This means also that the default value shown in the input can be set by setting firstname to a default value.
+
+Note that the 'svelte-ised' versions can be mixed with the Fomantic UI class versions without problem, for example:
+```html
+<div class="ui field">
+    <Label>First Name</Label>
+    <Input name="first-name" placeholder="First Name" bind:value={firstname}/>
+</div>
+```
+
+It does make sense, however, to use the Svelte versions where events and variable binding are required as this is taken care of in the module.
+
+## Installation
+
+Presently, this has not been packaged to be installed as a module with yarn or npm, so you will need to add the code to your project by hand.  The pieces you need are:
+
+1. Installion of fomantic UI with `yarn add fomantic-ui`
+1. The following line added to your index.html head section:
+```html
+<link rel="stylesheet" href="node_modules/fomantic-ui/dist/semantic.min.css" />
+```
+1. And the contents of the `lib/fomantic-ui` folder copied to the lib folder of your project.
+
+## Usage
+
+To use fomantic UI in your project, import the required elements from `Core.svelte` in the script section, and then use them below, for example:
+
+```html
+<script lang="ts">
+    import { Button } from './fomantic-ui/Core.svelte';
+</script>
+
+<Button ui simple red fluid>Hello World</Button>
+
+<style>
+</style>
 ```
