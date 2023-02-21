@@ -3,18 +3,16 @@
 // ******************************************************************************************************************************************************
 
 const onReady = function () {
-    $('.ui.calendar').each((i, element) => {
-
+    $('.ui.dropdown').each((i, element) => {
         let parameters = element.attributes.params?JSON.parse(element.attributes.params.value):{};
-        if (parameters.hasOwnProperty("startCalendar")) {
-            parameters.startCalendar = $("#"+parameters.startCalendar);
-        }
-        if (parameters.hasOwnProperty("endCalendar")) {
-            parameters.endCalendar = $("#"+parameters.endCalendar);
-        }
-
-        $(element).calendar(parameters);
+        $(element).dropdown(parameters);
     })
 };
+
+export const update = function (id, parameters) {
+    console.log(parameters);
+    $("#"+id).dropdown(parameters);
+    return("");
+}
 
 export default onReady;

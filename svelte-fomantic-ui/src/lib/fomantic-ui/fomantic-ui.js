@@ -5,9 +5,11 @@
 // ******************************************************************************************************************************************************
 import loadCalendars from './modules/Calendar';
 import loadAccordions from './modules/Accordion';
+import loadDropdowns from './modules/Dropdown';
 
-$(document).ready(() =>
+$(() =>
 {
     loadCalendars();
     loadAccordions();
+    loadDropdowns();
 });

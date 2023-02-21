@@ -16,6 +16,7 @@
   import CheckboxInteractive from './lib/fomantic-ui-tests/CheckboxInteractive.svelte';
   import ContainerTest from './lib/fomantic-ui-tests/Container.svelte';
   import DividerTest from './lib/fomantic-ui-tests/Divider.svelte';
+  import DropdownTest from './lib/fomantic-ui-tests/Dropdown.svelte';
   import EmojiTest from './lib/fomantic-ui-tests/Emoji.svelte';
   import FlagTest from './lib/fomantic-ui-tests/Flag.svelte';
   import HeaderTest from './lib/fomantic-ui-tests/Header.svelte';
@@ -47,6 +48,8 @@
       currentRoute = ContainerTest; break;
     case '/Divider':
       currentRoute = DividerTest; break;
+    case '/Dropdown':
+      currentRoute = DropdownTest; break;
     case '/Emoji':
       currentRoute = EmojiTest; break;
     case '/Flag':

@@ -12,7 +12,7 @@
 <div class="example-document">
     <h3 class="document-header">Accordion examples and tests</h3>
     <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/modules/accordion.html">here</a></div>
-    <div class="document-description"><i>This is very much still a work-in-progress.</i></div>
+    <div class="document-disclaimer">This is very much still a work-in-progress.</div>
 
     <div class="example">
         <h4 class="example-header">A standard accordion</h4>

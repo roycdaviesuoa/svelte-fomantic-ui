@@ -19,10 +19,7 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
-    "fomantic-ui": "^2.9.2",
     "fomantic-ui-css": "^2.9.2",
-    "jquery": "^3.6.3",
-    "svelte-preprocess": "^5.0.1",
     "vite-plugin-svelte": "^3.0.1"
   }
 }

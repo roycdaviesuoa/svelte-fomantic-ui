@@ -9,7 +9,7 @@
 </script>
 
 <div class="example-document">
-    <h3 class="document-header">Svelte sFomantic UI unit Tests</h3>
+    <h3 class="document-header">Svelte Fomantic UI unit Tests</h3>
     <div class="document-description">Various tests to check that the Svelte versions look the same as the Fomantic-UI examples.</div>
   
     <div class="example">
@@ -36,6 +36,7 @@
                 <li> <h4><a href="/Accordion">Accordion</a></h4> </li>
                 <li> <h4><a href="/Breadcrumb">Breadcrumb</a> | <a href="/BreadcrumbInteractive">Interactive Breadcrumb</a></h4> </li>
                 <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
+                <li> <h4><a href="/Dropdown">Dropdown</a></h4> </li>
             </ul>
             <li> <h3>Modules</h3></li>
             <ul>

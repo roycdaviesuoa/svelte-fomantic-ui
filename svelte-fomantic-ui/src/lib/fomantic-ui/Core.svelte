@@ -40,7 +40,7 @@
 
     // Inputs
     export {default as Checkbox} from './inputs/Checkbox.svelte';
-    export {default as Dropdown} from './inputs/Dropdown.svelte';
+    export {default as SimpleDropdown} from './inputs/SimpleDropdown.svelte';
     export {default as Fileinput} from './inputs/Fileinput.svelte';
     export {default as Input} from './inputs/Input.svelte';
     export {default as Input_Wrapper} from './inputs/Input_Wrapper.svelte';
@@ -69,6 +69,7 @@
     export {default as Accordion} from './modules/Accordion.svelte';
     export {default as Dimmer} from './modules/Dimmer.svelte';
     export {default as Calendar} from './modules/Calendar.svelte';
+    export {default as Dropdown} from './modules/Dropdown.svelte';
 
     // Views
     export {default as Advertisement} from './views/Advertisement.svelte';

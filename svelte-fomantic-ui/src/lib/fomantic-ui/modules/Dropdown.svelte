@@ -6,10 +6,16 @@
 
 <script lang="ts">
     import {uiProps, otherProps} from "../Helpers"
-    export let value: string = "";
+    import 'fomantic-ui-css/semantic.css';
+    import 'fomantic-ui-css/semantic.js';
+
     export let ui: boolean=false;
+    export let parameters: object={};
+
+    let params = JSON.stringify(parameters);
+
 </script>
 
-<div data-value={value} class={(ui?"ui ":"") + uiProps($$restProps) + " item"} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} {params} {...otherProps($$restProps)}>
     <slot />
 </div>
