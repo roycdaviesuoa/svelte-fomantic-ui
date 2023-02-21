@@ -15,7 +15,7 @@
   <div class="document-description"><i>This is very much still a work-in-progress.</i></div>
 
     <div class="example">
-        <h4 class="example-header">Testing interactive calendar</h4>
+        <h4 class="example-header">Interactive calendar with parameters (3 month)</h4>
         <Calendar ui parameters={{type: 'date', multiMonth: 3, monthOffset: -1}}>
             <Input_Wrapper ui fluid left icon>
                 <Icon calendar/>
@@ -24,8 +24,8 @@
         </Calendar>
     </div>
 
-    <div class="example">
-        <h4 class="example-header">Testing range calendar</h4>
+    <!-- <div class="example">
+        <h4 class="example-header">Range calendar</h4>
         <Form ui>
             <Fields two>
                 <Field>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="example">
-        <h4 class="example-header">Testing a range calendar with parameters</h4>
+        <h4 class="example-header">Range calendar with parameters</h4>
         <Form ui>
             <Fields two>
                 <Field>
@@ -74,5 +74,20 @@
                 </Field>
             </Fields>
         </Form>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Inline calendar</h4>
+        <Calendar ui parameters={{inline: true}}/>
+    </div> -->
+
+   <div class="example">
+        <h4 class="example-header">Interactive calendar with parameters (3 month)</h4>
+        <Calendar ui >
+            <Input_Wrapper ui fluid left icon>
+                <Icon calendar/>
+                <Input placeholder="Date/Time"/>
+            </Input_Wrapper>
+        </Calendar>
     </div>
 </div>
