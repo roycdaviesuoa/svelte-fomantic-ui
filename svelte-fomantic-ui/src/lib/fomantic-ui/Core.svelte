@@ -66,6 +66,7 @@
     export {default as Table_Col} from './collections/Table_Col.svelte';
 
     // Modules
+    export {default as Accordion} from './modules/Accordion.svelte';
     export {default as Dimmer} from './modules/Dimmer.svelte';
     export {default as Calendar} from './modules/Calendar.svelte';
 

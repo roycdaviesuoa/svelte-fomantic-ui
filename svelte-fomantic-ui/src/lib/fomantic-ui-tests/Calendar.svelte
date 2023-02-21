@@ -16,7 +16,7 @@
 
     <div class="example">
         <h4 class="example-header">Testing interactive calendar</h4>
-        <Calendar ui type="date">
+        <Calendar ui parameters={{type: 'date', multiMonth: 3, monthOffset: -1}}>
             <Input_Wrapper ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date/Time"/>
@@ -51,12 +51,12 @@
     </div>
 
     <div class="example">
-        <h4 class="example-header">Testing a range calendar with type</h4>
+        <h4 class="example-header">Testing a range calendar with parameters</h4>
         <Form ui>
             <Fields two>
                 <Field>
                     <Label>Start date</Label>
-                    <Calendar ui rangestart id="second" type="date">
+                    <Calendar ui rangestart id="second" parameters={{type:"date"}}>
                         <Input_Wrapper ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="Start"/>
@@ -65,7 +65,7 @@
                 </Field>
                 <Field>
                     <Label>End date</Label>
-                    <Calendar ui rangeend id="second" type="datetime">
+                    <Calendar ui rangeend id="second" parameters={{type:"datetime"}}>
                         <Input_Wrapper ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="End"/>

@@ -5,16 +5,7 @@
 -->
 
 <script lang="ts">
-    import { onMount } from 'svelte';
     import "../src/lib/fomantic-ui-tests/examplestyles.css";
-
-    import {Icon, Input, Input_Wrapper, Calendar} from './lib/fomantic-ui/Core.svelte';
-
-
-
-    onMount(() => {
-
-    });
 </script>
 
 <div class="example-document">
@@ -42,6 +33,7 @@
             </ul>
             <li> <h3>Collections</h3></li>
             <ul>
+                <li> <h4><a href="/Accordion">Accordion</a></h4> </li>
                 <li> <h4><a href="/Breadcrumb">Breadcrumb</a> | <a href="/BreadcrumbInteractive">Interactive Breadcrumb</a></h4> </li>
                 <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
             </ul>

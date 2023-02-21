@@ -10,12 +10,8 @@
     import 'fomantic-ui-css/semantic.js';
 
     export let ui: boolean=false;
-    export let parameters: object={};
-
-    let params = JSON.stringify(parameters);
-
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} {params} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} {...otherProps($$restProps)}>
     <slot />
 </div>
