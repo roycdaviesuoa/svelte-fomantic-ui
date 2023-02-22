@@ -9,16 +9,18 @@
     import "./examplestyles.css";
     import {update} from "../fomantic-ui/modules/Dropdown.js"
 
-    let changed:boolean = false;
+    let changed = {test:false, test2:false};
+    let test="male";
+    let test2="female";
 
     function changeMenu (id:string) {
-      if (changed) {
+      if (changed[id]) {
         update(id, {placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]});
       }
       else {
         update(id, {placeholder:"Species", values:[{name:"Species", type:"header"}, {name:"Cat", value:"cat"}, {name:"Dog", value:"dog"}, {name:"Horse", value:"horse"}]});
       }
-      changed=!changed;
+      changed[id]=!changed[id];
     }
 </script>
 
@@ -29,7 +31,7 @@
 
     <div class="example">
         <h4 class="example-header">Simple Dropdown</h4>
-        <Dropdown ui>
+        <Dropdown ui >
             <Input type="hidden" name="gender"/>
             <Icon dropdown/>
             <Text default>Gender</Text>
@@ -42,7 +44,7 @@
 
     <div class="example">
         <h4 class="example-header">Dropdown using settings</h4>
-        <Dropdown ui parameters={{
+        <Dropdown ui settings={{
             values: [
               {
                 name: 'Male',
@@ -64,20 +66,22 @@
         <h4 class="example-header">Changing settings after initialisation</h4>
         <Button ui on:click={()=>changeMenu("test")}>Click to change</Button>
         <br/>
-        <Dropdown ui id="test" parameters={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
+        <Dropdown ui bind:selected={test} id="test" settings={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
             <Text/>
             <Icon dropdown/>
         </Dropdown>
+        {test}
     </div>
 
     <div class="example">
         <h4 class="example-header">Changing settings after initialisation with formatting</h4>
         <Button ui on:click={()=>changeMenu("test2")}>Click to change</Button>
         <br/>
-        <Dropdown ui fluid selection id="test2" parameters={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
+        <Dropdown ui bind:selected={test2} fluid selection id="test2" settings={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
             <Text/>
             <Icon dropdown/>
         </Dropdown>
+        {test2}
     </div>
 
 </div>

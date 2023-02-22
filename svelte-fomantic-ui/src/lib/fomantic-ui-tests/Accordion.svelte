@@ -16,8 +16,8 @@
 
     <div class="example">
         <h4 class="example-header">A standard accordion</h4>
-        <Accordion ui>
-            <Title active>
+        <Accordion ui value="standard">
+            <Title active value="top">
                 <Icon dropdown/>
                 What is a dog?
             </Title>

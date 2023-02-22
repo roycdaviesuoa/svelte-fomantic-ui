@@ -15,7 +15,7 @@
   <div class="document-disclaimer">This is very much still a work-in-progress.</div>
 
     <div class="example">
-        <h4 class="example-header">Interactive calendar with parameters (3 month)</h4>
+        <h4 class="example-header">Interactive calendar with settings (3 month)</h4>
         <Calendar ui>
             <Input_Wrapper ui fluid left icon>
                 <Icon calendar/>
@@ -30,7 +30,7 @@
             <Fields two>
                 <Field>
                     <Label>Start date</Label>
-                    <Calendar ui id="firstStart" parameters={{type: 'date', endCalendar: "firstEnd"}}>
+                    <Calendar ui id="firstStart" settings={{type: 'date', endCalendar: "firstEnd"}}>
                         <Input_Wrapper ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="Start"/>
@@ -39,7 +39,7 @@
                 </Field>
                 <Field>
                     <Label>End date</Label>
-                    <Calendar ui id="firstEnd" parameters={{type: 'date', startCalendar: "firstStart"}}>
+                    <Calendar ui id="firstEnd" settings={{type: 'date', startCalendar: "firstStart"}}>
                         <Input_Wrapper ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="End"/>
@@ -51,12 +51,12 @@
     </div>
 
     <div class="example">
-        <h4 class="example-header">Range calendar with parameters</h4>
+        <h4 class="example-header">Range calendar with settings</h4>
         <Form ui>
             <Fields two>
                 <Field>
                     <Label>Start date</Label>
-                    <Calendar ui id="secondStart" parameters={{type: "date", endCalendar: "secondEnd"}}>
+                    <Calendar ui id="secondStart" settings={{type: "date", endCalendar: "secondEnd"}}>
                         <Input_Wrapper ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="Start"/>
@@ -65,7 +65,7 @@
                 </Field>
                 <Field>
                     <Label>End date</Label>
-                    <Calendar ui id="secondEnd" parameters={{type: "datetime", startCalendar: "secondStart"}}>
+                    <Calendar ui id="secondEnd" settings={{type: "datetime", startCalendar: "secondStart"}}>
                         <Input_Wrapper ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="End"/>
@@ -78,12 +78,12 @@
 
     <div class="example">
         <h4 class="example-header">Inline calendar</h4>
-        <Calendar ui parameters={{inline: true}}/>
+        <Calendar ui settings={{inline: true}}/>
     </div>
 
    <div class="example">
-        <h4 class="example-header">Interactive calendar with parameters (3 month)</h4>
-        <Calendar ui parameters={{type: 'date', multiMonth: 3, monthOffset: -1}}>
+        <h4 class="example-header">Interactive calendar with settings (3 month)</h4>
+        <Calendar ui settings={{type: 'date', multiMonth: 3, monthOffset: -1}}>
             <Input_Wrapper ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date/Time"/>
@@ -93,7 +93,7 @@
 
     <div class="example">
         <h4 class="example-header">Inverted calendar</h4>
-        <Calendar ui inverted parameters={{type: 'date'}}>
+        <Calendar ui inverted settings={{type: 'date'}}>
             <Input_Wrapper ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date/Time"/>
@@ -104,7 +104,7 @@
 
     <div class="example">
         <h4 class="example-header">Time calendar</h4>
-        <Calendar ui inverted parameters={{type: 'time'}}>
+        <Calendar ui inverted settings={{type: 'time'}}>
             <Input_Wrapper ui fluid left icon>
                 <Icon time/>
                 <Input placeholder="Time"/>
@@ -126,7 +126,7 @@
 
     <div class="example">
         <h4 class="example-header">Year first calendar</h4>
-        <Calendar ui inverted parameters={{startMode:"year"}}>
+        <Calendar ui inverted settings={{startMode:"year"}}>
             <Input_Wrapper ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date"/>
@@ -137,7 +137,7 @@
 
     <div class="example">
         <h4 class="example-header">24 hour format</h4>
-        <Calendar ui inverted parameters={{
+        <Calendar ui inverted settings={{
             type: 'time',
             formatter: {
               time: 'H:mm',
@@ -155,7 +155,7 @@
 
     <div class="example">
         <h4 class="example-header">Month and year calendar</h4>
-        <Calendar ui inverted parameters={{ type: 'month' }}>
+        <Calendar ui inverted settings={{ type: 'month' }}>
             <Input_Wrapper ui fluid left icon>
                 <Icon time/>
                 <Input placeholder="Date"/>
@@ -166,7 +166,7 @@
 
     <div class="example">
         <h4 class="example-header">Year calendar</h4>
-        <Calendar ui inverted parameters={{ type: 'year' }}>
+        <Calendar ui inverted settings={{ type: 'year' }}>
             <Input_Wrapper ui fluid left icon>
                 <Icon time/>
                 <Input placeholder="Date"/>

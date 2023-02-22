@@ -10,8 +10,19 @@
     import 'fomantic-ui-css/semantic.js';
 
     export let ui: boolean=false;
+    export let selected: string = "";
+    export let settings: object={};
+
+    let params = JSON.stringify(settings);
+
+    function setSelected(e) {
+        if (e.target.attributes["value"]) {
+            selected = e.target.attributes["value"].value;
+        }
+    }
+
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} {params} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

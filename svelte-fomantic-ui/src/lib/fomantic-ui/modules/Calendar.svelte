@@ -10,12 +10,19 @@
     import 'fomantic-ui-css/semantic.js';
 
     export let ui: boolean=false;
-    export let parameters: object={};
+    export let selected: string = "";
+    export let settings: object={};
 
-    let params = JSON.stringify(parameters);
+    let params = JSON.stringify(settings);
+
+    function setSelected(e) {
+        if (e.target.value) {
+            selected = e.target.value;
+        }
+    }
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} {params} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} {params} {...otherProps($$restProps)} on:change={setSelected}>
     <slot />
 </div>
