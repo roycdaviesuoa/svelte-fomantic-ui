@@ -123,14 +123,14 @@ It does make sense, however, to use the Svelte versions where events and variabl
 
 ## Installation
 
-Presently, this has not been packaged to be installed as a module with yarn or npm, so you will need to add the code to your project by hand.  The pieces you need are:
+This has been inexpertly packaged for installation with `yarn` - this needs more work - if you are an expert on this and wish to contribute, please let me know...  Presently, you can install in the following way:
 
-1. Installion of fomantic UI with `yarn add fomantic-ui`
-1. The following line added to your index.html head section:
+1. Install the svelte fomantic UI with `yarn add svelte-fomantic-ui`
+1. And add the following lines to your index.html head section:
 ```html
-<link rel="stylesheet" href="node_modules/fomantic-ui/dist/semantic.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/fomantic-ui/fomantic-ui.js"></script>
 ```
-1. And the contents of the `lib/fomantic-ui` folder copied to the lib folder of your project.
 
 ## Usage
 
@@ -138,7 +138,7 @@ To use fomantic UI in your project, import the required elements from `Core.svel
 
 ```html
 <script lang="ts">
-    import { Button } from './fomantic-ui/Core.svelte';
+    import {Button, Divider, Text, Calendar} from "svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte";
 </script>
 
 <Button ui simple red fluid>Hello World</Button>
