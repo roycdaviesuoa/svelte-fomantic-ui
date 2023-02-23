@@ -61,10 +61,10 @@
                 <li> <h4>Table</h4></li>
             </ul>
             <li> <h3>Modules</h3></li>
+             <ul>
                 <li> <h4><a href="/Accordion">Accordion</a></h4> </li>
                 <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
-            <ul>
-            </ul>
+           </ul>
         </ul>
     </div>
 </div>
