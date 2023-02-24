@@ -7,6 +7,8 @@
 <script lang="ts">
     import { Container, Column, Placeholder, Line, Paragraph, Image } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
+    import "./prism.css";
+    import Prism from 'svelte-prism'
 </script>
 
 <div class="example-document">
@@ -15,10 +17,14 @@
   
     <div class="example">
       <h4 class="example-header">A Text Container</h4>
-
         <Container ui text>
             This is some text
         </Container>
+        <Prism language="html" source={`
+<Container ui text>
+    This is some text
+</Container>
+    `}/>
     </div>
 
     <div class="example">
@@ -85,5 +91,69 @@
                 </Placeholder>
             </Column>
         </Container>
+        <Prism language="html" source={`
+<Container ui four column doubling stackable grid>
+    <Column>
+        <Placeholder ui>
+            <Image header>
+                <Line/>
+                <Line/>
+            </Image>
+            <Paragraph>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+            </Paragraph>
+        </Placeholder>
+    </Column>
+    <Column>
+        <Placeholder ui>
+            <Image header>
+                <Line/>
+                <Line/>
+            </Image>
+            <Paragraph>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+            </Paragraph>
+        </Placeholder>
+    </Column>
+    <Column>
+        <Placeholder ui>
+            <Image header>
+                <Line/>
+                <Line/>
+            </Image>
+            <Paragraph>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+            </Paragraph>
+        </Placeholder>
+    </Column>
+    <Column>
+        <Placeholder ui>
+            <Image header>
+                <Line/>
+                <Line/>
+            </Image>
+            <Paragraph>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+                <Line/>
+            </Paragraph>
+        </Placeholder>
+    </Column>
+</Container>
+    `}/>
     </div>
 </div>

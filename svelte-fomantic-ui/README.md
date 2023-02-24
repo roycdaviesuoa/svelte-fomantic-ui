@@ -143,6 +143,16 @@ To use fomantic UI in your project, import the required elements from `Core.svel
 
 <Button ui simple red fluid>Hello World</Button>
 
+## Examples and testing
+
+This project was created using vite, and is runnable in its own right.  When you do that, you'll see a website with some examples and tests.
+
+1. Clone the repository from GITHub.
+1. Change into the fomantic-ui-js sub directory.
+1. Run the `yarn` command to download dependencies.
+1. Run `yarn dev` to start development web server.
+1. Open the link in a browser to see the dev / test website (usually http://localhost:5173)
+
 <style>
 </style>
 ```

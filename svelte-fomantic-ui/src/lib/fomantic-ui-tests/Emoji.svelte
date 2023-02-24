@@ -5,8 +5,10 @@
 -->
 
 <script lang="ts">
-    import { Emoji, Segment, Header, Button, Label, Text } from "../fomantic-ui/Core.svelte";
+    import { Emoji, Segment, Header, Button, Label, Text, Link } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
+    import "./prism.css";
+    import Prism from 'svelte-prism';
 </script>
 
 <div class="example-document">
@@ -18,6 +20,11 @@
         <Segment ui basic massive>
             <Emoji anguished disabled/>
         </Segment>
+        <Prism language="html" source={`
+<Segment ui basic>
+    <Emoji anguished disabled/>
+</Segment>
+    `}/>
     </div>
 
     <div class="example">
@@ -27,6 +34,13 @@
             <Emoji blush loading/>
             <Emoji grin loading/>
         </Segment>
+        <Prism language="html" source={`
+<Segment ui basic massive>
+    <Emoji angel loading/>
+    <Emoji blush loading/>
+    <Emoji grin loading/>
+</Segment>
+    `}/>
     </div>
 
     <div class="example">
@@ -40,6 +54,14 @@
             <br>
             <Emoji relaxed big/>Big
         </Segment>
+        <Prism language="html" source={`
+<Segment ui basic massive>
+    <Emoji relaxed small/>Small
+    <Emoji relaxed medium/>Medium
+    <Emoji relaxed large/>Large
+    <Emoji relaxed big/>Big
+</Segment>
+    `}/>
     </div>
 
     <div class="example">
@@ -52,6 +74,16 @@
             <br><br>
             <Text ui small orange>Within a text <Emoji relaxed/></Text>
         </Segment>
+        <Prism language="html" source={`
+<Segment ui basic>
+    <Header ui small>Within a header <Emoji relaxed/></Header>
+    <Button ui large>Within a button <Emoji relaxed/></Button>
+
+    <Label ui massive>Within a label <Emoji relaxed/></Label>
+
+    <Text ui small orange>Within a text <Emoji relaxed/></Text>
+</Segment>
+    `}/>
     </div>
 
     <div class="example">
@@ -59,5 +91,10 @@
         <Segment ui basic massive>
             <Emoji slight_smile link/>
         </Segment>
+        <Prism language="html" source={`
+<Segment ui basic massive>
+    <Emoji slight_smile link/>
+</Segment>
+    `}/>
     </div>
 </div>

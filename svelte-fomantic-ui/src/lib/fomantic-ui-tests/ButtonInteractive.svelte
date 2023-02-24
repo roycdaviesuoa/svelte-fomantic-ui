@@ -5,15 +5,15 @@
 -->
 
 <script lang="ts">
-    import { Button, Buttons, Content, Text, Divider, Icon } from "../fomantic-ui/Core.svelte";
+    import { Button, Buttons, Content, Header, Divider, Icon } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
+    import "./prism.css";
+    import Prism from 'svelte-prism';
 
     let selected: string = "left";
     let output: string = "";
 
-    let items = ["left", "center", "right", "justify"]
-
-    let code_html = "";//document.getElementById("thecode").innerHTML;
+    let items = ["left", "center", "right", "justify"];
 
     function processClick (e)
     {
@@ -33,22 +33,61 @@
   
     <div class="example">
       <h4 class="example-header">Interactive Buttons</h4>
-      <Buttons ui wrapping spaced fluid>
-        <Button ui on:click={processClick} name="button1">Button 1</Button>
-        <Button ui red on:click={processClick} name="button2">Button 2</Button>
-        <Button ui toggle on:toggle={processToggle} name="toggle_button" on_style="purple" off_style="orange">
-            <Content slot="on">On</Content>
-            <Content slot="off">Off</Content>
-        </Button>
-        <Button ui black on:click={processClick} name="button3">Button 3</Button>
-        <Divider ui/>
-        <Buttons ui icon name="edit_buttons" >
-            {#each items as item}
-                <Button ui name={item} green={item === selected} on:click={processClick}><Icon align _={item}/></Button>
-            {/each}
+        <Buttons ui wrapping spaced fluid>
+            <Button ui on:click={processClick} name="button1">Button 1</Button>
+            <Button ui red on:click={processClick} name="button2">Button 2</Button>
+            <Button ui toggle on:toggle={processToggle} name="toggle_button" on_style="purple" off_style="orange">
+                <Content slot="on">On</Content>
+                <Content slot="off">Off</Content>
+            </Button>
+            <Button ui black on:click={processClick} name="button3">Button 3</Button>
+            <Buttons ui icon name="edit_buttons" >
+                {#each items as item}
+                    <Button ui name={item} green={item === selected} on:click={processClick}><Icon align _={item}/></Button>
+                {/each}
+            </Buttons>
         </Buttons>
-        </Buttons>
         <Divider ui/>
-        <Text>{output}</Text>
+        <Header>Output: {output}</Header>
+        <Divider ui/>
+
+        <Prism language="svelte" source={`
+<script>
+    import { Button, Buttons, Content, Header, Divider, Icon } from "svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte";
+
+    let selected: string = "left";
+    let output: string = "";
+
+    let items = ["left", "center", "right", "justify"];
+
+    function processClick (e) {
+        selected = e.detail.name;
+        output = e.detail.name + " clicked";
+    }
+
+    function processToggle (e) {
+        output = e.detail.name + ' toggled, state = ' + e.detail.active;
+    }
+</script>
+
+<Buttons ui wrapping spaced fluid>
+    <Button ui on:click={processClick} name="button1">Button 1</Button>
+    <Button ui red on:click={processClick} name="button2">Button 2</Button>
+    <Button ui toggle on:toggle={processToggle} name="toggle_button" on_style="purple" off_style="orange">
+        <Content slot="on">On</Content>
+        <Content slot="off">Off</Content>
+    </Button>
+    <Button ui black on:click={processClick} name="button3">Button 3</Button>
+
+    <Buttons ui icon name="edit_buttons" >
+        {#each items as item}
+            <Button ui name={item} green={item === selected} on:click={processClick}><Icon align _={item}/></Button>
+        {/each}
+    </Buttons>
+</Buttons>
+<Divider ui/>
+<Header>Output: {output}</Header>
+<Divider ui/>
+    `}/>
     </div>
 </div>

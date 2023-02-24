@@ -1,7 +1,7 @@
 {
-  "name": "svelte-fomantic-ui",
-  "private": false,
-  "version": "0.0.5",
+  "name": "svelte-fomantic-ui-test",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,8 +19,6 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
-    "fomantic-ui-css": "^2.9.2",
-    "svelte-prism": "^1.1.6",
-    "vite-plugin-svelte": "^3.0.1"
+    "svelte-fomantic-ui": "^0.0.5"
   }
 }
