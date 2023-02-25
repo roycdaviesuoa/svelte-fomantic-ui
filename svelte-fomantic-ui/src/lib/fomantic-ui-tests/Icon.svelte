@@ -78,18 +78,44 @@ Help me <Icon fitted help/>
         <Icon name="help" on:click={doClick} help link/>
         <br/>(click an icon)<br/>
         {iconClicked}{iconClicked===""?"":" clicked"}
+        <Prism language="svelte" source={`
+<script>
+    import { Icon } from "svelte-fomantic-ui";
+
+    let iconClicked:string = "";
+
+    function doClick(event) {
+        iconClicked = event.detail.name;
+    }
+</script>
+
+<Icon name="close" on:click={doClick} close link/>
+<Icon name="help" on:click={doClick} help link/>
+
+(click an icon)
+
+{iconClicked}{iconClicked===""?"":" clicked"}
+        `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Flipped</h4>
         <Icon horizontally flipped cloud/>
         <Icon vertically flipped cloud/>
+        <Prism language="html" source={`
+<Icon horizontally flipped cloud/>
+<Icon vertically flipped cloud/>
+        `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Rotated</h4>
         <Icon clockwise rotated cloud/>
         <Icon counterclockwise rotated cloud/>
+        <Prism language="html" source={`
+<Icon clockwise rotated cloud/>
+<Icon counterclockwise rotated cloud/>
+        `}/>
     </div>
 
     <div class="example">
@@ -98,6 +124,12 @@ Help me <Icon fitted help/>
         <Icon circular teal users/>
         <Icon circular inverted users/>
         <Icon circular inverted teal users/>
+        <Prism language="html" source={`
+<Icon circular users/>
+<Icon circular teal users/>
+<Icon circular inverted users/>
+<Icon circular inverted teal users/>
+        `}/>
     </div>
 
     <div class="example">
@@ -105,6 +137,11 @@ Help me <Icon fitted help/>
         <Icon circular colored red users/>
         <Icon circular colored green users/>
         <Icon circular colored blue users/>
+        <Prism language="html" source={`
+<Icon circular colored red users/>
+<Icon circular colored green users/>
+<Icon circular colored blue users/>
+        `}/>
     </div>
 
     <div class="example">
@@ -112,6 +149,11 @@ Help me <Icon fitted help/>
         <Icon bordered colored red users/>
         <Icon bordered colored green users/>
         <Icon bordered colored blue users/>
+        <Prism language="html" source={`
+<Icon bordered colored red users/>
+<Icon bordered colored green users/>
+<Icon bordered colored blue users/>
+        `}/>
     </div>
 
     <div class="example">
@@ -131,6 +173,23 @@ Help me <Icon fitted help/>
         <Icon brown users/>
         <Icon grey users/>
         <Icon black users/>
+        <Prism language="html" source={`
+<Icon primary users/>
+<Icon secondary users/>
+<Icon red users/>
+<Icon orange users/>
+<Icon yellow users/>
+<Icon olive users/>
+<Icon green users/>
+<Icon teal users/>
+<Icon blue users/>
+<Icon violet users/>
+<Icon purple users/>
+<Icon pink users/>
+<Icon brown users/>
+<Icon grey users/>
+<Icon black users/>
+        `}/>
     </div>
 
     <div class="example">
@@ -152,6 +211,25 @@ Help me <Icon fitted help/>
             <Icon inverted brown users/>
             <Icon inverted grey users/>
         </Segment>
+        <Prism language="html" source={`
+<Segment ui inverted>
+    <Icon inverted users/>
+    <Icon inverted primary users/>
+    <Icon inverted secondary users/>
+    <Icon inverted red users/>
+    <Icon inverted orange users/>
+    <Icon inverted yellow users/>
+    <Icon inverted olive users/>
+    <Icon inverted green users/>
+    <Icon inverted teal users/>
+    <Icon inverted blue users/>
+    <Icon inverted violet users/>
+    <Icon inverted purple users/>
+    <Icon inverted pink users/>
+    <Icon inverted brown users/>
+    <Icon inverted grey users/>
+</Segment>
+        `}/>
     </div>
 
     <div class="example">
@@ -165,6 +243,17 @@ Help me <Icon fitted help/>
             <Icon big red dont/>
             <Icon user/>
         </Icons>
+        <Prism language="html" source={`
+<Icons huge>
+    <Icon big circle outline/>
+    <Icon user/>
+</Icons>
+
+<Icons huge>
+    <Icon big red dont/>
+    <Icon user/>
+</Icons>
+        `}/>
     </div>
 
     <div class="example">
@@ -193,5 +282,31 @@ Help me <Icon fitted help/>
             </Icons>
             Add on Twitter
         </Header>
+        <Prism language="html" source={`
+<Icons huge>
+    <Icon puzzle/>
+    <Icon top left corner add/>
+</Icons>
+<Icons huge>
+    <Icon puzzle/>
+    <Icon top right corner add/>
+</Icons>
+<Icons huge>
+    <Icon puzzle/>
+    <Icon bottom left corner add/>
+</Icons>
+<Icons huge>
+    <Icon puzzle/>
+    <Icon bottom right corner add/>
+</Icons>
+
+<Header h2 ui>
+    <Icons large>
+        <Icon twitter/>
+        <Icon inverted corner add/>
+    </Icons>
+    Add on Twitter
+</Header>
+        `}/>
     </div>
 </div>

@@ -7,6 +7,8 @@
 <script lang="ts">
     import { Breadcrumb, Link, Divider, Section, Text, Icon } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
+    import "./prism.css";
+    import Prism from 'svelte-prism';
 
     let selected: string = "home";
     let output: string = "";
@@ -20,7 +22,7 @@
   <div class="document-description">An example of how to make breadcrumbs interactive.</div>
 
   <div class="example">
-    <h4 class="example-header">An ineractive breadcrumb</h4>
+    <h4 class="example-header">An interactive breadcrumb</h4>
     <Breadcrumb ui>
       {#each items as item, i}
           {#if i === (items.length-1)}
@@ -38,6 +40,36 @@
     </Breadcrumb>
     <Divider ui/>
     <Text>{output}</Text>
+
+    <Prism language="svelte" source={`
+<script>
+    import { Breadcrumb, Link, Divider, Section, Text, Icon } from "svelte-fomantic-ui";
+
+    let selected: string = "home";
+    let output: string = "";
+    let items = ["home", "store", "clothes", "socks"]
+
+    $: output = selected + " selected";
+</script>
+
+<Breadcrumb ui>
+    {#each items as item, i}
+        {#if i === (items.length-1)}
+            <Icon right arrow divider/>
+        {:else if i !== 0}
+            <Icon right chevron divider/>
+        {/if}
+
+        {#if selected === item}
+            <Section active>{item}</Section>
+        {:else}
+            <Link section on:click={(e) => selected=e.detail.name} name={item}>{item}</Link>
+        {/if}
+    {/each}
+</Breadcrumb>
+<Divider ui/>
+<Text>{output}</Text>
+`}/>
   </div>
 </div>
 
