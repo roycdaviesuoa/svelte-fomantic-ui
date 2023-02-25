@@ -8,7 +8,7 @@
     import { Button, Buttons, Content, Icon, Segment, Link, Divider } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
-    import Prism from 'svelte-prism'
+    import Prism from 'svelte-prism';
 </script>
 
 <div class="example-document">

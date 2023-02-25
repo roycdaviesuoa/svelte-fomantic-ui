@@ -433,7 +433,7 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
-jquery@^3.4.0:
+jquery@^3.4.0, jquery@^3.6.3:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.3.tgz#23ed2ffed8a19e048814f13391a19afcdba160e6"
   integrity sha512-bZ5Sy3YzKo9Fyc8wH2iIQK4JImJ6R0GWI9kL1/k7Z91ZBNgkRXE6U0JfHIizZbort8ZunhSI3jw9I6253ahKfg==
@@ -556,6 +556,16 @@ postcss@^8.4.21:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+prism-svelte@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/prism-svelte/-/prism-svelte-0.4.7.tgz#fbc6709450b4e2ed660ddb82c3718817fc584cbe"
+  integrity sha512-yABh19CYbM24V7aS7TuPYRNMqthxwbvx6FF/Rw920YbyBWO3tnyPIqRMgHuSVsLmuHkkBS1Akyof463FVdkeDQ==
+
+prismjs@^1.27.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
 
 queue-microtask@^1.2.2:
   version "1.2.3"
@@ -701,6 +711,17 @@ svelte-fomantic-ui@^0.0.5:
     fomantic-ui-css "^2.9.2"
     vite-plugin-svelte "^3.0.1"
 
+svelte-fomantic-ui@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/svelte-fomantic-ui/-/svelte-fomantic-ui-0.0.6.tgz#b55609d9693dd7432726e7f3cd8f69b529cc4717"
+  integrity sha512-RMohlAWMB5bMJT2KG/7Bc4SmT6QnJ4qM3OJbG2qz2DcX/QOW2F/4ELDhSbSB3gTSTAKPbYxdEs0Kb35OzuR20g==
+  dependencies:
+    fomantic-ui-css "^2.9.2"
+    jquery "^3.6.3"
+    svelte-fomantic-ui "^0.0.5"
+    svelte-prism "^1.1.6"
+    vite-plugin-svelte "^3.0.1"
+
 svelte-hmr@^0.11.3:
   version "0.11.6"
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.11.6.tgz#67f0498e2cdce9e1039631d820c1951bd01caa3f"
@@ -722,6 +743,14 @@ svelte-preprocess@^4.0.0:
     magic-string "^0.25.7"
     sorcery "^0.10.0"
     strip-indent "^3.0.0"
+
+svelte-prism@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/svelte-prism/-/svelte-prism-1.1.6.tgz#a9ab00576d4a66e69be688540c1df65bb2ed2701"
+  integrity sha512-FEVBqD1wcSKYwRpgaMGRfEIQPquKMwo+vl91lnFHhQCtTivxgkCS6ZWNOyvZGRsNbWk50fYZOWOp3xXIBWNeSw==
+  dependencies:
+    prism-svelte "^0.4.7"
+    prismjs "^1.27.0"
 
 svelte@^3.55.1:
   version "3.55.1"
