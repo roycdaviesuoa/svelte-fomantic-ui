@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Table, Table_Head, Table_Row, Table_Col, Table_Body} from 'svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte';
+  import {Table, Table_Head, Table_Row, Table_Col, Table_Body} from "svelte-fomantic-ui";
 </script>
 
 <main>

@@ -47,10 +47,10 @@
     <Divider ui/>
     <Header>{selected} clicked | {selected} | visibility = {visibility}</Header>
     <code>
-    <Prism language="html">
+    <Prism language="svelte">
     {`
-<script lang='ts'>
-    import { Checkbox, Field, Fields, Divider, Label, Header } from "svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte";
+<script>
+    import { Checkbox, Field, Fields, Divider, Label, Header } from "svelte-fomantic-ui";
 
     let selected: string = "apples";
     let items = ["apples", "peaches", "oranges", "bananas", "mangos"]

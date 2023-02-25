@@ -711,10 +711,10 @@ svelte-fomantic-ui@^0.0.5:
     fomantic-ui-css "^2.9.2"
     vite-plugin-svelte "^3.0.1"
 
-svelte-fomantic-ui@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/svelte-fomantic-ui/-/svelte-fomantic-ui-0.0.6.tgz#b55609d9693dd7432726e7f3cd8f69b529cc4717"
-  integrity sha512-RMohlAWMB5bMJT2KG/7Bc4SmT6QnJ4qM3OJbG2qz2DcX/QOW2F/4ELDhSbSB3gTSTAKPbYxdEs0Kb35OzuR20g==
+svelte-fomantic-ui@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/svelte-fomantic-ui/-/svelte-fomantic-ui-0.0.7.tgz#4f242c277b390108e850a88952f317e415bfb3ea"
+  integrity sha512-WF1zGAiV7x1qlCLtzLDKEUoBUQD8R72j64Ukq9yPaijRFJf9dD8F0RxBLaoBhzQjZWGOL8PMn1LljHl3HcVtAw==
   dependencies:
     fomantic-ui-css "^2.9.2"
     jquery "^3.6.3"

@@ -43,7 +43,7 @@
             <Button ui black on:click={processClick} name="button3">Button 3</Button>
             <Buttons ui icon name="edit_buttons" >
                 {#each items as item}
-                    <Button ui name={item} green={item === selected} on:click={processClick}><Icon align _={item}/></Button>
+                    <Button ui icon name={item} green={item === selected} on:click={processClick}><Icon align _={item}/></Button>
                 {/each}
             </Buttons>
         </Buttons>
@@ -53,7 +53,7 @@
 
         <Prism language="svelte" source={`
 <script>
-    import { Button, Buttons, Content, Header, Divider, Icon } from "svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte";
+    import { Button, Buttons, Content, Header, Divider, Icon } from "svelte-fomantic-ui";
 
     let selected: string = "left";
     let output: string = "";
@@ -81,7 +81,9 @@
 
     <Buttons ui icon name="edit_buttons" >
         {#each items as item}
-            <Button ui name={item} green={item === selected} on:click={processClick}><Icon align _={item}/></Button>
+            <Button ui icon name={item} green={item === selected} on:click={processClick}>
+                <Icon align _={item}/>
+            </Button>
         {/each}
     </Buttons>
 </Buttons>

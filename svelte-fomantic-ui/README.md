@@ -139,7 +139,7 @@ To use fomantic UI in your project, import the required elements from `Core.svel
 
 ```html
 <script lang="ts">
-    import { Button } from "svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte";
+    import { Button } from "svelte-fomantic-ui";
 </script>
 
 <Button ui simple red fluid>Hello World</Button>
