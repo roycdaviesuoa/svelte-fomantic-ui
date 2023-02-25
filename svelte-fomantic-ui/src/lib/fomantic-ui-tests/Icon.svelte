@@ -7,6 +7,8 @@
 <script lang="ts">
     import { Icon, Icons, Segment, Header } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
+    import "./prism.css";
+    import Prism from 'svelte-prism';
 
     let iconClicked:string = "";
 
@@ -23,6 +25,9 @@
     <div class="example">
         <h4 class="example-header">Disabled Icon</h4>
         <Icon disabled users />
+        <Prism language="html" source={`
+<Icon disabled users />
+    `}/>
     </div>
 
     <div class="example">
@@ -30,11 +35,19 @@
         <Icon spinner loading/>
         <Icon notched circle loading/>
         <Icon asterisk loading/>
+        <Prism language="html" source={`
+<Icon spinner loading/>
+<Icon notched circle loading/>
+<Icon asterisk loading/>
+    `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Fitted</h4>
         Help me <Icon fitted help/>
+        <Prism language="html" source={`
+Help me <Icon fitted help/>
+    `}/>
     </div>
 
     <div class="example">
@@ -47,6 +60,16 @@
         <Icon big home/>
         <Icon huge home/>
         <Icon massive home/>
+        <Prism language="html" source={`
+<Icon mini home/>
+<Icon tiny home/>
+<Icon small home/>
+<Icon home/>
+<Icon large home/>
+<Icon big home/>
+<Icon huge home/>
+<Icon massive home/>
+    `}/>
     </div>
 
     <div class="example">

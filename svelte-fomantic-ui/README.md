@@ -5,18 +5,16 @@
 
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
 
-The following links contain examples of [Elements](Elements.md) | [Collections](Collection.md) | [Views](Views.md) | [Modules](Modules.md)
-
 ## Overview
 
 The majority of the elements, collections, views and modules are wrapped in a single layer, with props used to represent the primary fomantic-ui element.  For example:
 
 ```html
 <button class="ui primary button">
-  Save
+    Save
 </button>
 <button class="ui button">
-  Discard
+    Discard
 </button>
 ```
 
@@ -24,10 +22,10 @@ Would be written as:
 
 ```html
 <Button ui primary>
-  Save
+    Save
 </Button>
 <Button ui>
-  Discard
+    Discard
 </Button>
 ```
 
@@ -37,12 +35,12 @@ More complex structures are similarly translated, for example:
 
 ```html
 <div class="ui labeled button">
-  <div class="ui button">
-    <i class="heart icon"></i> Like
-  </div>
-  <a class="ui basic label">
-    2,048
-  </a>
+    <div class="ui button">
+        <i class="heart icon"></i> Like
+    </div>
+    <a class="ui basic label">
+        2,048
+    </a>
 </div>
 ```
 
@@ -50,12 +48,12 @@ becomes:
 
 ```html
 <Button ui labeled>
-  <Button ui>
-    <Icon heart/> Like
-  </Button>
-  <Link ui basic>
-    2,048
-  </Link>
+    <Button ui>
+        <Icon heart/> Like
+    </Button>
+    <Link ui basic>
+        2,048
+    </Link>
 </Button>
 ```
 
@@ -70,8 +68,8 @@ Sometimes, you might want to send some Fomantic UI classes as text, in which cas
 </Buttons>
 ```
 where
-```json
-items=["left", "center", "right", "justify"]
+```javascript
+items = ["left", "center", "right", "justify"];
 ```
 
 Interaction with an element and variables are achieved in the standard svelte way, using binding.  For example:
@@ -84,7 +82,7 @@ Interaction with an element and variables are achieved in the standard svelte wa
 
 binds the click event to the function `processForm` in the `script` section such as:
 
-```typescript
+```javascript
 function processForm (e)
 {
     console.log(e.detail);
@@ -93,7 +91,7 @@ function processForm (e)
 
 where `e` is the event and `e.detail` contains information about the event that has occurred in the form of:
 
-```json
+```javascript
 {
     "name": "submit",  // The name of the button (in this case, 'submit')
     "target": { }      // The target object
@@ -127,6 +125,7 @@ This has been inexpertly packaged for installation with `yarn` - this needs more
 
 1. Install the svelte fomantic UI with `yarn add svelte-fomantic-ui`
 1. And add the following lines to your index.html head section:
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
 <script type="module" src="node_modules/svelte-fomantic-ui/src/lib/fomantic-ui/fomantic-ui.js"></script>
@@ -138,21 +137,21 @@ To use fomantic UI in your project, import the required elements from `Core.svel
 
 ```html
 <script lang="ts">
-    import {Button, Divider, Text, Calendar} from "svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte";
+    import { Button } from "svelte-fomantic-ui/src/lib/fomantic-ui/Core.svelte";
 </script>
 
 <Button ui simple red fluid>Hello World</Button>
+
+<style>
+</style>
+```
 
 ## Examples and testing
 
 This project was created using vite, and is runnable in its own right.  When you do that, you'll see a website with some examples and tests.
 
 1. Clone the repository from GITHub.
-1. Change into the fomantic-ui-js sub directory.
+1. Change into the `svelte-fomantic-ui` sub directory.
 1. Run the `yarn` command to download dependencies.
 1. Run `yarn dev` to start development web server.
-1. Open the link in a browser to see the dev / test website (usually http://localhost:5173)
-
-<style>
-</style>
-```
+1. Open the link in a browser to see the dev / test website (usually `http://localhost:5173`)

@@ -8,7 +8,7 @@
     import { Divider, Grid, Column, Placeholder, Line, Paragraph, Segment, Button, Icon, Form, Field, Label, Input, Input_Wrapper, Table, Table_Body, Table_Row, Table_Col, Table_Head } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
-    import Prism from 'svelte-prism'
+    import Prism from 'svelte-prism';
 </script>
 
 <div class="example-document">

@@ -7,6 +7,8 @@
 <script lang="ts">
     import { Flag, Header, Link, Icon, Segment, Button, Label, Text } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
+    import "./prism.css";
+    import Prism from 'svelte-prism';
 </script>
 
 <div class="example-document">
@@ -18,6 +20,11 @@
         <Flag ae large/>
         <Flag france large />
         <Flag myanmar large/>
+        <Prism language="html" source={`
+<Flag ae large/>
+<Flag france large />
+<Flag myanmar large/>
+    `}/>
     </div>
 
     <div class="example">
@@ -28,6 +35,14 @@
         <Flag ci big/>big
         <Flag greece huge/>huge
         <Flag ukraine massive/>massive
+        <Prism language="html" source={`
+<Flag uk small/>small
+<Flag se medium/>medum
+<Flag us large/>large
+<Flag ci big/>big
+<Flag greece huge/>huge
+<Flag ukraine massive/>massive
+    `}/>
     </div>
 
     <div class="example">
@@ -44,5 +59,13 @@
             <br><br>
             <Text ui small orange>Within a text <Flag rainbow/></Text>
         </Segment>
+        <Prism language="html" source={`
+<Segment ui basic>
+    <Header ui small>Within a header <Flag us/></Header>
+    <Button ui large>Within a button <Flag eu/></Button>
+    <Label ui massive>Within a label <Flag pirate/></Label>
+    <Text ui small orange>Within a text <Flag rainbow/></Text>
+</Segment>
+    `}/>
     </div>
 </div>
