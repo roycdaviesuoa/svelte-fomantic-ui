@@ -1,7 +1,10 @@
 {
   "name": "svelte-fomantic-ui",
+  "description": "Fomantic UI for Svelte",
+  "main": "index.html",
+  "svelte": "src/Core.svelte",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +12,18 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roycdaviesuoa/svelte-fomantic-ui.git"
+  },
+  "keywords": [
+    "svelte",
+    "fomantic-ui",
+    "code"
+  ],
+  "author": "Roy C. Davies",
+  "homepage": "https://github.com/roycdaviesuoa/svelte-fomantic-ui",
+  "license": "MIT",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "@tsconfig/svelte": "^3.0.0",
@@ -20,6 +35,8 @@
   },
   "dependencies": {
     "fomantic-ui-css": "^2.9.2",
+    "jquery": "^3.6.3",
+    "svelte-fomantic-ui": "^0.0.5",
     "svelte-prism": "^1.1.6",
     "vite-plugin-svelte": "^3.0.1"
   }
