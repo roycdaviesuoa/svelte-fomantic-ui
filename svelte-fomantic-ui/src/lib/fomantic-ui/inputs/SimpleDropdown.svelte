@@ -10,18 +10,18 @@
     // NOT YET COMPLETE
     export let ui: boolean=false;
     export let value: string = "";
-    export let name: string = "";
+    export let id: string = "";
 
     import { createEventDispatcher } from 'svelte';
 
     const dispatch = createEventDispatcher();
 
     function doClick(event) {
-        dispatch('click', {name: name, target:event.target})
+        dispatch('click', {id: id, target:event.target})
     }
 </script>
 
-<select class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} bind:value on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}>
+<select {id} class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} bind:value on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}>
     <slot/>
 </select>
 

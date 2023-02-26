@@ -10,7 +10,7 @@
     
     export let style: string = "";
     export let placeholder: string="";
-    export let name: string="";
+    export let id: string="";
     export let value: string="";
     export let ui: boolean=false;
 
@@ -21,5 +21,5 @@
 </script>
 
 <div class={(ui?"ui ":"") + style + " input"} {...$$restProps}>
-    <input type="file" {name}>
+    <input type="file" {id}>
 </div>

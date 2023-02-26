@@ -35,7 +35,7 @@
     <div class="example">
         <h4 class="example-header">Simple Dropdown</h4>
         <Dropdown ui >
-            <Input type="hidden" name="gender"/>
+            <Input type="hidden" id="gender"/>
             <Icon dropdown/>
             <Text default>Gender</Text>
             <Menu>
@@ -46,7 +46,7 @@
 
         <Prism language="html" source={`
 <Dropdown ui >
-    <Input type="hidden" name="gender"/>
+    <Input type="hidden" id="gender"/>
     <Icon dropdown/>
     <Text default>Gender</Text>
     <Menu>

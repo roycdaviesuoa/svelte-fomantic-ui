@@ -14,7 +14,7 @@
 
     function doClick(event) {
         console.log(event);
-        iconClicked = event.detail.name;
+        iconClicked = event.detail.id;
     }
 </script>
 
@@ -74,8 +74,8 @@ Help me <Icon fitted help/>
 
     <div class="example">
         <h4 class="example-header">Link</h4>
-        <Icon name="close" on:click={doClick} close link/>
-        <Icon name="help" on:click={doClick} help link/>
+        <Icon id="close" on:click={doClick} close link/>
+        <Icon id="help" on:click={doClick} help link/>
         <br/>(click an icon)<br/>
         {iconClicked}{iconClicked===""?"":" clicked"}
         <Prism language="svelte" source={`
@@ -85,12 +85,12 @@ Help me <Icon fitted help/>
     let iconClicked:string = "";
 
     function doClick(event) {
-        iconClicked = event.detail.name;
+        iconClicked = event.detail.id;
     }
 </script>
 
-<Icon name="close" on:click={doClick} close link/>
-<Icon name="help" on:click={doClick} help link/>
+<Icon id="close" on:click={doClick} close link/>
+<Icon id="help" on:click={doClick} help link/>
 
 (click an icon)
 

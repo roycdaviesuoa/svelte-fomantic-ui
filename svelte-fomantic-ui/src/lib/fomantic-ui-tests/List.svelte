@@ -12,6 +12,10 @@
 
     let sizes = ["mini", "tiny", "small", "medium", "large", "big", "huge", "massive"];
 
+    function doSelect(e) {
+        console.log(e);
+    }
+
 </script>
 
 <div class="example-document">
@@ -885,20 +889,20 @@
     <div class="example">
         <h4 class="example-header">Selection</h4>
 
-        <List ui middle aligned selection>
-            <Item>
+        <List ui middle aligned selection on:click={doSelect}>
+            <Item id="helen">
                 <Image ui avatar src="/images/helen.jpg"/>
                 <Content>
                     <Header>Helen</Header>
                 </Content>
             </Item>
-            <Item>
+            <Item id="christian">
                 <Image ui avatar src="/images/christian.jpg"/>
                 <Content>
                     <Header>Christian</Header>
                 </Content>
             </Item>
-            <Item>
+            <Item id="daniel">
                 <Image ui avatar src="/images/daniel.jpg"/>
                 <Content>
                     <Header>Daniel</Header>

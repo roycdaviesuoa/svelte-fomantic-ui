@@ -75,7 +75,7 @@ items = ["left", "center", "right", "justify"];
 Interaction with an element and variables are achieved in the standard svelte way, using binding.  For example:
 
 ```html
-<Button ui submit on:click={processForm} type="submit">
+<Button ui submit on:click={processForm} type="submit" id="submit">
     Submit
 </Button>
 ```
@@ -93,8 +93,8 @@ where `e` is the event and `e.detail` contains information about the event that 
 
 ```javascript
 {
-    "name": "submit",  // The name of the button (in this case, 'submit')
-    "target": { }      // The target object
+    "id": "submit",     // The id of the button (in this case, 'submit')
+    "target": { }       // The target object
 }
 ```
 
@@ -103,7 +103,7 @@ Similarly, to get data from an input field, the following may be used:
 ```html
 <Field>
     <Label ui>First Name</Label>
-    <Input ui name="first-name" placeholder="First Name" bind:value={firstname}/>
+    <Input ui id="first-name" placeholder="First Name" bind:value={firstname}/>
 </Field>
 ```
 
@@ -113,7 +113,7 @@ Note that the 'svelte-ised' versions can be mixed with the Fomantic UI class ver
 ```html
 <div class="ui field">
     <Label>First Name</Label>
-    <Input name="first-name" placeholder="First Name" bind:value={firstname}/>
+    <Input id="first-name" placeholder="First Name" bind:value={firstname}/>
 </div>
 ```
 

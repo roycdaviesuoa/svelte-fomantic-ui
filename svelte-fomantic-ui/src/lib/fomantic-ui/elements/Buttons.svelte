@@ -8,17 +8,17 @@
     import {uiProps, otherProps} from "../Helpers"
 
     export let ui: boolean=false;
-    export let name: string="";
+    export let id: string="";
 
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
     // Return a click event
     function doClick(event: any) {
-        dispatch('click', {name: name, target: event.target});
+        dispatch('click', {id: id, target: event.target});
     }
 </script>
 
-<div on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " buttons"} {...otherProps($$restProps)}>
+<div {id} on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " buttons"} {...otherProps($$restProps)}>
     <slot />
 </div>

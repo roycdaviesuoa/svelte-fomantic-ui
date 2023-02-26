@@ -6,7 +6,7 @@
 
 <script lang="ts">
     import {uiProps, otherProps} from "../Helpers"
-    export let name: string="";
+    export let id: string="";
     export let value: string="";
     export let checked: boolean=false;
     export let ui:boolean = false;
@@ -16,12 +16,12 @@
 
     // Return a click event
     function doClick(event: any) {     
-        dispatch('click', {name: event.target.name, value: event.target.value, checked: event.target.checked, target: event.target});
+        dispatch('click', {id: event.target.id, value: event.target.value, checked: event.target.checked, target: event.target});
     }
 </script>
 
 <div class={(ui?"ui ":"") + uiProps($$restProps) + " checkbox"}>
-    <input type="checkbox" {name} bind:checked bind:value on:click={doClick} {...otherProps($$restProps)}>
+    <input type="checkbox" {id} bind:checked bind:value on:click={doClick} {...otherProps($$restProps)}>
     <slot/>
 </div>
 

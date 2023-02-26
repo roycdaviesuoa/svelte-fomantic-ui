@@ -18,7 +18,7 @@
       console.log(event);
     }
     function select_group(event) {
-      selected = event.detail.name;
+      selected = event.detail.id;
       console.log(event);
     }
 </script>
@@ -37,7 +37,7 @@
     <Fields>
       {#each items as item}
         <Field>
-          <Checkbox ui green={item === selected} bind:value={selected} name={item} checked={item === selected} on:click={select_group}>
+          <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={select_group}>
             <Label checkbox>{item}</Label>
           </Checkbox>
         </Field>
@@ -60,7 +60,7 @@
       console.log(event);
     }
     function select_group(event) {
-      selected = event.detail.name;
+      selected = event.detail.id;
       console.log(event);
     }
 </script>
@@ -71,7 +71,7 @@
 <Fields>
     {#each items as item}
         <Field>
-            <Checkbox ui green={item === selected} bind:value={selected} name={item} checked={item === selected} on:click={select_group}>
+            <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={select_group}>
                 <Label checkbox>{item}</Label>
             </Checkbox>
         </Field>

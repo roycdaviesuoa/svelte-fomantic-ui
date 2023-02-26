@@ -7,7 +7,7 @@
 <script lang="ts">
     import {uiProps, otherProps} from "../Helpers"
     export let ui: boolean=false;
-    export let name: string="";
+    export let id: string="";
     export let group: string="";
     export let value: string="";
     export let placeholder: string="";
@@ -16,12 +16,12 @@
 
 {#if single}
     <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio checkbox"} {...otherProps($$restProps)}>
-        <input type="radio" {placeholder} {name} {value} >
+        <input type="radio" {placeholder} {id} {value} >
         <slot/>
     </div>
 {:else}
     <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio  checkbox"} {...otherProps($$restProps)}>
-        <input type="radio" {placeholder} {name} {value} bind:group>
+        <input type="radio" {placeholder} {id} {value} bind:group>
         <slot/>
     </div>
 {/if}
