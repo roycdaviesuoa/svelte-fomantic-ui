@@ -32,7 +32,7 @@
                 <li> <h4><a href="/Icon">Icon</a> </h4> </li>
                 <li> <h4><a href="/Image">Image</a> </h4> </li>
                 <li> <h4><a href="/Label">Label</a> </h4> </li>
-                <li> <h4>List</h4></li>
+                <li> <h4><a href="/List">List</a> </h4></li>
                 <li> <h4>Loader</h4></li>
                 <li> <h4>Placeholder</h4></li>
                 <li> <h4>Rail</h4></li>
