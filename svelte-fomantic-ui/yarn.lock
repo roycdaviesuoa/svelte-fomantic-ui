@@ -433,7 +433,7 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
-jquery@^3.4.0:
+jquery@^3.4.0, jquery@^3.6.3:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.3.tgz#23ed2ffed8a19e048814f13391a19afcdba160e6"
   integrity sha512-bZ5Sy3YzKo9Fyc8wH2iIQK4JImJ6R0GWI9kL1/k7Z91ZBNgkRXE6U0JfHIizZbort8ZunhSI3jw9I6253ahKfg==
@@ -702,6 +702,14 @@ svelte-check@^2.10.3:
     sade "^1.7.4"
     svelte-preprocess "^4.0.0"
     typescript "*"
+
+svelte-fomantic-ui@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/svelte-fomantic-ui/-/svelte-fomantic-ui-0.0.5.tgz#f4a301d2df21ea3f4566c1b847b67aefc529cafd"
+  integrity sha512-fta1QeNUN3xQZ0//13tnb+0zVTZ68mJJoIS7guMUolafmY56HIehnCrAGX+cei0AfPn/vHceY+QK/6EvFTlN4A==
+  dependencies:
+    fomantic-ui-css "^2.9.2"
+    vite-plugin-svelte "^3.0.1"
 
 svelte-hmr@^0.11.3:
   version "0.11.6"

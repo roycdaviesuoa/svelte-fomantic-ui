@@ -17,7 +17,7 @@
     function select(event) {
       console.log(event);
     }
-    function select_group(event) {
+    function selectItem(event) {
       selected = event.detail.id;
       console.log(event);
     }
@@ -31,22 +31,23 @@
     <h4 class="example-header">Interactive Checkbox</h4>
 
     <Checkbox ui bind:checked={visibility} on:click={select}>
-      <Label checkbox>Make my profile visible</Label>
+      <Label checkbox>Make selections visible</Label>
     </Checkbox>
     <p></p>
-    <Fields>
-      {#each items as item}
-        <Field>
-          <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={select_group}>
-            <Label checkbox>{item}</Label>
-          </Checkbox>
-        </Field>
-      {/each}
-    </Fields>
+    {#if visibility}
+      <Fields>
+          {#each items as item}
+            <Field>
+              <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={selectItem}>
+                <Label checkbox>{item}</Label>
+              </Checkbox>
+            </Field>
+          {/each}
+      </Fields>
+    {/if}
 
     <Divider ui/>
-    <Header>{selected} clicked | {selected} | visibility = {visibility}</Header>
-    <code>
+    <Header>{selected} clicked | visibility = {visibility}</Header>
     <Prism language="svelte">
     {`
 <script>
@@ -66,21 +67,25 @@
 </script>
 
 <Checkbox ui bind:checked={visibility} on:click={select}>
-    <Label checkbox>Make my profile visible</Label>
-</Checkbox>
-<Fields>
-    {#each items as item}
-        <Field>
-            <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={select_group}>
+      <Label checkbox>Make selections visible</Label>
+    </Checkbox>
+    <p></p>
+    {#if visibility}
+      <Fields>
+          {#each items as item}
+            <Field>
+              <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={selectItem}>
                 <Label checkbox>{item}</Label>
-            </Checkbox>
-        </Field>
-    {/each}
-</Fields>
-<Divider ui/>
-<Header>{selected} clicked | {selected} | visibility = {visibility}</Header>
+              </Checkbox>
+            </Field>
+          {/each}
+      </Fields>
+    {/if}
+
+    <Divider ui/>
+    <Header>{selected} clicked | visibility = {visibility}</Header>
 `}
-</Prism></code>
+</Prism>
   </div>
 </div>
 
