@@ -24,6 +24,7 @@
   import ImageTest from './lib/fomantic-ui-tests/Image.svelte';
   import LabelTest from './lib/fomantic-ui-tests/Label.svelte';
   import ListTest from './lib/fomantic-ui-tests/List.svelte';
+  import LoaderTest from './lib/fomantic-ui-tests/Loader.svelte';
 
 
   let currentRoute: any;
@@ -65,6 +66,8 @@
       currentRoute = LabelTest; break;
     case '/List':
       currentRoute = ListTest; break;
+    case '/Loader':
+      currentRoute = LoaderTest; break;
     default:
       break;
       // currentRoute = NotFound;
