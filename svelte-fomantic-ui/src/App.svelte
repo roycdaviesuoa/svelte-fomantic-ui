@@ -13,7 +13,7 @@
   import BreadcrumbTest from './lib/fomantic-ui-tests/Breadcrumb.svelte';
   import BreadcrumbInteractive from './lib/fomantic-ui-tests/BreadcrumbInteractive.svelte';
   import CalendarTest from './lib/fomantic-ui-tests/Calendar.svelte';
-  import CheckboxInteractive from './lib/fomantic-ui-tests/CheckboxInteractive.svelte';
+  import Checkbox from './lib/fomantic-ui-tests/Checkbox.svelte';
   import ContainerTest from './lib/fomantic-ui-tests/Container.svelte';
   import DividerTest from './lib/fomantic-ui-tests/Divider.svelte';
   import DropdownTest from './lib/fomantic-ui-tests/Dropdown.svelte';
@@ -44,8 +44,8 @@
       currentRoute = BreadcrumbInteractive; break;
     case '/Calendar':
       currentRoute = CalendarTest; break;
-    case '/CheckboxInteractive':
-      currentRoute = CheckboxInteractive; break;
+    case '/Checkbox':
+      currentRoute = Checkbox; break;
     case '/Container':
       currentRoute = ContainerTest; break;
     case '/Divider':

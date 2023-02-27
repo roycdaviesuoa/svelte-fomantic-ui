@@ -5,6 +5,11 @@
 
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
 
+## Progress
+
+I am working on this daily, so check back often.  However, my day job and family do sometimes get in the way of progress... 
+[Click here to check on progress so far](#progress-so-far)
+
 ## Overview
 
 The majority of the elements, collections, views and modules are wrapped in a single layer, with props used to represent the primary fomantic-ui element.  For example:
@@ -157,3 +162,76 @@ This project was created using vite, and is runnable in its own right.  When you
 1. Run the `yarn` command to download dependencies.
 1. Run `yarn dev` to start development web server.
 1. Open the link in a browser to see the dev / test website (usually `http://localhost:5173`)
+
+## Progress so far
+
+| Element          | Implemented | Tested and Documented | Test Link |
+|------------------|:-----------:|:---------------------:|-----------|
+| Button           |      X      |           X           | /Button
+|  - Interactive   |      X      |           X           | /ButtonInteractive
+| Container | X | X | /Container
+| Divider | X | X | /Divider
+| Emoji | X | X | /Emoji
+| Flag | X | X | /Flag
+| Header | X | X | /Header
+| Icon | X | X | /Icon
+| Image | X | X | /Image
+| Label | X | X | /Label
+| List | X | X | /List
+| Loader | X |   |
+| Placeholder | X |   |
+| Rail | X |   |
+| Reveal | X |   |
+| Segment | X |   |
+| Step | X |   |
+| Text | X |   |
+
+| Inputs          | Implemented | Tested and Documented | Test Link |
+|-----------------|:-----------:|:---------------------:|-----------|
+| Checkbox | X | X | /Checkbox
+| Input | X |  |
+| File Input |  |  |
+| Dropdown | X | X | /Dropdown
+| Radio | X |  | 
+| Simple Dropdown | X |  | 
+| Textarea | X |  | 
+
+| Collections     | Implemented | Tested and Documented | Test Link |
+|-----------------|:-----------:|:---------------------:|-----------|
+| Breadcrumb | X | X | /Breadcrumb
+|  - Interactive | X | X | /BreadcrumbInteractive
+| Form | X |  |
+| Grid | X |  |
+| Menu | X |  |
+| Message | X |  | 
+| Table | X |  | 
+
+| Views           | Implemented | Tested and Documented | Test Link |
+|-----------------|:-----------:|:---------------------:|-----------|
+| Advertisement | X |  |
+| Card | X |  |
+| Comment |  |  |
+| Feed | X |  |
+| Item | X |  |
+| Statistic | X |  |
+
+| Modules         | Implemented | Tested and Documented | Test Link |
+|-----------------|:-----------:|:---------------------:|-----------|
+| Accordion | X | X | /Accordion
+| Calendar | X | X | /Calendar
+| Dimmer | X |  |
+| Embed |  |  |
+| Flyout |  |  |
+| Modal |  |  |
+| Nag |  |  |
+| Popup |  |  |
+| Progress |  |  |
+| Rating |  |  |
+| Search |  |  |
+| Shape |  |  |
+| Sidebar |  |  |
+| Slider |  |  |
+| Sticky |  |  |
+| Tab |  |  |
+| Toast |  |  |
+| Transition |  |  |
