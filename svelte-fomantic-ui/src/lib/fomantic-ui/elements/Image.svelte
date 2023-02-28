@@ -10,12 +10,13 @@ TODO: support svg images
     import {uiProps, otherProps} from "../Helpers"
     export let ui: boolean = false;
     export let header: boolean = false;
+    export let div: boolean = false;
     export let alt: string = "";
 </script>
 
-{#if header}
-    <!-- Used with Placeholder -->
-    <div class="image header">
+{#if div}
+    <!-- Used mostly with Placeholder -->
+    <div class={(ui?"ui ":"") + uiProps($$restProps) + " image"} {...otherProps($$restProps)}>
         <slot/>
     </div>
 {:else}

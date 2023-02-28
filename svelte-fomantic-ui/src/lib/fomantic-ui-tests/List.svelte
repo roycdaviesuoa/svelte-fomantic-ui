@@ -6,16 +6,16 @@
 
 <script lang="ts">
     import { List, Item, Icon, Content, Header, Description, Link, Image, Segment, Button } from "../fomantic-ui/Core.svelte";
-    import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
+
+    import "./examplestyles.css";
 
     let sizes = ["mini", "tiny", "small", "medium", "large", "big", "huge", "massive"];
 
     function doSelect(e) {
         console.log(e);
     }
-
 </script>
 
 <div class="example-document">
@@ -1325,7 +1325,7 @@
 
         <Prism language="svelte" source={`
 <script>
-    ["mini", "tiny", "small", "medium", "large", "big", "huge", "massive"]; 
+    let sizes = ["mini", "tiny", "small", "medium", "large", "big", "huge", "massive"]; 
 </script>
 {#each sizes as size, i}
     {#if i>0}

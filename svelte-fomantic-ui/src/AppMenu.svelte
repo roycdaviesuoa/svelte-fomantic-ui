@@ -34,7 +34,7 @@
                 <li> <h4><a href="/Label">Label</a> </h4> </li>
                 <li> <h4><a href="/List">List</a> </h4></li>
                 <li> <h4><a href="/Loader">Loader</a></h4></li>
-                <li> <h4>Placeholder</h4></li>
+                <li> <h4><a href="/Placeholder">Placeholder</a></h4></li>
                 <li> <h4>Rail</h4></li>
                 <li> <h4>Reveal</h4></li>
                 <li> <h4>Segment</h4></li>

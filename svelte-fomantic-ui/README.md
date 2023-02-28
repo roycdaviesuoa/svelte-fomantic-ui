@@ -178,8 +178,8 @@ This project was created using vite, and is runnable in its own right.  When you
 | Image | X | X | /Image
 | Label | X | X | /Label
 | List | X | X | /List
-| Loader | X |   |
-| Placeholder | X |   |
+| Loader | X | X |
+| Placeholder | X | X |
 | Rail | X |   |
 | Reveal | X |   |
 | Segment | X |   |
