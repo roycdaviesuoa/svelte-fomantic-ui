@@ -5,10 +5,12 @@
 -->
 
 <script lang="ts">
-    import { Step, Steps, Icon, Content, Title, Description } from "../fomantic-ui/Core.svelte";
+    import { Step, Steps, Icon, Content, Title, Description, Grid, Column, Segment, Placeholder, Header, Line, Paragraph } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
+
+    let sizes = ["mini", "tiny", "small", "large", "big", "huge", "massive"];
 </script>
 
 <div class="example-document">
@@ -306,88 +308,598 @@
 
         <Steps ui>
             <Step active>
-                <Icon payement/>
+                <Icon payment/>
                 <Content>
                     <Title>Billing</Title>
                     <Description>Enter billing information</Description>
                 </Content>
             </Step>
-        </steps>
+        </Steps>
 
         <Prism language="html" source={`
-
+<Steps ui>
+    <Step active>
+        <Icon payment/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+</Steps>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Completed</h4>
 
-        <Prism language="html" source={`
+        <Steps ui>
+            <Step completed>
+                <Icon payment/>
+                <Content>
+                    <Title>Billing</Title>
+                    <Description>Enter billing information</Description>
+                </Content>
+            </Step>
+        </Steps>
 
+        <Prism language="html" source={`
+<Steps ui>
+    <Step completed>
+        <Icon payment/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+</Steps>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Disabled</h4>
 
-        <Prism language="html" source={`
+        <Steps ui>
+            <Step disabled>
+              Billing
+            </Step>
+        </Steps>
 
+        <Prism language="html" source={`
+<Steps ui>
+    <Step disabled>
+        Billing
+    </Step>
+</Steps>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Stackable</h4>
 
-        <Prism language="html" source={`
+        <Steps ui tablet stackable>
+            <Step>
+                <Icon plane/>
+                <Content>
+                    <Title>Shipping</Title>
+                    <Description>Choose your shipping options</Description>
+                </Content>
+            </Step>
+            <Step active>
+                <Icon dollar/>
+                <Content>
+                    <Title>Billing</Title>
+                    <Description>Enter billing information</Description>
+                </Content>
+            </Step>
+            <Step disabled>
+                <Icon info circle/>
+                <Content>
+                    <Title>Confirm Order</Title>
+                    <Description>Verify order details</Description>
+                </Content>
+            </Step>
+        </Steps>
 
+        <Prism language="html" source={`
+<Steps ui tablet stackable>
+    <Step>
+        <Icon plane/>
+        <Content>
+            <Title>Shipping</Title>
+            <Description>Choose your shipping options</Description>
+        </Content>
+    </Step>
+    <Step active>
+        <Icon dollar/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+    <Step disabled>
+        <Icon info circle/>
+        <Content>
+            <Title>Confirm Order</Title>
+            <Description>Verify order details</Description>
+        </Content>
+    </Step>
+</Steps>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Fluid</h4>
 
-        <Prism language="html" source={`
+        <Grid ui two column>
+            <Column>
+                <Steps ui fluid vertical>
+                    <Step completed>
+                        <Icon truck/>
+                        <Content>
+                            <Title>Shipping</Title>
+                            <Description>Choose your shipping options</Description>
+                        </Content>
+                    </Step>
+                    <Step active>
+                        <Icon dollar/>
+                        <Content>
+                            <Title>Billing</Title>
+                            <Description>Enter billing information</Description>
+                        </Content>
+                    </Step>
+                </Steps>
+            </Column>
+            <Column>
+                <p>The steps take up the entire column width</p>
+            </Column>
+        </Grid>
 
+        <Prism language="html" source={`
+<Grid ui two column>
+    <Column>
+        <Steps ui fluid vertical>
+            <Step completed>
+                <Icon truck/>
+                <Content>
+                    <Title>Shipping</Title>
+                    <Description>Choose your shipping options</Description>
+                </Content>
+            </Step>
+            <Step active>
+                <Icon dollar/>
+                <Content>
+                    <Title>Billing</Title>
+                    <Description>Enter billing information</Description>
+                </Content>
+            </Step>
+        </Steps>
+    </Column>
+    <Column>
+        <p>The steps take up the entire column width</p>
+    </Column>
+</Grid>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Unstackable</h4>
 
-        <Prism language="html" source={`
+        <Steps ui tablet unstackable>
+            <Step>
+                <Icon plane/>
+                <Content>
+                    <Title>Shipping</Title>
+                    <Description>Choose your shipping options</Description>
+                </Content>
+            </Step>
+            <Step active>
+                <Icon dollar/>
+                <Content>
+                    <Title>Billing</Title>
+                    <Description>Enter billing information</Description>
+                </Content>
+            </Step>
+            <Step disabled>
+                <Icon info circle/>
+                <Content>
+                    <Title>Confirm Order</Title>
+                    <Description>Verify order details</Description>
+                </Content>
+            </Step>
+        </Steps>
 
+        <Prism language="html" source={`
+<Steps ui tablet unstackable>
+    <Step>
+        <Icon plane/>
+        <Content>
+            <Title>Shipping</Title>
+            <Description>Choose your shipping options</Description>
+        </Content>
+    </Step>
+    <Step active>
+        <Icon dollar/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+    <Step disabled>
+        <Icon info circle/>
+        <Content>
+            <Title>Confirm Order</Title>
+            <Description>Verify order details</Description>
+        </Content>
+    </Step>
+</Steps>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Attached</h4>
 
-        <Prism language="html" source={`
+        <Steps ui three top attached>
+            <Step>
+                <Icon plane/>
+                <Content>
+                    <Title>Shipping</Title>
+                    <Description>Choose your shipping options</Description>
+                </Content>
+            </Step>
+            <Step active>
+                <Icon payment/>
+                <Content>
+                    <Title>Billing</Title>
+                    <Description>Enter billing information</Description>
+                </Content>
+            </Step>
+            <Step disabled>
+                <Icon info circle/>
+                <Content>
+                    <Title>Confirm Order</Title>
+                    <Description>Verify order details</Description>
+                </Content>
+            </Step>
+        </Steps>
+        <Segment ui attached>
+            <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+        </Segment>
+        <Steps ui three bottom attached>
+            <Step>
+                <Icon plane/>
+                <Content>
+                    <Title>Shipping</Title>
+                    <Description>Choose your shipping options</Description>
+                </Content>
+            </Step>
+            <Step active>
+                <Icon payment/>
+                <Content>
+                    <Title>Billing</Title>
+                    <Description>Enter billing information</Description>
+                </Content>
+            </Step>
+            <Step disabled>
+                <Icon info circle/>
+                <Content>
+                    <Title>Confirm Order</Title>
+                    <Description>Verify order details</Description>
+                </Content>
+            </Step>
+        </Steps>
 
+        <Prism language="html" source={`
+<Steps ui three top attached>
+    <Step>
+        <Icon plane/>
+        <Content>
+            <Title>Shipping</Title>
+            <Description>Choose your shipping options</Description>
+        </Content>
+    </Step>
+    <Step active>
+        <Icon payment/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+    <Step disabled>
+        <Icon info circle/>
+        <Content>
+            <Title>Confirm Order</Title>
+            <Description>Verify order details</Description>
+        </Content>
+    </Step>
+</Steps>
+<Segment ui attached>
+    <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+</Segment>
+<Steps ui three bottom attached>
+    <Step>
+        <Icon plane/>
+        <Content>
+            <Title>Shipping</Title>
+            <Description>Choose your shipping options</Description>
+        </Content>
+    </Step>
+    <Step active>
+        <Icon payment/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+    <Step disabled>
+        <Icon info circle/>
+        <Content>
+            <Title>Confirm Order</Title>
+            <Description>Verify order details</Description>
+        </Content>
+    </Step>
+</Steps>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Evenly distributed</h4>
-
+<Steps ui three>
+    <Step>
+        <Icon plane/>
+        <Content>
+            <Title>Shipping</Title>
+            <Description>Choose your shipping options</Description>
+        </Content>
+    </Step>
+    <Step active>
+        <Icon payment/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+    <Step disabled>
+        <Icon info circle/>
+        <Content>
+            <Title>Confirm Order</Title>
+            <Description>Verify order details</Description>
+        </Content>
+    </Step>
+</Steps>
         <Prism language="html" source={`
-
+<Steps ui three>
+    <Step>
+        <Icon plane/>
+        <Content>
+            <Title>Shipping</Title>
+            <Description>Choose your shipping options</Description>
+        </Content>
+    </Step>
+    <Step active>
+        <Icon payment/>
+        <Content>
+            <Title>Billing</Title>
+            <Description>Enter billing information</Description>
+        </Content>
+    </Step>
+    <Step disabled>
+        <Icon info circle/>
+        <Content>
+            <Title>Confirm Order</Title>
+            <Description>Verify order details</Description>
+        </Content>
+    </Step>
+</Steps>
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Size</h4>
 
-        <Prism language="html" source={`
-
+        {#each sizes as size, i}
+            {#if i > 0}
+                <br/><br/>
+            {/if}
+            <Steps ui _={size}>
+                <Step>
+                    <Icon plane/>
+                    <Content>
+                        <Title>Shipping</Title>
+                        <Description>Choose your shipping options</Description>
+                    </Content>
+                </Step>
+                <Step active>
+                    <Icon payment/>
+                    <Content>
+                        <Title>Billing</Title>
+                        <Description>Enter billing information</Description>
+                    </Content>
+                </Step>
+                <Step disabled>
+                    <Icon info circle/>
+                    <Content>
+                        <Title>Confirm Order</Title>
+                        <Description>Verify order details</Description>
+                    </Content>
+                </Step>
+            </Steps>
+        {/each}
+        
+        <Prism language="svelte" source={`
+{#each sizes as size, i}
+    {#if i > 0}
+        <br/><br/>
+    {/if}
+    <Steps ui _={size}>
+        <Step>
+            <Icon plane/>
+            <Content>
+                <Title>Shipping</Title>
+                <Description>Choose your shipping options</Description>
+            </Content>
+        </Step>
+        <Step active>
+            <Icon payment/>
+            <Content>
+                <Title>Billing</Title>
+                <Description>Enter billing information</Description>
+            </Content>
+        </Step>
+        <Step disabled>
+            <Icon info circle/>
+            <Content>
+                <Title>Confirm Order</Title>
+                <Description>Verify order details</Description>
+            </Content>
+        </Step>
+    </Steps>
+{/each}
     `}/>
     </div>
 
     <div class="example">
         <h4 class="example-header">Inverted</h4>
 
-        <Prism language="html" source={`
+        <Segment ui inverted>
+            <Steps ui three inverted>
+                <Step>
+                    <Icon plane/>
+                    <Content>
+                        <Title>Shipping</Title>
+                        <Description>Choose your shipping options</Description>
+                    </Content>
+                </Step>
+                <Step active>
+                    <Icon payment/>
+                    <Content>
+                        <Title>Billing</Title>
+                        <Description>Enter billing information</Description>
+                    </Content>
+                </Step>
+                <Step disabled>
+                    <Icon info circle/>
+                    <Content>
+                        <Title>Confirm Order</Title>
+                        <Description>Verify order details</Description>
+                    </Content>
+                </Step>
+            </Steps>
+        </Segment>
+        <Segment ui inverted>
+            <Steps ui three inverted ordered>
+                <Step completed>
+                    <Content>
+                        <Title>Shipping</Title>
+                        <Description>Choose your shipping options</Description>
+                    </Content>
+                </Step>
+                <Step completed>
+                    <Content>
+                        <Title>Billing</Title>
+                        <Description>Enter billing information</Description>
+                    </Content>
+                </Step>
+                <Step active>
+                    <Content>
+                        <Title>Confirm Order</Title>
+                        <Description>Verify order details</Description>
+                    </Content>
+                </Step>
+            </Steps>
+        </Segment>
+        <Segment ui inverted>
+            <Steps ui inverted vertical ordered>
+                <Step completed>
+                    <Content>
+                        <Title>Shipping</Title>
+                        <Description>Choose your shipping options</Description>
+                    </Content>
+                </Step>
+                <Step completed>
+                    <Content>
+                        <Title>Billing</Title>
+                        <Description>Enter billing information</Description>
+                    </Content>
+                </Step>
+                <Step active>
+                    <Content>
+                        <Title>Confirm Order</Title>
+                        <Description>Verify order details</Description>
+                    </Content>
+                </Step>
+            </Steps>
+        </Segment>
 
+        <Prism language="html" source={`
+<Segment ui inverted>
+    <Steps ui three inverted>
+        <Step>
+            <Icon plane/>
+            <Content>
+                <Title>Shipping</Title>
+                <Description>Choose your shipping options</Description>
+            </Content>
+        </Step>
+        <Step active>
+            <Icon payment/>
+            <Content>
+                <Title>Billing</Title>
+                <Description>Enter billing information</Description>
+            </Content>
+        </Step>
+        <Step disabled>
+            <Icon info circle/>
+            <Content>
+                <Title>Confirm Order</Title>
+                <Description>Verify order details</Description>
+            </Content>
+        </Step>
+    </Steps>
+</Segment>
+<Segment ui inverted>
+    <Steps ui three inverted ordered>
+        <Step completed>
+            <Content>
+                <Title>Shipping</Title>
+                <Description>Choose your shipping options</Description>
+            </Content>
+        </Step>
+        <Step completed>
+            <Content>
+                <Title>Billing</Title>
+                <Description>Enter billing information</Description>
+            </Content>
+        </Step>
+        <Step active>
+            <Content>
+                <Title>Confirm Order</Title>
+                <Description>Verify order details</Description>
+            </Content>
+        </Step>
+    </Steps>
+</Segment>
+<Segment ui inverted>
+    <Steps ui inverted vertical ordered>
+        <Step completed>
+            <Content>
+                <Title>Shipping</Title>
+                <Description>Choose your shipping options</Description>
+            </Content>
+        </Step>
+        <Step completed>
+            <Content>
+                <Title>Billing</Title>
+                <Description>Enter billing information</Description>
+            </Content>
+        </Step>
+        <Step active>
+            <Content>
+                <Title>Confirm Order</Title>
+                <Description>Verify order details</Description>
+            </Content>
+        </Step>
+    </Steps>
+</Segment>
     `}/>
     </div>
     
