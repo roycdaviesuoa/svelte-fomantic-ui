@@ -26,6 +26,9 @@
   import ListTest from './lib/fomantic-ui-tests/List.svelte';
   import LoaderTest from './lib/fomantic-ui-tests/Loader.svelte';
   import PlaceholderTest from './lib/fomantic-ui-tests/Placeholder.svelte';
+  import RailTest from './lib/fomantic-ui-tests/Rail.svelte';
+  import RevealTest from './lib/fomantic-ui-tests/Reveal.svelte';
+  import SegmentTest from './lib/fomantic-ui-tests/Segment.svelte';
 
 
   let currentRoute: any;
@@ -71,6 +74,12 @@
       currentRoute = LoaderTest; break;
     case '/Placeholder':
       currentRoute = PlaceholderTest; break;
+    case '/Reveal':
+      currentRoute = RevealTest; break;
+    case '/Rail':
+      currentRoute = RailTest; break;
+    case '/Segment':
+      currentRoute = SegmentTest; break;
     default:
       break;
       // currentRoute = NotFound;

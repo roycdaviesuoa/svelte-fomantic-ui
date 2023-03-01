@@ -35,9 +35,9 @@
                 <li> <h4><a href="/List">List</a> </h4></li>
                 <li> <h4><a href="/Loader">Loader</a></h4></li>
                 <li> <h4><a href="/Placeholder">Placeholder</a></h4></li>
-                <li> <h4>Rail</h4></li>
-                <li> <h4>Reveal</h4></li>
-                <li> <h4>Segment</h4></li>
+                <li> <h4><a href="/Rail">Rail</a></h4></li>
+                <li> <h4><a href="/Reveal">Reveal</a></h4></li>
+                <li> <h4><a href="/Segment">Segment</a></h4></li>
                 <li> <h4>Step</h4></li>
                 <li> <h4>Text</h4></li>
             </ul>

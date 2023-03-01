@@ -51,6 +51,14 @@
     /* padding-top: 20px; */
     border-radius: 10px;
 }
+
+.centered {
+    display: grid;
+    place-items: center;
+}
+.narrow {
+    width: 400px;
+}
 .example-header {
     background-color: rgb(244, 244, 244);
     padding:20px;

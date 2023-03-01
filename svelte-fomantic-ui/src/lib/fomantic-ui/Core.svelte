@@ -21,6 +21,7 @@
     export {default as Image} from './elements/Image.svelte';
     export {default as Image_Wrapper} from './elements/Image_Wrapper.svelte';
     export {default as Images} from './elements/Images.svelte';
+    export {default as Inline} from './elements/Inline.svelte';
     export {default as Label} from './elements/Label.svelte';
     export {default as Labels} from './elements/Labels.svelte';
     export {default as Line} from './elements/Line.svelte';
@@ -31,6 +32,7 @@
     export {default as Placeholder} from './elements/Placeholder.svelte';
     export {default as Rail} from './elements/Rail.svelte';
     export {default as Reveal} from './elements/Reveal.svelte';
+    export {default as Search} from './elements/Search.svelte';
     export {default as Segment} from './elements/Segment.svelte';
     export {default as Segments} from './elements/Segments.svelte';
     export {default as Step} from './elements/Step.svelte';
