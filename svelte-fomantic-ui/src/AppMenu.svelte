@@ -38,8 +38,8 @@
                 <li> <h4><a href="/Rail">Rail</a></h4></li>
                 <li> <h4><a href="/Reveal">Reveal</a></h4></li>
                 <li> <h4><a href="/Segment">Segment</a></h4></li>
-                <li> <h4>Step</h4></li>
-                <li> <h4>Text</h4></li>
+                <li> <h4><a href="/Step">Step</a></h4></li>
+                <li> <h4><a href="/Text">Text</a></h4></li>
             </ul>
             <li> <h3>Inputs</h3></li>
             <ul>

@@ -29,6 +29,8 @@
   import RailTest from './lib/fomantic-ui-tests/Rail.svelte';
   import RevealTest from './lib/fomantic-ui-tests/Reveal.svelte';
   import SegmentTest from './lib/fomantic-ui-tests/Segment.svelte';
+  import StepTest from './lib/fomantic-ui-tests/Step.svelte';
+  import TextTest from './lib/fomantic-ui-tests/Text.svelte';
 
 
   let currentRoute: any;
@@ -80,6 +82,10 @@
       currentRoute = RailTest; break;
     case '/Segment':
       currentRoute = SegmentTest; break;
+    case '/Step':
+      currentRoute = StepTest; break;
+    case '/Text':
+      currentRoute = TextTest; break;
     default:
       break;
       // currentRoute = NotFound;

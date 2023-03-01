@@ -179,12 +179,12 @@ This project was created using vite, and is runnable in its own right.  When you
 | Label | X | X | /Label
 | List | X | X | /List
 | Loader | X | X | /Loader
-| Placeholder | X | /Placeholder |
+| Placeholder | X | X | /Placeholder
 | Rail | X | X | /Rail
-| Reveal | X |   | /Reveal
-| Segment | X |   |
-| Step | X |   |
-| Text | X |   |
+| Reveal | X | X | /Reveal
+| Segment | X | X | /Segment
+| Step | X | X | /Step
+| Text | X | X | /Text
 
 | Inputs          | Implemented | Tested and Documented | Test Link |
 |-----------------|:-----------:|:---------------------:|-----------|
