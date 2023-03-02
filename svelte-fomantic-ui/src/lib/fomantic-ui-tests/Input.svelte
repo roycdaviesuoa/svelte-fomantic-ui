@@ -5,11 +5,12 @@
 -->
 
 <script lang="ts">
-    import { Input, Input_Wrapper, Label, Icon, Header, Text, Menu, Item, Dropdown, Link, Select, Option, Button } from "../fomantic-ui/Core.svelte";
+    import { Input, Input_Wrapper, Label, Icon, Header, Text, Menu, Item, Dropdown, Link, Select, Option, Button, Segment, Form, Textarea } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
-    import { loop_guard } from "svelte/internal";
+    let sizes = ["mini", "tiny", "small", "large", "big", "huge", "massive"];
+
 
     let filename1: string = "";
     let filename2: string = "";
@@ -229,43 +230,47 @@
     <div class="example">
         <h4 class="example-header">Icon</h4>
 
-        <Input_Wrapper ui icon>
-            <Input type="text" placeholder="Search..."/>
-            <Icon search/>
-        </Input_Wrapper>
-        <br/><br/>
-        <Input_Wrapper ui left icon>
-            <Input type="text" placeholder="Search users..."/>
-            <Icon users/>
-        </Input_Wrapper>
-        <br/><br/>
-        <Input_Wrapper ui icon>
-            <Input type="text" placeholder="Search..."/>
-            <Icon circular search link/>
-        </Input_Wrapper>
-        <br/><br/>
-        <Input_Wrapper ui icon>
-            <Input type="text" placeholder="Search..."/>
-            <Icon inverted circular search link/>
-        </Input_Wrapper>
+        <div class="centered">
+            <div class="narrow">
+                <Input_Wrapper ui icon fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Icon search/>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui left icon fluid>
+                    <Input type="text" placeholder="Search users..."/>
+                    <Icon users/>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui icon fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Icon circular search link/>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui icon fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Icon inverted circular search link/>
+                </Input_Wrapper>
+            </div>
+        </div>
 
         <Prism language="svelte" source={`
-<Input_Wrapper ui icon>
+<Input_Wrapper ui icon fluid>
     <Input type="text" placeholder="Search..."/>
     <Icon search/>
 </Input_Wrapper>
 
-<Input_Wrapper ui left icon>
+<Input_Wrapper ui left icon fluid>
     <Input type="text" placeholder="Search users..."/>
     <Icon users/>
 </Input_Wrapper>
 
-<Input_Wrapper ui icon>
+<Input_Wrapper ui icon fluid>
     <Input type="text" placeholder="Search..."/>
     <Icon circular search link/>
 </Input_Wrapper>
 
-<Input_Wrapper ui icon>
+<Input_Wrapper ui icon fluid>
     <Input type="text" placeholder="Search..."/>
     <Icon inverted circular search link/>
 </Input_Wrapper>
@@ -462,68 +467,326 @@
                     <Icon search/>
                     <Input type="text" placeholder="Search"/>
                     <Dropdown ui basic floating button>
-                        <div class="text">This Page</div>
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-                            <div class="item">This Organization</div>
-                            <div class="item">Entire Site</div>
-                        </div>
+                        <Text>This Page</Text>
+                        <Icon dropdown/>
+                        <Menu>
+                            <Item>This Organization</Item>
+                            <Item>Entire Site</Item>
+                        </Menu>
                     </Dropdown>
                 </Input_Wrapper>
                 <br/>
-                <Input_Wrapper ui action>
-                    <input type="text" placeholder="Search...">
-                    <select class="ui compact selection dropdown">
-                    <option value="all">All</option>
-                    <option selected="" value="articles">Articles</option>
-                    <option value="products">Products</option>
-                    </select>
-                    <div class="ui button">Search</div>
+                <Input_Wrapper ui action fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Select dropdown ui compact selection>
+                        <Option value="all">All</Option>
+                        <Option selected value="articles">Articles</Option>
+                        <Option value="products">Products</Option>
+                    </Select>
+                    <Button ui>Search</Button>
                 </Input_Wrapper>
-
-                <Input_Wrapper ui action>
-                    <input type="text" value="https://ww.short.url/c0opq">
-                    <button class="ui teal right labeled icon button">
-                    <i class="copy icon"></i>
-                    Copy
-                    </button>
+                <br/>
+                <Input_Wrapper ui action fluid>
+                    <Input type="text" value="https://ww.short.url/c0opq"/>
+                    <Button ui teal right labeled icon>
+                        <Icon copy/>
+                        Copy
+                    </Button>
                 </Input_Wrapper>
-
-                <Input_Wrapper ui action>
-                    <input type="text" placeholder="Search...">
-                    <button class="ui icon button">
-                    <i class="search icon"></i>
-                    </button>
+                <br/>
+                <Input_Wrapper ui action fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Button ui icon>
+                        <Icon search/>
+                    </Button>
                 </Input_Wrapper>
             </div>
         </div>
 
         <Prism language="svelte" source={`
+<Input_Wrapper ui action fluid>
+    <Input type="text" placeholder="Search..."/>
+    <Button ui>Search</Button>
+</Input_Wrapper>
 
+<Input_Wrapper ui left action fluid>
+    <Button ui teal labeled icon>
+    <Icon cart/>
+    Checkout
+    </Button>
+    <Input type="text" value="$52.03"/>
+</Input_Wrapper>
+
+<Input_Wrapper ui right action left icon fluid>
+    <Icon search/>
+    <Input type="text" placeholder="Search"/>
+    <Dropdown ui basic floating button>
+        <Text>This Page</Text>
+        <Icon dropdown/>
+        <Menu>
+            <Item>This Organization</Item>
+            <Item>Entire Site</Item>
+        </Menu>
+    </Dropdown>
+</Input_Wrapper>
+
+<Input_Wrapper ui action fluid>
+    <Input type="text" placeholder="Search..."/>
+    <Select dropdown ui compact selection>
+        <Option value="all">All</Option>
+        <Option selected value="articles">Articles</Option>
+        <Option value="products">Products</Option>
+    </Select>
+    <Button ui>Search</Button>
+</Input_Wrapper>
+
+<Input_Wrapper ui action fluid>
+    <Input type="text" value="https://ww.short.url/c0opq"/>
+    <Button ui teal right labeled icon>
+        <Icon copy/>
+        Copy
+    </Button>
+</Input_Wrapper>
+
+<Input_Wrapper ui action fluid>
+    <Input type="text" placeholder="Search..."/>
+    <Button ui icon>
+        <Icon search/>
+    </Button>
+</Input_Wrapper>
     `}/>
     </div>
 
     <div class="example">
-        <h4 class="example-header">Input</h4>
+        <h4 class="example-header">File action</h4>
+
+        <Input_Wrapper ui file action>
+            <Input id="actionfileinput" type="file"/>
+            <Label ui blue button _for="actionfileinput">
+               <Icon wizard/>
+                Choose wisely
+            </Label>
+        </Input_Wrapper>
 
         <Prism language="svelte" source={`
-
+<Input_Wrapper ui file action>
+    <Input id="actionfileinput" type="file"/>
+    <Label ui blue button _for="actionfileinput">
+        <Icon wizard/>
+        Choose wisely
+    </Label>
+</Input_Wrapper>
     `}/>
     </div>
 
     <div class="example">
-        <h4 class="example-header">Input</h4>
+        <h4 class="example-header">Transparent</h4>
+
+
+        <div class="centered">
+            <div class="narrow">
+                <Input_Wrapper ui transparent fluid>
+                    <Input type="text" placeholder="Search..."/>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui transparent icon fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Icon search/>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui transparent left icon fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Icon search/>
+                </Input_Wrapper>
+            </div>
+        </div>
 
         <Prism language="svelte" source={`
+<Input_Wrapper ui transparent fluid>
+    <Input type="text" placeholder="Search..."/>
+</Input_Wrapper>
 
+<Input_Wrapper ui transparent icon fluid>
+    <Input type="text" placeholder="Search..."/>
+    <Icon search/>
+</Input_Wrapper>
+
+<Input_Wrapper ui transparent left icon fluid>
+    <Input type="text" placeholder="Search..."/>
+    <Icon search/>
+</Input_Wrapper>
     `}/>
     </div>
 
     <div class="example">
-        <h4 class="example-header">Input</h4>
+        <h4 class="example-header">Inverted</h4>
+
+        <Segment ui inverted>
+            <Input_Wrapper ui inverted>
+                <Input type="text" placeholder="Search..."/>
+            </Input_Wrapper>
+            <br/><br/>
+            <Input_Wrapper ui icon inverted>
+                <Input type="text" placeholder="Search..."/>
+                <Icon search/>
+            </Input_Wrapper>
+            <br/><br/>
+            <Input_Wrapper ui left icon inverted>
+                <Input type="text" placeholder="Search..."/>
+                <Icon search/>
+            </Input_Wrapper>
+        </Segment>
 
         <Prism language="svelte" source={`
+<Segment ui inverted>
+    <Input_Wrapper ui inverted>
+        <Input type="text" placeholder="Search..."/>
+    </Input_Wrapper>
+    <br/><br/>
+    <Input_Wrapper ui icon inverted>
+        <Input type="text" placeholder="Search..."/>
+        <Icon search/>
+    </Input_Wrapper>
+    <br/><br/>
+    <Input_Wrapper ui left icon inverted>
+        <Input type="text" placeholder="Search..."/>
+        <Icon search/>
+    </Input_Wrapper>
+</Segment>
+    `}/>
+    </div>
 
+    <div class="example">
+        <h4 class="example-header">Fluid</h4>
+
+        <Input_Wrapper ui fluid icon>
+            <Input type="text" placeholder="Search a very wide input..."/>
+            <Icon search/>
+        </Input_Wrapper>
+        <br/>
+        <Input_Wrapper ui fluid action>
+            <Input type="text" placeholder="Search..."/>
+            <Button ui>Search</Button>
+        </Input_Wrapper>
+
+        <Prism language="svelte" source={`
+<Input_Wrapper ui fluid icon>
+    <Input type="text" placeholder="Search a very wide input..."/>
+    <Icon search/>
+</Input_Wrapper>
+
+<Input_Wrapper ui fluid action>
+    <Input type="text" placeholder="Search..."/>
+    <Button ui>Search</Button>
+</Input_Wrapper>
+    `}/>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Size</h4>
+
+        {#each sizes as size, i}
+            {#if i > 0}
+                <br/><br/>
+            {/if}
+            <Input_Wrapper ui _={size} icon>
+                <Input type="text" placeholder="Search {size}..."/>
+                <Icon search/>
+            </Input_Wrapper>
+        {/each}
+
+        <Prism language="svelte" source={`
+{#each sizes as size, i}
+    {#if i > 0}
+        <br/><br/>
+    {/if}
+    <Input_Wrapper ui _={size} icon>
+        <Input type="text" placeholder="Search {size}..."/>
+        <Icon search/>
+    </Input_Wrapper>
+{/each}
+    `}/>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Textarea</h4>
+
+        <p>Note here the example with left corner and left label has to use the underscore option as you can't have two props with the same name.</p>
+
+        <Form ui>
+            <Input_Wrapper ui left corner labeled>
+                <Label ui left corner>
+                    <Icon asterisk/>
+                </Label>
+                <Textarea value="I have a left corner label" />
+            </Input_Wrapper>
+            <Input_Wrapper ui corner labeled>
+                <Label ui corner>
+                    <Icon asterisk/>
+                </Label>
+                <Textarea value="I have a right corner label" />
+            </Input_Wrapper>
+            <Input_Wrapper ui left icon>
+                <Textarea value="I have a left icon" />
+                <Icon search/>
+            </Input_Wrapper>
+            <Input_Wrapper ui icon>
+                <Textarea value="I have a right icon" />
+                <Icon search/>
+            </Input_Wrapper>
+            <Input_Wrapper ui left corner labeled _={"left icon"}>
+                <Label ui left corner>
+                    <Icon asterisk/>
+                </Label>
+                <Textarea value="I have a left icon and left corner label" />
+                <Icon search/>
+            </Input_Wrapper>
+            <Input_Wrapper ui corner labeled icon>
+                <Label ui corner>
+                    <Icon asterisk/>
+                </Label>
+                <Textarea value="I have a right icon and right corner label" />
+                <Icon search/>
+            </Input_Wrapper>
+        </Form>
+
+        <Prism language="svelte" source={`
+<Form ui>
+    <Input_Wrapper ui left corner labeled>
+        <Label ui left corner>
+            <Icon asterisk/>
+        </Label>
+        <Textarea value="I have a left corner label" />
+    </Input_Wrapper>
+    <Input_Wrapper ui corner labeled>
+        <Label ui corner>
+            <Icon asterisk/>
+        </Label>
+        <Textarea value="I have a right corner label" />
+    </Input_Wrapper>
+    <Input_Wrapper ui left icon>
+        <Textarea value="I have a left icon" />
+        <Icon search/>
+    </Input_Wrapper>
+    <Input_Wrapper ui icon>
+        <Textarea value="I have a right icon" />
+        <Icon search/>
+    </Input_Wrapper>
+    <Input_Wrapper ui left corner labeled _={"left icon"}>
+        <Label ui left corner>
+            <Icon asterisk/>
+        </Label>
+        <Textarea value="I have a left icon and left corner label" />
+        <Icon search/>
+    </Input_Wrapper>
+    <Input_Wrapper ui corner labeled icon>
+        <Label ui corner>
+            <Icon asterisk/>
+        </Label>
+        <Textarea value="I have a right icon and right corner label" />
+        <Icon search/>
+    </Input_Wrapper>
+</Form>
     `}/>
     </div>
 </div>

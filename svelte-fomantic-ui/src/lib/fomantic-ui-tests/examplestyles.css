@@ -58,6 +58,12 @@
 }
 .narrow {
     width: 400px;
+    border: 1px;
+    border-color: rgb(244, 244, 244);;
+    border-style:solid;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
 }
 .example-header {
     background-color: rgb(244, 244, 244);

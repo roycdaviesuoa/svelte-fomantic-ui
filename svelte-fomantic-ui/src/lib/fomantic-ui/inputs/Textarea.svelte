@@ -10,4 +10,10 @@
     export let value: string="";
 </script>
 
-<textarea class={(ui?"ui ":"") + uiProps($$restProps)} bind:value={value} {...otherProps($$restProps)}/>
+{#if value !== ""}
+    <textarea class={(ui?"ui ":"") + uiProps($$restProps)} bind:value={value} {...otherProps($$restProps)}/>
+{:else}
+    <textarea class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
+        <slot />
+    </textarea>
+{/if}
