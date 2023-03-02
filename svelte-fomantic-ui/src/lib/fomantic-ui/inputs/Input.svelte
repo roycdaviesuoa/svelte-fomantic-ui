@@ -9,8 +9,6 @@
     import { createEventDispatcher } from 'svelte';
 
     export let value: string="";
-    export let password: boolean=false;
-
     export let id: string="";
 
     const dispatch = createEventDispatcher();
@@ -21,8 +19,4 @@
     }
 </script>
 
-{#if password}
-    <input {id} type="password" class={uiProps($$restProps)} bind:value={value} on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}/>
-{:else}
-    <input {id} type="text" class={uiProps($$restProps)} bind:value={value} on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}/>
-{/if}
+<input {id} disabled="" class={uiProps($$restProps) + " input"} bind:value={value} on:click={doClick} on:change on:keydown on:keypress on:keyup {...otherProps($$restProps)}/>

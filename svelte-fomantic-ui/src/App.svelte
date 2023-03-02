@@ -31,6 +31,7 @@
   import SegmentTest from './lib/fomantic-ui-tests/Segment.svelte';
   import StepTest from './lib/fomantic-ui-tests/Step.svelte';
   import TextTest from './lib/fomantic-ui-tests/Text.svelte';
+  import InputTest from './lib/fomantic-ui-tests/Input.svelte';
 
 
   let currentRoute: any;
@@ -68,6 +69,8 @@
       currentRoute = IconTest; break;
     case '/Image':
       currentRoute = ImageTest; break;
+    case '/Input':
+      currentRoute = InputTest; break;
     case '/Label':
       currentRoute = LabelTest; break;
     case '/List':

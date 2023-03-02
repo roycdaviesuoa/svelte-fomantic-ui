@@ -10,5 +10,5 @@
 </script>
 
 <div class={(ui?"ui ":"") + uiProps($$restProps) + " input"} {...otherProps($$restProps)}>
-    <slot />
+    <slot/>
 </div>

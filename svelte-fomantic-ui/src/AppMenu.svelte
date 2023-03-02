@@ -44,7 +44,7 @@
             <li> <h3>Inputs</h3></li>
             <ul>
                 <li> <h4><a href="/Checkbox">Checkbox</a></h4> </li>
-                <li> <h4>Input</h4></li>
+                <li> <h4><a href="/Input">Input</a></h4></li>
                 <li> <h4>File Input</h4></li>
                 <li> <h4><a href="/Dropdown">Dropdown</a></h4> </li>
                 <li> <h4>Radio</h4></li>
