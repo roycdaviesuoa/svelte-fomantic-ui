@@ -22,7 +22,7 @@
             <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 </Segment>
@@ -83,7 +83,7 @@
             </Grid>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui placeholder>
     <Header ui icon>
         <Icon pdf file outline/>
@@ -144,7 +144,7 @@
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui raised>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 </Segment>
@@ -162,7 +162,7 @@
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui stacked>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 </Segment>
@@ -183,7 +183,7 @@
             <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui piled>
     <Header ui h4>A header</Header>
     <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
@@ -208,7 +208,7 @@
             </Segment>
         </Content>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Content>
     <Segment ui vertical>
         <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
@@ -289,7 +289,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui>
     <Segment ui>
         <p>Top</p>
@@ -392,7 +392,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui>
     <Segment ui>
         <p>Top</p>
@@ -456,7 +456,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui horizontal>
     <Segment ui>
         <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
@@ -498,7 +498,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui horizontal equal width>
     <Segment ui>
         Segment One
@@ -543,7 +543,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui horizontal stackable>
     <Segment ui>
         Segment One
@@ -588,7 +588,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui raised>
     <Segment ui>
         <p>Top</p>
@@ -618,7 +618,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui stacked>
     <Segment ui>
         <p>Top</p>
@@ -648,7 +648,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui piled>
     <Segment ui>
         <p>Top</p>
@@ -670,7 +670,7 @@
             <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui disabled>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 </Segment>
@@ -692,7 +692,7 @@
             <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui loading>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 </Segment>
@@ -714,7 +714,7 @@
             <p>I'm here to tell you something, and you will probably read me first.</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <p>I'm here to tell you something, and you will probably read me first.</p>
 </Segment>
@@ -757,7 +757,7 @@
             You've reached the end of this content segment!
         </Message>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment top attached>
     <p>This segment is on top</p>
 </Segment>
@@ -805,7 +805,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segments ui horizontal>
     <Segment ui seamless left attached right aligned>
         <p>This segment is seamless left attached</p>
@@ -828,7 +828,7 @@
             <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui padded>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 </Segment>
@@ -852,7 +852,7 @@
             <p>Vertically fitted segment</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui fitted>
     <p>Fitted Segment</p>
 </Segment>
@@ -881,7 +881,7 @@
             </Segment>
         </Segments>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui compact>
     <p>Pellentesque habitant morbi</p>
 </Segment>
@@ -928,7 +928,7 @@
         <Segment ui inverted grey>Grey</Segment>
         <Segment ui inverted black>Black</Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui red>Red</Segment>
 <Segment ui orange>Orange</Segment>
 <Segment ui yellow>Yellow</Segment>
@@ -992,7 +992,7 @@
             <p>If you notice me you must be looking very hard.</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <p>I'm here to tell you something, and you will probably read me first.</p>
 </Segment>
@@ -1041,7 +1041,7 @@
             </Header>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui circular>
     <Header ui h2>
         Buy Now
@@ -1064,7 +1064,7 @@
             <Button ui right floated>Floated</Button>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui clearing>
     <Button ui right floated>Floated</Button>
 </Segment>
@@ -1082,7 +1082,7 @@
         </Segment>
         <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui right floated>
     <p>This segment will appear to the right</p>
 </Segment>
@@ -1107,7 +1107,7 @@
             Center
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui right aligned>
     Right
 </Segment>
@@ -1127,7 +1127,7 @@
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui basic>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 </Segment>
@@ -1159,7 +1159,7 @@
             <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui scrolling>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
     <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>

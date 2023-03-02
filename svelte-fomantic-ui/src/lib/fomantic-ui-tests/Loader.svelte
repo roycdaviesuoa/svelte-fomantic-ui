@@ -30,7 +30,7 @@
             </Dimmer>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <br/><br/><br/>
     <Dimmer ui active>
@@ -57,7 +57,7 @@
             </Dimmer>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <br/><br/><br/>
     <Dimmer ui active>
@@ -84,7 +84,7 @@
             </Dimmer>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <br/><br/><br/>
     <Dimmer ui active>
@@ -130,7 +130,7 @@
 
         <Loader ui active inline/>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Loader ui active inline/>
         `}/>
     </div>
@@ -140,7 +140,7 @@
 
         <Loader ui active centered inline/>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Loader ui active centered inline/>
         `}/>
     </div>
@@ -152,7 +152,7 @@
         <Loader ui active inline/>
         <Loader ui active fast inline/>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Loader ui active slow inline/>
 <Loader ui active inline/>
 <Loader ui active fast inline/>
@@ -178,7 +178,7 @@
         <Loader ui active grey inline/>
         <Loader ui active black inline/>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Loader ui active primary inline/>
 <Loader ui active secondary inline/>
 <Loader ui active red inline/>
@@ -249,7 +249,7 @@
             <br/><br/><br/><br/><br/>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Dimmer ui active>
         <Loader ui mini text>Loading</Loader>
@@ -309,7 +309,7 @@
             <br/><br/><br/><br/>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <Loader ui active inverted/>
     <br/><br/><br/><br/>
@@ -327,7 +327,7 @@
             <br/><br/><br/>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Dimmer ui active inverted>
         <Loader ui text>Loading</Loader>
@@ -349,7 +349,7 @@
             <br/><br/><br/><br/>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Loader ui active slow green double/>
     <br/><br/><br/><br/>

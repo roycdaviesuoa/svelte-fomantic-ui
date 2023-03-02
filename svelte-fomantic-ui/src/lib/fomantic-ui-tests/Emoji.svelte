@@ -20,7 +20,7 @@
         <Segment ui basic massive>
             <Emoji anguished disabled/>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui basic>
     <Emoji anguished disabled/>
 </Segment>
@@ -34,7 +34,7 @@
             <Emoji blush loading/>
             <Emoji grin loading/>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui basic massive>
     <Emoji angel loading/>
     <Emoji blush loading/>
@@ -54,7 +54,7 @@
             <br>
             <Emoji relaxed big/>Big
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui basic massive>
     <Emoji relaxed small/>Small
     <Emoji relaxed medium/>Medium
@@ -74,7 +74,7 @@
             <br><br>
             <Text ui small orange>Within a text <Emoji relaxed/></Text>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui basic>
     <Header ui small>Within a header <Emoji relaxed/></Header>
     <Button ui large>Within a button <Emoji relaxed/></Button>
@@ -91,7 +91,7 @@
         <Segment ui basic massive>
             <Emoji slight_smile link/>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui basic massive>
     <Emoji slight_smile link/>
 </Segment>

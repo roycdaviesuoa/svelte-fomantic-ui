@@ -24,7 +24,7 @@
                 <Input placeholder="Date/Time"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui>
     <Input_Wrapper ui fluid left icon>
         <Icon calendar/>
@@ -58,7 +58,7 @@
                 </Field>
             </Fields>
         </Form>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Form ui>
     <Fields two>
         <Field>
@@ -108,7 +108,7 @@
                 </Field>
             </Fields>
         </Form>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Form ui>
     <Fields two>
         <Field>
@@ -137,7 +137,7 @@
     <div class="example">
         <h4 class="example-header">Inline calendar</h4>
         <Calendar ui settings={{inline: true}}/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui settings={{inline: true}}/>
     `}/>
     </div>
@@ -150,7 +150,7 @@
                 <Input placeholder="Date/Time"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui settings={{type: 'date', multiMonth: 3, monthOffset: -1}}>
     <Input_Wrapper ui fluid left icon>
         <Icon calendar/>
@@ -168,7 +168,7 @@
                 <Input placeholder="Date/Time"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui inverted settings={{type: 'date'}}>
     <Input_Wrapper ui fluid left icon>
         <Icon calendar/>
@@ -187,7 +187,7 @@
                 <Input placeholder="Time"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui settings={{type: 'time'}}>
     <Input_Wrapper ui fluid left icon>
         <Icon time/>
@@ -206,7 +206,7 @@
                 <Input placeholder="Date"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui data-type="date" data-date="2019-12-24">
     <Input_Wrapper ui fluid left icon>
         <Icon calendar/>
@@ -225,7 +225,7 @@
                 <Input placeholder="Date"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui settings={{startMode:"year"}}>
     <Input_Wrapper ui fluid left icon>
         <Icon calendar/>
@@ -250,7 +250,7 @@
                 <Input placeholder="Date"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui settings={{
     type: 'time',
     formatter: {
@@ -276,7 +276,7 @@
                 <Input placeholder="Date"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui settings={{ type: 'month' }}>
     <Input_Wrapper ui fluid left icon>
         <Icon time/>
@@ -295,7 +295,7 @@
                 <Input placeholder="Date"/>
             </Input_Wrapper>
         </Calendar>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Calendar ui settings={{ type: 'year' }}>
     <Input_Wrapper ui fluid left icon>
         <Icon time/>

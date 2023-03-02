@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Rail ui left>
         <Segment ui>
@@ -70,7 +70,7 @@
             </Rail>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Rail ui left internal>
@@ -108,7 +108,7 @@
             </div>
         </div>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Rail ui left dividing>
@@ -159,7 +159,7 @@
             </Rail>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Rail ui left attached>
@@ -229,7 +229,7 @@
             </div>
         </div>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Rail ui left close>
@@ -317,7 +317,7 @@
             </div>
         </div>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Rail ui left mini>

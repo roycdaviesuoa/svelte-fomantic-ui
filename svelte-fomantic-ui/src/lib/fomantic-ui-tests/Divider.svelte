@@ -21,7 +21,7 @@
         <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         <Divider ui/>
         <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 <Divider ui/>
 <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
@@ -41,7 +41,7 @@
             </Grid>
             <Divider ui vertical> and </Divider>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Grid ui two column very relaxed>
         <Column>
@@ -90,7 +90,7 @@
             Or
             </Divider>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui placeholder>
     <Grid ui two column very relaxed stackable>
         <Column>
@@ -177,7 +177,7 @@
                 </Table_Row>
             </Table_Body>
         </Table>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui center aligned basic>
     <Input_Wrapper ui left icon action>
         <Icon search/>
@@ -244,7 +244,7 @@
             <Icon right align/>
             Right Aligned
         </Divider>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Divider ui small horizontal left aligned header>
     <Icon left align/>
     Left Aligned
@@ -270,7 +270,7 @@
                 Horizontal
             </Divider>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <Placeholder ui inverted> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Divider ui inverted/>

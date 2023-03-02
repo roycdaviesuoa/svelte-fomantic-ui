@@ -27,7 +27,7 @@
         <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         <Header h5 ui>Fifth header</Header>
         <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h1 ui>First header</Header>
 <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 <Header h2 ui>Second header</Header>
@@ -53,7 +53,7 @@
         <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         <Header ui tiny>Tiny Header</Header>
         <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header ui huge>Huge Header</Header>
 <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 <Header ui large>Large Header</Header>
@@ -82,7 +82,7 @@
             Friends
         </Header>
         <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h2 ui icon>
     <Icon settings/>
     <Content>
@@ -129,7 +129,7 @@
                 </Content>
             </Item>
         </List>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h2 sub>
     Price
 </Header>
@@ -185,7 +185,7 @@
             </Content>
         </Header>
         <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <h4 class="example-header">Image</h4>
 <Header h2 ui>
     <Image ui src="/images/school.png"/>
@@ -230,7 +230,7 @@
             </Content>
         </Header>
         <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h2 ui>
     <Icon plug/>
     <Content>
@@ -281,7 +281,7 @@
             H5
             <Header sub>Sub Header</Header>
         </Header>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h2 ui>
     Account Settings
     <Header sub>Manage your account settings and set e-mail preferences.</Header>
@@ -319,7 +319,7 @@
             Disabled Header
         </Header>
         <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header ui disabled>
     Disabled Header
 </Header>
@@ -334,7 +334,7 @@
             Dividing Header
         </Header>
         <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
 <Header h3 ui dividing>
     Dividing Header
@@ -349,7 +349,7 @@
             Block Header
         </Header>
         <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h3 ui block>
     Block Header
 </Header>
@@ -374,7 +374,7 @@
         <Header h3 ui bottom attached>
             Bottom Attached
         </Header>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h3 ui top attached>
     Top Attached
 </Header>
@@ -403,7 +403,7 @@
                 Go Back
             </Header>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui clearing>
     <Header h3 ui right floated>
         Go Forward
@@ -431,7 +431,7 @@
                 Center
             </Header>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <Header h3 ui right aligned>
         Right
@@ -465,7 +465,7 @@
         <Header h4 ui pink>Pink</Header>
         <Header h4 ui brown>Brown</Header>
         <Header h4 ui grey>Grey</Header>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Header h4 ui primary>Primary</Header>
 <Header h4 ui secondary>Secondary</Header>
 <Header h4 ui red>Red</Header>
@@ -499,7 +499,7 @@
             <Header h4 ui inverted brown>Brown</Header>
             <Header h4 ui inverted grey>Grey</Header>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <Header h4 ui inverted red>Red</Header>
     <Header h4 ui inverted orange>Orange</Header>

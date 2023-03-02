@@ -44,7 +44,7 @@
             </Menu>
         </Dropdown>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Dropdown ui >
     <Input type="hidden" id="gender"/>
     <Icon dropdown/>
@@ -76,7 +76,7 @@
             <Icon dropdown/>
         </Dropdown>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Dropdown ui settings={{
     values: [
       {

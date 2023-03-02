@@ -154,7 +154,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui>
     <Item>Apples</Item>
     <Item>Pears</Item>
@@ -315,7 +315,7 @@
             </Link>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui bulleted>
     <Item>Gaining Access</Item>
     <Item>Inviting Friends</Item>
@@ -363,7 +363,7 @@
 
         For Lists using `&#x3c;ol&#x3e;`, `&#x3c;ul&#x3e;` and `&#x3c;li&#x3e;`, use those tags instead of `&#x3c;List&#x3e;` and `&#x3c;Item&#x3e;` as per the examples on the Fomantic UI website.
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui ordered>
     <Link item>Getting Started</Link>
     <Link item>Introduction</Link>
@@ -390,7 +390,7 @@
             <Link item>Team</Link>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui link>
     <Item active>Home</Item>
     <Link item>About</Link>
@@ -409,7 +409,7 @@
             <Item>3</Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui>
     <Item>1</Item>
     <Item>2</Item>
@@ -442,7 +442,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui>
     <Link item>
         <Icon help/>
@@ -507,7 +507,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui>
     <Item>
         <Image ui avatar src="/images/rachel.png"/>
@@ -572,7 +572,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui>
     <Link item>What is a FAQ?</Link>
     <Link item>Who is our user?</Link>
@@ -618,7 +618,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui>
     <Item>
         <Header>New York City</Header>
@@ -674,7 +674,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui>
     <Item>
         <Icon map marker/>
@@ -771,7 +771,7 @@
             </Link>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui horizontal>
     <Item>
         <Image ui avatar src="/images/tom.jpg"/>
@@ -860,7 +860,7 @@
             </List>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <List ui inverted relaxed divided>
         <List>
@@ -910,7 +910,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui middle aligned selection>
     <Item>
         <Image ui avatar src="/images/helen.jpg"/>
@@ -958,7 +958,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui middle aligned animated>
     <Item>
         <Image ui avatar src="/images/helen.jpg"/>
@@ -1075,7 +1075,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui relaxed>
     <Item>
         <Image ui avatar src="/images/daniel.jpg"/>
@@ -1192,7 +1192,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui middle aligned divided>
     <Item >
         <Image ui avatar src="/images/daniel.jpg"/>
@@ -1255,7 +1255,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui celled>
     <Item>
         <Image ui avatar src="/images/helen.jpg"/>
@@ -1379,7 +1379,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui horizontal>
     <Item>
         <Image ui avatar src="/images/square-image.png"/>
@@ -1445,7 +1445,7 @@
             </Item>
         </List>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui middle aligned divided>
     <Item>
         <Content right floated>

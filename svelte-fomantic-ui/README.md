@@ -1,14 +1,27 @@
 # Svelte Fomantic UI Wrapper
 
-## This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
-## If you are interested in the project, feel free to download, assess, and give me frank feedback...
+### This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
+### If you are interested in the project, feel free to download, assess, and give me frank feedback...
+----
 
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
 
+----
 ## Progress
 
 I am working on this daily, so check back often.  However, my day job and family do sometimes get in the way of progress... 
 [Click here to check on progress so far](#progress-so-far)
+
+## Roadmap
+
+1. Minimum set of features complete - enough for a working website - all the Elements, Collections and Views - will work with pure css.
+    * To date: implementation of features is at about 90%, and I'm about three quarters of the way through testing and documentation.
+1. Main features complete - as above, but also the Modules.
+    * A couple of modules have been completed, tested and documented.
+1. All features complete - as above, but also the Behaviours and Theming.
+    * This hasn't been looked at yet (but it might work - see below).
+
+Note that in essence all these do already work (except for the Modules) because you can include Fomantic UI directly into your code using classes as with any javascript.
 
 ## Overview
 
@@ -126,7 +139,7 @@ It does make sense, however, to use the Svelte versions where events and variabl
 
 ## Installation
 
-This has been inexpertly packaged for installation with `yarn` - this needs more work - if you are an expert on this and wish to contribute, please let me know...  Presently, you can install in the following way:
+This has been packaged for installation with `yarn`, but should also work with `npm` (testing yet to be conducted).  Presently, you can install in the following way:
 
 1. Install the svelte fomantic UI with `yarn add svelte-fomantic-ui`
 1. And add the following lines to your index.html head section:
@@ -140,7 +153,7 @@ Notice that jquery is being included in this project.  If you don't wish to use 
 
 ## Usage
 
-To use fomantic UI in your project, import the required elements from `Core.svelte` in the script section, and then use them below, for example:
+To use fomantic UI in your project, import the required elements in the script section, and then use them below, for example:
 
 ```html
 <script lang="ts">
@@ -162,6 +175,8 @@ This project was created using vite, and is runnable in its own right.  When you
 1. Run the `yarn` command to download dependencies.
 1. Run `yarn dev` to start development web server.
 1. Open the link in a browser to see the dev / test website (usually `http://localhost:5173`)
+
+If you are looking for code examples, check in the `fomantic-ui-tests` folder where the examples from the Fomantic UI website have been replicated for testing and documentation purposes.  Even if you don't wish to run the dev server as above, you can still see the worked code.
 
 ## Progress so far
 
@@ -189,8 +204,7 @@ This project was created using vite, and is runnable in its own right.  When you
 | Inputs          | Implemented | Tested and Documented | Test Link |
 |-----------------|:-----------:|:---------------------:|-----------|
 | Checkbox | X | X | /Checkbox
-| Input | X |  |
-| File Input |  |  |
+| Input | X | X | /Input
 | Dropdown | X | X | /Dropdown
 | Radio | X |  | 
 | Simple Dropdown | X |  | 

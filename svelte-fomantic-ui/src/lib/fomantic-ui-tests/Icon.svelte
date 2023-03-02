@@ -25,7 +25,7 @@
     <div class="example">
         <h4 class="example-header">Disabled Icon</h4>
         <Icon disabled users />
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon disabled users />
     `}/>
     </div>
@@ -35,7 +35,7 @@
         <Icon spinner loading/>
         <Icon notched circle loading/>
         <Icon asterisk loading/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon spinner loading/>
 <Icon notched circle loading/>
 <Icon asterisk loading/>
@@ -45,7 +45,7 @@
     <div class="example">
         <h4 class="example-header">Fitted</h4>
         Help me <Icon fitted help/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 Help me <Icon fitted help/>
     `}/>
     </div>
@@ -60,7 +60,7 @@ Help me <Icon fitted help/>
         <Icon big home/>
         <Icon huge home/>
         <Icon massive home/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon mini home/>
 <Icon tiny home/>
 <Icon small home/>
@@ -102,7 +102,7 @@ Help me <Icon fitted help/>
         <h4 class="example-header">Flipped</h4>
         <Icon horizontally flipped cloud/>
         <Icon vertically flipped cloud/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon horizontally flipped cloud/>
 <Icon vertically flipped cloud/>
         `}/>
@@ -112,7 +112,7 @@ Help me <Icon fitted help/>
         <h4 class="example-header">Rotated</h4>
         <Icon clockwise rotated cloud/>
         <Icon counterclockwise rotated cloud/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon clockwise rotated cloud/>
 <Icon counterclockwise rotated cloud/>
         `}/>
@@ -124,7 +124,7 @@ Help me <Icon fitted help/>
         <Icon circular teal users/>
         <Icon circular inverted users/>
         <Icon circular inverted teal users/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon circular users/>
 <Icon circular teal users/>
 <Icon circular inverted users/>
@@ -137,7 +137,7 @@ Help me <Icon fitted help/>
         <Icon circular colored red users/>
         <Icon circular colored green users/>
         <Icon circular colored blue users/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon circular colored red users/>
 <Icon circular colored green users/>
 <Icon circular colored blue users/>
@@ -149,7 +149,7 @@ Help me <Icon fitted help/>
         <Icon bordered colored red users/>
         <Icon bordered colored green users/>
         <Icon bordered colored blue users/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon bordered colored red users/>
 <Icon bordered colored green users/>
 <Icon bordered colored blue users/>
@@ -173,7 +173,7 @@ Help me <Icon fitted help/>
         <Icon brown users/>
         <Icon grey users/>
         <Icon black users/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icon primary users/>
 <Icon secondary users/>
 <Icon red users/>
@@ -211,7 +211,7 @@ Help me <Icon fitted help/>
             <Icon inverted brown users/>
             <Icon inverted grey users/>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <Icon inverted users/>
     <Icon inverted primary users/>
@@ -243,7 +243,7 @@ Help me <Icon fitted help/>
             <Icon big red dont/>
             <Icon user/>
         </Icons>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icons huge>
     <Icon big circle outline/>
     <Icon user/>
@@ -282,7 +282,7 @@ Help me <Icon fitted help/>
             </Icons>
             Add on Twitter
         </Header>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Icons huge>
     <Icon puzzle/>
     <Icon top left corner add/>

@@ -12,12 +12,12 @@ export const onReady = function () {
             settings.endCalendar = $("#"+settings.endCalendar);
         }
 
-        $(element).calendar(settings);
+        if ($(element).calendar) $(element).calendar(settings);
     })
 };
 
 export const update = function (id, settings) {
-    $("#"+id).dropdown(settings);
+    if ($("#"+id).calendar) $("#"+id).calendar(settings);
 }
 
 export default onReady;

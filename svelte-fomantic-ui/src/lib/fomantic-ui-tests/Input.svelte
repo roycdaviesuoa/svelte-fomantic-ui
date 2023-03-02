@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Input, Input_Wrapper, Label, Icon, Header, Button } from "../fomantic-ui/Core.svelte";
+    import { Input, Input_Wrapper, Label, Icon, Header, Text, Menu, Item, Dropdown, Link, Select, Option, Button } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
@@ -13,6 +13,14 @@
 
     let filename1: string = "";
     let filename2: string = "";
+    let date: string = "";
+    let email: string = "";
+    let password: string = "";
+    let phone: string = "";
+    let domain_prefix: string = "";
+    let domain_suffix: string = "";
+    let occupation: string = "developer";
+    let persons: string = "1";
 </script>
 
 <div class="example-document">
@@ -26,7 +34,7 @@
             <Input type="text" placeholder="Search..."/>
         </Input_Wrapper>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Input_Wrapper ui>
     <Input type="text" placeholder="Search..."/>
 </Input_Wrapper>
@@ -40,7 +48,7 @@
             <Input type="file"/>
         </Input_Wrapper>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Input_Wrapper ui file>
     <Input type="file"/>
 </Input_Wrapper>
@@ -93,7 +101,7 @@
             <Input type="text" placeholder="Search..."/>
         </Input_Wrapper>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Input_Wrapper ui focus>
     <Input type="text" placeholder="Search..."/>
 </Input_Wrapper>
@@ -123,7 +131,7 @@
             <Icon search/>
         </Input_Wrapper>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Input_Wrapper ui left icon loading>
     <Input type="text" placeholder="Search..."/>
     <Icon search/>
@@ -158,7 +166,7 @@
             <Input type="text" placeholder="Search..."/>
         </Input_Wrapper>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Input_Wrapper ui disabled>
     <Input type="text" placeholder="Search..."/>
 </Input_Wrapper>
@@ -177,7 +185,7 @@
             <Input type="text" placeholder="Search..."/>
         </Input_Wrapper>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Input_Wrapper ui error>
     <Input type="text" placeholder="Search..."/>
 </Input_Wrapper>
@@ -188,14 +196,33 @@
         <h4 class="example-header">Input types</h4>
 
         <Input_Wrapper ui>
-            <Input type="date"/>
+            <Input type="date" bind:value={date}/>
         </Input_Wrapper>
         <Input_Wrapper ui>
-            <Input type="email" placeholder="E-Mail Address" required=""/>
+            <Input required type="email" placeholder="E-Mail Address" bind:value={email}/>
         </Input_Wrapper>
+        <Input_Wrapper ui>
+            <Input type="password" placeholder="Password" bind:value={password}/>
+        </Input_Wrapper>
+        <Input_Wrapper ui>
+            <Input type="tel" placeholder="Telephone Number" bind:value={phone}/>
+        </Input_Wrapper>
+        <Header h4>Date: {date} <br/> Email: {email} <br/> Password: {password} <br/> Phone: {phone}</Header>
 
-        <Prism language="html" source={`
-
+        <Prism language="svelte" source={`
+<Input_Wrapper ui>
+    <Input type="date" bind:value={date}/>
+</Input_Wrapper>
+<Input_Wrapper ui>
+    <Input required type="email" placeholder="E-Mail Address" bind:value={email}/>
+</Input_Wrapper>
+<Input_Wrapper ui>
+    <Input type="password" placeholder="Password" bind:value={password}/>
+</Input_Wrapper>
+<Input_Wrapper ui>
+    <Input type="tel" placeholder="Telephone Number" bind:value={phone}/>
+</Input_Wrapper>
+<Header h4>Date: {date} <br/> Email: {email} <br/> Password: {password} <br/> Phone: {phone}</Header>
     `}/>
     </div>
 
@@ -222,7 +249,7 @@
             <Icon inverted circular search link/>
         </Input_Wrapper>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Input_Wrapper ui icon>
     <Input type="text" placeholder="Search..."/>
     <Icon search/>
@@ -246,9 +273,232 @@
     </div>
 
     <div class="example">
-        <h4 class="example-header">Input</h4>
+        <h4 class="example-header">Labeled</h4>
 
-        <Prism language="html" source={`
+        <div class="centered">
+            <div class="narrow">
+                <Input_Wrapper ui labeled fluid>
+                    <Label ui>
+                    https://
+                    </Label>
+                    <Input type="text" placeholder="mysite.com"/>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui right labeled fluid>
+                    <Input type="text" placeholder="Find domain" bind:value={domain_prefix}/>
+                    <Dropdown ui label bind:selected={domain_suffix}>
+                        <Text>.com</Text>
+                        <Icon dropdown/>
+                        <Menu>
+                            <Item data-value=".com">.com</Item>
+                            <Item data-value=".net">.net</Item>
+                            <Item data-value=".org">.org</Item>
+                        </Menu>
+                    </Dropdown>
+                </Input_Wrapper>
+                <Header h4>Domain: {domain_prefix}{domain_suffix} </Header>
+                <br/>
+                <Input_Wrapper ui right labeled fluid>
+                    <Input type="text" placeholder="Enter weight..."/>
+                    <Label ui basic>
+                    kg
+                    </Label>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui right labeled fluid>
+                    <Label ui _for="amount">$</Label>
+                    <Input type="text" placeholder="Amount" id="amount"/>
+                    <Label ui basic >.00</Label>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui right labeled left icon fluid>
+                    <Icon tags/>
+                    <Input type="text" placeholder="Enter tags"/>
+                    <Link ui tag label>
+                      Add Tag
+                    </Link>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui left corner labeled fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Label ui left corner>
+                      <Icon asterisk/>
+                    </Label>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui corner labeled fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Label ui right corner>
+                      <Icon asterisk/>
+                    </Label>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui fluid labeled>
+                    <Label ui>I am a</Label>
+                    <Select ui selection dropdown input fluid bind:value={occupation}>
+                        <Option value="developer">Developer</Option>
+                        <Option value="software-engineer">Software engineer</Option>
+                        <Option value="system-admin">System admin</Option>
+                        <Option value="database-admin">Database admin</Option>
+                    </Select>
+                </Input_Wrapper>
+                <Header h4>Occupation: {occupation} </Header>
+                <br/>
+                <Input_Wrapper ui fluid right labeled>
+                    <Select ui selection dropdown fluid bind:value={persons}>
+                        <Option value="1">1-5</Option>
+                        <Option value="6">6-10</Option>
+                        <Option value="11">11-20</Option>
+                        <Option value="21">21-50</Option>
+                        <Option value="51">51-100</Option>
+                    </Select>
+                    <Label ui basic>Persons</Label>
+                </Input_Wrapper>
+                <Header h4>Persons: {persons} </Header>
+            </div>
+        </div>
+
+        <Prism language="svelte" source={`
+<Input_Wrapper ui labeled fluid>
+    <Label ui>
+    https://
+    </Label>
+    <Input type="text" placeholder="mysite.com"/>
+</Input_Wrapper>
+
+<Input_Wrapper ui right labeled fluid>
+    <Input type="text" placeholder="Find domain" bind:value={domain_prefix}/>
+    <Dropdown ui label bind:selected={domain_suffix}>
+        <Text>.com</Text>
+        <Icon dropdown/>
+        <Menu>
+            <Item data-value=".com">.com</Item>
+            <Item data-value=".net">.net</Item>
+            <Item data-value=".org">.org</Item>
+        </Menu>
+    </Dropdown>
+</Input_Wrapper>
+<Header h4>Domain: {domain_prefix}{domain_suffix} </Header>
+
+<Input_Wrapper ui right labeled fluid>
+    <Input type="text" placeholder="Enter weight..."/>
+    <Label ui basic>
+    kg
+    </Label>
+</Input_Wrapper>
+
+<Input_Wrapper ui right labeled fluid>
+    <Label ui _for="amount">$</Label>
+    <Input type="text" placeholder="Amount" id="amount"/>
+    <Label ui basic >.00</Label>
+</Input_Wrapper>
+
+<Input_Wrapper ui right labeled left icon fluid>
+    <Icon tags/>
+    <Input type="text" placeholder="Enter tags"/>
+    <Link ui tag label>
+        Add Tag
+    </Link>
+</Input_Wrapper>
+
+<Input_Wrapper ui left corner labeled fluid>
+    <Input type="text" placeholder="Search..."/>
+    <Label ui left corner>
+        <Icon asterisk/>
+    </Label>
+</Input_Wrapper>
+
+<Input_Wrapper ui corner labeled fluid>
+    <Input type="text" placeholder="Search..."/>
+    <Label ui right corner>
+        <Icon asterisk/>
+    </Label>
+</Input_Wrapper>
+
+<Input_Wrapper ui fluid labeled>
+    <Label ui>I am a</Label>
+    <Select ui selection dropdown input fluid bind:value={occupation}>
+        <Option value="developer">Developer</Option>
+        <Option value="software-engineer">Software engineer</Option>
+        <Option value="system-admin">System admin</Option>
+        <Option value="database-admin">Database admin</Option>
+    </Select>
+</Input_Wrapper>
+<Header h4>Occupation: {occupation} </Header>
+
+<Input_Wrapper ui fluid right labeled>
+    <Select ui selection dropdown fluid bind:value={persons}>
+        <Option value="1">1-5</Option>
+        <Option value="6">6-10</Option>
+        <Option value="11">11-20</Option>
+        <Option value="21">21-50</Option>
+        <Option value="51">51-100</Option>
+    </Select>
+    <Label ui basic>Persons</Label>
+</Input_Wrapper>
+<Header h4>Persons: {persons} </Header>
+    `}/>
+    </div>
+
+    <div class="example">
+        <h4 class="example-header">Action</h4>
+
+        <div class="centered">
+            <div class="narrow">
+                <Input_Wrapper ui action fluid>
+                    <Input type="text" placeholder="Search..."/>
+                    <Button ui>Search</Button>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui left action fluid>
+                    <Button ui teal labeled icon>
+                    <Icon cart/>
+                    Checkout
+                    </Button>
+                    <Input type="text" value="$52.03"/>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui right action left icon fluid>
+                    <Icon search/>
+                    <Input type="text" placeholder="Search"/>
+                    <Dropdown ui basic floating button>
+                        <div class="text">This Page</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item">This Organization</div>
+                            <div class="item">Entire Site</div>
+                        </div>
+                    </Dropdown>
+                </Input_Wrapper>
+                <br/>
+                <Input_Wrapper ui action>
+                    <input type="text" placeholder="Search...">
+                    <select class="ui compact selection dropdown">
+                    <option value="all">All</option>
+                    <option selected="" value="articles">Articles</option>
+                    <option value="products">Products</option>
+                    </select>
+                    <div class="ui button">Search</div>
+                </Input_Wrapper>
+
+                <Input_Wrapper ui action>
+                    <input type="text" value="https://ww.short.url/c0opq">
+                    <button class="ui teal right labeled icon button">
+                    <i class="copy icon"></i>
+                    Copy
+                    </button>
+                </Input_Wrapper>
+
+                <Input_Wrapper ui action>
+                    <input type="text" placeholder="Search...">
+                    <button class="ui icon button">
+                    <i class="search icon"></i>
+                    </button>
+                </Input_Wrapper>
+            </div>
+        </div>
+
+        <Prism language="svelte" source={`
 
     `}/>
     </div>
@@ -256,7 +506,7 @@
     <div class="example">
         <h4 class="example-header">Input</h4>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 
     `}/>
     </div>
@@ -264,7 +514,7 @@
     <div class="example">
         <h4 class="example-header">Input</h4>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 
     `}/>
     </div>
@@ -272,15 +522,7 @@
     <div class="example">
         <h4 class="example-header">Input</h4>
 
-        <Prism language="html" source={`
-
-    `}/>
-    </div>
-
-    <div class="example">
-        <h4 class="example-header">Input</h4>
-
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 
     `}/>
     </div>

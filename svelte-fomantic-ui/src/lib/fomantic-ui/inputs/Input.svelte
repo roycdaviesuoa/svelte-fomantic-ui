@@ -19,4 +19,4 @@
     }
 </script>
 
-<input {id} disabled="" class={uiProps($$restProps) + " input"} bind:value={value} on:click={doClick} on:change on:keydown on:keypress on:keyup {...otherProps($$restProps)}/>
+<input {id} class={uiProps($$restProps) + " input"} bind:value={value} on:click={doClick} on:change on:keydown on:keypress on:keyup {...otherProps($$restProps)}/>

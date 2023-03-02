@@ -34,7 +34,7 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Reveal ui fade>
     <Content visible>
         <Image ui small src="/images/square-image.png"/>
@@ -74,7 +74,7 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Reveal ui small move image>
     <Image visible content src="/images/square-image.png"/>
     <Image hidden content src="/images/ade.jpg"/>
@@ -111,7 +111,7 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Reveal ui small circular rotate image>
     <Image visible content src="/images/square-image.png"/>
     <Image hidden content src="/images/ade.jpg"/>
@@ -132,7 +132,7 @@
             <Image hidden content src="/images/square-image.png"/>
         </Reveal>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Reveal ui small fade image>
     <Image visible content src="/images/ade.png"/>
     <Image hidden content src="/images/square-image.jpg"/>
@@ -148,7 +148,7 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Reveal ui small fade image>
     <Image visible content src="/images/square-image.png"/>
     <Image hidden content src="/images/ade.jpg"/>
@@ -168,7 +168,7 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Button ui toggle bind:active={revealed} green>
     <Content slot="on">Hide</Content>
     <Content slot="off">Reveal</Content>
@@ -188,7 +188,7 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Reveal ui small instant move image>
     <Image visible content src="/images/square-image.png"/>
     <Image hidden content src="/images/ade.jpg"/>

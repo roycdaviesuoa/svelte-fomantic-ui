@@ -31,7 +31,7 @@
             This is <Text ui info>info</Text> inline text and this is <Text ui success>success</Text> inline text and this is <Text ui warning>warning</Text> inline text and this is <Text ui error>error</Text> inline text
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     This is <Text ui red>red</Text> inline text and this is <Text ui blue>blue</Text> inline text and this is <Text ui purple>purple</Text> inline text
 </Segment>
@@ -61,7 +61,7 @@
             <p>to finally become <Text ui red massive>massive</Text> text</p>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui>
     <p>Starting with <Text ui mini red>mini</Text> text</p>
     <p>which turns into <Text ui tiny red>tiny</Text> text</p>

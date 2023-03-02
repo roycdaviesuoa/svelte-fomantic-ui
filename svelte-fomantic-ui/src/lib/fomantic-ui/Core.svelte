@@ -42,8 +42,7 @@
 
     // Inputs
     export {default as Checkbox} from './inputs/Checkbox.svelte';
-    export {default as SimpleDropdown} from './inputs/SimpleDropdown.svelte';
-    export {default as Fileinput} from './inputs/Fileinput.svelte';
+    export {default as Select} from './inputs/Select.svelte';
     export {default as Input} from './inputs/Input.svelte';
     export {default as Input_Wrapper} from './inputs/Input_Wrapper.svelte';
     export {default as Radio} from './inputs/Radio.svelte';

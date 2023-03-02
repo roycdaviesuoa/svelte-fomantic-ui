@@ -20,7 +20,7 @@
         <Flag ae large/>
         <Flag france large />
         <Flag myanmar large/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Flag ae large/>
 <Flag france large />
 <Flag myanmar large/>
@@ -35,7 +35,7 @@
         <Flag ci big/>big
         <Flag greece huge/>huge
         <Flag ukraine massive/>massive
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Flag uk small/>small
 <Flag se medium/>medum
 <Flag us large/>large
@@ -59,7 +59,7 @@
             <br><br>
             <Text ui small orange>Within a text <Flag rainbow/></Text>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui basic>
     <Header ui small>Within a header <Flag us/></Header>
     <Button ui large>Within a button <Flag eu/></Button>

@@ -21,7 +21,7 @@
         <Label ui>
             <Icon mail/> 23
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Label ui>
     <Icon mail/> 23
 </Label>
@@ -78,7 +78,7 @@
             Nan
             <Icon delete/>
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui image label>
     <Image src="/images/joe.jpg"/>
     Joe
@@ -187,7 +187,7 @@
                 <Input type="password"/>
             </Field>
         </Form>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Form ui fluid>
     <Field>
         <Input placeholder="First name"/>
@@ -270,7 +270,7 @@
                 </Image_Wrapper>
             </Column>
         </Grid>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Grid ui two column>
     <Column>
         <Image_Wrapper ui fluid>
@@ -297,7 +297,7 @@
         <Link ui tag label>New</Link>
         <Link ui red tag label>Upcoming</Link>
         <Link ui teal tag label>Featured</Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui tag label>New</Link>
 <Link ui red tag label>Upcoming</Link>
 <Link ui teal tag label>Featured</Link>
@@ -379,7 +379,7 @@
                 </Image_Wrapper>
             </Column>
         </Grid>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Grid ui two column>
     <Column>
         <Segment ui raised>
@@ -506,7 +506,7 @@
                 </Column>
             </Row>
         </Grid>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Grid ui celled three column>
     <Row>
         <Column>
@@ -578,7 +578,7 @@
                 Poodle
             </Link>
         </List>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <List ui divided selection>
     <Link item>
         <Label ui red horizontal label>Fruit</Label>
@@ -642,7 +642,7 @@
                 <Label bottom floating ui teal>22 Friends</Label>
             </Link>
         </Menu>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Menu ui compact>
     <Link item>
         <Icon mail/> Messages
@@ -731,7 +731,7 @@
                 <Label left bottom floating ui teal>22 Friends</Label>
             </Link>
         </Menu>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Menu ui compact>
     <Link item>
         <Icon mail/> Messages
@@ -790,7 +790,7 @@
                 <Label right aligned floating ui teal>22 Friends online</Label>
             </Link>
         </Menu>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Menu ui compact>
     <Link item>
         <Icon mail/> Messages from Fomantic-UI-Users
@@ -856,7 +856,7 @@
             <Label ui grey inverted tag>Grey</Label>
             <Label ui black inverted tag>Black</Label>
         </Segment>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <Label ui primary inverted>Primary</Label>
     <Label ui secondary inverted>Secondary</Label>
@@ -916,7 +916,7 @@
             Dogs
             <Detail>214</Detail>
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Label ui>
     Dogs
     <Detail>214</Detail>
@@ -942,7 +942,7 @@
             <Icon cat/>
             Cat
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Label ui>
     <Icon mail/>
     Mail
@@ -980,7 +980,7 @@
             Cat
             <Icon cat/>
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Label ui right icon>
     Mail
     <Icon mail/>
@@ -1011,7 +1011,7 @@
         <Label ui icon>
             <Icon cat/>
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Label ui icon>
     <Icon mail/>
 </Label>
@@ -1034,7 +1034,7 @@
             <Image src="/images/stevie.jpg"/>
             Stevie
         </Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui label>
     <Image ui right spaced avatar src="/images/elliot.jpg"/>
     Elliot
@@ -1057,7 +1057,7 @@
             23
             <Link detail>View Mail</Link>
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui label>
     <Icon mail/> 23
 </Link>
@@ -1075,7 +1075,7 @@
         <Link ui disabled label>
             Disabled Label
         </Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui disabled label>
     Disabled Label
 </Link>
@@ -1087,7 +1087,7 @@
         <Link ui fluid label>
             Fits container
         </Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui fluid label>
     Fits container
 </Link>
@@ -1099,7 +1099,7 @@
         <Link ui fluid centered label>
             Fits container
         </Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui fluid centered label>
     Fits container
 </Link>
@@ -1135,7 +1135,7 @@
         <Link ui brown empty circular label/>
         <Link ui grey empty circular label/>
         <Link ui black empty circular label/>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui red circular label>2</Link>
 <Link ui orange circular label>2</Link>
 <Link ui yellow circular label>2</Link>
@@ -1176,7 +1176,7 @@
         </Link>
         <Link ui pointing red basic label>Red Pointing</Link>
         <Link ui blue basic label>Blue</Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui basic label>Basic</Link>
 <Link ui pointing basic label>Pointing</Link>
 <Link ui basic image label>
@@ -1205,7 +1205,7 @@
         <Link ui brown label>Brown</Link>
         <Link ui grey label>Grey</Link>
         <Link ui black label>Black</Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui primary label>Primary</Link>
 <Link ui secondary label>Secondary</Link>
 <Link ui red label>Red</Link>
@@ -1242,7 +1242,7 @@
         <Link ui brown basic tag label>Brown</Link>
         <Link ui grey basic tag label>Grey</Link>
         <Link ui black basic tag label>Black</Link>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Link ui basic tag label>Standard Tag</Link>
 <Link ui primary basic tag label>Primary</Link>
 <Link ui secondary basic tag label>Secondary</Link>
@@ -1288,7 +1288,7 @@
         <Label ui massive>
             Massive
         </Label>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Label ui mini>
     Mini
 </Label>
@@ -1332,7 +1332,7 @@
             Witty
             </Label>
         </Labels>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Labels ui huge>
     <Label ui>
     Fun
@@ -1370,7 +1370,7 @@
               Exciting
             </Link>
         </Labels>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Labels ui blue>
     <Link ui label>
         Fun <Icon close/>
@@ -1412,7 +1412,7 @@
               Exciting
             </Link>
         </Labels>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Labels ui basic>
     <Link ui label>
         Fun <Icon close/>
@@ -1453,7 +1453,7 @@
                 $10.25
             </Link>
         </Labels>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Labels ui tag>
     <Link ui label>
         $10
@@ -1493,7 +1493,7 @@
                 141
             </Link>
         </Labels>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Labels ui circular>
     <Link ui label>
         11

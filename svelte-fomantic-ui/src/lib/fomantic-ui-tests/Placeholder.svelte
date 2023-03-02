@@ -32,7 +32,7 @@
             </Paragraph>
         </Placeholder>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Placeholder ui>
     <Header image>
         <Line/>
@@ -97,7 +97,7 @@
             </Column>
         </Grid>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Grid ui three column stackable>
     <Column>
         <Segment ui raised>
@@ -175,7 +175,7 @@
         </Cards>
 
         Note the `Image div` below which tells the Image element to use div instead of the usual image html code.
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Cards ui three doubling stackable>
     <Card ui>
         <Image div>
@@ -230,7 +230,7 @@
             </Card>
         </Cards>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Cards ui three>
     <Card ui>
         <Content>
@@ -269,7 +269,7 @@
             <Line very short/>
         </Placeholder>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Placeholder ui>
     <Line full/>
     <Line very long/>
@@ -296,7 +296,7 @@
             </Paragraph>
         </Placeholder>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Placeholder ui fluid>
     <Header image>
         <Line/>
@@ -328,7 +328,7 @@
             </Placeholder>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <Placeholder ui active inverted>
         <Header image>

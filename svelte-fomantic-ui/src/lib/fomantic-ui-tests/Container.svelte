@@ -20,7 +20,7 @@
         <Container ui text>
             This is some text
         </Container>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Container ui text>
     This is some text
 </Container>
@@ -91,7 +91,7 @@
                 </Placeholder>
             </Column>
         </Container>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Container ui four column doubling stackable grid>
     <Column>
         <Placeholder ui>

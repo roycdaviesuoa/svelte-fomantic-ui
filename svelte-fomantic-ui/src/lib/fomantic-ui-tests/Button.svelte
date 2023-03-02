@@ -19,7 +19,7 @@
   <div class="example">
     <h4 class="example-header">A standard button</h4>
     <Button ui>Follow</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui>Follow</Button>
     `}/>
   </div>
@@ -28,7 +28,7 @@
     <h4 class="example-header">Emphasis</h4>
     <Button ui primary>Primary</Button>
     <Button ui secondary>Secondary</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui primary>Primary</Button>
 <Button ui secondary>Secondary</Button>
     `}/>
@@ -54,7 +54,7 @@
             $12.99 a month
         </Content>
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui animated>
     <Content visible>Next</Content>
     <Content hidden>
@@ -102,7 +102,7 @@
           <Icon fork/>
         </Button>
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui labeled>
   <Button ui>
       <Icon heart/> Like
@@ -135,7 +135,7 @@
     <Button ui icon>
       <Icon cloud/>
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui icon>
     <Icon cloud/>
 </Button>
@@ -156,7 +156,7 @@
       <Icon loading spinner/>
       Loading
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui labeled icon>
     <Icon pause/>
     Pause
@@ -197,7 +197,7 @@
     <Button ui brown basic>Brown</Button>
     <Button ui grey basic>Grey</Button>
     <Button ui black basic>Black</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui basic>
     <Icon user/>
     Add Friend
@@ -245,7 +245,7 @@
     <Button ui brown tertiary>Brown</Button>
     <Button ui grey tertiary>Grey</Button>
     <Button ui black tertiary>Black</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui tertiary>
     Cancel Action
 </Button>
@@ -307,7 +307,7 @@
       <Button ui inverted grey basic>Basic Grey</Button>
       <Button ui inverted black basic>Basic Black</Button>
     </Segment>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Segment ui inverted>
     <Button ui inverted>Standard</Button>
     <Button ui inverted primary>Primary</Button>
@@ -355,7 +355,7 @@
       <Button ui>Two</Button>
       <Button ui>Three</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -377,7 +377,7 @@
       <Button ui><Icon underline/></Button>
       <Button ui><Icon text width/></Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui icon>
     <Button ui><Icon align left/></Button>
     <Button ui><Icon align center/></Button>
@@ -399,7 +399,7 @@
       <div class="or"></div>
       <Button ui positive>Save</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui>
     <Button ui>Cancel</Button>
     <div class="or"></div>
@@ -414,7 +414,7 @@
       <Icon user/>
       Follow
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui active>
     <Icon user/>
     Follow
@@ -428,7 +428,7 @@
       <Icon user/>
       Followed
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui disabled>
     <Icon user/>
     Followed
@@ -452,7 +452,7 @@
     <Button ui basic elastic loading>Loading</Button>
     <Button ui primary elastic loading>Loading</Button>
     <Button ui secondary elastic loading>Loading</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui loading>Loading</Button>
 <Button ui basic loading>Loading</Button>
 <Button ui primary loading>Loading</Button>
@@ -508,7 +508,7 @@
       <Icon telegram/>
       Telegram
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui facebook>
     <Icon facebook/>
     Facebook
@@ -574,7 +574,7 @@
     <Button ui massive>
       Massive
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui mini>
     Mini
 </Button>
@@ -607,7 +607,7 @@
     <Button ui right floated>Right Floated</Button>
     <Button ui left floated>Left Floated</Button>
     <br/><br/>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui right floated>Right Floated</Button>
 <Button ui left floated>Left Floated</Button>
   `}/>
@@ -628,7 +628,7 @@
     <Button ui brown>Brown</Button>
     <Button ui grey>Grey</Button>
     <Button ui black>Black</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui red>Red</Button>
 <Button ui orange>Orange</Button>
 <Button ui yellow>Yellow</Button>
@@ -658,7 +658,7 @@
       <Icon pause icon/>
       Pause
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui compact>
     Hold
 </Button>
@@ -679,7 +679,7 @@
       <Content slot="on">Voted</Content>
       <Content slot="off">Vote</Content>
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui toggle active={false} on_style="green" off_style="grey">
     <Content slot="on">Voted</Content>
     <Content slot="off">Vote</Content>
@@ -691,7 +691,7 @@
   <div class="example">
     <h4 class="example-header">Positive</h4>
     <Button ui positive>Positive Button</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui positive>Positive Button</Button>
   `}/>
   </div>
@@ -700,7 +700,7 @@
   <div class="example">
     <h4 class="example-header">Negative</h4>
     <Button ui negative>Negative Button</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui negative>Negative Button</Button>
     `}/>
   </div>
@@ -708,7 +708,7 @@
   <div class="example">
     <h4 class="example-header">Fluid</h4>
     <Button ui fluid>Fits container</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui fluid>Fits container</Button>
     `}/>
   </div>
@@ -730,7 +730,7 @@
     <Button ui circular google plus icon>
       <Icon google plus/>
     </Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui circular icon>
     <Icon settings/>
 </Button>
@@ -768,7 +768,7 @@
       <Button ui>One</Button>
       <Button ui>Two</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui top attached>Top</Button>
 <Segment ui attached>
     <p>blah blah blah</p>
@@ -793,7 +793,7 @@
     <h4 class="example-header">Horizontally Attached</h4>
     <Button ui left attached>Left</Button>
     <Button ui right attached>Right</Button>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Button ui left attached>Left</Button>
 <Button ui right attached>Right</Button>    
 `}/>
@@ -807,7 +807,7 @@
       <Button ui>Events</Button>
       <Button ui>Photos</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui vertical>
     <Button ui>Feed</Button>
     <Button ui>Messages</Button>
@@ -825,7 +825,7 @@
       <Button ui>Events</Button>
       <Button ui>Photos</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui stackable>
     <Button ui>Feed</Button>
     <Button ui>Messages</Button>
@@ -848,7 +848,7 @@
       <Button ui><Icon underline/></Button>
       <Button ui><Icon text width/></Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui icon>
     <Button ui><Icon align left/></Button>
     <Button ui><Icon align center/></Button>
@@ -879,7 +879,7 @@
         Shuffle
       </Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui vertical labeled icon>
     <Button ui>
         <Icon pause/>
@@ -913,7 +913,7 @@
           <Icon right chevron/>
       </Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui>
     <Button ui labeled icon>
         <Icon left chevron/>
@@ -945,7 +945,7 @@
       <Button ui>Specs</Button>
       <Button ui>Support</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui five>
     <Button ui>Overview</Button>
     <Button ui>Specs</Button>
@@ -968,7 +968,7 @@
       <Button ui>Two</Button>
       <Button ui>Three</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui blue>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -996,7 +996,7 @@
       <Button ui blue basic>Two</Button>
       <Button ui green basic>Three</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui basic>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -1037,7 +1037,7 @@
       <div class="or"></div>
       <Button ui>Two</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui large>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -1083,7 +1083,7 @@
       <Button ui>Nineteen</Button>
       <Button ui>Twenty</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui wrapped wrapping>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -1133,7 +1133,7 @@
       <Button ui>Nineteen</Button>
       <Button ui>Twenty</Button>
     </Buttons>
-    <Prism language="html" source={`
+    <Prism language="svelte" source={`
 <Buttons ui spaced wrapping>
     <Button ui>One</Button>
     <Button ui>Two</Button>

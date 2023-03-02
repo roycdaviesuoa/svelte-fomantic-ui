@@ -21,7 +21,7 @@
     }
 </script>
 
-<select {id} class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} bind:value on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}>
+<select {id} class={(ui?"ui ":"") + uiProps($$restProps)} bind:value on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}>
     <slot/>
 </select>
 

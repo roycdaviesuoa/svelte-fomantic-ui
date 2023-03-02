@@ -12,7 +12,7 @@
 </script>
 
 {#if _for}
-    <label class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)} for={_for}>
+    <label class={(ui?"ui ":"") + uiProps($$restProps) + " label"} {...otherProps($$restProps)} for={_for}>
         <slot />
     </label>
 {:else if checkbox}

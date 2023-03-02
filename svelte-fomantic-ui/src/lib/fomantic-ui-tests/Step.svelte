@@ -26,7 +26,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step>
         Shipping
@@ -61,7 +61,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step>
         <Icon truck/>
@@ -111,7 +111,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui ordered>
     <Step completed>
         <Content>
@@ -159,7 +159,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui vertical ordered>
     <Step completed>
         <Content>
@@ -195,7 +195,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step>
         <Content>
@@ -220,7 +220,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step>
         <Icon truck/>
@@ -268,7 +268,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step active link>
         <Icon truck/>
@@ -316,7 +316,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step active>
         <Icon payment/>
@@ -342,7 +342,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step completed>
         <Icon payment/>
@@ -364,7 +364,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui>
     <Step disabled>
         Billing
@@ -400,7 +400,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui tablet stackable>
     <Step>
         <Icon plane/>
@@ -454,7 +454,7 @@
             </Column>
         </Grid>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Grid ui two column>
     <Column>
         <Steps ui fluid vertical>
@@ -508,7 +508,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui tablet unstackable>
     <Step>
         <Icon plane/>
@@ -588,7 +588,7 @@
             </Step>
         </Steps>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui three top attached>
     <Step>
         <Icon plane/>
@@ -666,7 +666,7 @@
         </Content>
     </Step>
 </Steps>
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Steps ui three>
     <Step>
         <Icon plane/>
@@ -830,7 +830,7 @@
             </Steps>
         </Segment>
 
-        <Prism language="html" source={`
+        <Prism language="svelte" source={`
 <Segment ui inverted>
     <Steps ui three inverted>
         <Step>
