@@ -7,7 +7,6 @@
 <script lang="ts">
     import {uiProps, otherProps} from "../Helpers"
 
-    // NOT YET COMPLETE
     export let ui: boolean=false;
     export let value: string = "";
     export let id: string = "";
