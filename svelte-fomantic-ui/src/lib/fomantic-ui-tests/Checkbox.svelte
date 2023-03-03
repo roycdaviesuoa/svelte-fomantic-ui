@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Checkbox, Field, Fields, Divider, Label, Header, Input } from "../fomantic-ui/Core.svelte";
+    import { Checkbox, Form, Field, Fields, Divider, Label, Header, Input } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
@@ -70,7 +70,7 @@
 <Checkbox ui bind:checked={visibility} on:click={select}>
     <Label checkbox>Make selections visible</Label>
 </Checkbox>
-<p></p>
+
 {#if visibility}
     <Fields>
         {#each items as item}
@@ -104,35 +104,35 @@
   <div class="example">
     <h4 class="example-header">Textarea</h4>
 
-    <div class="ui form">
-      <div class="inline fields">
-        <label>How often do you use checkboxes?</label>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="frequency" checked="checked">
-            <label>Once a week</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="frequency">
-            <label>2-3 times a week</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="frequency">
-            <label>Once a day</label>
-          </div>
-        </div>
-        <div class="field">
-          <div class="ui radio checkbox">
-            <input type="radio" name="frequency">
-            <label>Twice a day</label>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Form ui>
+        <Fields inline>
+          <Label>How often do you use checkboxes?</Label>
+          <Field>
+              <Checkbox ui radio>
+                  <Input type="radio" name="frequency" checked="checked"/>
+                  <Label>Once a week</Label>
+              </Checkbox>
+          </Field>
+          <Field>
+              <Checkbox ui radio>
+                  <Input type="radio" name="frequency"/>
+                  <Label>2-3 times a week</Label>
+              </Checkbox>
+          </Field>
+          <Field>
+              <Checkbox ui radio>
+                  <Input type="radio" name="frequency"/>
+                  <Label>Once a day</Label>
+              </Checkbox>
+          </Field>
+          <Field>
+              <Checkbox ui radio>
+                  <Input type="radio" name="frequency"/>
+                  <Label>Twice a day</Label>
+              </Checkbox>
+          </Field>
+        </Fields>
+    </Form>
 
     <Prism language="svelte" source={`
   `}/>
