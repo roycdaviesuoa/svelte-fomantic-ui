@@ -11,13 +11,13 @@
     export let group: string="";
     export let value: string="";
     export let placeholder: string="";
-    export let single: boolean=false;
+    export let label: string=null;
 </script>
 
-{#if single}
+{#if label}
     <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio checkbox"} {...otherProps($$restProps)}>
-        <input type="radio" {placeholder} {id} {value} >
-        <slot/>
+        <input type="radio" {placeholder} {id} {value} bind:group>
+        <label for={id} class="ui radio">{label}</label>
     </div>
 {:else}
     <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio checkbox"} {...otherProps($$restProps)}>

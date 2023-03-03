@@ -151,7 +151,7 @@
 
         <Cards ui three doubling stackable>
             <Card ui>
-                <Image div>
+                <Image ui>
                     <Placeholder ui>
                         <Image square/>
                     </Placeholder>
@@ -174,11 +174,10 @@
             </Card>
         </Cards>
 
-        Note the `Image div` below which tells the Image element to use div instead of the usual image html code.
         <Prism language="svelte" source={`
 <Cards ui three doubling stackable>
     <Card ui>
-        <Image div>
+        <Image ui>
             <Placeholder ui>
                 <Image square/>
             </Placeholder>
@@ -210,21 +209,21 @@
             <Card ui>
                 <Content>
                     <Placeholder ui>
-                        <Image div rectangular/>
+                        <Image ui rectangular/>
                     </Placeholder>
                 </Content>
             </Card>
             <Card ui>
                 <Content>
                     <Placeholder ui>
-                        <Image div rectangular/>
+                        <Image ui rectangular/>
                     </Placeholder>
                 </Content>
             </Card>
             <Card ui>
                 <Content>
                     <Placeholder ui>
-                        <Image div rectangular/>
+                        <Image ui rectangular/>
                     </Placeholder>
                 </Content>
             </Card>
@@ -235,21 +234,21 @@
     <Card ui>
         <Content>
             <Placeholder ui>
-                <Image div rectangular/>
+                <Image ui rectangular/>
             </Placeholder>
         </Content>
     </Card>
     <Card ui>
         <Content>
             <Placeholder ui>
-                <Image div rectangular/>
+                <Image ui rectangular/>
             </Placeholder>
         </Content>
     </Card>
     <Card ui>
         <Content>
             <Placeholder ui>
-                <Image div rectangular/>
+                <Image ui rectangular/>
             </Placeholder>
         </Content>
     </Card>

@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Divider, Grid, Column, Placeholder, Line, Paragraph, Segment, Button, Icon, Form, Field, Label, Input, Input_Wrapper, Table, Table_Body, Table_Row, Table_Col, Table_Head } from "../fomantic-ui/Core.svelte";
+    import { Divider, Grid, Column, Placeholder, Line, Paragraph, Segment, Button, Icon, Form, Field, Label, Input, Table, Table_Body, Table_Row, Table_Col, Table_Head } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
@@ -64,17 +64,17 @@
                     <Form ui>
                         <Field>
                             <Label checkbox>Username</Label>
-                            <Input_Wrapper ui left icon>
+                            <Input ui left icon>
                                 <Input type="text" placeholder='Username'/>
                                 <Icon user/>
-                            </Input_Wrapper>
+                            </Input>
                         </Field>
                         <Field>
                             <Label checkbox>Password</Label>
-                            <Input_Wrapper ui left icon>
+                            <Input ui left icon>
                                 <Input type="password"/>
                                 <Icon lock/>
-                            </Input_Wrapper>
+                            </Input>
                         </Field>
                         <Button ui blue submit>Login</Button>
                     </Form>
@@ -97,17 +97,17 @@
             <Form ui>
                 <Field>
                     <Label checkbox>Username</Label>
-                    <Input_Wrapper ui left icon>
+                    <Input ui left icon>
                         <Input type="text" placeholder='Username'/>
                         <Icon user/>
-                    </Input_Wrapper>
+                    </Input>
                 </Field>
                 <Field>
                     <Label checkbox>Password</Label>
-                    <Input_Wrapper ui left icon>
+                    <Input ui left icon>
                         <Input type="password"/>
                         <Icon lock/>
-                    </Input_Wrapper>
+                    </Input>
                 </Field>
                 <Button ui blue submit>Login</Button>
             </Form>
@@ -129,11 +129,11 @@
     <div class="example">
         <h4 class="example-header">Horizontal divider</h4>
         <Segment ui center aligned basic>
-            <Input_Wrapper ui left icon action>
+            <Input ui left icon action>
                 <Icon search/>
                 <Input type="text" placeholder="Order #"/>
                 <Button ui blue submit>Search</Button>
-            </Input_Wrapper>
+            </Input>
             <Divider ui horizontal>
                 Or
             </Divider>
@@ -179,11 +179,11 @@
         </Table>
         <Prism language="svelte" source={`
 <Segment ui center aligned basic>
-    <Input_Wrapper ui left icon action>
+    <Input ui left icon action>
         <Icon search/>
         <Input type="text" placeholder="Order #"/>
         <Button ui blue submit>Search</Button>
-    </Input_Wrapper>
+    </Input>
     <Divider ui horizontal>
         Or
     </Divider>

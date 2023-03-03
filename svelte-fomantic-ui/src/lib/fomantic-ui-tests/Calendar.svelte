@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Calendar, Input, Input_Wrapper, Icon, Form, Fields, Field, Label } from "../fomantic-ui/Core.svelte";
+    import { Calendar, Input, Icon, Form, Fields, Field, Label } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
@@ -19,17 +19,17 @@
     <div class="example">
         <h4 class="example-header">Interactive calendar with settings (3 month)</h4>
         <Calendar ui>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date/Time"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon calendar/>
         <Input placeholder="Date/Time"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
     `}/>
     </div>
@@ -41,19 +41,19 @@
                 <Field>
                     <Label>Start date</Label>
                     <Calendar ui id="firstStart" settings={{type: 'date', endCalendar: "firstEnd"}}>
-                        <Input_Wrapper ui input left icon>
+                        <Input ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="Start"/>
-                        </Input_Wrapper>
+                        </Input>
                     </Calendar>
                 </Field>
                 <Field>
                     <Label>End date</Label>
                     <Calendar ui id="firstEnd" settings={{type: 'date', startCalendar: "firstStart"}}>
-                        <Input_Wrapper ui input left icon>
+                        <Input ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="End"/>
-                        </Input_Wrapper>
+                        </Input>
                     </Calendar>
                 </Field>
             </Fields>
@@ -64,19 +64,19 @@
         <Field>
             <Label>Start date</Label>
             <Calendar ui id="firstStart" settings={{type: 'date', endCalendar: "firstEnd"}}>
-                <Input_Wrapper ui input left icon>
+                <Input ui input left icon>
                     <Icon calendar/>
                     <Input placeholder="Start"/>
-                </Input_Wrapper>
+                </Input>
             </Calendar>
         </Field>
         <Field>
             <Label>End date</Label>
             <Calendar ui id="firstEnd" settings={{type: 'date', startCalendar: "firstStart"}}>
-                <Input_Wrapper ui input left icon>
+                <Input ui input left icon>
                     <Icon calendar/>
                     <Input placeholder="End"/>
-                </Input_Wrapper>
+                </Input>
             </Calendar>
         </Field>
     </Fields>
@@ -91,19 +91,19 @@
                 <Field>
                     <Label>Start date</Label>
                     <Calendar ui id="secondStart" settings={{type: "date", endCalendar: "secondEnd"}}>
-                        <Input_Wrapper ui input left icon>
+                        <Input ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="Start"/>
-                        </Input_Wrapper>
+                        </Input>
                     </Calendar>
                 </Field>
                 <Field>
                     <Label>End date</Label>
                     <Calendar ui id="secondEnd" settings={{type: "datetime", startCalendar: "secondStart"}}>
-                        <Input_Wrapper ui input left icon>
+                        <Input ui input left icon>
                             <Icon calendar/>
                             <Input placeholder="End"/>
-                        </Input_Wrapper>
+                        </Input>
                     </Calendar>
                 </Field>
             </Fields>
@@ -114,19 +114,19 @@
         <Field>
             <Label>Start date</Label>
             <Calendar ui id="secondStart" settings={{type: "date", endCalendar: "secondEnd"}}>
-                <Input_Wrapper ui input left icon>
+                <Input ui input left icon>
                     <Icon calendar/>
                     <Input placeholder="Start"/>
-                </Input_Wrapper>
+                </Input>
             </Calendar>
         </Field>
         <Field>
             <Label>End date</Label>
             <Calendar ui id="secondEnd" settings={{type: "datetime", startCalendar: "secondStart"}}>
-                <Input_Wrapper ui input left icon>
+                <Input ui input left icon>
                     <Icon calendar/>
                     <Input placeholder="End"/>
-                </Input_Wrapper>
+                </Input>
             </Calendar>
         </Field>
     </Fields>
@@ -145,17 +145,17 @@
    <div class="example">
         <h4 class="example-header">Interactive calendar with settings (3 month)</h4>
         <Calendar ui settings={{type: 'date', multiMonth: 3, monthOffset: -1}}>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date/Time"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui settings={{type: 'date', multiMonth: 3, monthOffset: -1}}>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon calendar/>
         <Input placeholder="Date/Time"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
     `}/>
     </div>
@@ -163,17 +163,17 @@
     <div class="example">
         <h4 class="example-header">Inverted calendar</h4>
         <Calendar ui inverted settings={{type: 'date'}}>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date/Time"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui inverted settings={{type: 'date'}}>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon calendar/>
         <Input placeholder="Date/Time"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
     `}/>
     </div>
@@ -182,17 +182,17 @@
     <div class="example">
         <h4 class="example-header">Time calendar</h4>
         <Calendar ui settings={{type: 'time'}}>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon time/>
                 <Input placeholder="Time"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui settings={{type: 'time'}}>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon time/>
         <Input placeholder="Time"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
         `}/>
     </div>
@@ -201,17 +201,17 @@
     <div class="example">
         <h4 class="example-header">Parameters using html</h4>
         <Calendar ui data-type="date" data-date="2019-12-24">
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui data-type="date" data-date="2019-12-24">
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon calendar/>
         <Input placeholder="Date"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
         `}/>
     </div>
@@ -220,17 +220,17 @@
     <div class="example">
         <h4 class="example-header">Year first calendar</h4>
         <Calendar ui settings={{startMode:"year"}}>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon calendar/>
                 <Input placeholder="Date"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui settings={{startMode:"year"}}>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon calendar/>
         <Input placeholder="Date"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
         `}/>        
     </div>
@@ -245,10 +245,10 @@
               cellTime: 'H:mm'
             }
           }}>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon time/>
                 <Input placeholder="Date"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui settings={{
@@ -258,10 +258,10 @@
         cellTime: 'H:mm'
     }
     }}>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon time/>
         <Input placeholder="Date"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
         `}/>        
     </div>
@@ -271,17 +271,17 @@
     <div class="example">
         <h4 class="example-header">Month and year calendar</h4>
         <Calendar ui settings={{ type: 'month' }}>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon time/>
                 <Input placeholder="Date"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui settings={{ type: 'month' }}>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon time/>
         <Input placeholder="Date"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
         `}/>        
     </div>
@@ -290,17 +290,17 @@
     <div class="example">
         <h4 class="example-header">Year calendar</h4>
         <Calendar ui settings={{ type: 'year' }}>
-            <Input_Wrapper ui fluid left icon>
+            <Input ui fluid left icon>
                 <Icon time/>
                 <Input placeholder="Date"/>
-            </Input_Wrapper>
+            </Input>
         </Calendar>
         <Prism language="svelte" source={`
 <Calendar ui settings={{ type: 'year' }}>
-    <Input_Wrapper ui fluid left icon>
+    <Input ui fluid left icon>
         <Icon time/>
         <Input placeholder="Date"/>
-    </Input_Wrapper>
+    </Input>
 </Calendar>
         `}/>        
     </div>

@@ -6,22 +6,23 @@
 
 <script lang="ts">
     import {uiProps, otherProps} from "../Helpers"
+    export let ui: boolean=false;
     export let id: string="";
+    export let group: string="";
     export let value: string="";
-    export let checked: boolean=false;
-    export let ui:boolean = false;
-
-    import { createEventDispatcher } from 'svelte';
-    const dispatch = createEventDispatcher();
-
-    // Return a click event
-    function doClick(event: any) {     
-        dispatch('click', {id: event.target.id, value: event.target.value, checked: event.target.checked, target: event.target});
-    }
+    export let placeholder: string="";
+    export let label: string=null;
+    export let checked:boolean=false;
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " checkbox"}>
-    <input type="checkbox" {id} bind:checked bind:value on:click={doClick} {...otherProps($$restProps)}>
-    <slot/>
-</div>
-
+{#if label}
+    <div class={(ui?"ui ":"") + uiProps($$restProps) + " checkbox"} {...otherProps($$restProps)}>
+        <input type="checkbox" {placeholder} {id} {value} bind:group bind:checked>
+        <label for={id} class="ui checkbox">{label}</label>
+    </div>
+{:else}
+    <div class={(ui?"ui ":"") + uiProps($$restProps) + " checkbox"} {...otherProps($$restProps)}>
+        <input type="checkbox" {placeholder} {id} {value} bind:group bind:checked>
+        <slot/>
+    </div>
+{/if}

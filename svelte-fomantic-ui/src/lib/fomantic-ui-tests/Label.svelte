@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Label, Labels, Icon, Link, Image, Image_Wrapper, Detail, Form, Field, Divider, Input, Grid, Column, Row, Segment, Placeholder, Paragraph, Line, Content, List, Menu} from "../fomantic-ui/Core.svelte";
+    import { Label, Labels, Icon, Link, Image, Detail, Form, Field, Divider, Input, Grid, Column, Row, Segment, Placeholder, Paragraph, Line, Content, List, Menu} from "../fomantic-ui/Core.svelte";
     import "./prism.css";
     import Prism from 'svelte-prism';
 
@@ -254,39 +254,39 @@
         <h4 class="example-header">Corner</h4>
         <Grid ui two column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Link ui left corner label>
                         <Icon heart/>
                     </Link>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Link ui red right corner label>
                         <Icon save/>
                     </Link>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
         </Grid>
         <Prism language="svelte" source={`
 <Grid ui two column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Link ui left corner label>
                 <Icon heart/>
             </Link>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Link ui red right corner label>
                 <Icon save/>
             </Link>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
 </Grid>
         `}/>
@@ -327,56 +327,56 @@
         </Grid>
         <Grid ui two column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Label ui black ribbon>
                         <Icon hotel/> Hotel
                     </Label>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Label ui blue right ribbon>
                         <Icon spoon/> Food
                     </Label>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
         </Grid>
         <Grid ui two column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Label ui black ribbon>
                         Hotel <Icon hotel/> 
                     </Label>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Label ui blue right ribbon>
                         Food <Icon spoon/> 
                     </Label>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
         </Grid>
         <Grid ui two column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Label ui black ribbon>
                         <Icon hotel/> 
                     </Label>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
             <Column>
-                <Image_Wrapper ui fluid>
+                <Image ui fluid>
                     <Label ui blue right ribbon>
                         <Icon spoon/> 
                     </Label>
                     <Image src="/images/image.png"/>
-                </Image_Wrapper>
+                </Image>
             </Column>
         </Grid>
         <Prism language="svelte" source={`
@@ -401,56 +401,56 @@
 </Grid>
 <Grid ui two column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Label ui black ribbon>
                 <Icon hotel/> Hotel
             </Label>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Label ui blue right ribbon>
                 <Icon spoon/> Food
             </Label>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
 </Grid>
 <Grid ui two column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Label ui black ribbon>
                 Hotel <Icon hotel/> 
             </Label>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Label ui blue right ribbon>
                 Food <Icon spoon/> 
             </Label>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
 </Grid>
 <Grid ui two column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Label ui black ribbon>
                 <Icon hotel/> 
             </Label>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
     <Column>
-        <Image_Wrapper ui fluid>
+        <Image ui fluid>
             <Label ui blue right ribbon>
                 <Icon spoon/> 
             </Label>
             <Image src="/images/image.png"/>
-        </Image_Wrapper>
+        </Image>
     </Column>
 </Grid>
         `}/>

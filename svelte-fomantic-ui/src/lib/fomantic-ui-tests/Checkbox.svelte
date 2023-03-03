@@ -5,24 +5,29 @@
 -->
 
 <script lang="ts">
-    import { Checkbox, Form, Field, Fields, Divider, Label, Header, Input } from "../fomantic-ui/Core.svelte";
+    import { Checkbox, Form, Field, Fields, Divider, Label, Header, Input, Radio, Icon } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
 
-    let selected: string = "apples";
     let items = ["apples", "peaches", "oranges", "bananas", "mangos"]
-    let visibility: boolean=false;
+    let visibility = ["select"];
 
     let radio1: string="";
+    let radio2: string="1";
+    let selectedOptions: string[]=[];
 
-    function select(event) {
-      console.log(event);
+    interface Item {
+      id: number;
+      name: string;
+      selected: boolean;
     }
-    function selectItem(event) {
-      selected = event.detail.id;
-      console.log(event);
-    }
+
+    let moreItems: Item[] = [
+      { id: 1, name: 'Item 1', selected: false },
+      { id: 2, name: 'Item 2', selected: false },
+      { id: 3, name: 'Item 3', selected: false },
+    ];
 </script>
 
 <div class="example-document">
@@ -32,123 +37,142 @@
   <div class="example">
     <h4 class="example-header">Interactive Checkbox</h4>
 
-    <Checkbox ui bind:checked={visibility} on:click={select}>
-      <Label checkbox>Make selections visible</Label>
+    <Checkbox ui bind:group={visibility} value="select">
+        <Label checkbox>Make selections visible</Label>
     </Checkbox>
     <p></p>
-    {#if visibility}
+    {#if visibility[0]==="select"}
       <Fields>
           {#each items as item}
-            <Field>
-              <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={selectItem}>
-                <Label checkbox>{item}</Label>
-              </Checkbox>
-            </Field>
+            <Field> <Checkbox ui name={item} value={item} bind:group={selectedOptions} label={item}/> </Field>
           {/each}
       </Fields>
     {/if}
-
     <Divider ui/>
-    <Header>{selected} clicked | visibility = {visibility}</Header>
+    <Header>{selectedOptions} clicked | visibility = {visibility}</Header>
+
     <Prism language="svelte" source={`
 <script>
     import { Checkbox, Field, Fields, Divider, Label, Header } from "svelte-fomantic-ui";
 
     let selected: string = "apples";
     let items = ["apples", "peaches", "oranges", "bananas", "mangos"]
-    let visibility: boolean=false;
-
-    function select(event) {
-      console.log(event);
-    }
-    function select_group(event) {
-      selected = event.detail.id;
-      console.log(event);
-    }
+    let visibility: string[]=[];
+    let selectedOptions: string[]=[];
 </script>
 
-<Checkbox ui bind:checked={visibility} on:click={select}>
+<Checkbox ui bind:group={visibility} value="select">
     <Label checkbox>Make selections visible</Label>
 </Checkbox>
 
-{#if visibility}
-    <Fields>
-        {#each items as item}
-            <Field>
-                <Checkbox ui green={item === selected} bind:value={selected} id={item} checked={item === selected} on:click={selectItem}>
-                    <Label checkbox>{item}</Label>
-                </Checkbox>
-            </Field>
-        {/each}
-    </Fields>
+{#if visibility[0]==="select"}
+  <Fields>
+      {#each items as item}
+        <Field> <Checkbox ui name={item} value={item} bind:group={selectedOptions} label={item}/> </Field>
+      {/each}
+  </Fields>
 {/if}
-
 <Divider ui/>
-<Header>{selected} clicked | visibility = {visibility}</Header>
+<Header>{selectedOptions} clicked | visibility = {visibility}</Header>
   `}/>
 </div>
 
   <div class="example">
-    <h4 class="example-header">Textarea</h4>
-
-    <Checkbox ui radio bind:value={radio1}>
-        <Input type="radio" value="radio1" id="radio1"/>
-        <Label _for="radio1">Radio choice 1</Label>
-    </Checkbox>
-    <Header>Checked: {radio1}</Header>
-
-    <Prism language="svelte" source={`
-  `}/>
-  </div>
-
-  <div class="example">
-    <h4 class="example-header">Textarea</h4>
-
+    <h4 class="example-header">Radio inline</h4>
+    
+    <Label>How often do you use checkboxes? </Label>
     <Form ui>
         <Fields inline>
-          <Label>How often do you use checkboxes?</Label>
-          <Field>
-              <Checkbox ui radio>
-                  <Input type="radio" name="frequency" checked="checked"/>
-                  <Label>Once a week</Label>
-              </Checkbox>
-          </Field>
-          <Field>
-              <Checkbox ui radio>
-                  <Input type="radio" name="frequency"/>
-                  <Label>2-3 times a week</Label>
-              </Checkbox>
-          </Field>
-          <Field>
-              <Checkbox ui radio>
-                  <Input type="radio" name="frequency"/>
-                  <Label>Once a day</Label>
-              </Checkbox>
-          </Field>
-          <Field>
-              <Checkbox ui radio>
-                  <Input type="radio" name="frequency"/>
-                  <Label>Twice a day</Label>
-              </Checkbox>
-          </Field>
+            <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
+            <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
+            <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
+            <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
         </Fields>
     </Form>
+    <Header h4>Selected: {radio2}</Header>
 
     <Prism language="svelte" source={`
+<Label>How often do you use checkboxes? </Label>
+<Form ui>
+    <Fields inline>
+        <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
+        <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
+        <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
+        <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
+    </Fields>
+</Form>
+<Header h4>Selected: {radio2}</Header>
   `}/>
   </div>
 
   <div class="example">
-    <h4 class="example-header">Textarea</h4>
+    <h4 class="example-header">Radio grouped</h4>
+
+    <div class="centered">
+      <div class="narrow">
+        <Label>How often do you use checkboxes? </Label>
+        <Form ui>
+            <Fields grouped>
+                <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
+                <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
+                <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
+                <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
+            </Fields>
+        </Form>
+        <Header h4>Selected: {radio2}</Header>
+      </div>
+    </div>
 
     <Prism language="svelte" source={`
+<Label>How often do you use checkboxes? </Label>
+<Form ui>
+    <Fields grouped>
+        <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
+        <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
+        <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
+        <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
+    </Fields>
+</Form>
+<Header h4>Selected: {radio2}</Header>
   `}/>
   </div>
 
   <div class="example">
-    <h4 class="example-header">Textarea</h4>
+    <h4 class="example-header">Checkbox individually selected</h4>
+
+    <div class="centered">
+      <div class="narrow">
+        <Fields grouped>
+            {#each moreItems as item}
+                <Field> <Checkbox ui id={item.id} bind:checked={item.selected} label={item.name}/> </Field>
+            {/each}
+        </Fields>
+        {#each moreItems as item}
+            {item.name} is {item.selected}<br/>
+        {/each}
+      </div>
+    </div>
 
     <Prism language="svelte" source={`
+<script>
+    interface Item { id: number; name: string; selected: boolean; }
+
+    let moreItems: Item[] = [
+        { id: 1, name: 'Item 1', selected: false },
+        { id: 2, name: 'Item 2', selected: false },
+        { id: 3, name: 'Item 3', selected: false },
+    ];
+</script>
+
+<Fields grouped>
+    {#each moreItems as item}
+        <Field> <Checkbox ui id={item.id} bind:checked={item.selected} label={item.name}/> </Field>
+    {/each}
+</Fields>
+
+{#each moreItems as item}
+    {item.name} is {item.selected}<br/>
+{/each}
   `}/>
   </div>
 

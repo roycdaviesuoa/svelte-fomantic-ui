@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Segment, Placeholder, Header, Line, Paragraph, Icon, Button, Inline, Grid, Divider, Row, Column, Field, Input_Wrapper, Input, Search, Content, Segments, Message } from "../fomantic-ui/Core.svelte";
+    import { Segment, Placeholder, Header, Line, Paragraph, Icon, Button, Inline, Grid, Divider, Row, Column, Field, Input, Search, Content, Segments, Message } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
@@ -62,10 +62,10 @@
                         </Header>
                         <Field>
                             <Search ui>
-                                <Input_Wrapper ui icon>
+                                <Input ui icon>
                                     <Input class="prompt" type="text" placeholder="Search countries..."/>
                                     <Icon search/>
-                                </Input_Wrapper>
+                                </Input>
                                 <div class="results"></div>
                             </Search>
                         </Field>
@@ -114,10 +114,10 @@
                 </Header>
                 <Field>
                     <Search ui>
-                        <Input_Wrapper ui icon>
+                        <Input ui icon>
                             <Input class="prompt" type="text" placeholder="Search countries..."/>
                             <Icon search/>
-                        </Input_Wrapper>
+                        </Input>
                         <Segment ui results"></div>
                     </Search>
                 </Field>
