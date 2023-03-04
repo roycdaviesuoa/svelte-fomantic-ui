@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Button, Buttons, Content, Icon, Segment, Link, Divider } from "../fomantic-ui/Core.svelte";
+    import { Button, Buttons, Content, Icon, Segment, Link, Divider } from "svelte-fomantic-ui";
     import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
@@ -33,6 +33,7 @@
 
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Emphasis -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Emphasis</h4>

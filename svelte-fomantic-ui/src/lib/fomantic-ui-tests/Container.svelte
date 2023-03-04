@@ -5,12 +5,11 @@
 -->
 
 <script lang="ts">
-    import { Container, Column, Placeholder, Line, Paragraph, Image, Link, Icon, Item, Input, Header } from "../fomantic-ui/Core.svelte";
+    import { Container, Column, Placeholder, Line, Paragraph, Image, Link, Icon, Item, Input, Header, Menu } from "svelte-fomantic-ui";
     import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
     import Code from './Container'
-    import Menu from "../fomantic-ui/collections/Menu.svelte";
 </script>
 
 <div class="example-document">
