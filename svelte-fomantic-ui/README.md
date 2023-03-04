@@ -183,7 +183,7 @@ If you are looking for code examples, check in the `fomantic-ui-tests` folder wh
 | Element          | Implemented | Tested and Documented | Test Link |
 |------------------|:-----------:|:---------------------:|-----------|
 | Button           |      X      |           X           | [/Button](./src/lib/fomantic-ui-tests/Button.svelte)
-|  - Interactive   |      X      |           X           | /ButtonInteractive
+|  - Interactive   |      X      |           X           | [/ButtonInteractive](./src/lib/fomantic-ui-tests/ButtonInteractive.svelte)
 | Container | X | X | /Container
 | Divider | X | X | /Divider
 | Emoji | X | X | /Emoji
