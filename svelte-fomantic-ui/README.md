@@ -184,8 +184,8 @@ If you are looking for code examples, check in the `fomantic-ui-tests` folder wh
 |------------------|:-----------:|:---------------------:|-----------|
 | Button           |      X      |           X           | [/Button](./src/lib/fomantic-ui-tests/Button.svelte)
 |  - Interactive   |      X      |           X           | [/ButtonInteractive](./src/lib/fomantic-ui-tests/ButtonInteractive.svelte)
-| Container | X | X | /Container
-| Divider | X | X | /Divider
+| Container | X | X | [/Container](./src/lib/fomantic-ui-tests/Container.svelte)
+| Divider | X | X | [/Divider](./src/lib/fomantic-ui-tests/Divider.svelte)
 | Emoji | X | X | /Emoji
 | Flag | X | X | /Flag
 | Header | X | X | /Header
