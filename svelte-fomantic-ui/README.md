@@ -157,7 +157,7 @@ To use fomantic UI in your project, import the required elements in the script s
 
 ## Examples and testing
 
-This project was created using vite, and is runnable in its own right.  When you do that, you'll see a website with some examples and tests.
+This project contains examples and tests.
 
 1. Clone the repository from GITHub.
 1. Change into the `svelte-fomantic-ui-runtime-test` sub directory.
@@ -165,5 +165,5 @@ This project was created using vite, and is runnable in its own right.  When you
 1. Run `yarn dev` to start development web server.
 1. Open the link in a browser to see the dev / test website (usually `http://localhost:5173`)
 
-If you are looking for code examples, check in the `fomantic-ui-tests` folder where the examples from the Fomantic UI website have been replicated for testing and documentation purposes.  Even if you don't wish to run the dev server as above, you can still see the worked code.
+If you are looking for code examples, check in the `svelte-fomantic-ui-runtime-test/src/lib` folder where the examples from the Fomantic UI website have been replicated for testing and documentation purposes.  Even if you don't wish to run the dev server as above, you can still see the worked code.
 
