@@ -8,34 +8,56 @@
     import { Button, Buttons, Content, Icon, Segment, Link, Divider } from "../fomantic-ui/Core.svelte";
     import "./examplestyles.css";
     import "./prism.css";
-    import Prism from 'svelte-prism';
+    import SourceCode from 'svelte-prism';
 </script>
 
 <div class="example-document">
   <h3 class="document-header">Button examples and tests</h3>
   <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/button.html">here</a></div>
 
-
-  <div class="example">
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Standard Button -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">A standard button</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui>Follow</Button>
-    <Prism language="svelte" source={`
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language="svelte" source={`
 <Button ui>Follow</Button>
     `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Emphasis</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui primary>Primary</Button>
     <Button ui secondary>Secondary</Button>
-    <Prism language="svelte" source={`
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language="svelte" source={`
 <Button ui primary>Primary</Button>
 <Button ui secondary>Secondary</Button>
     `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Animated -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Animated</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui animated>
         <Content visible>Next</Content>
         <Content hidden>
@@ -54,7 +76,9 @@
             $12.99 a month
         </Content>
     </Button>
-    <Prism language="svelte" source={`
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language="svelte" source={`
 <Button ui animated>
     <Content visible>Next</Content>
     <Content hidden>
@@ -74,10 +98,18 @@
     </Content>
 </Button>
     `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Labeled -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Labeled</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui labeled>
       <Button ui>
           <Icon heart/> Like
@@ -102,7 +134,9 @@
           <Icon fork/>
         </Button>
     </Button>
-    <Prism language="svelte" source={`
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language="svelte" source={`
 <Button ui labeled>
   <Button ui>
       <Icon heart/> Like
@@ -127,36 +161,56 @@
       <Icon fork/>
     </Button>
 </Button>
-    `}/>
-    </div>
+  `}/>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Icon -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Icon</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui icon>
-      <Icon cloud/>
+        <Icon cloud/>
     </Button>
-    <Prism language="svelte" source={`
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language="svelte" source={`
 <Button ui icon>
     <Icon cloud/>
 </Button>
-    `}/>
-  </div>
+  `}/>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Labeled Icon -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Labeled Icon</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui labeled icon>
-      <Icon pause/>
-      Pause
+        <Icon pause/>
+        Pause
     </Button>
     <Button ui right labeled icon>
-      <Icon right arrow/>
-      Next
+        <Icon right arrow/>
+        Next
     </Button>
     <Button ui labeled icon>
-      <Icon loading spinner/>
-      Loading
+        <Icon loading spinner/>
+        Loading
     </Button>
-    <Prism language="svelte" source={`
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language="svelte" source={`
 <Button ui labeled icon>
     <Icon pause/>
     Pause
@@ -169,10 +223,16 @@
     <Icon loading spinner/>
     Loading
 </Button>
-    `}/>
-  </div>
+  `}/>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Basic -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Basic</h4>
     <Button ui basic>
       <Icon user/>
@@ -197,7 +257,7 @@
     <Button ui brown basic>Brown</Button>
     <Button ui grey basic>Grey</Button>
     <Button ui black basic>Black</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui basic>
     <Icon user/>
     Add Friend
@@ -223,8 +283,14 @@
 <Button ui black basic>Black</Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Tertiary -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Tertiary</h4>
     <Button ui tertiary>
       Cancel Action
@@ -245,7 +311,7 @@
     <Button ui brown tertiary>Brown</Button>
     <Button ui grey tertiary>Grey</Button>
     <Button ui black tertiary>Black</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui tertiary>
     Cancel Action
 </Button>
@@ -267,8 +333,14 @@
 <Button ui black tertiary>Black</Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Inverted -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Inverted</h4>
     <Segment ui inverted>
       <Button ui inverted>Standard</Button>
@@ -307,7 +379,7 @@
       <Button ui inverted grey basic>Basic Grey</Button>
       <Button ui inverted black basic>Basic Black</Button>
     </Segment>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Segment ui inverted>
     <Button ui inverted>Standard</Button>
     <Button ui inverted primary>Primary</Button>
@@ -347,15 +419,21 @@
 </Segment>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Groups -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Groups</h4>
     <Buttons ui>
       <Button ui>One</Button>
       <Button ui>Two</Button>
       <Button ui>Three</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Buttons ui>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -377,7 +455,7 @@
       <Button ui><Icon underline/></Button>
       <Button ui><Icon text width/></Button>
     </Buttons>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Buttons ui icon>
     <Button ui><Icon align left/></Button>
     <Button ui><Icon align center/></Button>
@@ -391,15 +469,21 @@
 </Buttons>  
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Conditionals -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Conditionals</h4>
     <Buttons ui>
       <Button ui>Cancel</Button>
       <div class="or"></div>
       <Button ui positive>Save</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Buttons ui>
     <Button ui>Cancel</Button>
     <div class="or"></div>
@@ -407,36 +491,54 @@
 </Buttons> 
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Active State</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Active state-->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Active state</h4>
     <Button ui active>
       <Icon user/>
       Follow
     </Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui active>
     <Icon user/>
     Follow
 </Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Disabled -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Disabled</h4>
     <Button ui disabled>
       <Icon user/>
       Followed
     </Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui disabled>
     <Icon user/>
     Followed
 </Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Loading -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Loading</h4>
     <Button ui loading>Loading</Button>
     <Button ui basic loading>Loading</Button>
@@ -452,7 +554,7 @@
     <Button ui basic elastic loading>Loading</Button>
     <Button ui primary elastic loading>Loading</Button>
     <Button ui secondary elastic loading>Loading</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui loading>Loading</Button>
 <Button ui basic loading>Loading</Button>
 <Button ui primary loading>Loading</Button>
@@ -469,8 +571,14 @@
 <Button ui secondary elastic loading>Loading</Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Social -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Social</h4>
     <Button ui facebook>
       <Icon facebook/>
@@ -508,7 +616,7 @@
       <Icon telegram/>
       Telegram
     </Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui facebook>
     <Icon facebook/>
     Facebook
@@ -547,8 +655,14 @@
 </Button>
   `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Size -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Size</h4>
     <Button ui mini>
       Mini
@@ -574,7 +688,7 @@
     <Button ui massive>
       Massive
     </Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui mini>
     Mini
 </Button>
@@ -601,19 +715,31 @@
 </Button>
   `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Floated -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Floated</h4>
     <Button ui right floated>Right Floated</Button>
     <Button ui left floated>Left Floated</Button>
     <br/><br/>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui right floated>Right Floated</Button>
 <Button ui left floated>Left Floated</Button>
   `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Colored -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Colored</h4>
     <Button ui red>Red</Button>
     <Button ui orange>Orange</Button>
@@ -628,7 +754,7 @@
     <Button ui brown>Brown</Button>
     <Button ui grey>Grey</Button>
     <Button ui black>Black</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui red>Red</Button>
 <Button ui orange>Orange</Button>
 <Button ui yellow>Yellow</Button>
@@ -643,10 +769,15 @@
 <Button ui grey>Grey</Button>
 <Button ui black>Black</Button>
   `}/>
-
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Compact -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Compact</h4>
     <Button ui compact>
       Hold
@@ -658,7 +789,7 @@
       <Icon pause icon/>
       Pause
     </Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui compact>
     Hold
 </Button>
@@ -671,49 +802,76 @@
 </Button>
   `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Toggle -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
   <div class="example">
     <h4 class="example-header">Toggle</h4>
     <Button ui toggle active={false} on_style="green" off_style="grey">
       <Content slot="on">Voted</Content>
       <Content slot="off">Vote</Content>
     </Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui toggle active={false} on_style="green" off_style="grey">
     <Content slot="on">Voted</Content>
     <Content slot="off">Vote</Content>
 </Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Positive -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
   <div class="example">
     <h4 class="example-header">Positive</h4>
     <Button ui positive>Positive Button</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui positive>Positive Button</Button>
   `}/>
   </div>
-  
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Negative -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Negative</h4>
     <Button ui negative>Negative Button</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui negative>Negative Button</Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Fluid -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Fluid</h4>
     <Button ui fluid>Fits container</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui fluid>Fits container</Button>
     `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Circular -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Circular</h4>
     <Button ui circular icon>
       <Icon settings/>
@@ -730,7 +888,7 @@
     <Button ui circular google plus icon>
       <Icon google plus/>
     </Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui circular icon>
     <Icon settings/>
 </Button>
@@ -748,9 +906,15 @@
 </Button>
   `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Vertically Aligned</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Vertically aligned -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Vertically aligned</h4>
     <Button ui top attached>Top</Button>
     <Segment ui attached>
       <p>blah blah blah</p>
@@ -768,7 +932,7 @@
       <Button ui>One</Button>
       <Button ui>Two</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui top attached>Top</Button>
 <Segment ui attached>
     <p>blah blah blah</p>
@@ -788,26 +952,38 @@
 </Buttons>
   `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Horizontally Attached</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Horizontally attached -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Horizontally attached</h4>
     <Button ui left attached>Left</Button>
     <Button ui right attached>Right</Button>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Button ui left attached>Left</Button>
 <Button ui right attached>Right</Button>    
 `}/>
   </div>
-  
-  <div class="example">
-    <h4 class="example-header">Vertical Buttons</h4>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Vertical buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Vertical buttons</h4>
     <Buttons ui vertical>
       <Button ui>Feed</Button>
       <Button ui>Messages</Button>
       <Button ui>Events</Button>
       <Button ui>Photos</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Buttons ui vertical>
     <Button ui>Feed</Button>
     <Button ui>Messages</Button>
@@ -825,7 +1001,7 @@
       <Button ui>Events</Button>
       <Button ui>Photos</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+    <SourceCode language="svelte" source={`
 <Buttons ui stackable>
     <Button ui>Feed</Button>
     <Button ui>Messages</Button>
@@ -834,21 +1010,29 @@
 </Buttons>
 `}/>
   </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Icon Buttons</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Icon buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Icon buttons</h4>
+
     <Buttons ui icon>
-      <Button ui><Icon align left/></Button>
-      <Button ui><Icon align center/></Button>
-      <Button ui><Icon align right/></Button>
-      <Button ui><Icon align justify/></Button>
+        <Button ui><Icon align left/></Button>
+        <Button ui><Icon align center/></Button>
+        <Button ui><Icon align right/></Button>
+        <Button ui><Icon align justify/></Button>
     </Buttons>
     <Buttons ui icon>
-      <Button ui><Icon bold/></Button>
-      <Button ui><Icon underline/></Button>
-      <Button ui><Icon text width/></Button>
+        <Button ui><Icon bold/></Button>
+        <Button ui><Icon underline/></Button>
+        <Button ui><Icon text width/></Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui icon>
     <Button ui><Icon align left/></Button>
     <Button ui><Icon align center/></Button>
@@ -861,25 +1045,33 @@
     <Button ui><Icon text width/></Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Labeled Icon Buttons</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Labeled icon buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Labeled icon buttons</h4>
+
     <Buttons ui vertical labeled icon>
-      <Button ui>
-        <Icon pause/>
-        Pause
-      </Button>
-      <Button ui>
-        <Icon play/>
-        Play
-      </Button>
-      <Button ui>
-        <Icon shuffle/>
-        Shuffle
-      </Button>
+        <Button ui>
+          <Icon pause/>
+          Pause
+        </Button>
+        <Button ui>
+          <Icon play/>
+          Play
+        </Button>
+        <Button ui>
+          <Icon shuffle/>
+          Shuffle
+        </Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui vertical labeled icon>
     <Button ui>
         <Icon pause/>
@@ -895,25 +1087,33 @@
     </Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Mixed Group</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Mixed group -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Mixed group</h4>
+
     <Buttons ui>
-      <Button ui labeled icon>
-          <Icon left chevron/>
-          Back
-      </Button>
-      <Button ui>
-          <Icon stop/>
-          Stop
-      </Button>
-      <Button ui right labeled icon>
-          Forward
-          <Icon right chevron/>
-      </Button>
+        <Button ui labeled icon>
+            <Icon left chevron/>
+            Back
+        </Button>
+        <Button ui>
+            <Icon stop/>
+            Stop
+        </Button>
+        <Button ui right labeled icon>
+            Forward
+            <Icon right chevron/>
+        </Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui>
     <Button ui labeled icon>
         <Icon left chevron/>
@@ -929,23 +1129,31 @@
     </Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Equal Width</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Equal width -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Equal width</h4>
+
     <Buttons ui five>
-      <Button ui>Overview</Button>
-      <Button ui>Specs</Button>
-      <Button ui>Warranty</Button>
-      <Button ui>Reviews</Button>
-      <Button ui>Support</Button>
+        <Button ui>Overview</Button>
+        <Button ui>Specs</Button>
+        <Button ui>Warranty</Button>
+        <Button ui>Reviews</Button>
+        <Button ui>Support</Button>
     </Buttons>
     <Buttons ui three>
-      <Button ui>Overview</Button>
-      <Button ui>Specs</Button>
-      <Button ui>Support</Button>
+        <Button ui>Overview</Button>
+        <Button ui>Specs</Button>
+        <Button ui>Support</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui five>
     <Button ui>Overview</Button>
     <Button ui>Specs</Button>
@@ -959,44 +1167,60 @@
     <Button ui>Support</Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Colored Buttons</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Colored buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Colored buttons</h4>
+
     <Buttons ui blue>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
-      <Button ui>Three</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
+        <Button ui>Three</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui blue>
     <Button ui>One</Button>
     <Button ui>Two</Button>
     <Button ui>Three</Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Basic Buttons</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Basic buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Basic buttons</h4>
+    
     <Buttons ui basic>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
-      <Button ui>Three</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
+        <Button ui>Three</Button>
     </Buttons>
     <Divider ui/>
     <Buttons ui vertical basic>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
-      <Button ui>Three</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
+        <Button ui>Three</Button>
     </Buttons>
     <Divider ui/>
     <Buttons ui>
-      <Button ui red basic>One</Button>
-      <Button ui blue basic>Two</Button>
-      <Button ui green basic>Three</Button>
+        <Button ui red basic>One</Button>
+        <Button ui blue basic>Two</Button>
+        <Button ui green basic>Three</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui basic>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -1015,29 +1239,37 @@
     <Button ui green basic>Three</Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Group Sizes</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Group sizes -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Group sizes</h4>
+
     <Buttons ui large>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
-      <Button ui>Three</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
+        <Button ui>Three</Button>
     </Buttons>
     <br/><br/>
     <Buttons ui small basic icon>
-      <Button ui><Icon file/></Button>
-      <Button ui><Icon save/></Button>
-      <Button ui><Icon upload/></Button>
-      <Button ui><Icon download/></Button>
+        <Button ui><Icon file/></Button>
+        <Button ui><Icon save/></Button>
+        <Button ui><Icon upload/></Button>
+        <Button ui><Icon download/></Button>
     </Buttons>
     <br/><br/>
     <Buttons ui>
-      <Button ui>One</Button>
-      <div class="or"></div>
-      <Button ui>Two</Button>
+        <Button ui>One</Button>
+        <div class="or"></div>
+        <Button ui>Two</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui large>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -1057,33 +1289,41 @@
     <Button ui>Two</Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Wrapping Buttons</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Wrapping buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Wrapping buttons</h4>
+
     <Buttons ui wrapped wrapping>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
-      <Button ui>Three</Button>
-      <Button ui>Four</Button>
-      <Button ui>Five</Button>
-      <Button ui>Six</Button>
-      <Button ui>Seven</Button>
-      <Button ui>Eight</Button>
-      <Button ui>Nine</Button>
-      <Button ui>Ten</Button>
-      <Button ui>Eleven</Button>
-      <Button ui>Twelve</Button>
-      <Button ui>Thirteen</Button>
-      <Button ui>Fourteen</Button>
-      <Button ui>Fifteen</Button>
-      <Button ui>Sixteen</Button>
-      <Button ui>Seventeen</Button>
-      <Button ui>Eighteen</Button>
-      <Button ui>Nineteen</Button>
-      <Button ui>Twenty</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
+        <Button ui>Three</Button>
+        <Button ui>Four</Button>
+        <Button ui>Five</Button>
+        <Button ui>Six</Button>
+        <Button ui>Seven</Button>
+        <Button ui>Eight</Button>
+        <Button ui>Nine</Button>
+        <Button ui>Ten</Button>
+        <Button ui>Eleven</Button>
+        <Button ui>Twelve</Button>
+        <Button ui>Thirteen</Button>
+        <Button ui>Fourteen</Button>
+        <Button ui>Fifteen</Button>
+        <Button ui>Sixteen</Button>
+        <Button ui>Seventeen</Button>
+        <Button ui>Eighteen</Button>
+        <Button ui>Nineteen</Button>
+        <Button ui>Twenty</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui wrapped wrapping>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -1107,33 +1347,41 @@
     <Button ui>Twenty</Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="example">
-    <h4 class="example-header">Spaced Buttons</h4>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Spaced buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Spaced buttons</h4>
+
     <Buttons ui spaced wrapping>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
-      <Button ui>Three</Button>
-      <Button ui>Four</Button>
-      <Button ui>Five</Button>
-      <Button ui>Six</Button>
-      <Button ui>Seven</Button>
-      <Button ui>Eight</Button>
-      <Button ui>Nine</Button>
-      <Button ui>Ten</Button>
-      <Button ui>Eleven</Button>
-      <Button ui>Twelve</Button>
-      <Button ui>Thirteen</Button>
-      <Button ui>Fourteen</Button>
-      <Button ui>Fifteen</Button>
-      <Button ui>Sixteen</Button>
-      <Button ui>Seventeen</Button>
-      <Button ui>Eighteen</Button>
-      <Button ui>Nineteen</Button>
-      <Button ui>Twenty</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
+        <Button ui>Three</Button>
+        <Button ui>Four</Button>
+        <Button ui>Five</Button>
+        <Button ui>Six</Button>
+        <Button ui>Seven</Button>
+        <Button ui>Eight</Button>
+        <Button ui>Nine</Button>
+        <Button ui>Ten</Button>
+        <Button ui>Eleven</Button>
+        <Button ui>Twelve</Button>
+        <Button ui>Thirteen</Button>
+        <Button ui>Fourteen</Button>
+        <Button ui>Fifteen</Button>
+        <Button ui>Sixteen</Button>
+        <Button ui>Seventeen</Button>
+        <Button ui>Eighteen</Button>
+        <Button ui>Nineteen</Button>
+        <Button ui>Twenty</Button>
     </Buttons>
-    <Prism language="svelte" source={`
+
+    <SourceCode language="svelte" source={`
 <Buttons ui spaced wrapping>
     <Button ui>One</Button>
     <Button ui>Two</Button>
@@ -1157,5 +1405,7 @@
     <Button ui>Twenty</Button>
 </Buttons>
   `}/>
-  </div>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 </div>

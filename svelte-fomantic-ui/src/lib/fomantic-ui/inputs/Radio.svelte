@@ -11,16 +11,20 @@
     export let group: string="";
     export let value: string="";
     export let label: string="";
+    export let name: string=null;
+    export let slider: boolean=false;
+    export let toggle: boolean=false;
+    export let disabled: boolean=false;
 </script>
 
 {#if label}
-    <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio checkbox"} {...otherProps($$restProps)}>
-        <input type="radio" {id} {value} bind:group>
+    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} {...otherProps($$restProps)}>
+        <input type="radio" {id} {name} {value} bind:group {disabled}>
         <label for={id} class="ui radio">{label}</label>
     </div>
 {:else}
-    <div class={(ui?"ui ":"") + uiProps($$restProps) + " radio checkbox"} {...otherProps($$restProps)}>
-        <input type="radio" {id} {value} bind:group>
+    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} {...otherProps($$restProps)}>
+        <input type="radio" {id} {name} {value} bind:group {disabled}>
         <slot/>
     </div>
 {/if}

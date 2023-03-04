@@ -43,10 +43,9 @@
             </ul>
             <li> <h3>Inputs</h3></li>
             <ul>
-                <li> <h4><a href="/Checkbox">Checkbox</a></h4> </li>
+                <li> <h4><a href="/Checkbox">Checkbox, Radio, Toggle, Slider</a>, <a href="/CheckboxIndeterminate">Indeterminate</a></h4> </li>
                 <li> <h4><a href="/Input">Input</a></h4></li>
                 <li> <h4><a href="/Dropdown">Dropdown</a></h4> </li>
-                <li> <h4>Radio</h4></li>
                 <li> <h4>Simple Dropdown</h4></li>
                 <li> <h4>Textarea</h4></li>
             </ul>

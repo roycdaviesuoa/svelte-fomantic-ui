@@ -19,7 +19,6 @@
     export {default as Icon} from './elements/Icon.svelte';
     export {default as Icons} from './elements/Icons.svelte';
     export {default as Image} from './elements/Image.svelte';
-    // export {default as Image_Wrapper} from './elements/Image_Wrapper.svelte';
     export {default as Images} from './elements/Images.svelte';
     export {default as Inline} from './elements/Inline.svelte';
     export {default as Label} from './elements/Label.svelte';

@@ -182,7 +182,7 @@ If you are looking for code examples, check in the `fomantic-ui-tests` folder wh
 
 | Element          | Implemented | Tested and Documented | Test Link |
 |------------------|:-----------:|:---------------------:|-----------|
-| Button           |      X      |           X           | /Button
+| Button           |      X      |           X           | [/Button](./src/lib/fomantic-ui-tests/Button.svelte)
 |  - Interactive   |      X      |           X           | /ButtonInteractive
 | Container | X | X | /Container
 | Divider | X | X | /Divider
@@ -204,9 +204,10 @@ If you are looking for code examples, check in the `fomantic-ui-tests` folder wh
 | Inputs          | Implemented | Tested and Documented | Test Link |
 |-----------------|:-----------:|:---------------------:|-----------|
 | Checkbox | X | X | /Checkbox
+|  - Indeterminate | X | X | /CheckboxIndeterminate
 | Input | X | X | /Input
 | Dropdown | X | X | /Dropdown
-| Radio | X |  | 
+| Radio | X | X | /Checkbox
 | Simple Dropdown | X |  | 
 | Textarea | X |  | 
 
