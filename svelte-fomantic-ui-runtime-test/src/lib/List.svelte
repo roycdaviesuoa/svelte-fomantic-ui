@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { List, Item, Icon, Content, Header, Description, Link, Image, Segment, Button } from "../fomantic-ui/Core.svelte";
+    import { List, Item, Icon, Content, Header, Description, Link, Image, Segment, Button } from "svelte-fomantic-ui";
     import "./prism.css";
     import Prism from 'svelte-prism';
 

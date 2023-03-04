@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Calendar, Input, Icon, Form, Fields, Field, Label } from "../fomantic-ui/Core.svelte";
+    import { Calendar, Input, Icon, Form, Fields, Field, Label } from "svelte-fomantic-ui";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';

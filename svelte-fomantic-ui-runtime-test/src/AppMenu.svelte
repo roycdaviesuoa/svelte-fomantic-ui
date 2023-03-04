@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import "../src/lib/fomantic-ui-tests/examplestyles.css";
+    import "../src/lib/examplestyles.css";
 </script>
 
 <div class="example-document">

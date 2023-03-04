@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Input, Label, Icon, Header, Text, Menu, Item, Dropdown, Link, Select, Option, Button, Segment, Form, Textarea } from "../fomantic-ui/Core.svelte";
+    import { Input, Label, Icon, Header, Text, Menu, Item, Dropdown, Link, Select, Option, Button, Segment, Form, Textarea } from "svelte-fomantic-ui";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';

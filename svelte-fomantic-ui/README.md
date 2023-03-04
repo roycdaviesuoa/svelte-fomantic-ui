@@ -135,7 +135,7 @@ This has been packaged for installation with `yarn`, but should also work with `
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/fomantic-ui/fomantic-ui.js"></script>
+<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/fomantic-ui.js"></script>
 ```
 
 Notice that jquery is being included in this project.  If you don't wish to use jquery, you can omit these lines completely, but many of the fomantic-ui modules won't work.  However, everything that only requires css will still be fine.
@@ -160,7 +160,7 @@ To use fomantic UI in your project, import the required elements in the script s
 This project was created using vite, and is runnable in its own right.  When you do that, you'll see a website with some examples and tests.
 
 1. Clone the repository from GITHub.
-1. Change into the `svelte-fomantic-ui` sub directory.
+1. Change into the `svelte-fomantic-ui-runtime-test` sub directory.
 1. Run the `yarn` command to download dependencies.
 1. Run `yarn dev` to start development web server.
 1. Open the link in a browser to see the dev / test website (usually `http://localhost:5173`)

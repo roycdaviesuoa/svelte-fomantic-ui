@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Emoji, Segment, Header, Button, Label, Text, Link } from "../fomantic-ui/Core.svelte";
+    import { Emoji, Segment, Header, Button, Label, Text, Link } from "svelte-fomantic-ui";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';

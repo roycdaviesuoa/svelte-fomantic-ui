@@ -6,7 +6,7 @@
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
 
 ---
-For more details, look inside the svelte-fomantic-ui folder, and in particular, check the [README](https://github.com/roycdaviesuoa/svelte-fomantic-ui/blob/main/svelte-fomantic-ui/README.md)
+For more details, look inside the svelte-fomantic-ui folder, and in particular, check the [README](./svelte-fomantic-ui/README.md)
 
 The source code is found in the folder `src/lib/fomantic-ui`.  You can use the Core.svelte file for including the necessary elements in your project.
 There are some examples and tests in the `src/lib/fomantic-ui-tests`.  You can actually run these as a simple project using `yarn dev`, and certianly look at the code for inspiration.
@@ -26,10 +26,10 @@ Note that in essence all these do already work (except for the Modules) because 
 
 | Element          | Implemented | Tested and Documented | Test Link |
 |------------------|:-----------:|:---------------------:|-----------|
-| Button           |      X      |           X           | [/Button](./svelte-fomantic-ui/src/lib/fomantic-ui-tests/Button.svelte)
-|  - Interactive   |      X      |           X           | [/ButtonInteractive](./svelte-fomantic-ui/src/lib/fomantic-ui-tests/ButtonInteractive.svelte)
-| Container | X | X | [/Container](./svelte-fomantic-ui/src/lib/fomantic-ui-tests/Container.svelte)
-| Divider | X | X | [/Divider](./svelte-fomantic-ui/src/lib/fomantic-ui-tests/Divider.svelte)
+| Button           |      X      |           X           | [/Button](./svelte-fomantic-ui-runtime-test/src/lib/Button.svelte)
+|  - Interactive   |      X      |           X           | [/ButtonInteractive](./svelte-fomantic-ui-runtime-test/src/lib/ButtonInteractive.svelte)
+| Container | X | X | [/Container](./svelte-fomantic-ui-runtime-test/src/lib/Container.svelte)
+| Divider | X | X | [/Divider](./svelte-fomantic-ui-runtime-test/src/lib/Divider.svelte)
 | Emoji | X | X | /Emoji
 | Flag | X | X | /Flag
 | Header | X | X | /Header

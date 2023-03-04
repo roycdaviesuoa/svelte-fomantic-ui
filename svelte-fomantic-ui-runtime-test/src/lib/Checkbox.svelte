@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Checkbox, Form, Field, Fields, Divider, Label, Header, Segment, Radio, List, Item } from "../fomantic-ui/Core.svelte";
+    import { Checkbox, Form, Field, Fields, Divider, Label, Header, Segment, Radio, List, Item } from "svelte-fomantic-ui";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
