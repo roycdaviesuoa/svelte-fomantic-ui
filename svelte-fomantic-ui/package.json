@@ -2,9 +2,9 @@
   "name": "svelte-fomantic-ui",
   "description": "Fomantic UI for Svelte",
   "main": "index.html",
-  "svelte": "src/lib/fomantic-ui/Core.svelte",
+  "svelte": "src/lib/Core.svelte",
   "private": false,
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -36,8 +36,6 @@
   "dependencies": {
     "fomantic-ui-css": "^2.9.2",
     "jquery": "^3.6.3",
-    "svelte-fomantic-ui": "^0.0.13",
-    "svelte-prism": "^1.1.6",
     "vite-plugin-svelte": "^3.0.1"
   }
 }
