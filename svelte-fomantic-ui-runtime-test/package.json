@@ -19,9 +19,8 @@
     "vite": "latest"
   },
   "dependencies": {
-    "svelte-fomantic-ui": "^0.0.14",
+    "svelte-fomantic-ui": "latest",
     "svelte-prism": "latest",
-    "sveltyper": "^1.0.2",
     "vite-plugin-svelte": "latest"
   }
 }

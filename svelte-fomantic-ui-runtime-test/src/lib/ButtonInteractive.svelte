@@ -1,6 +1,6 @@
 <!--
 ******************************************************************************************************************************************************
-* By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
+* By Dr. Roy C. Davies, March 2023, roy.c.davies@ieee.org
 ******************************************************************************************************************************************************
 -->
 
@@ -9,7 +9,7 @@
     import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import Code from './ButtonInteractive'
+    import Code from './ButtonInteractive';
 
     let selected: string = "left";
     let output: string = "";
