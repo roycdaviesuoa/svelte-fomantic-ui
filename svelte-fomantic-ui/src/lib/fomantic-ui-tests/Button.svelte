@@ -9,6 +9,7 @@
     import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
+    import Code from './Button'
 </script>
 
 <div class="example-document">
@@ -25,9 +26,7 @@
     <Button ui>Follow</Button>
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Button ui>Follow</Button>
-    `}/>
+    <SourceCode language = "svelte" source = {Code.standard}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -43,10 +42,7 @@
     <Button ui secondary>Secondary</Button>
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Button ui primary>Primary</Button>
-<Button ui secondary>Secondary</Button>
-    `}/>
+    <SourceCode language = "svelte" source = {Code.emphasis}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -78,26 +74,7 @@
     </Button>
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Button ui animated>
-    <Content visible>Next</Content>
-    <Content hidden>
-        <Icon right arrow/>
-    </Content>
-</Button>
-<Button ui vertical animated>
-    <Content hidden>Shop</Content>
-    <Content visible>
-        <Icon shop/>
-    </Content>
-</Button>
-<Button ui animated fade>
-    <Content visible>Sign-up for a Pro account</Content>
-    <Content hidden>
-        $12.99 a month
-    </Content>
-</Button>
-    `}/>
+    <SourceCode language = "svelte" source = {Code.animated}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -136,32 +113,7 @@
     </Button>
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Button ui labeled>
-  <Button ui>
-      <Icon heart/> Like
-  </Button>
-  <Link ui basic label>
-      2,048
-  </Link>
-</Button>
-<Button ui left labeled>
-    <Link ui basic right pointing label>
-      2,048
-    </Link>
-    <Button ui>
-      <Icon heart/> Like
-    </Button>
-</Button>
-<Button ui left labeled>
-    <Link ui basic label>
-      1,048
-    </Link>
-    <Button ui icon>
-      <Icon fork/>
-    </Button>
-</Button>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.labeled}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -179,11 +131,7 @@
     </Button>
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Button ui icon>
-    <Icon cloud/>
-</Button>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.icon}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -210,20 +158,7 @@
     </Button>
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Button ui labeled icon>
-    <Icon pause/>
-    Pause
-</Button>
-<Button ui right labeled icon>
-    <Icon right arrow/>
-    Next
-</Button>
-<Button ui labeled icon>
-    <Icon loading spinner/>
-    Loading
-</Button>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.labeled_icon}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -234,9 +169,11 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Basic</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui basic>
-      <Icon user/>
-      Add Friend
+        <Icon user/>
+        Add Friend
     </Button>
     <br/><br/>
     <Button ui primary basic>Primary</Button>
@@ -257,32 +194,10 @@
     <Button ui brown basic>Brown</Button>
     <Button ui grey basic>Grey</Button>
     <Button ui black basic>Black</Button>
-    <SourceCode language="svelte" source={`
-<Button ui basic>
-    <Icon user/>
-    Add Friend
-</Button>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Button ui primary basic>Primary</Button>
-<Button ui secondary basic>Secondary</Button>
-<Button ui positive basic>Positive</Button>
-<Button ui negative basic>Negative</Button>
-
-<Button ui red basic>Red</Button>
-<Button ui orange basic>Orange</Button>
-<Button ui yellow basic>Yellow</Button>
-<Button ui olive basic>Olive</Button>
-<Button ui green basic>Green</Button>
-<Button ui teal basic>Teal</Button>
-<Button ui blue basic>Blue</Button>
-<Button ui violet basic>Violet</Button>
-<Button ui purple basic>Purple</Button>
-<Button ui pink basic>Pink</Button>
-<Button ui brown basic>Brown</Button>
-<Button ui grey basic>Grey</Button>
-<Button ui black basic>Black</Button>
-    `}/>
-  </div>
+    <SourceCode language = "svelte" source = {Code.basic}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -292,8 +207,10 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Tertiary</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui tertiary>
-      Cancel Action
+        Cancel Action
     </Button>
     <br/><br/>
     <Button ui primary tertiary>Primary</Button>
@@ -311,28 +228,10 @@
     <Button ui brown tertiary>Brown</Button>
     <Button ui grey tertiary>Grey</Button>
     <Button ui black tertiary>Black</Button>
-    <SourceCode language="svelte" source={`
-<Button ui tertiary>
-    Cancel Action
-</Button>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Button ui primary tertiary>Primary</Button>
-<Button ui secondary tertiary>Secondary</Button>
-<Button ui red tertiary>Red</Button>
-<Button ui orange tertiary>Orange</Button>
-<Button ui yellow tertiary>Yellow</Button>
-<Button ui olive tertiary>Olive</Button>
-<Button ui green tertiary>Green</Button>
-<Button ui teal tertiary>Teal</Button>
-<Button ui blue tertiary>Blue</Button>
-<Button ui violet tertiary>Violet</Button>
-<Button ui purple tertiary>Purple</Button>
-<Button ui pink tertiary>Pink</Button>
-<Button ui brown tertiary>Brown</Button>
-<Button ui grey tertiary>Grey</Button>
-<Button ui black tertiary>Black</Button>
-    `}/>
-  </div>
+    <SourceCode language = "svelte" source = {Code.tertiary}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -342,83 +241,49 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Inverted</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Segment ui inverted>
-      <Button ui inverted>Standard</Button>
-      <Button ui inverted primary>Primary</Button>
-      <Button ui inverted secondary>Secondary</Button>
-      <Button ui inverted red>Red</Button>
-      <Button ui inverted orange>Orange</Button>
-      <Button ui inverted yellow>Yellow</Button>
-      <Button ui inverted olive>Olive</Button>
-      <Button ui inverted green>Green</Button>
-      <Button ui inverted teal>Teal</Button>
-      <Button ui inverted blue>Blue</Button>
-      <Button ui inverted violet>Violet</Button>
-      <Button ui inverted purple>Purple</Button>
-      <Button ui inverted pink>Pink</Button>
-      <Button ui inverted brown>Brown</Button>
-      <Button ui inverted grey>Grey</Button>
-      <Button ui inverted black>Black</Button>
+        <Button ui inverted>Standard</Button>
+        <Button ui inverted primary>Primary</Button>
+        <Button ui inverted secondary>Secondary</Button>
+        <Button ui inverted red>Red</Button>
+        <Button ui inverted orange>Orange</Button>
+        <Button ui inverted yellow>Yellow</Button>
+        <Button ui inverted olive>Olive</Button>
+        <Button ui inverted green>Green</Button>
+        <Button ui inverted teal>Teal</Button>
+        <Button ui inverted blue>Blue</Button>
+        <Button ui inverted violet>Violet</Button>
+        <Button ui inverted purple>Purple</Button>
+        <Button ui inverted pink>Pink</Button>
+        <Button ui inverted brown>Brown</Button>
+        <Button ui inverted grey>Grey</Button>
+        <Button ui inverted black>Black</Button>
     </Segment>
     <br/><br/>
     <Segment ui inverted>
-      <Button ui inverted basic>Basic</Button>
-      <Button ui inverted primary basic>Primary</Button>
-      <Button ui inverted secondary basic>Secondary</Button>
-      <Button ui inverted red basic>Basic Red</Button>
-      <Button ui inverted orange basic>Basic Orange</Button>
-      <Button ui inverted yellow basic>Basic Yellow</Button>
-      <Button ui inverted olive basic>Basic Olive</Button>
-      <Button ui inverted green basic>Basic Green</Button>
-      <Button ui inverted teal basic>Basic Teal</Button>
-      <Button ui inverted blue basic>Basic Blue</Button>
-      <Button ui inverted violet basic>Basic Violet</Button>
-      <Button ui inverted purple basic>Basic Purple</Button>
-      <Button ui inverted pink basic>Basic Pink</Button>
-      <Button ui inverted brown basic>Basic Brown</Button>
-      <Button ui inverted grey basic>Basic Grey</Button>
-      <Button ui inverted black basic>Basic Black</Button>
+        <Button ui inverted basic>Basic</Button>
+        <Button ui inverted primary basic>Primary</Button>
+        <Button ui inverted secondary basic>Secondary</Button>
+        <Button ui inverted red basic>Basic Red</Button>
+        <Button ui inverted orange basic>Basic Orange</Button>
+        <Button ui inverted yellow basic>Basic Yellow</Button>
+        <Button ui inverted olive basic>Basic Olive</Button>
+        <Button ui inverted green basic>Basic Green</Button>
+        <Button ui inverted teal basic>Basic Teal</Button>
+        <Button ui inverted blue basic>Basic Blue</Button>
+        <Button ui inverted violet basic>Basic Violet</Button>
+        <Button ui inverted purple basic>Basic Purple</Button>
+        <Button ui inverted pink basic>Basic Pink</Button>
+        <Button ui inverted brown basic>Basic Brown</Button>
+        <Button ui inverted grey basic>Basic Grey</Button>
+        <Button ui inverted black basic>Basic Black</Button>
     </Segment>
-    <SourceCode language="svelte" source={`
-<Segment ui inverted>
-    <Button ui inverted>Standard</Button>
-    <Button ui inverted primary>Primary</Button>
-    <Button ui inverted secondary>Secondary</Button>
-    <Button ui inverted red>Red</Button>
-    <Button ui inverted orange>Orange</Button>
-    <Button ui inverted yellow>Yellow</Button>
-    <Button ui inverted olive>Olive</Button>
-    <Button ui inverted green>Green</Button>
-    <Button ui inverted teal>Teal</Button>
-    <Button ui inverted blue>Blue</Button>
-    <Button ui inverted violet>Violet</Button>
-    <Button ui inverted purple>Purple</Button>
-    <Button ui inverted pink>Pink</Button>
-    <Button ui inverted brown>Brown</Button>
-    <Button ui inverted grey>Grey</Button>
-    <Button ui inverted black>Black</Button>
-</Segment>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Segment ui inverted>
-    <Button ui inverted basic>Basic</Button>
-    <Button ui inverted primary basic>Primary</Button>
-    <Button ui inverted secondary basic>Secondary</Button>
-    <Button ui inverted red basic>Basic Red</Button>
-    <Button ui inverted orange basic>Basic Orange</Button>
-    <Button ui inverted yellow basic>Basic Yellow</Button>
-    <Button ui inverted olive basic>Basic Olive</Button>
-    <Button ui inverted green basic>Basic Green</Button>
-    <Button ui inverted teal basic>Basic Teal</Button>
-    <Button ui inverted blue basic>Basic Blue</Button>
-    <Button ui inverted violet basic>Basic Violet</Button>
-    <Button ui inverted purple basic>Basic Purple</Button>
-    <Button ui inverted pink basic>Basic Pink</Button>
-    <Button ui inverted brown basic>Basic Brown</Button>
-    <Button ui inverted grey basic>Basic Grey</Button>
-    <Button ui inverted black basic>Basic Black</Button>
-</Segment>
-    `}/>
-  </div>
+    <SourceCode language = "svelte" source = {Code.inverted}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -428,47 +293,43 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Groups</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui>
       <Button ui>One</Button>
       <Button ui>Two</Button>
       <Button ui>Three</Button>
     </Buttons>
-    <SourceCode language="svelte" source={`
-<Buttons ui>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-    <Button ui>Three</Button>
-</Buttons>    
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-  <div class="example">
+    <SourceCode language = "svelte" source = {Code.groups}/>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Icon buttons -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
     <h4 class="example-header">Icon Buttons</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui icon>
-      <Button ui><Icon align left/></Button>
-      <Button ui><Icon align center/></Button>
-      <Button ui><Icon align right/></Button>
-      <Button ui><Icon align justify/></Button>
+        <Button ui><Icon align left/></Button>
+        <Button ui><Icon align center/></Button>
+        <Button ui><Icon align right/></Button>
+        <Button ui><Icon align justify/></Button>
     </Buttons>
     <Buttons ui icon>
-      <Button ui><Icon bold/></Button>
-      <Button ui><Icon underline/></Button>
-      <Button ui><Icon text width/></Button>
+        <Button ui><Icon bold/></Button>
+        <Button ui><Icon underline/></Button>
+        <Button ui><Icon text width/></Button>
     </Buttons>
-    <SourceCode language="svelte" source={`
-<Buttons ui icon>
-    <Button ui><Icon align left/></Button>
-    <Button ui><Icon align center/></Button>
-    <Button ui><Icon align right/></Button>
-    <Button ui><Icon align justify/></Button>
-</Buttons>
-<Buttons ui icon>
-    <Button ui><Icon bold/></Button>
-    <Button ui><Icon underline/></Button>
-    <Button ui><Icon text width/></Button>
-</Buttons>  
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.icon_buttons}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -478,19 +339,16 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Conditionals</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui>
-      <Button ui>Cancel</Button>
-      <div class="or"></div>
-      <Button ui positive>Save</Button>
+        <Button ui>Cancel</Button>
+        <div class="or"></div>
+        <Button ui positive>Save</Button>
     </Buttons>
-    <SourceCode language="svelte" source={`
-<Buttons ui>
-    <Button ui>Cancel</Button>
-    <div class="or"></div>
-    <Button ui positive>Save</Button>
-</Buttons> 
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.conditionals}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -500,17 +358,16 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Active state</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui active>
-      <Icon user/>
-      Follow
+        <Icon user/>
+        Follow
     </Button>
-    <SourceCode language="svelte" source={`
-<Button ui active>
-    <Icon user/>
-    Follow
-</Button>
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.active_state}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -520,17 +377,16 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Disabled</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui disabled>
-      <Icon user/>
-      Followed
+        <Icon user/>
+        Followed
     </Button>
-    <SourceCode language="svelte" source={`
-<Button ui disabled>
-    <Icon user/>
-    Followed
-</Button>
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.disabled}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -540,6 +396,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Loading</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui loading>Loading</Button>
     <Button ui basic loading>Loading</Button>
     <Button ui primary loading>Loading</Button>
@@ -554,23 +412,10 @@
     <Button ui basic elastic loading>Loading</Button>
     <Button ui primary elastic loading>Loading</Button>
     <Button ui secondary elastic loading>Loading</Button>
-    <SourceCode language="svelte" source={`
-<Button ui loading>Loading</Button>
-<Button ui basic loading>Loading</Button>
-<Button ui primary loading>Loading</Button>
-<Button ui secondary loading>Loading</Button>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Button ui double loading>Loading</Button>
-<Button ui basic double loading>Loading</Button>
-<Button ui primary double loading>Loading</Button>
-<Button ui secondary double loading>Loading</Button>
-
-<Button ui elastic loading>Loading</Button>
-<Button ui basic elastic loading>Loading</Button>
-<Button ui primary elastic loading>Loading</Button>
-<Button ui secondary elastic loading>Loading</Button>
-    `}/>
-  </div>
+    <SourceCode language = "svelte" source = {Code.loading}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -580,81 +425,48 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Social</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui facebook>
-      <Icon facebook/>
-      Facebook
+        <Icon facebook/>
+        Facebook
     </Button>
     <Button ui twitter>
-      <Icon twitter/>
-      Twitter
+        <Icon twitter/>
+        Twitter
     </Button>
     <Button ui google plus>
-      <Icon google plus/>
-      Google Plus
+        <Icon google plus/>
+        Google Plus
     </Button>
     <Button ui vk>
-      <Icon vk/>
-      VK
+        <Icon vk/>
+        VK
     </Button>
     <Button ui linkedin>
-      <Icon linkedin/>
-      LinkedIn
+        <Icon linkedin/>
+        LinkedIn
     </Button>
     <Button ui instagram>
-      <Icon instagram/>
-      Instagram
+        <Icon instagram/>
+        Instagram
     </Button>
     <Button ui youtube>
-      <Icon youtube/>
-      YouTube
+        <Icon youtube/>
+        YouTube
     </Button>
     <Button ui whatsapp>
-      <Icon whatsapp/>
-      WhatsApp
+        <Icon whatsapp/>
+        WhatsApp
     </Button>
     <Button ui telegram>
-      <Icon telegram/>
-      Telegram
+        <Icon telegram/>
+        Telegram
     </Button>
-    <SourceCode language="svelte" source={`
-<Button ui facebook>
-    <Icon facebook/>
-    Facebook
-</Button>
-<Button ui twitter>
-    <Icon twitter/>
-    Twitter
-</Button>
-<Button ui google plus>
-    <Icon google plus/>
-    Google Plus
-</Button>
-<Button ui vk>
-    <Icon vk/>
-    VK
-</Button>
-<Button ui linkedin>
-    <Icon linkedin/>
-    LinkedIn
-</Button>
-<Button ui instagram>
-    <Icon instagram/>
-    Instagram
-</Button>
-<Button ui youtube>
-    <Icon youtube/>
-    YouTube
-</Button>
-<Button ui whatsapp>
-    <Icon whatsapp/>
-    WhatsApp
-</Button>
-<Button ui telegram>
-    <Icon telegram/>
-    Telegram
-</Button>
-  `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.social}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -664,57 +476,36 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Size</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui mini>
-      Mini
+        Mini
     </Button>
     <Button ui tiny>
-      Tiny
+        Tiny
     </Button>
     <Button ui small>
-      Small
+        Small
     </Button>
     <Button ui medium>
-      Medium
+        Medium
     </Button>
     <Button ui large>
-      Large
+        Large
     </Button>
     <Button ui big>
-      Big
+        Big
     </Button>
     <Button ui huge>
-      Huge
+        Huge
     </Button>
     <Button ui massive>
-      Massive
+        Massive
     </Button>
-    <SourceCode language="svelte" source={`
-<Button ui mini>
-    Mini
-</Button>
-<Button ui tiny>
-    Tiny
-</Button>
-<Button ui small>
-    Small
-</Button>
-<Button ui medium>
-    Medium
-</Button>
-<Button ui large>
-    Large
-</Button>
-<Button ui big>
-    Big
-</Button>
-<Button ui huge>
-    Huge
-</Button>
-<Button ui massive>
-    Massive
-</Button>
-  `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.size}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -724,14 +515,15 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Floated</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui right floated>Right Floated</Button>
     <Button ui left floated>Left Floated</Button>
     <br/><br/>
-    <SourceCode language="svelte" source={`
-<Button ui right floated>Right Floated</Button>
-<Button ui left floated>Left Floated</Button>
-  `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.floated}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -741,6 +533,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Colored</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui red>Red</Button>
     <Button ui orange>Orange</Button>
     <Button ui yellow>Yellow</Button>
@@ -754,22 +548,10 @@
     <Button ui brown>Brown</Button>
     <Button ui grey>Grey</Button>
     <Button ui black>Black</Button>
-    <SourceCode language="svelte" source={`
-<Button ui red>Red</Button>
-<Button ui orange>Orange</Button>
-<Button ui yellow>Yellow</Button>
-<Button ui olive>Olive</Button>
-<Button ui green>Green</Button>
-<Button ui teal>Teal</Button>
-<Button ui blue>Blue</Button>
-<Button ui violet>Violet</Button>
-<Button ui purple>Purple</Button>
-<Button ui pink>Pink</Button>
-<Button ui brown>Brown</Button>
-<Button ui grey>Grey</Button>
-<Button ui black>Black</Button>
-  `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.colored}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -779,29 +561,22 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Compact</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui compact>
-      Hold
+        Hold
     </Button>
     <Button ui compact icon>
-      <Icon pause icon/>
+        <Icon pause icon/>
     </Button>
     <Button ui compact labeled icon>
-      <Icon pause icon/>
-      Pause
+        <Icon pause icon/>
+        Pause
     </Button>
-    <SourceCode language="svelte" source={`
-<Button ui compact>
-    Hold
-</Button>
-<Button ui compact icon>
-    <Icon pause icon/>
-</Button>
-<Button ui compact labeled icon>
-    <Icon pause icon/>
-    Pause
-</Button>
-  `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.compact}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -809,19 +584,18 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Toggle -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-  <div class="example">
+<div class="example">
     <h4 class="example-header">Toggle</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui toggle active={false} on_style="green" off_style="grey">
-      <Content slot="on">Voted</Content>
-      <Content slot="off">Vote</Content>
+        <Content slot="on">Voted</Content>
+        <Content slot="off">Vote</Content>
     </Button>
-    <SourceCode language="svelte" source={`
-<Button ui toggle active={false} on_style="green" off_style="grey">
-    <Content slot="on">Voted</Content>
-    <Content slot="off">Vote</Content>
-</Button>
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.toggle}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -829,13 +603,15 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Positive -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-  <div class="example">
+<div class="example">
     <h4 class="example-header">Positive</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui positive>Positive Button</Button>
-    <SourceCode language="svelte" source={`
-<Button ui positive>Positive Button</Button>
-  `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.positive}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -845,11 +621,13 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Negative</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui negative>Negative Button</Button>
-    <SourceCode language="svelte" source={`
-<Button ui negative>Negative Button</Button>
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.negative}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -859,11 +637,13 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Fluid</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui fluid>Fits container</Button>
-    <SourceCode language="svelte" source={`
-<Button ui fluid>Fits container</Button>
-    `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.fluid}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -873,39 +653,27 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Circular</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui circular icon>
-      <Icon settings/>
+        <Icon settings/>
     </Button>
     <Button ui circular facebook icon>
-      <Icon facebook/>
+        <Icon facebook/>
     </Button>
     <Button ui circular twitter icon>
-      <Icon twitter/>
+        <Icon twitter/>
     </Button>
     <Button ui circular linkedin icon>
-      <Icon linkedin/>
+        <Icon linkedin/>
     </Button>
     <Button ui circular google plus icon>
-      <Icon google plus/>
+        <Icon google plus/>
     </Button>
-    <SourceCode language="svelte" source={`
-<Button ui circular icon>
-    <Icon settings/>
-</Button>
-<Button ui circular facebook icon>
-    <Icon facebook/>
-</Button>
-<Button ui circular twitter icon>
-    <Icon twitter/>
-</Button>
-<Button ui circular linkedin icon>
-    <Icon linkedin/>
-</Button>
-<Button ui circular google plus icon>
-    <Icon google plus/>
-</Button>
-  `}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.circular}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -915,43 +683,29 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Vertically aligned</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui top attached>Top</Button>
     <Segment ui attached>
-      <p>blah blah blah</p>
+        <p>blah blah blah</p>
     </Segment>
     <Button ui bottom attached>Bottom</Button>
     <br/>
     <Buttons ui two top attached>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
     </Buttons>
     <Segment ui attached>
-    <p>Hello World</p>
+        <p>Hello World</p>
     </Segment>
     <Buttons ui two bottom attached>
-      <Button ui>One</Button>
-      <Button ui>Two</Button>
+        <Button ui>One</Button>
+        <Button ui>Two</Button>
     </Buttons>
-    <SourceCode language="svelte" source={`
-<Button ui top attached>Top</Button>
-<Segment ui attached>
-    <p>blah blah blah</p>
-</Segment>
-<Button ui bottom attached>Bottom</Button>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Buttons ui two top attached>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-</Buttons>
-<Segment ui attached>
-    <p>Hello World</p>
-</Segment>
-<Buttons ui two bottom attached>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-</Buttons>
-  `}/>
-  </div>
+    <SourceCode language = "svelte" source = {Code.vertically_aligned}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -961,13 +715,14 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Horizontally attached</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Button ui left attached>Left</Button>
     <Button ui right attached>Right</Button>
-    <SourceCode language="svelte" source={`
-<Button ui left attached>Left</Button>
-<Button ui right attached>Right</Button>    
-`}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.horizontally_attached}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -977,39 +732,39 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">Vertical buttons</h4>
-    <Buttons ui vertical>
-      <Button ui>Feed</Button>
-      <Button ui>Messages</Button>
-      <Button ui>Events</Button>
-      <Button ui>Photos</Button>
-    </Buttons>
-    <SourceCode language="svelte" source={`
-<Buttons ui vertical>
-    <Button ui>Feed</Button>
-    <Button ui>Messages</Button>
-    <Button ui>Events</Button>
-    <Button ui>Photos</Button>
-</Buttons>    
-`}/>
-  </div>
 
-  <div class="example">
-    <h4 class="example-header">Stackable</h4>
-    <Buttons ui stackable>
-      <Button ui>Feed</Button>
-      <Button ui>Messages</Button>
-      <Button ui>Events</Button>
-      <Button ui>Photos</Button>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Buttons ui vertical>
+        <Button ui>Feed</Button>
+        <Button ui>Messages</Button>
+        <Button ui>Events</Button>
+        <Button ui>Photos</Button>
     </Buttons>
-    <SourceCode language="svelte" source={`
-<Buttons ui stackable>
-    <Button ui>Feed</Button>
-    <Button ui>Messages</Button>
-    <Button ui>Events</Button>
-    <Button ui>Photos</Button>
-</Buttons>
-`}/>
-  </div>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.vertical_buttons}/>
+</div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Stackable -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+    <h4 class="example-header">Stackable</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Buttons ui stackable>
+        <Button ui>Feed</Button>
+        <Button ui>Messages</Button>
+        <Button ui>Events</Button>
+        <Button ui>Photos</Button>
+    </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+    <SourceCode language = "svelte" source = {Code.stackable}/>
+</div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -1020,6 +775,7 @@
 <div class="example">
     <h4 class="example-header">Icon buttons</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui icon>
         <Button ui><Icon align left/></Button>
         <Button ui><Icon align center/></Button>
@@ -1031,20 +787,9 @@
         <Button ui><Icon underline/></Button>
         <Button ui><Icon text width/></Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui icon>
-    <Button ui><Icon align left/></Button>
-    <Button ui><Icon align center/></Button>
-    <Button ui><Icon align right/></Button>
-    <Button ui><Icon align justify/></Button>
-</Buttons>
-<Buttons ui icon>
-    <Button ui><Icon bold/></Button>
-    <Button ui><Icon underline/></Button>
-    <Button ui><Icon text width/></Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.icon_buttons2}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1056,37 +801,24 @@
 <div class="example">
     <h4 class="example-header">Labeled icon buttons</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui vertical labeled icon>
         <Button ui>
-          <Icon pause/>
-          Pause
+            <Icon pause/>
+            Pause
         </Button>
         <Button ui>
-          <Icon play/>
-          Play
+            <Icon play/>
+            Play
         </Button>
         <Button ui>
-          <Icon shuffle/>
-          Shuffle
+            <Icon shuffle/>
+            Shuffle
         </Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui vertical labeled icon>
-    <Button ui>
-        <Icon pause/>
-        Pause
-    </Button>
-    <Button ui>
-        <Icon play/>
-        Play
-    </Button>
-    <Button ui>
-        <Icon shuffle/>
-        Shuffle
-    </Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.labeled_icon_buttons}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1098,6 +830,7 @@
 <div class="example">
     <h4 class="example-header">Mixed group</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui>
         <Button ui labeled icon>
             <Icon left chevron/>
@@ -1112,23 +845,9 @@
             <Icon right chevron/>
         </Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui>
-    <Button ui labeled icon>
-        <Icon left chevron/>
-        Back
-    </Button>
-    <Button ui>
-        <Icon stop/>
-        Stop
-    </Button>
-    <Button ui right labeled icon>
-        Forward
-        <Icon right chevron/>
-    </Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.mixed_group}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1140,6 +859,7 @@
 <div class="example">
     <h4 class="example-header">Equal width</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui five>
         <Button ui>Overview</Button>
         <Button ui>Specs</Button>
@@ -1152,21 +872,9 @@
         <Button ui>Specs</Button>
         <Button ui>Support</Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui five>
-    <Button ui>Overview</Button>
-    <Button ui>Specs</Button>
-    <Button ui>Warranty</Button>
-    <Button ui>Reviews</Button>
-    <Button ui>Support</Button>
-</Buttons>
-<Buttons ui three>
-    <Button ui>Overview</Button>
-    <Button ui>Specs</Button>
-    <Button ui>Support</Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.equal_width}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1178,19 +886,15 @@
 <div class="example">
     <h4 class="example-header">Colored buttons</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui blue>
         <Button ui>One</Button>
         <Button ui>Two</Button>
         <Button ui>Three</Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui blue>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-    <Button ui>Three</Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.colored_buttons}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1202,6 +906,7 @@
 <div class="example">
     <h4 class="example-header">Basic buttons</h4>
     
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui basic>
         <Button ui>One</Button>
         <Button ui>Two</Button>
@@ -1219,26 +924,9 @@
         <Button ui blue basic>Two</Button>
         <Button ui green basic>Three</Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui basic>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-    <Button ui>Three</Button>
-</Buttons>
-<Divider ui/>
-<Buttons ui vertical basic>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-    <Button ui>Three</Button>
-</Buttons>
-<Divider ui/>
-<Buttons ui>
-    <Button ui red basic>One</Button>
-    <Button ui blue basic>Two</Button>
-    <Button ui green basic>Three</Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.basic_buttons}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1250,6 +938,7 @@
 <div class="example">
     <h4 class="example-header">Group sizes</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui large>
         <Button ui>One</Button>
         <Button ui>Two</Button>
@@ -1268,27 +957,9 @@
         <div class="or"></div>
         <Button ui>Two</Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui large>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-    <Button ui>Three</Button>
-</Buttons>
-
-<Buttons ui small basic icon>
-    <Button ui><Icon file/></Button>
-    <Button ui><Icon save/></Button>
-    <Button ui><Icon upload/></Button>
-    <Button ui><Icon download/></Button>
-</Buttons>
-
-<Buttons ui>
-    <Button ui>One</Button>
-    <div class="or"></div>
-    <Button ui>Two</Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.group_sizes}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1300,6 +971,7 @@
 <div class="example">
     <h4 class="example-header">Wrapping buttons</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui wrapped wrapping>
         <Button ui>One</Button>
         <Button ui>Two</Button>
@@ -1322,31 +994,9 @@
         <Button ui>Nineteen</Button>
         <Button ui>Twenty</Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui wrapped wrapping>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-    <Button ui>Three</Button>
-    <Button ui>Four</Button>
-    <Button ui>Five</Button>
-    <Button ui>Six</Button>
-    <Button ui>Seven</Button>
-    <Button ui>Eight</Button>
-    <Button ui>Nine</Button>
-    <Button ui>Ten</Button>
-    <Button ui>Eleven</Button>
-    <Button ui>Twelve</Button>
-    <Button ui>Thirteen</Button>
-    <Button ui>Fourteen</Button>
-    <Button ui>Fifteen</Button>
-    <Button ui>Sixteen</Button>
-    <Button ui>Seventeen</Button>
-    <Button ui>Eighteen</Button>
-    <Button ui>Nineteen</Button>
-    <Button ui>Twenty</Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.wrapping_buttons}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -1358,6 +1008,7 @@
 <div class="example">
     <h4 class="example-header">Spaced buttons</h4>
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Buttons ui spaced wrapping>
         <Button ui>One</Button>
         <Button ui>Two</Button>
@@ -1380,31 +1031,9 @@
         <Button ui>Nineteen</Button>
         <Button ui>Twenty</Button>
     </Buttons>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language="svelte" source={`
-<Buttons ui spaced wrapping>
-    <Button ui>One</Button>
-    <Button ui>Two</Button>
-    <Button ui>Three</Button>
-    <Button ui>Four</Button>
-    <Button ui>Five</Button>
-    <Button ui>Six</Button>
-    <Button ui>Seven</Button>
-    <Button ui>Eight</Button>
-    <Button ui>Nine</Button>
-    <Button ui>Ten</Button>
-    <Button ui>Eleven</Button>
-    <Button ui>Twelve</Button>
-    <Button ui>Thirteen</Button>
-    <Button ui>Fourteen</Button>
-    <Button ui>Fifteen</Button>
-    <Button ui>Sixteen</Button>
-    <Button ui>Seventeen</Button>
-    <Button ui>Eighteen</Button>
-    <Button ui>Nineteen</Button>
-    <Button ui>Twenty</Button>
-</Buttons>
-  `}/>
+    <SourceCode language = "svelte" source = {Code.spaced_buttons}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
