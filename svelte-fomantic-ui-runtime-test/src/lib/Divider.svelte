@@ -17,7 +17,7 @@
     <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/divider.html">here</a></div>
   
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- A text container -->
+<!-- A standard divider -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">A standard divider</h4>
