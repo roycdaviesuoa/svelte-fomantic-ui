@@ -135,7 +135,7 @@ This has been packaged for installation with `yarn`, but should also work with `
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/fomantic-ui.js"></script>
+<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui.js"></script>
 ```
 
 Notice that jquery is being included in this project.  If you don't wish to use jquery, you can omit these lines completely, but many of the fomantic-ui modules won't work.  However, everything that only requires css will still be fine.

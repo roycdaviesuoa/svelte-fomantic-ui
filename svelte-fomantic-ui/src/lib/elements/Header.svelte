@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../Helpers"
+    import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
     export let h1: boolean=false;
     export let h2: boolean=false;

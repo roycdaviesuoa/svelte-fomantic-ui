@@ -712,6 +712,11 @@ svelte-check@latest:
     svelte-preprocess "^5.0.0"
     typescript "^4.9.4"
 
+svelte-docster@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/svelte-docster/-/svelte-docster-2.0.1.tgz#5d6cf576dae528cdf019103fc5be9aceb046faa4"
+  integrity sha512-J00AvzKMbbToGd1OzJzoWRWMNqhKmsKWo66xTz5hxmUMyApJPzI/7IVUNKUsbaTOO0Q/9VVKBvTdEjiiBtmDlg==
+
 svelte-fomantic-ui@^0.0.14:
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/svelte-fomantic-ui/-/svelte-fomantic-ui-0.0.14.tgz#1924d2817b750fe34bc6cd29328222c05859f4d4"
@@ -755,6 +760,13 @@ svelte@latest:
   version "3.55.1"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.55.1.tgz#6f93b153e5248039906ce5fe196efdb9e05dfce8"
   integrity sha512-S+87/P0Ve67HxKkEV23iCdAh/SX1xiSfjF1HOglno/YTbSTW7RniICMCofWGdJJbdjw3S+0PfFb1JtGfTXE0oQ==
+
+sveltyper@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/sveltyper/-/sveltyper-1.0.2.tgz#c173d1f9aa14d20754bc9103d2558107a2ab61a5"
+  integrity sha512-TEh99XgEqoeZZG8H9rJCWPV/P++MtdJm8rsY1LkVcdqa+A8BojwUKmgeyoCGyflkZ7bXk7QBuyhD+02kqmf04g==
+  dependencies:
+    svelte-docster "^2.0.0"
 
 to-regex-range@^5.0.1:
   version "5.0.1"

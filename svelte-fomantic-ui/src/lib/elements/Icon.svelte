@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../Helpers"
+    import {uiProps, otherProps} from "../svelte-fomantic-ui"
     import { createEventDispatcher } from 'svelte';
 
     export let ui: boolean=false;

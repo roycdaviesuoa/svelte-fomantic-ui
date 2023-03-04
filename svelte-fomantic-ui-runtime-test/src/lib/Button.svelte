@@ -17,7 +17,7 @@
   <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/button.html">here</a></div>
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Standard Button -->
+<!-- Standard button -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="example">
     <h4 class="example-header">A standard button</h4>

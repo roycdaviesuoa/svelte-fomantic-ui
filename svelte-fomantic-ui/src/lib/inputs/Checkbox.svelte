@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../Helpers"
+    import {uiProps, otherProps} from "../svelte-fomantic-ui"
     import { onMount, afterUpdate } from 'svelte';
     import { createEventDispatcher } from 'svelte';
 

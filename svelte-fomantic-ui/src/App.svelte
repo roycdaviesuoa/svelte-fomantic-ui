@@ -9,5 +9,5 @@
     
 </script>
 
-<span>Welcome to the Svelte-Fomantic-UI repository.  Not much to see here, all the excitement can be found on <a href="https://github.com/roycdaviesuoa/svelte-fomantic-ui">GITHub</a>.</span>
-<span>You can also find this on <a href="https://www.npmjs.com/package/svelte-fomantic-ui">NPM</a>. </span>
+<p>Welcome to the Svelte-Fomantic-UI repository.  Not much to see here, all the excitement can be found on <a href="https://github.com/roycdaviesuoa/svelte-fomantic-ui">GITHub</a>.</p>
+<p>You can also find this on <a href="https://www.npmjs.com/package/svelte-fomantic-ui">NPM</a>. </p>
