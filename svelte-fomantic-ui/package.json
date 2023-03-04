@@ -2,7 +2,7 @@
   "name": "svelte-fomantic-ui",
   "description": "Fomantic UI for Svelte",
   "main": "index.html",
-  "svelte": "src/lib/Core.svelte",
+  "svelte": "src/lib/svelte-fomantic-ui.svelte",
   "private": false,
   "version": "0.0.15",
   "type": "module",
