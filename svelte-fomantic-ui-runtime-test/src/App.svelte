@@ -7,32 +7,32 @@
 
 <script lang='ts'>
   import AppMenu from './AppMenu.svelte';
-  import AccordionTest from './lib/Accordion.svelte';
-  import ButtonTest from './lib/Button.svelte';
+  import Accordion from './lib/Accordion.svelte';
+  import Button from './lib/Button.svelte';
   import ButtonInteractive from './lib/ButtonInteractive.svelte';
-  import BreadcrumbTest from './lib/Breadcrumb.svelte';
+  import Breadcrumb from './lib/Breadcrumb.svelte';
   import BreadcrumbInteractive from './lib/BreadcrumbInteractive.svelte';
-  import CalendarTest from './lib/Calendar.svelte';
+  import Calendar from './lib/Calendar.svelte';
   import Checkbox from './lib/Checkbox.svelte';
   import CheckboxIndeterminate from './lib/CheckboxIndeterminate.svelte';
-  import ContainerTest from './lib/Container.svelte';
-  import DividerTest from './lib/Divider.svelte';
-  import DropdownTest from './lib/Dropdown.svelte';
-  import EmojiTest from './lib/Emoji.svelte';
-  import FlagTest from './lib/Flag.svelte';
-  import HeaderTest from './lib/Header.svelte';
-  import IconTest from './lib/Icon.svelte';
-  import ImageTest from './lib/Image.svelte';
-  import LabelTest from './lib/Label.svelte';
-  import ListTest from './lib/List.svelte';
-  import LoaderTest from './lib/Loader.svelte';
-  import PlaceholderTest from './lib/Placeholder.svelte';
-  import RailTest from './lib/Rail.svelte';
-  import RevealTest from './lib/Reveal.svelte';
-  import SegmentTest from './lib/Segment.svelte';
-  import StepTest from './lib/Step.svelte';
-  import TextTest from './lib/Text.svelte';
-  import InputTest from './lib/Input.svelte';
+  import Container from './lib/Container.svelte';
+  import Divider from './lib/Divider.svelte';
+  import Dropdown from './lib/Dropdown.svelte';
+  import Emoji from './lib/Emoji.svelte';
+  import Flag from './lib/Flag.svelte';
+  import Header from './lib/Header.svelte';
+  import Icon from './lib/Icon.svelte';
+  import Image from './lib/Image.svelte';
+  import Label from './lib/Label.svelte';
+  import List from './lib/List.svelte';
+  import Loader from './lib/Loader.svelte';
+  import Placeholder from './lib/Placeholder.svelte';
+  import Rail from './lib/Rail.svelte';
+  import Reveal from './lib/Reveal.svelte';
+  import Segment from './lib/Segment.svelte';
+  import Step from './lib/Step.svelte';
+  import Text from './lib/Text.svelte';
+  import Input from './lib/Input.svelte';
 
 
   let currentRoute: any;
@@ -41,57 +41,57 @@
     case '/':
       currentRoute = AppMenu; break;
     case '/Accordion':
-      currentRoute = AccordionTest; break;
+      currentRoute = Accordion; break;
     case '/Button':
-      currentRoute = ButtonTest; break;
+      currentRoute = Button; break;
     case '/ButtonInteractive':
       currentRoute = ButtonInteractive; break;
     case '/Breadcrumb':
-      currentRoute = BreadcrumbTest; break;
+      currentRoute = Breadcrumb; break;
     case '/BreadcrumbInteractive':
       currentRoute = BreadcrumbInteractive; break;
     case '/Calendar':
-      currentRoute = CalendarTest; break;
+      currentRoute = Calendar; break;
     case '/Checkbox':
       currentRoute = Checkbox; break;
     case '/CheckboxIndeterminate':
       currentRoute = CheckboxIndeterminate; break;
     case '/Container':
-      currentRoute = ContainerTest; break;
+      currentRoute = Container; break;
     case '/Divider':
-      currentRoute = DividerTest; break;
+      currentRoute = Divider; break;
     case '/Dropdown':
-      currentRoute = DropdownTest; break;
+      currentRoute = Dropdown; break;
     case '/Emoji':
-      currentRoute = EmojiTest; break;
+      currentRoute = Emoji; break;
     case '/Flag':
-      currentRoute = FlagTest; break;
+      currentRoute = Flag; break;
     case '/Header':
-      currentRoute = HeaderTest; break;
+      currentRoute = Header; break;
     case '/Icon':
-      currentRoute = IconTest; break;
+      currentRoute = Icon; break;
     case '/Image':
-      currentRoute = ImageTest; break;
+      currentRoute = Image; break;
     case '/Input':
-      currentRoute = InputTest; break;
+      currentRoute = Input; break;
     case '/Label':
-      currentRoute = LabelTest; break;
+      currentRoute = Label; break;
     case '/List':
-      currentRoute = ListTest; break;
+      currentRoute = List; break;
     case '/Loader':
-      currentRoute = LoaderTest; break;
+      currentRoute = Loader; break;
     case '/Placeholder':
-      currentRoute = PlaceholderTest; break;
+      currentRoute = Placeholder; break;
     case '/Reveal':
-      currentRoute = RevealTest; break;
+      currentRoute = Reveal; break;
     case '/Rail':
-      currentRoute = RailTest; break;
+      currentRoute = Rail; break;
     case '/Segment':
-      currentRoute = SegmentTest; break;
+      currentRoute = Segment; break;
     case '/Step':
-      currentRoute = StepTest; break;
+      currentRoute = Step; break;
     case '/Text':
-      currentRoute = TextTest; break;
+      currentRoute = Text; break;
     default:
       break;
       // currentRoute = NotFound;
