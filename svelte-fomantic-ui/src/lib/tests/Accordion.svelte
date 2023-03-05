@@ -5,19 +5,17 @@
 -->
 
 <script lang="ts">
-    import { Accordion, Title, Icon, Content, Segment, Form, Fields, Field, Input, Label, Button, Radio, Item, Checkbox } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import SourceCode from 'svelte-prism';
-    import Code from './Accordion'
-
+    import { Accordion, Title, Icon, Content, Segment, Form, Fields, Field, Input, Label, Button } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
+    import Code from './Accordion'
 </script>
 
-<div class="example-document">
-<h3 class="document-header">Accordion examples and tests</h3>
-<div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/modules/accordion.html">here</a></div>
-<div class="document-disclaimer">The basic functionality is working, but the advanced controls are yet to be implemented.</div>
+<Examples
+    title = "Accordion examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/accordion.html'>here</a>"
+    disclaimer = "The basic functionality is working, but the advanced controls are yet to be implemented.">
+    
 
     
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -368,4 +366,4 @@
 
 </Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-</div>
+</Examples>
