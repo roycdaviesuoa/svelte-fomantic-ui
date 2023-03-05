@@ -26,7 +26,7 @@ const code = {
         {#if selected === item}
             <Section active>{item}</Section>
         {:else}
-            <Link section on:click={(e) => selected=e.detail.name} name={item}>{item}</Link>
+            <Link section on:click={(e) => selected=e.detail.id} id={item}>{item}</Link>
         {/if}
     {/each}
 </Breadcrumb>

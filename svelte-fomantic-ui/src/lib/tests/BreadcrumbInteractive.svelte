@@ -6,9 +6,8 @@
 
 <script lang="ts">
     import { Breadcrumb, Link, Divider, Section, Text, Icon } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import SourceCode from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
     import Code from './BreadcrumbInteractive';
 
     let selected: string = "home";
@@ -18,39 +17,35 @@
     $: output = selected + " selected";
 </script>
 
-<div class="example-document">
-  <h3 class="document-header">Breadcrumb interactive example and test</h3>
-  <div class="document-description">An example of how to make breadcrumbs interactive.</div>
+<Examples
+    title = "Breadcrumb interactive example and test"
+    description = "An example of how to make breadcrumbs interactive.">
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- An interactive breadcrumb -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">An interactive breadcrumb</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- An interactive breadcrumb -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "An interactive breadcrumb" code = {Code.interactive}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Breadcrumb ui>
-      {#each items as item, i}
-          {#if i === (items.length-1)}
-              <Icon right arrow divider/>
-          {:else if i !== 0}
-              <Icon right chevron divider/>
-          {/if}
+        <Breadcrumb ui>
+        {#each items as item, i}
+            {#if i === (items.length-1)}
+                <Icon right arrow divider/>
+            {:else if i !== 0}
+                <Icon right chevron divider/>
+            {/if}
 
-          {#if selected === item}
-              <Section active>{item}</Section>
-          {:else}
-              <Link section on:click={(e) => selected=e.detail.name} name={item}>{item}</Link>
-          {/if}
-      {/each}
-    </Breadcrumb>
-    <Divider ui/>
-    <Text>{output}</Text>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+            {#if selected === item}
+                <Section active>{item}</Section>
+            {:else}
+                <Link section on:click={(e) => selected=e.detail.id} id={item}>{item}</Link>
+            {/if}
+        {/each}
+        </Breadcrumb>
+        <Divider ui/>
+        <Text>{output}</Text>
 
-    <SourceCode language = "svelte" source = {Code.interactive}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-</div>
+</Examples>
 
