@@ -4,9 +4,17 @@
 ******************************************************************************************************************************************************
 -->
 
-<script lang='ts'>
-    
+<script lang="ts">
+    import "./examplestyles.css";
+    import "./prism.css";
+    import SourceCode from 'svelte-prism';
+
+    export let title: string = "";
+    export let code: string = "";
 </script>
 
-<p>Welcome to the Svelte-Fomantic-UI repository.  Not much to see here, all the excitement can be found on <a href="https://github.com/roycdaviesuoa/svelte-fomantic-ui">GITHub</a>.</p>
-<p>You can also find this on <a href="https://www.npmjs.com/package/svelte-fomantic-ui">NPM</a>. </p>
+<div class="example">
+    <h4 class="example-header">{title}</h4>
+    <slot />
+    <SourceCode language = "svelte" source = {code}/>
+</div>

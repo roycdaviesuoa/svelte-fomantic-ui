@@ -10,21 +10,21 @@
     import "./prism.css";
     import SourceCode from 'svelte-prism';
     import Code from './Accordion'
+
+    import Example from "./Example.svelte";
 </script>
 
 <div class="example-document">
-    <h3 class="document-header">Accordion examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/modules/accordion.html">here</a></div>
-    <div class="document-disclaimer">This is very much still a work-in-progress.</div>
+<h3 class="document-header">Accordion examples and tests</h3>
+<div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/modules/accordion.html">here</a></div>
+<div class="document-disclaimer">The basic functionality is working, but the advanced controls are yet to be implemented.</div>
 
     
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- A standard accordion -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">A standard accordion</h4>
+<Example title = "A standard accordion" code = {Code.standard}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Accordion ui>
         <Title active>
             <Icon dropdown/>
@@ -49,10 +49,8 @@
             <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
         </Content>
     </Accordion>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.standard}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -60,10 +58,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Styled -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">A styled accordion</h4>
+<Example title = "A styled accordion" code = {Code.styled}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Accordion ui styled>
         <Title active>
             <Icon dropdown/>
@@ -88,10 +84,8 @@
             <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
         </Content>
     </Accordion>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.styled}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -99,10 +93,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Basic styled -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">A basic styled accordion</h4>
+<Example title = "A basic styled accordion" code = {Code.basic_styled}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Accordion ui basic styled>
         <Title active>
             <Icon dropdown/>
@@ -127,10 +119,8 @@
             <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
         </Content>
     </Accordion>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.basic_styled}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -138,10 +128,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Fluid styled -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">A fluid styled accordion</h4>
+<Example title = "A fluid styled accordion" code = {Code.fluid_styled}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Accordion ui fluid styled>
         <Title active>
             <Icon dropdown/>
@@ -166,10 +154,8 @@
             <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
         </Content>
     </Accordion>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.fluid_styled}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -177,10 +163,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Compact -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">A compact accordion</h4>
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+<Example title = "A compact accordion" code = {Code.compact}>
+ 
     <Accordion ui compact>
         <Title active>
             <Icon dropdown/>
@@ -205,10 +189,8 @@
             <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
         </Content>
     </Accordion>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    <SourceCode language = "svelte" source = {Code.compact}/>
-</div>
+ 
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -216,10 +198,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Very compact -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">A very compact accordion</h4>
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+<Example title = "A very compact accordion" code = {Code.very_compact}>
+ 
     <Accordion ui very compact>
         <Title active>
             <Icon dropdown/>
@@ -244,10 +224,8 @@
             <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
         </Content>
     </Accordion>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.very_compact}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -255,10 +233,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Nested, styled and fluid -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Nested accordions, with style, and fluid</h4>
+<Example title = "Nested accordions, with style, and fluid" code = {Code.nested_styled_fluid}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Accordion ui styled fluid>
         <Title active>
             <Icon dropdown/>
@@ -353,10 +329,8 @@
             </Accordion>
         </Content>
     </Accordion>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.nested_styled_fluid}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -364,10 +338,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Form fields -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Form fields</h4>
+<Example title = "Form fields" code = {Code.form_fields}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Segment ui>
         <Form ui fluid>
             <Fields two>
@@ -393,9 +365,7 @@
             <Button ui secondary submit>Sign Up</Button>
         </Form>
     </Segment>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.form_fields}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 </div>

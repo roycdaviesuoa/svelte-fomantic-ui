@@ -9,7 +9,8 @@
     import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import Code from './Header';</script>
+    import Code from './Header';
+</script>
 
 <div class="example-document">
     <h3 class="document-header">Header examples and tests</h3>

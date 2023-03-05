@@ -31,7 +31,6 @@
         <Divider>/</Divider>
         <Section active>T-shirt</Section>
     </Breadcrumb>
-
     <br/><br/>
     <Breadcrumb ui>
         <Link section>Home</Link>
