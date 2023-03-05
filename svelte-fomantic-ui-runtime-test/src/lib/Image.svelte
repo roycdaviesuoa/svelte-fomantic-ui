@@ -5,7 +5,8 @@
 -->
 
 <script lang="ts">
-    import { Image, Images, Link, Button, Content, Divider, Segment } from "svelte-fomantic-ui";
+    // import { Image, Images, Link, Button, Content, Divider, Segment } from "svelte-fomantic-ui";
+    import { Image, Images, Link, Button, Content, Divider, Segment } from "../svelte-fomantic-ui/src/lib/svelte-fomantic-ui.svelte";
     import "./examplestyles.css";
     import "./prism.css";
     import Prism from 'svelte-prism';
@@ -15,7 +16,7 @@
 
 <div class="example-document">
     <h3 class="document-header">Image examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/miage.html">here</a></div>
+    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/image.html">here</a></div>
 
     <div class="example">
         <h4 class="example-header">Image</h4>

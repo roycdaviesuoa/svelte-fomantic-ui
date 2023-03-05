@@ -36,6 +36,7 @@
   "dependencies": {
     "fomantic-ui-css": "^2.9.2",
     "jquery": "^3.6.3",
+    "svelte-prism": "^1.1.6",
     "vite-plugin-svelte": "^3.0.1"
   }
 }

@@ -135,14 +135,14 @@ This has been packaged for installation with `yarn`, but should also work with `
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui.js"></script>
+<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui-jquery.js"></script>
 ```
 
 Notice that jquery is being included in this project.  If you don't wish to use jquery, you can omit these lines completely, but many of the fomantic-ui modules won't work.  However, everything that only requires css will still be fine.
 
 ## Usage
 
-To use fomantic UI in your project, import the required elements in the script section, and then use them below, for example:
+To use fomantic UI in your project, import the required elements in the script section, and then use them in the html section below, for example:
 
 ```html
 <script lang="ts">
@@ -160,10 +160,10 @@ To use fomantic UI in your project, import the required elements in the script s
 This project contains examples and tests.
 
 1. Clone the repository from GITHub.
-1. Change into the `svelte-fomantic-ui-runtime-test` sub directory.
+1. Change into the `svelte-fomantic-ui` sub directory.
 1. Run the `yarn` command to download dependencies.
 1. Run `yarn dev` to start development web server.
 1. Open the link in a browser to see the dev / test website (usually `http://localhost:5173`)
 
-If you are looking for code examples, check in the `svelte-fomantic-ui-runtime-test/src/lib` folder where the examples from the Fomantic UI website have been replicated for testing and documentation purposes.  Even if you don't wish to run the dev server as above, you can still see the worked code.
+If you are looking for code examples, check in the `svelte-fomantic-ui/src/lib/tests` folder where the examples from the Fomantic UI website have been replicated for testing and documentation purposes.  Even if you don't wish to run the dev server as above, you can still see the worked code.
 

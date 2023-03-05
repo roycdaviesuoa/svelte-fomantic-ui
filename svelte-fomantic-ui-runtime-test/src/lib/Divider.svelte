@@ -9,7 +9,7 @@
     import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import Code from './Divider'
+    import Code from './Divider';
 </script>
 
 <div class="example-document">
