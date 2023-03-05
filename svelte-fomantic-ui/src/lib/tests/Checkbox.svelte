@@ -6,336 +6,265 @@
 
 <script lang="ts">
     import { Checkbox, Form, Field, Fields, Divider, Label, Header, Segment, Radio, List, Item } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import SourceCode from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
     import Code from './Checkbox';
 
     let items = ["apples", "peaches", "oranges", "bananas", "mangos"]
-    let visibility = ["select"];
+    let visibility: string[] = [];
 
     let throughput: string="1";
     let radio2: string="1";
-    let selectedOptions: string[]=[];
+    let selectedOption: string[] = [];
     let subscribe: boolean=false;
 
     interface Item {
-      id: number;
-      name: string;
-      selected: boolean;
+        id: string;
+        name: string;
+        selected: boolean;
     }
 
     let moreItems: Item[] = [
-      { id: 1, name: 'Item 1', selected: false },
-      { id: 2, name: 'Item 2', selected: false },
-      { id: 3, name: 'Item 3', selected: false },
+        { id: "1", name: 'Item 1', selected: false },
+        { id: "2", name: 'Item 2', selected: false },
+        { id: "3", name: 'Item 3', selected: false },
     ];
 </script>
 
-<div class="example-document">
-  <h3 class="document-header">Checkbox, Radio, Toggle and Slider examples and tests</h3>
-  <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/modules/checkbox.html">here</a></div>
+<Examples
+    title = "Checkbox, Radio, Toggle and Slider examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/checkbox.html'>here</a>">
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Interactive -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Interactive Checkbox" code = {Code.interactive} narrow>
+
+        <Checkbox ui bind:group={visibility} value="select" label="Make selections visible"/>
+        <p></p>
+        {#if visibility[0]==="select"}
+            <Fields>
+                {#each items as item}
+                <Field> <Checkbox ui name={item} value={item} bind:group={selectedOption} label={item}/> </Field>
+                {/each}
+            </Fields>
+        {/if}
+        <Divider ui/>
+        <Header>{selectedOption} clicked | visibility = {visibility}</Header>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Interactive -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Interactive Checkbox</h4> <div class="centered"> <div class="narrow">
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Radio inline -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Radio inline" code = {Code.radio_inline}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Checkbox ui bind:group={visibility} value="select" label="Make selections visible"/>
+        <Label>How often do you use checkboxes? </Label>
+        <Form ui>
+            <Fields inline>
+                <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
+                <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
+                <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
+                <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
+            </Fields>
+        </Form>
+        <Header h4>Selected: {radio2}</Header>
 
-    <p></p>
-    {#if visibility[0]==="select"}
-        <Fields>
-            {#each items as item}
-            <Field> <Checkbox ui name={item} value={item} bind:group={selectedOptions} label={item}/> </Field>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Radio grouped -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Radio grouped" code = {Code.radio_grouped} narrow>
+
+        <Label>How often do you use checkboxes? </Label>
+        <Form ui>
+            <Fields grouped>
+                <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
+                <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
+                <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
+                <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
+            </Fields>
+        </Form>
+        <Header h4>Selected: {radio2}</Header>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Individually selected -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Checkbox individually selected" code = {Code.individually_selected} narrow>
+
+        <Fields grouped>
+            {#each moreItems as item}
+                <Field> <Checkbox ui id={item.id} bind:checked={item.selected} label={item.name}/> </Field>
             {/each}
         </Fields>
-    {/if}
-    <Divider ui/>
-    <Header>{selectedOptions} clicked | visibility = {visibility}</Header>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    </div></div><SourceCode language = "svelte" source = {Code.interactive}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Radio inline -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Radio inline</h4>
-    
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Label>How often do you use checkboxes? </Label>
-    <Form ui>
-        <Fields inline>
-            <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
-            <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
-            <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
-            <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
-        </Fields>
-    </Form>
-    <Header h4>Selected: {radio2}</Header>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    <SourceCode language = "svelte" source = {Code.radio_inline}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Radio grouped -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Radio grouped</h4> <div class="centered"> <div class="narrow">
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Label>How often do you use checkboxes? </Label>
-    <Form ui>
-        <Fields grouped>
-            <Field> <Radio ui value="1" bind:group={radio2} label="Once a week"/> </Field>
-            <Field> <Radio ui value="2" bind:group={radio2} label="2-3 time a week"/> </Field>
-            <Field> <Radio ui value="3" bind:group={radio2} label="Once a day"/> </Field>
-            <Field> <Radio ui value="4" bind:group={radio2} label="Twice a day"/> </Field>
-        </Fields>
-    </Form>
-    <Header h4>Selected: {radio2}</Header>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    </div></div><SourceCode language = "svelte" source = {Code.radio_grouped}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Individually selected -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Checkbox individually selected</h4> <div class="centered"> <div class="narrow">
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Fields grouped>
         {#each moreItems as item}
-            <Field> <Checkbox ui id={item.id} bind:checked={item.selected} label={item.name}/> </Field>
+            {item.name} is {item.selected}<br/>
         {/each}
-    </Fields>
-    {#each moreItems as item}
-        {item.name} is {item.selected}<br/>
-    {/each}
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    </div></div><SourceCode language = "svelte" source = {Code.individually_selected}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Slider -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Slider</h4><div class="centered"><div class="narrow">
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Slider -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Slider" code = {Code.slider} narrow>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Checkbox ui slider name="newsletter" label="Accept terms and conditions"/>
-    <br/>
-    <Form>
-        <Fields grouped>
-            <Label>Outbound Throughput</Label>
-            <Field> <Radio ui slider value="1" bind:group={throughput} label="20 mbps max"/></Field>
-            <Field> <Radio ui slider value="2" bind:group={throughput} label="10 mbps max"/></Field>
-            <Field> <Radio ui slider value="3" bind:group={throughput} label="5 mbps max"/></Field>
-            <Field> <Radio ui slider value="4" bind:group={throughput} label="Unmetered"/></Field>
-        </Fields>
-    </Form>
-    <Header h4>Selected: {throughput}</Header>
-    <br/>
-    <Checkbox ui toggle bind:checked={subscribe} label={(subscribe?"S":"Don\'t s") + "ubscribe to weekly newsletter"}/>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Checkbox ui slider name="newsletter" label="Accept terms and conditions"/>
+        <br/>
+        <Form>
+            <Fields grouped>
+                <Label>Outbound Throughput</Label>
+                <Field> <Radio ui slider value="1" bind:group={throughput} label="20 mbps max"/></Field>
+                <Field> <Radio ui slider value="2" bind:group={throughput} label="10 mbps max"/></Field>
+                <Field> <Radio ui slider value="3" bind:group={throughput} label="5 mbps max"/></Field>
+                <Field> <Radio ui slider value="4" bind:group={throughput} label="Unmetered"/></Field>
+            </Fields>
+        </Form>
+        <Header h4>Selected: {throughput}</Header>
+        <br/>
+        <Checkbox ui toggle bind:checked={subscribe} label={(subscribe?"S":"Don\'t s") + "ubscribe to weekly newsletter"}/>
 
-    </div></div><SourceCode language = "svelte" source = {Code.slider}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Read only -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Read only</h4><div class="centered"><div class="narrow">
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Read only -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Read only" code = {Code.readonly} narrow>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Checkbox ui read-only label="Read Only"/>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Checkbox ui read-only label="Read Only"/>
 
-    </div></div><SourceCode language = "svelte" source = {Code.readonly}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Checked -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Checked</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Checked -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Checked" code = {Code.checked} narrow>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <div class="centered">
-        <div class="narrow">
-            <Checkbox ui checked label="Active"/>
-        </div>
-    </div>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Checkbox ui checked label="Active"/>
 
-    <SourceCode language = "svelte" source = {Code.checked}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Disabled -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Disabled</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Disabled -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Disabled" code = {Code.disabled} narrow>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <div class="centered">
-        <div class="narrow">
-            <Checkbox ui disabled label="Disabled"/><br/><br/>
-            <Checkbox ui disabled toggle label="Disabled"/>
-        </div>
-    </div>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Checkbox ui disabled label="Disabled"/><br/><br/>
+        <Checkbox ui disabled toggle label="Disabled"/>
 
-    <SourceCode language = "svelte" source = {Code.disabled}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Fitted -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Fitted</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Fitted -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Fitted" code = {Code.fitted} narrow>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <div class="centered">
-        <div class="narrow">
-            <Segment ui left floated compact>
-                <Checkbox ui fitted label=""/>
-            </Segment>
-            <Segment ui left floated compact>
-                <Checkbox ui fitted slider label=""/>
-            </Segment>
-            <Segment ui left floated compact>
-                <Checkbox ui fitted toggle label=""/>
-            </Segment>
-        </div>
-    </div>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    
-    <SourceCode language = "svelte" source = {Code.fitted}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <Segment ui left floated compact>
+            <Checkbox ui fitted label=""/>
+        </Segment>
+        <Segment ui left floated compact>
+            <Checkbox ui fitted slider label=""/>
+        </Segment>
+        <Segment ui left floated compact>
+            <Checkbox ui fitted toggle label=""/>
+        </Segment>
+        
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Centered -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Inverted</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Centered -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inverted" code = {Code.centered} narrow>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <div class="centered">
-        <div class="narrow">
-            <Segment ui inverted compact>
-                <Checkbox ui inverted label="Inverted"/>
-            </Segment>
-            <Segment ui inverted compact>
-                <Checkbox ui inverted slider label="Inverted"/>
-            </Segment>
-            <Segment ui inverted compact>
-                <Checkbox ui inverted toggle label="Inverted"/>
-            </Segment>
-        </div>
-    </div>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Segment ui inverted compact>
+            <Checkbox ui inverted label="Inverted"/>
+        </Segment>
+        <Segment ui inverted compact>
+            <Checkbox ui inverted slider label="Inverted"/>
+        </Segment>
+        <Segment ui inverted compact>
+            <Checkbox ui inverted toggle label="Inverted"/>
+        </Segment>
 
-    <SourceCode language = "svelte" source = {Code.centered}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Right aligned -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Right aligned</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Right aligned -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Right aligned" code = {Code.right_aligned} narrow>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <div class="centered">
-        <div class="narrow">
-            <span>Not working correctly for some reason - the active area is still on the left...</span>
-            <Form ui>
-                <Fields grouped>
-                    <Field>
-                        <Checkbox ui right aligned label="Checkbox"/>
-                    </Field>
-                    <Field>
-                        <Radio ui right aligned label="Radio"/>
-                    </Field>
-                    <Field>
-                        <Checkbox ui right aligned slider label="Slider"/>
-                    </Field>
-                    <Field>
-                        <Checkbox ui right aligned toggle label="Toggle"/>
-                    </Field>
-                </Fields>
-            </Form>
-        </div>
-    </div>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <span>Not working correctly for some reason - the active area is still on the left...</span>
+        <Form ui>
+            <Fields grouped>
+                <Field>
+                    <Checkbox ui right aligned label="Checkbox"/>
+                </Field>
+                <Field>
+                    <Radio ui right aligned label="Radio"/>
+                </Field>
+                <Field>
+                    <Checkbox ui right aligned slider label="Slider"/>
+                </Field>
+                <Field>
+                    <Checkbox ui right aligned toggle label="Toggle"/>
+                </Field>
+            </Fields>
+        </Form>
 
-    <SourceCode language = "svelte" source = {Code.right_aligned}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Size -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Size</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Size -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Size" code = {Code.size} narrow>
+        
+        {#each ["mini", "tiny", "small", "large", "big", "huge", "massive"] as size, i}
+            {#if i > 0} <br/><br/> {/if}
+            <Checkbox ui _={size} label="Checkbox"/>&nbsp;&nbsp;
+            <Radio ui _={size} label="Radio"/>&nbsp;&nbsp;
+            <Checkbox ui _={size} slider label="Slider"/>&nbsp;&nbsp;
+            <Checkbox ui _={size} toggle label="Toggle"/>&nbsp;&nbsp;
+        {/each}
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    {#each ["mini", "tiny", "small", "large", "big", "huge", "massive"] as size, i}
-        {#if i > 0} <br/><br/> {/if}
-        <Checkbox ui _={size} label="Checkbox"/>&nbsp;&nbsp;
-        <Radio ui _={size} label="Radio"/>&nbsp;&nbsp;
-        <Checkbox ui _={size} slider label="Slider"/>&nbsp;&nbsp;
-        <Checkbox ui _={size} toggle label="Toggle"/>&nbsp;&nbsp;
-    {/each}
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.size}/>
-  </div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-</div>
+</Examples>
 
 

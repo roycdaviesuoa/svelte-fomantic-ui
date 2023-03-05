@@ -11,10 +11,24 @@
 
     export let title: string = "";
     export let code: string = "";
+    export let narrow: boolean = false;
 </script>
 
-<div class="example">
-    <h4 class="example-header">{title}</h4>
-    <slot />
-    <SourceCode language = "svelte" source = {code}/>
-</div>
+{#if narrow}
+    <div class="example">
+        <h4 class="example-header">{title}</h4>
+        <div class="centered">
+            <div class="narrow">
+                <slot />
+            </div>
+        </div>
+        <SourceCode language = "svelte" source = {code}/>
+    </div>
+
+{:else}
+    <div class="example">
+        <h4 class="example-header">{title}</h4>
+        <slot />
+        <SourceCode language = "svelte" source = {code}/>
+    </div>
+{/if}

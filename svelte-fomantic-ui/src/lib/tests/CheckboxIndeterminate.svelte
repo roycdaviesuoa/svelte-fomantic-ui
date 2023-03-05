@@ -6,9 +6,8 @@
 
 <script lang="ts">
     import { Checkbox, List, Item } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import SourceCode from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
     import Code from './CheckboxIndeterminate';
 
     interface fruit_type { id: string; name: string; selected: boolean; }
@@ -29,35 +28,30 @@
 
 </script>
 
-<div class="example-document">
-  <h3 class="document-header">A Checkbox with Indeterminate status example</h3>
-  <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/modules/checkbox.html#/usage">here</a></div>
+<Examples
+    title = "A Checkbox with Indeterminate status example"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/checkbox.html#/usage'>here</a>">
 
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Checkbox Indeterminate example -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Indeterminate" code = {Code.indeterminate}>
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Checkbox Indeterminate example -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Indeterminate</h4>
+        <List ui celled relaxed>
+            <Item>
+                <Checkbox ui {indeterminate} bind:checked label="Fruits" on:click={()=>{fruits.forEach((fruit) => {fruit.selected = !checked})}}/>
+                <List>
+                    {#each fruits as fruit}
+                        <Item> <Checkbox ui id={fruit.id} bind:checked={fruit.selected} label={fruit.name}/> </Item>
+                    {/each}
+                </List>
+            </Item>
+        </List>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <List ui celled relaxed>
-        <Item>
-            <Checkbox ui {indeterminate} bind:checked label="Fruits" on:click={()=>{fruits.forEach((fruit) => {fruit.selected = !checked})}}/>
-            <List>
-                {#each fruits as fruit}
-                    <Item> <Checkbox ui id={fruit.id} bind:checked={fruit.selected} label={fruit.name}/> </Item>
-                {/each}
-            </List>
-        </Item>
-    </List>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.indeterminate}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-</div>
+</Examples>
 
 

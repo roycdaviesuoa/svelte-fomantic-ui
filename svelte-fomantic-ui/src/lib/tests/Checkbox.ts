@@ -10,8 +10,8 @@ const code = {
 
     let selected: string = "apples";
     let items = ["apples", "peaches", "oranges", "bananas", "mangos"]
-    let visibility: string[]=[];
-    let selectedOptions: string[]=[];
+    let visibility: string[] = [];
+    let selectedOption: string[] = [];
 </script>
 
 <Checkbox ui bind:group={visibility} value="select" label="Make selections visible"/>
@@ -19,12 +19,12 @@ const code = {
 {#if visibility[0]==="select"}
     <Fields>
         {#each items as item}
-        <Field> <Checkbox ui name={item} value={item} bind:group={selectedOptions} label={item}/> </Field>
+        <Field> <Checkbox ui name={item} value={item} bind:group={selectedOption} label={item}/> </Field>
         {/each}
     </Fields>
 {/if}
 <Divider ui/>
-<Header>{selectedOptions} clicked | visibility = {visibility}</Header>
+<Header>{selectedOption} clicked | visibility = {visibility}</Header>
     `,
     radio_inline : `
 <Label>How often do you use checkboxes? </Label>

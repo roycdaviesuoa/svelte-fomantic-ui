@@ -13,7 +13,7 @@
 
     export let ui: boolean=false;
     export let id: string=null;
-    export let group: string="";
+    export let group: string[]=[];
     export let value: string=null;
     export let label: string=null;
     export let name: string=null;
