@@ -64,10 +64,6 @@
     <h4 class="example-header">Autosizing</h4>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Header ui small autosizing>
-        <Link href="#autosizing"><Icon fitted small linkify/>Autosizing</Link>
-    </Header>
-    <p>If no specific size class is given, all flags are automatically sized according to the current element font-size</p>
     <Segment ui basic>
         <Header ui small>Within a header <Flag us/></Header>
         <Button ui large>Within a button <Flag eu/></Button>
@@ -81,5 +77,14 @@
     <SourceCode language = "svelte" source = {Code.autosizing}/>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- -->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="example">
+</div>
+
 
 </div>
