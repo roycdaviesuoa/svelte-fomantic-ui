@@ -6,32 +6,26 @@
 
 <script lang="ts">
     import { Flag, Header, Link, Icon, Segment, Button, Label, Text } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import SourceCode from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
     import Code from './Flag';
 </script>
 
-<div class="example-document">
-    <h3 class="document-header">Flag examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/flag.html">here</a></div>
-  
+<Examples
+    title = "Flag examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/flag.html'>here</a>">
 
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Large flags-->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Some large flags</h4>
+<Example title = "Some large flags" code = {Code.large}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Flag ae large/>
     <Flag france large />
-    <Flag myanmar large/>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Flag myanmar large/>s
 
-    <SourceCode language = "svelte" source = {Code.large}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -39,8 +33,9 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Size -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Size</h4><Flag nz tiny/>tiny
+<Example title = "Size", code = {Code.size}
+
+    <Flag nz tiny/>tiny
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Flag uk small/>small
@@ -49,10 +44,8 @@
     <Flag ci big/>big
     <Flag greece huge/>huge
     <Flag ukraine massive/>massive
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.size}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -60,10 +53,8 @@
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!-- Autosizing -->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Autosizing</h4>
+<Example title = "Autosizing" code = {Code.autosizing}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
     <Segment ui basic>
         <Header ui small>Within a header <Flag us/></Header>
         <Button ui large>Within a button <Flag eu/></Button>
@@ -72,10 +63,8 @@
         <br><br>
         <Text ui small orange>Within a text <Flag rainbow/></Text>
     </Segment>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <SourceCode language = "svelte" source = {Code.autosizing}/>
-</div>
+</Example>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
