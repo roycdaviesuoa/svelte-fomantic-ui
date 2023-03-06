@@ -6,52 +6,61 @@
 
 <script lang="ts">
     import { Icon, Icons, Segment, Header } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import Prism from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
+    import Code from './Icon';
 
     let iconClicked:string = "";
-
-    function doClick(event) {
-        console.log(event);
-        iconClicked = event.detail.id;
-    }
 </script>
 
-<div class="example-document">
-    <h3 class="document-header">Icon examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/icon.html#/definition">here</a></div>
+<Examples
+    title = "Icon examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/icon.html'>here</a>">
 
-    <div class="example">
-        <h4 class="example-header">Disabled Icon</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Disabled -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Disabled Icon" code = {Code.disabled}>
+
         <Icon disabled users />
-        <Prism language="svelte" source={`
-<Icon disabled users />
-    `}/>
-    </div>
+ 
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Loading</h4>
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Loading -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Loading" code = {Code.loading}>
+
         <Icon spinner loading/>
         <Icon notched circle loading/>
         <Icon asterisk loading/>
-        <Prism language="svelte" source={`
-<Icon spinner loading/>
-<Icon notched circle loading/>
-<Icon asterisk loading/>
-    `}/>
-    </div>
+ 
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Fitted</h4>
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Fitted -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Fitted" code = {Code.fitted}>
+
         Help me <Icon fitted help/>
-        <Prism language="svelte" source={`
-Help me <Icon fitted help/>
-    `}/>
-    </div>
+ 
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Size</h4>
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Size -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Size" code = {Code.size}>
+
         <Icon mini home/>
         <Icon tiny home/>
         <Icon small home/>
@@ -60,104 +69,101 @@ Help me <Icon fitted help/>
         <Icon big home/>
         <Icon huge home/>
         <Icon massive home/>
-        <Prism language="svelte" source={`
-<Icon mini home/>
-<Icon tiny home/>
-<Icon small home/>
-<Icon home/>
-<Icon large home/>
-<Icon big home/>
-<Icon huge home/>
-<Icon massive home/>
-    `}/>
-    </div>
+ 
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Link</h4>
-        <Icon id="close" on:click={doClick} close link/>
-        <Icon id="help" on:click={doClick} help link/>
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Link -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Link" code = {Code.link}>
+
+        <Icon id="close" on:click={(event) => iconClicked = event.detail.id} close link/>
+        <Icon id="help" on:click={(event) => iconClicked = event.detail.id} help link/>
         <br/>(click an icon)<br/>
         {iconClicked}{iconClicked===""?"":" clicked"}
-        <Prism language="svelte" source={`
-<script>
-    import { Icon } from "svelte-fomantic-ui";
 
-    let iconClicked:string = "";
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    function doClick(event) {
-        iconClicked = event.detail.id;
-    }
-</script>
 
-<Icon id="close" on:click={doClick} close link/>
-<Icon id="help" on:click={doClick} help link/>
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Flipped -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Flipped" code = {Code.flipped}>
 
-(click an icon)
-
-{iconClicked}{iconClicked===""?"":" clicked"}
-        `}/>
-    </div>
-
-    <div class="example">
-        <h4 class="example-header">Flipped</h4>
         <Icon horizontally flipped cloud/>
         <Icon vertically flipped cloud/>
-        <Prism language="svelte" source={`
-<Icon horizontally flipped cloud/>
-<Icon vertically flipped cloud/>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Rotated</h4>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Rotated -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Rotated" code = {Code.rotated}>
+
         <Icon clockwise rotated cloud/>
         <Icon counterclockwise rotated cloud/>
-        <Prism language="svelte" source={`
-<Icon clockwise rotated cloud/>
-<Icon counterclockwise rotated cloud/>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Circular</h4>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Circular -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Circular" code = {Code.circular}>
+
         <Icon circular users/>
         <Icon circular teal users/>
         <Icon circular inverted users/>
         <Icon circular inverted teal users/>
-        <Prism language="svelte" source={`
-<Icon circular users/>
-<Icon circular teal users/>
-<Icon circular inverted users/>
-<Icon circular inverted teal users/>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Circular colored</h4>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Circular colored -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Circular colored" code = {Code.circular_colored}>
+
         <Icon circular colored red users/>
         <Icon circular colored green users/>
         <Icon circular colored blue users/>
-        <Prism language="svelte" source={`
-<Icon circular colored red users/>
-<Icon circular colored green users/>
-<Icon circular colored blue users/>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Bordered colored</h4>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Bordered colored -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Bordered colored" code = {Code.bordered_colored}>
+
         <Icon bordered colored red users/>
         <Icon bordered colored green users/>
         <Icon bordered colored blue users/>
-        <Prism language="svelte" source={`
-<Icon bordered colored red users/>
-<Icon bordered colored green users/>
-<Icon bordered colored blue users/>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Colored</h4>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Colored -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Colored" code = {Code.colored}>
+
         <Icon primary users/>
         <Icon secondary users/>
         <Icon red users/>
@@ -173,27 +179,17 @@ Help me <Icon fitted help/>
         <Icon brown users/>
         <Icon grey users/>
         <Icon black users/>
-        <Prism language="svelte" source={`
-<Icon primary users/>
-<Icon secondary users/>
-<Icon red users/>
-<Icon orange users/>
-<Icon yellow users/>
-<Icon olive users/>
-<Icon green users/>
-<Icon teal users/>
-<Icon blue users/>
-<Icon violet users/>
-<Icon purple users/>
-<Icon pink users/>
-<Icon brown users/>
-<Icon grey users/>
-<Icon black users/>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Inverted</h4>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Inverted -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inverted" code = {Code.inverted}>
+
         <Segment ui inverted>
             <Icon inverted users/>
             <Icon inverted primary users/>
@@ -211,29 +207,17 @@ Help me <Icon fitted help/>
             <Icon inverted brown users/>
             <Icon inverted grey users/>
         </Segment>
-        <Prism language="svelte" source={`
-<Segment ui inverted>
-    <Icon inverted users/>
-    <Icon inverted primary users/>
-    <Icon inverted secondary users/>
-    <Icon inverted red users/>
-    <Icon inverted orange users/>
-    <Icon inverted yellow users/>
-    <Icon inverted olive users/>
-    <Icon inverted green users/>
-    <Icon inverted teal users/>
-    <Icon inverted blue users/>
-    <Icon inverted violet users/>
-    <Icon inverted purple users/>
-    <Icon inverted pink users/>
-    <Icon inverted brown users/>
-    <Icon inverted grey users/>
-</Segment>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Icon groups</h4>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Icon groups -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Icon groups" code = {Code.icon_groups}>
+
         <Icons huge>
             <Icon big circle outline/>
             <Icon user/>
@@ -243,21 +227,17 @@ Help me <Icon fitted help/>
             <Icon big red dont/>
             <Icon user/>
         </Icons>
-        <Prism language="svelte" source={`
-<Icons huge>
-    <Icon big circle outline/>
-    <Icon user/>
-</Icons>
 
-<Icons huge>
-    <Icon big red dont/>
-    <Icon user/>
-</Icons>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Corner icons</h4>
+
+    
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Corner icons -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Corner icons" code = {Code.corner_icons}>
+
         <Icons huge>
             <Icon puzzle/>
             <Icon top left corner add/>
@@ -282,31 +262,7 @@ Help me <Icon fitted help/>
             </Icons>
             Add on Twitter
         </Header>
-        <Prism language="svelte" source={`
-<Icons huge>
-    <Icon puzzle/>
-    <Icon top left corner add/>
-</Icons>
-<Icons huge>
-    <Icon puzzle/>
-    <Icon top right corner add/>
-</Icons>
-<Icons huge>
-    <Icon puzzle/>
-    <Icon bottom left corner add/>
-</Icons>
-<Icons huge>
-    <Icon puzzle/>
-    <Icon bottom right corner add/>
-</Icons>
 
-<Header h2 ui>
-    <Icons large>
-        <Icon twitter/>
-        <Icon inverted corner add/>
-    </Icons>
-    Add on Twitter
-</Header>
-        `}/>
-    </div>
-</div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+</Examples>
