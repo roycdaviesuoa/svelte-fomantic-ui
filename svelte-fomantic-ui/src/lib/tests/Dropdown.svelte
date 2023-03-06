@@ -6,9 +6,8 @@
 
 <script lang="ts">
     import { Dropdown, Input, Text, Menu, Icon, Item, Header, Button } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import SourceCode from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
     import Code from './Dropdown';
     
     import {update} from "../modules/Dropdown";
@@ -28,99 +27,82 @@
     }
 </script>
 
-<div class="example-document">
-  <h3 class="document-header">Dropdown examples and tests</h3>
-  <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/modules/dropdown.html">here</a></div>
-  <div class="document-disclaimer">This is very much still a work-in-progress.</div>
+<Examples
+    title = "Dropdown examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/dropdown.html'>here</a>"
+    disclaimer = "This is very much still a work-in-progress.">
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Simple dropdown -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Simple Dropdown" code = {Code.simple}>
+
+        <Dropdown ui >
+            <Input type="hidden" id="gender"/>
+            <Icon dropdown/>
+            <Text default>Gender</Text>
+            <Menu>
+                <Item value="male">Male</Item>
+                <Item value="female">Female</Item>
+            </Menu>
+        </Dropdown>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Simple dropdown -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Simple Dropdown</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Dropdown using settings -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Dropdown using settings" code = {Code.settings}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Dropdown ui >
-        <Input type="hidden" id="gender"/>
-        <Icon dropdown/>
-        <Text default>Gender</Text>
-        <Menu>
-            <Item value="male">Male</Item>
-            <Item value="female">Female</Item>
-        </Menu>
-    </Dropdown>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Dropdown ui settings={{
+                values: [
+                    { name: 'Male', value: 'male' },
+                    { name     : 'Female', value    : 'female', selected : true }
+                ]
+            }}>
+            <Text/>
+            <Icon dropdown/>
+        </Dropdown>
 
-    <SourceCode language = "svelte" source = {Code.simple}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Dropdown using settings -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Dropdown using settings</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Changing settings after initialisation -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Changing settings after initialisation" code = {Code.change_after_initialisation}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Dropdown ui settings={{
-            values: [
-                { name: 'Male', value: 'male' },
-                { name     : 'Female', value    : 'female', selected : true }
-            ]
-        }}>
-        <Text/>
-        <Icon dropdown/>
-    </Dropdown>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Button ui on:click={()=>changeMenu("test")}>Click to change</Button>
+        <Dropdown ui bind:selected={test} id="test" settings={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
+            <Text/>
+            <Icon dropdown/>
+        </Dropdown>
+        <Header>{test}</Header>
 
-    <SourceCode language = "svelte" source = {Code.settings}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!-- Changing settings after initialisation -->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Changing settings after initialisation</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Changing settings after initialisation with formatting" code = {Code.change_with_formatting}>
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Button ui on:click={()=>changeMenu("test")}>Click to change</Button>
-    <Dropdown ui bind:selected={test} id="test" settings={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
-        <Text/>
-        <Icon dropdown/>
-    </Dropdown>
-    <Header>{test}</Header>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <Button ui on:click={()=>changeMenu("test2")}>Click to change</Button>
 
-    <SourceCode language = "svelte" source = {Code.change_after_initialisation}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <Dropdown ui bind:selected={test2} fluid selection id="test2" settings={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
+            <Text/>
+            <Icon dropdown/>
+        </Dropdown>
+        <Header>{test2}</Header>
 
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="example">
-    <h4 class="example-header">Changing settings after initialisation with formatting</h4>
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Button ui on:click={()=>changeMenu("test2")}>Click to change</Button>
-
-    <Dropdown ui bind:selected={test2} fluid selection id="test2" settings={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
-        <Text/>
-        <Icon dropdown/>
-    </Dropdown>
-    <Header>{test2}</Header>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    <SourceCode language = "svelte" source = {Code.change_with_formatting}/>
-</div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-</div>
+</Examples>

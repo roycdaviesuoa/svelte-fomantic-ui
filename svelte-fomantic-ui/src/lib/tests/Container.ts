@@ -13,62 +13,32 @@ const code = {
 <Container ui four column doubling stackable grid>
     <Column>
         <Placeholder ui>
-            <Image header>
-                <Line/>
-                <Line/>
-            </Image>
-            <Paragraph>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-            </Paragraph>
+            <Image header> <Line/> <Line/> </Image>
+            <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph>
         </Placeholder>
     </Column>
     <Column>
         <Placeholder ui>
-            <Image header>
-                <Line/>
-                <Line/>
-            </Image>
-            <Paragraph>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-            </Paragraph>
+            <Placeholder ui>
+                <Image header> <Line/> <Line/> </Image>
+                <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+            </Placeholder>
         </Placeholder>
     </Column>
     <Column>
         <Placeholder ui>
-            <Image header>
-                <Line/>
-                <Line/>
-            </Image>
-            <Paragraph>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-            </Paragraph>
+            <Placeholder ui>
+                <Image header> <Line/> <Line/> </Image>
+                <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+            </Placeholder>
         </Placeholder>
     </Column>
     <Column>
         <Placeholder ui>
-            <Image header>
-                <Line/>
-                <Line/>
-            </Image>
-            <Paragraph>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-                <Line/>
-            </Paragraph>
+            <Placeholder ui>
+                <Image header> <Line/> <Line/> </Image>
+                <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+            </Placeholder>
         </Placeholder>
     </Column>
 </Container>
