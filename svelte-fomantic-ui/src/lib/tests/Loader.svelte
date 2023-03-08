@@ -6,22 +6,26 @@
 
 <script lang="ts">
     import { Loader, Segment, Dimmer, Placeholder, Paragraph, Line, Button, Content } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import Prism from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
+    import Code from './Loader';
 
     let isActive: boolean = false;
     function setActive() {
         isActive = !isActive;
     }
+    
 </script>
 
-<div class="example-document">
-    <h3 class="document-header">Loader examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/loader.html">here</a></div>
+<Examples
+    title = "Loader examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/loader.html'>here</a>">
+
   
-    <div class="example">
-        <h4 class="example-header">A loader</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- loader -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "A loader" code = {Code.loader}>
 
         <Segment ui>
             <br/><br/><br/>
@@ -30,18 +34,15 @@
             </Dimmer>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui>
-    <br/><br/><br/>
-    <Dimmer ui active>
-        <Loader ui/>
-    </Dimmer>
-</Segment>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Text loader</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Text loader -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Text loader" code = {Code.text_loader}>
 
         <Segment ui>
             <br/><br/><br/>
@@ -57,25 +58,15 @@
             </Dimmer>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui>
-    <br/><br/><br/>
-    <Dimmer ui active>
-        <Loader ui text>Loading</Loader>
-    </Dimmer>
-</Segment>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Segment ui>
-    <br/><br/><br/>
-    <Dimmer ui active inverted >
-        <Loader ui text>Loading</Loader>
-    </Dimmer>
-</Segment>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Intermediate</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Indeterminate -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Indeterminate" code = {Code.intermediate}>
 
         <Segment ui>
             <br/><br/><br/>
@@ -84,18 +75,15 @@
             </Dimmer>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui>
-    <br/><br/><br/>
-    <Dimmer ui active>
-        <Loader ui indeterminate text>Preparing Files</Loader>
-    </Dimmer>
-</Segment>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Active / Disabled</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Active / Disabled -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Active / Disabled" code = {Code.active_disabled}>
 
         <Button ui toggle fluid bind:value={isActive} on:toggle={setActive} on_style="green">
             <Content slot="on">Active</Content>
@@ -106,61 +94,53 @@
             <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Segment>
 
-        <Prism language="svelte" source={`
-<script>
-    import { Loader, Segment, Placeholder, Paragraph, Line, Button, Content } from "../svelte-fomantic-ui.svelte";
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    let isActive: boolean = false;
-    function setActive() { isActive = !isActive; }
-</script>
 
-<Button ui toggle fluid bind:value={isActive} on:toggle={setActive} on_style="green">
-    <Content slot="on">Active</Content>
-    <Content slot="off">Disabled</Content>
-</Button>
-<Segment ui>
-    <Loader ui active={isActive} disabled={!isActive}/>
-    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-</Segment>
-        `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Inline</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Inline -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inline" code = {Code.inline}>
 
         <Loader ui active inline/>
 
-        <Prism language="svelte" source={`
-<Loader ui active inline/>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Centered inline</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Centered inline -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Centered inline" code = {Code.centered_inline}>
 
         <Loader ui active centered inline/>
 
-        <Prism language="svelte" source={`
-<Loader ui active centered inline/>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Speed</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Speed -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Speed" code = {Code.speed}>
 
         <Loader ui active slow inline/>
         <Loader ui active inline/>
         <Loader ui active fast inline/>
 
-        <Prism language="svelte" source={`
-<Loader ui active slow inline/>
-<Loader ui active inline/>
-<Loader ui active fast inline/>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Colored</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Colored -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Colored" code = {Code.colored}>
 
         <Loader ui active primary inline/>
         <Loader ui active secondary inline/>
@@ -178,27 +158,15 @@
         <Loader ui active grey inline/>
         <Loader ui active black inline/>
 
-        <Prism language="svelte" source={`
-<Loader ui active primary inline/>
-<Loader ui active secondary inline/>
-<Loader ui active red inline/>
-<Loader ui active orange inline/>
-<Loader ui active yellow inline/>
-<Loader ui active olive inline/>
-<Loader ui active green inline/>
-<Loader ui active teal inline/>
-<Loader ui active blue inline/>
-<Loader ui active violet inline/>
-<Loader ui active purple inline/>
-<Loader ui active pink inline/>
-<Loader ui active brown inline/>
-<Loader ui active grey inline/>
-<Loader ui active black inline/>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Size</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Size -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Size" code = {Code.size}>
 
         <Segment ui>
             <Dimmer ui active>
@@ -249,76 +217,30 @@
             <br/><br/><br/><br/><br/>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui mini text>Loading</Loader>
-    </Dimmer>
-    <br/><br/>
-</Segment>
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui tiny text>Loading</Loader>
-    </Dimmer>
-    <br/><br/>
-</Segment>
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui small text>Loading</Loader>
-    </Dimmer>
-    <br/><br/><br/>
-</Segment>
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui medium text>Loading</Loader>
-    </Dimmer>
-    <br/><br/><br/>
-</Segment>
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui large text>Loading</Loader>
-    </Dimmer>
-    <br/><br/><br/><br/>
-</Segment>
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui big text>Loading</Loader>
-    </Dimmer>
-    <br/><br/><br/><br/><br/>
-</Segment>
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui huge text>Loading</Loader>
-    </Dimmer>
-    <br/><br/><br/><br/><br/>
-</Segment>
-<Segment ui>
-    <Dimmer ui active>
-        <Loader ui massive text>Loading</Loader>
-    </Dimmer>
-    <br/><br/><br/><br/><br/>
-</Segment>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Inverted</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Inverted -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inverted" code = {Code.inverted}>
 
         <Segment ui inverted>
             <Loader ui active inverted/>
             <br/><br/><br/><br/>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui inverted>
-    <Loader ui active inverted/>
-    <br/><br/><br/><br/>
-</Segment>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Inverted dimmer</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Inverted dimmer -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inverted dimmer" code = {Code.inverted_dimmer}>
 
         <Segment ui>
             <Dimmer ui active inverted>
@@ -327,18 +249,15 @@
             <br/><br/><br/>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui>
-    <Dimmer ui active inverted>
-        <Loader ui text>Loading</Loader>
-    </Dimmer>
-    <br/><br/><br/>
-</Segment>
-        `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Styles</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Styles -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Styles" code = {Code.styles}>
 
         <Segment ui>
             <Loader ui active slow green double/>
@@ -349,15 +268,7 @@
             <br/><br/><br/><br/>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui>
-    <Loader ui active slow green double/>
-    <br/><br/><br/><br/>
-</Segment>
-<Segment ui>
-    <Loader ui active blue elastic/>
-    <br/><br/><br/><br/>
-</Segment>
-        `}/>
-    </div>
-</div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+</Examples>
