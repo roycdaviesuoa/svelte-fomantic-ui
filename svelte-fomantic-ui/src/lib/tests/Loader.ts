@@ -24,7 +24,7 @@ const code = {
     </Dimmer>
 </Segment>
     `,
-    intermediate : `
+    indeterminate : `
 <Segment ui>
     <Dimmer ui active>
         <Loader ui indeterminate text>Preparing Files</Loader>
