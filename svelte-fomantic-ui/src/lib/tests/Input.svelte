@@ -10,11 +10,7 @@
     import Examples from "./Examples.svelte";
     import Code from './Input';
 
-    import "./examplestyles.css";
-    import "./prism.css";
-    import Prism from 'svelte-prism';
     let sizes = ["mini", "tiny", "small", "large", "big", "huge", "massive"];
-
 
     let filename1: string = "";
     let filename2: string = "";
