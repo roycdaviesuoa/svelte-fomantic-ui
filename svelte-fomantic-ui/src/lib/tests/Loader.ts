@@ -64,21 +64,21 @@ const code = {
 <Loader ui active fast inline/>
     `,
     colored : `
-    <Loader ui active primary inline/>
-    <Loader ui active secondary inline/>
-    <Loader ui active red inline/>
-    <Loader ui active orange inline/>
-    <Loader ui active yellow inline/>
-    <Loader ui active olive inline/>
-    <Loader ui active green inline/>
-    <Loader ui active teal inline/>
-    <Loader ui active blue inline/>
-    <Loader ui active violet inline/>
-    <Loader ui active purple inline/>
-    <Loader ui active pink inline/>
-    <Loader ui active brown inline/>
-    <Loader ui active grey inline/>
-    <Loader ui active black inline/>    
+<Loader ui active primary inline/>
+<Loader ui active secondary inline/>
+<Loader ui active red inline/>
+<Loader ui active orange inline/>
+<Loader ui active yellow inline/>
+<Loader ui active olive inline/>
+<Loader ui active green inline/>
+<Loader ui active teal inline/>
+<Loader ui active blue inline/>
+<Loader ui active violet inline/>
+<Loader ui active purple inline/>
+<Loader ui active pink inline/>
+<Loader ui active brown inline/>
+<Loader ui active grey inline/>
+<Loader ui active black inline/>    
     `,
     size : `
 <Segment ui>

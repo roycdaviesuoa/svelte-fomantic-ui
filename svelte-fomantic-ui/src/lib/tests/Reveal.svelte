@@ -6,19 +6,22 @@
 
 <script lang="ts">
     import { Reveal, Content, Image, Button } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import Prism from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
+    import Code from './Reveal';
 
     let revealed: boolean = false;
 </script>
 
-<div class="example-document">
-    <h3 class="document-header">Emoji examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/reveal.html">here</a></div>
+<Examples
+    title = "Reveal examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/reveal.html'>here</a>">
+    
 
-    <div class="example">
-        <h4 class="example-header">Fade</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Fade -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Fade" code = {Code.fade}>
 
         <Reveal ui fade>
             <Content visible>
@@ -34,25 +37,15 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="svelte" source={`
-<Reveal ui fade>
-    <Content visible>
-        <Image ui small src="/images/square-image.png"/>
-    </Content>
-    <Content hidden>
-        <Image ui small src="/images/ade.jpg"/>
-    </Content>
-</Reveal>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Reveal ui small fade image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
-    `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Move</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Move -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Move" code = {Code.move}>
 
         <Reveal ui small move image>
             <Image visible content src="/images/square-image.png"/>
@@ -74,32 +67,15 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="svelte" source={`
-<Reveal ui small move image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Reveal ui small move right image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
 
-<Reveal ui small move up image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
 
-<Reveal ui small move down image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
-
-    `}/>
-    </div>
-
-    <div class="example">
-        <h4 class="example-header">Rotate</h4>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Rotate -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Rotate" code = {Code.rotate}>
 
         <Reveal ui small circular rotate image>
             <Image visible content src="/images/square-image.png"/>
@@ -111,53 +87,45 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="svelte" source={`
-<Reveal ui small circular rotate image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Reveal ui small circular rotate left image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
-    `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Visible Content</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Visible Content -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Visible Content" code = {Code.visible_content}>
 
         <Reveal ui small fade image>
             <Image visible content src="/images/ade.jpg"/>
             <Image hidden content src="/images/square-image.png"/>
         </Reveal>
 
-        <Prism language="svelte" source={`
-<Reveal ui small fade image>
-    <Image visible content src="/images/ade.png"/>
-    <Image hidden content src="/images/square-image.jpg"/>
-</Reveal>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Hidden Content</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Hidden Content -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Hidden Content" code = {Code.hidden_content}>
 
         <Reveal ui small fade image>
             <Image visible content src="/images/square-image.png"/>
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="svelte" source={`
-<Reveal ui small fade image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Active / Disabled</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Active / Disabled -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Active / Disabled" code = {Code.active_disabled}>
 
         <Button ui toggle bind:active={revealed} green>
             <Content slot="on">Hide</Content>
@@ -168,31 +136,23 @@
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="svelte" source={`
-<Button ui toggle bind:active={revealed} green>
-    <Content slot="on">Hide</Content>
-    <Content slot="off">Reveal</Content>
-</Button>
-<Reveal ui small fade image active={revealed} disabled={!revealed}>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Instant</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Instant -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Instant" code = {Code.instant}>
 
         <Reveal ui small instant move image>
             <Image visible content src="/images/square-image.png"/>
             <Image hidden content src="/images/ade.jpg"/>
         </Reveal>
 
-        <Prism language="svelte" source={`
-<Reveal ui small instant move image>
-    <Image visible content src="/images/square-image.png"/>
-    <Image hidden content src="/images/ade.jpg"/>
-</Reveal>
-    `}/>
-    </div>
-</div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+</Examples>
