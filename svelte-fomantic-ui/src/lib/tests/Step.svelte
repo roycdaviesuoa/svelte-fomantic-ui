@@ -6,19 +6,22 @@
 
 <script lang="ts">
     import { Step, Steps, Icon, Content, Title, Description, Grid, Column, Segment, Placeholder, Header, Line, Paragraph } from "../svelte-fomantic-ui.svelte";
-    import "./examplestyles.css";
-    import "./prism.css";
-    import Prism from 'svelte-prism';
+    import Example from "./Example.svelte";
+    import Examples from "./Examples.svelte";
+    import Code from './Step';
 
     let sizes = ["mini", "tiny", "small", "large", "big", "huge", "massive"];
 </script>
 
-<div class="example-document">
-    <h3 class="document-header">Emoji examples and tests</h3>
-    <div class="document-description">To check these are correct, compare with standard FomanticUI, <a href="https://fomantic-ui.com/elements/step.html">here</a></div>
+<Examples
+    title = "Step examples and tests"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/step.html'>here</a>">
 
-    <div class="example">
-        <h4 class="example-header">External</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- External -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "External" code = {Code.external}>
 
         <Steps ui>
             <Step>
@@ -26,17 +29,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step>
-        Shipping
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Steps</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Steps -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Steps" code = {Code.steps}>
 
         <Steps ui>
             <Step>
@@ -54,41 +55,22 @@
                 </Content>
             </Step>
             <Step disabled>
-                <Icon info/>>
+                <Icon info/>
                 <Content>
                     <Title>Confirm Order</Title>
                 </Content>
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step>
-        <Icon truck/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Icon payment/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step disabled>
-        <Icon info/>>
-        <Content>
-            <Title>Confirm Order</Title>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Ordered</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Ordered -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Ordered" code = {Code.ordered}>
 
         <Steps ui ordered>
             <Step completed>
@@ -111,32 +93,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui ordered>
-    <Step completed>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step completed>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Vertical</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Vertical -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Vertical" code = {Code.vertical}>
 
         <Steps ui vertical ordered>
             <Step completed>
@@ -159,32 +124,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui vertical ordered>
-    <Step completed>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step completed>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Description</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Description -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Description" code = {Code.description}>
 
         <Steps ui>
             <Step>
@@ -195,20 +143,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Icon</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Icon -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Icon" code = {Code.icon}>
 
         <Steps ui>
             <Step>
@@ -220,21 +163,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step>
-        <Icon truck/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Link</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Link -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Link" code = {Code.link}>
 
         <Steps ui>
             <Step active link>
@@ -268,43 +205,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step active link>
-        <Icon truck/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step link>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-</Steps>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<Steps ui>
-    <Step link>
-        <Icon truck/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step link>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Active</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Active -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Active" code = {Code.active}>
 
         <Steps ui>
             <Step active>
@@ -316,21 +225,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step active>
-        <Icon payment/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Completed</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Completed -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Completed" code = {Code.completed}>
 
         <Steps ui>
             <Step completed>
@@ -342,21 +245,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step completed>
-        <Icon payment/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Disabled</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Disabled -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Disabled" code = {Code.disabled}>
 
         <Steps ui>
             <Step disabled>
@@ -364,17 +261,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui>
-    <Step disabled>
-        Billing
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Stackable</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Stackable -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Stackable" code = {Code.stackable}>
 
         <Steps ui tablet stackable>
             <Step>
@@ -400,35 +295,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui tablet stackable>
-    <Step>
-        <Icon plane/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Icon dollar/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step disabled>
-        <Icon info circle/>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Fluid</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Fluid -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Fluid" code = {Code.fluid}>
 
         <Grid ui two column>
             <Column>
@@ -454,35 +329,15 @@
             </Column>
         </Grid>
 
-        <Prism language="svelte" source={`
-<Grid ui two column>
-    <Column>
-        <Steps ui fluid vertical>
-            <Step completed>
-                <Icon truck/>
-                <Content>
-                    <Title>Shipping</Title>
-                    <Description>Choose your shipping options</Description>
-                </Content>
-            </Step>
-            <Step active>
-                <Icon dollar/>
-                <Content>
-                    <Title>Billing</Title>
-                    <Description>Enter billing information</Description>
-                </Content>
-            </Step>
-        </Steps>
-    </Column>
-    <Column>
-        <p>The steps take up the entire column width</p>
-    </Column>
-</Grid>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Unstackable</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Unstackable -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Unstackable" code = {Code.unstackable}>
 
         <Steps ui tablet unstackable>
             <Step>
@@ -508,35 +363,15 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui tablet unstackable>
-    <Step>
-        <Icon plane/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Icon dollar/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step disabled>
-        <Icon info circle/>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Attached</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Attached -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Attached" code = {Code.attached}>
 
         <Steps ui three top attached>
             <Step>
@@ -588,113 +423,49 @@
             </Step>
         </Steps>
 
-        <Prism language="svelte" source={`
-<Steps ui three top attached>
-    <Step>
-        <Icon plane/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Icon payment/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step disabled>
-        <Icon info circle/>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-<Segment ui attached>
-    <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
-</Segment>
-<Steps ui three bottom attached>
-    <Step>
-        <Icon plane/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Icon payment/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step disabled>
-        <Icon info circle/>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Evenly distributed</h4>
-<Steps ui three>
-    <Step>
-        <Icon plane/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Icon payment/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step disabled>
-        <Icon info circle/>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-        <Prism language="svelte" source={`
-<Steps ui three>
-    <Step>
-        <Icon plane/>
-        <Content>
-            <Title>Shipping</Title>
-            <Description>Choose your shipping options</Description>
-        </Content>
-    </Step>
-    <Step active>
-        <Icon payment/>
-        <Content>
-            <Title>Billing</Title>
-            <Description>Enter billing information</Description>
-        </Content>
-    </Step>
-    <Step disabled>
-        <Icon info circle/>
-        <Content>
-            <Title>Confirm Order</Title>
-            <Description>Verify order details</Description>
-        </Content>
-    </Step>
-</Steps>
-    `}/>
-    </div>
 
-    <div class="example">
-        <h4 class="example-header">Size</h4>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Evenly distributed -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Evenly distributed" code = {Code.evenly_distributed}>
+        
+        <Steps ui three>
+            <Step>
+                <Icon plane/>
+                <Content>
+                    <Title>Shipping</Title>
+                    <Description>Choose your shipping options</Description>
+                </Content>
+            </Step>
+            <Step active>
+                <Icon payment/>
+                <Content>
+                    <Title>Billing</Title>
+                    <Description>Enter billing information</Description>
+                </Content>
+            </Step>
+            <Step disabled>
+                <Icon info circle/>
+                <Content>
+                    <Title>Confirm Order</Title>
+                    <Description>Verify order details</Description>
+                </Content>
+            </Step>
+        </Steps>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Size -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Size" code = {Code.size}>
 
         {#each sizes as size, i}
             {#if i > 0}
@@ -725,40 +496,15 @@
             </Steps>
         {/each}
         
-        <Prism language="svelte" source={`
-{#each sizes as size, i}
-    {#if i > 0}
-        <br/><br/>
-    {/if}
-    <Steps ui _={size}>
-        <Step>
-            <Icon plane/>
-            <Content>
-                <Title>Shipping</Title>
-                <Description>Choose your shipping options</Description>
-            </Content>
-        </Step>
-        <Step active>
-            <Icon payment/>
-            <Content>
-                <Title>Billing</Title>
-                <Description>Enter billing information</Description>
-            </Content>
-        </Step>
-        <Step disabled>
-            <Icon info circle/>
-            <Content>
-                <Title>Confirm Order</Title>
-                <Description>Verify order details</Description>
-            </Content>
-        </Step>
-    </Steps>
-{/each}
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
-    <div class="example">
-        <h4 class="example-header">Inverted</h4>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Inverted -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inverted" code = {Code.inverted}>
 
         <Segment ui inverted>
             <Steps ui three inverted>
@@ -830,77 +576,8 @@
             </Steps>
         </Segment>
 
-        <Prism language="svelte" source={`
-<Segment ui inverted>
-    <Steps ui three inverted>
-        <Step>
-            <Icon plane/>
-            <Content>
-                <Title>Shipping</Title>
-                <Description>Choose your shipping options</Description>
-            </Content>
-        </Step>
-        <Step active>
-            <Icon payment/>
-            <Content>
-                <Title>Billing</Title>
-                <Description>Enter billing information</Description>
-            </Content>
-        </Step>
-        <Step disabled>
-            <Icon info circle/>
-            <Content>
-                <Title>Confirm Order</Title>
-                <Description>Verify order details</Description>
-            </Content>
-        </Step>
-    </Steps>
-</Segment>
-<Segment ui inverted>
-    <Steps ui three inverted ordered>
-        <Step completed>
-            <Content>
-                <Title>Shipping</Title>
-                <Description>Choose your shipping options</Description>
-            </Content>
-        </Step>
-        <Step completed>
-            <Content>
-                <Title>Billing</Title>
-                <Description>Enter billing information</Description>
-            </Content>
-        </Step>
-        <Step active>
-            <Content>
-                <Title>Confirm Order</Title>
-                <Description>Verify order details</Description>
-            </Content>
-        </Step>
-    </Steps>
-</Segment>
-<Segment ui inverted>
-    <Steps ui inverted vertical ordered>
-        <Step completed>
-            <Content>
-                <Title>Shipping</Title>
-                <Description>Choose your shipping options</Description>
-            </Content>
-        </Step>
-        <Step completed>
-            <Content>
-                <Title>Billing</Title>
-                <Description>Enter billing information</Description>
-            </Content>
-        </Step>
-        <Step active>
-            <Content>
-                <Title>Confirm Order</Title>
-                <Description>Verify order details</Description>
-            </Content>
-        </Step>
-    </Steps>
-</Segment>
-    `}/>
-    </div>
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
     
-</div>
+</Examples>
