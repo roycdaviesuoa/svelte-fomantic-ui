@@ -6,7 +6,6 @@
 const code = {
     loader : `
 <Segment ui>
-    <br/><br/><br/>
     <Dimmer ui active>
         <Loader ui/>
     </Dimmer>
@@ -14,14 +13,12 @@ const code = {
     `,
     text_loader : `
 <Segment ui>
-    <br/><br/><br/>
     <Dimmer ui active>
         <Loader ui text>Loading</Loader>
     </Dimmer>
 </Segment>
 
 <Segment ui>
-    <br/><br/><br/>
     <Dimmer ui active inverted >
         <Loader ui text>Loading</Loader>
     </Dimmer>
@@ -29,7 +26,6 @@ const code = {
     `,
     intermediate : `
 <Segment ui>
-    <br/><br/><br/>
     <Dimmer ui active>
         <Loader ui indeterminate text>Preparing Files</Loader>
     </Dimmer>
@@ -85,55 +81,46 @@ const code = {
     <Dimmer ui active>
         <Loader ui mini text>Loading</Loader>
     </Dimmer>
-    <br/><br/>
 </Segment>
 <Segment ui>
     <Dimmer ui active>
         <Loader ui tiny text>Loading</Loader>
     </Dimmer>
-    <br/><br/>
 </Segment>
 <Segment ui>
     <Dimmer ui active>
         <Loader ui small text>Loading</Loader>
     </Dimmer>
-    <br/><br/><br/>
 </Segment>
 <Segment ui>
     <Dimmer ui active>
         <Loader ui medium text>Loading</Loader>
     </Dimmer>
-    <br/><br/><br/>
 </Segment>
 <Segment ui>
     <Dimmer ui active>
         <Loader ui large text>Loading</Loader>
     </Dimmer>
-    <br/><br/><br/><br/>
 </Segment>
 <Segment ui>
     <Dimmer ui active>
         <Loader ui big text>Loading</Loader>
     </Dimmer>
-    <br/><br/><br/><br/><br/>
 </Segment>
 <Segment ui>
     <Dimmer ui active>
         <Loader ui huge text>Loading</Loader>
     </Dimmer>
-    <br/><br/><br/><br/><br/>
 </Segment>
 <Segment ui>
     <Dimmer ui active>
         <Loader ui massive text>Loading</Loader>
     </Dimmer>
-    <br/><br/><br/><br/><br/>
 </Segment>
     `,
     inverted : `
 <Segment ui inverted>
     <Loader ui active inverted/>
-    <br/><br/><br/><br/>
 </Segment>
     `,
     inverted_dimmer : `
@@ -141,17 +128,14 @@ const code = {
     <Dimmer ui active inverted>
         <Loader ui text>Loading</Loader>
     </Dimmer>
-    <br/><br/><br/>
 </Segment>
     `,
     styles : `
 <Segment ui>
     <Loader ui active slow green double/>
-    <br/><br/><br/><br/>
 </Segment>
 <Segment ui>
     <Loader ui active blue elastic/>
-    <br/><br/><br/><br/>
 </Segment>
     `
 }
