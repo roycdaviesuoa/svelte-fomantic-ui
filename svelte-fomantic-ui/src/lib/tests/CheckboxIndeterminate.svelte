@@ -28,6 +28,7 @@
 
 </script>
 
+
 <Examples
     title = "A Checkbox with Indeterminate status example"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/checkbox.html#/usage'>here</a>">

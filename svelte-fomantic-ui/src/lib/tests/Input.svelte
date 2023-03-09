@@ -25,7 +25,9 @@
     let domain_prefix: string = "";
     let domain_suffix: string = "";
     let occupation: string = "developer";
-    let persons: string = "1";</script>
+    let persons: string = "1";
+</script>
+
 
 <Examples
     title = "Input examples and tests"

@@ -31,6 +31,7 @@
     ];
 </script>
 
+
 <Examples
     title = "Checkbox, Radio, Toggle and Slider examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/checkbox.html'>here</a>">

@@ -11,6 +11,7 @@
     import Code from './Breadcrumb';
 </script>
 
+
 <Examples
     title = "Breadcrumb examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/breadcrumb.html'>here</a>">

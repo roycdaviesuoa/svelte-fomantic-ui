@@ -11,6 +11,7 @@
     import Code from './Accordion'
 </script>
 
+
 <Examples
     title = "Accordion examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/accordion.html'>here</a>"

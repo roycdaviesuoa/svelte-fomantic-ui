@@ -11,6 +11,7 @@
     import Code from './Calendar';
 </script>
 
+
 <Examples
     title = "Calendar examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/calendar.html'>here</a><">

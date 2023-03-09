@@ -13,6 +13,7 @@
     let imageHidden: boolean = true;
 </script>
 
+
 <Examples
     title = "Image examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/image.html'>here</a>">

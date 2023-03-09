@@ -13,6 +13,7 @@
     let revealed: boolean = false;
 </script>
 
+
 <Examples
     title = "Reveal examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/reveal.html'>here</a>">
