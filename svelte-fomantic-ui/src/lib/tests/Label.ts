@@ -627,7 +627,7 @@ const code = {
     Massive
 </Label>
     `,
-    group_Size : `
+    group_size : `
 <Labels ui huge>
     <Label ui>
         Fun
