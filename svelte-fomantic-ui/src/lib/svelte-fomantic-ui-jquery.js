@@ -10,8 +10,8 @@ import loadAccordions from './modules/Accordion';
 import loadDropdowns from './modules/Dropdown';
 import loadMenus from './collections/Menu';
 import loadCheckboxes from './inputs/Checkbox';
+import loadEmbeds from './modules/Embed';
 
-// eslint-disable-next-line
 $(() =>
 {
     loadCalendars();
@@ -19,4 +19,5 @@ $(() =>
     loadDropdowns();
     loadMenus();
     loadCheckboxes();
+    loadEmbeds();
 });

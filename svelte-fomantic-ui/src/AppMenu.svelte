@@ -46,7 +46,6 @@
                 <li> <h4><a href="/Checkbox">Checkbox, Radio, Toggle, Slider</a>, <a href="/CheckboxIndeterminate">Indeterminate</a></h4> </li>
                 <li> <h4><a href="/Input">Input</a></h4></li>
                 <li> <h4><a href="/Dropdown">Dropdown</a></h4> </li>
-                <li> <h4>Simple Dropdown</h4></li>
                 <li> <h4>Textarea</h4></li>
             </ul>
             <li> <h3>Collections</h3></li>
@@ -62,6 +61,7 @@
              <ul>
                 <li> <h4><a href="/Accordion">Accordion</a></h4> </li>
                 <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
+                <li> <h4><a href="/Embed">Embed</a></h4> </li>
            </ul>
         </ul>
     </div>

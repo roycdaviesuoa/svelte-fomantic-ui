@@ -18,6 +18,7 @@
   import Container from './lib/tests/Container.svelte';
   import Divider from './lib/tests/Divider.svelte';
   import Dropdown from './lib/tests/Dropdown.svelte';
+  import Embed from './lib/tests/Embed.svelte';
   import Emoji from './lib/tests/Emoji.svelte';
   import Flag from './lib/tests/Flag.svelte';
   import Grid from './lib/tests/Grid.svelte';
@@ -63,6 +64,8 @@
       currentRoute = Divider; break;
     case '/Dropdown':
       currentRoute = Dropdown; break;
+    case '/Embed':
+      currentRoute = Embed; break;
     case '/Emoji':
       currentRoute = Emoji; break;
     case '/Flag':

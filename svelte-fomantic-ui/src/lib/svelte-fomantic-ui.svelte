@@ -67,6 +67,7 @@
     // Modules
     export {default as Accordion} from './modules/Accordion.svelte';
     export {default as Dimmer} from './modules/Dimmer.svelte';
+    export {default as Embed} from './modules/Embed.svelte';
     export {default as Calendar} from './modules/Calendar.svelte';
     export {default as Dropdown} from './modules/Dropdown.svelte';
 
@@ -74,6 +75,8 @@
     export {default as Advertisement} from './views/Advertisement.svelte';
     export {default as Card} from './views/Card.svelte';
     export {default as Cards} from './views/Cards.svelte';
+    export {default as Comment} from './views/Comment.svelte';
+    export {default as Comments} from './views/Comments.svelte';
     export {default as Feed} from './views/Feed.svelte';
     export {default as Item} from './views/Item.svelte';
     export {default as Items} from './views/Items.svelte';

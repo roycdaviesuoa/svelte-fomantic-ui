@@ -60,7 +60,7 @@ Note that in essence all these do already work (except for the Modules) because 
 |------------------|:-----------:|:---------------------:|--------------------------|------------------|
 | Advertisement | X |  |
 | Card | X |  |
-| Comment |  |  |
+| Comment | X |  |
 | Feed | X |  |
 | Item | X |  |
 | Statistic | X |  |
@@ -73,7 +73,7 @@ Note that in essence all these do already work (except for the Modules) because 
 |  - Indeterminate | X | X | [/CheckboxIndeterminate](./svelte-fomantic-ui/src/lib/tests/CheckboxIndeterminate.svelte)
 | Dimmer | X |  |
 | Dropdown | X | X | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
-| Embed |  |  |
+| Embed | X |  |
 | Flyout |  |  |
 | Modal |  |  |
 | Nag |  |  |
