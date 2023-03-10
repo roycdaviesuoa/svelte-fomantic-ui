@@ -53,7 +53,7 @@
             <ul>
                 <li> <h4><a href="/Breadcrumb">Breadcrumb</a> | <a href="/BreadcrumbInteractive">Interactive Breadcrumb</a></h4> </li>
                 <li> <h4>Form</h4></li>
-                <li> <h4>Grid</h4></li>
+                <li> <h4><a href="/Grid">Grid</a></h4></li>
                 <li> <h4>Menu</h4></li>
                 <li> <h4>Message</h4></li>
                 <li> <h4>Table</h4></li>

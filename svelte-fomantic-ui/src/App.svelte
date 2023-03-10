@@ -20,6 +20,7 @@
   import Dropdown from './lib/tests/Dropdown.svelte';
   import Emoji from './lib/tests/Emoji.svelte';
   import Flag from './lib/tests/Flag.svelte';
+  import Grid from './lib/tests/Grid.svelte';
   import Header from './lib/tests/Header.svelte';
   import Icon from './lib/tests/Icon.svelte';
   import Image from './lib/tests/Image.svelte';
@@ -66,6 +67,8 @@
       currentRoute = Emoji; break;
     case '/Flag':
       currentRoute = Flag; break;
+    case '/Grid':
+      currentRoute = Grid; break;
     case '/Header':
       currentRoute = Header; break;
     case '/Icon':
