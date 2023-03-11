@@ -5,7 +5,7 @@
 
 const code = {
     interactive : `
-<script>
+<script lang="ts">
     import { Checkbox, Field, Fields, Divider, Label, Header } from "svelte-fomantic-ui";
 
     let selected: string = "apples";
@@ -51,7 +51,7 @@ const code = {
 <Header h4>Selected: {radio2}</Header>
     `,
     individually_selected : `
-<script>
+<script lang="ts">
     interface Item { id: number; name: string; selected: boolean; }
 
     let moreItems: Item[] = [

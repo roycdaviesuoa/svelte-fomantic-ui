@@ -32,7 +32,7 @@ const code = {
 </Segment>
     `,
     active_disabled : `
-<script>
+<script lang="ts">
     import { Loader, Segment, Placeholder, Paragraph, Line, Button, Content } from "svelte-fomantic-ui";
 
     let isActive: boolean = false;

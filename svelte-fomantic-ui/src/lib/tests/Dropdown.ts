@@ -27,7 +27,7 @@ const code = {
 </Dropdown>
     `,
     change_after_initialisation : `
-<script>
+<script lang="ts">
     import { Dropdown, Input, Text, Menu, Icon, Item, Button } from "svelte-fomantic-ui";
 
     import { update } from "svelte-fomantic-ui/src/lib/modules/Dropdown.js"
@@ -55,7 +55,7 @@ const code = {
 <Header>{test}</Header>
     `,
     change_with_formatting : `
-<script>
+<script lang="ts">
     import { Dropdown, Input, Text, Menu, Icon, Item, Button } from "svelte-fomantic-ui";
 
     import { update } from "svelte-fomantic-ui/src/lib/modules/Dropdown.js"

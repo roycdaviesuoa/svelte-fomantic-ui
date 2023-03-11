@@ -13,7 +13,7 @@ const code = {
 </Link>
     `,
     hidden : `
-<script>
+<script lang="ts">
     import { Image, Button, Content } from "svelte-fomantic-ui";
     let imageHidden: boolean = true;
 </script>

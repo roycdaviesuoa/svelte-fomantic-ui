@@ -5,7 +5,7 @@
 
 const code = {
     interactive : `
-<script>
+<script lang="ts">
     import { Breadcrumb, Link, Divider, Section, Text, Icon } from "svelte-fomantic-ui";
 
     let selected: string = "home";

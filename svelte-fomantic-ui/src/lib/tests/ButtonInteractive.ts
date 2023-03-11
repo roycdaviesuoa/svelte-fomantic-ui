@@ -5,7 +5,7 @@
 
 const code = {
     interactive_buttons : `
-<script>
+<script lang="ts">
     import { Button, Buttons, Content, Header, Divider, Icon } from "svelte-fomantic-ui";
 
     let selected: string = "left";

@@ -73,7 +73,7 @@ Note that in essence all these do already work (except for the Modules) because 
 |  - Indeterminate | X | X | [/CheckboxIndeterminate](./svelte-fomantic-ui/src/lib/tests/CheckboxIndeterminate.svelte)
 | Dimmer | X |  |
 | Dropdown | X | X | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
-| Embed | X |  |
+| Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Dropdown](https://fomantic-ui.com/modules/embed.html)
 | Flyout |  |  |
 | Modal |  |  |
 | Nag |  |  |

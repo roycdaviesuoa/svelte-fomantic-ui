@@ -14,8 +14,12 @@ export const onReady = function () {
 };
 
 export const update = function (id, settings=null) {
-    console.log()
-    if ($("#"+id).embed) {console.log("here"); $("#"+id).embed(settings);}
+    if ($("#"+id).embed) {$("#"+id).embed(settings);}
+}
+
+export const behavior = function(id, param1="", param2="", param3="") {
+    console.log(id, param1, param2, param3);
+    if ($("#"+id).embed) {$("#"+id).embed().play();}
 }
 
 export default onReady;

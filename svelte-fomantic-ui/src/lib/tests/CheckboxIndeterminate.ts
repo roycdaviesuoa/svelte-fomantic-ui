@@ -5,7 +5,7 @@
 
 const code = {
     indeterminate : `
-<script>
+<script lang="ts">
     import { Checkbox, List, Item } from "svelte-fomantic-ui";
 
     interface fruit_type { id: string; name: string; selected: boolean; }

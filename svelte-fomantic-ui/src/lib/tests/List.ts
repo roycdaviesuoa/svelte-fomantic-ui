@@ -608,7 +608,7 @@ const code = {
 </List>
     `,
     size : `
-<script>
+<script lang="ts">
     let sizes = ["mini", "tiny", "small", "medium", "large", "big", "huge", "massive"]; 
 </script>
 {#each sizes as size, i}
