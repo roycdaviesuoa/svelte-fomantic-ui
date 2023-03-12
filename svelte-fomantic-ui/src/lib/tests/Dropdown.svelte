@@ -5,13 +5,11 @@
 -->
 
 <script lang="ts">
-    import { Dropdown, Input, Text, Menu, Icon, Item, Header, Button } from "../svelte-fomantic-ui.svelte";
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dropdown';
     
-    import {update} from "../modules/Dropdown";
-
     let changed = {test:false, test2:false};
     let test="male";
     let test2="female";

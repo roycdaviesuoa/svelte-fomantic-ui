@@ -9,8 +9,4 @@ export const onReady = function () {
     })
 };
 
-export const update = function (id, settings) {
-    if ($("#"+id).dropdown) $("#"+id).dropdown(settings);
-}
-
 export default onReady;

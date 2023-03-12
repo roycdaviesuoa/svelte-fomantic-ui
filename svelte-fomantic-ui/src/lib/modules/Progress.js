@@ -5,10 +5,7 @@
 export const onReady = function () {
     $('.ui.progress').each((i, element) => {
         let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
-        let activate = element.attributes.activate?JSON.parse(element.attributes.activate.value):false;
-
-        console.log(activate, settings);
-        
+        let activate = element.attributes.activate?JSON.parse(element.attributes.activate.value):false;      
         if (activate)
         {
             if ($(element).progress) $(element).progress(settings);

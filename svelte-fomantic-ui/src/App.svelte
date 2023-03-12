@@ -28,7 +28,9 @@
   import Label from './lib/tests/Label.svelte';
   import List from './lib/tests/List.svelte';
   import Loader from './lib/tests/Loader.svelte';
+  import Menu from './lib/tests/Menu.svelte';
   import Placeholder from './lib/tests/Placeholder.svelte';
+  import Popup from './lib/tests/Popup.svelte';
   import Progress from './lib/tests/Progress.svelte';
   import Rail from './lib/tests/Rail.svelte';
   import Reveal from './lib/tests/Reveal.svelte';
@@ -87,8 +89,12 @@
       currentRoute = List; break;
     case '/Loader':
       currentRoute = Loader; break;
+    case '/Menu':
+      currentRoute = Menu; break;
     case '/Placeholder':
       currentRoute = Placeholder; break;
+    case '/Popup':
+      currentRoute = Popup; break;
     case '/Progress':
       currentRoute = Progress; break;
     case '/Reveal':

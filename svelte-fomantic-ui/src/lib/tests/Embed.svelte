@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { behavior, update, Embed, Button, Grid, Column, Row, Header } from "../svelte-fomantic-ui.svelte";
+    import { behavior, update, Embed, Button, Grid, Column, Row, Header, Placeholder } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Embed';
@@ -140,7 +140,7 @@
         <p>Note that the behavior command can be used to return data as well.</p>
 
         <Grid ui>
-            <Row six column>
+            <Row six column stackable>
                 <Column><Button ui fluid green on:click={()=>behavior("content", "change", "youtube", "O6Xo21L0ybE")}>Youtube</Button></Column>
                 <Column><Button ui fluid blue on:click={()=>behavior("content", "change", "vimeo", "125292332")}>Vimeo</Button></Column>
                 <Column><Button ui fluid brown on:click={()=>behavior("content", "change", "url", "", "https://fomantic-ui.com")}>Webpage</Button></Column>
@@ -148,8 +148,14 @@
                 <Column><Button ui fluid orange on:click={()=>output = behavior("content", "get source")}>Get source</Button></Column>
                 <Column><Button ui fluid purple on:click={()=>output = behavior("content", "get url")}>Get URL</Button></Column>
             </Row>
-            <Row one column centered>
-                <Column><Header h4>{output}</Header></Column>
+            <Row one column center aligned>
+                <Column>
+                {#if output}
+                    <Header h3>{output}</Header>
+                {:else}
+                <Header h3>(no data at present)</Header>
+                {/if}
+                </Column>
             </Row>
         </Grid>
             

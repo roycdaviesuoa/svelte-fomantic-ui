@@ -16,8 +16,4 @@ export const onReady = function () {
     })
 };
 
-export const update = function (id, settings) {
-    if ($("#"+id).calendar) $("#"+id).calendar(settings);
-}
-
 export default onReady;

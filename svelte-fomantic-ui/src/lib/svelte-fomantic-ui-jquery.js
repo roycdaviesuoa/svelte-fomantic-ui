@@ -10,8 +10,10 @@ import loadAccordions from './modules/Accordion';
 import loadDropdowns from './modules/Dropdown';
 import loadMenus from './collections/Menu';
 import loadCheckboxes from './inputs/Checkbox';
+import loadForms from './collections/Form';
 import loadEmbeds from './modules/Embed';
 import loadProgresses from './modules/Progress';
+import loadPopups from './modules/Popup';
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
@@ -19,12 +21,29 @@ import loadProgresses from './modules/Progress';
 $(() =>
 {
     loadCalendars();
-    loadAccordions();
-    loadDropdowns();
-    loadMenus();
-    loadCheckboxes();
+    // loadAccordions();
+    // loadDropdowns();
+    // loadMenus();
+    // loadCheckboxes();
     loadEmbeds();
     loadProgresses();
+    // loadForms();
+    // loadPopups();
+
+    $("[data-module_type]").each(function() {
+        let moduleType = $(this).data("module_type");
+        switch (moduleType) {
+            case "":
+            case "calendar" :
+            case "embed":
+            case "progress":
+            case "menu":
+                break;
+            default :
+            console.log(moduleType);
+                $(this)[moduleType](); break;
+        }
+    });
 });
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,7 +72,7 @@ export const behavior = function(...args) {
 export const update = function (...args) {
     let id = args.shift();
     let command = $("#"+id).data("module_type");
-
+    
     if (command && id && ($("#"+id)[command])) {
         $("#"+id)[command](...args);
     }

@@ -9,6 +9,6 @@
     export let ui: boolean=false;
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " form"} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " form"} data-module_type="form" {...otherProps($$restProps)}>
     <slot />
 </div>

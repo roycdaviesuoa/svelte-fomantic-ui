@@ -6,11 +6,16 @@
 
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
-    export let value: string = "";
+    import 'fomantic-ui-css/semantic.css';
+    import 'fomantic-ui-css/semantic.js';
+
     export let ui: boolean=false;
-    export let popup: boolean = false;
+    export let settings: object={};
+
+    let params = JSON.stringify(settings);
+
 </script>
 
-<div data-value={value} class={(ui?"ui ":"") + uiProps($$restProps) + " card"} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " popup"} {params} data-module_type="popup" {...otherProps($$restProps)}>
     <slot />
 </div>

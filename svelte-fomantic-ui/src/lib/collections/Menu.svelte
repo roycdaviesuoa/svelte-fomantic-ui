@@ -23,6 +23,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} {params} {...otherProps($$restProps)} on:click={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} {params} data-module_type="menu" {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

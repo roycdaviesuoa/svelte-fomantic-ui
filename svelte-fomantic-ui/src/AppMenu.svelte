@@ -53,7 +53,7 @@
                 <li> <h4><a href="/Breadcrumb">Breadcrumb</a> | <a href="/BreadcrumbInteractive">Interactive Breadcrumb</a></h4> </li>
                 <li> <h4>Form</h4></li>
                 <li> <h4><a href="/Grid">Grid</a></h4></li>
-                <li> <h4>Menu</h4></li>
+                <li> <h4><a href="/Menu">Menu</a></h4></li>
                 <li> <h4>Message</h4></li>
                 <li> <h4>Table</h4></li>
             </ul>
@@ -62,6 +62,7 @@
                 <li> <h4><a href="/Accordion">Accordion</a></h4> </li>
                 <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
                 <li> <h4><a href="/Embed">Embed</a></h4> </li>
+                <li> <h4>Popup</h4> </li>
                 <li> <h4><a href="/Progress">Progress</a></h4> </li>
            </ul>
         </ul>

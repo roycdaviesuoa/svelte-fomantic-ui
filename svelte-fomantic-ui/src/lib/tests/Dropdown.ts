@@ -28,9 +28,7 @@ const code = {
     `,
     change_after_initialisation : `
 <script lang="ts">
-    import { Dropdown, Input, Text, Menu, Icon, Item, Button } from "svelte-fomantic-ui";
-
-    import { update } from "svelte-fomantic-ui/src/lib/modules/Dropdown.js"
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Button } from "svelte-fomantic-ui";
 
     let changed = {test:false};
     let test="male";
@@ -56,9 +54,7 @@ const code = {
     `,
     change_with_formatting : `
 <script lang="ts">
-    import { Dropdown, Input, Text, Menu, Icon, Item, Button } from "svelte-fomantic-ui";
-
-    import { update } from "svelte-fomantic-ui/src/lib/modules/Dropdown.js"
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Button } from "svelte-fomantic-ui";
 
     let changed = {test2:false};
     let test2="male";
