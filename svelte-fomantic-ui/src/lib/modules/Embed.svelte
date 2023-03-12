@@ -17,6 +17,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " embed"} {params} {activate} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " embed"} {params} data-module_type="embed" {activate} {...otherProps($$restProps)}>
     <slot />
 </div>

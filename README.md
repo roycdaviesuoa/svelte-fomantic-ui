@@ -78,7 +78,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Modal |  |  |
 | Nag |  |  |
 | Popup |  |  |
-| Progress |  |  |
+| Progress | X | X | [/Progress](./svelte-fomantic-ui/src/lib/tests/Progress.svelte) | [Progress](https://fomantic-ui.com/modules/checkbox.html)
 | Radio | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
 | Rating |  |  |
 | Search |  |  |

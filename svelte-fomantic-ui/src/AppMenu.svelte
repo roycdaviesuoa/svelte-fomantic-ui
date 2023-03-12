@@ -62,6 +62,7 @@
                 <li> <h4><a href="/Accordion">Accordion</a></h4> </li>
                 <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
                 <li> <h4><a href="/Embed">Embed</a></h4> </li>
+                <li> <h4><a href="/Progress">Progress</a></h4> </li>
            </ul>
         </ul>
     </div>

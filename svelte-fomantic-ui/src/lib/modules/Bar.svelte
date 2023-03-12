@@ -6,23 +6,9 @@
 
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
-    import 'fomantic-ui-css/semantic.css';
-    import 'fomantic-ui-css/semantic.js';
-
     export let ui: boolean=false;
-    export let selected: string = "";
-    export let settings: object={};
-
-    let params = JSON.stringify(settings);
-
-    function setSelected(e) {
-        if (e.target.attributes["value"]) {
-            selected = e.target.attributes["value"].value;
-        }
-    }
-
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} {params} data-module_type="accordion" {...otherProps($$restProps)} on:click={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " bar"} {...otherProps($$restProps)}>
     <slot />
 </div>

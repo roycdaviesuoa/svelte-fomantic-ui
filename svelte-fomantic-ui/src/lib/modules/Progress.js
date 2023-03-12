@@ -3,12 +3,15 @@
 // ******************************************************************************************************************************************************
 
 export const onReady = function () {
-    $('.ui.embed').each((i, element) => {
+    $('.ui.progress').each((i, element) => {
         let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
         let activate = element.attributes.activate?JSON.parse(element.attributes.activate.value):false;
+
+        console.log(activate, settings);
+        
         if (activate)
         {
-            if ($(element).embed) $(element).embed(settings);
+            if ($(element).progress) $(element).progress(settings);
         }
     })
 };

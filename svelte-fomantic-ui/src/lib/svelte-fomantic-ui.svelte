@@ -66,10 +66,12 @@
 
     // Modules
     export {default as Accordion} from './modules/Accordion.svelte';
-    export {default as Dimmer} from './modules/Dimmer.svelte';
-    export {default as Embed} from './modules/Embed.svelte';
+    export {default as Bar} from './modules/Bar.svelte';
     export {default as Calendar} from './modules/Calendar.svelte';
+    export {default as Dimmer} from './modules/Dimmer.svelte';
     export {default as Dropdown} from './modules/Dropdown.svelte';
+    export {default as Embed} from './modules/Embed.svelte';
+    export {default as Progress} from './modules/Progress.svelte';
 
     // Views
     export {default as Advertisement} from './views/Advertisement.svelte';
@@ -83,5 +85,7 @@
     export {default as Statistic} from './views/Statistic.svelte';
     export {default as Statistics} from './views/Statistics.svelte';
 
-    
+    // Helper functions for modules
+    export { behavior } from './svelte-fomantic-ui-jquery';
+    export { update } from './svelte-fomantic-ui-jquery';
 </script>

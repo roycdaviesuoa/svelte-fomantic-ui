@@ -23,6 +23,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} {params} {...otherProps($$restProps)} on:change={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} {params} data-module_type="calendar" {...otherProps($$restProps)} on:change={setSelected}>
     <slot />
 </div>

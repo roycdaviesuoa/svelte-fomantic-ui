@@ -5,27 +5,19 @@
 -->
 
 <script lang="ts">
-    import { Embed, Button } from "../svelte-fomantic-ui.svelte";
+    import { behavior, update, Embed, Button, Grid, Column, Row, Header } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Embed';
 
-    import {update, behavior} from "../modules/Embed";
+    let output: string = "";
 
-    function activate(id) {
-        update(id, {})
-    }
-
-    function specify(id) {
+    function specify(id:any) {
         update(id, {
             source      : 'youtube',
             id          : 'O6Xo21L0ybE',
             placeholder : '/images/bear-waving.jpg'
           });
-    }
-
-    function do_behavior(id, param1="", param2="", param3="") {
-        behavior(id, param1, param2, param3);
     }
 </script>
 
@@ -40,7 +32,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Specifying a URL" code = {Code.url}>
 
-        <Button ui fluid green attached top on:click={()=>activate("bear")}>Enable</Button>
+        <Button ui fluid green attached top on:click={()=>update("bear")}>Enable</Button>
         <Embed ui id="bear" data-url="https://www.youtube.com/embed/O6Xo21L0ybE" data-placeholder="/images/bear-waving.jpg"/>
 
     </Example>
@@ -65,7 +57,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Content IDs" code = {Code.content_ids}>
 
-        <Button ui fluid green attached top on:click={()=>activate("bear2")}>Enable</Button>
+        <Button ui fluid green attached top on:click={()=>update("bear2")}>Enable</Button>
         <Embed ui id="bear2" data-source="youtube" data-id="O6Xo21L0ybE"/>
 
     </Example>
@@ -78,7 +70,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Specifying metadata" code = {Code.specifying_metadata}>
 
-        <Button ui fluid green attached top on:click={()=>activate("bear3")}>Enable</Button>
+        <Button ui fluid green attached top on:click={()=>update("bear3")}>Enable</Button>
         <Embed ui id="bear3" data-source="youtube" data-id="O6Xo21L0ybE" data-icon="video" data-placeholder="/images/bear-waving.jpg"/>
 
     </Example>
@@ -104,7 +96,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Youtube" code = {Code.youtube}>
 
-        <Button ui fluid green attached top on:click={()=>activate("bear5")}>Enable</Button>
+        <Button ui fluid green attached top on:click={()=>update("bear5")}>Enable</Button>
         <Embed ui id="bear5" data-source="youtube" data-id="O6Xo21L0ybE" data-placeholder="/images/image-16by9.png"/>
 
     </Example>
@@ -117,7 +109,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Vimeo" code = {Code.vimeo}>
 
-        <Button ui fluid green attached top on:click={()=>activate("vimeo1")}>Enable</Button>
+        <Button ui fluid green attached top on:click={()=>update("vimeo1")}>Enable</Button>
         <Embed ui id="vimeo1" data-source="vimeo" data-id="125292332" data-placeholder="/images/vimeo-example.jpg"/>
 
     </Example>
@@ -128,9 +120,9 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Any content -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Any content" code = {Code.vimeo}>
+    <Example title = "Any content" code = {Code.any_content}>
 
-        <Button ui fluid green attached top on:click={()=>activate("any")}>Enable</Button>
+        <Button ui fluid green attached top on:click={()=>update("any")}>Enable</Button>
         <Embed ui id="any" data-url="https://rasterbuster.lubber.de" data-placeholder="/images/image-16by9.png" data-icon="right circle arrow"/>
 
     </Example>
@@ -142,10 +134,26 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Behaviors -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Behaviors" code = {Code.vimeo}>
+    <Example title = "Behaviors" code = {Code.behaviors}>
 
-        <Button ui fluid green attached top on:click={()=>do_behavior("behavior", "play")}>Play</Button>
-        <Embed ui activate id="behavior" data-source="vimeo" data-id="125292332" data-placeholder="/images/vimeo-example.jpg"/>
+        <p>The first parameter to the behavior command has to be the name of embedded element, and the rest are as per required for the Embed module behavior.</p>
+        <p>Note that the behavior command can be used to return data as well.</p>
+
+        <Grid ui>
+            <Row six column>
+                <Column><Button ui fluid green on:click={()=>behavior("content", "change", "youtube", "O6Xo21L0ybE")}>Youtube</Button></Column>
+                <Column><Button ui fluid blue on:click={()=>behavior("content", "change", "vimeo", "125292332")}>Vimeo</Button></Column>
+                <Column><Button ui fluid brown on:click={()=>behavior("content", "change", "url", "", "https://fomantic-ui.com")}>Webpage</Button></Column>
+                <Column><Button ui fluid yellow on:click={()=>output = behavior("content", "get type")}>Get type</Button></Column>
+                <Column><Button ui fluid orange on:click={()=>output = behavior("content", "get source")}>Get source</Button></Column>
+                <Column><Button ui fluid purple on:click={()=>output = behavior("content", "get url")}>Get URL</Button></Column>
+            </Row>
+            <Row one column centered>
+                <Column><Header h4>{output}</Header></Column>
+            </Row>
+        </Grid>
+            
+        <Embed ui id="content"/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

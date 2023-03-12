@@ -29,6 +29,7 @@
   import List from './lib/tests/List.svelte';
   import Loader from './lib/tests/Loader.svelte';
   import Placeholder from './lib/tests/Placeholder.svelte';
+  import Progress from './lib/tests/Progress.svelte';
   import Rail from './lib/tests/Rail.svelte';
   import Reveal from './lib/tests/Reveal.svelte';
   import Segment from './lib/tests/Segment.svelte';
@@ -88,6 +89,8 @@
       currentRoute = Loader; break;
     case '/Placeholder':
       currentRoute = Placeholder; break;
+    case '/Progress':
+      currentRoute = Progress; break;
     case '/Reveal':
       currentRoute = Reveal; break;
     case '/Rail':
