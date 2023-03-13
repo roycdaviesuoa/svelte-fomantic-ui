@@ -88,7 +88,7 @@ const code = {
 </Calendar>
     `,
     html : `
-<Calendar ui data-type="date" data-date="2019-12-24">
+<Calendar ui data-type="date" data-date={Date()}>
     <Input ui fluid left icon>
         <Icon calendar/>
         <Input placeholder="Date"/>
