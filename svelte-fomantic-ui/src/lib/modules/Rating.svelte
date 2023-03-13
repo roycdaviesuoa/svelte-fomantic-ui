@@ -6,19 +6,16 @@
 
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import 'fomantic-ui-css/semantic.css';
+    import 'fomantic-ui-css/semantic.js';
+
     export let ui: boolean=false;
-    export let id: string = "";
-    export let popup: boolean = false;
+    export let settings: object={};
 
-    import { createEventDispatcher } from 'svelte';
+    let params = JSON.stringify(settings);
 
-    const dispatch = createEventDispatcher();
-
-    function doClick(event) {
-        dispatch('click', {id: id, target:event.target})
-    }
 </script>
 
-<a {id} class={(ui?"ui ":"") + uiProps($$restProps)} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " rating"} {params} data-module_type="rating" {...otherProps($$restProps)}>
     <slot />
-</a>
+</div>

@@ -30,8 +30,22 @@ export function uiProps (restProps:{}):string {
 export function otherProps (restProps:{}):{} {
     let other_props = {};
     Object.keys(restProps).forEach((key) => {
-        if (typeof(restProps[key]) !== "boolean") {
-            other_props[key] = restProps[key];
+        if (key === "data") {
+            Object.keys(restProps[key]).forEach((data_key) => {
+                other_props["data-"+data_key] = restProps[key][data_key];
+            })
+        }
+        else {
+            if (typeof(restProps[key]) !== "boolean") {
+                if (typeof(restProps[key] === "string")) {
+                    if (restProps[key] !== "") {
+                        other_props[key] = restProps[key];
+                    }
+                }
+                else {
+                    other_props[key] = restProps[key];
+                }
+            }
         }
     });
     return(other_props);

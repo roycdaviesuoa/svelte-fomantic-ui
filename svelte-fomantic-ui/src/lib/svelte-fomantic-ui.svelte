@@ -73,6 +73,7 @@
     export {default as Embed} from './modules/Embed.svelte';
     export {default as Popup} from './modules/Popup.svelte';
     export {default as Progress} from './modules/Progress.svelte';
+    export {default as Rating} from './modules/Rating.svelte';
 
     // Views
     export {default as Advertisement} from './views/Advertisement.svelte';

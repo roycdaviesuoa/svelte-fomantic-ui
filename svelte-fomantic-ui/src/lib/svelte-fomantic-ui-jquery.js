@@ -14,6 +14,7 @@ import loadForms from './collections/Form';
 import loadEmbeds from './modules/Embed';
 import loadProgresses from './modules/Progress';
 import loadPopups from './modules/Popup';
+import loadRatings from './modules/Rating';
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
