@@ -45,11 +45,11 @@ const code = {
 `,
     vimeo : `
 <Button ui fluid green attached top on:click={()=>update("vimeo1")}>Enable</Button>
-<Embed ui id="vimeo1" data-source="vimeo" data-id="125292332" data-placeholder="/images/vimeo-example.jpg"/>
+<Embed ui id="vimeo1" data={{source : "vimeo", id : "125292332", placeholder : "/images/vimeo-example.jpg"}}/>
 `,
     any_content : `
 <Button ui fluid green attached top on:click={()=>update("any")}>Enable</Button>
-<Embed ui id="any" data-url="https://rasterbuster.lubber.de" data-placeholder="/images/image-16by9.png" data-icon="right circle arrow"/>
+<Embed ui id="any" data={{url : "https://rasterbuster.lubber.de", placeholder : "/images/image-16by9.png", icon : "right circle arrow"}}/>
 `,
     behaviors : `
 <script lang="ts">

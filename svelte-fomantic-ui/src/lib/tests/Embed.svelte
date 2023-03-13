@@ -123,7 +123,7 @@
     <Example title = "Any content" code = {Code.any_content}>
 
         <Button ui fluid green attached top on:click={()=>update("any")}>Enable</Button>
-        <Embed ui id="any" data-url="https://rasterbuster.lubber.de" data-placeholder="/images/image-16by9.png" data-icon="right circle arrow"/>
+        <Embed ui id="any" data={{url : "https://rasterbuster.lubber.de", placeholder : "/images/image-16by9.png", icon : "right circle arrow"}}/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
