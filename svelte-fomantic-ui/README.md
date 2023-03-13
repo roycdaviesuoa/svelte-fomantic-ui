@@ -128,7 +128,7 @@ It does make sense, however, to use the Svelte versions where events and variabl
 
 ## Sending data
 
-Oftentime, a module will require some data to be sent, where each variable name is preceded by `data-`.  For convenience, these can be collected into one `JSON` object and sent as a data property.  For example:
+Oftentimes, a module will require some data to be sent, where each variable name is preceded by `data-`.  For convenience, these can be collected into one JSON object and sent as a data property.  For example:
 
 ```html
 <Button ui data={{inverted : "", tooltip : "Add users to your feed", position : "top left"}}>
@@ -146,11 +146,11 @@ is equivalent to:
 
 ## Modules
 
-Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery.  The sveltised versions wrap this in a simple format that abstracts the need for using JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.
+Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.
 
 ### The `update` function
 
-Two functions are supplied that enable the sending of behaviors and data to a module, and are imported from the `svelte-fomantic-ui` node_module.  The first is the `update` function:
+Two functions are supplied that enable the sending of behaviors and data to a module, and are imported from `svelte-fomantic-ui`.  The first is the `update` function:
 
 ```html
 <script lang="ts">
