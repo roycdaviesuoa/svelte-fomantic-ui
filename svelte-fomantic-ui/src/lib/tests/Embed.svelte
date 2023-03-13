@@ -110,7 +110,7 @@
     <Example title = "Vimeo" code = {Code.vimeo}>
 
         <Button ui fluid green attached top on:click={()=>update("vimeo1")}>Enable</Button>
-        <Embed ui id="vimeo1" data-source="vimeo" data-id="125292332" data-placeholder="/images/vimeo-example.jpg"/>
+        <Embed ui id="vimeo1" data={{source : "vimeo", id : "125292332", placeholder : "/images/vimeo-example.jpg"}}/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

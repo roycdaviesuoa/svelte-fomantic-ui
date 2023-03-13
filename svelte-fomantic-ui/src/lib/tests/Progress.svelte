@@ -9,6 +9,10 @@
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Progress';
+
+    let example1_value = 0;
+    let example2_value = 74;
+    let example3_value = 0;
 </script>
 
 
@@ -22,10 +26,10 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Activate on event" code = {Code.on_event}>
 
-        <Button ui blue fluid on:click={()=>{update("example1")}}>Update</Button>
-        <Progress ui teal data-percent="74" id="example1">
+        <Button ui blue fluid on:click={()=>{update("example1"); example1_value = behavior("example1", "get percent")}}>Update</Button>
+        <Progress ui teal data-percent={74} id="example1">
             <Bar/>
-            <Label>74% Funded</Label>
+            <Label>{example1_value}% Funded</Label>
         </Progress>
 
     </Example>
@@ -38,9 +42,9 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Activate on start" code = {Code.on_start}>
 
-        <Progress ui activate teal data-percent="74" id="example2">
+        <Progress ui activate teal data-percent={example2_value} id="example2">
             <Bar/>
-            <Label>74% Funded</Label>
+            <Label>{example2_value}% Funded</Label>
         </Progress>
 
     </Example>
@@ -53,10 +57,10 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "With javascript" code = {Code.javascript}>
 
-        <Button ui blue fluid on:click={()=>{update("example3", {percent: 22})}}>Update</Button>
+        <Button ui blue fluid on:click={()=>{update("example3", {percent: 22}); example3_value = behavior("example3", "get percent")}}>Update</Button>
         <Progress ui activate teal id="example3">
             <Bar/>
-            <Label>22% Funded</Label>
+            <Label>{example3_value}% Funded</Label>
         </Progress>
 
     </Example>

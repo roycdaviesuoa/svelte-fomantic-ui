@@ -126,6 +126,105 @@ Note that the 'svelte-ised' versions can be mixed with the Fomantic UI class ver
 
 It does make sense, however, to use the Svelte versions where events and variable binding are required as this is taken care of in the module.
 
+## Sending data
+
+Oftentime, a module will require some data to be sent, where each variable name is preceded by `data-`.  For convenience, these can be collected into one `JSON` object and sent as a data property.  For example:
+
+```html
+<Button ui data={{inverted : "", tooltip : "Add users to your feed", position : "top left"}}>
+    Top Left
+</Button>
+```
+
+is equivalent to:
+
+```html
+<Button ui data-inverted="" data-tooltip="Add users to your feed" data-position="top left">
+    Top Left
+</Button>
+```
+
+## Modules
+
+Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery.  The sveltised versions wrap this in a simple format that abstracts the need for using JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.
+
+### The `update` function
+
+Two functions are supplied that enable the sending of behaviors and data to a module, and are imported from the `svelte-fomantic-ui` node_module.  The first is the `update` function:
+
+```html
+<script lang="ts">
+    import { update, Embed, Button } from "svelte-fomantic-ui";
+</script>
+
+<Button ui fluid green attached top on:click={()=>update("vimeo1")}>Enable</Button>
+<Embed ui id="vimeo1" data={{source : "vimeo", id : "125292332", placeholder : "/images/vimeo-example.jpg"}}/>
+```
+
+The update function above would be equivalent to using:
+
+```javascript
+$('#vimeo1').embed();
+```
+
+with the HTML:
+
+```html
+<div id="vimeo1" class="ui embed" data-source="vimeo" data-id="125292332" data-placeholder="/images/vimeo-example.jpg"></div>
+```
+
+Note that above we used the contraction of the `data` properties supplied as syntactic sugar.  The following are the same:
+
+```html
+<Embed ui id="vimeo1" data={{source : "vimeo", id : "125292332", placeholder : "/images/vimeo-example.jpg"}}/>
+<Embed ui id="vimeo1" data-source="vimeo" data-id="125292332" data-placeholder="/images/vimeo-example.jpg"/>
+```
+
+Which is also equivalent to using the update function with some settings:
+
+```javascript
+update("vimeo1", {{source : "vimeo", id : "125292332", placeholder : "/images/vimeo-example.jpg"}});
+```
+
+### The `behavior` function
+
+The second function is `behavior`, which can be used to both send behavior commands and data, and receive return values.
+
+```html
+<script lang="ts">
+    import { update, behavior, Progress, Button, Label, Bar } from "svelte-fomantic-ui";
+</script>
+
+<Button ui blue fluid on:click={()=>{update("example1"); example1_value = behavior("example1", "get percent")}}>Update</Button>
+<Progress ui teal data-percent={74} id="example1">
+    <Bar/>
+    <Label>{example1_value}% Funded</Label>
+</Progress>
+```
+
+Both the `update` and `behavior` functions take one or more parameters, where the first parameter is always the `id` of the module.  The second parameter, if required, is usually the behavior, and subsequent parameters are the  parameters of that behavior.  For example `behavior("example1", "set percent", 30)`.
+
+Sometimes, the module can be sent settings on initialisation, for example - see the `Progress` module html below.  Settings are sent via the `settings` prop.  Similarly, some modules allow JSON settings to be sent when being updated, so the `update` function allows that possibility as well.
+
+```html
+<script lang="ts">
+    import { update, behavior, Progress, Button, Label, Grid, Row, Column, Bar } from "svelte-fomantic-ui";
+</script>
+
+<Grid ui>
+    <Row two column>
+        <Column><Button ui green fluid on:click={()=>{update("example4", {total: 3, value:0})}}>Reset</Button></Column>
+        <Column><Button ui orange fluid on:click={()=>{behavior("example4", 'increment')}}>Increment</Button></Column>
+    </Row>
+</Grid>
+<Progress ui teal activate id="example4" settings={{total: 3, value:0}}>
+    <Bar>
+        <Progress />
+    </Bar>
+    <Label>Adding Photos</Label>
+</Progress>
+```
+
 ## Installation
 
 This has been packaged for installation with `yarn`, but should also work with `npm` (testing yet to be conducted).  Presently, you can install in the following way:
