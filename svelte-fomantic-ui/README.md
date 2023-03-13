@@ -144,9 +144,38 @@ is equivalent to:
 </Button>
 ```
 
+## Installation
+
+This has been packaged for installation with `yarn`, but should also work with `npm` (testing yet to be conducted).  Presently, you can install in the following way:
+
+1. Install the svelte fomantic UI with `yarn add svelte-fomantic-ui`
+1. Add the following lines to your index.html head section:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui-jquery.js"></script>
+```
+
+Notice that JQuery is being included in this project.  If you don't wish to use JQuery, you can omit these lines completely, but many of the fomantic-ui modules won't work.  However, everything that only requires css should still be fine.
+
+## Usage
+
+To use fomantic UI in your project, import the required elements in the script section, and then use them in the html section below, for example:
+
+```html
+<script lang="ts">
+    import { Button } from "svelte-fomantic-ui";
+</script>
+
+<Button ui simple red fluid>Hello World</Button>
+
+<style>
+</style>
+```
+
 ## Modules
 
-Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.
+Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery, as mentioned above.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.  **These won't work without the two lines above being included in your index.html head section.**
 
 ### The `update` function
 
@@ -225,35 +254,6 @@ Sometimes, the module can be sent settings on initialisation, for example - see 
 </Progress>
 ```
 
-## Installation
-
-This has been packaged for installation with `yarn`, but should also work with `npm` (testing yet to be conducted).  Presently, you can install in the following way:
-
-1. Install the svelte fomantic UI with `yarn add svelte-fomantic-ui`
-1. And add the following lines to your index.html head section:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui-jquery.js"></script>
-```
-
-Notice that jquery is being included in this project.  If you don't wish to use jquery, you can omit these lines completely, but many of the fomantic-ui modules won't work.  However, everything that only requires css will still be fine.
-
-## Usage
-
-To use fomantic UI in your project, import the required elements in the script section, and then use them in the html section below, for example:
-
-```html
-<script lang="ts">
-    import { Button } from "svelte-fomantic-ui";
-</script>
-
-<Button ui simple red fluid>Hello World</Button>
-
-<style>
-</style>
-```
-
 ## Examples and testing
 
 This project contains examples and tests.
@@ -264,5 +264,5 @@ This project contains examples and tests.
 1. Run `yarn dev` to start development web server.
 1. Open the link in a browser to see the dev / test website (usually `http://localhost:5173`)
 
-If you are looking for code examples, check in the `svelte-fomantic-ui/src/lib/tests` folder where the examples from the Fomantic UI website have been replicated for testing and documentation purposes.  Even if you don't wish to run the dev server as above, you can still see the worked code.
+If you are looking for code examples, check in the `svelte-fomantic-ui/src/lib/tests` folder where the examples from the Fomantic UI website have been replicated for testing and documentation purposes.  Even if you don't wish to run the dev server as above, you can still see the worked code.  These are also linked to in the [progress README](https://github.com/roycdaviesuoa/svelte-fomantic-ui) in the `Test Link / Example Code` column
 
