@@ -56,14 +56,21 @@ $(() =>
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Create a JQuery command from the parameters object
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-function construct_jquery_command(firstarg, ...args) {
+function construct_jquery_command(firstarg) {
     var jquery_command = "$";
     if (firstarg.hasOwnProperty("id")) {
         jquery_command += "(\'#" + firstarg.id + "\')";
     }
-    jquery_command += ("." + firstarg.type + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
+    let theType = "";
+    if (firstarg.hasOwnProperty("id")) {
+        theType = $("#"+firstarg.id).data("module_type");
+    }
+    else {
+        theType = firstarg.type;
+    }
+    jquery_command += ("." + theType + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
     firstarg.commands.forEach ((command) => {
-        jquery_command += "." + firstarg.type + "(\'" + command + "\')";
+        jquery_command += "." + theType + "(\'" + command + "\')";
     })
     return jquery_command;
 }
@@ -98,7 +105,7 @@ export const behavior = function(...args) {
 // Send an update to an item
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const update = function (...args) {
-    let id = args.shift();
+    let firstarg = args.shift();
     if (typeof firstarg === 'object')
     {
         eval (construct_jquery_command(firstarg, ...args));
