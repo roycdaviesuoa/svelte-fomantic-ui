@@ -15,6 +15,7 @@ import loadEmbeds from './modules/Embed';
 import loadProgresses from './modules/Progress';
 import loadPopups from './modules/Popup';
 import loadRatings from './modules/Rating';
+import loadModals from './modules/Modal';
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
@@ -30,6 +31,7 @@ $(() =>
     loadProgresses();
     // loadForms();
     // loadPopups();
+    loadModals();
 
     $("[data-module_type]").each(function() {
         let moduleType = $(this).data("module_type");
@@ -39,6 +41,7 @@ $(() =>
             case "embed":
             case "progress":
             case "menu":
+            case "modal":
                 break;
             default :
             console.log(moduleType);

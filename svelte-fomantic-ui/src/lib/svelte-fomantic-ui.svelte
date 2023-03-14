@@ -71,6 +71,7 @@
     export {default as Dimmer} from './modules/Dimmer.svelte';
     export {default as Dropdown} from './modules/Dropdown.svelte';
     export {default as Embed} from './modules/Embed.svelte';
+    export {default as Modal} from './modules/Modal.svelte';
     export {default as Popup} from './modules/Popup.svelte';
     export {default as Progress} from './modules/Progress.svelte';
     export {default as Rating} from './modules/Rating.svelte';

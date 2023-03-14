@@ -29,6 +29,7 @@
   import List from './lib/tests/List.svelte';
   import Loader from './lib/tests/Loader.svelte';
   import Menu from './lib/tests/Menu.svelte';
+  import Modal from './lib/tests/Modal.svelte';
   import Placeholder from './lib/tests/Placeholder.svelte';
   import Popup from './lib/tests/Popup.svelte';
   import Progress from './lib/tests/Progress.svelte';
@@ -91,6 +92,8 @@
       currentRoute = Loader; break;
     case '/Menu':
       currentRoute = Menu; break;
+    case '/Modal':
+      currentRoute = Modal; break;
     case '/Placeholder':
       currentRoute = Placeholder; break;
     case '/Popup':
