@@ -7,7 +7,7 @@ export const onReady = function () {
         console.log(element);
         let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
         console.log(settings);
-        if ($(element).modal) $(element).modal(settings);
+        if ($(element).modal) $.modal(settings);
     })
 };
 

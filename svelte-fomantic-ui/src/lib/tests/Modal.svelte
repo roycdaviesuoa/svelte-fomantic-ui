@@ -12,6 +12,7 @@
 
     let example1 = {
         title: 'Important Notice',
+        text: "Hello",
         class: 'mini',
         closeIcon: true,
         content: 'You will be logged out in 5 Minutes',
