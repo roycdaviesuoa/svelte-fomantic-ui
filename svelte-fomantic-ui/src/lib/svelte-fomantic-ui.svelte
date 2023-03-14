@@ -66,6 +66,7 @@
 
     // Modules
     export {default as Accordion} from './modules/Accordion.svelte';
+    export {default as Actions} from './modules/Actions.svelte';
     export {default as Bar} from './modules/Bar.svelte';
     export {default as Calendar} from './modules/Calendar.svelte';
     export {default as Dimmer} from './modules/Dimmer.svelte';

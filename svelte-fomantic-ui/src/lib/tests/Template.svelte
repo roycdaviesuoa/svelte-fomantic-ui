@@ -8,7 +8,7 @@
     import {  } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
-    import Code from './Modal';
+    import Code from './XXXX';
 </script>
 
 

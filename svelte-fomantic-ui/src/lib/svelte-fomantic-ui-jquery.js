@@ -54,15 +54,39 @@ $(() =>
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
+// Create a JQuery command from the parameters object
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+function construct_jquery_command(firstarg, ...args) {
+    var jquery_command = "$";
+    if (firstarg.hasOwnProperty("id")) {
+        jquery_command += "(\'#" + firstarg.id + "\')";
+    }
+    jquery_command += ("." + firstarg.type + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
+    firstarg.commands.forEach ((command) => {
+        jquery_command += "." + firstarg.type + "(\'" + command + "\')";
+    })
+    return jquery_command;
+}
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Send a behaviour to an item, and optionally return a result
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const behavior = function(...args) {
-    let id = args.shift();
-    let command = $("#"+id).data("module_type");
-
+    let firstarg = args.shift();
     let returnvalue;
-    if (command && id && ($("#"+id)[command])) {
-        returnvalue = $("#"+id)[command](...args);
+    if (typeof firstarg === 'object')
+    {
+        returnvalue = eval (construct_jquery_command(firstarg, ...args));
+    }
+    else {
+        let id = firstarg;
+        let command = $("#"+id).data("module_type");
+        if (command && id && ($("#"+id)[command])) {
+            returnvalue = $("#"+id)[command](...args);
+        }
     }
     return returnvalue;
 }
@@ -75,10 +99,17 @@ export const behavior = function(...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const update = function (...args) {
     let id = args.shift();
-    let command = $("#"+id).data("module_type");
-    
-    if (command && id && ($("#"+id)[command])) {
-        $("#"+id)[command](...args);
+    if (typeof firstarg === 'object')
+    {
+        eval (construct_jquery_command(firstarg, ...args));
+    }
+    else {
+        let id = firstarg;
+        let command = $("#"+id).data("module_type");
+        
+        if (command && id && ($("#"+id)[command])) {
+            $("#"+id)[command](...args);
+        }
     }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
