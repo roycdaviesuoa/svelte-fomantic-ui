@@ -15,13 +15,6 @@
     let selectedCourse = '';
     let selectedTopic = '';
 
-    function handleCourseChange(event) {
-        selectedCourse = event.detail.target.attributes.name.value;
-    }
-    function handleTopicChange(event) {
-        selectedTopic = event.detail.target.attributes.name.value;
-    }
-
     let courseMenu = {
         "Business" : ["Design & Urban Ecologies", "Fashion Design", "Fine Art", "Strategic Design"],
         "Liberal Arts" : ["Anthropology", "Economics", "Media Studies", "Philosophy"],
@@ -40,12 +33,6 @@
     <!-- A menu -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "A menu" code = {Code.a_menu}>
-
-        <Menu ui three item>
-            <Link item active={ex1===0} on:click={()=>ex1=0}>Editorials</Link>
-            <Link item active={ex1===1} on:click={()=>ex1=1}>Reviews</Link>
-            <Link item active={ex1===2} on:click={()=>ex1=2}>Upcoming Events</Link>
-        </Menu>
 
         <Menu ui three item>
             <Link item active={ex1===0} on:click={()=>ex1=0}>Editorials</Link>
@@ -78,7 +65,7 @@
                                     <Header h4>{menu}</Header>
                                     <List ui link style="white-space: normal">
                                         {#each courseMenu[menu] as item}
-                                            <Link item name={item} on:click={handleCourseChange}>{item}</Link>
+                                            <Link item name={item} on:click={()=>{selectedCourse=item}}>{item}</Link>
                                         {/each}
                                     </List>
                                 </Column>
@@ -95,7 +82,7 @@
                     <Text>More</Text>
                     <Menu relaxed>
                         {#each topics as topic}
-                            <Link item name={topic} on:click={handleTopicChange}>{topic}</Link>
+                            <Link item name={topic} on:click={()=>{selectedTopic=topic}}>{topic}</Link>
                         {/each}
                     </Menu>
                 </Dropdown>
