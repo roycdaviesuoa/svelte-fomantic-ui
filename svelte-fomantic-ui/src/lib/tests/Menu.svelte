@@ -50,100 +50,57 @@
             <Item>
                 <Image src="/images/new-school.jpg"/>
             </Item>
-            <Link item id="menu1">
-                Browse Courses
-                <i class="dropdown icon"></i>
-            </Link>
-            <Popup ui hoverable flowing>
-                <Grid ui three column relaxed divided>
-                    <Column>
-                        <Header ui h4>Business</Header>
-                        <List ui link>
-                            <Link item>Design &amp; Urban Ecologies</Link>
-                            <Link item>Fashion Design</Link>
-                            <Link item>Fine Art</Link>
-                            <Link item>Strategic Design</Link>
-                        </List>
-                    </Column>
-                    <Column>
-                        <Header ui h4>Liberal Arts</Header>
-                        <List ui link>
-                            <Link item>Anthropology</Link>
-                            <Link item>Economics</Link>
-                            <Link item>Media Studies</Link>
-                            <Link item>Philosophy</Link>
-                        </List>
-                    </Column>
-                    <Column>
-                        <Header ui h4>Social Sciences</Header>
-                        <List ui link>
-                            <Link item>Food Studies</Link>
-                            <Link item>Journalism</Link>
-                            <Link item>Non Profit Management</Link>
-                        </List>
-                    </Column>
-                </Grid>
-            </Popup>
-            <div class="ui right dropdown item">
-            More
-            <i class="dropdown icon"></i>
-            <Menu>
-                <div class="item">Applications</div>
-                <div class="item">International Students</div>
-                <div class="item">Scholarships</div>
-            </Menu>
-            </div>
-        </Menu>
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-        <Menu ui>
-            <Item>Hello</Item>
             <Item>
-                <Dropdown ui>
-                    <Input type="hidden" id="gender"/>
-                    <Text default>Gender</Text>
-                    <Icon dropdown popup/>
-                    <Section ui>
-                        <Grid ui three column relaxed divided>
+                <Dropdown ui >
+                    <Input type="hidden" id="courses"/>
+                    <Text default>Browse Courses</Text>
+                    <Icon dropdown/>
+                    <Menu>
+                        <Grid ui three column padded divided relaxed equal width>
                             <Column>
-                                <Header ui h4>Business</Header>
-                                <List ui link>
-                                    <Link item>Design &amp; Urban Ecologies</Link>
-                                    <Link item>Fashion Design</Link>
-                                    <Link item>Fine Art</Link>
-                                    <Link item>Strategic Design</Link>
+                                <Header h4>Business</Header>
+                                <List ui link relaxed>
+                                    <Link item wrap>Design &amp; Urban Ecologies</Link>
+                                    <Link item wrap>Fashion Design</Link>
+                                    <Link item wrap>Fine Art</Link>
+                                    <Link item wrap>Strategic Design</Link>
                                 </List>
                             </Column>
                             <Column>
-                                <Header ui h4>Liberal Arts</Header>
-                                <List ui link>
-                                    <Link item>Anthropology</Link>
-                                    <Link item>Economics</Link>
-                                    <Link item>Media Studies</Link>
-                                    <Link item>Philosophy</Link>
+                                <Header h4>Liberal Arts</Header>
+                                <List ui link relaxed>
+                                    <Link item wrap>Anthropology</Link>
+                                    <Link item wrap>Economics</Link>
+                                    <Link item wrap>Media Studies</Link>
+                                    <Link item wrap>Philosophy</Link>
                                 </List>
                             </Column>
                             <Column>
-                                <Header ui h4>Social Sciences</Header>
-                                <List ui link>
-                                    <Link item>Food Studies</Link>
-                                    <Link item>Journalism</Link>
-                                    <Link item>Non Profit Management</Link>
+                                <Header h4>Social Sciences</Header>
+                                <List ui link relaxed>
+                                    <Link item wrap>Food Studies</Link>
+                                    <Link item wrap>Journalism</Link>
+                                    <Link item wrap>Non Profit Management</Link>
                                 </List>
                             </Column>
                         </Grid>
-                    </Section>
+                    </Menu>
+                </Dropdown>
+            </Item>
+            <Item right>
+                <Dropdown ui >
+                    <Input type="hidden" id="more"/>
+                    <Text default>More</Text>
+                    <Icon dropdown/>
+                    <Menu>
+                        <Item value="applications">Applications</Item>
+                        <Item value="international">International Students</Item>
+                        <Item value="scholarships">Scholarships</Item>
+                    </Menu>
                 </Dropdown>
             </Item>
         </Menu>
+          
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -391,3 +348,13 @@
 
 
 </Examples>
+
+<style>
+    .padded {
+        padding: 0em;
+    }
+
+    .wrap {
+        white-space: normal;
+    }
+</style>
