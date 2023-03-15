@@ -15,11 +15,11 @@
     let selectedCourse = '';
     let selectedTopic = '';
 
-    let courseMenu = {
-        "Business" : ["Design & Urban Ecologies", "Fashion Design", "Fine Art", "Strategic Design"],
-        "Liberal Arts" : ["Anthropology", "Economics", "Media Studies", "Philosophy"],
-        "Social Sciences" : ["Food Studies", "Journalism", "Non Profit Management"]
-    };
+    let courseMenu = [
+        {name: "Business", items: ["Design & Urban Ecologies", "Fashion Design", "Fine Art", "Strategic Design"], function: (a:string) => {selectedCourse=a}},
+        {name: "Liberal Arts", items: ["Anthropology", "Economics", "Media Studies", "Philosophy"], function: (a:string) => {selectedCourse=a}},
+        {name: "Social Sciences", items: ["Food Studies", "Journalism", "Non Profit Management"], function: (a:string) => {selectedCourse=a}},
+    ];
     let topics = ["Applications", "International Students", "Scholarships"];
 </script>
 
@@ -60,12 +60,12 @@
                     <Icon dropdown/>
                     <Menu relaxed>
                         <Grid ui three column padded divided>
-                            {#each Object.keys(courseMenu) as menu}
+                            {#each courseMenu as menu}
                                 <Column>
-                                    <Header h4>{menu}</Header>
+                                    <Header h4>{menu.name}</Header>
                                     <List ui link style="white-space: normal">
-                                        {#each courseMenu[menu] as item}
-                                            <Link item name={item} on:click={()=>{selectedCourse=item}}>{item}</Link>
+                                        {#each menu.items as item}
+                                            <Link item name={item} on:click={()=>menu.function(item)}>{item}</Link>
                                         {/each}
                                     </List>
                                 </Column>
