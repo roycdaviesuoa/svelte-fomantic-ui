@@ -5,18 +5,29 @@
 -->
 
 <script lang="ts">
-    import { update, Menu, Item, Image, Icon, Link, Popup, Dropdown, Grid, Column, Header, List, Button, Input, Text, Section } from "../svelte-fomantic-ui.svelte";
+    import { Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
 
-    import { onMount } from 'svelte';
-
-    onMount(() => {
-        update({id:"menu1", commands:[], type:"popup", settings:{position:"bottom left", variation: "basic hoverable"}})
-    });
-
     let ex1 = 0;
+
+    let selectedCourse = '';
+    let selectedTopic = '';
+
+    function handleCourseChange(event) {
+        selectedCourse = event.detail.target.attributes.name.value;
+    }
+    function handleTopicChange(event) {
+        selectedTopic = event.detail.target.attributes.name.value;
+    }
+
+    let courseMenu = {
+        "Business" : ["Design & Urban Ecologies", "Fashion Design", "Fine Art", "Strategic Design"],
+        "Liberal Arts" : ["Anthropology", "Economics", "Media Studies", "Philosophy"],
+        "Social Sciences" : ["Food Studies", "Journalism", "Non Profit Management"]
+    };
+    let topics = ["Applications", "International Students", "Scholarships"];
 </script>
 
 
@@ -36,71 +47,62 @@
             <Link item active={ex1===2} on:click={()=>ex1=2}>Upcoming Events</Link>
         </Menu>
 
+        <Menu ui three item>
+            <Link item active={ex1===0} on:click={()=>ex1=0}>Editorials</Link>
+            <Link item active={ex1===1} on:click={()=>ex1=1}>Reviews</Link>
+            <Link item active={ex1===2} on:click={()=>ex1=2}>Upcoming Events</Link>
+        </Menu>
+
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Dropdown Menus -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Dropdown Menus" code = {Code.dropdown_menus}>
 
-        <Menu ui>
+        <Menu ui text>
             <Item>
                 <Image src="/images/new-school.jpg"/>
             </Item>
             <Item>
-                <Dropdown ui >
-                    <Input type="hidden" id="courses"/>
-                    <Text default>Browse Courses</Text>
+                <Dropdown ui>
+                    <Text>Browse Courses</Text>
                     <Icon dropdown/>
-                    <Menu>
-                        <Grid ui three column padded divided relaxed equal width>
-                            <Column>
-                                <Header h4>Business</Header>
-                                <List ui link relaxed>
-                                    <Link item wrap>Design &amp; Urban Ecologies</Link>
-                                    <Link item wrap>Fashion Design</Link>
-                                    <Link item wrap>Fine Art</Link>
-                                    <Link item wrap>Strategic Design</Link>
-                                </List>
-                            </Column>
-                            <Column>
-                                <Header h4>Liberal Arts</Header>
-                                <List ui link relaxed>
-                                    <Link item wrap>Anthropology</Link>
-                                    <Link item wrap>Economics</Link>
-                                    <Link item wrap>Media Studies</Link>
-                                    <Link item wrap>Philosophy</Link>
-                                </List>
-                            </Column>
-                            <Column>
-                                <Header h4>Social Sciences</Header>
-                                <List ui link relaxed>
-                                    <Link item wrap>Food Studies</Link>
-                                    <Link item wrap>Journalism</Link>
-                                    <Link item wrap>Non Profit Management</Link>
-                                </List>
-                            </Column>
+                    <Menu relaxed>
+                        <Grid ui three column padded divided>
+                            {#each Object.keys(courseMenu) as menu}
+                                <Column>
+                                    <Header h4>{menu}</Header>
+                                    <List ui link style="white-space: normal">
+                                        {#each courseMenu[menu] as item}
+                                            <Link item name={item} on:click={handleCourseChange}>{item}</Link>
+                                        {/each}
+                                    </List>
+                                </Column>
+                            {/each}
                         </Grid>
                     </Menu>
                 </Dropdown>
             </Item>
             <Item right>
-                <Dropdown ui >
-                    <Input type="hidden" id="more"/>
-                    <Text default>More</Text>
-                    <Icon dropdown/>
-                    <Menu>
-                        <Item value="applications">Applications</Item>
-                        <Item value="international">International Students</Item>
-                        <Item value="scholarships">Scholarships</Item>
+                <Dropdown ui>
+                    <Icon ui left>
+                        <Icon dropdown/>
+                    </Icon>
+                    <Text>More</Text>
+                    <Menu relaxed>
+                        {#each topics as topic}
+                            <Link item name={topic} on:click={handleTopicChange}>{topic}</Link>
+                        {/each}
                     </Menu>
                 </Dropdown>
             </Item>
         </Menu>
-          
+
+        {selectedCourse} {selectedTopic && selectedCourse?":":""} {selectedTopic}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -350,11 +352,8 @@
 </Examples>
 
 <style>
-    .padded {
-        padding: 0em;
-    }
 
-    .wrap {
-        white-space: normal;
-    }
+.wrap {
+    white-space: normal;
+}
 </style>
