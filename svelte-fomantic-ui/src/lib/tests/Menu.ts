@@ -66,6 +66,74 @@ const code = {
 </Menu>
 
 {selectedCourse} {selectedTopic && selectedCourse?":":""} {selectedTopic}
+    `,
+    attached_menus: `
+<script lang="ts">
+    import { Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Results } from "svelte-fomantic-ui";
+
+    let example3searchterm: string = "";
+    let example3menuselection: string = "";
+    function example3handler(menuname: string) {
+        example3menuselection = menuname;
+    }
+    function example3input() {
+        console.log("Search Initiated...");
+    }
+</script>
+
+<Menu ui top attached>
+    <Dropdown ui icon item>
+        <Icon wrench/>
+        <Menu>
+            <Item>
+                <Icon dropdown/>
+                <Text>New</Text>
+                <Menu>
+                    <Item on:click={()=>{example3handler("Document")}}>Document</Item>
+                    <Item on:click={()=>{example3handler("Image")}}>Image</Item>
+                </Menu>
+            </Item>
+            <Item on:click={()=>{example3handler("Open")}}>
+                Open...
+            </Item>
+            <Item on:click={()=>{example3handler("Save")}}>
+                Save...
+            </Item>
+            <Item on:click={()=>{example3handler("Edit Permissions")}}>Edit Permissions</Item>
+            <Divider />
+            <Header>
+                Export
+            </Header>
+            <Item on:click={()=>{example3handler("Share")}}>
+                Share...
+            </Item>
+        </Menu>
+    </Dropdown>
+    <Menu right>
+        <Item ui right aligned category search>
+            <Input ui transparent icon>
+                <Input prompt type="text" placeholder="Search animals..." bind:value={example3searchterm} on:change={example3input}/>
+                <Icon search link/>
+            </Input>
+            <Results />
+        </Item>
+    </Menu>
+</Menu>
+<Segment ui bottom attached>
+    <Placeholder ui fluid>
+        <Header image>
+            <Line/>
+            <Line/>
+        </Header>
+        <Paragraph>
+            <Line/>
+            <Line/>
+            <Line/>
+        </Paragraph>
+    </Placeholder>
+</Segment>
+
+{example3menuselection} {example3menuselection && example3searchterm?":":""} {example3searchterm?"Will search for : ":""} {example3searchterm}
     `
 }
 

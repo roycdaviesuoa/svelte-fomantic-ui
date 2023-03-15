@@ -22,6 +22,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={JSON.stringify(settings)} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)} on:click={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={JSON.stringify(settings)} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)} on:click={setSelected} on:change>
     <slot />
 </div>

@@ -44,6 +44,7 @@
     export {default as Select} from './inputs/Select.svelte';
     export {default as Input} from './inputs/Input.svelte';
     export {default as Radio} from './inputs/Radio.svelte';
+    export {default as Results} from './inputs/Results.svelte';
     export {default as Textarea} from './inputs/Textarea.svelte';
     
     // Collections

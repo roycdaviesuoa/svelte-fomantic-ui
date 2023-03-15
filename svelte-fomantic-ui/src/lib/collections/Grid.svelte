@@ -9,6 +9,6 @@
     export let ui: boolean=false;
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " grid"} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " grid"} {...otherProps($$restProps)} on:click on:change>
     <slot />
 </div>

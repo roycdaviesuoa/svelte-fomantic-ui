@@ -6,11 +6,9 @@
 
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
-    export let value: string = "";
     export let ui: boolean=false;
-    export let popup: boolean = false;
 </script>
 
-<div data-value={value} class={(ui?"ui ":"") + uiProps($$restProps) + " item"} data-module_type={(popup?"popup":"")} on:change on:click {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " results"} {...otherProps($$restProps)}>
     <slot />
 </div>
