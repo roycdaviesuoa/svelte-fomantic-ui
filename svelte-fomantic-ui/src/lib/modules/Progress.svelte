@@ -13,10 +13,8 @@
     export let settings: object={};
     export let activate: boolean = false;
 
-    let params = JSON.stringify(settings);
-
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " progress"} {params} data-module_type="progress" {activate} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " progress"}  data-settings={JSON.stringify(settings)} data-module_type="progress" {activate} {...otherProps($$restProps)}>
     <slot />
 </div>

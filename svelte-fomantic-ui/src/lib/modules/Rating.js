@@ -4,8 +4,8 @@
 
 export const onReady = function () {
     $('.ui.rating').each((i, element) => {
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
-        if ($(element).rating) $(element).rating(settings);
+        let settings = $(element).data('settings');
+        if ($(element).rating) $(element).rating(settings?settings:{});
     })
 };
 

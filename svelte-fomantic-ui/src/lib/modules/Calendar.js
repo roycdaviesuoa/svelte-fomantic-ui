@@ -3,8 +3,8 @@
 // ******************************************************************************************************************************************************
 export const onReady = function () {
     $('.ui.calendar').each((i, element) => {
+        let settings = $(element).data('settings');
 
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
         if (settings.hasOwnProperty("startCalendar")) {
             settings.startCalendar = $("#"+settings.startCalendar);
         }
@@ -12,7 +12,7 @@ export const onReady = function () {
             settings.endCalendar = $("#"+settings.endCalendar);
         }
 
-        if ($(element).calendar) $(element).calendar(settings);
+        if ($(element).calendar) $(element).calendar(settings?settings:{});
     })
 };
 

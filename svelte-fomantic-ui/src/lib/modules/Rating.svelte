@@ -12,10 +12,8 @@
     export let ui: boolean=false;
     export let settings: object={};
 
-    let params = JSON.stringify(settings);
-
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " rating"} {params} data-module_type="rating" {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " rating"} data-settings={JSON.stringify(settings)}  data-module_type="rating" {...otherProps($$restProps)}>
     <slot />
 </div>

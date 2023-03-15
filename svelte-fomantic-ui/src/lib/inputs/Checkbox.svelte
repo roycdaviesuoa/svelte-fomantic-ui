@@ -22,6 +22,7 @@
     export let toggle: boolean=false;
     export let disabled: boolean=false;
     export let indeterminate: boolean=false;
+    export let settings: object={};
 
     let inputElement;
 
@@ -35,12 +36,12 @@
 </script>
 
 {#if label!==null}
-    <div id={id+"_div"} class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":"")) + " checkbox"} {...otherProps($$restProps)} on:click on:keydown on:keypress on:keyup>
+    <div id={id+"_div"} class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":"")) + " checkbox"} data-settings={JSON.stringify(settings)} {...otherProps($$restProps)} on:click on:keydown on:keypress on:keyup>
         <input type="checkbox" {id} {name} {value} bind:group bind:checked {disabled} bind:this={inputElement}>
         <label for={id} class="ui checkbox">{label}</label>
     </div>
 {:else}
-    <div id={id+"_div"} class={(ui?"ui ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":"")) + " checkbox"} {...otherProps($$restProps)} on:click on:keydown on:keypress on:keyup>
+    <div id={id+"_div"} class={(ui?"ui ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":"")) + " checkbox"} data-settings={JSON.stringify(settings)} {...otherProps($$restProps)} on:click on:keydown on:keypress on:keyup>
         <input type="checkbox" {id} {name} {value} bind:group bind:checked {disabled} bind:this={inputElement}>
         <slot/>
     </div>

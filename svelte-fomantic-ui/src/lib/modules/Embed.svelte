@@ -12,11 +12,8 @@
     export let ui: boolean=false;
     export let settings: object={};
     export let activate: boolean = false;
-
-    let params = JSON.stringify(settings);
-
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " embed"} {params} data-module_type="embed" {activate} {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " embed"} data-settings={JSON.stringify(settings)} data-module_type="embed" {activate} {...otherProps($$restProps)}>
     <slot />
 </div>

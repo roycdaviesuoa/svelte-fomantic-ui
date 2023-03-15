@@ -5,10 +5,18 @@
 -->
 
 <script lang="ts">
-    import { Menu, Item, Image, Icon, Link, Popup, Dropdown } from "../svelte-fomantic-ui.svelte";
+    import { update, Menu, Item, Image, Icon, Link, Popup, Dropdown, Grid, Column, Header, List, Button, Input, Text, Section } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
+
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        update({id:"menu1", commands:[], type:"popup", settings:{position:"bottom left", variation: "basic hoverable"}})
+    });
+
+    let ex1 = 0;
 </script>
 
 
@@ -23,9 +31,9 @@
     <Example title = "A menu" code = {Code.a_menu}>
 
         <Menu ui three item>
-            <Item active>Editorials</Item>
-            <Item>Reviews</Item>
-            <Item>Upcoming Events</Item>
+            <Link item active={ex1===0} on:click={()=>ex1=0}>Editorials</Link>
+            <Link item active={ex1===1} on:click={()=>ex1=1}>Reviews</Link>
+            <Link item active={ex1===2} on:click={()=>ex1=2}>Upcoming Events</Link>
         </Menu>
 
     </Example>
@@ -38,55 +46,54 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "XXXX" code = {Code.XXXX}>
 
-        <Menu ui text>
+        <Menu ui>
             <Item>
                 <Image src="/images/new-school.jpg"/>
             </Item>
-            <Link browse item>
+            <Link item id="menu1">
                 Browse Courses
-                <Icon dropdown/>
+                <i class="dropdown icon"></i>
             </Link>
-            <Dropdown ui right item>
-                More
-                <Icon dropdown/>
-                <Menu data-module_type="popup">
-                    <Item>Applications</Item>
-                    <Item>International Students</Item>
-                    <Item>Scholarships</Item>
-                </Menu>
-            </Dropdown>
-        </Menu>
-        <Popup ui flowing basic admission>
-            <div class="ui three column relaxed divided grid">
-                <div class="column">
-                    <h4 class="ui header">Business</h4>
-                    <div class="ui link list">
-                        <Link item>Design &amp; Urban Ecologies</Link>
-                        <Link item>Fashion Design</Link>
-                        <Link item>Fine Art</Link>
-                        <Link item>Strategic Design</Link>
-                    </div>
-                </div>
-                <div class="column">
-                    <h4 class="ui header">Liberal Arts</h4>
-                    <div class="ui link list">
-                        <Link item>Anthropology</Link>
-                        <Link item>Economics</Link>
-                        <Link item>Media Studies</Link>
-                        <Link item>Philosophy</Link>
-                    </div>
-                </div>
-                <div class="column">
-                    <h4 class="ui header">Social Sciences</h4>
-                    <div class="ui link list">
-                        <Link item>Food Studies</Link>
-                        <Link item>Journalism</Link>
-                        <Link item>Non Profit Management</Link>
-                    </div>
-                </div>
+            <Popup ui hoverable flowing>
+                <Grid ui three column relaxed divided>
+                    <Column>
+                        <Header ui h4>Business</Header>
+                        <List ui link>
+                            <Link item>Design &amp; Urban Ecologies</Link>
+                            <Link item>Fashion Design</Link>
+                            <Link item>Fine Art</Link>
+                            <Link item>Strategic Design</Link>
+                        </List>
+                    </Column>
+                    <Column>
+                        <Header ui h4>Liberal Arts</Header>
+                        <List ui link>
+                            <Link item>Anthropology</Link>
+                            <Link item>Economics</Link>
+                            <Link item>Media Studies</Link>
+                            <Link item>Philosophy</Link>
+                        </List>
+                    </Column>
+                    <Column>
+                        <Header ui h4>Social Sciences</Header>
+                        <List ui link>
+                            <Link item>Food Studies</Link>
+                            <Link item>Journalism</Link>
+                            <Link item>Non Profit Management</Link>
+                        </List>
+                    </Column>
+                </Grid>
+            </Popup>
+            <div class="ui right dropdown item">
+            More
+            <i class="dropdown icon"></i>
+            <Menu>
+                <div class="item">Applications</div>
+                <div class="item">International Students</div>
+                <div class="item">Scholarships</div>
+            </Menu>
             </div>
-        </Popup>
-
+        </Menu>
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
@@ -97,7 +104,46 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "XXXX" code = {Code.XXXX}>
 
-
+        <Menu ui>
+            <Item>Hello</Item>
+            <Item>
+                <Dropdown ui>
+                    <Input type="hidden" id="gender"/>
+                    <Text default>Gender</Text>
+                    <Icon dropdown popup/>
+                    <Section ui>
+                        <Grid ui three column relaxed divided>
+                            <Column>
+                                <Header ui h4>Business</Header>
+                                <List ui link>
+                                    <Link item>Design &amp; Urban Ecologies</Link>
+                                    <Link item>Fashion Design</Link>
+                                    <Link item>Fine Art</Link>
+                                    <Link item>Strategic Design</Link>
+                                </List>
+                            </Column>
+                            <Column>
+                                <Header ui h4>Liberal Arts</Header>
+                                <List ui link>
+                                    <Link item>Anthropology</Link>
+                                    <Link item>Economics</Link>
+                                    <Link item>Media Studies</Link>
+                                    <Link item>Philosophy</Link>
+                                </List>
+                            </Column>
+                            <Column>
+                                <Header ui h4>Social Sciences</Header>
+                                <List ui link>
+                                    <Link item>Food Studies</Link>
+                                    <Link item>Journalism</Link>
+                                    <Link item>Non Profit Management</Link>
+                                </List>
+                            </Column>
+                        </Grid>
+                    </Section>
+                </Dropdown>
+            </Item>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

@@ -208,7 +208,7 @@ titled : `
     `,
     fluid : `
 <Button ui popup>Show fluid popup</Button>
-<Popup ui fluid popup top left transition>
+<Popup ui fluid>
     <Grid ui four column divided center aligned>
         <Column>1</Column>
         <Column>2</Column>
@@ -219,7 +219,7 @@ titled : `
     `,
     flowing : `
 <Button ui popup>Show flowing popup</Button>
-<Popup ui flowing top left transition hidden>
+<Popup ui flowing>
     <Grid ui three column divided center aligned>
         <Column>
             <Header ui h4>Basic Plan</Header>

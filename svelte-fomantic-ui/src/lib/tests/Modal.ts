@@ -39,8 +39,8 @@ const code = {
     </Content>
     <Actions>
         <Button ui on:click={()=>{behavior("example2", "hide")}}>Cancel</Button>
-        <Button ui on:click={()=>{behavior("example2", "hide")}}>OK</Button>
-    </Actions>
+        <Button ui on:click={()=>{behavior({id: "example2", commands: ["hide"]})}}>OK</Button>
+        </Actions>
 </Modal>
     `,
     reuse_dom : `

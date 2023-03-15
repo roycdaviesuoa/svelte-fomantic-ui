@@ -12,8 +12,7 @@
     export let ui: boolean=false;
     export let selected: string = "";
     export let settings: object={};
-
-    let params = JSON.stringify(settings);
+    export let popup: boolean = false;
 
     function setSelected(e) {
         if (e.target.attributes["value"]) {
@@ -23,6 +22,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} {params} data-module_type="menu" {...otherProps($$restProps)} on:click={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={JSON.stringify(settings)} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

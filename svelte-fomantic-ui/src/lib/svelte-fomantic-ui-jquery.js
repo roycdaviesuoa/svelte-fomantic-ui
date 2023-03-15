@@ -8,7 +8,6 @@
 import loadCalendars from './modules/Calendar';
 import loadAccordions from './modules/Accordion';
 import loadDropdowns from './modules/Dropdown';
-import loadMenus from './collections/Menu';
 import loadCheckboxes from './inputs/Checkbox';
 import loadForms from './collections/Form';
 import loadEmbeds from './modules/Embed';
@@ -22,10 +21,11 @@ import loadModals from './modules/Modal';
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 $(() =>
 {
+    // THe ones that are not commented out have specific requirements for setting up, for example the calendar can pass in some special parameters
+    // for linking start and end calendars, whilst the embed doesn't want to be started on page load as it will take too much memory.
     loadCalendars();
     // loadAccordions();
     // loadDropdowns();
-    // loadMenus();
     // loadCheckboxes();
     loadEmbeds();
     loadProgresses();
@@ -40,12 +40,17 @@ $(() =>
             case "calendar" :
             case "embed":
             case "progress":
-            case "menu":
             case "modal":
+            // case "popup":
                 break;
             default :
-            console.log(moduleType);
-                $(this)[moduleType](); break;
+                let settings=$(this).data('settings');
+                console.log(moduleType, settings);
+                if (settings)
+                    $(this)[moduleType](settings);
+                else
+                    $(this)[moduleType]();
+                break;
         }
     });
 });
@@ -55,6 +60,12 @@ $(() =>
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Create a JQuery command from the parameters object
+// The commands can be one of two types, either referring to a specific HTML element, or a general jquery behaviour command.  For exmaple:
+// $.modal({ ... various parameters ... }).modal('show');
+// $("#example1").modal('show');
+// These are constructed from an object of data sent in as the first argument, for example:
+// {commands:['show'], settings:{ ... various parameters ...}}
+// {id: "example1", commands: ['show'], settings:{ ... various parameters ...}}
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function construct_jquery_command(firstarg) {
     var jquery_command = "$";
@@ -64,6 +75,9 @@ function construct_jquery_command(firstarg) {
     let theType = "";
     if (firstarg.hasOwnProperty("id")) {
         theType = $("#"+firstarg.id).data("module_type");
+        if (!theType) {
+            theType = firstarg.type;
+        }
     }
     else {
         theType = firstarg.type;
@@ -72,6 +86,7 @@ function construct_jquery_command(firstarg) {
     firstarg.commands.forEach ((command) => {
         jquery_command += "." + theType + "(\'" + command + "\')";
     })
+    console.log(jquery_command);
     return jquery_command;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,7 +101,7 @@ export const behavior = function(...args) {
     let returnvalue;
     if (typeof firstarg === 'object')
     {
-        returnvalue = eval (construct_jquery_command(firstarg, ...args));
+        returnvalue = eval (construct_jquery_command(firstarg));
     }
     else {
         let id = firstarg;
@@ -105,18 +120,19 @@ export const behavior = function(...args) {
 // Send an update to an item
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const update = function (...args) {
-    let firstarg = args.shift();
-    if (typeof firstarg === 'object')
-    {
-        eval (construct_jquery_command(firstarg, ...args));
-    }
-    else {
-        let id = firstarg;
-        let command = $("#"+id).data("module_type");
+    behavior(...args);
+    // let firstarg = args.shift();
+    // if (typeof firstarg === 'object')
+    // {
+    //     eval (construct_jquery_command(firstarg, ...args));
+    // }
+    // else {
+    //     let id = firstarg;
+    //     let command = $("#"+id).data("module_type");
         
-        if (command && id && ($("#"+id)[command])) {
-            $("#"+id)[command](...args);
-        }
-    }
+    //     if (command && id && ($("#"+id)[command])) {
+    //         $("#"+id)[command](...args);
+    //     }
+    // }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

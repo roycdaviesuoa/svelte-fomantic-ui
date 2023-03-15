@@ -4,7 +4,7 @@
 
 export const onReady = function () {
     $('.ui.form').each((i, element) => {
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
+        let settings = $(element).data('settings');
         if ($(element).form) $(element).form(settings);
     })
 };

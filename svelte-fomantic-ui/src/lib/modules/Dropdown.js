@@ -4,8 +4,8 @@
 
 export const onReady = function () {
     $('.ui.dropdown').each((i, element) => {
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
-        if ($(element).dropdown) $(element).dropdown(settings);
+        let settings = $(element).data('settings');
+        if ($(element).dropdown) $(element).dropdown(settings?settings:{});
     })
 };
 

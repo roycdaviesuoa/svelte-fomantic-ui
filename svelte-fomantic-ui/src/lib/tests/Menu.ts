@@ -6,9 +6,9 @@
 const code = {
     a_menu : `
 <Menu ui three item>
-    <Item active>Editorials</Item>
-    <Item>Reviews</Item>
-    <Item>Upcoming Events</Item>
+    <Link item active={ex1===0} on:click={()=>ex1=0}>Editorials</Link>
+    <Link item active={ex1===1} on:click={()=>ex1=1}>Reviews</Link>
+    <Link item active={ex1===2} on:click={()=>ex1=2}>Upcoming Events</Link>
 </Menu>
     `
 }

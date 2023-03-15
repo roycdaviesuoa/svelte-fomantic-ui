@@ -13,8 +13,6 @@
     export let selected: string = "";
     export let settings: object={};
 
-    let params = JSON.stringify(settings);
-
     function setSelected(e) {
         if (e.target.attributes["value"]) {
             selected = e.target.attributes["value"].value;
@@ -23,6 +21,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} {params} data-module_type="accordion" {...otherProps($$restProps)} on:click={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} data-settings={JSON.stringify(settings)} data-module_type="accordion" {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

@@ -7,8 +7,9 @@
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
+    export let settings: object={};
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " form"} data-module_type="form" {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " form"} data-module_type="form" data-settings={JSON.stringify(settings)} {...otherProps($$restProps)}>
     <slot />
 </div>

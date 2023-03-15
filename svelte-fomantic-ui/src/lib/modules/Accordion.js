@@ -5,8 +5,8 @@
 const onReady = function () {
     // Find Accordian elements and run the .accordian() function on them
     $('.ui.accordion').each((i, element) => {
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
-        if ($(element).accordion) $(element).accordion(settings);
+        let settings = $(element).data('settings');
+        if ($(element).accordion) $(element).accordion(settings?settings:{});
     })
 };
 

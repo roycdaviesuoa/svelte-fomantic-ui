@@ -4,7 +4,7 @@
 
 export const onReady = function () {
     $('.ui.popup').each((i, element) => {
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
+        let settings = $(element).data('settings');
         if ($(element).popup) $(element).popup(settings);
     })
 };

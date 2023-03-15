@@ -4,8 +4,8 @@
 
 export const onReady = function () {
     $('.ui.modal').each((i, element) => {
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
-        if ($(element).modal) $(element).modal(settings);
+        let settings = $(element).data('settings');
+        if ($(element).modal) $(element).modal(settings?settings:{});
     })
 };
 

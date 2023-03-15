@@ -4,11 +4,11 @@
 
 export const onReady = function () {
     $('.ui.embed').each((i, element) => {
-        let settings = element.attributes.params?JSON.parse(element.attributes.params.value):{};
+        let settings = $(element).data('settings');
         let activate = element.attributes.activate?JSON.parse(element.attributes.activate.value):false;
         if (activate)
         {
-            if ($(element).embed) $(element).embed(settings);
+            if ($(element).embed) $(element).embed(settings?settings:{});
         }
     })
 };

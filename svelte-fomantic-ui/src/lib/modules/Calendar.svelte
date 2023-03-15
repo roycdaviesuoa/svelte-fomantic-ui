@@ -13,8 +13,6 @@
     export let selected: string = "";
     export let settings: object={};
 
-    let params = JSON.stringify(settings);
-
     function setSelected(e) {
         if (e.target.value) {
             selected = e.target.value;
@@ -23,6 +21,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} {params} data-module_type="calendar" {...otherProps($$restProps)} on:change={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} data-settings={JSON.stringify(settings)} data-module_type="calendar" {...otherProps($$restProps)} on:change={setSelected}>
     <slot />
 </div>
