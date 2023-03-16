@@ -15,6 +15,7 @@
     export let big: boolean = false;
     export let link: boolean = false;
     export let id: string="";
+    export let popup: boolean=false;
 
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -27,12 +28,12 @@
 
 {#if link} 
     <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
-        data-emoji = {uiProps($$restProps)} on:click={doClick} on:keydown on:keyup on:keypress>
+        data-emoji = {uiProps($$restProps)} on:click={doClick} on:keydown on:keyup on:keypress> data-module_type={(popup?"popup":null)} 
         <slot />
     </em>
 {:else}
     <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
-        data-emoji = {uiProps($$restProps)}>
+        data-emoji = {uiProps($$restProps)}> data-module_type={(popup?"popup":null)} 
         <slot />
     </em>
 {/if}

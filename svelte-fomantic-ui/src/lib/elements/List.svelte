@@ -9,6 +9,7 @@
     export let ui: boolean=false;
     export let selection: boolean=false;
     export let id: string="";
+    export let popup: boolean=false;
 
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -20,11 +21,11 @@
 </script>
 
 {#if selection}
-    <div {id} class={(ui?"ui ":"") + uiProps($$restProps) + " list"} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup >
+    <div {id} class={(ui?"ui ":"") + uiProps($$restProps) + " list"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup >
         <slot />
     </div>
 {:else}
-    <div {id} class={(ui?"ui ":"") + uiProps($$restProps) + " list"} {...otherProps($$restProps)}>
+    <div {id} class={(ui?"ui ":"") + uiProps($$restProps) + " list"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

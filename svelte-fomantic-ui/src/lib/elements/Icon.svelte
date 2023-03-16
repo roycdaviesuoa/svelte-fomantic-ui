@@ -23,11 +23,11 @@
 </script>
 
 {#if link}
-    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} on:click={doClick} on:keydown on:keypress on:keyup data-module_type={(popup?"popup":"")} {...otherProps($$restProps)}>
+    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} on:click={doClick} on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {:else}
-    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)}>
+    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {/if}

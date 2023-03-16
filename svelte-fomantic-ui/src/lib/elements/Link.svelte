@@ -19,6 +19,6 @@
     }
 </script>
 
-<a {id} class={(ui?"ui ":"") + uiProps($$restProps)} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
+<a {id} class={(ui?"ui ":"") + uiProps($$restProps)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
     <slot />
 </a>

@@ -32,7 +32,7 @@
 
 <!-- The Toggle button functionality -->
 {#if toggle}
-    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " " + (active?on_style:off_style) + " button"} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)}>
+    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " " + (active?on_style:off_style) + " button"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         {#if active}
             <slot name="on"/>
         {:else}
@@ -41,7 +41,7 @@
     </div>
 {:else}
 <!-- An ordinary, clickable button -->
-    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " button"} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)}>
+    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " button"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

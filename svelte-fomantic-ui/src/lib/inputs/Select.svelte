@@ -10,6 +10,7 @@
     export let ui: boolean=false;
     export let value: string = "";
     export let id: string = "";
+    export let popup: boolean=false;
 
     import { createEventDispatcher } from 'svelte';
 
@@ -20,7 +21,7 @@
     }
 </script>
 
-<select {id} class={(ui?"ui ":"") + uiProps($$restProps)} bind:value on:click={doClick} on:keydown on:keypress on:keyup {...otherProps($$restProps)}>
+<select {id} class={(ui?"ui ":"") + uiProps($$restProps)} bind:value on:click={doClick} on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
     <slot/>
 </select>
 

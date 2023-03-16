@@ -15,15 +15,16 @@
     export let slider: boolean=false;
     export let toggle: boolean=false;
     export let disabled: boolean=false;
+    export let popup: boolean=false;
 </script>
 
 {#if label}
-    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} {...otherProps($$restProps)}>
+    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <input type="radio" {id} {name} {value} bind:group {disabled}>
         <label for={id} class="ui radio">{label}</label>
     </div>
 {:else}
-    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} {...otherProps($$restProps)}>
+    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <input type="radio" {id} {name} {value} bind:group {disabled}>
         <slot/>
     </div>

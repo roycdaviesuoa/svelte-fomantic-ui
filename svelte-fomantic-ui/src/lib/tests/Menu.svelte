@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Results } from "../svelte-fomantic-ui.svelte";
+    import { update, Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Button, Popup } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
@@ -110,10 +110,19 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Attached Menus" code = {Code.attached_menus}>
 
+        <Button ui on:click={()=>{update({id:"update1", type:"popup", commands:[], settings: ({position: "bottom left"})})}}>Make menus popups</Button>
         <Menu ui top attached>
-            <Dropdown ui icon item>
-                <Icon wrench/>
-                <Menu>
+            <Dropdown ui icon item id="dropdown1">
+                <Icon wrench popup/>
+                <Popup ui menu data={{
+                    inline     : true,
+                    hoverable  : true,
+                    position   : 'bottom left',
+                    delay: {
+                      show: 300,
+                      hide: 800
+                    }
+                  }}>
                     <Item>
                         <Icon dropdown/>
                         <Text>New</Text>
@@ -136,7 +145,7 @@
                     <Item on:click={()=>{example3handler("Share")}}>
                         Share...
                     </Item>
-                </Menu>
+                </Popup>
             </Dropdown>
             <Menu right>
                 <Item ui right aligned category search>
@@ -144,7 +153,6 @@
                         <Input prompt type="text" placeholder="Search animals..." bind:value={example3searchterm} on:change={example3input}/>
                         <Icon search link/>
                     </Input>
-                    <Results />
                 </Item>
             </Menu>
         </Menu>

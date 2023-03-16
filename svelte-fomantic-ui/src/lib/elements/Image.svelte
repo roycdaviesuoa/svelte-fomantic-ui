@@ -15,9 +15,9 @@ TODO: support svg images
 </script>
 
 {#if src !== ""}
-    <img {src} class={(ui?"ui ":"") + uiProps($$restProps) + " image"} {alt} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)}/>
+    <img {src} class={(ui?"ui ":"") + uiProps($$restProps) + " image"} {alt} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
 {:else}
-    <div class={(ui?"ui ":"") + uiProps($$restProps) + " image"} data-module_type={(popup?"popup":"")} {...otherProps($$restProps)}>
+    <div class={(ui?"ui ":"") + uiProps($$restProps) + " image"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}
