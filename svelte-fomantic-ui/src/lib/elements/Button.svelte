@@ -14,6 +14,7 @@
     export let on_style: string = "";
     export let off_style: string = "";
     export let popup: boolean = false;
+    export let settings = null;
 
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -32,7 +33,7 @@
 
 <!-- The Toggle button functionality -->
 {#if toggle}
-    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " " + (active?on_style:off_style) + " button"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " " + (active?on_style:off_style) + " button"} data-settings={(settings===null?null:JSON.stringify(settings))} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         {#if active}
             <slot name="on"/>
         {:else}
@@ -41,7 +42,7 @@
     </div>
 {:else}
 <!-- An ordinary, clickable button -->
-    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " button"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " button"} data-settings={(settings===null?null:JSON.stringify(settings))} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

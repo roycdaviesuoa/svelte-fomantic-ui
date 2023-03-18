@@ -110,19 +110,10 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Attached Menus" code = {Code.attached_menus}>
 
-        <Button ui on:click={()=>{update({id:"update1", type:"popup", commands:[], settings: ({position: "bottom left"})})}}>Make menus popups</Button>
         <Menu ui top attached>
-            <Dropdown ui icon item id="dropdown1">
-                <Icon wrench popup/>
-                <Popup ui menu data={{
-                    inline     : true,
-                    hoverable  : true,
-                    position   : 'bottom left',
-                    delay: {
-                      show: 300,
-                      hide: 800
-                    }
-                  }}>
+            <Dropdown ui icon item>
+                <Icon wrench/>
+                <Menu>
                     <Item>
                         <Icon dropdown/>
                         <Text>New</Text>
@@ -145,7 +136,7 @@
                     <Item on:click={()=>{example3handler("Share")}}>
                         Share...
                     </Item>
-                </Popup>
+                </Menu>
             </Dropdown>
             <Menu right>
                 <Item ui right aligned category search>
@@ -182,7 +173,11 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "XXXX" code = {Code.XXXX}>
 
-
+        <Button ui popup settings={{position:"bottom center", hoverable: true, variation: "basic"}}>Activator</Button>
+        <Popup ui special>
+          <Header>Custom Header</Header>
+          <Button ui>Click Me</Button>
+        </Popup>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -195,6 +190,27 @@
     <Example title = "XXXX" code = {Code.XXXX}>
 
 
+        <Button ui popup settings={{position:"bottom center", hoverable: true, variation: "basic", flowing: true}}>Show flowing popup </Button>
+        <Popup ui settings={{position:"bottom center", hoverable: true, variation: "basic", flowing: true}}>
+            <Grid ui three column divided center aligned >
+                <Column>
+                    <Header ui h4>Basic Plan</Header>
+                    <p><b>2</b> projects, $10 a month</p>
+                    <Button ui>Choose</Button>
+                </Column>
+                <Column>
+                    <Header ui h4>Business Plan</Header>
+                    <p><b>5</b> projects, $20 a month</p>
+                    <Button ui>Choose</Button>
+                </Column>
+                <Column>
+                    <Header ui h4>Premium Plan</Header>
+                    <p><b>8</b> projects, $25 a month</p>
+                    <Button ui>Choose</Button>
+                </Column>
+            </Grid>
+        </Popup>
+            
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

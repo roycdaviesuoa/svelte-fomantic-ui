@@ -35,6 +35,7 @@ $(() =>
 
     $("[data-module_type]").each(function() {
         let moduleType = $(this).data("module_type");
+        console.log($(this));
         switch (moduleType) {
             case "":
             case "calendar" :
@@ -45,11 +46,15 @@ $(() =>
                 break;
             default :
                 let settings=$(this).data('settings');
-                console.log(moduleType, settings);
-                if (settings)
-                    $(this)[moduleType](settings);
-                else
-                    $(this)[moduleType]();
+                console.log ($(this));
+                let jquery_command = "$(this)." + moduleType + '(' + (settings?JSON.stringify(settings):"") + ')';
+                console.log(jquery_command);
+                eval(jquery_command);
+                // console.log(moduleType, settings);
+                // if (settings)
+                //     $(this)[moduleType](settings);
+                // else
+                //     $(this)[moduleType]();
                 break;
         }
     });
@@ -86,7 +91,7 @@ function construct_jquery_command(firstarg) {
     firstarg.commands.forEach ((command) => {
         jquery_command += "." + theType + "(\'" + command + "\')";
     })
-    console.log(jquery_command);
+    console.log("JQuery", jquery_command);
     return jquery_command;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -102,6 +107,7 @@ export const behavior = function(...args) {
     if (typeof firstarg === 'object')
     {
         returnvalue = eval (construct_jquery_command(firstarg));
+        console.log(returnvalue);
     }
     else {
         let id = firstarg;
@@ -121,18 +127,5 @@ export const behavior = function(...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const update = function (...args) {
     behavior(...args);
-    // let firstarg = args.shift();
-    // if (typeof firstarg === 'object')
-    // {
-    //     eval (construct_jquery_command(firstarg, ...args));
-    // }
-    // else {
-    //     let id = firstarg;
-    //     let command = $("#"+id).data("module_type");
-        
-    //     if (command && id && ($("#"+id)[command])) {
-    //         $("#"+id)[command](...args);
-    //     }
-    // }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

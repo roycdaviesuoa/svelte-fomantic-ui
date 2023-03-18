@@ -11,6 +11,6 @@
     export let popup: boolean = false;
 </script>
 
-<div data-value={value} class={(ui?"ui ":"") + uiProps($$restProps) + " item"} data-module_type={(popup?"popup":null)} on:change on:click {...otherProps($$restProps)}>
+<div data-value={value} class={(ui?"ui ":"") + (popup?"popup ":"") + uiProps($$restProps) + " item"} data-module_type={(popup?"popup":null)} on:change on:click {...otherProps($$restProps)}>
     <slot />
 </div>

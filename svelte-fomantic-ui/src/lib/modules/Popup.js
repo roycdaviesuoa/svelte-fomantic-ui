@@ -5,6 +5,7 @@
 export const onReady = function () {
     $('.ui.popup').each((i, element) => {
         let settings = $(element).data('settings');
+        console.log("onReady", element, settings);
         if ($(element).popup) $(element).popup(settings);
     })
 };

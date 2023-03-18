@@ -30,8 +30,8 @@ export function uiProps (restProps:{}):string {
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-// Return an object with any props that are not booleans to be included in the remaining props for tge Fomantic UI tag.
-// If a prop is required that is a boolean, name it and include it specifically in the svelte tagdefinition as an exported prop.
+// Return an object with any props that are not booleans to be included in the remaining props for the Fomantic UI tag.
+// If a prop is required that is a boolean, name it and include it specifically in the svelte tag definition as an exported prop.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function otherProps (restProps:{}):{} {
     let other_props = {};
@@ -52,3 +52,10 @@ export function otherProps (restProps:{}):{} {
     return(other_props);
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+export function JQ(command) {
+
+    eval(command);
+
+}

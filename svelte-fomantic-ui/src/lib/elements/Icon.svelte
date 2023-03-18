@@ -12,6 +12,7 @@
     export let link: boolean=false;
     export let id: string="";
     export let popup: boolean = false;
+    export let settings = {};
 
     const dispatch = createEventDispatcher();
 
@@ -23,11 +24,11 @@
 </script>
 
 {#if link}
-    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} on:click={doClick} on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} on:click={doClick} on:keydown on:keypress on:keyup data-settings={JSON.stringify(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {:else}
-    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} data-settings={JSON.stringify(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {/if}
