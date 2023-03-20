@@ -37,8 +37,6 @@
     <Example title = "Size" code = {Code.size}>
 
         <Flag nz tiny/>tiny
-
-        <!------------------------------------------------------------------------------------------------------------------------------------------------------>
         <Flag uk small/>small
         <Flag se medium/>medum
         <Flag us large/>large

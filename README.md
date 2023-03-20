@@ -54,9 +54,9 @@ Note that in essence all these do already work (except for the Modules) because 
 |  - Interactive | X | X | [/BreadcrumbInteractive](./svelte-fomantic-ui/src/lib/tests/BreadcrumbInteractive.svelte)
 | Form | X |  |
 | Grid | X | X | [/Grid](./svelte-fomantic-ui/src/lib/tests/Grid.svelte) | [Grid](https://fomantic-ui.com/collections/grid.html) 
-| Menu | X |  |
+| Menu | X |  | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Grid](https://fomantic-ui.com/collections/menu.html)
 | Message | X |  | 
-| Table | X |  | 
+| Table | X |  | [/Table](./svelte-fomantic-ui/src/lib/tests/Table.svelte) | [Table](https://fomantic-ui.com/collections/table.html)
 
 | Views            | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
 |------------------|:-----------:|:---------------------:|--------------------------|------------------|
@@ -80,7 +80,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Modal | X |  | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Popup](https://fomantic-ui.com/modules/modal.html)
 | Nag |  |  |
 | Popup | X | X | [/Popup](./svelte-fomantic-ui/src/lib/tests/Popup.svelte) | [Popup](https://fomantic-ui.com/modules/popup.html)
-| Progress | X | X | [/Progress](./svelte-fomantic-ui/src/lib/tests/Progress.svelte) | [Progress](https://fomantic-ui.com/modules/checkbox.html)
+| Progress | X | X | [/Progress](./svelte-fomantic-ui/src/lib/tests/Progress.svelte) | [Progress](https://fomantic-ui.com/modules/progress.html)
 | Radio | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
 | Rating | X |  |
 | Search |  |  |

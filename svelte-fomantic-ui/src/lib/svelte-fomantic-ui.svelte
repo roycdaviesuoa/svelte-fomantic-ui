@@ -64,6 +64,7 @@
     export {default as Table_Head} from './collections/Table_Head.svelte';
     export {default as Table_Row} from './collections/Table_Row.svelte';
     export {default as Table_Col} from './collections/Table_Col.svelte';
+    export {default as Table_Foot} from './collections/Table_Foot.svelte';
 
     // Modules
     export {default as Accordion} from './modules/Accordion.svelte';

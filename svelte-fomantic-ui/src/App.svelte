@@ -37,6 +37,7 @@
   import Reveal from './lib/tests/Reveal.svelte';
   import Segment from './lib/tests/Segment.svelte';
   import Step from './lib/tests/Step.svelte';
+  import Table from './lib/tests/Table.svelte';
   import Text from './lib/tests/Text.svelte';
   import Input from './lib/tests/Input.svelte';
 
@@ -108,6 +109,8 @@
       currentRoute = Segment; break;
     case '/Step':
       currentRoute = Step; break;
+    case '/Table':
+      currentRoute = Table; break;
     case '/Text':
       currentRoute = Text; break;
     default:

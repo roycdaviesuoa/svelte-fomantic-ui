@@ -55,7 +55,7 @@
                 <li> <h4><a href="/Grid">Grid</a></h4></li>
                 <li> <h4><a href="/Menu">Menu</a></h4></li>
                 <li> <h4>Message</h4></li>
-                <li> <h4>Table</h4></li>
+                <li> <h4><a href="/Table">Table</a></h4></li>
             </ul>
             <li> <h3>Modules</h3></li>
              <ul>
