@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Table, Table_Body, Table_Col, Table_Head, Table_Row, Table_Foot, Header, Rating, Link, Menu, Icon, Content, Image } from "../svelte-fomantic-ui.svelte";
+    import { Table, Table_Body, Table_Col, Table_Head, Table_Row, Table_Foot, Header, Rating, Link, Menu, Icon, Content, Image, Button, Checkbox, Input, Label } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Table';
@@ -14,15 +14,15 @@
 
 <Examples
     title = "Table examples and tests"
-    description = "To check Table_Colese are correct, compare wiTable_Col standard FomanticUI, <a href='https://fomantic-ui.com/collections/table.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/table.html'>here</a>">
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- Definition-->
+    <!-- Definition example-->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "Definition" code = {Code.definition}>
+    <Example title = "Definition example" code = {Code.definition_example}>
 
-        <Table class="ui celled table">
+        <Table ui celled>
             <Table_Head>
                 <Table_Row>
                     <Table_Col head>Name</Table_Col>
@@ -216,11 +216,88 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- STable_Rowiped example -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "STable_Rowiped example" code = {Code.striped_example}>
+
+        <Table ui celled striped>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head colspan="3">
+                        Git Repository
+                    </Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col collapsing>
+                        <Icon folder/> node_modules
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col right aligned collapsing>10 hours ago</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>
+                        <Icon folder/> test
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col right aligned>10 hours ago</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>
+                        <Icon folder/> build
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col right aligned>10 hours ago</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>
+                        <Icon file outline/> package.json
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col right aligned>10 hours ago</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>
+                        <Icon file outline/> Gruntfile.js
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col right aligned>10 hours ago</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Definition -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Definition" code = {Code.definition}>
+
+        <Table ui definition>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head></Table_Col>
+                    <Table_Col head>Arguments</Table_Col>
+                    <Table_Col head>Description</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>reset rating</Table_Col>
+                    <Table_Col>None</Table_Col>
+                    <Table_Col>Resets rating to default value</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>set rating</Table_Col>
+                    <Table_Col>rating (integer)</Table_Col>
+                    <Table_Col>Sets the current star rating to specified value</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -232,19 +309,68 @@
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
     <Example title = "XXXX" code = {Code.XXXX}>
 
-
-        
-    </Example>
-    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
-    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Table ui compact celled definition>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head></Table_Col>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Registration Date</Table_Col>
+                    <Table_Col head>E-mail address</Table_Col>
+                    <Table_Col head>Premium Plan</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col collapsing>
+                        <Checkbox ui fitted slider>
+                            <Input type="checkbox"/> <Label/>
+                        </Checkbox>
+                    </Table_Col>
+                    <Table_Col>John Lilki</Table_Col>
+                    <Table_Col>September 14, 2013</Table_Col>
+                    <Table_Col>jhlilk22@yahoo.com</Table_Col>
+                    <Table_Col>No</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col collapsing>
+                    <Checkbox ui fitted slider>
+                        <Input type="checkbox"/> <Label/>
+                    </Checkbox>
+                    </Table_Col>
+                    <Table_Col>Jamie Harington</Table_Col>
+                    <Table_Col>January 11, 2014</Table_Col>
+                    <Table_Col>jamieharingonton@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col collapsing>
+                    <Checkbox ui fitted slider>
+                        <Input type="checkbox"/> <Label/>
+                    </Checkbox>
+                    </Table_Col>
+                    <Table_Col>Jill Lewis</Table_Col>
+                    <Table_Col>May 11, 2014</Table_Col>
+                    <Table_Col>jilsewris22@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot class="full-width">
+                <Table_Row>
+                    <Table_Col head></Table_Col>
+                    <Table_Col colspan="4">
+                        <Button ui right floated small primary labeled icon>
+                            <i class="user icon"></i> Add User
+                        </Button>
+                        <Button ui small>
+                            Approve
+                        </Button>
+                        <Button ui small disabled>
+                            Approve All
+                        </Button>
+                    </Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->

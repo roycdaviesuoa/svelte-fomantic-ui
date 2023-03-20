@@ -4,8 +4,8 @@
 
 
 const code = {
-    definition : `
-<Table class="ui celled table">
+    definition_example : `
+<Table ui celled>
     <Table_Head>
         <Table_Row>
             <Table_Col head>Name</Table_Col>
@@ -171,6 +171,77 @@ const code = {
             <Table_Col>
                 11
             </Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    striped_example: `
+<Table ui celled striped>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head colspan="3">
+                Git Repository
+            </Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col collapsing>
+                <Icon folder/> node_modules
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col right aligned collapsing>10 hours ago</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>
+                <Icon folder/> test
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col right aligned>10 hours ago</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>
+                <Icon folder/> build
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col right aligned>10 hours ago</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>
+                <Icon file outline/> package.json
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col right aligned>10 hours ago</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>
+                <Icon file outline/> Gruntfile.js
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col right aligned>10 hours ago</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `, 
+    definition: `
+<Table ui definition>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head></Table_Col>
+            <Table_Col head>Arguments</Table_Col>
+            <Table_Col head>Description</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>reset rating</Table_Col>
+            <Table_Col>None</Table_Col>
+            <Table_Col>Resets rating to default value</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>set rating</Table_Col>
+            <Table_Col>rating (integer)</Table_Col>
+            <Table_Col>Sets the current star rating to specified value</Table_Col>
         </Table_Row>
     </Table_Body>
 </Table>
