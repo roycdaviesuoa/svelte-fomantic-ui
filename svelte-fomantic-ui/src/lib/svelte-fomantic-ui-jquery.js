@@ -35,20 +35,21 @@ $(() =>
 
     $("[data-module_type]").each(function() {
         let moduleType = $(this).data("module_type");
-        console.log($(this));
+        // console.log($(this));
         switch (moduleType) {
             case "":
             case "calendar" :
             case "embed":
             case "progress":
             case "modal":
+            // case "checkbox":
             // case "popup":
                 break;
             default :
                 let settings=$(this).data('settings');
-                console.log ($(this));
+                // console.log ($(this));
                 let jquery_command = "$(this)." + moduleType + '(' + (settings?JSON.stringify(settings):"") + ')';
-                console.log(jquery_command);
+                // console.log(jquery_command);
                 eval(jquery_command);
                 // console.log(moduleType, settings);
                 // if (settings)

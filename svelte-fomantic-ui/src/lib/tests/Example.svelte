@@ -8,6 +8,8 @@
     // import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
+    import { Accordion, Content, Title, Menu, Icon, Item, Popup } from "../svelte-fomantic-ui.svelte";
+
 
     export let title: string = "";
     export let code: string = "";
@@ -22,14 +24,40 @@
                 <slot />
             </div>
         </div>
-        <SourceCode language = "svelte" source = {code}/>
+        <Accordion ui>
+            <Title>
+                <Menu ui text>
+                    <Menu right>
+                        <Item data-tooltip="view source">
+                            <Icon fitted chevron left/><Icon fitted chevron right/>
+                        </Item>
+                    </Menu>
+                </Menu>
+            </Title>
+            <Content>
+                <SourceCode language = "svelte" source = {code}/>
+            </Content>
+        </Accordion>
     </div>
 
 {:else}
     <div class="example">
         <h4 class="example-header">{title}</h4>
         <slot />
-        <SourceCode language = "svelte" source = {code}/>
+        <Accordion ui>
+            <Title>
+                <Menu ui text>
+                    <Menu right>
+                        <Item data-tooltip="view source">
+                            <Icon fitted chevron left/><Icon fitted chevron right/>
+                        </Item>
+                    </Menu>
+                </Menu>
+            </Title>
+            <Content>
+                <SourceCode language = "svelte" source = {code}/>
+            </Content>
+        </Accordion>
     </div>
 {/if}
 

@@ -20,7 +20,7 @@ const code = {
 </Segment>
     `,
     internal : `
-    <Segment ui>
+<Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Rail ui left internal>
         <Segment ui>
@@ -108,7 +108,7 @@ const code = {
 </Segment>
     `,
     size : `
-    <Segment ui>
+<Segment ui>
     <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
     <Rail ui left mini>
             Mini
