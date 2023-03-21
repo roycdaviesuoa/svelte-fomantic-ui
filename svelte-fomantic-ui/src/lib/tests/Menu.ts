@@ -115,7 +115,6 @@ const code = {
                 <Input prompt type="text" placeholder="Search animals..." bind:value={example3searchterm} on:change={example3input}/>
                 <Icon search link/>
             </Input>
-            <Results />
         </Item>
     </Menu>
 </Menu>
@@ -134,6 +133,150 @@ const code = {
 </Segment>
 
 {example3menuselection} {example3menuselection && example3searchterm?":":""} {example3searchterm?"Will search for : ":""} {example3searchterm}
+    `,
+    secondary: `
+<Menu ui secondary>
+    <Item link active={ex4===0} on:click={()=>ex4=0} >
+        Home
+    </Item>
+    <Item link active={ex4===1} on:click={()=>ex4=1}>
+        Messages
+    </Item>
+    <Item link active={ex4===2} on:click={()=>ex4=2}>
+        Friends
+    </Item>
+    <Menu right>
+        <Item>
+            <Input ui icon>
+                <Input type="text" placeholder="Search..." bind:value={ex4search}/>
+                <Icon class="search link"/>
+            </Input>
+        </Item>
+        <Item link active={ex4===3} on:click={()=>ex4=3}>
+            Logout
+        </Item>
+    </Menu>
+</Menu>
+<Segment ui basic bottom attached>
+    Menu Active : {ex4} {ex4 && ex4search?":":""} {ex4search?"Will search for : ":""} {ex4search}
+</Segment>
+    `,
+    pointing: `
+<Menu ui pointing>
+    <Item link active={ex5===0} on:click={()=>ex5=0} >
+        Home
+    </Item>
+    <Item link active={ex5===1} on:click={()=>ex5=1}>
+        Messages
+    </Item>
+    <Item link active={ex5===2} on:click={()=>ex5=2}>
+        Friends
+    </Item>
+    <Menu right>
+        <Item>
+            <Input ui icon>
+                <Input type="text" placeholder="Search..." bind:value={ex5search}/>
+                <Icon class="search link"/>
+            </Input>
+        </Item>
+    </Menu>
+</Menu>
+
+{#if ex5 === 0}
+    <Segment ui>
+        Section 1
+    </Segment>
+{:else if ex5 === 1}
+    <Segment ui>
+        Section 2
+    </Segment>
+{:else if ex5 === 2}
+    <Segment ui>
+        Section 3
+    </Segment>
+{/if}
+
+<Segment basic ui>
+    Menu Active : {ex5} {ex5 && ex4search?":":""} {ex5search?"Will search for : ":""} {ex5search}
+</Segment>
+    `,
+    pointing_secondary: `
+<Menu ui pointing secondary>
+    <Item link active={ex6===0} on:click={()=>ex6=0} >
+        Home
+    </Item>
+    <Item link active={ex6===1} on:click={()=>ex6=1}>
+        Messages
+    </Item>
+    <Item link active={ex6===2} on:click={()=>ex6=2}>
+        Friends
+    </Item>
+    <Menu right>
+        <Item link active={ex6===3} on:click={()=>ex6=3}>
+            Logout
+        </Item>
+    </Menu>
+</Menu>
+
+{#if ex6 === 0}
+    <Segment ui basic>
+        Section 1 - Home
+    </Segment>
+{:else if ex6 === 1}
+    <Segment ui basic>
+        Section 2 - Messages
+    </Segment>
+{:else if ex6 === 2}
+    <Segment ui basic>
+        Section 3 - Friends
+    </Segment>
+{:else if ex6 === 3}
+    <Segment ui basic>
+        Logging out
+    </Segment>
+{/if}
+
+<Segment basic ui>
+    Menu Active : {ex6}
+</Segment>
+    `,
+    tabular: `
+<Menu ui tabular top attached>
+    <Item link active={ex7===0} on:click={()=>ex7=0}>
+        Bio
+    </Item>
+    <Item link active={ex7===1} on:click={()=>ex7=1}>
+        Photos
+    </Item>
+</Menu>
+
+{#if ex7 === 0}
+    <Segment ui bottom attached>
+        Biography
+    </Segment>
+{:else if ex7 === 1}
+    <Segment ui bottom attached>
+        Photos
+    </Segment>
+{/if}
+    `,
+    tabular_bottom: `
+<Segment ui top attached>
+    {#if ex8 === 0}
+        Biography
+    {:else if ex8 === 1}
+        Photos
+    {/if}
+</Segment>
+
+<Menu ui tabular bottom attached>
+    <Item link active={ex8===0} on:click={()=>ex8=0}>
+        Bio
+    </Item>
+    <Item link active={ex8===1} on:click={()=>ex8=1}>
+        Photos
+    </Item>
+</Menu>
     `
 }
 

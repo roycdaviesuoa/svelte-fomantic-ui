@@ -11,6 +11,16 @@
     import Code from './Menu';
 
     let ex1 = 0;
+    let ex4 = 0;
+    let ex5 = 0;
+    let ex6 = 0;
+    let ex7 = 0;
+    let ex8 = 0;
+    let ex9 = 0;
+
+    let ex3search = "";
+    let ex4search = "";
+    let ex5search = "";
 
     let selectedCourse = '';
     let selectedTopic = '';
@@ -22,12 +32,11 @@
     ];
     let topics = ["Applications", "International Students", "Scholarships"];
 
-    let example3searchterm: string = "";
-    let example3menuselection: string = "";
-    function example3handler(menuname: string) {
-        example3menuselection = menuname;
+    let ex3menu: string = "";
+    function ex3handler(menuname: string) {
+        ex3menu = menuname;
     }
-    function example3input() {
+    function ex3dosearch() {
         console.log("Search Initiated...");
     }
 </script>
@@ -118,22 +127,22 @@
                         <Icon dropdown/>
                         <Text>New</Text>
                         <Menu>
-                            <Item on:click={()=>{example3handler("Document")}}>Document</Item>
-                            <Item on:click={()=>{example3handler("Image")}}>Image</Item>
+                            <Item on:click={()=>{ex3handler("Document")}}>Document</Item>
+                            <Item on:click={()=>{ex3handler("Image")}}>Image</Item>
                         </Menu>
                     </Item>
-                    <Item on:click={()=>{example3handler("Open")}}>
+                    <Item on:click={()=>{ex3handler("Open")}}>
                         Open...
                     </Item>
-                    <Item on:click={()=>{example3handler("Save")}}>
+                    <Item on:click={()=>{ex3handler("Save")}}>
                         Save...
                     </Item>
-                    <Item on:click={()=>{example3handler("Edit Permissions")}}>Edit Permissions</Item>
+                    <Item on:click={()=>{ex3handler("Edit Permissions")}}>Edit Permissions</Item>
                     <Divider />
                     <Header>
                         Export
                     </Header>
-                    <Item on:click={()=>{example3handler("Share")}}>
+                    <Item on:click={()=>{ex3handler("Share")}}>
                         Share...
                     </Item>
                 </Menu>
@@ -141,7 +150,7 @@
             <Menu right>
                 <Item ui right aligned category search>
                     <Input ui transparent icon>
-                        <Input prompt type="text" placeholder="Search animals..." bind:value={example3searchterm} on:change={example3input}/>
+                        <Input prompt type="text" placeholder="Search animals..." bind:value={ex3search} on:change={ex3dosearch}/>
                         <Icon search link/>
                     </Input>
                 </Item>
@@ -159,9 +168,198 @@
                     <Line/>
                 </Paragraph>
             </Placeholder>
+            {ex3menu} {ex3menu && ex3search?":":""} {ex3search?"Will search for : ":""} {ex3search}
         </Segment>
 
-        {example3menuselection} {example3menuselection && example3searchterm?":":""} {example3searchterm?"Will search for : ":""} {example3searchterm}
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Secondary Menu -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Secondary Menu" code = {Code.secondary}>
+
+        <Menu ui secondary>
+            <Item link active={ex4===0} on:click={()=>ex4=0} >
+                Home
+            </Item>
+            <Item link active={ex4===1} on:click={()=>ex4=1}>
+                Messages
+            </Item>
+            <Item link active={ex4===2} on:click={()=>ex4=2}>
+                Friends
+            </Item>
+            <Menu right>
+                <Item>
+                    <Input ui icon>
+                        <Input type="text" placeholder="Search..." bind:value={ex4search}/>
+                        <Icon class="search link"/>
+                    </Input>
+                </Item>
+                <Item link active={ex4===3} on:click={()=>ex4=3}>
+                    Logout
+                </Item>
+            </Menu>
+        </Menu>
+        <Segment ui basic bottom attached>
+            Menu Active : {ex4} {ex4 && ex4search?":":""} {ex4search?"Will search for : ":""} {ex4search}
+        </Segment>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Pointing -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Pointing" code = {Code.pointing}>
+        
+        <Menu ui pointing>
+            <Item link active={ex5===0} on:click={()=>ex5=0} >
+                Home
+            </Item>
+            <Item link active={ex5===1} on:click={()=>ex5=1}>
+                Messages
+            </Item>
+            <Item link active={ex5===2} on:click={()=>ex5=2}>
+                Friends
+            </Item>
+            <Menu right>
+                <Item>
+                    <Input ui icon>
+                        <Input type="text" placeholder="Search..." bind:value={ex5search}/>
+                        <Icon class="search link"/>
+                    </Input>
+                </Item>
+            </Menu>
+        </Menu>
+
+        {#if ex5 === 0}
+            <Segment ui stacked>
+                Section 1 - Home
+            </Segment>
+        {:else if ex5 === 1}
+            <Segment ui stacked>
+                Section 2 - Messages
+            </Segment>
+        {:else if ex5 === 2}
+            <Segment ui stacked>
+                Section 3 - Friends
+            </Segment>
+        {/if}
+
+        <Segment basic ui>
+            Menu Active : {ex5} {ex5 && ex4search?":":""} {ex5search?"Will search for : ":""} {ex5search}
+        </Segment>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Pointing secondary -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Pointing secondary" code = {Code.pointing_secondary}>
+
+        <Menu ui pointing secondary>
+            <Item link active={ex6===0} on:click={()=>ex6=0}>
+                Home
+            </Item>
+            <Item link active={ex6===1} on:click={()=>ex6=1}>
+                Messages
+            </Item>
+            <Item link active={ex6===2} on:click={()=>ex6=2}>
+                Friends
+            </Item>
+            <Menu right>
+                <Item link active={ex6===3} on:click={()=>ex6=3}>
+                    Logout
+                </Item>
+            </Menu>
+        </Menu>
+
+        {#if ex6 === 0}
+            <Segment ui basic>
+                Section 1 - Home
+            </Segment>
+        {:else if ex6 === 1}
+            <Segment ui basic>
+                Section 2 - Messages
+            </Segment>
+        {:else if ex6 === 2}
+            <Segment ui basic>
+                Section 3 - Friends
+            </Segment>
+        {:else if ex6 === 3}
+            <Segment ui basic>
+                Logging out
+            </Segment>
+        {/if}
+
+        <Segment basic ui>
+            Menu Active : {ex6}
+        </Segment>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Tabular -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Tabular" code = {Code.tabular}>
+
+        <Menu ui tabular top attached>
+            <Item link active={ex7===0} on:click={()=>ex7=0}>
+                Bio
+            </Item>
+            <Item link active={ex7===1} on:click={()=>ex7=1}>
+                Photos
+            </Item>
+        </Menu>
+
+        {#if ex7 === 0}
+            <Segment ui bottom attached>
+                Biography
+            </Segment>
+        {:else if ex7 === 1}
+            <Segment ui bottom attached>
+                Photos
+            </Segment>
+        {/if}
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Tabular bottom -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Tabular bottom" code = {Code.tabular_bottom}>
+
+        <Segment ui top attached>
+            {#if ex8 === 0}
+                Biography
+            {:else if ex8 === 1}
+                Photos
+            {/if}
+        </Segment>
+
+        <Menu ui tabular bottom attached>
+            <Item link active={ex8===0} on:click={()=>ex8=0}>
+                Bio
+            </Item>
+            <Item link active={ex8===1} on:click={()=>ex8=1}>
+                Photos
+            </Item>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -173,92 +371,25 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "XXXX" code = {Code.XXXX}>
 
-        <Button ui popup settings={{position:"bottom center", hoverable: true, variation: "basic"}}>Activator</Button>
-        <Popup ui special>
-          <Header>Custom Header</Header>
-          <Button ui>Click Me</Button>
-        </Popup>
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-        <Button ui popup settings={{position:"bottom center", hoverable: true, variation: "basic", flowing: true}}>Show flowing popup </Button>
-        <Popup ui settings={{position:"bottom center", hoverable: true, variation: "basic", flowing: true}}>
-            <Grid ui three column divided center aligned >
-                <Column>
-                    <Header ui h4>Basic Plan</Header>
-                    <p><b>2</b> projects, $10 a month</p>
-                    <Button ui>Choose</Button>
-                </Column>
-                <Column>
-                    <Header ui h4>Business Plan</Header>
-                    <p><b>5</b> projects, $20 a month</p>
-                    <Button ui>Choose</Button>
-                </Column>
-                <Column>
-                    <Header ui h4>Premium Plan</Header>
-                    <p><b>8</b> projects, $25 a month</p>
-                    <Button ui>Choose</Button>
-                </Column>
-            </Grid>
-        </Popup>
-            
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Segment ui top attached>
+            <p></p>
+        </Segment>
+        <Menu ui bottom attached tabular>
+            <Link item active={ex9===0} on:click={()=>ex9=0}>
+                Active Project
+            </Link>
+            <Link item active={ex9===1} on:click={()=>ex9=1}>
+                 Project #2
+            </Link>
+            <Link item active={ex9===2} on:click={()=>ex9=2}>
+                Project #3
+            </Link>
+            <Menu right>
+                <Link item active={ex9===3} on:click={()=>ex9=3}>
+                    <Icon add/> New Tab
+                </Link>
+            </Menu>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
