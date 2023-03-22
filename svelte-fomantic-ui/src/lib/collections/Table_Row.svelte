@@ -7,8 +7,10 @@
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
+
+    let the_class: string = (ui?"ui ":"") + uiProps($$restProps);
 </script>
 
-<tr class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
+<tr class={the_class===""?null:the_class} {...otherProps($$restProps)}>
     <slot />
 </tr>

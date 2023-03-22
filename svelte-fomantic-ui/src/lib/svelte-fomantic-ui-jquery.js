@@ -49,7 +49,7 @@ $(() =>
                 let settings=$(this).data('settings');
                 // console.log ($(this));
                 let jquery_command = "$(this)." + moduleType + '(' + (settings?JSON.stringify(settings):"") + ')';
-                // console.log(jquery_command);
+                console.log(jquery_command);
                 eval(jquery_command);
                 // console.log(moduleType, settings);
                 // if (settings)

@@ -623,6 +623,754 @@ const code = {
         </Table_Row>
     </Table_Body>
 </Table>
+    `,
+    single_line: `
+<Table ui single line>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Registration Date</Table_Col>
+            <Table_Col head>E-mail address</Table_Col>
+            <Table_Col head>Premium Plan</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John Lilki</Table_Col>
+            <Table_Col>September 14, 2013</Table_Col>
+            <Table_Col>jhlilk22@yahoo.com</Table_Col>
+            <Table_Col>No</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie Harington</Table_Col>
+            <Table_Col>January 11, 2014</Table_Col>
+            <Table_Col>jamieharingonton@yahoo.com</Table_Col>
+            <Table_Col>Yes</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill Lewis</Table_Col>
+            <Table_Col>May 11, 2014</Table_Col>
+            <Table_Col>jilsewris22@yahoo.com</Table_Col>
+            <Table_Col>Yes</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    fixed: `
+<Table ui fixed>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Description</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>John is an interesting boy but sometimes you don't really have enough room to describe everything you'd like</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Jamie is a kind girl but sometimes you don't really have enough room to describe everything you'd like</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>Jill is an alright girl but sometimes you don't really have enough room to describe everything you'd like</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+
+<Table ui fixed single line celled>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Description</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col title="This is much too long to fit I'm sorry about that">This is much too long to fit I'm sorry about that</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Shorter description</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>Shorter description</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    stacking: `
+<Table ui unstackable>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head right aligned>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+  </Table>
+  
+  <Table ui tablet stackable>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head right aligned>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    selectable_row: `
+<Table ui selectable celled>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>No Action</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row warning>
+            <Table_Col>John</Table_Col>
+            <Table_Col>No Action</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col positive>Approved</Table_Col>
+            <Table_Col warning>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col negative>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+
+<Table ui selectable inverted>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head right aligned>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    selectable_cell: `
+<Table ui celled>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Edit</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>No Action</Table_Col>
+            <Table_Col selectable>
+                <Link>Edit</Link>
+            </Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col selectable>
+            <Link>Edit</Link>
+            </Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col selectable>
+                <Link>Edit</Link>
+            </Table_Col>
+        </Table_Row>
+        <Table_Row warning>
+            <Table_Col>John</Table_Col>
+            <Table_Col>No Action</Table_Col>
+            <Table_Col selectable warning>
+                <Link>Requires change</Link>
+            </Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col positive>Approved</Table_Col>
+            <Table_Col selectable positive>
+                <Link>Approve</Link>
+            </Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col negative>Denied</Table_Col>
+            <Table_Col selectable negative>
+                <Link>Remove</Link>
+            </Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    vertical_alignment: `
+<Table ui striped>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row top aligned>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col top aligned>
+                Notes<br>
+                1<br>
+                2<br>
+            </Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col bottom aligned>Approved</Table_Col>
+            <Table_Col>
+                Notes<br>
+                1<br>
+                2<br>
+            </Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    text_alignment: `
+<Table ui striped>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head right aligned>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row center aligned>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col right aligned>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col right aligned>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    striped: `
+<Table ui striped>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Date Joined</Table_Col>
+            <Table_Col head>E-mail</Table_Col>
+            <Table_Col head>Called</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John Lilki</Table_Col>
+            <Table_Col>September 14, 2013</Table_Col>
+            <Table_Col>jhlilk22@yahoo.com</Table_Col>
+            <Table_Col>No</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie Harington</Table_Col>
+            <Table_Col>January 11, 2014</Table_Col>
+            <Table_Col>jamieharingonton@yahoo.com</Table_Col>
+            <Table_Col>Yes</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill Lewis</Table_Col>
+            <Table_Col>May 11, 2014</Table_Col>
+            <Table_Col>jilsewris22@yahoo.com</Table_Col>
+            <Table_Col>Yes</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>John Lilki</Table_Col>
+            <Table_Col>September 14, 2013</Table_Col>
+            <Table_Col>jhlilk22@yahoo.com</Table_Col>
+            <Table_Col>No</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>John Lilki</Table_Col>
+            <Table_Col>September 14, 2013</Table_Col>
+            <Table_Col>jhlilk22@yahoo.com</Table_Col>
+            <Table_Col>No</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie Harington</Table_Col>
+            <Table_Col>January 11, 2014</Table_Col>
+            <Table_Col>jamieharingonton@yahoo.com</Table_Col>
+            <Table_Col>Yes</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill Lewis</Table_Col>
+            <Table_Col>May 11, 2014</Table_Col>
+            <Table_Col>jilsewris22@yahoo.com</Table_Col>
+            <Table_Col>Yes</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>John Lilki</Table_Col>
+            <Table_Col>September 14, 2013</Table_Col>
+            <Table_Col>jhlilk22@yahoo.com</Table_Col>
+            <Table_Col>No</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    celled: `
+<Table ui celled>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+            <Table_Col head></Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
+    `,
+    basic: `
+<Table ui basic>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+            <Table_Col head></Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
+
+<Table ui very basic>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+            <Table_Col head></Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
+    `,
+    collapsing_cell: `
+<Table ui>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col collapsing>
+                <Icon folder/> node_modules
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col>10 hours ago</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>
+                <Icon folder/> test
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col>10 hours ago</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>
+                <Icon folder/> build
+            </Table_Col>
+            <Table_Col>Initial commit</Table_Col>
+            <Table_Col>10 hours ago</Table_Col>
+        </Table_Row>
+    </Table_Body>
+</Table>
+    `,
+    column_count: `
+<Table ui five column>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Age</Table_Col>
+            <Table_Col head>Gender</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>22</Table_Col>
+            <Table_Col>Male</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>32</Table_Col>
+            <Table_Col>Male</Table_Col>
+            <Table_Col>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>22</Table_Col>
+            <Table_Col>Female</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+            <Table_Col head></Table_Col>
+            <Table_Col head></Table_Col>
+            <Table_Col head></Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
+    `,
+    column_width: `
+<Table ui>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col ten wide>Name</Table_Col>
+            <Table_Col six wide>Status</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
+    `,
+    collapsing: `
+<Table ui collapsing>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+            <Table_Col head></Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
+    `,
+    colored_table: `
+{#each ["red", "orange", "yellow", "olive", "green", "teal", "blue", "voilet", "purple", "pink", "grey", "black"] as color}
+    <Table ui _={color}>
+        <Table_Head>
+            <Table_Row>
+                <Table_Col head>Food</Table_Col>
+                <Table_Col head>Calories</Table_Col>
+                <Table_Col head>Protein</Table_Col>
+            </Table_Row>
+        </Table_Head>
+        <Table_Body>
+            <Table_Row>
+                <Table_Col>Apples</Table_Col>
+                <Table_Col>200</Table_Col>
+                <Table_Col>0g</Table_Col>
+            </Table_Row>
+            <Table_Row>
+                <Table_Col>Orange</Table_Col>
+                <Table_Col>310</Table_Col>
+                <Table_Col>0g</Table_Col>
+            </Table_Row>
+        </Table_Body>
+    </Table>
+{/each}
+    `,
+    inverted: `
+<Table ui inverted>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col>Approved</Table_Col>
+            <Table_Col>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+            <Table_Col head></Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
+
+{#each ["red", "orange", "yellow", "olive", "green", "teal", "blue", "voilet", "purple", "pink", "grey", "black"] as color}
+    <Table ui inverted _={color}>
+        <Table_Head>
+            <Table_Row>
+                <Table_Col head>Food</Table_Col>
+                <Table_Col head>Calories</Table_Col>
+                <Table_Col head>Protein</Table_Col>
+            </Table_Row>
+        </Table_Head>
+        <Table_Body>
+            <Table_Row>
+                <Table_Col>Apples</Table_Col>
+                <Table_Col>200</Table_Col>
+                <Table_Col>0g</Table_Col>
+            </Table_Row>
+            <Table_Row>
+                <Table_Col>Orange</Table_Col>
+                <Table_Col>310</Table_Col>
+                <Table_Col>0g</Table_Col>
+            </Table_Row>
+        </Table_Body>
+    </Table>
+{/each}
+    `,
+    sortable: `
+<Table ui sortable celled>
+    <Table_Head>
+        <Table_Row>
+            <Table_Col head>Name</Table_Col>
+            <Table_Col head>Status</Table_Col>
+            <Table_Col head>Notes</Table_Col>
+        </Table_Row>
+    </Table_Head>
+    <Table_Body>
+        <Table_Row>
+            <Table_Col>John</Table_Col>
+            <Table_Col>No Action</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jamie</Table_Col>
+            <Table_Col positive>Approved</Table_Col>
+            <Table_Col warning>Requires call</Table_Col>
+        </Table_Row>
+        <Table_Row>
+            <Table_Col>Jill</Table_Col>
+            <Table_Col negative>Denied</Table_Col>
+            <Table_Col>None</Table_Col>
+        </Table_Row>
+    </Table_Body>
+    <Table_Foot>
+        <Table_Row>
+            <Table_Col head>3 People</Table_Col>
+            <Table_Col head>2 Approved</Table_Col>
+            <Table_Col head></Table_Col>
+        </Table_Row>
+    </Table_Foot>
+</Table>
     `
 };
 

@@ -7,8 +7,11 @@
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
+    export let sortable: boolean = false;
+
+    let the_class = (ui?"ui ":"") + uiProps($$restProps) + " table";
 </script>
 
-<table class={(ui?"ui ":"") + uiProps($$restProps) + " table"} {...otherProps($$restProps)}>
+<table class={the_class===""?null:the_class} data-module_type={(sortable?"tablesort":null)} {...otherProps($$restProps)}>
     <slot />
 </table>

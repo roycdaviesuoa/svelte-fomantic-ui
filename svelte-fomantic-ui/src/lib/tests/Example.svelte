@@ -8,7 +8,7 @@
     // import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import { Accordion, Content, Title, Menu, Icon, Item, Popup } from "../svelte-fomantic-ui.svelte";
+    import { Accordion, Content, Title, Menu, Icon, Item, Button } from "../svelte-fomantic-ui.svelte";
 
 
     export let title: string = "";
@@ -24,11 +24,11 @@
                 <slot />
             </div>
         </div>
-        <Accordion ui>
+        <Accordion ui very compact>
             <Title>
-                <Menu ui text>
-                    <Menu right>
-                        <Item data-tooltip="view source">
+                <Menu ui text fitted>
+                    <Menu right fitted>
+                        <Item fitted data-tooltip="view source">
                             <Icon fitted chevron left/><Icon fitted chevron right/>
                         </Item>
                     </Menu>
@@ -44,11 +44,11 @@
     <div class="example">
         <h4 class="example-header">{title}</h4>
         <slot />
-        <Accordion ui>
+        <Accordion ui very compact>
             <Title>
-                <Menu ui text>
-                    <Menu right>
-                        <Item data-tooltip="view source">
+                <Menu ui text fitted>
+                    <Menu right fitted>
+                        <Item fitted data-tooltip="view source">
                             <Icon fitted chevron left/><Icon fitted chevron right/>
                         </Item>
                     </Menu>

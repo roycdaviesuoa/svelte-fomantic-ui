@@ -917,6 +917,7 @@
                 </Table_Row>
             </Table_Body>
           </Table>
+
           <Table ui tablet stackable>
             <Table_Head>
                 <Table_Row>
@@ -1093,11 +1094,39 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Vertical Alignment -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Vertical Alignment" code = {Code.vertical_alignment}>
 
-
+        <Table ui striped>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row top aligned>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col top aligned>
+                        Notes<br>
+                        1<br>
+                        2<br>
+                    </Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col bottom aligned>Approved</Table_Col>
+                    <Table_Col>
+                        Notes<br>
+                        1<br>
+                        2<br>
+                    </Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1105,11 +1134,36 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Text Alignment -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Text Alignment" code = {Code.text_alignment}>
 
-
+        <Table ui striped>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head right aligned>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row center aligned>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col right aligned>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col right aligned>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col right aligned>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1117,11 +1171,70 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Striped -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Striped" code = {Code.striped}>
 
-
+        <Table ui striped>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Date Joined</Table_Col>
+                    <Table_Col head>E-mail</Table_Col>
+                    <Table_Col head>Called</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John Lilki</Table_Col>
+                    <Table_Col>September 14, 2013</Table_Col>
+                    <Table_Col>jhlilk22@yahoo.com</Table_Col>
+                    <Table_Col>No</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie Harington</Table_Col>
+                    <Table_Col>January 11, 2014</Table_Col>
+                    <Table_Col>jamieharingonton@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill Lewis</Table_Col>
+                    <Table_Col>May 11, 2014</Table_Col>
+                    <Table_Col>jilsewris22@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John Lilki</Table_Col>
+                    <Table_Col>September 14, 2013</Table_Col>
+                    <Table_Col>jhlilk22@yahoo.com</Table_Col>
+                    <Table_Col>No</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John Lilki</Table_Col>
+                    <Table_Col>September 14, 2013</Table_Col>
+                    <Table_Col>jhlilk22@yahoo.com</Table_Col>
+                    <Table_Col>No</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie Harington</Table_Col>
+                    <Table_Col>January 11, 2014</Table_Col>
+                    <Table_Col>jamieharingonton@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill Lewis</Table_Col>
+                    <Table_Col>May 11, 2014</Table_Col>
+                    <Table_Col>jilsewris22@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John Lilki</Table_Col>
+                    <Table_Col>September 14, 2013</Table_Col>
+                    <Table_Col>jhlilk22@yahoo.com</Table_Col>
+                    <Table_Col>No</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1129,11 +1242,43 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Celled -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Celled" code = {Code.celled}>
 
-
+        <Table ui celled>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1141,11 +1286,77 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Basic -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Basic" code = {Code.basic}>
 
+        <Table ui basic>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
 
+        <Table ui very basic>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1153,11 +1364,35 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Collapsing cell -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Collapsing cell" code = {Code.collapsing_cell}>
 
-
+        <Table ui>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col collapsing>
+                        <Icon folder/> node_modules
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col>10 hours ago</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>
+                        <Icon folder/> test
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col>10 hours ago</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>
+                        <Icon folder/> build
+                    </Table_Col>
+                    <Table_Col>Initial commit</Table_Col>
+                    <Table_Col>10 hours ago</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1165,11 +1400,53 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Column count -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Column count" code = {Code.column_count}>
 
-
+        <Table ui five column>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Age</Table_Col>
+                    <Table_Col head>Gender</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>22</Table_Col>
+                    <Table_Col>Male</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>32</Table_Col>
+                    <Table_Col>Male</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>22</Table_Col>
+                    <Table_Col>Female</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                    <Table_Col head></Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -1177,11 +1454,919 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- XXXX -->
+    <!-- Column width -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Column width" code = {Code.column_width}>
+
+        <Table ui>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col ten wide>Name</Table_Col>
+                    <Table_Col six wide>Status</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Collapsing -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Collapsing" code = {Code.collapsing}>
+
+        <Table ui collapsing>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Colored -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Colored" code = {Code.colored_table}>
+
+        {#each ["red", "orange", "yellow", "olive", "green", "teal", "blue", "voilet", "purple", "pink", "grey", "black"] as color}
+            <Table ui _={color}>
+                <Table_Head>
+                    <Table_Row>
+                        <Table_Col head>Food</Table_Col>
+                        <Table_Col head>Calories</Table_Col>
+                        <Table_Col head>Protein</Table_Col>
+                    </Table_Row>
+                </Table_Head>
+                <Table_Body>
+                    <Table_Row>
+                        <Table_Col>Apples</Table_Col>
+                        <Table_Col>200</Table_Col>
+                        <Table_Col>0g</Table_Col>
+                    </Table_Row>
+                    <Table_Row>
+                        <Table_Col>Orange</Table_Col>
+                        <Table_Col>310</Table_Col>
+                        <Table_Col>0g</Table_Col>
+                    </Table_Row>
+                </Table_Body>
+            </Table>
+        {/each}
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Inverted -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Inverted" code = {Code.inverted}>
+
+        <Table ui inverted>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+
+        {#each ["red", "orange", "yellow", "olive", "green", "teal", "blue", "voilet", "purple", "pink", "grey", "black"] as color}
+            <Table ui inverted _={color}>
+                <Table_Head>
+                    <Table_Row>
+                        <Table_Col head>Food</Table_Col>
+                        <Table_Col head>Calories</Table_Col>
+                        <Table_Col head>Protein</Table_Col>
+                    </Table_Row>
+                </Table_Head>
+                <Table_Body>
+                    <Table_Row>
+                        <Table_Col>Apples</Table_Col>
+                        <Table_Col>200</Table_Col>
+                        <Table_Col>0g</Table_Col>
+                    </Table_Row>
+                    <Table_Row>
+                        <Table_Col>Orange</Table_Col>
+                        <Table_Col>310</Table_Col>
+                        <Table_Col>0g</Table_Col>
+                    </Table_Row>
+                </Table_Body>
+            </Table>
+        {/each}
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Sortable -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Sortable" code = {Code.sortable}>
+
+        <Table ui sortable celled>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>No Action</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col positive>Approved</Table_Col>
+                    <Table_Col warning>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col negative>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Full-width header / footer -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Full-width header / footer" code = {Code.full_width}>
+
+        <Table ui compact celled definition>
+            <Table_Head full-width>
+                <Table_Row>
+                    <Table_Col head></Table_Col>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Registration Date</Table_Col>
+                    <Table_Col head>E-mail address</Table_Col>
+                    <Table_Col head>Premium Plan</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col collapsing>
+                        <Checkbox ui fitted slider/>
+                    </Table_Col>
+                    <Table_Col>John Lilki</Table_Col>
+                    <Table_Col>September 14, 2013</Table_Col>
+                    <Table_Col>jhlilk22@yahoo.com</Table_Col>
+                    <Table_Col>No</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col collapsing>
+                        <Checkbox ui fitted slider/>
+                    </Table_Col>
+                    <Table_Col>Jamie Harington</Table_Col>
+                    <Table_Col>January 11, 2014</Table_Col>
+                    <Table_Col>jamieharingonton@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col collapsing>
+                        <Checkbox ui fitted slider/>
+                    </Table_Col>
+                    <Table_Col>Jill Lewis</Table_Col>
+                    <Table_Col>May 11, 2014</Table_Col>
+                    <Table_Col>jilsewris22@yahoo.com</Table_Col>
+                    <Table_Col>Yes</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot full-width>
+                <Table_Row>
+                    <Table_Col head></Table_Col>
+                    <Table_Col colspan="4">
+                    <Button ui right floated small primary labeled icon>
+                        <Icon user/> Add User
+                    </Button>
+                    <Button ui small>
+                        Approve
+                    </Button>
+                    <Button ui small disabled>
+                        Approve All
+                    </Button>
+                    </Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Padded -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Padded" code = {Code.padded}>
+
+        <Table ui padded>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>He is a very nice guy and I enjoyed talking to him on the telephone. I hope we get to talk again.</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Jamie was not interested in purchasing our product.</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
+
+        <Table ui very padded>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>He is a very nice guy and I enjoyed talking to him on the telephone. I hope we get to talk again.</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Jamie was not interested in purchasing our product.</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Compact -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Compact" code = {Code.compact}>
+
+        <Table ui compact>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
+
+        <Table ui very compact>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Another Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+            </Table_Body>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Size -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Size" code = {Code.size}>
+
+        <Table ui small>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+
+        <Table ui large>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Status</Table_Col>
+                    <Table_Col head>Notes</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>John</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jamie</Table_Col>
+                    <Table_Col>Approved</Table_Col>
+                    <Table_Col>Requires call</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>Denied</Table_Col>
+                    <Table_Col>None</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col head>3 People</Table_Col>
+                    <Table_Col head>2 Approved</Table_Col>
+                    <Table_Col head></Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Scrolling -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Scrolling" code = {Code.scrolling}>
+
+        <Table ui unstackable celled scrolling>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Age</Table_Col>
+                    <Table_Col head>Job</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>James</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>26</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Elyse</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Daphne</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Zoe</Table_Col>
+                    <Table_Col>26</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Kirk</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Doug</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Francis</Table_Col>
+                    <Table_Col>26</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Claire</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Thomas</Table_Col>
+                    <Table_Col>27</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Clint</Table_Col>
+                    <Table_Col>31</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Alison</Table_Col>
+                    <Table_Col>21</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Rachel</Table_Col>
+                    <Table_Col>19</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Dave</Table_Col>
+                    <Table_Col>23</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Oliver</Table_Col>
+                    <Table_Col>29</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Sue</Table_Col>
+                    <Table_Col>23</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jennifer</Table_Col>
+                    <Table_Col>22</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Zak</Table_Col>
+                    <Table_Col>27</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col>18 Entries</Table_Col>
+                    <Table_Col>Average age: 25</Table_Col>
+                    <Table_Col>2 Job-Types</Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+
+        <Table ui unstackable celled long scrolling>
+            <Table_Head>
+                <Table_Row>
+                    <Table_Col head>Name</Table_Col>
+                    <Table_Col head>Age</Table_Col>
+                    <Table_Col head>Job</Table_Col>
+                </Table_Row>
+            </Table_Head>
+            <Table_Body>
+                <Table_Row>
+                    <Table_Col>James</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jill</Table_Col>
+                    <Table_Col>26</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Elyse</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Daphne</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Zoe</Table_Col>
+                    <Table_Col>26</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Kirk</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Doug</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Francis</Table_Col>
+                    <Table_Col>26</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Claire</Table_Col>
+                    <Table_Col>24</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Thomas</Table_Col>
+                    <Table_Col>27</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Clint</Table_Col>
+                    <Table_Col>31</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Alison</Table_Col>
+                    <Table_Col>21</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Rachel</Table_Col>
+                    <Table_Col>19</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Dave</Table_Col>
+                    <Table_Col>23</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Oliver</Table_Col>
+                    <Table_Col>29</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Sue</Table_Col>
+                    <Table_Col>23</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Jennifer</Table_Col>
+                    <Table_Col>22</Table_Col>
+                    <Table_Col>Engineer</Table_Col>
+                </Table_Row>
+                <Table_Row>
+                    <Table_Col>Zak</Table_Col>
+                    <Table_Col>27</Table_Col>
+                    <Table_Col>Designer</Table_Col>
+                </Table_Row>
+            </Table_Body>
+            <Table_Foot>
+                <Table_Row>
+                    <Table_Col>18 Entries</Table_Col>
+                    <Table_Col>Average age: 25</Table_Col>
+                    <Table_Col>2 Job-Types</Table_Col>
+                </Table_Row>
+            </Table_Foot>
+        </Table>
+        
+    </Example>
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- Stuck -->
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <Example title = "Stuck" code = {Code.stuck}>
+
+        <div class="ui short scrolling container">
+            <Table ui first last head foot stuck unstackable celled>
+                <Table_Head>
+                    <Table_Row>
+                        <Table_Col head>Name</Table_Col>
+                        <Table_Col head>Age</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Job</Table_Col>
+                        <Table_Col head>Summary</Table_Col>
+                    </Table_Row>
+                </Table_Head>
+                <Table_Body>
+                    <Table_Row>
+                        <Table_Col>James</Table_Col>
+                        <Table_Col>24</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Accepted</Table_Col>
+                    </Table_Row>
+                    <Table_Row>
+                        <Table_Col>Jill</Table_Col>
+                        <Table_Col>26</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Accepted</Table_Col>
+                    </Table_Row>
+                    <Table_Row>
+                        <Table_Col>Elyse</Table_Col>
+                        <Table_Col>24</Table_Col>
+                        <Table_Col>Designer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Pending</Table_Col>
+                    </Table_Row>
+                    <Table_Row>
+                        <Table_Col>Daphne</Table_Col>
+                        <Table_Col>24</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Accepted</Table_Col>
+                    </Table_Row>
+                    <Table_Row>
+                        <Table_Col>Zoe</Table_Col>
+                        <Table_Col>26</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Accepted</Table_Col>
+                    </Table_Row>
+                    <Table_Row>
+                        <Table_Col>Kirk</Table_Col>
+                        <Table_Col>24</Table_Col>
+                        <Table_Col>Designer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Engineer</Table_Col>
+                        <Table_Col>Pending</Table_Col>
+                    </Table_Row>
+                </Table_Body>
+                <Table_Foot>
+                    <Table_Row>
+                        <Table_Col>Names:6</Table_Col>
+                        <Table_Col>av.25</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>Jobs : 2</Table_Col>
+                        <Table_Col>2 Pending</Table_Col>
+                    </Table_Row>
+                </Table_Foot>
+            </Table>
+        </div>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
