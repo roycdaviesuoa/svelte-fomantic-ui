@@ -54,9 +54,9 @@ Note that in essence all these do already work (except for the Modules) because 
 |  - Interactive | X | X | [/BreadcrumbInteractive](./svelte-fomantic-ui/src/lib/tests/BreadcrumbInteractive.svelte)
 | Form | X |  |
 | Grid | X | X | [/Grid](./svelte-fomantic-ui/src/lib/tests/Grid.svelte) | [Grid](https://fomantic-ui.com/collections/grid.html) 
-| Menu | X |  | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Grid](https://fomantic-ui.com/collections/menu.html)
+| Menu | X |  | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Menu](https://fomantic-ui.com/collections/menu.html)
 | Message | X |  | 
-| Table | X |  | [/Table](./svelte-fomantic-ui/src/lib/tests/Table.svelte) | [Table](https://fomantic-ui.com/collections/table.html)
+| Table | X | X | [/Table](./svelte-fomantic-ui/src/lib/tests/Table.svelte) | [Table](https://fomantic-ui.com/collections/table.html)
 
 | Views            | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
 |------------------|:-----------:|:---------------------:|--------------------------|------------------|
@@ -77,7 +77,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Dropdown | X | X | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
 | Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Embed](https://fomantic-ui.com/modules/embed.html)
 | Flyout |  |  |
-| Modal | X |  | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Popup](https://fomantic-ui.com/modules/modal.html)
+| Modal | X | X | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Popup](https://fomantic-ui.com/modules/modal.html)
 | Nag |  |  |
 | Popup | X | X | [/Popup](./svelte-fomantic-ui/src/lib/tests/Popup.svelte) | [Popup](https://fomantic-ui.com/modules/popup.html)
 | Progress | X | X | [/Progress](./svelte-fomantic-ui/src/lib/tests/Progress.svelte) | [Progress](https://fomantic-ui.com/modules/progress.html)
