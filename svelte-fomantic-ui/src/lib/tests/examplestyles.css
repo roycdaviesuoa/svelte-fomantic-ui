@@ -7,13 +7,13 @@
 
 .document-header {
     background-color: lightgrey;
-    /* max-width: 1164px; */
+    width: calc(100% - 250px);
     padding:20px;
     margin-bottom:20px;
     text-align: center;
 }
 .document-description {
-    /* max-width: 1164px; */
+    width: calc(100% - 250px);
     background-color:rgb(244, 244, 244);
     padding:20px;
     margin-bottom:20px;
@@ -22,7 +22,7 @@
 }
 .document-disclaimer {
     background-color:rgb(244, 244, 244);
-    /* max-width: 1164px; */
+    width: calc(100% - 250px);
     padding-left:20px;
     padding-right:20px;
     padding-bottom:20px;
@@ -37,7 +37,7 @@
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 20px;
-    width: 80%;
+    width: calc(100% - 360px);
     border: 1px;
     border-color: lightgrey;
     border-style:solid;
