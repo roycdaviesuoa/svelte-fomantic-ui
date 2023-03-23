@@ -7,8 +7,9 @@
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
+    let the_class= (ui?"ui ":"") + uiProps($$restProps);
 </script>
 
-<tbody class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
+<tbody class={the_class===""?null:the_class} {...otherProps($$restProps)}>
     <slot />
 </tbody>

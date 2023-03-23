@@ -8,12 +8,14 @@
     // import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import { Accordion, Content, Title, Menu, Icon, Item, Button } from "../svelte-fomantic-ui.svelte";
-
+    import { Accordion, Content, Title, Menu, Icon, Item, Button, Segment } from "../svelte-fomantic-ui.svelte";
+    import { copyToClipboard } from "../svelte-fomantic-ui-jquery";
 
     export let title: string = "";
     export let code: string = "";
     export let narrow: boolean = false;
+
+    let message="copy code to clipboard";
 </script>
 
 {#if narrow}
@@ -46,15 +48,18 @@
         <slot />
         <Accordion ui very compact>
             <Title>
-                <Menu ui text fitted>
-                    <Menu right fitted>
-                        <Item fitted data-tooltip="view source">
+                <Menu ui text>
+                    <Menu right>
+                        <Item data-tooltip="view source code">
                             <Icon fitted chevron left/><Icon fitted chevron right/>
                         </Item>
                     </Menu>
                 </Menu>
             </Title>
             <Content>
+                <Button ui icon tertiary left floated data-tooltip={message} on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}>
+                    <Icon copy link/>
+                </Button>
                 <SourceCode language = "svelte" source = {code}/>
             </Content>
         </Accordion>

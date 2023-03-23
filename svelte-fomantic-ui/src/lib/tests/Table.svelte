@@ -5,12 +5,12 @@
 -->
 
 <script lang="ts">
-    import { Table, Table_Body, Table_Col, Table_Head, Table_Row, Table_Foot, Header, Rating, Link, Menu, Icon, Content, Image, Button, Checkbox, Input, Label } from "../svelte-fomantic-ui.svelte";
+    import { Table, Table_Body, Table_Col, Table_Head, Table_Row, Table_Foot, Header, Rating, Link, Menu, Icon, Content, Image, Button, Checkbox, Container } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Table';
 </script>
-
+    
 
 <Examples
     title = "Table examples and tests"
@@ -2237,7 +2237,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
     <Example title = "Stuck" code = {Code.stuck}>
 
-        <div class="ui short scrolling container">
+        <Container ui short scrolling>
             <Table ui first last head foot stuck unstackable celled>
                 <Table_Head>
                     <Table_Row>
@@ -2366,7 +2366,7 @@
                     </Table_Row>
                 </Table_Foot>
             </Table>
-        </div>
+        </Container>
         
     </Example>
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->

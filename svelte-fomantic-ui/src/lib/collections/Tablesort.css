@@ -1,0 +1,11 @@
+.sorted.ascending::after {
+    content: '\f0d8';
+    margin-left: 0.25em;
+    font-family: 'icons';
+}
+
+.sorted.descending::after {
+    content: '\f0d7';
+    margin-left: 0.25em;
+    font-family: 'icons';
+}

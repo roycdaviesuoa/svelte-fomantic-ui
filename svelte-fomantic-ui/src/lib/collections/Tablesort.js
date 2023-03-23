@@ -4,7 +4,7 @@
 	Version 0.0.11
 */
 
-(function($) {
+export const tableSort = function() {
 	$.tablesort = function ($table, settings) {
 		var self = this;
 		this.$table = $table;
@@ -129,4 +129,4 @@
 		});
 	};
 
-})(window.Zepto || window.jQuery);
+};

@@ -5,6 +5,7 @@
 -->
 
 <script lang="ts">
+    import './Tablesort.css';
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
     export let sortable: boolean = false;
@@ -13,5 +14,5 @@
 </script>
 
 <table class={the_class===""?null:the_class} data-module_type={(sortable?"tablesort":null)} {...otherProps($$restProps)}>
-    <slot />
+        <slot />
 </table>

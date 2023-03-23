@@ -16,6 +16,7 @@ import loadPopups from './modules/Popup';
 import loadRatings from './modules/Rating';
 import loadModals from './modules/Modal';
 
+import { tableSort } from './collections/Tablesort';
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -32,6 +33,8 @@ $(() =>
     // loadForms();
     // loadPopups();
     loadModals();
+
+    tableSort();
 
     $("[data-module_type]").each(function() {
         let moduleType = $(this).data("module_type");
@@ -93,6 +96,7 @@ function construct_jquery_command(firstarg) {
         jquery_command += "." + theType + "(\'" + command + "\')";
     })
     console.log("JQuery", jquery_command);
+
     return jquery_command;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,5 +132,28 @@ export const behavior = function(...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const update = function (...args) {
     behavior(...args);
+}
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+export const copyToClipboard = function (str) {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    const selected =
+        document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    if (selected) {
+        document.getSelection().removeAllRanges();
+        document.getSelection().addRange(selected);
+    }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

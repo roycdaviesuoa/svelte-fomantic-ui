@@ -8,14 +8,15 @@
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
     export let head: boolean = false;
+    let the_class = (ui?"ui ":"") + uiProps($$restProps);
 </script>
 
 {#if head}
-    <th class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
+    <th class={the_class===""?null:the_class} {...otherProps($$restProps)}>
         <slot />
     </th>
 {:else}
-    <td class={(ui?"ui ":"") + uiProps($$restProps)} {...otherProps($$restProps)}>
+    <td class={the_class===""?null:the_class} {...otherProps($$restProps)}>
         <slot />
     </td>
 {/if}
