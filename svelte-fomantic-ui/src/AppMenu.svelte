@@ -5,20 +5,97 @@
 -->
 
 <script lang="ts">
+    import { reload, Link, Header, Menu, Item } from "../src/lib/svelte-fomantic-ui.svelte";
     import "../src/lib/tests/examplestyles.css";
+
+    import AppMenu from './AppMenu.svelte';
+    import Home from './Home.svelte';
+    import ComingSoon from './ComingSoon.svelte';
+
+    import Accordion from './lib/tests/Accordion.svelte';
+    import Button from './lib/tests/Button.svelte';
+    import ButtonInteractive from './lib/tests/ButtonInteractive.svelte';
+    import Breadcrumb from './lib/tests/Breadcrumb.svelte';
+    import BreadcrumbInteractive from './lib/tests/BreadcrumbInteractive.svelte';
+    import Calendar from './lib/tests/Calendar.svelte';
+    import Checkbox from './lib/tests/Checkbox.svelte';
+    import CheckboxIndeterminate from './lib/tests/CheckboxIndeterminate.svelte';
+    import Container from './lib/tests/Container.svelte';
+    import Divider from './lib/tests/Divider.svelte';
+    import Dropdown from './lib/tests/Dropdown.svelte';
+    import Embed from './lib/tests/Embed.svelte';
+    import Emoji from './lib/tests/Emoji.svelte';
+    import Flag from './lib/tests/Flag.svelte';
+    import Grid from './lib/tests/Grid.svelte';
+    import _Header from './lib/tests/Header.svelte';
+    import Icon from './lib/tests/Icon.svelte';
+    import Image from './lib/tests/Image.svelte';
+    import Label from './lib/tests/Label.svelte';
+    import List from './lib/tests/List.svelte';
+    import Loader from './lib/tests/Loader.svelte';
+    import _Menu from './lib/tests/Menu.svelte';
+    import Modal from './lib/tests/Modal.svelte';
+    import Placeholder from './lib/tests/Placeholder.svelte';
+    import Popup from './lib/tests/Popup.svelte';
+    import Progress from './lib/tests/Progress.svelte';
+    import Rail from './lib/tests/Rail.svelte';
+    import Reveal from './lib/tests/Reveal.svelte';
+    import Segment from './lib/tests/Segment.svelte';
+    import Step from './lib/tests/Step.svelte';
+    import Table from './lib/tests/Table.svelte';
+    import Text from './lib/tests/Text.svelte';
+    import Input from './lib/tests/Input.svelte';
+
+    import { afterUpdate } from 'svelte';
+    afterUpdate(() => { reload(); });
+
+    let currentPage: any = Home;
 </script>
 
 <div class="example-document">
-    <h3 class="document-header">Svelte Fomantic UI unit Tests</h3>
-    <div class="document-description">
-        Here are various tests to check that the Svelte versions look the same as the Fomantic-UI examples.  These are also useful as code examples.
-        The ones that have links have been worked through, but the ones without links are still being tested and documented.
-        They may work fine as they follow the same pattern of implementation as the others, but use at your own risk.
-        Note that the Modules, and some of the Inputs require jquery.  If you don't want jquery in your project, then those
-        elements won't work, but pretty much all the style-based UI elements still work fine.
+    <Menu ui visible inverted left vertical sidebar pushable>
+        <Link item on:click={()=>currentPage=Home}>
+            <i class="home icon"></i>
+            Home
+        </Link>
+        <Item>
+            <Header ui small inverted>Elements</Header>
+            <Menu>
+                <Link item on:click={()=>currentPage=Button}>Button</Link>    
+                <Link item on:click={()=>currentPage=ButtonInteractive}>Interactive Buttons</Link>    
+                <Link item on:click={()=>currentPage=Container}>Container</Link>    
+                <Link item on:click={()=>currentPage=Divider}>Divider</Link>    
+                <Link item on:click={()=>currentPage=Emoji}>Emoji</Link>    
+                <Link item on:click={()=>currentPage=Flag}>Flag</Link>    
+                <Link item on:click={()=>currentPage=_Header}>Header</Link>    
+                <Link item on:click={()=>currentPage=Icon}>Icon</Link>    
+                <Link item on:click={()=>currentPage=Image}>Image</Link>    
+                <Link item on:click={()=>currentPage=Label}>Label</Link>    
+                <Link item on:click={()=>currentPage=List}>List</Link>    
+                <Link item on:click={()=>currentPage=Loader}>Loader</Link>    
+                <Link item on:click={()=>currentPage=Placeholder}>Placeholder</Link>    
+                <Link item on:click={()=>currentPage=Rail}>Rail</Link>    
+                <Link item on:click={()=>currentPage=Reveal}>Reveal</Link>    
+                <Link item on:click={()=>currentPage=Segment}>Segment</Link>    
+                <Link item on:click={()=>currentPage=Step}>Step</Link>    
+                <Link item on:click={()=>currentPage=Text}>Text</Link>    
+            </Menu>
+        </Item>
+        <Item>
+            <Header ui small inverted>Inputs</Header>
+            <Menu>
+                <Link item on:click={()=>currentPage=Checkbox}>Checkbox, Radio, Toggle, Slider</Link>    
+                <Link item on:click={()=>currentPage=Input}>Input</Link>    
+                <Link item on:click={()=>currentPage=Dropdown}>Dropdown</Link>    
+                <Link item on:click={()=>currentPage=ComingSoon}>Textarea</Link>    
+            </Menu>
+        </Item>
+    </Menu>
+    <div class="pusher">
+        <svelte:component this={currentPage}/>
     </div>
-  
-    <div class="example">
+
+    <!-- <div class="example">
         <h4 class="example-header">Fomantic UI Svelte</h4>
         <ul>
             <li> <h3>Elements</h3></li>
@@ -67,5 +144,5 @@
                 <li> <h4><a href="/Progress">Progress</a></h4> </li>
            </ul>
         </ul>
-    </div>
+    </div> -->
 </div>

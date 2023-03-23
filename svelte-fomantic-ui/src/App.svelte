@@ -7,6 +7,8 @@
 
 <script lang='ts'>
   import AppMenu from './AppMenu.svelte';
+  import Home from './Home.svelte';
+
   import Accordion from './lib/tests/Accordion.svelte';
   import Button from './lib/tests/Button.svelte';
   import ButtonInteractive from './lib/tests/ButtonInteractive.svelte';
@@ -47,6 +49,8 @@
   switch (window.location.pathname) {
     case '/':
       currentRoute = AppMenu; break;
+    case '/Home':
+      currentRoute = Home; break;
     case '/Accordion':
       currentRoute = Accordion; break;
     case '/Button':

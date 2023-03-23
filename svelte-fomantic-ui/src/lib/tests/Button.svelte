@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Button, Buttons, Content, Icon, Segment, Link, Divider } from "../svelte-fomantic-ui.svelte";
+    import { reload, Button, Buttons, Content, Icon, Segment, Link, Divider } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Button';

@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Container, Column, Placeholder, Line, Paragraph, Image, Link, Icon, Item, Input, Header, Menu } from "../svelte-fomantic-ui.svelte";
+    import { reload, Container, Column, Placeholder, Line, Paragraph, Image, Link, Icon, Item, Input, Header, Menu } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Container';

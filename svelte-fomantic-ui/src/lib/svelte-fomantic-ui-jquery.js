@@ -22,6 +22,10 @@ import { tableSort } from './collections/Tablesort';
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 $(() =>
 {
+    reload();
+});
+
+export const reload = function(){
     // THe ones that are not commented out have specific requirements for setting up, for example the calendar can pass in some special parameters
     // for linking start and end calendars, whilst the embed doesn't want to be started on page load as it will take too much memory.
     loadCalendars();
@@ -62,7 +66,7 @@ $(() =>
                 break;
         }
     });
-});
+};
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

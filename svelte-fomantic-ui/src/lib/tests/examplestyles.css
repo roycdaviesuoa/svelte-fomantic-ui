@@ -2,23 +2,18 @@
     border: 1px;
     border-color: lightgrey;
     border-style:solid;
-    max-width: 1124px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    border-radius: 10px;
+    /* max-width: 1424px; */
 }
 
 .document-header {
     background-color: lightgrey;
+    /* max-width: 1164px; */
     padding:20px;
     margin-bottom:20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     text-align: center;
 }
 .document-description {
+    /* max-width: 1164px; */
     background-color:rgb(244, 244, 244);
     padding:20px;
     margin-bottom:20px;
@@ -27,6 +22,7 @@
 }
 .document-disclaimer {
     background-color:rgb(244, 244, 244);
+    /* max-width: 1164px; */
     padding-left:20px;
     padding-right:20px;
     padding-bottom:20px;
@@ -41,7 +37,7 @@
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 20px;
-    max-width: 1024px;
+    width: 80%;
     border: 1px;
     border-color: lightgrey;
     border-style:solid;

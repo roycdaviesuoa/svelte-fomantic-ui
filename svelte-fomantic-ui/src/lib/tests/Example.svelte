@@ -5,10 +5,10 @@
 -->
 
 <script lang="ts">
-    // import "./examplestyles.css";
+    import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import { Accordion, Content, Title, Menu, Icon, Item, Button } from "../svelte-fomantic-ui.svelte";
+    import { Accordion, Content, Title, Menu, Icon, Text, Link } from "../svelte-fomantic-ui.svelte";
     import { copyToClipboard } from "../svelte-fomantic-ui-jquery";
 
     export let title: string = "";
@@ -17,6 +17,7 @@
 
     let message="copy code to clipboard";
 </script>
+
 
 {#if narrow}
     <div class="example">
@@ -30,23 +31,22 @@
             <Title>
                 <Menu ui text>
                     <Menu right>
-                        <Item data-tooltip="view source code">
-                            <Icon fitted chevron left/><Icon fitted chevron right/>
-                        </Item>
+                        <Link item data-tooltip="view source code">
+                            <Icon fitted chevron left/><Text ui large>/</Text><Icon fitted chevron right/>
+                        </Link>
                     </Menu>
                 </Menu>
             </Title>
             <Content>
-                <Menu ui text>
-                    <Item data-tooltip={message}>
+                <Menu ui centered fluid text>
+                    <Link item style="background-color: rgb(249, 249, 249); border-top-left-radius: 1em; border-top-right-radius: 1em;" data-tooltip={message} data-variation="basic">
                         <Icon copy link on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}/>
-                    </Item>
+                    </Link>
                 </Menu>
                 <SourceCode language = "svelte" source = {code}/>
             </Content>
         </Accordion>
     </div>
-
 {:else}
     <div class="example">
         <h4 class="example-header">{title}</h4>
@@ -55,60 +55,22 @@
             <Title>
                 <Menu ui text>
                     <Menu right>
-                        <Item data-tooltip="view source code">
-                            <Icon fitted chevron left/><Icon fitted chevron right/>
-                        </Item>
+                        <Link item data-tooltip="view source code">
+                            <Icon fitted chevron left/><Text ui large>/</Text><Icon fitted chevron right/>
+                        </Link>
                     </Menu>
                 </Menu>
             </Title>
             <Content>
-                <Button ui tertiary fluid icon data-tooltip={message} style="background-color: rgb(249, 249, 249); border-color: rgb(249, 249, 249);">
-                    <Icon copy link on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}/>
-                </Button>
+                <Menu ui centered fluid text>
+                    <Link item style="background-color: rgb(249, 249, 249); border-top-left-radius: 1em; border-top-right-radius: 1em;" data-tooltip={message} data-variation="basic">
+                        <Icon copy link on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}/>
+                    </Link>
+                </Menu>
                 <SourceCode language = "svelte" source = {code}/>
             </Content>
         </Accordion>
     </div>
 {/if}
 
-<style>
 
-    .example {
-        margin-left: 50px;
-        margin-right: 50px;
-        margin-bottom: 20px;
-        max-width: 1024px;
-        border: 1px;
-        border-color: lightgrey;
-        border-style:solid;
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-bottom: 20px;
-        /* padding-top: 20px; */
-        border-radius: 10px;
-    }
-    .centered {
-        display: grid;
-        place-items: center;
-    }
-    .narrow {
-        width: 400px;
-        border: 1px;
-        border-color: rgb(244, 244, 244);;
-        border-style:solid;
-        margin: 5px;
-        padding: 5px;
-        border-radius: 10px;
-    }
-    .example-header {
-        background-color: rgb(244, 244, 244);
-        padding:20px;
-        margin-bottom:20px;
-        margin-left:-50px;
-        margin-right:-50px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        text-align: center;
-    }
-
-</style>

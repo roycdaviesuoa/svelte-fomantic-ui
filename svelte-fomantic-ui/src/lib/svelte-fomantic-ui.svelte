@@ -94,4 +94,5 @@
     // Helper functions for modules
     export { behavior } from './svelte-fomantic-ui-jquery';
     export { update } from './svelte-fomantic-ui-jquery';
+    export { reload } from './svelte-fomantic-ui-jquery';
 </script>
