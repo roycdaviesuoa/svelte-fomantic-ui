@@ -8,7 +8,7 @@
     // import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import { Accordion, Content, Title, Menu, Icon, Item, Button, Segment } from "../svelte-fomantic-ui.svelte";
+    import { Accordion, Content, Title, Menu, Icon, Item, Button } from "../svelte-fomantic-ui.svelte";
     import { copyToClipboard } from "../svelte-fomantic-ui-jquery";
 
     export let title: string = "";
@@ -28,15 +28,20 @@
         </div>
         <Accordion ui very compact>
             <Title>
-                <Menu ui text fitted>
-                    <Menu right fitted>
-                        <Item fitted data-tooltip="view source">
+                <Menu ui text>
+                    <Menu right>
+                        <Item data-tooltip="view source code">
                             <Icon fitted chevron left/><Icon fitted chevron right/>
                         </Item>
                     </Menu>
                 </Menu>
             </Title>
             <Content>
+                <Menu ui text>
+                    <Item data-tooltip={message}>
+                        <Icon copy link on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}/>
+                    </Item>
+                </Menu>
                 <SourceCode language = "svelte" source = {code}/>
             </Content>
         </Accordion>
@@ -57,8 +62,8 @@
                 </Menu>
             </Title>
             <Content>
-                <Button ui icon tertiary left floated data-tooltip={message} on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}>
-                    <Icon copy link/>
+                <Button ui tertiary fluid icon data-tooltip={message} style="background-color: rgb(249, 249, 249); border-color: rgb(249, 249, 249);">
+                    <Icon copy link on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}/>
                 </Button>
                 <SourceCode language = "svelte" source = {code}/>
             </Content>
