@@ -555,8 +555,4 @@
 </Examples>
 
 <style>
-
-.wrap {
-    white-space: normal;
-}
 </style>

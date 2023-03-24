@@ -10,6 +10,12 @@
     export let popup: boolean=false;
 </script>
 
-<span class={(ui?"ui ":"") + uiProps($$restProps) + " text"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
-    <slot />
-</span>
+{#if ui}
+    <span class={"ui " + uiProps($$restProps) + " text"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+        <slot />
+    </span>
+{:else}
+    <div class={uiProps($$restProps) + " text"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+        <slot />
+    </div>
+{/if}

@@ -25,6 +25,8 @@ Note that in essence all these do already work (except for the Modules) because 
 
 ## Progress so far
 
+Where there is a cross in the Implemented column; that means the basic code is in place and should work.  Where there is a cross in the Tested and Documented column; the examples from the Fomantic UI website have been sveltised and compared for accuracy with the ones on the Fomantic UI website, and where necessary, tweaks to the svelte-fomantic-ui code made.  Often, there are sub classes like 'metadata' and 'description' that need adding, for example.  Where there is an underscore in the Tested and Documented column, this means I've started the process of testing and documenting, but not yet finished - but I've done at least one, so am confident that it is working - however, there may be some tweaks to come.  For example, when working on the Table element, there is an option for sorted tables that required some extra scripting to be added to work as per the example, and to function seamlessly in the Svelte environment.
+
 | Element          | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
 |------------------|:-----------:|:---------------------:|--------------------------|------------------|
 | Button | X | X | [/Button](./svelte-fomantic-ui/src/lib/tests/Button.svelte) | [Button](https://fomantic-ui.com/elements/button.html)
@@ -54,18 +56,18 @@ Note that in essence all these do already work (except for the Modules) because 
 |  - Interactive | X | X | [/BreadcrumbInteractive](./svelte-fomantic-ui/src/lib/tests/BreadcrumbInteractive.svelte)
 | Form | X |  |
 | Grid | X | X | [/Grid](./svelte-fomantic-ui/src/lib/tests/Grid.svelte) | [Grid](https://fomantic-ui.com/collections/grid.html) 
-| Menu | X |  | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Menu](https://fomantic-ui.com/collections/menu.html)
+| Menu | X | _ | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Menu](https://fomantic-ui.com/collections/menu.html)
 | Message | X |  | 
 | Table | X | X | [/Table](./svelte-fomantic-ui/src/lib/tests/Table.svelte) | [Table](https://fomantic-ui.com/collections/table.html)
 
 | Views            | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
 |------------------|:-----------:|:---------------------:|--------------------------|------------------|
-| Advertisement | X |  |
-| Card | X |  |
-| Comment | X |  |
+| Advertisement | X | _ | [/Ad](./svelte-fomantic-ui/src/lib/tests/Ad.svelte) | [Ad](https://fomantic-ui.com/views/advertisement.html)
+| Card | X | _ |
+| Comment | X | _ | [/Comment](./svelte-fomantic-ui/src/lib/tests/Comment.svelte) | [Statistic](https://fomantic-ui.com/views/comment.html) 
 | Feed | X |  |
 | Item | X |  |
-| Statistic | X |  |
+| Statistic | X | X | [/Statistic](./svelte-fomantic-ui/src/lib/tests/Statistic.svelte) | [Statistic](https://fomantic-ui.com/views/statistic.html) 
 
 | Modules          | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
 |------------------|:-----------:|:---------------------:|--------------------------|------------------|

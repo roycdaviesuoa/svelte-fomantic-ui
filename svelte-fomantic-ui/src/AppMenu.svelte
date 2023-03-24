@@ -14,13 +14,16 @@
     import NotYet from './NotYet.svelte';
 
     import Accordion from './lib/tests/Accordion.svelte';
+    import Ad from './lib/tests/Ad.svelte';
     import Button from './lib/tests/Button.svelte';
     import ButtonInteractive from './lib/tests/ButtonInteractive.svelte';
     import Breadcrumb from './lib/tests/Breadcrumb.svelte';
     import BreadcrumbInteractive from './lib/tests/BreadcrumbInteractive.svelte';
     import Calendar from './lib/tests/Calendar.svelte';
+    import Card from './lib/tests/Card.svelte';
     import Checkbox from './lib/tests/Checkbox.svelte';
     import CheckboxIndeterminate from './lib/tests/CheckboxIndeterminate.svelte';
+    import Comment from './lib/tests/Comment.svelte';
     import Container from './lib/tests/Container.svelte';
     import Divider from './lib/tests/Divider.svelte';
     import Dropdown from './lib/tests/Dropdown.svelte';
@@ -85,11 +88,10 @@
     <Item>
         <Header ui mini inverted>Inputs</Header>
         <Menu>
-            <Link item on:click={()=>currentPage=Checkbox}>Checkbox, Radio, Toggle, Slider</Link>    
+            <Link item on:click={()=>currentPage=Checkbox}>Checkbox, Radio, Toggle, Slider, Textarea</Link>    
             <Link item on:click={()=>currentPage=CheckboxIndeterminate}>Indeterminate Checkbox</Link>    
             <Link item on:click={()=>currentPage=Input}>Input</Link>    
             <Link item on:click={()=>currentPage=Dropdown}>Dropdown</Link>    
-            <Link item on:click={()=>currentPage=ComingSoon}>Textarea</Link>    
         </Menu>
     </Item>
     <Item>
@@ -98,7 +100,7 @@
             <Link item on:click={()=>currentPage=Breadcrumb}>Breadcrumb</Link>    
             <Link item on:click={()=>currentPage=BreadcrumbInteractive}>Interactive Breadcrumb</Link>    
             <Link item on:click={()=>currentPage=ComingSoon}>Form</Link>    
-            <Link item on:click={()=>currentPage=Dropdown}>Grid</Link>    
+            <Link item on:click={()=>currentPage=Grid}>Grid</Link>    
             <Link item on:click={()=>currentPage=_Menu}>Menu</Link>    
             <Link item on:click={()=>currentPage=ComingSoon}>Message</Link>    
             <Link item on:click={()=>currentPage=Table}>Table</Link>    
@@ -107,9 +109,9 @@
     <Item>
         <Header ui mini inverted>Views</Header>
         <Menu>
-            <Link item on:click={()=>currentPage=ComingSoon}>Advertisement</Link>    
-            <Link item on:click={()=>currentPage=ComingSoon}>Card</Link>    
-            <Link item on:click={()=>currentPage=ComingSoon}>Comment</Link>    
+            <Link item on:click={()=>currentPage=Ad}>Advertisement</Link>    
+            <Link item on:click={()=>currentPage=Card}>Card</Link>    
+            <Link item on:click={()=>currentPage=Comment}>Comment</Link>    
             <Link item on:click={()=>currentPage=ComingSoon}>Feed</Link>    
             <Link item on:click={()=>currentPage=ComingSoon}>Item</Link>    
             <Link item on:click={()=>currentPage=Statistic}>Statistic</Link>    

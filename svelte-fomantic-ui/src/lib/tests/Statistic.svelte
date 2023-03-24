@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Statistic, Statistics, Value, Label, Segment } from "../svelte-fomantic-ui.svelte";
+    import { Statistic, Statistics, Value, Label, Segment, Icon, Image } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Statistic';
@@ -31,14 +31,14 @@
             </Label>
         </Statistic>
 
-        <div class="ui statistic">
+        <Statistic ui>
             <Label>
                 Views
-            </div>
+            </Label>
             <Value>
                 40,509
-            </div>
-        </div>
+            </Value>
+        </Statistic>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -50,32 +50,32 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Statistic group" code = {Code.statistic_group}>
 
-        <div class="ui statistics">
+        <Statistics ui>
             <Statistic>
                 <Value>
                     22
-                </div>
+                </Value>
                 <Label>
                     Faves
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
                     31,200
-                </div>
+                </Value>
                 <Label>
                     Views
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
                     22
-                </div>
+                </Value>
                 <Label>
                     Members
-                </div>
-            </div>
-        </div>
+                </Label>
+            </Statistic>
+        </Statistics>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -87,42 +87,42 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Content" code = {Code.content}>
 
-        <div class="ui statistics">
+        <Statistics ui>
             <Statistic>
                 <Value>
                     22
-                </div>
+                </Value>
                 <Label>
                     Saves
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
-                <div class="text value">
+                <Value text>
                     Three<br>
                     Thousand
-                </div>
+                </Value>
                 <Label>
                     Signups
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
-                    <i class="plane icon"></i> 5
-                </div>
+                    <Icon plane/> 5
+                </Value>
                 <Label>
                     Flights
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
-                    <img src="/images/joe.jpg" class="ui circular inline image">
+                    <Image ui circular inline src="/images/joe.jpg" />
                     42
-                </div>
+                </Value>
                 <Label>
                     Team Members
-                </div>
-            </div>
-        </div>
+                </Label>
+            </Statistic>
+        </Statistics>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -135,14 +135,14 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Label" code = {Code.label}>
 
-        <div class="ui statistic">
+        <Statistic ui>
             <Value>
                 2,204
-            </div>
+            </Value>
             <Label>
                 Views
-            </div>
-        </div>
+            </Label>
+        </Statistic>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -155,41 +155,41 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Horizontal" code = {Code.horizontal}>
 
-        <div class="ui horizontal statistic">
+        <Statistics ui horizontal>
             <Value>
-              2,204
-            </div>
+                2,204
+            </Value>
             <Label>
-              Views
-            </div>
-        </div>
+                Views
+            </Label>
+        </Statistics>
 
-        <div class="ui horizontal statistics">
+        <Statistics ui horizontal>
             <Statistic>
                 <Value>
                     2,204
-                </div>
+                </Value>
                 <Label>
                     Views
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
                     3,322
-                </div>
+                </Value>
                 <Label>
                     Downloads
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
                     22
-                </div>
+                </Value>
                 <Label>
                     Tasks
-                </div>
-            </div>
-        </div>
+                </Label>
+            </Statistic>
+        </Statistics>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -274,42 +274,42 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Evenly Divided" code = {Code.evenly_divided}>
 
-        <div class="ui four statistics">
+        <Statistics ui four>
             <Statistic>
                 <Value>
                     22
                 </Value>
                 <Label>
                     Saves
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
-                <div class="text value">
+                <Value text>
                     Three<br>
                     Thousand
-                </div>
+                </Value>
                 <Label>
                     Signups
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
-                    <i class="plane icon"></i> 5
-                </div>
+                    <Icon plane/> 5
+                </Value>
                 <Label>
                     Flights
-                </div>
-            </div>
+                </Label>
+            </Statistic>
             <Statistic>
                 <Value>
-                    <img src="/images/joe.jpg" class="ui circular inline image">
+                    <Image ui circular inline src="/images/joe.jpg"/>
                     42
-                </div>
+                </Value>
                 <Label>
                     Team Members
-                </div>
-            </div>
-        </div>
+                </Label>
+            </Statistic>
+        </Statistics>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -318,11 +318,18 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Fluid -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Fluid" code = {Code.fluid}>
 
-
+        <Statistic ui fluid>
+            <Value>
+                2,204
+            </Value>
+            <Label>
+                Views
+            </Label>
+        </Statistic>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -331,11 +338,32 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Floated -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Floated" code = {Code.floated}>
 
-
+        <Segment ui>
+            <Statistic ui right floated>
+                <Value>
+                    2,204
+                </Value>
+                <Label>
+                    Views
+                </Label>
+            </Statistic>
+            <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
+            <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
+            <Statistic ui left floated>
+                <Value>
+                    2,204
+                </Value>
+                <Label>
+                    Views
+                </Label>
+            </Statistic>
+            <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
+            <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -344,37 +372,31 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Size -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Size" code = {Code.size}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        {#each ["mini", "tiny", "", "small", "large", "huge"] as size}
+            <Statistic ui _={size}>
+                <Value>
+                    2,204
+                </Value>
+                <Label>
+                    Views
+                </Label>
+            </Statistic>
+        {/each}
+        <br/><br/>
+        {#each ["mini", "tiny", "", "small", "large", "huge"] as size}
+            <Statistic ui _={size} horizontal>
+                <Value>
+                    2,204
+                </Value>
+                <Label>
+                    Views
+                </Label>
+            </Statistic>
+        {/each}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

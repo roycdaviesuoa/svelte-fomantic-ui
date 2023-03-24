@@ -5,17 +5,6 @@
 </script>
 
 <style>
-.code {
-    background-color: rgb(244, 244, 244);
-    width:100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-radius: 10px;
-    white-space:no-wrap;
-}
-
 </style>
 
 <div class="example">
@@ -66,7 +55,7 @@
     <p>Would be written as:</p>
     <SourceCode language = "svelte" source={Code.button2}/>
 <p>
-As can be seem from the example, the props contains the classes that
+As can be seem from the example, the props contain the classes that
 would be used by fomantic-ui, except the main class, in this case <code
     >button</code
 >.
@@ -105,7 +94,8 @@ binds the click event to the function <code>processForm</code> in the
     </p>
 <SourceCode language = "svelte"
 source={`{
-    "id": "submit",     // The id of the button (in this case, 'submit') "target": { }       // The target object
+    "id": "submit",     // The id of the button (in this case, 'submit') 
+    "target": { }       // The target object
 }
 `}/>
     <p>
