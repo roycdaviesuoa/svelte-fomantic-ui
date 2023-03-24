@@ -10,6 +10,7 @@
   import Home from './Home.svelte';
 
   import Accordion from './lib/tests/Accordion.svelte';
+  import Ad from './lib/tests/Ad.svelte';
   import Button from './lib/tests/Button.svelte';
   import ButtonInteractive from './lib/tests/ButtonInteractive.svelte';
   import Breadcrumb from './lib/tests/Breadcrumb.svelte';
@@ -17,6 +18,7 @@
   import Calendar from './lib/tests/Calendar.svelte';
   import Checkbox from './lib/tests/Checkbox.svelte';
   import CheckboxIndeterminate from './lib/tests/CheckboxIndeterminate.svelte';
+  import Comment from './lib/tests/Comment.svelte';
   import Container from './lib/tests/Container.svelte';
   import Divider from './lib/tests/Divider.svelte';
   import Dropdown from './lib/tests/Dropdown.svelte';
@@ -38,6 +40,7 @@
   import Rail from './lib/tests/Rail.svelte';
   import Reveal from './lib/tests/Reveal.svelte';
   import Segment from './lib/tests/Segment.svelte';
+  import Statistic from './lib/tests/Statistic.svelte';
   import Step from './lib/tests/Step.svelte';
   import Table from './lib/tests/Table.svelte';
   import Text from './lib/tests/Text.svelte';
@@ -53,6 +56,8 @@
       currentRoute = Home; break;
     case '/Accordion':
       currentRoute = Accordion; break;
+    case '/Ad':
+        currentRoute = Ad; break;
     case '/Button':
       currentRoute = Button; break;
     case '/ButtonInteractive':
@@ -67,6 +72,8 @@
       currentRoute = Checkbox; break;
     case '/CheckboxIndeterminate':
       currentRoute = CheckboxIndeterminate; break;
+    case '/Comment':
+      currentRoute = Comment; break;
     case '/Container':
       currentRoute = Container; break;
     case '/Divider':
@@ -111,6 +118,8 @@
       currentRoute = Rail; break;
     case '/Segment':
       currentRoute = Segment; break;
+    case '/Statistic':
+        currentRoute = Statistic; break;
     case '/Step':
       currentRoute = Step; break;
     case '/Table':

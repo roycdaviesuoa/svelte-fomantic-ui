@@ -25,10 +25,13 @@ Note that in essence all these do already work (except for the Modules) because 
 
 ## Progress so far
 
-Where there is a cross in the Implemented column; that means the basic code is in place and should work.  Where there is a cross in the Tested and Documented column; the examples from the Fomantic UI website have been sveltised and compared for accuracy with the ones on the Fomantic UI website, and where necessary, tweaks to the svelte-fomantic-ui code made.  Often, there are sub classes like 'metadata' and 'description' that need adding, for example.  Where there is an underscore in the Tested and Documented column, this means I've started the process of testing and documenting, but not yet finished - but I've done at least one, so am confident that it is working - however, there may be some tweaks to come.  For example, when working on the Table element, there is an option for sorted tables that required some extra scripting to be added to work as per the example, and to function seamlessly in the Svelte environment.
+* Where there is a cross in the Implemented column; that means the basic code is in place and should work.
+* Where there is a cross in the Tested and Documented column; the examples from the Fomantic UI website have been sveltised and compared for accuracy with the ones on the Fomantic UI website, and where necessary, tweaks to the svelte-fomantic-ui code made.  Often, there are sub classes like 'metadata' and 'description' that need adding, for example.
+* Where there is an underscore in the Tested and Documented column, this means I've started the process of testing and documenting, but not yet finished - but I've done at least one, so am confident that it is working - however, there may be some tweaks to come.
+    * For example, when working on the Table element, there is an option for sorted tables that required some extra scripting to be added to work as per the example, and to function seamlessly in the Svelte environment.
 
-| Element          | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
-|------------------|:-----------:|:---------------------:|--------------------------|------------------|
+| Element          | Implemented | Tested and Documented | Example Code | Fomantic UI page |
+|------------------|:-----------:|:---------------------:|--------------|------------------|
 | Button | X | X | [/Button](./svelte-fomantic-ui/src/lib/tests/Button.svelte) | [Button](https://fomantic-ui.com/elements/button.html)
 |  - Interactive | X | X | [/ButtonInteractive](./svelte-fomantic-ui/src/lib/tests/ButtonInteractive.svelte)
 | Container | X | X | [/Container](./svelte-fomantic-ui/src/lib/tests/Container.svelte) | [Container](https://fomantic-ui.com/elements/container.html)
@@ -50,8 +53,8 @@ Where there is a cross in the Implemented column; that means the basic code is i
 | Text | X | X | [/Text](./svelte-fomantic-ui/src/lib/tests/Text.svelte) | [Text](https://fomantic-ui.com/elements/text.html)
 | Textarea | X | X | [/Input](./svelte-fomantic-ui/src/lib/tests/Input.svelte) | [Input](https://fomantic-ui.com/elements/input.html) 
 
-| Collections      | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
-|------------------|:-----------:|:---------------------:|--------------------------|------------------|
+| Collections      | Implemented | Tested and Documented | Example Code | Fomantic UI page |
+|------------------|:-----------:|:---------------------:|--------------|------------------|
 | Breadcrumb | X | X | [/Breadcrumb](./svelte-fomantic-ui/src/lib/tests/Breadcrumb.svelte) | [Breadcrumb](https://fomantic-ui.com/collections/breadcrumb.html) 
 |  - Interactive | X | X | [/BreadcrumbInteractive](./svelte-fomantic-ui/src/lib/tests/BreadcrumbInteractive.svelte)
 | Form | X |  |
@@ -60,17 +63,17 @@ Where there is a cross in the Implemented column; that means the basic code is i
 | Message | X |  | 
 | Table | X | X | [/Table](./svelte-fomantic-ui/src/lib/tests/Table.svelte) | [Table](https://fomantic-ui.com/collections/table.html)
 
-| Views            | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
-|------------------|:-----------:|:---------------------:|--------------------------|------------------|
+| Views            | Implemented | Tested and Documented | Example Code | Fomantic UI page |
+|------------------|:-----------:|:---------------------:|--------------|------------------|
 | Advertisement | X | _ | [/Ad](./svelte-fomantic-ui/src/lib/tests/Ad.svelte) | [Ad](https://fomantic-ui.com/views/advertisement.html)
-| Card | X | _ |
-| Comment | X | _ | [/Comment](./svelte-fomantic-ui/src/lib/tests/Comment.svelte) | [Statistic](https://fomantic-ui.com/views/comment.html) 
+| Card | X | _ | [/Card](./svelte-fomantic-ui/src/lib/tests/Card.svelte) | [Card](https://fomantic-ui.com/views/card.html)
+| Comment | X | _ | [/Comment](./svelte-fomantic-ui/src/lib/tests/Comment.svelte) | [Comment](https://fomantic-ui.com/views/comment.html) 
 | Feed | X |  |
 | Item | X |  |
 | Statistic | X | X | [/Statistic](./svelte-fomantic-ui/src/lib/tests/Statistic.svelte) | [Statistic](https://fomantic-ui.com/views/statistic.html) 
 
-| Modules          | Implemented | Tested and Documented | Test Link / Example Code | Fomantic UI page |
-|------------------|:-----------:|:---------------------:|--------------------------|------------------|
+| Modules          | Implemented | Tested and Documented | Example Code | Fomantic UI page |
+|------------------|:-----------:|:---------------------:|--------------|------------------|
 | Accordion | X | X | [/Accordion](./svelte-fomantic-ui/src/lib/tests/Accordion.svelte) | [Accordion](https://fomantic-ui.com/modules/accordion.html) 
 | Calendar | X | X | [/Calendar](./svelte-fomantic-ui/src/lib/tests/Calendar.svelte) | [Calendar](https://fomantic-ui.com/modules/calendar.html)
 | Checkbox | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
