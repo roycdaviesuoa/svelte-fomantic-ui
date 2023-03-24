@@ -5,10 +5,10 @@
 -->
 
 <script lang="ts">
-    import {  } from "../src/lib/svelte-fomantic-ui.svelte";
-    import Example from "../src/lib/tests/Example.svelte";
-    import Examples from "../src/lib/tests/Examples.svelte";
-    import Code from '../src/lib/tests/Loader';
+    import {  } from "./lib/svelte-fomantic-ui.svelte";
+    import Example from "./lib/tests/Example.svelte";
+    import Examples from "./lib/tests/Examples.svelte";
+    import Code from './lib/tests/Loader';
 
     let isActive: boolean = false;
     function setActive() {
@@ -20,5 +20,5 @@
 
 <Examples
     title = "Coming Soon ..."
-    description = "Implemented, and probably works, but not fully tested as yet.">
+    description = "Not yet Implemented...">
 </Examples>

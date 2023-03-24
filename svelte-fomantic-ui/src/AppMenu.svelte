@@ -5,12 +5,13 @@
 -->
 
 <script lang="ts">
-    import { reload, Link, Header, Menu, Item } from "../src/lib/svelte-fomantic-ui.svelte";
+    import { reload, Link, Header, Menu, Item, Sidebar, Pusher } from "../src/lib/svelte-fomantic-ui.svelte";
     import "../src/lib/tests/examplestyles.css";
 
     import AppMenu from './AppMenu.svelte';
     import Home from './Home.svelte';
     import ComingSoon from './ComingSoon.svelte';
+    import NotYet from './NotYet.svelte';
 
     import Accordion from './lib/tests/Accordion.svelte';
     import Button from './lib/tests/Button.svelte';
@@ -41,6 +42,7 @@
     import Rail from './lib/tests/Rail.svelte';
     import Reveal from './lib/tests/Reveal.svelte';
     import Segment from './lib/tests/Segment.svelte';
+    import Statistic from './lib/tests/Statistic.svelte';
     import Step from './lib/tests/Step.svelte';
     import Table from './lib/tests/Table.svelte';
     import Text from './lib/tests/Text.svelte';
@@ -52,97 +54,88 @@
     let currentPage: any = Home;
 </script>
 
-<div class="example-document">
-    <Menu ui visible inverted left vertical sidebar pushable>
-        <Link item on:click={()=>currentPage=Home}>
-            <i class="home icon"></i>
-            Home
-        </Link>
-        <Item>
-            <Header ui small inverted>Elements</Header>
-            <Menu>
-                <Link item on:click={()=>currentPage=Button}>Button</Link>    
-                <Link item on:click={()=>currentPage=ButtonInteractive}>Interactive Buttons</Link>    
-                <Link item on:click={()=>currentPage=Container}>Container</Link>    
-                <Link item on:click={()=>currentPage=Divider}>Divider</Link>    
-                <Link item on:click={()=>currentPage=Emoji}>Emoji</Link>    
-                <Link item on:click={()=>currentPage=Flag}>Flag</Link>    
-                <Link item on:click={()=>currentPage=_Header}>Header</Link>    
-                <Link item on:click={()=>currentPage=Icon}>Icon</Link>    
-                <Link item on:click={()=>currentPage=Image}>Image</Link>    
-                <Link item on:click={()=>currentPage=Label}>Label</Link>    
-                <Link item on:click={()=>currentPage=List}>List</Link>    
-                <Link item on:click={()=>currentPage=Loader}>Loader</Link>    
-                <Link item on:click={()=>currentPage=Placeholder}>Placeholder</Link>    
-                <Link item on:click={()=>currentPage=Rail}>Rail</Link>    
-                <Link item on:click={()=>currentPage=Reveal}>Reveal</Link>    
-                <Link item on:click={()=>currentPage=Segment}>Segment</Link>    
-                <Link item on:click={()=>currentPage=Step}>Step</Link>    
-                <Link item on:click={()=>currentPage=Text}>Text</Link>    
-            </Menu>
-        </Item>
-        <Item>
-            <Header ui small inverted>Inputs</Header>
-            <Menu>
-                <Link item on:click={()=>currentPage=Checkbox}>Checkbox, Radio, Toggle, Slider</Link>    
-                <Link item on:click={()=>currentPage=Input}>Input</Link>    
-                <Link item on:click={()=>currentPage=Dropdown}>Dropdown</Link>    
-                <Link item on:click={()=>currentPage=ComingSoon}>Textarea</Link>    
-            </Menu>
-        </Item>
-    </Menu>
-    <div class="pusher">
-        <svelte:component this={currentPage}/>
-    </div>
-
-    <!-- <div class="example">
-        <h4 class="example-header">Fomantic UI Svelte</h4>
-        <ul>
-            <li> <h3>Elements</h3></li>
-            <ul>
-                <li> <h4><a href="/Button">Button</a> | <a href="/ButtonInteractive">Interactive Button</a></h4> </li>
-                <li> <h4><a href="/Container">Container</a> </h4> </li>
-                <li> <h4><a href="/Divider">Divider</a> </h4> </li>
-                <li> <h4><a href="/Emoji">Emoji</a> </h4> </li>
-                <li> <h4><a href="/Flag">Flag</a> </h4> </li>
-                <li> <h4><a href="/Header">Header</a> </h4> </li>
-                <li> <h4><a href="/Icon">Icon</a> </h4> </li>
-                <li> <h4><a href="/Image">Image</a> </h4> </li>
-                <li> <h4><a href="/Label">Label</a> </h4> </li>
-                <li> <h4><a href="/List">List</a> </h4></li>
-                <li> <h4><a href="/Loader">Loader</a></h4></li>
-                <li> <h4><a href="/Placeholder">Placeholder</a></h4></li>
-                <li> <h4><a href="/Rail">Rail</a></h4></li>
-                <li> <h4><a href="/Reveal">Reveal</a></h4></li>
-                <li> <h4><a href="/Segment">Segment</a></h4></li>
-                <li> <h4><a href="/Step">Step</a></h4></li>
-                <li> <h4><a href="/Text">Text</a></h4></li>
-            </ul>
-            <li> <h3>Inputs</h3></li>
-            <ul>
-                <li> <h4><a href="/Checkbox">Checkbox, Radio, Toggle, Slider</a>, <a href="/CheckboxIndeterminate">Indeterminate</a></h4> </li>
-                <li> <h4><a href="/Input">Input</a></h4></li>
-                <li> <h4><a href="/Dropdown">Dropdown</a></h4> </li>
-                <li> <h4>Textarea</h4></li>
-            </ul>
-            <li> <h3>Collections</h3></li>
-            <ul>
-                <li> <h4><a href="/Breadcrumb">Breadcrumb</a> | <a href="/BreadcrumbInteractive">Interactive Breadcrumb</a></h4> </li>
-                <li> <h4>Form</h4></li>
-                <li> <h4><a href="/Grid">Grid</a></h4></li>
-                <li> <h4><a href="/Menu">Menu</a></h4></li>
-                <li> <h4>Message</h4></li>
-                <li> <h4><a href="/Table">Table</a></h4></li>
-            </ul>
-            <li> <h3>Modules</h3></li>
-             <ul>
-                <li> <h4><a href="/Accordion">Accordion</a></h4> </li>
-                <li> <h4><a href="/Calendar">Calendar</a></h4> </li>
-                <li> <h4><a href="/Embed">Embed</a></h4> </li>
-                <li> <h4><a href="/Modal">Modal</a></h4> </li>
-                <li> <h4><a href="/Popup">Popup</a></h4> </li>
-                <li> <h4><a href="/Progress">Progress</a></h4> </li>
-           </ul>
-        </ul>
-    </div> -->
-</div>
+<Sidebar ui inverted vertical menu mobile hidden tablet computer only visible>
+    <Link item header on:click={()=>currentPage=Home}>
+        <i class="home icon"></i>
+        Home
+    </Link>
+    <Item>
+        <Header ui mini inverted>Elements</Header>
+        <Menu>
+            <Link item on:click={()=>currentPage=Button}>Button</Link>    
+            <Link item on:click={()=>currentPage=ButtonInteractive}>Interactive Buttons</Link>    
+            <Link item on:click={()=>currentPage=Container}>Container</Link>    
+            <Link item on:click={()=>currentPage=Divider}>Divider</Link>    
+            <Link item on:click={()=>currentPage=Emoji}>Emoji</Link>    
+            <Link item on:click={()=>currentPage=Flag}>Flag</Link>    
+            <Link item on:click={()=>currentPage=_Header}>Header</Link>    
+            <Link item on:click={()=>currentPage=Icon}>Icon</Link>    
+            <Link item on:click={()=>currentPage=Image}>Image</Link>    
+            <Link item on:click={()=>currentPage=Label}>Label</Link>    
+            <Link item on:click={()=>currentPage=List}>List</Link>    
+            <Link item on:click={()=>currentPage=Loader}>Loader</Link>    
+            <Link item on:click={()=>currentPage=Placeholder}>Placeholder</Link>    
+            <Link item on:click={()=>currentPage=Rail}>Rail</Link>    
+            <Link item on:click={()=>currentPage=Reveal}>Reveal</Link>    
+            <Link item on:click={()=>currentPage=Segment}>Segment</Link>    
+            <Link item on:click={()=>currentPage=Step}>Step</Link>    
+            <Link item on:click={()=>currentPage=Text}>Text</Link>    
+        </Menu>
+    </Item>
+    <Item>
+        <Header ui mini inverted>Inputs</Header>
+        <Menu>
+            <Link item on:click={()=>currentPage=Checkbox}>Checkbox, Radio, Toggle, Slider</Link>    
+            <Link item on:click={()=>currentPage=CheckboxIndeterminate}>Indeterminate Checkbox</Link>    
+            <Link item on:click={()=>currentPage=Input}>Input</Link>    
+            <Link item on:click={()=>currentPage=Dropdown}>Dropdown</Link>    
+            <Link item on:click={()=>currentPage=ComingSoon}>Textarea</Link>    
+        </Menu>
+    </Item>
+    <Item>
+        <Header ui mini inverted>Collections</Header>
+        <Menu>
+            <Link item on:click={()=>currentPage=Breadcrumb}>Breadcrumb</Link>    
+            <Link item on:click={()=>currentPage=BreadcrumbInteractive}>Interactive Breadcrumb</Link>    
+            <Link item on:click={()=>currentPage=ComingSoon}>Form</Link>    
+            <Link item on:click={()=>currentPage=Dropdown}>Grid</Link>    
+            <Link item on:click={()=>currentPage=_Menu}>Menu</Link>    
+            <Link item on:click={()=>currentPage=ComingSoon}>Message</Link>    
+            <Link item on:click={()=>currentPage=Table}>Table</Link>    
+        </Menu>
+    </Item>
+    <Item>
+        <Header ui mini inverted>Views</Header>
+        <Menu>
+            <Link item on:click={()=>currentPage=ComingSoon}>Advertisement</Link>    
+            <Link item on:click={()=>currentPage=ComingSoon}>Card</Link>    
+            <Link item on:click={()=>currentPage=ComingSoon}>Comment</Link>    
+            <Link item on:click={()=>currentPage=ComingSoon}>Feed</Link>    
+            <Link item on:click={()=>currentPage=ComingSoon}>Item</Link>    
+            <Link item on:click={()=>currentPage=Statistic}>Statistic</Link>    
+        </Menu>
+    </Item>
+    <Item>
+        <Header ui mini inverted>Modules</Header>
+        <Menu>
+            <Link item on:click={()=>currentPage=Accordion}>Accordion</Link>    
+            <Link item on:click={()=>currentPage=Calendar}>Calendar</Link>    
+            <Link item on:click={()=>currentPage=Embed}>Embed</Link>    
+            <Link item on:click={()=>currentPage=Modal}>Modal</Link>    
+            <Link item on:click={()=>currentPage=Popup}>Popup</Link>    
+            <Link item on:click={()=>currentPage=Progress}>Progress</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Rating</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Search</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Shape</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Sidebar</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Slider</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Sticky</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Tab</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Toast</Link>    
+            <Link item on:click={()=>currentPage=NotYet}>Transition</Link>    
+        </Menu>
+    </Item>
+</Sidebar>
+<Pusher overflowing>
+    <svelte:component this={currentPage}/>
+</Pusher>

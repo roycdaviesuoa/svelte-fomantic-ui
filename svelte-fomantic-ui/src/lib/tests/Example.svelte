@@ -32,7 +32,7 @@
                 <Menu ui text>
                     <Menu right>
                         <Link item data-tooltip="view source code">
-                            <Icon fitted chevron left/><Text ui large>/</Text><Icon fitted chevron right/>
+                            <Icon fitted chevron left small/><Text ui medium>/</Text><Icon fitted chevron right small/>
                         </Link>
                     </Menu>
                 </Menu>
@@ -56,17 +56,17 @@
                 <Menu ui text>
                     <Menu right>
                         <Link item data-tooltip="view source code">
-                            <Icon fitted chevron left/><Text ui large>/</Text><Icon fitted chevron right/>
+                            <Icon fitted chevron left small/><Text ui medium>/</Text><Icon fitted chevron right small/>
                         </Link>
                     </Menu>
                 </Menu>
             </Title>
             <Content>
-                <Menu ui centered fluid text>
-                    <Link item style="background-color: rgb(249, 249, 249); border-top-left-radius: 1em; border-top-right-radius: 1em;" data-tooltip={message} data-variation="basic">
-                        <Icon copy link on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}/>
+                <div style="margin-bottom:-40px; text-align: center;">
+                    <Link data-tooltip={message} data-variation="basic" on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}>
+                        <Icon ui grey copy/>
                     </Link>
-                </Menu>
+                </div>
                 <SourceCode language = "svelte" source = {code}/>
             </Content>
         </Accordion>

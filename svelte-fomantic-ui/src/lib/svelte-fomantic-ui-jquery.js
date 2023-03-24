@@ -15,6 +15,7 @@ import loadProgresses from './modules/Progress';
 import loadPopups from './modules/Popup';
 import loadRatings from './modules/Rating';
 import loadModals from './modules/Modal';
+import loadSidebars from './modules/Sidebar';
 
 import { tableSort } from './collections/Tablesort';
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -37,6 +38,7 @@ export const reload = function(){
     // loadForms();
     // loadPopups();
     loadModals();
+    // loadSidebars();
 
     tableSort();
 
@@ -49,20 +51,14 @@ export const reload = function(){
             case "embed":
             case "progress":
             case "modal":
+            // case "sidebar":
             // case "checkbox":
             // case "popup":
                 break;
             default :
                 let settings=$(this).data('settings');
-                // console.log ($(this));
                 let jquery_command = "$(this)." + moduleType + '(' + (settings?JSON.stringify(settings):"") + ')';
-                console.log(jquery_command);
                 eval(jquery_command);
-                // console.log(moduleType, settings);
-                // if (settings)
-                //     $(this)[moduleType](settings);
-                // else
-                //     $(this)[moduleType]();
                 break;
         }
     });

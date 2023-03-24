@@ -77,7 +77,9 @@
     export {default as Modal} from './modules/Modal.svelte';
     export {default as Popup} from './modules/Popup.svelte';
     export {default as Progress} from './modules/Progress.svelte';
+    export {default as Pusher} from './modules/Pusher.svelte';
     export {default as Rating} from './modules/Rating.svelte';
+    export {default as Sidebar} from './modules/Sidebar.svelte';
 
     // Views
     export {default as Advertisement} from './views/Advertisement.svelte';
@@ -90,6 +92,7 @@
     export {default as Items} from './views/Items.svelte';
     export {default as Statistic} from './views/Statistic.svelte';
     export {default as Statistics} from './views/Statistics.svelte';
+    export {default as Value} from './views/Value.svelte';
 
     // Helper functions for modules
     export { behavior } from './svelte-fomantic-ui-jquery';

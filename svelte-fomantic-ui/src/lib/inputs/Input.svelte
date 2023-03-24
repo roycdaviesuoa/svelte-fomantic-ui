@@ -11,7 +11,7 @@
     export let value: string="";
     export let checked: boolean=false;
     export let group: string="";
-    export let id: string="";
+    export let id: string=null;
     export let ui: boolean=false;
     export let popup: boolean=false;
 
