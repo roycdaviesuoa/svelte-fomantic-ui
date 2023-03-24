@@ -32,10 +32,10 @@
         </Statistic>
 
         <div class="ui statistic">
-            <div class="label">
+            <Label>
                 Views
             </div>
-            <div class="value">
+            <Value>
                 40,509
             </div>
         </div>
@@ -51,27 +51,27 @@
     <Example title = "Statistic group" code = {Code.statistic_group}>
 
         <div class="ui statistics">
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     22
                 </div>
-                <div class="label">
+                <Label>
                     Faves
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     31,200
                 </div>
-                <div class="label">
+                <Label>
                     Views
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     22
                 </div>
-                <div class="label">
+                <Label>
                     Members
                 </div>
             </div>
@@ -88,37 +88,37 @@
     <Example title = "Content" code = {Code.content}>
 
         <div class="ui statistics">
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     22
                 </div>
-                <div class="label">
+                <Label>
                     Saves
                 </div>
             </div>
-            <div class="statistic">
+            <Statistic>
                 <div class="text value">
                     Three<br>
                     Thousand
                 </div>
-                <div class="label">
+                <Label>
                     Signups
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     <i class="plane icon"></i> 5
                 </div>
-                <div class="label">
+                <Label>
                     Flights
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     <img src="/images/joe.jpg" class="ui circular inline image">
                     42
                 </div>
-                <div class="label">
+                <Label>
                     Team Members
                 </div>
             </div>
@@ -136,10 +136,10 @@
     <Example title = "Label" code = {Code.label}>
 
         <div class="ui statistic">
-            <div class="value">
+            <Value>
                 2,204
             </div>
-            <div class="label">
+            <Label>
                 Views
             </div>
         </div>
@@ -156,36 +156,36 @@
     <Example title = "Horizontal" code = {Code.horizontal}>
 
         <div class="ui horizontal statistic">
-            <div class="value">
+            <Value>
               2,204
             </div>
-            <div class="label">
+            <Label>
               Views
             </div>
         </div>
 
         <div class="ui horizontal statistics">
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     2,204
                 </div>
-                <div class="label">
+                <Label>
                     Views
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     3,322
                 </div>
-                <div class="label">
+                <Label>
                     Downloads
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     22
                 </div>
-                <div class="label">
+                <Label>
                     Tasks
                 </div>
             </div>
@@ -275,37 +275,37 @@
     <Example title = "Evenly Divided" code = {Code.evenly_divided}>
 
         <div class="ui four statistics">
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     22
-                </div>
-                <div class="label">
+                </Value>
+                <Label>
                     Saves
                 </div>
             </div>
-            <div class="statistic">
+            <Statistic>
                 <div class="text value">
                     Three<br>
                     Thousand
                 </div>
-                <div class="label">
+                <Label>
                     Signups
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     <i class="plane icon"></i> 5
                 </div>
-                <div class="label">
+                <Label>
                     Flights
                 </div>
             </div>
-            <div class="statistic">
-                <div class="value">
+            <Statistic>
+                <Value>
                     <img src="/images/joe.jpg" class="ui circular inline image">
                     42
                 </div>
-                <div class="label">
+                <Label>
                     Team Members
                 </div>
             </div>
