@@ -362,6 +362,275 @@ const code = {
         Most Popular
     </Link>
 </Menu>
+    `,
+    vertical: `
+<Grid ui>
+    <Column eight wide>
+        <Menu ui vertical>
+            <Link item teal={ex12===0} active={ex12===0} on:click={()=>ex12=0}>
+                Inbox
+                <Label ui teal left pointing>1</Label>
+            </Link>
+            <Link item teal={ex12===1} active={ex12===1} on:click={()=>ex12=1}>
+                Spam
+                <Label ui>51</Label>
+            </Link>
+            <Link item teal={ex12===2} active={ex12===2} on:click={()=>ex12=2}>
+                Updates
+                <Label ui>1</Label>
+            </Link>
+            <Item>
+                <Input ui transparent icon>
+                    <Input type="text" placeholder="Search mail..."/>
+                    <Icon search/>
+                </Input>
+            </Item>
+        </Menu>
+    </Column>
+
+    <Column eight wide>
+        <Menu ui secondary vertical>
+            <Link item active={ex13===0} on:click={()=>ex13=0}>
+                Account
+            </Link>
+            <Link item active={ex13===1} on:click={()=>ex13=1}>
+                Settings
+            </Link>
+            <Dropdown ui item>
+                <Icon dropdown/>
+                Display Options
+                <Menu>
+                    <Header>Text Size</Header>
+                    <Item>Small</Item>
+                    <Item>Medium</Item>
+                    <Item>Large</Item>
+                </Menu>
+            </Dropdown>
+            </Menu>            
+    </Column>
+
+    <Column five wide>
+        <Menu ui vertical text>
+            <Header item>Sort By</Header>
+            <Item active={ex14===0} on:click={()=>ex14=0}>
+                Closest
+            </Item>
+            <Item active={ex14===1} on:click={()=>ex14=1}>
+                Most Comments
+            </Item>
+            <Item active={ex14===2} on:click={()=>ex14=2}>
+                Most Popular
+            </Item>
+        </Menu>
+    </Column>
+
+    <Column five wide>
+        <Menu ui vertical pointing>
+            <Item active={ex15===0} on:click={()=>ex15=0}>
+                Home
+            </Item>
+            <Item active={ex15===1} on:click={()=>ex15=1}>
+                Messages
+            </Item>
+            <Item active={ex15===2} on:click={()=>ex15=2}>
+                Friends
+            </Item>
+        </Menu>
+    </Column>
+
+    <Column six wide>
+        <Menu ui secondary vertical pointing>
+            <Item active={ex16===0} on:click={()=>ex16=0}>
+                Home
+            </Item>
+            <Item active={ex16===1} on:click={()=>ex16=1}>
+                Messages
+            </Item>
+            <Item active={ex16===2} on:click={()=>ex16=2}>
+                Friends
+            </Item>
+        </Menu>
+    </Column>
+</Grid>
+    `,
+    pagination: `
+<Menu ui pagination>
+    <Link item>
+        1
+    </Link>
+    <Item disabled>
+        ...
+    </Item>
+    <Link item>
+        10
+    </Link>
+    <Link item>
+        11
+    </Link>
+    <Link item>
+        12
+    </Link>
+</Menu>
+    `,
+    header: `
+<Menu ui>
+    <Item header>
+        Our Company
+    </Item>
+    <Link item  active={ex17===0} on:click={()=>ex17=0}>
+        About Us
+    </Link>
+    <Link item  active={ex17===1} on:click={()=>ex17=1}>
+        Jobs
+    </Link>
+    <Link item active={ex17===2} on:click={()=>ex17=2}>
+        Locations
+    </Link>
+</Menu>
+
+<Menu ui vertical>
+    <Item>
+        <Header>Products</Header>
+        <Menu>
+            <Link item active={ex17===3} on:click={()=>ex17=3}>Enterprise</Link>
+            <Link item active={ex17===4} on:click={()=>ex17=4}>Consumer</Link>
+        </Menu>
+    </Item>
+    <Item>
+        <Header>CMS Solutions</Header>
+        <Menu>
+            <Link item active={ex17===5} on:click={()=>ex17=5}>Rails</Link>
+            <Link item active={ex17===6} on:click={()=>ex17=6}>Python</Link>
+            <Link item active={ex17===7} on:click={()=>ex17=7}>PHP</Link>
+        </Menu>
+    </Item>
+    <Item>
+        <Header>Hosting</Header>
+        <Menu>
+            <Link item active={ex17===8} on:click={()=>ex17=8}>Shared</Link>
+            <Link item active={ex17===9} on:click={()=>ex17=9}>Dedicated</Link>
+        </Menu>
+    </Item>
+    <Item>
+        <Header>Support</Header>
+        <Menu>
+            <Link item active={ex17===10} on:click={()=>ex17=10}>E-mail Support</Link>
+            <Link item active={ex17===11} on:click={()=>ex17=11}>FAQs</Link>
+        </Menu>
+    </Item>
+</Menu>
+    `,
+    text2: `
+<Menu ui vertical>
+    <Link item active={ex18===0} on:click={()=>ex18=0}>
+        <Header ui h4>Promotions</Header>
+        <p>Check out our new promotions</p>
+    </Link>
+    <Link item active={ex18===1} on:click={()=>ex18=1}>
+        <Header ui h4>Coupons</Header>
+        <p>Check out our collection of coupons</p>
+    </Link>
+    <Link item active={ex18===2} on:click={()=>ex18=2}>
+        <Header ui h4>Rebates</Header>
+        <p>Visit our rebate forum for information on claiming rebates</p>
+    </Link>
+</Menu>
+    `,
+    input: `
+<Menu ui>
+    <Item>
+      <Input ui icon>
+        <Input type="text" placeholder="Search..."/>
+        <Icon search/>
+      </Input>
+    </Item>
+    <Item right>
+      <Input ui action>
+            <Input type="text" placeholder="Navigate to..."/>
+            <Button ui>Go</Button>
+      </Input>
+    </Item>
+</Menu>
+    `,
+    button: `
+<Menu ui>
+    <Item>
+        <Button ui primary>Sign up</Button>
+    </Item>
+    <Item>
+        <Button ui>Log-in</Button>
+    </Item>
+</Menu>
+    `,
+    link_item:`
+<Menu ui vertical>
+    <Link item href="https://www.google.com">
+        Visit Google
+    </Link>
+    <Item link>
+        Javascript Link
+    </Item>
+</Menu>
+    `,
+    dropdown_item:`
+<Menu ui vertical>
+    <Dropdown ui item>
+        Categories
+        <Icon dropdown/>
+        <Menu>
+            <Link item active={ex19===0} on:click={()=>ex19=0}>Electronics</Link>
+            <Link item active={ex19===1} on:click={()=>ex19=1}>Automotive</Link>
+            <Link item active={ex19===2} on:click={()=>ex19=2}>Home</Link>
+        </Menu>
+    </Dropdown>
+</Menu>
+    `,
+    popup:`
+<Menu ui>
+    <Link browse item>
+        Browse
+        <Icon dropdown/>
+    </Link>
+</Menu>
+<Popup ui fluid>
+    <Grid ui four column relaxed equal height divided>
+        <Column>
+            <Header ui h4>Fabrics</Header>
+            <List ui link>
+                <Link item active={ex20===0} on:click={()=>ex20=0}>Cashmere</Link>
+                <Link item active={ex20===1} on:click={()=>ex20=1}>Linen</Link>
+                <Link item active={ex20===2} on:click={()=>ex20=2}>Cotton</Link>
+                <Link item active={ex20===3} on:click={()=>ex20=3}>Viscose</Link>
+            </List>
+        </Column>
+        <Column>
+            <Header ui h4>Size</Header>
+            <List ui link>
+                <Link item active={ex20===4} on:click={()=>ex20=4}>Small</Link>
+                <Link item active={ex20===5} on:click={()=>ex20=5}>Medium</Link>
+                <Link item active={ex20===6} on:click={()=>ex20=6}>Large</Link>
+                <Link item active={ex20===7} on:click={()=>ex20=7}>Plus Sizes</Link>
+            </List>
+        </Column>
+        <Column>
+            <Header ui h4>Colored</Header>
+            <List ui link>
+                <Link item active={ex20===8} on:click={()=>ex20=8}>Neutrals</Link>
+                <Link item active={ex20===9} on:click={()=>ex20=9}>Brights</Link>
+                <Link item active={ex20===10} on:click={()=>ex20=10}>Pastels</Link>
+            </List>
+        </Column>
+        <Column>
+            <Header ui h4>Types</Header>
+            <List ui link>
+                <Link item active={ex20===11} on:click={()=>ex20=11}>Knitwear</Link>
+                <Link item active={ex20===12} on:click={()=>ex20=12}>Outerwear</Link>
+                <Link item active={ex20===13} on:click={()=>ex20=13}>Pants</Link>
+                <Link item active={ex20===14} on:click={()=>ex20=14}>Shoes</Link>
+            </List>
+        </Column>
+    </Grid>
+</Popup>
     `
 }
 

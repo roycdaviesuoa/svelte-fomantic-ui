@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup } from "../svelte-fomantic-ui.svelte";
+    import { update, Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup, Button, Results } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
@@ -20,6 +20,27 @@
     let ex10 = 0;
     let ex11 = 0;
     let ex12 = 0;
+    let ex13 = 0;
+    let ex14 = 0;
+    let ex15 = 0;
+    let ex16 = 0;
+    let ex17 = 0;
+    let ex18 = 0;
+    let ex19 = 0;
+    let ex20 = 0;
+    let ex21 = 0;
+    let ex22 = 0;
+    let ex23 = 0;
+    let ex24 = 0;
+    let ex25 = 0;
+    let ex26 = 0;
+    let ex27 = 0;
+    let ex28 = 0;
+    let ex29 = 0;
+    let ex30 = 0;
+    let ex31 = 0;
+    let ex32 = 0;
+    let ex33 = 0;
 
     let ex3search = "";
     let ex4search = "";
@@ -491,30 +512,591 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Vertical -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.vertical}>
+    <Example title = "Vertical" code = {Code.vertical}>
+
+        <Grid ui>
+            <Column eight wide>
+                <Menu ui vertical>
+                    <Link item teal={ex12===0} active={ex12===0} on:click={()=>ex12=0}>
+                        Inbox
+                        <Label ui teal left pointing>1</Label>
+                    </Link>
+                    <Link item teal={ex12===1} active={ex12===1} on:click={()=>ex12=1}>
+                        Spam
+                        <Label ui>51</Label>
+                    </Link>
+                    <Link item teal={ex12===2} active={ex12===2} on:click={()=>ex12=2}>
+                        Updates
+                      <Label ui>1</Label>
+                    </Link>
+                    <Item>
+                        <Input ui transparent icon>
+                            <Input type="text" placeholder="Search mail..."/>
+                            <Icon search/>
+                        </Input>
+                    </Item>
+                </Menu>
+            </Column>
+
+            <Column eight wide>
+                <Menu ui secondary vertical>
+                    <Link item active={ex13===0} on:click={()=>ex13=0}>
+                        Account
+                    </Link>
+                    <Link item active={ex13===1} on:click={()=>ex13=1}>
+                        Settings
+                    </Link>
+                    <Dropdown ui item>
+                        <Icon dropdown/>
+                        Display Options
+                        <Menu>
+                            <Header>Text Size</Header>
+                            <Item>Small</Item>
+                            <Item>Medium</Item>
+                            <Item>Large</Item>
+                        </Menu>
+                    </Dropdown>
+                  </Menu>            
+            </Column>
+
+            <Column five wide>
+                <Menu ui vertical text>
+                    <Header item>Sort By</Header>
+                    <Link item active={ex14===0} on:click={()=>ex14=0}>
+                        Closest
+                    </Link>
+                    <Link item active={ex14===1} on:click={()=>ex14=1}>
+                        Most Comments
+                    </Link>
+                    <Link item active={ex14===2} on:click={()=>ex14=2}>
+                        Most Popular
+                    </Link>
+                </Menu>
+            </Column>
+
+            <Column five wide>
+                <Menu ui vertical pointing>
+                    <Link item active={ex15===0} on:click={()=>ex15=0}>
+                      Home
+                    </Link>
+                    <Link item active={ex15===1} on:click={()=>ex15=1}>
+                      Messages
+                    </Link>
+                    <Link item active={ex15===2} on:click={()=>ex15=2}>
+                      Friends
+                    </Link>
+                </Menu>
+            </Column>
+
+            <Column six wide>
+                <Menu ui secondary vertical pointing>
+                    <Link item active={ex16===0} on:click={()=>ex16=0}>
+                      Home
+                    </Link>
+                    <Link item active={ex16===1} on:click={()=>ex16=1}>
+                      Messages
+                    </Link>
+                    <Link item active={ex16===2} on:click={()=>ex16=2}>
+                      Friends
+                    </Link>
+                </Menu>
+            </Column>
+        </Grid>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Pagination -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Pagination" code = {Code.pagination}>
+
+        <Menu ui pagination>
+            <Link item>
+                1
+            </Link>
+            <Item disabled>
+                ...
+            </Item>
+            <Link item>
+                10
+            </Link>
+            <Link item>
+                11
+            </Link>
+            <Link item>
+                12
+            </Link>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Header -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Header" code = {Code.header}>
+
+        <Menu ui>
+            <Item header>
+                Our Company
+            </Item>
+            <Link item  active={ex17===0} on:click={()=>ex17=0}>
+                About Us
+            </Link>
+            <Link item  active={ex17===1} on:click={()=>ex17=1}>
+                Jobs
+            </Link>
+            <Link item active={ex17===2} on:click={()=>ex17=2}>
+                Locations
+            </Link>
+        </Menu>
 
         <Menu ui vertical>
-            <Link item teal={ex12===0} active={ex12===0} on:click={()=>ex12=0}>
-                Inbox
-                <Label ui teal left pointing>1</Label>
-            </Link>
-            <Link item teal={ex12===1} active={ex12===1} on:click={()=>ex12=1}>
-                Spam
-                <Label ui>51</Label>
-            </Link>
-            <Link item teal={ex12===2} active={ex12===2} on:click={()=>ex12=2}>
-                Updates
-              <Label ui>1</Label>
-            </Link>
             <Item>
-                <Input ui transparent icon>
-                    <Input type="text" placeholder="Search mail..."/>
-                    <Icon search/>
-                </Input>
+                <Header>Products</Header>
+                <Menu>
+                    <Link item active={ex17===3} on:click={()=>ex17=3}>Enterprise</Link>
+                    <Link item active={ex17===4} on:click={()=>ex17=4}>Consumer</Link>
+                </Menu>
+            </Item>
+            <Item>
+                <Header>CMS Solutions</Header>
+                <Menu>
+                    <Link item active={ex17===5} on:click={()=>ex17=5}>Rails</Link>
+                    <Link item active={ex17===6} on:click={()=>ex17=6}>Python</Link>
+                    <Link item active={ex17===7} on:click={()=>ex17=7}>PHP</Link>
+                </Menu>
+            </Item>
+            <Item>
+                <Header>Hosting</Header>
+                <Menu>
+                    <Link item active={ex17===8} on:click={()=>ex17=8}>Shared</Link>
+                    <Link item active={ex17===9} on:click={()=>ex17=9}>Dedicated</Link>
+                </Menu>
+            </Item>
+            <Item>
+                <Header>Support</Header>
+                <Menu>
+                    <Link item active={ex17===10} on:click={()=>ex17=10}>E-mail Support</Link>
+                    <Link item active={ex17===11} on:click={()=>ex17=11}>FAQs</Link>
+                </Menu>
             </Item>
         </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Text -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Text" code = {Code.text2}>
+
+        <Menu ui vertical>
+            <Link item active={ex18===0} on:click={()=>ex18=0}>
+                <Header ui h4>Promotions</Header>
+                <p>Check out our new promotions</p>
+            </Link>
+            <Link item active={ex18===1} on:click={()=>ex18=1}>
+                <Header ui h4>Coupons</Header>
+                <p>Check out our collection of coupons</p>
+            </Link>
+            <Link item active={ex18===2} on:click={()=>ex18=2}>
+                <Header ui h4>Rebates</Header>
+                <p>Visit our rebate forum for information on claiming rebates</p>
+            </Link>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Input -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Input" code = {Code.input}>
+
+        <Menu ui>
+            <Item>
+              <Input ui icon>
+                <Input type="text" placeholder="Search..."/>
+                <Icon search/>
+              </Input>
+            </Item>
+            <Item right>
+              <Input ui action>
+                    <Input type="text" placeholder="Navigate to..."/>
+                    <Button ui>Go</Button>
+              </Input>
+            </Item>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Button -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Button" code = {Code.button}>
+
+        <Menu ui>
+            <Item>
+                <Button ui primary>Sign up</Button>
+            </Item>
+            <Item>
+                <Button ui>Log-in</Button>
+            </Item>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Link item -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Link item" code = {Code.link_item}>
+
+        <Menu ui vertical>
+            <Link item href="https://www.google.com">
+                Visit Google
+            </Link>
+            <Item link>
+                Javascript Link
+            </Item>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Dropdown item -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Dropdown item" code = {Code.dropdown_item}>
+
+        <Menu ui vertical>
+            <Dropdown ui item>
+                Categories
+                <Icon dropdown/>
+                <Menu>
+                    <Link item active={ex19===0} on:click={()=>ex19=0}>Electronics</Link>
+                    <Link item active={ex19===1} on:click={()=>ex19=1}>Automotive</Link>
+                    <Link item active={ex19===2} on:click={()=>ex19=2}>Home</Link>
+                </Menu>
+            </Dropdown>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Popup -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Popup" code = {Code.popup}>
+
+        <Menu ui popup settings={{position: "bottom left"}}>
+            <Link browse item>
+                Browse
+                <Icon dropdown/>
+            </Link>
+        </Menu>
+        <Popup ui fluid>
+            <Grid ui four column relaxed equal height divided>
+                <Column>
+                    <Header ui h4>Fabrics</Header>
+                    <List ui link>
+                        <Link item active={ex20===0} on:click={()=>ex20=0}>Cashmere</Link>
+                        <Link item active={ex20===1} on:click={()=>ex20=1}>Linen</Link>
+                        <Link item active={ex20===2} on:click={()=>ex20=2}>Cotton</Link>
+                        <Link item active={ex20===3} on:click={()=>ex20=3}>Viscose</Link>
+                    </List>
+                </Column>
+                <Column>
+                    <Header ui h4>Size</Header>
+                    <List ui link>
+                        <Link item active={ex20===4} on:click={()=>ex20=4}>Small</Link>
+                        <Link item active={ex20===5} on:click={()=>ex20=5}>Medium</Link>
+                        <Link item active={ex20===6} on:click={()=>ex20=6}>Large</Link>
+                        <Link item active={ex20===7} on:click={()=>ex20=7}>Plus Sizes</Link>
+                    </List>
+                </Column>
+                <Column>
+                    <Header ui h4>Colored</Header>
+                    <List ui link>
+                        <Link item active={ex20===8} on:click={()=>ex20=8}>Neutrals</Link>
+                        <Link item active={ex20===9} on:click={()=>ex20=9}>Brights</Link>
+                        <Link item active={ex20===10} on:click={()=>ex20=10}>Pastels</Link>
+                    </List>
+                </Column>
+                <Column>
+                    <Header ui h4>Types</Header>
+                    <List ui link>
+                        <Link item active={ex20===11} on:click={()=>ex20=11}>Knitwear</Link>
+                        <Link item active={ex20===12} on:click={()=>ex20=12}>Outerwear</Link>
+                        <Link item active={ex20===13} on:click={()=>ex20=13}>Pants</Link>
+                        <Link item active={ex20===14} on:click={()=>ex20=14}>Shoes</Link>
+                    </List>
+                </Column>
+            </Grid>
+        </Popup>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Search -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Search" code = {Code.search}>
+
+        <Menu ui>
+            <Item ui category search>
+                <Input ui transparent icon>
+                    <Input class="prompt" type="text" placeholder="Search animals..."/>
+                    <Icon search link/>
+                </Input>
+                <Results></Results>
+            </Item>
+        </Menu>
+        <Segment ui>
+            <p></p>
+        </Segment>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Menu -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Menu" code = {Code.menu}>
+
+        <Menu ui>
+            <Link item active={ex21===0} on:click={()=>ex21=0}>Browse</Link>
+            <Link item active={ex21===1} on:click={()=>ex21=1}>Submit</Link>
+            <Menu right>
+                <Link item active={ex21===2} on:click={()=>ex21=2}>Sign Up</Link>
+                <Link item active={ex21===3} on:click={()=>ex21=3}>Help</Link>
+            </Menu>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Sub menu -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Sub menu" code = {Code.submenu}>
+
+        <Menu ui vertical>
+            <Item>
+                <Input ui>
+                    <Input type="text" placeholder="Search..."/>
+                </Input>
+            </Item>
+            <Item>
+                Home
+                <Menu>
+                    <Link item active={ex22===0} on:click={()=>ex22=0}>Search</Link>
+                    <Link item active={ex22===1} on:click={()=>ex22=1}>Add</Link>
+                    <Link item active={ex22===2} on:click={()=>ex22=2}>Remove</Link>
+                </Menu>
+            </Item>
+            <Link item active={ex22===3} on:click={()=>ex22=3}>
+                <Icon grid layout/> Browse
+            </Link>
+            <Link item active={ex22===4} on:click={()=>ex22=4}>
+                Messages
+            </Link>
+            <Dropdown ui item>
+                More
+                <Icon dropdown/>
+                <Menu>
+                    <Link item active={ex22===5} on:click={()=>ex22=5}><i class="edit icon"></i> Edit Profile</Link>
+                    <Link item active={ex22===6} on:click={()=>ex22=6}><i class="globe icon"></i> Choose Language</Link>
+                    <Link item active={ex22===7} on:click={()=>ex22=7}><i class="settings icon"></i> Account Settings</Link>
+                </Menu>
+            </Dropdown>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Hover -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Hover" code = {Code.hover}>
+
+        <Menu ui compact>
+            <Link item active={ex23===0} on:click={()=>ex23=0}>
+                A link
+            </Link>
+            <Item link active={ex23===1} on:click={()=>ex23=1}>
+                div Link
+            </Item>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Active -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Active" code = {Code.active}>
+
+        <Menu ui compact>
+            <Item disabled>
+                Link
+            </Item>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Disabled -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Disabled" code = {Code.disabled}>
+
+        <Menu ui compact>
+            <Item disabled>
+                Link
+            </Item>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- XXXX -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "XXXX" code = {Code.XXXX}>
+
+
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
