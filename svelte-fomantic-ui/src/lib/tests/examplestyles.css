@@ -7,13 +7,13 @@
 
 .document-header {
     background-color: lightgrey;
-    width: calc(100% - 250px);
+    width: 100%;
     padding:20px;
     margin-bottom:20px;
     text-align: center;
 }
 .document-description {
-    width: calc(100% - 250px);
+    width: 100%;
     background-color:rgb(244, 244, 244);
     padding:20px;
     margin-bottom:20px;
@@ -22,7 +22,7 @@
 }
 .document-disclaimer {
     background-color:rgb(244, 244, 244);
-    width: calc(100% - 250px);
+    width: 100%;
     padding-left:20px;
     padding-right:20px;
     padding-bottom:20px;
@@ -37,7 +37,7 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
-    width: calc(100% - 300px);
+    width: calc(100%-40px);
     border: 1px;
     border-color: lightgrey;
     border-style:solid;
@@ -53,7 +53,7 @@
     place-items: center;
 }
 .narrow {
-    width: calc(100% - 500px);
+    width: 60%;
     border: 1px;
     border-color: rgb(244, 244, 244);;
     border-style:solid;

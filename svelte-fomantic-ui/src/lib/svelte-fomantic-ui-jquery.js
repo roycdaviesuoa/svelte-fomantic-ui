@@ -25,8 +25,15 @@ $(() =>
 {
     reload();
 });
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-export const reload = function(){
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+// (Re)load the modules, which mostly is required to initialise each of the modules once the page is loaded.
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+export const reload = function()
+{
     // THe ones that are not commented out have specific requirements for setting up, for example the calendar can pass in some special parameters
     // for linking start and end calendars, whilst the embed doesn't want to be started on page load as it will take too much memory.
     loadCalendars();
@@ -40,6 +47,7 @@ export const reload = function(){
     loadModals();
     // loadSidebars();
 
+    // Initialise the Tablesort code
     tableSort();
 
     $("[data-module_type]").each(function() {
@@ -112,12 +120,13 @@ export const behavior = function(...args) {
     if (typeof firstarg === 'object')
     {
         returnvalue = eval (construct_jquery_command(firstarg));
-        console.log(returnvalue);
+        // console.log(returnvalue);
     }
     else {
         let id = firstarg;
         let command = $("#"+id).data("module_type");
         if (command && id && ($("#"+id)[command])) {
+            console.log("HERE", command);
             returnvalue = $("#"+id)[command](...args);
         }
     }

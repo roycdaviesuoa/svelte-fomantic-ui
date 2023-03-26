@@ -157,7 +157,7 @@ This has been packaged for installation with `yarn`, but should also work with `
 <script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui-jquery.js"></script>
 ```
 
-Notice that JQuery is being included in this project.  If you don't wish to use JQuery, you can omit these lines completely, but many of the fomantic-ui modules won't work.  However, everything that only requires css should still be fine.
+Notice that JQuery is being included in this project as fomantic UI depends on it.
 
 ## Usage
 

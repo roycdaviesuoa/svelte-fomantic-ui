@@ -2,11 +2,11 @@
 // * By Dr. Roy C. Davies, March 2023, roy.c.davies@ieee.org
 // ******************************************************************************************************************************************************
 
-
 const code = {
     button1 : `<button class="ui primary button">
     Save
-</button> <button class="ui button">
+</button>
+<button class="ui button">
     Discard
 </button>`,
     button2 : `<Button ui primary>
@@ -135,8 +135,12 @@ reload : `<script lang="ts">
         <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
         <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
     </Content>
-</Accordion>`
-
+</Accordion>`,
+event: `{
+    "id": "submit",     // The id of the button (in this case, 'submit') 
+    "target": { }       // The target object
+}`,
+items: `items = ["left", "center", "right", "justify"];`
 }
 
 export default code;

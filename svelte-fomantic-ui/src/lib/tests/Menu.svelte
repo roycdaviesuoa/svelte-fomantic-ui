@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Button, Popup } from "../svelte-fomantic-ui.svelte";
+    import { update, Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
@@ -17,6 +17,9 @@
     let ex7 = 0;
     let ex8 = 0;
     let ex9 = 0;
+    let ex10 = 0;
+    let ex11 = 0;
+    let ex12 = 0;
 
     let ex3search = "";
     let ex4search = "";
@@ -367,9 +370,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Attached tabular -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Attached tabular" code = {Code.attached_tabular}>
 
         <Segment ui top attached>
             <p></p>
@@ -397,11 +400,90 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Left attached -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Left attached" code = {Code.left_attached}>
+
+        <Grid ui>
+            <Column four wide left attached>
+                <Menu ui vertical fluid tabular>
+                    <Link item active={ex10===0} on:click={()=>ex10=0}>
+                        Bio
+                    </Link>
+                    <Link item active={ex10===1} on:click={()=>ex10=1}>
+                        Pics
+                    </Link>
+                    <Link item active={ex10===2} on:click={()=>ex10=2}>
+                        Companies
+                    </Link>
+                    <Link item active={ex10===3} on:click={()=>ex10=3}>
+                        Links
+                    </Link>
+                </Menu>
+            </Column>
+            <Column twelve wide stretched right attached>
+                <Segment ui seamless right attached>
+                    This is a stretched grid column. This segment will always match the tab height
+                </Segment>
+            </Column>
+        </Grid>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Right attached -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Right attached" code = {Code.right_attached}>
+
+        <Grid ui>
+            <Column twelve wide stretched left attached>
+                <Segment ui seamless left attached>
+                    This is a stretched grid column. This segment will always match the tab height
+                </Segment>
+            </Column>
+            <Column four wide right attached>
+                <Menu ui vertical fluid right tabular>
+                    <Link item active={ex10===0} on:click={()=>ex10=0}>
+                        Bio
+                    </Link>
+                    <Link item active={ex10===1} on:click={()=>ex10=1}>
+                        Pics
+                    </Link>
+                    <Link item active={ex10===2} on:click={()=>ex10=2}>
+                        Companies
+                    </Link>
+                    <Link item active={ex10===3} on:click={()=>ex10=3}>
+                        Links
+                    </Link>
+                </Menu>
+            </Column>
+        </Grid>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Text -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Text" code = {Code.text}>
+
+        <Menu ui text>
+            <Item header>Sort By</Item>
+            <Link item active={ex11===0} on:click={()=>ex11=0}>
+                Closest
+            </Link>
+            <Link item active={ex11===1} on:click={()=>ex11=1}>
+                Most Comments
+            </Link>
+            <Link item active={ex11===2} on:click={()=>ex11=2}>
+                Most Popular
+            </Link>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -411,33 +493,28 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- XXXX -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "XXXX" code = {Code.vertical}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Menu ui vertical>
+            <Link item teal={ex12===0} active={ex12===0} on:click={()=>ex12=0}>
+                Inbox
+                <Label ui teal left pointing>1</Label>
+            </Link>
+            <Link item teal={ex12===1} active={ex12===1} on:click={()=>ex12=1}>
+                Spam
+                <Label ui>51</Label>
+            </Link>
+            <Link item teal={ex12===2} active={ex12===2} on:click={()=>ex12=2}>
+                Updates
+              <Label ui>1</Label>
+            </Link>
+            <Item>
+                <Input ui transparent icon>
+                    <Input type="text" placeholder="Search mail..."/>
+                    <Icon search/>
+                </Input>
+            </Item>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

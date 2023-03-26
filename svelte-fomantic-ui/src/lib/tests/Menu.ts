@@ -277,6 +277,91 @@ const code = {
         Photos
     </Item>
 </Menu>
+    `,
+    attached_tabular: `
+<Segment ui top attached>
+    <p></p>
+</Segment>
+<Menu ui bottom attached tabular>
+    <Link item active={ex9===0} on:click={()=>ex9=0}>
+        Active Project
+    </Link>
+    <Link item active={ex9===1} on:click={()=>ex9=1}>
+         Project #2
+    </Link>
+    <Link item active={ex9===2} on:click={()=>ex9=2}>
+        Project #3
+    </Link>
+    <Menu right>
+        <Link item active={ex9===3} on:click={()=>ex9=3}>
+            <Icon add/> New Tab
+        </Link>
+    </Menu>
+</Menu>
+    `,
+    left_attached: `
+<Grid ui>
+    <Column four wide left attached>
+        <Menu ui vertical fluid tabular>
+            <Link item active={ex10===0} on:click={()=>ex10=0}>
+                Bio
+            </Link>
+            <Link item active={ex10===1} on:click={()=>ex10=1}>
+                Pics
+            </Link>
+            <Link item active={ex10===2} on:click={()=>ex10=2}>
+                Companies
+            </Link>
+            <Link item active={ex10===3} on:click={()=>ex10=3}>
+                Links
+            </Link>
+        </Menu>
+    </Column>
+    <Column twelve wide stretched right attached>
+        <Segment ui seamless right attached>
+            This is a stretched grid column. This segment will always match the tab height
+        </Segment>
+    </Column>
+</Grid>
+    `,
+    right_attached: `
+<Grid ui>
+    <Column twelve wide stretched left attached>
+        <Segment ui seamless left attached>
+            This is a stretched grid column. This segment will always match the tab height
+        </Segment>
+    </Column>
+    <Column four wide right attached>
+        <Menu ui vertical fluid right tabular>
+            <Link item active={ex10===0} on:click={()=>ex10=0}>
+                Bio
+            </Link>
+            <Link item active={ex10===1} on:click={()=>ex10=1}>
+                Pics
+            </Link>
+            <Link item active={ex10===2} on:click={()=>ex10=2}>
+                Companies
+            </Link>
+            <Link item active={ex10===3} on:click={()=>ex10=3}>
+                Links
+            </Link>
+        </Menu>
+    </Column>
+</Grid>
+    `,
+    text: `
+<Menu ui text>
+    <Item header>Sort By</Item>
+    <Link item active={ex11===0} on:click={()=>ex11=0}>
+        Closest
+    </Link>
+    <Link item active={ex11===1} on:click={()=>ex11=1}>
+        Most Comments
+    </Link>
+    <Link item active={ex11===2} on:click={()=>ex11=2}>
+        Most Popular
+    </Link>
+</Menu>
     `
 }
 
