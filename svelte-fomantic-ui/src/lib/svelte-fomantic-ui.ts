@@ -59,6 +59,9 @@ export function otherProps (restProps:{}):{} {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function serialize(obj:any)
 {
+    // let output = do_serialize(obj);
+    // console.log(output);
+    // return output;
     // Create a new object to hold the serialized version
     const serialized = {};
 
@@ -68,14 +71,18 @@ export function serialize(obj:any)
         {
             const val = obj[key];
             if (typeof val === 'function') {
+                // val = val.bind(obj);
                 // If the property is a function, convert it to a string
                 serialized[key] = val.toString();
+                // serialized[key] = val.bind(obj).toString();
             } else {
                 // Otherwise, add the property to the serialized object
                 serialized[key] = val;
             }
         }
     }
+
+    console.log(serialized);
 
     // Return the serialized object
     return JSON.stringify(serialized);

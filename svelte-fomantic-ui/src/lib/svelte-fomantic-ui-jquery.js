@@ -6,9 +6,7 @@
 // Load the various modules required by Fomantic UI.
 // ******************************************************************************************************************************************************
 import { tableSort } from './collections/Tablesort';
-
-
-
+import { encode, decode } from 'msgpack-javascript';
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -30,7 +28,17 @@ export const reload = function()
 
     $("[data-module_type]").each(function() {
         let moduleType = $(this).data("module_type");
-        let settings = deserialize($(this).data('settings'));
+        let serialized = $(this).attr('data-settings');
+        let settings;
+
+        console.log($(this));
+        if (moduleType === "menu"){
+            settings=decode(serialized);
+        }
+        else
+        {
+            settings=deserialize(serialized);
+        }
         console.log(moduleType, settings);
         switch (moduleType) {
             case "": break;
@@ -90,7 +98,6 @@ function construct_jquery_command(firstarg) {
     firstarg.commands.forEach ((command) => {
         jquery_command += "." + theType + "(\'" + command + "\')";
     })
-    console.log("JQuery", jquery_command);
 
     return jquery_command;
 }
@@ -107,13 +114,11 @@ export const behavior = function(...args) {
     if (typeof firstarg === 'object')
     {
         returnvalue = eval (construct_jquery_command(firstarg));
-        // console.log(returnvalue);
     }
     else {
         let id = firstarg;
         let command = $("#"+id).data("module_type");
         if (command && id && ($("#"+id)[command])) {
-            console.log("HERE", command);
             returnvalue = $("#"+id)[command](...args);
         }
     }
@@ -139,6 +144,7 @@ export const update = function (...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function deserialize(serialized)
 {
+    // return eval('(' + serialized + ')');    
     // Create a new object to hold the deserialized version
     const obj = {};
 

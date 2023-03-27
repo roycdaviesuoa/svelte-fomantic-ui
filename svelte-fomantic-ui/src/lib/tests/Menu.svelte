@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup, Button, Results } from "../svelte-fomantic-ui.svelte";
+    import { Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup, Button, Results } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
@@ -814,13 +814,13 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Popup" code = {Code.popup}>
 
-        <Menu ui popup settings={{position: "bottom left", onHide: ()=>{printMessage("here");}}}>
+        <Menu ui popup settings={{ position: "bottom left", hoverable: true, onHide : () => {printMessage("Hello World")}}}>
             <Link browse item>
                 Browse
                 <Icon dropdown/>
             </Link>
         </Menu>
-        <Popup ui fluid>
+        <Popup ui flowing>
             <Grid ui four column relaxed equal height divided>
                 <Column>
                     <Header ui h4>Fabrics</Header>

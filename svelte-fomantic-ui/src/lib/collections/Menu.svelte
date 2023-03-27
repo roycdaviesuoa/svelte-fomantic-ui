@@ -5,7 +5,8 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import { uiProps, otherProps } from "../svelte-fomantic-ui"
+    import { encode, decode } from 'msgpack-javascript';
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
 
@@ -21,6 +22,6 @@
     }
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={setSelected} on:change>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={encode(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={setSelected} on:change>
     <slot />
 </div>
