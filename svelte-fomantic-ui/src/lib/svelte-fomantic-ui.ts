@@ -54,8 +54,30 @@ export function otherProps (restProps:{}):{} {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-export function JQ(command) {
 
-    eval(command);
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+export function serialize(obj:any)
+{
+    // Create a new object to hold the serialized version
+    const serialized = {};
 
+    // Iterate over the object's properties
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) 
+        {
+            const val = obj[key];
+            if (typeof val === 'function') {
+                // If the property is a function, convert it to a string
+                serialized[key] = val.toString();
+            } else {
+                // Otherwise, add the property to the serialized object
+                serialized[key] = val;
+            }
+        }
+    }
+
+    // Return the serialized object
+    return JSON.stringify(serialized);
 }
+// ------------------------------------------------------------------------------------------------------------------------------------------------------

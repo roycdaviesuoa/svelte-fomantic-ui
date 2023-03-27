@@ -5,19 +5,10 @@
 //
 // Load the various modules required by Fomantic UI.
 // ******************************************************************************************************************************************************
-import loadCalendars from './modules/Calendar';
-import loadAccordions from './modules/Accordion';
-import loadDropdowns from './modules/Dropdown';
-import loadCheckboxes from './inputs/Checkbox';
-import loadForms from './collections/Form';
-import loadEmbeds from './modules/Embed';
-import loadProgresses from './modules/Progress';
-import loadPopups from './modules/Popup';
-import loadRatings from './modules/Rating';
-import loadModals from './modules/Modal';
-import loadSidebars from './modules/Sidebar';
-
 import { tableSort } from './collections/Tablesort';
+
+
+
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -34,39 +25,35 @@ $(() =>
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const reload = function()
 {
-    // THe ones that are not commented out have specific requirements for setting up, for example the calendar can pass in some special parameters
-    // for linking start and end calendars, whilst the embed doesn't want to be started on page load as it will take too much memory.
-    loadCalendars();
-    // loadAccordions();
-    // loadDropdowns();
-    // loadCheckboxes();
-    loadEmbeds();
-    loadProgresses();
-    // loadForms();
-    // loadPopups();
-    loadModals();
-    // loadSidebars();
-
     // Initialise the Tablesort code
     tableSort();
 
     $("[data-module_type]").each(function() {
         let moduleType = $(this).data("module_type");
-        // console.log($(this));
+        let settings = deserialize($(this).data('settings'));
+        console.log(moduleType, settings);
         switch (moduleType) {
-            case "":
+            case "": break;
             case "calendar" :
-            case "embed":
+                if (typeof settings === 'object' && (settings)) {
+                    if (settings.hasOwnProperty("startCalendar")) {
+                        settings.startCalendar = $("#"+settings.startCalendar);
+                    }
+                    if (settings.hasOwnProperty("endCalendar")) {
+                        settings.endCalendar = $("#"+settings.endCalendar);
+                    }
+                }
+                $(this)[moduleType](settings);
+                break;
             case "progress":
-            case "modal":
-            // case "sidebar":
-            // case "checkbox":
-            // case "popup":
+            case "embed":
+                let activate = this.attributes.activate?JSON.parse(this.attributes.activate.value):false;
+                if (activate) {
+                    $(this)[moduleType](settings);
+                }
                 break;
             default :
-                let settings=$(this).data('settings');
-                let jquery_command = "$(this)." + moduleType + '(' + (settings?JSON.stringify(settings):"") + ')';
-                eval(jquery_command);
+                $(this)[moduleType](settings);
                 break;
         }
     });
@@ -147,22 +134,30 @@ export const update = function (...args) {
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
+// This is called above when getting the settings.  Note that the Svelte parameter passing process has already converted it bcak from serialised object
+// to an object, but we still have to reconvert back the functions.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-export const copyToClipboard = function (str) {
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    const selected =
-        document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-    if (selected) {
-        document.getSelection().removeAllRanges();
-        document.getSelection().addRange(selected);
+function deserialize(serialized)
+{
+    // Create a new object to hold the deserialized version
+    const obj = {};
+
+    // Iterate over the serialized object's properties
+    for (const key in serialized) {
+        if (serialized.hasOwnProperty(key))
+        {
+            const val = serialized[key];
+            if (typeof val === 'string' && (val.startsWith('function') || (val.startsWith('(') && (val.indexOf('=>') > -1)))) {
+                // If the property is a function string, convert it back into a function
+                obj[key] = eval(`(${val})`);
+            } else {
+                // Otherwise, add the property to the deserialized object
+                obj[key] = val;
+            }
+        }
     }
+
+    // Return the deserialized object
+    return obj;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

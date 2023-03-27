@@ -5,15 +5,16 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean = false;
     export let checkbox: boolean = false;
     export let _for: string="";
+    export let settings = {};
     export let popup: boolean=false;
 </script>
 
 {#if _for}
-    <label class={(ui?"ui ":"") + uiProps($$restProps) + " label"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} for={_for}>
+    <label class={(ui?"ui ":"") + uiProps($$restProps) + " label"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} for={_for}>
         <slot />
     </label>
 {:else if checkbox}
@@ -22,7 +23,7 @@
         <slot />
     </label>
 {:else}
-    <div class={(ui?"ui ":"") + uiProps($$restProps) + " label"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div class={(ui?"ui ":"") + uiProps($$restProps) + " label"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

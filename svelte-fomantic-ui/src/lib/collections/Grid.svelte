@@ -7,7 +7,10 @@
 <script lang="ts">
     import {uiProps, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
-</script>
+    import 'fomantic-ui-css/semantic.css';
+    import 'fomantic-ui-css/semantic.js';
+    
+    </script>
 
 <div class={(ui?"ui ":"") + uiProps($$restProps) + " grid"} {...otherProps($$restProps)} on:click on:change>
     <slot />

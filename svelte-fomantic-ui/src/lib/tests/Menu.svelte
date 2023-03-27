@@ -63,6 +63,10 @@
     function ex3dosearch() {
         console.log("Search Initiated...");
     }
+
+    function printMessage(theMessage:string) {
+        console.log(theMessage);
+    }
 </script>
 
 
@@ -810,7 +814,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Popup" code = {Code.popup}>
 
-        <Menu ui popup settings={{position: "bottom left"}}>
+        <Menu ui popup settings={{position: "bottom left", onHide: ()=>{printMessage("here");}}}>
             <Link browse item>
                 Browse
                 <Icon dropdown/>

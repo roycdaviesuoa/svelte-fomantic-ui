@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
 
@@ -18,6 +18,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " sidebar"} data-settings={JSON.stringify(settings)} bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight data-module_type="sidebar" {...otherProps($$restProps)}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " sidebar"} data-settings={serialize(settings)} data-module_type="sidebar" bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight {...otherProps($$restProps)}>
     <slot />
 </div>

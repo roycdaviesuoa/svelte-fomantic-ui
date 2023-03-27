@@ -9,13 +9,30 @@
     import "./prism.css";
     import SourceCode from 'svelte-prism';
     import { Accordion, Content, Title, Menu, Icon, Text, Link } from "../svelte-fomantic-ui.svelte";
-    import { copyToClipboard } from "../svelte-fomantic-ui-jquery";
 
     export let title: string = "";
     export let code: string = "";
     export let narrow: boolean = false;
 
     let message="copy code to clipboard";
+
+    function copyToClipboard (str: string) {
+        const el = document.createElement('textarea');
+        el.value = str;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        const selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        if (selected)
+        {
+            document.getSelection().removeAllRanges();
+            document.getSelection().addRange(selected);
+        }
+    }
 </script>
 
 
