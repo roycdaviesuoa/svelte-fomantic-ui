@@ -64,8 +64,8 @@
         console.log("Search Initiated...");
     }
 
-    function printMessage(theMessage:string) {
-        console.log(theMessage);
+    function printMessage() {
+        console.log("hello world");
     }
 </script>
 
@@ -814,7 +814,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Popup" code = {Code.popup}>
 
-        <Menu ui popup settings={{hoverable: true, position: 'bottom left', onHide: function() {console.log("HERE");}}} >
+        <Menu ui popup settings={{hoverable: true, position: 'bottom left', onHide: printMessage}} >
             <Link browse item>
                 Browse
                 <Icon dropdown/>

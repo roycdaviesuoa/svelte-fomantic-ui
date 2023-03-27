@@ -5,12 +5,9 @@
 -->
 
 <script lang="ts">
-    import { uiProps, otherProps } from "../svelte-fomantic-ui"
-    import { encode, decode } from 'msgpack-javascript';
+    import { serialize, uiProps, otherProps } from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
-
-    import serialize from 'serialize-javascript';
 
     export let ui: boolean=false;
     export let selected: string = "";

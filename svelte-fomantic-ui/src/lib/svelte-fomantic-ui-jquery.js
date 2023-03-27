@@ -6,7 +6,6 @@
 // Load the various modules required by Fomantic UI.
 // ******************************************************************************************************************************************************
 import { tableSort } from './collections/Tablesort';
-import { encode, decode } from 'msgpack-javascript';
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,15 +30,14 @@ export const reload = function()
         let serialized = $(this).attr('data-settings');
         let settings;
 
-        console.log($(this));
         if (moduleType === "menu"){
-            settings=decode(serialized);
+            settings=eval('('+serialized+')');
+            console.log(moduleType, settings);
         }
         else
         {
             settings=deserialize(serialized);
         }
-        console.log(moduleType, settings);
         switch (moduleType) {
             case "": break;
             case "calendar" :
@@ -144,26 +142,27 @@ export const update = function (...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function deserialize(serialized)
 {
-    // return eval('(' + serialized + ')');    
-    // Create a new object to hold the deserialized version
-    const obj = {};
+    return (eval('(' + serialized + ")"));
 
-    // Iterate over the serialized object's properties
-    for (const key in serialized) {
-        if (serialized.hasOwnProperty(key))
-        {
-            const val = serialized[key];
-            if (typeof val === 'string' && (val.startsWith('function') || (val.startsWith('(') && (val.indexOf('=>') > -1)))) {
-                // If the property is a function string, convert it back into a function
-                obj[key] = eval(`(${val})`);
-            } else {
-                // Otherwise, add the property to the deserialized object
-                obj[key] = val;
-            }
-        }
-    }
+    // // Create a new object to hold the deserialized version
+    // const obj = {};
 
-    // Return the deserialized object
-    return obj;
+    // // Iterate over the serialized object's properties
+    // for (const key in serialized) {
+    //     if (serialized.hasOwnProperty(key))
+    //     {
+    //         const val = serialized[key];
+    //         if (typeof val === 'string' && (val.startsWith('function') || (val.startsWith('(') && (val.indexOf('=>') > -1)))) {
+    //             // If the property is a function string, convert it back into a function
+    //             obj[key] = eval('('+val+')');
+    //         } else {
+    //             // Otherwise, add the property to the deserialized object
+    //             obj[key] = val;
+    //         }
+    //     }
+    // }
+
+    // // Return the deserialized object
+    // return obj;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 // ******************************************************************************************************************************************************
 // * By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
 // ******************************************************************************************************************************************************
+import do_serialize from 'serialize-javascript';
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Convert the props that are sent into an svelte tag that are not named directly into a string that can be used as class attributes.
@@ -59,32 +60,31 @@ export function otherProps (restProps:{}):{} {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function serialize(obj:any)
 {
-    // let output = do_serialize(obj);
-    // console.log(output);
-    // return output;
-    // Create a new object to hold the serialized version
-    const serialized = {};
+    return do_serialize(obj);
 
-    // Iterate over the object's properties
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key)) 
-        {
-            const val = obj[key];
-            if (typeof val === 'function') {
-                // val = val.bind(obj);
-                // If the property is a function, convert it to a string
-                serialized[key] = val.toString();
-                // serialized[key] = val.bind(obj).toString();
-            } else {
-                // Otherwise, add the property to the serialized object
-                serialized[key] = val;
-            }
-        }
-    }
+    // // Create a new object to hold the serialized version
+    // const serialized = {};
 
-    console.log(serialized);
+    // // Iterate over the object's properties
+    // for (const key in obj) {
+    //     if (obj.hasOwnProperty(key)) 
+    //     {
+    //         const val = obj[key];
+    //         if (typeof val === 'function') {
+    //             // If the property is a function, convert it to a string
+    //             serialized[key] = val.toString();
+    //             console.log(serialized[key]);
+    //             // serialized[key] = val.bind(obj).toString();
+    //         } else {
+    //             // Otherwise, add the property to the serialized object
+    //             serialized[key] = val;
+    //         }
+    //     }
+    // }
 
-    // Return the serialized object
-    return JSON.stringify(serialized);
+    // console.log(serialized);
+
+    // // Return the serialized object
+    // return JSON.stringify(serialized);
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
