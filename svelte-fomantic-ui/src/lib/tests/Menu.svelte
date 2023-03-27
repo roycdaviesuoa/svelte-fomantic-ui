@@ -810,13 +810,13 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Popup" code = {Code.popup}>
 
-        <Menu ui popup settings={{position: "bottom left"}}>
+        <Menu ui popup settings={{hoverable: true, position: 'bottom left', onHide: function() {console.log("HERE");}}} >
             <Link browse item>
                 Browse
                 <Icon dropdown/>
             </Link>
         </Menu>
-        <Popup ui fluid>
+        <Popup ui flowing>
             <Grid ui four column relaxed equal height divided>
                 <Column>
                     <Header ui h4>Fabrics</Header>

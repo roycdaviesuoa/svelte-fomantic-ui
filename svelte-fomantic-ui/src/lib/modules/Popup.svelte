@@ -10,9 +10,10 @@
     import 'fomantic-ui-css/semantic.js';
 
     export let ui: boolean=false;
-    export let settings: object=null;
+    // export let settings: object=null;
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " popup"} data-settings={settings===null?null:JSON.stringify(settings)} data-module_type="popup" {...otherProps($$restProps)}>
-    <slot />
+<!-- <div class={(ui?"ui ":"") + uiProps($$restProps) + " popup"} data-settings={settings===null?null:JSON.stringify(settings)} data-module_type="popup" {...otherProps($$restProps)}> -->
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " popup"}  {...otherProps($$restProps)}>
+        <slot />
 </div>

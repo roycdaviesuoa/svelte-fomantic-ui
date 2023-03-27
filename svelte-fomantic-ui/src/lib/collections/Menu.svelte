@@ -9,6 +9,8 @@
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
 
+    import serialize from 'serialize-javascript';
+
     export let ui: boolean=false;
     export let selected: string = "";
     export let settings: object={};
@@ -22,6 +24,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={JSON.stringify(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={setSelected} on:change>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={setSelected} on:change>
     <slot />
 </div>

@@ -18,6 +18,9 @@ import loadModals from './modules/Modal';
 import loadSidebars from './modules/Sidebar';
 
 import { tableSort } from './collections/Tablesort';
+
+var global = window;
+
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -61,7 +64,10 @@ export const reload = function()
             case "modal":
             // case "sidebar":
             // case "checkbox":
-            // case "popup":
+            case "popup":
+                let popup_settings=$(this).data('settings');
+                let popup_jquery_command = "$(this)." + moduleType + '(' + popup_settings + ')';
+                eval(popup_jquery_command);
                 break;
             default :
                 let settings=$(this).data('settings');
