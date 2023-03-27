@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {uiProps, serialize} from "../svelte-fomantic-ui"
     export let ui: boolean = false;
     export let disabled: boolean = false;
     export let loading: boolean = false;
@@ -15,6 +15,7 @@
     export let big: boolean = false;
     export let link: boolean = false;
     export let id: string="";
+    export let settings: object={};
     export let popup: boolean=false;
 
     import { createEventDispatcher } from 'svelte';
@@ -28,12 +29,12 @@
 
 {#if link} 
     <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
-        data-emoji = {uiProps($$restProps)} on:click={doClick} on:keydown on:keyup on:keypress data-module_type={(popup?"popup":null)}> 
+        data-emoji = {uiProps($$restProps)} on:click={doClick} on:keydown on:keyup on:keypress data-settings={serialize(settings)} data-module_type={(popup?"popup":null)}> 
         <slot />
     </em>
 {:else}
     <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
-        data-emoji = {uiProps($$restProps)} data-module_type={(popup?"popup":null)}> 
+        data-emoji = {uiProps($$restProps)} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)}> 
         <slot />
     </em>
 {/if}

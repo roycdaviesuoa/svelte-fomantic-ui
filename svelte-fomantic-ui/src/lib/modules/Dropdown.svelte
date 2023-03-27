@@ -5,10 +5,10 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
-
+    
     export let ui: boolean=false;
     export let settings: object={};
     export let selected: string = "";
@@ -21,6 +21,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} data-settings={JSON.stringify(settings)}  data-module_type="dropdown" {...otherProps($$restProps)} on:click={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} data-settings={serialize(settings)} data-module_type="dropdown" {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

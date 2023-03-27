@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup, Button, Results } from "../svelte-fomantic-ui.svelte";
+    import { Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup, Button, Results } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
@@ -62,6 +62,10 @@
     }
     function ex3dosearch() {
         console.log("Search Initiated...");
+    }
+
+    function printMessage(theMessage:string) {
+        console.log(theMessage);
     }
 </script>
 

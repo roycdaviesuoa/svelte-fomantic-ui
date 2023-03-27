@@ -5,11 +5,13 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
     export let date: string = null;
     export let ui: boolean=false;
+    export let settings={};
+    export let popup: boolean=false;
 </script>
 
-<span data-date={date} class={(ui?"ui ":"") + uiProps($$restProps) + " date"} {...otherProps($$restProps)}>
+<span data-date={date} class={(ui?"ui ":"") + uiProps($$restProps) + " date"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
     <slot />
 </span>
