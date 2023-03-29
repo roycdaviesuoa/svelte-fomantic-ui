@@ -15,13 +15,14 @@
 <Examples
     title = "Accordion examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/accordion.html'>here</a>"
-    disclaimer = "The basic functionality is working, but the advanced controls are yet to be implemented.">
+    disclaimer = "The basic functionality is working, but the advanced controls are yet to be implemented."
+    code = {Code}>
     
   
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- A standard accordion -->
+    <!-- Standard -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A standard accordion" code = {Code.standard}>
+    <Example title = "Standard" code = {Code.standard}>
 
         <Accordion ui>
             <Title active>
@@ -56,7 +57,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Styled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A styled accordion" code = {Code.styled}>
+    <Example title = "Styled" code = {Code.styled}>
 
         <Accordion ui styled>
             <Title active>
@@ -91,7 +92,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Basic styled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A basic styled accordion" code = {Code.basic_styled}>
+    <Example title = "Basic styled" code = {Code.basic_styled}>
 
         <Accordion ui basic styled>
             <Title active>
@@ -126,7 +127,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Fluid styled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A fluid styled accordion" code = {Code.fluid_styled}>
+    <Example title = "Fluid styled" code = {Code.fluid_styled}>
 
         <Accordion ui fluid styled>
             <Title active>
@@ -161,7 +162,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Compact -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A compact accordion" code = {Code.compact}>
+    <Example title = "Compact" code = {Code.compact}>
     
         <Accordion ui compact>
             <Title active>
@@ -196,7 +197,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Very compact -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A very compact accordion" code = {Code.very_compact}>
+    <Example title = "Very compact" code = {Code.very_compact}>
     
         <Accordion ui very compact>
             <Title active>
@@ -231,7 +232,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Nested, styled and fluid -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Nested accordions, with style, and fluid" code = {Code.nested_styled_fluid}>
+    <Example title = "Nested styled fluid" code = {Code.nested_styled_fluid}>
 
         <Accordion ui styled fluid>
             <Title active>

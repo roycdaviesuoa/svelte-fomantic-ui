@@ -72,7 +72,8 @@
 
 <Examples
     title = "Menu examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/menu.html'>here</Link>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/menu.html'>here</Link>"
+    code = {Code}>
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -208,7 +209,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Secondary Menu -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Secondary Menu" code = {Code.secondary}>
+    <Example title = "Secondary" code = {Code.secondary}>
 
         <Menu ui secondary>
             <Item link active={ex4===0} on:click={()=>ex4=0} >

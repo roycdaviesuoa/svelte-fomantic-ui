@@ -6,14 +6,49 @@
 
 <script lang="ts">
     import "./prism.css";
+    import { Dropdown as DropdownSFU, Text as TextSFU, Icon as IconSFU, Grid, Column} from "../svelte-fomantic-ui.svelte";
+
     export let title: string = "";
     export let description: string = "";
     export let disclaimer: string = "";
+    export let code:{} = {};
+
+    let submenu: string = "";
+
+    function capitalizeAndReplace(original:string) {
+        // Capitalize first letter
+        let nice = original.charAt(0).toUpperCase() + original.slice(1);
+        // Replace underscores with spaces
+        nice = nice.replace(/_/g, " ");
+        return {name:nice, value:"_"+original};
+    }
+
+    function scrollToSection(id: string) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function submenu_chosen(e: any) {
+        console.log(e);
+        scrollToSection(e.detail.value);
+    }
+
+    console.log(Object.keys(code).map(capitalizeAndReplace));
 </script>
 
 
-<div class="example-document">
-    <h3 class="document-header">{@html title}</h3>
+
+<div id="_top" class="example-document">
+    <h3 class="document-header">{@html title}<br/>
+    {#if (Object.keys(code).length > 0)}
+        <DropdownSFU ui selection grey bind:selected={submenu} on:click={submenu_chosen} settings={{placeholder: "Choose Section", values: Object.keys(code).map(capitalizeAndReplace)}}>
+            <TextSFU/>
+            <IconSFU dropdown/>
+        </DropdownSFU>
+    {/if}
+    </h3>
     <div class="document-description">{@html description}</div>
     <div class="document-disclaimer">{@html disclaimer}</div>
     <slot/>

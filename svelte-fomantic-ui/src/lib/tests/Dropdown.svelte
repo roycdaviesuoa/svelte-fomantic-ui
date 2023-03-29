@@ -60,7 +60,7 @@
         <Dropdown ui settings={{
                 values: [
                     { name: 'Male', value: 'male' },
-                    { name     : 'Female', value    : 'female', selected : true }
+                    { name: 'Female', value: 'female', selected : true }
                 ]
             }}>
             <Text/>

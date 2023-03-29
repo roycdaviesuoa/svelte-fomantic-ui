@@ -14,7 +14,8 @@
 
 <Examples
     title = "Advertisement examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/views/advertisement.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/views/advertisement.html'>here</a>"
+    code = {Code}>
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

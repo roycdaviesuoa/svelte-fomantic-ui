@@ -14,7 +14,8 @@
 
 <Examples
     title = "Button examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/button.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/button.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Standard button -->
@@ -649,28 +650,6 @@
             <Button ui>Messages</Button>
             <Button ui>Events</Button>
             <Button ui>Photos</Button>
-        </Buttons>
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Icon buttons -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Icon buttons" code = {Code.icon_buttons2}>
-
-        <Buttons ui icon>
-            <Button ui><Icon align left/></Button>
-            <Button ui><Icon align center/></Button>
-            <Button ui><Icon align right/></Button>
-            <Button ui><Icon align justify/></Button>
-        </Buttons>
-        <Buttons ui icon>
-            <Button ui><Icon bold/></Button>
-            <Button ui><Icon underline/></Button>
-            <Button ui><Icon text width/></Button>
         </Buttons>
 
     </Example>

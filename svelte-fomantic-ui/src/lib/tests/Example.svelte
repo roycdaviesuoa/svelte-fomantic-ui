@@ -8,7 +8,7 @@
     import "./examplestyles.css";
     import "./prism.css";
     import SourceCode from 'svelte-prism';
-    import { Accordion, Content, Title, Menu, Icon, Text, Link } from "../svelte-fomantic-ui.svelte";
+    import { Accordion, Content, Title, Menu, Icon, Text, Link, Button } from "../svelte-fomantic-ui.svelte";
 
     export let title: string = "";
     export let code: string = "";
@@ -33,12 +33,31 @@
             document.getSelection().addRange(selected);
         }
     }
+
+    function deCapitalizeAndReplace(original:string) {
+        // Make lower case
+        let nice = original.toLowerCase();
+        // Replace spaces with underscores
+        nice = nice.replace(/ /g, "_");
+        return "_"+nice;
+    }
+
+    function scrollToSection(id: string) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 </script>
 
 
 {#if narrow}
-    <div class="example">
-        <h4 class="example-header">{title}</h4>
+    <div class="example" id={deCapitalizeAndReplace(title)} >
+        <h4 class="example-header">{title}
+            <Link ui icon left floated button tertiary data-tooltop="back to top" on:click={(e)=>{scrollToSection("_top")}}>
+                <Icon home/>
+            </Link>
+        </h4>
         <div class="centered">
             <div class="narrow">
                 <slot />
@@ -65,8 +84,13 @@
         </Accordion>
     </div>
 {:else}
-    <div class="example">
-        <h4 class="example-header">{title}</h4>
+    <div class="example" id={deCapitalizeAndReplace(title)}>
+        <h4 class="example-header">{title}
+            <Link ui icon left floated button tertiary data-tooltop="back to top" on:click={(e)=>{scrollToSection("_top")}}>
+                <Icon home/>
+            </Link>
+        </h4>
+
         <slot />
         <Accordion ui very compact>
             <Title>

@@ -382,19 +382,6 @@ const code = {
     <Button ui>Photos</Button>
 </Buttons>
     `,
-    icon_buttons2 : `
-<Buttons ui icon>
-    <Button ui><Icon align left/></Button>
-    <Button ui><Icon align center/></Button>
-    <Button ui><Icon align right/></Button>
-    <Button ui><Icon align justify/></Button>
-</Buttons>
-<Buttons ui icon>
-    <Button ui><Icon bold/></Button>
-    <Button ui><Icon underline/></Button>
-    <Button ui><Icon text width/></Button>
-</Buttons>
-    `,
     labeled_icon_buttons : `
 <Buttons ui vertical labeled icon>
     <Button ui>
