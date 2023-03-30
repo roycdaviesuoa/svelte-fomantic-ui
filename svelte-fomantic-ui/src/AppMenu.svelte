@@ -43,7 +43,7 @@
 </script>
 
 {#if isNarrow }
-    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui settings={{silent:true, dimPage: false, delaySetup: true, closable: false}}>
+    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui settings={{silent:false, dimPage: false, delaySetup: true, closable: false}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
     <Pusher style={pusherStyle}>

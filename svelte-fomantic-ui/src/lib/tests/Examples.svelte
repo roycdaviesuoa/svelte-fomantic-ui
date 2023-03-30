@@ -34,8 +34,6 @@
         console.log(e);
         scrollToSection(e.detail.value);
     }
-
-    console.log(Object.keys(code).map(capitalizeAndReplace));
 </script>
 
 

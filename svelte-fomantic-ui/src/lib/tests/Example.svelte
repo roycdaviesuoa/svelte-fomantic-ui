@@ -66,9 +66,9 @@
             <Title>
                 <Menu ui text>
                     <Menu right>
-                        <Link item data-tooltip="view source code" data-position="top right">
+                        <Button ui item data-tooltip="view source code" data-position="top right">
                             <Icon fitted chevron left small/><Text ui medium>/</Text><Icon fitted chevron right small/>
-                        </Link>
+                        </Button>
                     </Menu>
                 </Menu>
             </Title>
@@ -85,7 +85,9 @@
 {:else}
     <div class="example" id={deCapitalizeAndReplace(title)}>
         <h4 class="example-header">
-                <Button ui icon mini basic left floated style="margin-top: -5px;" data-position="top left" data-tooltip="back to top" on:click={(e)=>{scrollToSection("_top")}}><Icon home/></Button>
+                <Button ui icon mini basic left floated style="margin-top: -5px;" data-variation="basic" data-position="top left" data-tooltip="back to top" on:click={(e)=>{scrollToSection("_top")}}>
+                    <Icon home/>
+                </Button>
                 {title}
         </h4>
         <slot />
@@ -93,9 +95,9 @@
             <Title>
                 <Menu ui text>
                     <Menu right>
-                        <Link item data-tooltip="view source code" data-position="top right">
+                        <Button ui icon item data-tooltip="view source code" data-position="top right">
                             <Icon fitted chevron left small/><Text ui medium>/</Text><Icon fitted chevron right small/>
-                        </Link>
+                        </Button>
                     </Menu>
                 </Menu>
             </Title>
