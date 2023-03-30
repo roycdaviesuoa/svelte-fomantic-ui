@@ -14,8 +14,8 @@
 
 <Examples
     title = "Rail examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/rail.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/rail.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- External -->
@@ -130,7 +130,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Close and very close -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Close and very close" code = {Code.close} narrow>
+    <Example title = "Close" code = {Code.close} narrow>
 
         <Segment ui>
             <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>

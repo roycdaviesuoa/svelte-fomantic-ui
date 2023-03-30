@@ -16,8 +16,8 @@
 
 <Examples
     title = "Segment examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/segment.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/segment.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Segment -->
@@ -36,7 +36,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Placeholder segment -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Placeholder segment" code = {Code.placeholder}>
+    <Example title = "Placeholder" code = {Code.placeholder}>
 
         <Segment ui placeholder>
             <Header ui icon>
@@ -144,9 +144,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Vertical segment -->
+    <!-- Vertical -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Vertical segment" code = {Code.vertical}>
+    <Example title = "Vertical" code = {Code.vertical}>
 
         <Content>
             <Segment ui vertical>
@@ -239,9 +239,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Nested segments -->
+    <!-- Nested -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Nested segments" code = {Code.nested}>
+    <Example title = "Nested" code = {Code.nested}>
 
         <Segments ui>
             <Segment ui>
@@ -283,9 +283,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Horizontal segments -->
+    <!-- Horizontal -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Horizontal segments" code = {Code.horizontal}>
+    <Example title = "Horizontal" code = {Code.horizontal}>
 
         <Segments ui horizontal>
             <Segment ui>
@@ -319,7 +319,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Horizontal equal width segments -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Horizontal equal width segments" code = {Code.equal_width}>
+    <Example title = "Equal width" code = {Code.equal_width}>
 
         <Segments ui horizontal equal width>
             <Segment ui>
@@ -339,9 +339,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Horizontal stackable segments -->
+    <!-- Stackable -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Horizontal stackable segments" code = {Code.stackable}>
+    <Example title = "Stackable" code = {Code.stackable}>
 
         <Segments ui horizontal stackable>
             <Segment ui>

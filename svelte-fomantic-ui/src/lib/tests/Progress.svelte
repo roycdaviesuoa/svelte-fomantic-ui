@@ -18,13 +18,13 @@
 
 <Examples
     title = "Progress examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/progress.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/progress.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Activate on event -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Activate on event" code = {Code.on_event}>
+    <Example title = "Activate on event" code = {Code.activate_on_event}>
 
         <Button ui blue fluid on:click={()=>{update("example1"); example1_value = behavior("example1", "get percent")}}>Update</Button>
         <Progress ui teal data-percent={74} id="example1">
@@ -40,7 +40,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Activate on start -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Activate on start" code = {Code.on_start}>
+    <Example title = "On start" code = {Code.on_start}>
 
         <Progress ui activate teal data-percent={example2_value} id="example2">
             <Bar/>
@@ -55,7 +55,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- With javascript -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "With javascript" code = {Code.javascript}>
+    <Example title = "Javascript" code = {Code.javascript}>
 
         <Button ui blue fluid on:click={()=>{update("example3", {percent: 22}); example3_value = behavior("example3", "get percent")}}>Update</Button>
         <Progress ui activate teal id="example3">
@@ -71,7 +71,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Adding a total value -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Adding a total value" code = {Code.total_value}>
+    <Example title = "Total value" code = {Code.total_value}>
 
         <Grid ui>
             <Row two column>
@@ -94,7 +94,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Initializing with metadata -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Initializing with metadata" code = {Code.metadata}>
+    <Example title = "Metadata" code = {Code.metadata}>
 
         <Grid ui>
             <Row two column>

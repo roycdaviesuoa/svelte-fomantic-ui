@@ -14,11 +14,12 @@
 
 <Examples
     title = "Header examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/header.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/header.html'>here</a>"
+    code = {Code}>
 
   
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Page headers -->
+    <!-- Page header -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Page header" code = {Code.page_header}>
 

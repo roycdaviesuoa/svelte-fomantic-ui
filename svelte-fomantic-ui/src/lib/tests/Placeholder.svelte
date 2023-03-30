@@ -14,8 +14,8 @@
 
 <Examples
     title = "Placeholder examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/placeholder.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/placeholder.html'>here</a>"
+    code = {Code}>
     
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Standard -->
@@ -42,9 +42,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- More complex -->
+    <!-- Complex -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "More complex" code = {Code.complex}>
+    <Example title = "Complex" code = {Code.complex}>
 
         <Grid ui three column stackable>
             <Column>
@@ -96,9 +96,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Simulate Loading -->
+    <!-- Loading -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Simulate loading" code = {Code.loading}>
+    <Example title = "Loading" code = {Code.loading}>
 
         <Cards ui three doubling stackable>
             <Card ui>
@@ -133,7 +133,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Rectangular images -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Rectangular images" code = {Code.rectangular}>
+    <Example title = "Rectangular images" code = {Code.rectangular_images}>
 
         <Cards ui three>
             <Card ui>

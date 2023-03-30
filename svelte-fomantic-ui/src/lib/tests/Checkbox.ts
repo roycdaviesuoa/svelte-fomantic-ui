@@ -88,7 +88,7 @@ const code = {
 <Checkbox ui toggle bind:checked={subscribe} label={(subscribe?"S":"Don\'t s") + "ubscribe to weekly newsletter"}/>
 
     `,
-    readonly : `
+    read_only : `
 <Checkbox ui read-only label="Read Only"/>
     `,
     checked : `

@@ -29,13 +29,13 @@
 <Examples
     title = "Dropdown examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/dropdown.html'>here</a>"
-    disclaimer = "This is very much still a work-in-progress.">
-
+    disclaimer = "This is very much still a work-in-progress."
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Simple dropdown -->
+    <!-- Simple -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Simple Dropdown" code = {Code.simple}>
+    <Example title = "Simple" code = {Code.simple}>
 
         <Dropdown ui >
             <Input type="hidden" id="gender"/>
@@ -55,7 +55,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Dropdown using settings -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Dropdown using settings" code = {Code.settings}>
+    <Example title = "Sttings" code = {Code.settings}>
 
         <Dropdown ui settings={{
                 values: [
@@ -75,7 +75,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Changing settings after initialisation -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Changing settings after initialisation" code = {Code.change_after_initialisation}>
+    <Example title = "Change after initialisation" code = {Code.change_after_initialisation}>
 
         <Button ui on:click={()=>changeMenu("test")}>Click to change</Button>
         <Dropdown ui bind:selected={test} id="test" settings={{placeholder:"Gender", values:[{name:"Gender", type:"header"}, {name:"Male", value:"male"}, {name:"Female", value:"female"}, {name:"Not say", value:"notsay"}]}}>
@@ -91,7 +91,7 @@
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Changing settings after initialisation with formatting" code = {Code.change_with_formatting}>
+    <Example title = "Change with formatting" code = {Code.change_with_formatting}>
 
         <Button ui on:click={()=>changeMenu("test2")}>Click to change</Button>
 

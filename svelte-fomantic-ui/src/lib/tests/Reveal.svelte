@@ -16,8 +16,8 @@
 
 <Examples
     title = "Reveal examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/reveal.html'>here</a>">
-    
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/reveal.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Fade -->
@@ -96,7 +96,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Visible Content -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Visible Content" code = {Code.visible_content}>
+    <Example title = "Visible content" code = {Code.visible_content}>
 
         <Reveal ui small fade image>
             <Image visible content src="/images/ade.jpg"/>
@@ -111,7 +111,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Hidden Content -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Hidden Content" code = {Code.hidden_content}>
+    <Example title = "Hidden content" code = {Code.hidden_content}>
 
         <Reveal ui small fade image>
             <Image visible content src="/images/square-image.png"/>
@@ -124,9 +124,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Active / Disabled -->
+    <!-- Active Disabled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Active / Disabled" code = {Code.active_disabled}>
+    <Example title = "Active disabled" code = {Code.active_disabled}>
 
         <Button ui toggle bind:active={revealed} green>
             <Content slot="on">Hide</Content>

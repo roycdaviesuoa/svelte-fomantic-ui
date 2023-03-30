@@ -24,13 +24,13 @@
 
 <Examples
     title = "Embed examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/embed.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/embed.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Specifying a URL -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Specifying a URL" code = {Code.url}>
+    <Example title = "URL" code = {Code.url}>
 
         <Button ui fluid green attached top on:click={()=>update("bear")}>Enable</Button>
         <Embed ui id="bear" data-url="https://www.youtube.com/embed/O6Xo21L0ybE" data-placeholder="/images/bear-waving.jpg"/>
@@ -43,7 +43,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Activate on page load -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Activate on page load" code = {Code.activate}>
+    <Example title = "Activate" code = {Code.activate}>
 
         <Embed ui activate data-url="https://www.youtube.com/embed/O6Xo21L0ybE" data-placeholder="/images/bear-waving.jpg"/>
 

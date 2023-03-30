@@ -33,8 +33,8 @@
 
 <Examples
     title = "Modal examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/modal.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/modal.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Via javascript -->
@@ -52,7 +52,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Via existing DOM node -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Via existing DOM node" code = {Code.existing_dom}>
+    <Example title = "Existing DOM" code = {Code.existing_dom}>
 
         <Button ui fluid blue on:click={()=>{behavior("example2", "show")}}>Activate</Button>
 
@@ -82,7 +82,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Reuse existing DOM -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Reuse existing DOM" code = {Code.reuse_dom}>
+    <Example title = "Reuse DOM" code = {Code.reuse_dom}>
 
         <p>Note again here the use of behavior with an object rather than a set of parameters, but this time with an id.</p>
         <Button ui fluid green on:click={()=>{behavior({id: 'example3', commands: ['show', 'is active'], settings: example3}); console.log(behavior({id: 'example3', commands: ['can fit']}))}}>Activate</Button>

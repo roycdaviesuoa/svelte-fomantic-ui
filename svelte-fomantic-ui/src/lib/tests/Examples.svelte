@@ -43,7 +43,7 @@
 <div id="_top" class="example-document">
     <h3 class="document-header">{@html title}<br/>
     {#if (Object.keys(code).length > 0)}
-        <DropdownSFU ui selection grey bind:selected={submenu} on:click={submenu_chosen} settings={{placeholder: "Choose Section", values: Object.keys(code).map(capitalizeAndReplace)}}>
+        <DropdownSFU ui selection basic grey bind:selected={submenu} on:click={submenu_chosen} settings={{placeholder: "Choose Section", values: Object.keys(code).map(capitalizeAndReplace)}}>
             <TextSFU/>
             <IconSFU dropdown/>
         </DropdownSFU>

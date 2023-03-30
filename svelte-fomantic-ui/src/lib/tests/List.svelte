@@ -19,13 +19,13 @@
 
 <Examples
     title = "List examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/list.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/list.html'>here</a>"
+    code = {Code}>
   
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Basic lists -->
+    <!-- Basic -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Basic lists" code = {Code.basic}>
+    <Example title = "Basic" code = {Code.basic}>
 
         <List ui>
             <Item>Apples</Item>
@@ -226,7 +226,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Link -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Link" code = {Code.link1}>
+    <Example title = "Link" code = {Code.link}>
 
         <List ui link>
             <Item active>Home</Item>
@@ -336,9 +336,9 @@
 
       
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Link -->
+    <!-- Link lists -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Link" code = {Code.link2}>
+    <Example title = "Link lists" code = {Code.link_lists}>
 
         <List ui>
             <Link item>What is a FAQ?</Link>

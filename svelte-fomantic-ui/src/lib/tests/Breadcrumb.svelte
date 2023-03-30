@@ -14,13 +14,13 @@
 
 <Examples
     title = "Breadcrumb examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/breadcrumb.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/breadcrumb.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- A standard breadcrumb -->
+    <!-- Standard -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A standard breadcrumb" code = {Code.standard}>
+    <Example title = "Standard" code = {Code.standard}>
 
         <Breadcrumb ui>
             <Link section>Home</Link>

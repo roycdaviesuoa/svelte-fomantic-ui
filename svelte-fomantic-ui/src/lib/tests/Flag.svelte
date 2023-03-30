@@ -14,13 +14,14 @@
 
 <Examples
     title = "Flag examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/flag.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/flag.html'>here</a>"
+    code = {Code}>
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- Large flags-->
+    <!-- Large -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "Some large flags" code = {Code.large}>
+    <Example title = "Large" code = {Code.large}>
 
         <Flag ae large/>
         <Flag france large />

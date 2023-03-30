@@ -91,7 +91,7 @@ const code = {
     </Card>
 </Cards>
     `,
-    rectangular : `
+    rectangular_images : `
 <Cards ui three>
     <Card ui>
         <Content>

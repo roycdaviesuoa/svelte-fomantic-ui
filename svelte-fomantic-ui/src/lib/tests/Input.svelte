@@ -27,8 +27,8 @@
 
 <Examples
     title = "Input examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/input.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/input.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Input -->
@@ -45,7 +45,7 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- File -->
+    <!-- File input-->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "File input" code = {Code.file_input}>
 
@@ -168,9 +168,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Input types -->
+    <!-- Types -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Input types" code = {Code.types}>
+    <Example title = "Types" code = {Code.types}>
 
         <Input ui>
             <Input type="date" bind:value={date}/>

@@ -53,10 +53,9 @@
 
 {#if narrow}
     <div class="example" id={deCapitalizeAndReplace(title)} >
-        <h4 class="example-header">{title}
-            <Link ui icon left floated button tertiary data-tooltop="back to top" on:click={(e)=>{scrollToSection("_top")}}>
-                <Icon home/>
-            </Link>
+        <h4 class="example-header">
+            <Button ui icon mini basic left floated style="margin-top: -5px;" data-position="top left" data-tooltip="back to top" on:click={(e)=>{scrollToSection("_top")}}><Icon home/></Button>
+            {title}
         </h4>
         <div class="centered">
             <div class="narrow">
@@ -67,7 +66,7 @@
             <Title>
                 <Menu ui text>
                     <Menu right>
-                        <Link item data-tooltip="view source code">
+                        <Link item data-tooltip="view source code" data-position="top right">
                             <Icon fitted chevron left small/><Text ui medium>/</Text><Icon fitted chevron right small/>
                         </Link>
                     </Menu>
@@ -85,18 +84,16 @@
     </div>
 {:else}
     <div class="example" id={deCapitalizeAndReplace(title)}>
-        <h4 class="example-header">{title}
-            <Link ui icon left floated button tertiary data-tooltop="back to top" on:click={(e)=>{scrollToSection("_top")}}>
-                <Icon home/>
-            </Link>
+        <h4 class="example-header">
+                <Button ui icon mini basic left floated style="margin-top: -5px;" data-position="top left" data-tooltip="back to top" on:click={(e)=>{scrollToSection("_top")}}><Icon home/></Button>
+                {title}
         </h4>
-
         <slot />
         <Accordion ui very compact>
             <Title>
                 <Menu ui text>
                     <Menu right>
-                        <Link item data-tooltip="view source code">
+                        <Link item data-tooltip="view source code" data-position="top right">
                             <Icon fitted chevron left small/><Text ui medium>/</Text><Icon fitted chevron right small/>
                         </Link>
                     </Menu>

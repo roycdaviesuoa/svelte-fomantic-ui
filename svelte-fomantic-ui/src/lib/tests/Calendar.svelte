@@ -14,13 +14,13 @@
 
 <Examples
     title = "Calendar examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/calendar.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/calendar.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Interactive calendar -->
+    <!-- Interactive -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Interactive calendar" code = {Code.interactive}>
+    <Example title = "Interactive" code = {Code.interactive}>
 
         <Calendar ui>
             <Input ui fluid left icon>
@@ -35,9 +35,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Range calendar -->
+    <!-- Range -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Range calendar" code = {Code.range}>
+    <Example title = "Range" code = {Code.range}>
 
         <Form ui>
             <Fields two>
@@ -70,7 +70,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Range calendar with settings -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Range calendar with settings" code = {Code.range_settings}>
+    <Example title = "Range settings" code = {Code.range_settings}>
 
         <Form ui>
             <Fields two>
@@ -101,9 +101,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Inline calendar -->
+    <!-- Inline -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Inline calendar" code = {Code.inline}>
+    <Example title = "Inline" code = {Code.inline}>
 
         <Calendar ui settings={{inline: true}}/>
 
@@ -115,7 +115,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Interactive calendar with settings (3 month)-->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Interactive calendar with settings (3 month)" code = {Code.three_month}>
+    <Example title = "Three month" code = {Code.three_month}>
 
         <Calendar ui settings={{type: 'date', multiMonth: 3, monthOffset: -1}}>
             <Input ui fluid left icon>
@@ -130,9 +130,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Inverted calendar -->
+    <!-- Inverted -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Inverted calendar" code = {Code.inverted}>
+    <Example title = "Inverted" code = {Code.inverted}>
 
         <Calendar ui inverted settings={{type: 'date'}}>
             <Input ui fluid left icon>
@@ -147,9 +147,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Time calendar -->
+    <!-- Time -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Time calendar" code = {Code.time}>
+    <Example title = "Time" code = {Code.time}>
 
         <Calendar ui settings={{type: 'time'}}>
             <Input ui fluid left icon>
@@ -166,7 +166,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Parameters using HTML -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Parameters using html" code = {Code.html}>
+    <Example title = "Html" code = {Code.html}>
 
         <Calendar ui data-type="date" data-date={Date()}>
             <Input ui fluid left icon>
@@ -181,9 +181,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Year first calendar -->
+    <!-- Year first -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Year first calendar" code = {Code.year_first}>
+    <Example title = "Year first" code = {Code.year_first}>
 
         <Calendar ui settings={{startMode:"year"}}>
             <Input ui fluid left icon>
@@ -200,7 +200,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- 24 hour format -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "24 hour format" code = {Code.twenty_four_hour}>
+    <Example title = "Twenty four hour" code = {Code.twenty_four_hour}>
 
         <Calendar ui settings={{
             type: 'time',
@@ -221,9 +221,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Month and year calendar -->
+    <!-- Month and year -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Month and year calendar" code = {Code.month_and_year}>
+    <Example title = "Month and year" code = {Code.month_and_year}>
 
         <Calendar ui settings={{ type: 'month' }}>
             <Input ui fluid left icon>
@@ -238,9 +238,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Year calendar -->
+    <!-- Year -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Year calendar" code = {Code.year}>
+    <Example title = "Year" code = {Code.year}>
 
         <Calendar ui settings={{ type: 'year' }}>
             <Input ui fluid left icon>

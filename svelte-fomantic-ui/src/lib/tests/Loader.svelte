@@ -20,13 +20,13 @@
 
 <Examples
     title = "Loader examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/loader.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/loader.html'>here</a>"
+    code = {Code}>
   
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- A loader -->
+    <!-- Loader -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A loader" code = {Code.loader}>
+    <Example title = "Loader" code = {Code.loader}>
 
         <Segment ui>
             <br/><br/><br/>
@@ -82,9 +82,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Active / Disabled -->
+    <!-- Active Disabled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Active / Disabled" code = {Code.active_disabled}>
+    <Example title = "Active Disabled" code = {Code.active_disabled}>
 
         <Button ui toggle fluid bind:value={isActive} on:toggle={setActive} on_style="green">
             <Content slot="on">Active</Content>

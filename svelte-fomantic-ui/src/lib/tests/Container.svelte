@@ -14,13 +14,14 @@
 
 <Examples
     title = "Container Examples"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/container.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/container.html'>here</a>"
+    code = {Code}>
 
     
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- A text container -->
+    <!-- text container -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A text container" code = {Code.text_container}>
+    <Example title = "Text continaer" code = {Code.text_container}>
 
         <Container ui text>
             This is some text
@@ -32,9 +33,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Container with grids -->
+    <!-- Grid container -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Container with grids" code = {Code.grid_container}>
+    <Example title = "Grid container" code = {Code.grid_container}>
 
         <Container ui four column doubling stackable grid>
             <Column>

@@ -14,8 +14,8 @@
 
 <Examples
     title = "Popup examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/popup.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/popup.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Popup -->
@@ -84,7 +84,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Pre-existing -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Pre-existing" code = {Code.pre_existing}>
+    <Example title = "Pre existing" code = {Code.pre_existing}>
 
         <Card ui popup>
             <Image>
@@ -416,7 +416,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Colored with javascript -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Colored" code = {Code.colored_javascript}>
+    <Example title = "Colored javascript" code = {Code.colored_javascript}>
 
         <Buttons ui spaced compact wrapping>
             {#each ['Red', 'Orange', 'Yellow', 'Olive', 'Green', 'Teal', 'Blue', 'Violet', 'Purple', 'Pink', 'Brown', 'Gray', 'Black'] as color}
@@ -429,8 +429,5 @@
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
 
 </Examples>

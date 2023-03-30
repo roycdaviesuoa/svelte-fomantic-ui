@@ -176,7 +176,7 @@ const code = {
     <Link item>Review</Link>
 </List>
     `,
-    link1 : `
+    link : `
 <List ui link>
     <Item active>Home</Item>
     <Link item>About</Link>
@@ -252,7 +252,7 @@ const code = {
     </Item>
 </List>
     `,
-    link2 : `
+    link_lists : `
 <List ui>
     <Link item>What is a FAQ?</Link>
     <Link item>Who is our user?</Link>

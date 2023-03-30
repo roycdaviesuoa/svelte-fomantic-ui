@@ -16,7 +16,8 @@
 
 <Examples
     title = "Image examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/image.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/image.html'>here</a>"
+    code = {Code}>
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -223,9 +224,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Group size -->
+    <!-- Grouped size -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Group size" code = {Code.grouped_size}>
+    <Example title = "Grouped size" code = {Code.grouped_size}>
 
         <Images ui tiny>
             <Image src="/images/image.png"/>

@@ -15,8 +15,8 @@
 
 <Examples
     title = "Grid examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/grid.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/grid.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Grids -->
@@ -216,7 +216,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Left / Right attached -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Left / Right attached" code = {Code.attached}>
+    <Example title = "Attached" code = {Code.attached}>
 
         <Grid ui two column>
             <Column left attached><Box/></Column>
@@ -231,7 +231,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Row grouping -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Row grouping" code = {Code.grouping}>
+    <Example title = "Grouping" code = {Code.grouping}>
 
         <Grid ui four column>
             <Row two column>

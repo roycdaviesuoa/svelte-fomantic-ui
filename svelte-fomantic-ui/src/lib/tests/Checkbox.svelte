@@ -34,13 +34,13 @@
 
 <Examples
     title = "Checkbox, Radio, Toggle and Slider examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/checkbox.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/checkbox.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Interactive -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Interactive Checkbox" code = {Code.interactive} narrow>
+    <Example title = "Interactive" code = {Code.interactive} narrow>
 
         <Checkbox ui bind:group={visibility} value="select" label="Make selections visible"/>
         <p></p>
@@ -104,7 +104,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Individually selected -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Checkbox individually selected" code = {Code.individually_selected} narrow>
+    <Example title = "Individually selected" code = {Code.individually_selected} narrow>
 
         <Fields grouped>
             {#each moreItems as item}
@@ -148,7 +148,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Read only -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Read only" code = {Code.readonly} narrow>
+    <Example title = "Read only" code = {Code.read_only} narrow>
 
         <Checkbox ui read-only label="Read Only"/>
 
@@ -205,7 +205,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Centered -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Inverted" code = {Code.centered} narrow>
+    <Example title = "Centered" code = {Code.centered} narrow>
 
         <Segment ui inverted compact>
             <Checkbox ui inverted label="Inverted"/>

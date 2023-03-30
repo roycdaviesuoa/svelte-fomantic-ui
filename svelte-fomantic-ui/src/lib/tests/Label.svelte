@@ -16,13 +16,13 @@
 
 <Examples
     title = "Label examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/label.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/label.html'>here</a>"
+    code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Label -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A Label" code = {Code.label}>
+    <Example title = "Label" code = {Code.label}>
 
         <Label ui>
             <Icon mail/> 23
@@ -604,9 +604,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Icons on the right -->
+    <!-- Icons right -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Icons on the right" code = {Code.icons_right}>
+    <Example title = "Icons right" code = {Code.icons_right}>
 
         <Label ui right icon>
             Mail
@@ -651,9 +651,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Image -->
+    <!-- Images -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Image" code = {Code.images}>
+    <Example title = "Images" code = {Code.images}>
 
         <Link ui label>
             <Image ui right spaced avatar src="/images/elliot.jpg"/>
@@ -815,9 +815,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Basic tag -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Basic tag labels" code = {Code.basic_tag}>
+    <Example title = "Basic tag" code = {Code.basic_tag}>
 
         <Link ui basic tag label>Standard Tag</Link>
         <Link ui primary basic tag label>Primary</Link>

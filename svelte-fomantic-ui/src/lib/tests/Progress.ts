@@ -4,7 +4,7 @@
 
 
 const code = {
-    on_event : `
+    activate_on_event : `
 <script lang="ts">
     import { update, behavior, Progress, Label, Bar, Button, Grid, Row, Column } from "svelte-fomantic-ui";
 

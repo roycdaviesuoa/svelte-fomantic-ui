@@ -14,8 +14,8 @@
 
 <Examples
     title = "Table examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/table.html'>here</a>">
-
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/table.html'>here</a>"
+    code = {Code}>
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!-- Definition example -->
@@ -463,7 +463,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!-- Positive / negative states -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "Positive / Negative states" code = {Code.positive_negative}>
+    <Example title = "Positive Negative" code = {Code.positive_negative}>
 
         <Table ui celled>
             <Table_Head>
@@ -505,7 +505,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!-- Cell error state -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "Cell error state" code = {Code.error}>
+    <Example title = "Error" code = {Code.error}>
 
         <Table ui celled>
             <Table_Head>
@@ -757,7 +757,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!-- Colored and marked -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "Colored and marked" code = {Code.colored_marked}>
+    <Example title = "Colored marked" code = {Code.colored_marked}>
 
         <Table ui celled>
             <Table_Head>
@@ -1537,9 +1537,9 @@
 
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <!-- Colored -->
+    <!-- Colored Table -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "Colored" code = {Code.colored_table}>
+    <Example title = "Colored table" code = {Code.colored_table}>
 
         {#each ["red", "orange", "yellow", "olive", "green", "teal", "blue", "voilet", "purple", "pink", "grey", "black"] as color}
             <Table ui _={color}>
@@ -1685,7 +1685,7 @@
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!-- Full-width header / footer -->
     <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <Example title = "Full-width header / footer" code = {Code.full_width}>
+    <Example title = "Full-width" code = {Code.full_width}>
 
         <Table ui compact celled definition>
             <Table_Head full-width>

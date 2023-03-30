@@ -14,13 +14,14 @@
 
 <Examples
     title = "Divider examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/divider.html'>here</a>">
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/elements/divider.html'>here</a>"
+    code = {Code}>
 
     
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- A standard divider -->
+    <!-- Standard -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A standard divider" code = {Code.standard}>
+    <Example title = "Standard" code = {Code.standard}>
 
         <Placeholder ui> <Paragraph> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         <Divider ui/>
@@ -32,9 +33,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Vertical divider -->
+    <!-- Vertical -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "A vertical divider" code = {Code.vertical}>
+    <Example title = "Vertical" code = {Code.vertical}>
 
         <Segment ui>
             <Grid ui two column very relaxed>
@@ -54,9 +55,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Stackable grid vertical divider -->
+    <!-- Stackable vertical grid -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Stackable grid vertical divider" code = {Code.stackable_vertical_grid}>
+    <Example title = "Stackable vertical grid" code = {Code.stackable_vertical_grid}>
 
         <Segment ui placeholder>
             <Grid ui two column very relaxed stackable>

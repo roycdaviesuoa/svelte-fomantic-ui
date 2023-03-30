@@ -5,13 +5,6 @@
     /* max-width: 1424px; */
 }
 
-.document-header-side {
-    background-color: lightgrey;
-    padding:20px;
-    margin-bottom:20px;
-    text-align: center;
-}
-
 .document-header {
     background-color: lightgrey;
     width: 100%;
@@ -71,6 +64,7 @@
 .example-header {
     background-color: rgb(244, 244, 244);
     padding:20px;
+    padding-top: 20px;
     margin-bottom:20px;
     margin-left:-50px;
     margin-right:-50px;
