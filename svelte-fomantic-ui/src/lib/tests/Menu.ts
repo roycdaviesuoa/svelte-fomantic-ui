@@ -876,6 +876,239 @@ const code = {
         </Link>
     </Menu>
 {/each}
+    `,
+    icon: `
+<Menu ui icon labeled>
+    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+        <Link item active={ex29===i} on:click={()=>ex29=i}>
+            <Icon _={icon.i}/>
+            {icon.n}
+        </Link>
+    {/each}
+</Menu>
+
+<Menu ui icon vertical labeled>
+    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+        <Link item active={ex29===i} on:click={()=>ex29=i}>
+            <Icon _={icon.i}/>
+            {icon.n}
+        </Link>
+    {/each}
+</Menu>
+    `,
+    labeled_icon: `
+<Menu ui icon labeled>
+    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+        <Link item active={ex29===i} on:click={()=>ex29=i}>
+            <Icon _={icon.i}/>
+            {icon.n}
+        </Link>
+    {/each}
+</Menu>
+
+<Menu ui icon vertical labeled>
+    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+        <Link item active={ex29===i} on:click={()=>ex29=i}>
+            <Icon _={icon.i}/>
+            {icon.n}
+        </Link>
+    {/each}
+</Menu>
+    `,
+    fluid: `
+<Menu ui fluid vertical>
+    <Link item active={ex30===0} on:click={()=>ex30=0}>Run</Link>
+    <Link item active={ex30===1} on:click={()=>ex30=1}>Walk</Link>
+    <Link item active={ex30===2} on:click={()=>ex30=2}>Bike</Link>
+</Menu>
+    `,
+    compact: `
+<Menu ui compact>
+    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+        <Link item active={ex31===i} on:click={()=>ex31=i}>
+            <Icon _={icon.i}/>
+            {icon.n}
+        </Link>
+    {/each}
+</Menu>
+
+<Menu ui compact labeled vertical icon>
+    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+        <Link item active={ex31===i} on:click={()=>ex31=i}>
+            <Icon _={icon.i}/>
+            {icon.n}
+        </Link>
+    {/each}
+</Menu>
+    `,
+    evenly_divided: `
+<Menu ui fluid three item>
+    <Link item active={ex32===0} on:click={()=>ex32=0}>Buy</Link>
+    <Link item active={ex32===1} on:click={()=>ex32=1}>Sell</Link>
+    <Link item active={ex32===2} on:click={()=>ex32=2}>Rent</Link>
+</Menu>
+    `,
+    attached: `
+<Menu ui top attached tabular>
+    <Link item active={ex33===0} on:click={()=>ex33=0}>
+        Tab 1
+    </Link>
+    <Link item active={ex33===1} on:click={()=>ex33=1}>
+        Tab 2
+    </Link>
+</Menu>
+<Segment ui bottom attached>
+    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+</Segment>
+
+<Menu ui top attached>
+    <Link item active={ex34===0} on:click={()=>ex34=0}>
+        Section 1
+    </Link>
+    <Link item active={ex34===1} on:click={()=>ex34=1}>
+        Section 2
+    </Link>
+</Menu>
+<Segment ui attached>
+    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+</Segment>
+<Menu ui bottom attached>
+    <Link item active={ex35===0} on:click={()=>ex35=0}>
+        Section 1
+    </Link>
+    <Link item active={ex35===1} on:click={()=>ex35=1}>
+        Section 2
+    </Link>
+</Menu>
+    `,
+    size: `
+{#each ["mini", "tiny", "small", "large", "huge", "massive"] as size}
+    <Menu ui _={size}>
+        <Link item active={ex36===0} on:click={()=>ex36=0}>
+        Home
+        </Link>
+        <Link item active={ex36===1} on:click={()=>ex36=1}>
+            Messages
+        </Link>
+        <Menu right>
+            <Dropdown ui item>
+                Language <Icon dropdown/>
+                <Menu>
+                    <Link item active={ex36===2} on:click={()=>ex36=2}>English</Link>
+                    <Link item active={ex36===3} on:click={()=>ex36=3}>Russian</Link>
+                    <Link item active={ex36===4} on:click={()=>ex36=4}>Spanish</Link>
+                </Menu>
+            </Dropdown>
+            <Item>
+                <Button ui primary>Sign Up</Button>
+            </Item>
+        </Menu>
+    </Menu>
+{/each}
+
+{#each ["mini", "tiny", "small", "large", "huge", "massive"] as size}
+    <Menu ui vertical _={size}>
+        <Link item teal={ex37===0} active={ex37===0} on:click={()=>ex37=0}>
+            Inbox
+            <Label ui teal left pointing>1</Label>
+        </Link>
+        <Link item teal={ex37===1} active={ex37===1} on:click={()=>ex37=1}>
+            Spam
+            <Label ui>51</Label>
+        </Link>
+        <Link item teal={ex37===2} active={ex37===2} on:click={()=>ex37=2}>
+            Updates
+            <Label ui>1</Label>
+        </Link>
+        <Item>
+            <Input ui transparent icon>
+                <Input type="text" placeholder="Search mail..."/>
+                <Icon search/>
+            </Input>
+        </Item>
+    </Menu>
+{/each}
+    `,
+    fitted: `
+<Menu ui>
+    <Item fitted>
+        No padding whatsoever
+    </Item>
+    <Item horizontally fitted>
+        No horizontal padding
+    </Item>
+    <Item vertically fitted>
+        No vertical padding
+    </Item>
+</Menu>
+    `,
+    borderless: `
+<Menu ui borderless>
+    <Link item active={ex38===0} on:click={()=>ex38=0}>1</Link>
+    <Link item active={ex38===1} on:click={()=>ex38=1}>2</Link>
+    <Link item active={ex38===2} on:click={()=>ex38=2}>3</Link>
+    <Link item active={ex38===3} on:click={()=>ex38=3}>4</Link>
+    <Link item active={ex38===4} on:click={()=>ex38=4}>5</Link>
+    <Link item active={ex38===5} on:click={()=>ex38=5}>6</Link>
+</Menu>
+    `,
+    centered: `
+<Menu ui centered>
+    <Link bug popup icon item active={ex39===0} on:click={()=>ex39=0}>
+        <Icon edit/>
+    </Link>
+    <Link bug popup icon item active={ex39===1} on:click={()=>ex39=1}>
+        <Icon bug/>
+    </Link>
+    <Link github popup icon item active={ex39===2} on:click={()=>ex39=2}>
+        <Icon alternate github/>
+    </Link>
+</Menu>
+
+<Menu ui centered pagination>
+    <Link active={ex40===0} on:click={()=>ex40=0} item>
+        1
+    </Link>
+    <Link disabled item>
+        ...
+    </Link>
+    <Link active={ex40===1} on:click={()=>ex40=1} item>
+        10
+    </Link>
+    <Link active={ex40===2} on:click={()=>ex40=2} item>
+        11
+    </Link>
+    <Link active={ex40===3} on:click={()=>ex40=3} item>
+        12
+    </Link>
+</Menu>
+    `,
+    centered_fluid: `
+<Menu ui centered fluid>
+    <Link bug popup icon item active={ex41===0} on:click={()=>ex41=0}>
+        <Icon edit/>
+    </Link>
+    <Link bug popup icon item active={ex41===1} on:click={()=>ex41=1}>
+        <Icon bug/>
+    </Link>
+    <Link github popup icon item active={ex41===2} on:click={()=>ex41=2}>
+        <Icon alternate github/>
+    </Link>
+</Menu>
+    `,
+    wrapping: `
+<Menu ui inverted green wrapping>
+    {#each ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"] as count, i}
+        <Link item active={ex42===i} on:click={()=>ex42=i}>{count}</Link>
+    {/each}
+</Menu>
+    `,
+    centered_fluid_wrapping: `
+<Menu ui inverted centered fluid wrapping blue>
+    {#each ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"] as count, i}
+        <Link item active={ex43===i} on:click={()=>ex43=i}>{count}</Link>
+    {/each}
+</Menu>
     `
 }
 

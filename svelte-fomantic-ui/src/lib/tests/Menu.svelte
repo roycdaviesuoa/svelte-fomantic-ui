@@ -10,42 +10,10 @@
     import Examples from "./Examples.svelte";
     import Code from './Menu';
 
-    let ex1 = 0;
-    let ex4 = 0;
-    let ex5 = 0;
-    let ex6 = 0;
-    let ex7 = 0;
-    let ex8 = 0;
-    let ex9 = 0;
-    let ex10 = 0;
-    let ex11 = 0;
-    let ex12 = 0;
-    let ex13 = 0;
-    let ex14 = 0;
-    let ex15 = 0;
-    let ex16 = 0;
-    let ex17 = 0;
-    let ex18 = 0;
-    let ex19 = 0;
-    let ex20 = 0;
-    let ex21 = 0;
-    let ex22 = 0;
-    let ex23 = 0;
-    let ex24 = 0;
-    let ex25 = 0;
-    let ex26 = 0;
-    let ex27: number[] = new Array(12);
-    let ex28 = 0;
-    let ex29 = 0;
-    let ex30 = 0;
-    let ex31 = 0;
-    let ex32 = 0;
-    let ex33 = 0;
-    let ex34 = 0;
-    let ex35 = 0;
-    let ex36 = 0;
-    let ex37 = 0;
-    let ex38 = 0;
+    let ex1 = 0; let ex4 = 0; let ex5 = 0; let ex6 = 0; let ex7 = 0; let ex8 = 0; let ex9 = 0; let ex10 = 0; let ex11 = 0; let ex12 = 0; let ex13 = 0; let ex14 = 0; let ex15 = 0; let ex16 = 0;
+    let ex17 = 0; let ex18 = 0; let ex19 = 0; let ex20 = 0; let ex21 = 0; let ex22 = 0; let ex23 = 0; let ex24 = 0; let ex25 = 0; let ex26 = 0; let ex27: number[] = new Array(12);
+    let ex28 = 0; let ex29 = 0; let ex30 = 0; let ex31 = 0; let ex32 = 0; let ex33 = 0; let ex34 = 0; let ex35 = 0; let ex36 = 0; let ex37 = 0; let ex38 = 0; let ex39 = 0; let ex40 = 0; let ex41 = 0;
+    let ex42 = 0; let ex43 = 0;
 
     let ex3search = "";
     let ex4search = "";
@@ -1416,17 +1384,17 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Borderless -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.borderless}>
+    <Example title = "Borderless" code = {Code.borderless}>
 
         <Menu ui borderless>
-            <Link item>1</Link>
-            <Link item>2</Link>
-            <Link item>3</Link>
-            <Link item>4</Link>
-            <Link item>5</Link>
-            <Link item>6</Link>
+            <Link item active={ex38===0} on:click={()=>ex38=0}>1</Link>
+            <Link item active={ex38===1} on:click={()=>ex38=1}>2</Link>
+            <Link item active={ex38===2} on:click={()=>ex38=2}>3</Link>
+            <Link item active={ex38===3} on:click={()=>ex38=3}>4</Link>
+            <Link item active={ex38===4} on:click={()=>ex38=4}>5</Link>
+            <Link item active={ex38===5} on:click={()=>ex38=5}>6</Link>
         </Menu>
 
     </Example>
@@ -1440,31 +1408,31 @@
     <Example title = "Centered" code = {Code.centered}>
 
         <Menu ui centered>
-            <Link bug popup icon item>
+            <Link bug popup icon item active={ex39===0} on:click={()=>ex39=0}>
                 <Icon edit/>
             </Link>
-            <Link bug popup icon item>
+            <Link bug popup icon item active={ex39===1} on:click={()=>ex39=1}>
                 <Icon bug/>
             </Link>
-            <Link github popup icon item>
+            <Link github popup icon item active={ex39===2} on:click={()=>ex39=2}>
                 <Icon alternate github/>
             </Link>
         </Menu>
 
         <Menu ui centered pagination>
-            <Link active item>
+            <Link active={ex40===0} on:click={()=>ex40=0} item>
                 1
             </Link>
-            <Link disab;ed item>
+            <Link disabled item>
                 ...
             </Link>
-            <Link item>
+            <Link active={ex40===1} on:click={()=>ex40=1} item>
                 10
             </Link>
-            <Link item>
+            <Link active={ex40===2} on:click={()=>ex40=2} item>
                 11
             </Link>
-            <Link item>
+            <Link active={ex40===3} on:click={()=>ex40=3} item>
                 12
             </Link>
         </Menu>
@@ -1480,13 +1448,13 @@
     <Example title = "Centered fluid" code = {Code.centered_fluid}>
 
         <Menu ui centered fluid>
-            <Link bug popup icon item>
+            <Link bug popup icon item active={ex41===0} on:click={()=>ex41=0}>
                 <Icon edit/>
             </Link>
-            <Link bug popup icon item>
+            <Link bug popup icon item active={ex41===1} on:click={()=>ex41=1}>
                 <Icon bug/>
             </Link>
-            <Link github popup icon item>
+            <Link github popup icon item active={ex41===2} on:click={()=>ex41=2}>
                 <Icon alternate github/>
             </Link>
         </Menu>
@@ -1502,26 +1470,9 @@
     <Example title = "Wrapping" code = {Code.wrapping}>
 
         <Menu ui inverted green wrapping>
-            <Link active item>One</Link>
-            <Link item>Two</Link>
-            <Link item>Three</Link>
-            <Link item>Four</Link>
-            <Link item>Five</Link>
-            <Link item>Six</Link>
-            <Link item>Seven</Link>
-            <Link item>Eight</Link>
-            <Link item>Nine</Link>
-            <Link item>Ten</Link>
-            <Link item>Eleven</Link>
-            <Link item>Twelve</Link>
-            <Link item>Thirteen</Link>
-            <Link item>Fourteen</Link>
-            <Link item>Fifteen</Link>
-            <Link item>Sixteen</Link>
-            <Link item>Seventeen</Link>
-            <Link item>Eighteen</Link>
-            <Link item>Nineteen</Link>
-            <Link item>Twenty</Link>
+            {#each ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"] as count, i}
+                <Link item active={ex42===i} on:click={()=>ex42=i}>{count}</Link>
+            {/each}
         </Menu>
 
     </Example>
@@ -1535,26 +1486,9 @@
     <Example title = "Centered fluid wrapping" code = {Code.centered_fluid_wrapping}>
 
         <Menu ui inverted centered fluid wrapping blue>
-            <Link active item>One</Link>
-            <Link item>Two</Link>
-            <Link item>Three</Link>
-            <Link item>Four</Link>
-            <Link item>Five</Link>
-            <Link item>Six</Link>
-            <Link item>Seven</Link>
-            <Link item>Eight</Link>
-            <Link item>Nine</Link>
-            <Link item>Ten</Link>
-            <Link item>Eleven</Link>
-            <Link item>Twelve</Link>
-            <Link item>Thirteen</Link>
-            <Link item>Fourteen</Link>
-            <Link item>Fifteen</Link>
-            <Link item>Sixteen</Link>
-            <Link item>Seventeen</Link>
-            <Link item>Eighteen</Link>
-            <Link item>Nineteen</Link>
-            <Link item>Twenty</Link>
+            {#each ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"] as count, i}
+                <Link item active={ex43===i} on:click={()=>ex43=i}>{count}</Link>
+            {/each}
         </Menu>
 
     </Example>
