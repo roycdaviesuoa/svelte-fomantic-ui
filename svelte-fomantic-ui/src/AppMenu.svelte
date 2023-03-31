@@ -13,6 +13,7 @@
 
     import { afterUpdate, onMount, onDestroy } from 'svelte';
     afterUpdate(() => { reload(); });
+    onMount(() => { handleResize(); });
 
     let windowWidth = window.innerWidth;
     let currentPage: any = Home;
@@ -22,7 +23,7 @@
     let isNarrow: boolean= false;
     let narrowWidth = 768;
 
-    const handleResize = () => { windowWidth = window.innerWidth; };
+    const handleResize = () => { windowWidth = window.innerWidth - 25; console.log(windowWidth); };
     onMount(() => { window.addEventListener('resize', handleResize); });
     onDestroy(() => { window.removeEventListener('resize', handleResize); });
 
@@ -37,13 +38,14 @@
             mainmenu_open = !mainmenu_open;
             behavior("mainmenu_mobile", mainmenu_open?"show":"hide");
         }
+        handleResize();
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
 </script>
 
 {#if isNarrow }
-    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui settings={{silent:false, dimPage: false, delaySetup: true, closable: false}}>
+    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui settings={{silent:false, dimPage: false, delaySetup: true, closable: true}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
     <Pusher style={pusherStyle}>

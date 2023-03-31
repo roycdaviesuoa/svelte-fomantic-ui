@@ -592,7 +592,7 @@ const code = {
         <Icon dropdown/>
     </Link>
 </Menu>
-<Popup ui fluid>
+<Popup ui flowing>
     <Grid ui four column relaxed equal height divided>
         <Column>
             <Header ui h4>Fabrics</Header>
@@ -631,6 +631,171 @@ const code = {
         </Column>
     </Grid>
 </Popup>
+    `,
+    fixed: `
+<Menu ui top fixed>
+    <Item>
+        <Image src="/images/logo.png"/>
+    </Item>
+    <Link item>Features</Link>
+    <Link item>Testimonials</Link>
+    <Link item>Sign-in</Link>
+</Menu>
+<Segment>
+    <Placeholder ui>
+        <Header image>
+            <Line/>
+            <Line/>
+        </Header>
+        <Paragraph>
+            <Line/>
+            <Line/>
+            <Line/>
+            <Line/>
+            <Line/>
+        </Paragraph>
+    </Placeholder>            
+</Segment>
+<Menu ui bottom fixed>
+    <Item>
+        <Image src="/images/logo.png"/>
+    </Item>
+    <Link item>Features</Link>
+    <Link item>Testimonials</Link>
+    <Link item>Sign-in</Link>
+</Menu>
+    `,
+    stackable: `
+<Menu ui stackable>
+    <Item>
+        <Image src="/images/logo.png"/>
+    </Item>
+    <Link active={ex25===0} on:click={()=>ex25=0} item>
+        Features
+    </Link>
+    <Link active={ex25===1} on:click={()=>ex25=1} item>
+        Testimonials
+    </Link>
+    <Link active={ex25===2} on:click={()=>ex25=2} item>
+        Sign-in
+    </Link>
+</Menu>
+    `,
+    inverted: `
+<Menu ui inverted>
+    <Link active={ex24===0} on:click={()=>ex24=0} item>
+        Home
+    </Link>
+    <Link active={ex24===1} on:click={()=>ex24=1} item>
+        Messages
+    </Link>
+    <Link active={ex24===2} on:click={()=>ex24=2} item>
+        Friends
+    </Link>
+</Menu>
+
+<Menu ui inverted vertical>
+    <Link active={ex24===0} on:click={()=>ex24=0} item>
+        Home
+    </Link>
+    <Link active={ex24===1} on:click={()=>ex24=1} item>
+        Messages
+    </Link>
+    <Link active={ex24===2} on:click={()=>ex24=2} item>
+        Friends
+    </Link>
+</Menu>
+
+<Menu ui inverted vertical pointing>
+    <Link active={ex24===0} on:click={()=>ex24=0} item>
+        Home
+    </Link>
+    <Link active={ex24===1} on:click={()=>ex24=1} item>
+        Messages
+    </Link>
+    <Link active={ex24===2} on:click={()=>ex24=2} item>
+        Friends
+    </Link>
+</Menu>
+
+<Segment ui inverted>
+    <Menu ui inverted secondary>
+        <Link active={ex24===0} on:click={()=>ex24=0} item>
+            Home
+        </Link>
+        <Link active={ex24===1} on:click={()=>ex24=1} item>
+            Messages
+        </Link>
+        <Link active={ex24===2} on:click={()=>ex24=2} item>
+            Friends
+        </Link>
+    </Menu>
+</Segment>
+
+<Segment ui inverted>
+    <Menu ui inverted secondary pointing>
+        <Link active={ex24===0} on:click={()=>ex24=0} item>
+            Home
+        </Link>
+        <Link active={ex24===1} on:click={()=>ex24=1} item>
+            Messages
+        </Link>
+        <Link active={ex24===2} on:click={()=>ex24=2} item>
+            Friends
+        </Link>
+    </Menu>
+</Segment>
+    `,
+    colored: `
+<Menu ui six item>
+    {#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal"] as color, i}
+        <Link _={color.toLowerCase()} item active={ex26===i} on:click={()=>ex26=i}>{color}</Link>
+    {/each}
+</Menu>
+<Menu ui six item>
+    {#each ["Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, j}
+        <Link _={color.toLowerCase()} item active={ex26===(j+6)} on:click={()=>ex26=(j+6)}>{color}</Link>
+    {/each}
+</Menu>
+
+{#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal", "Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, k}
+    <Menu ui  _={color.toLowerCase()} three item>
+        <Link active={ex27[k]===0} on:click={()=>ex27[k]=0} item>
+            Home
+        </Link>
+        <Link active={ex27[k]===1} on:click={()=>ex27[k]=1} item>
+            Messages
+        </Link>
+        <Link active={ex27[k]===2} on:click={()=>ex27[k]=2} item>
+            Friends
+        </Link>
+    </Menu>
+{/each}
+
+<Menu ui six item inverted>
+    {#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal"] as color, i}
+        <Link _={color.toLowerCase()} item active={ex26===i} on:click={()=>ex26=i}>{color}</Link>
+    {/each}
+</Menu>
+<Menu ui six item inverted>
+    {#each ["Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, j}
+        <Link _={color.toLowerCase()} item active={ex26===(j+6)} on:click={()=>ex26=(j+6)}>{color}</Link>
+    {/each}
+</Menu>
+
+{#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal", "Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, k}
+    <Menu ui  _={color.toLowerCase()} three item inverted>
+        <Link active={ex27[k]===0} on:click={()=>ex27[k]=0} item>
+            Home
+        </Link>
+        <Link active={ex27[k]===1} on:click={()=>ex27[k]=1} item>
+            Messages
+        </Link>
+        <Link active={ex27[k]===2} on:click={()=>ex27[k]=2} item>
+            Friends
+        </Link>
+    </Menu>
+{/each}
     `
 }
 

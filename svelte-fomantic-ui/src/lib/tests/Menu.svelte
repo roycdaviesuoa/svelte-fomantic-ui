@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Menu, Item, Image, Icon, Link, Dropdown, Grid, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup, Button, Results } from "../svelte-fomantic-ui.svelte";
+    import { Menu, Item, Image, Icon, Link, Dropdown, Grid, Embed, Column, Header, List, Text, Placeholder, Line, Paragraph, Segment, Divider, Input, Label, Popup, Button, Results } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Menu';
@@ -34,7 +34,7 @@
     let ex24 = 0;
     let ex25 = 0;
     let ex26 = 0;
-    let ex27 = 0;
+    let ex27: number[] = new Array(12);
     let ex28 = 0;
     let ex29 = 0;
     let ex30 = 0;
@@ -1001,11 +1001,15 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Fixed -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Fixed" code = {Code.fixed}>
 
-
+        <Embed ui activate data={{url : "/Menu_fixed"}}/>
+        <br/>
+        <Divider ui/>
+        <br/>
+        <Embed ui activate data={{url : "/Menu_fixed_vertical"}}/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1013,11 +1017,24 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Stackable -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Stackable" code = {Code.stackable}>
 
-
+        <Menu ui stackable>
+            <Item>
+                <Image src="/images/logo.png"/>
+            </Item>
+            <Link active={ex25===0} on:click={()=>ex25=0} item>
+                Features
+            </Link>
+            <Link active={ex25===1} on:click={()=>ex25=1} item>
+                Testimonials
+            </Link>
+            <Link active={ex25===2} on:click={()=>ex25=2} item>
+                Sign-in
+            </Link>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1025,11 +1042,73 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Inverted -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Inverted" code = {Code.inverted}>
 
+        <Menu ui inverted>
+            <Link active={ex24===0} on:click={()=>ex24=0} item>
+                Home
+            </Link>
+            <Link active={ex24===1} on:click={()=>ex24=1} item>
+                Messages
+            </Link>
+            <Link active={ex24===2} on:click={()=>ex24=2} item>
+                Friends
+            </Link>
+        </Menu>
 
+        <Menu ui inverted vertical>
+            <Link active={ex24===0} on:click={()=>ex24=0} item>
+                Home
+            </Link>
+            <Link active={ex24===1} on:click={()=>ex24=1} item>
+                Messages
+            </Link>
+            <Link active={ex24===2} on:click={()=>ex24=2} item>
+                Friends
+            </Link>
+        </Menu>
+
+        <Menu ui inverted vertical pointing>
+            <Link active={ex24===0} on:click={()=>ex24=0} item>
+                Home
+            </Link>
+            <Link active={ex24===1} on:click={()=>ex24=1} item>
+                Messages
+            </Link>
+            <Link active={ex24===2} on:click={()=>ex24=2} item>
+                Friends
+            </Link>
+        </Menu>
+
+        <Segment ui inverted>
+            <Menu ui inverted secondary>
+                <Link active={ex24===0} on:click={()=>ex24=0} item>
+                    Home
+                </Link>
+                <Link active={ex24===1} on:click={()=>ex24=1} item>
+                    Messages
+                </Link>
+                <Link active={ex24===2} on:click={()=>ex24=2} item>
+                    Friends
+                </Link>
+            </Menu>
+        </Segment>
+
+        <Segment ui inverted>
+            <Menu ui inverted secondary pointing>
+                <Link active={ex24===0} on:click={()=>ex24=0} item>
+                    Home
+                </Link>
+                <Link active={ex24===1} on:click={()=>ex24=1} item>
+                    Messages
+                </Link>
+                <Link active={ex24===2} on:click={()=>ex24=2} item>
+                    Friends
+                </Link>
+            </Menu>
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1037,11 +1116,59 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Colored -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Colored" code = {Code.colored}>
 
+        <Menu ui six item>
+            {#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal"] as color, i}
+                <Link _={color.toLowerCase()} item active={ex26===i} on:click={()=>ex26=i}>{color}</Link>
+            {/each}
+        </Menu>
+        <Menu ui six item>
+            {#each ["Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, j}
+                <Link _={color.toLowerCase()} item active={ex26===(j+6)} on:click={()=>ex26=(j+6)}>{color}</Link>
+            {/each}
+        </Menu>
 
+        {#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal", "Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, k}
+            <Menu ui  _={color.toLowerCase()} three item>
+                <Link active={ex27[k]===0} on:click={()=>ex27[k]=0} item>
+                    Home
+                </Link>
+                <Link active={ex27[k]===1} on:click={()=>ex27[k]=1} item>
+                    Messages
+                </Link>
+                <Link active={ex27[k]===2} on:click={()=>ex27[k]=2} item>
+                    Friends
+                </Link>
+            </Menu>
+        {/each}
+
+        <Menu ui six item inverted>
+            {#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal"] as color, i}
+                <Link _={color.toLowerCase()} item active={ex26===i} on:click={()=>ex26=i}>{color}</Link>
+            {/each}
+        </Menu>
+        <Menu ui six item inverted>
+            {#each ["Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, j}
+                <Link _={color.toLowerCase()} item active={ex26===(j+6)} on:click={()=>ex26=(j+6)}>{color}</Link>
+            {/each}
+        </Menu>
+
+        {#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal", "Blue", "Violet", "Purple", "Pink", "Brown", "Grey"] as color, k}
+            <Menu ui  _={color.toLowerCase()} three item inverted>
+                <Link active={ex27[k]===0} on:click={()=>ex27[k]=0} item>
+                    Home
+                </Link>
+                <Link active={ex27[k]===1} on:click={()=>ex27[k]=1} item>
+                    Messages
+                </Link>
+                <Link active={ex27[k]===2} on:click={()=>ex27[k]=2} item>
+                    Friends
+                </Link>
+            </Menu>
+        {/each}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
