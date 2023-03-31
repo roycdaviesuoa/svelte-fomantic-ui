@@ -12,8 +12,8 @@
     export let popup: boolean = false;
 
     import { createEventDispatcher } from 'svelte';
-
     const dispatch = createEventDispatcher();
+
 
     function doClick(event) {
         dispatch('click', {id: id, target:event.target})

@@ -41,6 +41,11 @@
     let ex31 = 0;
     let ex32 = 0;
     let ex33 = 0;
+    let ex34 = 0;
+    let ex35 = 0;
+    let ex36 = 0;
+    let ex37 = 0;
+    let ex38 = 0;
 
     let ex3search = "";
     let ex4search = "";
@@ -911,7 +916,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Sub menu -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Sub menu" code = {Code.submenu}>
+    <Example title = "Submenu" code = {Code.submenu}>
 
         <Menu ui vertical>
             <Item>
@@ -1176,11 +1181,234 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Icon -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Icon" code = {Code.icon}>
+
+        <Menu ui icon>
+            {#each ['gamepad', 'video camera', 'play'] as icon, i}
+                <Link item active={ex28===i} on:click={()=>ex28=i}>
+                    <Icon _={icon}/>
+                </Link>
+            {/each}
+        </Menu>
+
+        <Menu ui icon vertical>
+            {#each ['gamepad', 'video camera', 'play'] as icon, i}
+                <Link item active={ex28===i} on:click={()=>ex28=i}>
+                    <Icon _={icon}/>
+                </Link>
+            {/each}
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Labeled icon -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Labeled icon" code = {Code.labeled_icon}>
+
+        <Menu ui icon labeled>
+            {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+                <Link item active={ex29===i} on:click={()=>ex29=i}>
+                    <Icon _={icon.i}/>
+                    {icon.n}
+                </Link>
+            {/each}
+        </Menu>
+
+        <Menu ui icon vertical labeled>
+            {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+                <Link item active={ex29===i} on:click={()=>ex29=i}>
+                    <Icon _={icon.i}/>
+                    {icon.n}
+                </Link>
+            {/each}
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Fluid -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Fluid" code = {Code.fluid}>
+
+        <Menu ui fluid vertical>
+            <Link item active={ex30===0} on:click={()=>ex30=0}>Run</Link>
+            <Link item active={ex30===1} on:click={()=>ex30=1}>Walk</Link>
+            <Link item active={ex30===2} on:click={()=>ex30=2}>Bike</Link>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Compact -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Compact" code = {Code.compact}>
+
+        <Menu ui compact>
+            {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+                <Link item active={ex31===i} on:click={()=>ex31=i}>
+                    <Icon _={icon.i}/>
+                    {icon.n}
+                </Link>
+            {/each}
+        </Menu>
+        <br/><br/>
+        <Menu ui compact labeled vertical icon>
+            {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
+                <Link item active={ex31===i} on:click={()=>ex31=i}>
+                    <Icon _={icon.i}/>
+                    {icon.n}
+                </Link>
+            {/each}
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Evenly divided -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Evenly divided" code = {Code.evenly_divided}>
+
+        <Menu ui fluid three item>
+            <Link item active={ex32===0} on:click={()=>ex32=0}>Buy</Link>
+            <Link item active={ex32===1} on:click={()=>ex32=1}>Sell</Link>
+            <Link item active={ex32===2} on:click={()=>ex32=2}>Rent</Link>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Attached -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Attached" code = {Code.attached}>
+
+        <Menu ui top attached tabular>
+            <Link item active={ex33===0} on:click={()=>ex33=0}>
+                Tab 1
+            </Link>
+            <Link item active={ex33===1} on:click={()=>ex33=1}>
+                Tab 2
+            </Link>
+        </Menu>
+        <Segment ui bottom attached>
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </Segment>
+
+        <Menu ui top attached>
+            <Link item active={ex34===0} on:click={()=>ex34=0}>
+                Section 1
+            </Link>
+            <Link item active={ex34===1} on:click={()=>ex34=1}>
+                Section 2
+            </Link>
+        </Menu>
+        <Segment ui attached>
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </Segment>
+        <Menu ui bottom attached>
+            <Link item active={ex35===0} on:click={()=>ex35=0}>
+                Section 1
+            </Link>
+            <Link item active={ex35===1} on:click={()=>ex35=1}>
+                Section 2
+            </Link>
+        </Menu>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Size -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Size" code = {Code.size}>
+
+        {#each ["mini", "tiny", "small", "large", "huge", "massive"] as size}
+            <Menu ui _={size}>
+                <Link item active={ex36===0} on:click={()=>ex36=0}>
+                Home
+                </Link>
+                <Link item active={ex36===1} on:click={()=>ex36=1}>
+                    Messages
+                </Link>
+                <Menu right>
+                    <Dropdown ui item>
+                        Language <Icon dropdown/>
+                        <Menu>
+                            <Link item active={ex36===2} on:click={()=>ex36=2}>English</Link>
+                            <Link item active={ex36===3} on:click={()=>ex36=3}>Russian</Link>
+                            <Link item active={ex36===4} on:click={()=>ex36=4}>Spanish</Link>
+                        </Menu>
+                    </Dropdown>
+                    <Item>
+                        <Button ui primary>Sign Up</Button>
+                    </Item>
+                </Menu>
+            </Menu>
+        {/each}
+        <br/><br/>
+        {#each ["mini", "tiny", "small", "large", "huge", "massive"] as size}
+        <Menu ui vertical _={size}>
+            <Link item teal={ex37===0} active={ex37===0} on:click={()=>ex37=0}>
+                Inbox
+                <Label ui teal left pointing>1</Label>
+            </Link>
+            <Link item teal={ex37===1} active={ex37===1} on:click={()=>ex37=1}>
+                Spam
+                <Label ui>51</Label>
+            </Link>
+            <Link item teal={ex37===2} active={ex37===2} on:click={()=>ex37=2}>
+                Updates
+                <Label ui>1</Label>
+            </Link>
+            <Item>
+                <Input ui transparent icon>
+                    <Input type="text" placeholder="Search mail..."/>
+                    <Icon search/>
+                </Input>
+            </Item>
+        </Menu>
+    {/each}
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Fitted -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Fitted" code = {Code.fitted}>
+
+        <Menu ui>
+            <Item fitted>
+                No padding whatsoever
+            </Item>
+            <Item horizontally fitted>
+                No horizontal padding
+            </Item>
+            <Item vertically fitted>
+                No vertical padding
+            </Item>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1190,21 +1418,16 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- XXXX -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "XXXX" code = {Code.borderless}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Menu ui borderless>
+            <Link item>1</Link>
+            <Link item>2</Link>
+            <Link item>3</Link>
+            <Link item>4</Link>
+            <Link item>5</Link>
+            <Link item>6</Link>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1212,11 +1435,39 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Centered -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Centered" code = {Code.centered}>
 
+        <Menu ui centered>
+            <Link bug popup icon item>
+                <Icon edit/>
+            </Link>
+            <Link bug popup icon item>
+                <Icon bug/>
+            </Link>
+            <Link github popup icon item>
+                <Icon alternate github/>
+            </Link>
+        </Menu>
 
+        <Menu ui centered pagination>
+            <Link active item>
+                1
+            </Link>
+            <Link disab;ed item>
+                ...
+            </Link>
+            <Link item>
+                10
+            </Link>
+            <Link item>
+                11
+            </Link>
+            <Link item>
+                12
+            </Link>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1224,11 +1475,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Centered fluid -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Centered fluid" code = {Code.centered_fluid}>
 
-
+        <Menu ui centered fluid>
+            <Link bug popup icon item>
+                <Icon edit/>
+            </Link>
+            <Link bug popup icon item>
+                <Icon bug/>
+            </Link>
+            <Link github popup icon item>
+                <Icon alternate github/>
+            </Link>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1236,11 +1497,32 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Wrapping -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Wrapping" code = {Code.wrapping}>
 
-
+        <Menu ui inverted green wrapping>
+            <Link active item>One</Link>
+            <Link item>Two</Link>
+            <Link item>Three</Link>
+            <Link item>Four</Link>
+            <Link item>Five</Link>
+            <Link item>Six</Link>
+            <Link item>Seven</Link>
+            <Link item>Eight</Link>
+            <Link item>Nine</Link>
+            <Link item>Ten</Link>
+            <Link item>Eleven</Link>
+            <Link item>Twelve</Link>
+            <Link item>Thirteen</Link>
+            <Link item>Fourteen</Link>
+            <Link item>Fifteen</Link>
+            <Link item>Sixteen</Link>
+            <Link item>Seventeen</Link>
+            <Link item>Eighteen</Link>
+            <Link item>Nineteen</Link>
+            <Link item>Twenty</Link>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1248,102 +1530,34 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Centered fluid wrapping -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Centered fluid wrapping" code = {Code.centered_fluid_wrapping}>
 
-
+        <Menu ui inverted centered fluid wrapping blue>
+            <Link active item>One</Link>
+            <Link item>Two</Link>
+            <Link item>Three</Link>
+            <Link item>Four</Link>
+            <Link item>Five</Link>
+            <Link item>Six</Link>
+            <Link item>Seven</Link>
+            <Link item>Eight</Link>
+            <Link item>Nine</Link>
+            <Link item>Ten</Link>
+            <Link item>Eleven</Link>
+            <Link item>Twelve</Link>
+            <Link item>Thirteen</Link>
+            <Link item>Fourteen</Link>
+            <Link item>Fifteen</Link>
+            <Link item>Sixteen</Link>
+            <Link item>Seventeen</Link>
+            <Link item>Eighteen</Link>
+            <Link item>Nineteen</Link>
+            <Link item>Twenty</Link>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
 
 </Examples>
-
-<style>
-</style>

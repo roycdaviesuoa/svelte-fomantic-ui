@@ -23,7 +23,7 @@
     let isNarrow: boolean= false;
     let narrowWidth = 768;
 
-    const handleResize = () => { windowWidth = window.innerWidth - 25; console.log(windowWidth); };
+    const handleResize = () => { windowWidth = window.innerWidth - 25; };
     onMount(() => { window.addEventListener('resize', handleResize); });
     onDestroy(() => { window.removeEventListener('resize', handleResize); });
 

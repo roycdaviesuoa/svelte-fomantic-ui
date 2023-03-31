@@ -632,6 +632,86 @@ const code = {
     </Grid>
 </Popup>
     `,
+    search: `
+<Menu ui>
+    <Item ui category search>
+        <Input ui transparent icon>
+            <Input class="prompt" type="text" placeholder="Search animals..."/>
+            <Icon search link/>
+        </Input>
+        <Results></Results>
+    </Item>
+</Menu>
+<Segment ui>
+    <p></p>
+</Segment>
+    `,
+    menu: `
+<Menu ui>
+    <Link item active={ex21===0} on:click={()=>ex21=0}>Browse</Link>
+    <Link item active={ex21===1} on:click={()=>ex21=1}>Submit</Link>
+    <Menu right>
+        <Link item active={ex21===2} on:click={()=>ex21=2}>Sign Up</Link>
+        <Link item active={ex21===3} on:click={()=>ex21=3}>Help</Link>
+    </Menu>
+</Menu>
+    `,
+    submenu: `
+<Menu ui vertical>
+    <Item>
+        <Input ui>
+            <Input type="text" placeholder="Search..."/>
+        </Input>
+    </Item>
+    <Item>
+        Home
+        <Menu>
+            <Link item active={ex22===0} on:click={()=>ex22=0}>Search</Link>
+            <Link item active={ex22===1} on:click={()=>ex22=1}>Add</Link>
+            <Link item active={ex22===2} on:click={()=>ex22=2}>Remove</Link>
+        </Menu>
+    </Item>
+    <Link item active={ex22===3} on:click={()=>ex22=3}>
+        <Icon grid layout/> Browse
+    </Link>
+    <Link item active={ex22===4} on:click={()=>ex22=4}>
+        Messages
+    </Link>
+    <Dropdown ui item>
+        More
+        <Icon dropdown/>
+        <Menu>
+            <Link item active={ex22===5} on:click={()=>ex22=5}><i class="edit icon"></i> Edit Profile</Link>
+            <Link item active={ex22===6} on:click={()=>ex22=6}><i class="globe icon"></i> Choose Language</Link>
+            <Link item active={ex22===7} on:click={()=>ex22=7}><i class="settings icon"></i> Account Settings</Link>
+        </Menu>
+    </Dropdown>
+</Menu>
+    `,
+    hover: `
+<Menu ui compact>
+    <Link item active={ex23===0} on:click={()=>ex23=0}>
+        A link
+    </Link>
+    <Item link active={ex23===1} on:click={()=>ex23=1}>
+        div Link
+    </Item>
+</Menu>
+    `,
+    active: `
+<Menu ui compact>
+    <Item disabled>
+        Link
+    </Item>
+</Menu>
+    `,
+    disabled: `
+<Menu ui compact>
+    <Item disabled>
+        Link
+    </Item>
+</Menu>
+    `,
     fixed: `
 <Menu ui top fixed>
     <Item>
