@@ -34,11 +34,9 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
-    "flatted": "^3.2.7",
     "fomantic-ui": "^2.9.2",
     "fomantic-ui-css": "^2.9.2",
     "jquery": "^3.6.4",
-    "serialize-javascript": "^6.0.1",
     "svelte-preprocess": "^5.0.3",
     "svelte-prism": "^1.1.6",
     "vite-plugin-svelte": "^3.0.1"

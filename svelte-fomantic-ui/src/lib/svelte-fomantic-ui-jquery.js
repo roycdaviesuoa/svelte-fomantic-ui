@@ -25,22 +25,18 @@ export const reload = function()
     // Initialise the Tablesort code
     tableSort();
 
+    // Find each element that has a dete-module_type value - these are all the ones that need initialising
     $("[data-module_type]").each(function() {
+        // Grab the module type
         let moduleType = $(this).data("module_type");
+        // Grab the settings, if there are any
         let serialized = $(this).attr('data-settings');
-        let settings;
+        // Deserialize the settings
+        let settings = deserialize(serialized);
 
-        if (moduleType === "menu"){
-            settings=eval('('+serialized+')');
-            console.log(moduleType, settings);
-        }
-        else
-        {
-            settings=deserialize(serialized);
-        }
         switch (moduleType) {
-            case "": break;
-            case "calendar" :
+            case "": break; // Sometimes, there may be elements with blank module names
+            case "calendar" : // We have to do something special for calendar
                 if (typeof settings === 'object' && (settings)) {
                     if (settings.hasOwnProperty("startCalendar")) {
                         settings.startCalendar = $("#"+settings.startCalendar);
@@ -51,14 +47,18 @@ export const reload = function()
                 }
                 $(this)[moduleType](settings);
                 break;
-            case "progress":
+            case "accordion":
+                console.log("Accordion ", settings);
+                $(this)[moduleType](settings);
+                break;
+            case "progress": // Progress and Embed have the ability to activate on load
             case "embed":
                 let activate = this.attributes.activate?JSON.parse(this.attributes.activate.value):false;
                 if (activate) {
                     $(this)[moduleType](settings);
                 }
                 break;
-            default :
+            default : // Everything else
                 $(this)[moduleType](settings);
                 break;
         }
@@ -155,27 +155,27 @@ export const update = function (...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function deserialize(serialized)
 {
-    return (eval('(' + serialized + ")"));
+    let deserialized = JSON.parse(serialized);
 
-    // // Create a new object to hold the deserialized version
-    // const obj = {};
+    // Create a new object to hold the deserialized version
+    const obj = {};
 
-    // // Iterate over the serialized object's properties
-    // for (const key in serialized) {
-    //     if (serialized.hasOwnProperty(key))
-    //     {
-    //         const val = serialized[key];
-    //         if (typeof val === 'string' && (val.startsWith('function') || (val.startsWith('(') && (val.indexOf('=>') > -1)))) {
-    //             // If the property is a function string, convert it back into a function
-    //             obj[key] = eval('('+val+')');
-    //         } else {
-    //             // Otherwise, add the property to the deserialized object
-    //             obj[key] = val;
-    //         }
-    //     }
-    // }
+    // Iterate over the serialized object's properties
+    for (const key in deserialized) {
+        if (deserialized.hasOwnProperty(key))
+        {
+            const val = deserialized[key];
+            if (typeof val === 'string' && (val.startsWith('function') || (val.startsWith('(') && (val.indexOf('=>') > -1)))) {
+                // If the property is a function string, convert it back into a function
+                obj[key] = eval('('+val+')');
+            } else {
+                // Otherwise, add the property to the deserialized object
+                obj[key] = val;
+            }
+        }
+    }
 
-    // // Return the deserialized object
-    // return obj;
+    // Return the deserialized object
+    return obj;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

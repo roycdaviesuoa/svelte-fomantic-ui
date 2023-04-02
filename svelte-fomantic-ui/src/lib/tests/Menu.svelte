@@ -38,7 +38,7 @@
     }
 
     function printMessage() {
-        console.log("hello world");
+        console.log("This is the beginning of the end.");
     }
 </script>
 

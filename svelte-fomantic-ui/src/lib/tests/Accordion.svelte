@@ -235,18 +235,18 @@
     <Example title = "Nested styled fluid" code = {Code.nested_styled_fluid}>
 
         <Accordion ui styled fluid>
-            <Title active>
+            <Title>
                 <Icon dropdown/>
                 Level 1
             </Title>
-            <Content active>
+            <Content>
                 Welcome to level 1
                 <Accordion>
-                    <Title active>
+                    <Title>
                         <Icon dropdown/>
                         Level 1A
                     </Title>
-                    <Content active>
+                    <Content>
                         <p>Level 1A Contents</p>
                         <Accordion>
                             <Title>
@@ -288,11 +288,11 @@
             <Content>
                 <p>Welcome to level 2</p>
                 <Accordion>
-                    <Title active>
+                    <Title>
                     <Icon dropdown/>
                     Level 2A
                     </Title>
-                    <Content active>
+                    <Content>
                     <p>Level 2A Contents</p>
                         <Accordion>
                             <Title>
@@ -351,7 +351,7 @@
                         <Input placeholder="Last Name"/>
                     </Field>
                 </Fields>
-                <Field ui accordion>
+                <Accordion ui field>
                     <Title>
                     <Icon dropdown/>
                         Optional Details
@@ -360,7 +360,7 @@
                         <Label>Maiden Name</Label>
                         <Input placeholder="Maiden Name"/>
                     </Field>
-                </Field>
+                </Accordion>
                 <Button ui secondary submit>Sign Up</Button>
             </Form>
         </Segment>
