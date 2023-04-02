@@ -78,10 +78,16 @@ export const reload = function()
 // {id: "example1", commands: ['show'], settings:{ ... various parameters ...}}
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function construct_jquery_command(firstarg) {
+    // Jquery commands always begin with a $
     var jquery_command = "$";
+
+    // If there is an id parameter, then the jquery command is for a specific element.  Sometime, though it is a general setup,
+    // in which case there is no id
     if (firstarg.hasOwnProperty("id")) {
         jquery_command += "(\'#" + firstarg.id + "\')";
     }
+
+    // Now we need to find the type, ie the sort of element, eg modal or accordion
     let theType = "";
     if (firstarg.hasOwnProperty("id")) {
         theType = $("#"+firstarg.id).data("module_type");
@@ -92,11 +98,16 @@ function construct_jquery_command(firstarg) {
     else {
         theType = firstarg.type;
     }
+
+    // If there is a settings parameter, use that as the settings to send in, otherwise empty brackets.
     jquery_command += ("." + theType + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
+
+    // If there are additional commands, add those to the end.
     firstarg.commands.forEach ((command) => {
         jquery_command += "." + theType + "(\'" + command + "\')";
     })
 
+    // Finally, return the completed jquery command as a string
     return jquery_command;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,6 +118,8 @@ function construct_jquery_command(firstarg) {
 // Send a behaviour to an item, and optionally return a result
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const behavior = function(...args) {
+    // Grab the first argument - this should either be an object with settings, or the first of an array of string, being the ID of the element the
+    // commands are for.
     let firstarg = args.shift();
     let returnvalue;
     if (typeof firstarg === 'object')
