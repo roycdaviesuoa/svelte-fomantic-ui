@@ -21,6 +21,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} data-settings={serialize(settings)} data-module_type="accordion" {...otherProps($$restProps)} on:click={setSelected}>
+<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} data-settings={serialize(settings)} data-module_type={(ui?"accordion":"")} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>
