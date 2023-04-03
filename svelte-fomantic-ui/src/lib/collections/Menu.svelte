@@ -22,5 +22,5 @@
 </script>
 
 <div class={(ui?"ui ":"") + uiProps($$restProps) + " menu"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={setSelected} on:change>
-    <slot />
+        <slot />
 </div>

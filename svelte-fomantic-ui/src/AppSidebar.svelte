@@ -34,6 +34,7 @@
     import Label from './lib/tests/Label.svelte';
     import List from './lib/tests/List.svelte';
     import Loader from './lib/tests/Loader.svelte';
+    import Message from './lib/tests/Message.svelte';
     import Menu from './lib/tests/Menu.svelte';
     import Modal from './lib/tests/Modal.svelte';
     import Placeholder from './lib/tests/Placeholder.svelte';
@@ -102,7 +103,7 @@
             <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Form</Link>    
             <Link item on:click={()=>{currentPage=Grid; doMenuToggle();}}>Grid</Link>    
             <Link item on:click={()=>{currentPage=Menu; doMenuToggle();}}>Menu</Link>    
-            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Message</Link>    
+            <Link item on:click={()=>{currentPage=Message; doMenuToggle();}}>Message</Link>    
             <Link item on:click={()=>{currentPage=Table; doMenuToggle();}}>Table</Link>    
         </MenuFUI>
     </Item>

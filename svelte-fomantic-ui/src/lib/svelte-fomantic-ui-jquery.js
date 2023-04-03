@@ -47,10 +47,6 @@ export const reload = function()
                 }
                 $(this)[moduleType](settings);
                 break;
-            case "accordion":
-                console.log("Accordion ", settings);
-                $(this)[moduleType](settings);
-                break;
             case "progress": // Progress and Embed have the ability to activate on load
             case "embed":
                 let activate = this.attributes.activate?JSON.parse(this.attributes.activate.value):false;
@@ -155,7 +151,14 @@ export const update = function (...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function deserialize(serialized)
 {
-    let deserialized = JSON.parse(serialized);
+    console.log(serialized, typeof(serialized));
+    let deserialized = {};
+
+    try {
+        deserialized = JSON.parse(serialized);
+    } catch (e) {
+      // Oh well, but whatever...
+    }
 
     // Create a new object to hold the deserialized version
     const obj = {};

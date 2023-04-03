@@ -31,7 +31,6 @@
     }
 
     function submenu_chosen(e: any) {
-        console.log(e);
         scrollToSection(e.detail.value);
     }
 </script>
