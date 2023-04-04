@@ -84,6 +84,116 @@ const code = {
         </Message>
     </Column>
 </Grid>
+    `,
+    visible : `
+<Message ui visible>
+    <p>You can always see me</p>
+</Message>
+    `,
+    center_aligned : `
+<Message ui center aligned>
+    <Content>
+        <Header>
+            New Version is available!
+        </Header>
+        <p>When are you going to update?</p>
+    </Content>
+</Message>
+    `,
+    right_aligned : `
+<Message ui right aligned>
+    <Content>
+        <Header>
+            New Version is available!
+        </Header>
+        <p>When are you going to update?</p>
+    </Content>
+</Message>
+    `,
+    floating: `
+<Message ui floating>
+    <p>Way to go!</p>
+</Message>
+    `,
+    compact: `
+<Message ui compact>
+    <p>Get all the best inventions in your e-mail every day. Sign up now!</p>
+</Message>
+    `,
+    attached: `
+<Message ui attached>
+    <Header>
+        Welcome to our site!
+    </Header>
+    <p>Fill out the form below to sign-up for a new account</p>
+</Message>
+<Form ui attached fluid segment>
+    <Fields two>
+        <Field>
+            <Label>First Name</Label>
+            <Input placeholder="First Name" type="text" bind:value={formFields.firstname}/>
+        </Field>
+        <Field>
+            <Label>Last Name</Label>
+            <Input placeholder="Last Name" type="text" bind:value={formFields.lastname}/>
+        </Field>
+    </Fields>
+    <Field>
+        <Label>Username</Label>
+        <Input placeholder="Username" type="text" bind:value={formFields.username}/>
+    </Field>
+    <Field>
+        <Label>Password</Label>
+        <Input type="password" bind:value={formFields.password}/>
+    </Field>
+    <Field inline>
+        <Checkbox ui bind:checked={formFields.ts_and_cs} label="I agree to the terms and conditions"/>
+    </Field>
+    <Button ui blue submit>Submit</Button>
+</Form>
+<Message ui bottom attached warning>
+    <Icon help/>
+    Already signed up? <Link href="#">Login here</Link> instead.
+</Message>
+<Message ui>
+    Data filled in: {JSON.stringify(formFields)}
+</Message>
+    `,
+    warning : `
+<Message ui warning>
+    <Icon close icon/>
+    <Header>
+      You must register before you can do that!
+    </Header>
+    Visit our registration page, then try again
+</Message>
+    `,
+    positive_success : `
+<Message ui positive>
+    <Icon close icon/>
+    <Header>
+        You are eligible for a reward
+    </Header>
+    <p>Go to your <b>special offers</b> page to see now.</p>
+</Message>
+
+<Message ui success>
+    <Icon close icon/>
+    <Header>
+        Your user registration was successful.
+    </Header>
+    <p>You may now log-in with the username you have chosen</p>
+</Message>
+    `,
+    colored: `
+{#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal", "BLue", "Violet", "Purple", "Pink", "Brown", "Black"] as color}
+    <Message ui _={color.toLowerCase()}>{color}</Message>
+{/each}
+    `,
+    size : `
+{#each ["mini", "tiny", "small", "large", "big", "huge", "massive"] as size, i}
+    <Message ui _={size.toLowerCase()}>This is {i<3?"a ":""}{size}{i<3?" message":""}</Message>
+{/each}
     `
 }
 
