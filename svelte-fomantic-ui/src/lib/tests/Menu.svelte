@@ -947,7 +947,7 @@
     <Example title = "Active" code = {Code.active}>
 
         <Menu ui compact>
-            <Item disabled>
+            <Item active>
                 Link
             </Item>
         </Menu>
@@ -976,7 +976,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Fixed -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Fixed" code = {Code.fixed}>
+    <Example title = "Fixed" code = {Code.fixed} narrow>
 
         <Embed ui activate data={{url : "/Menu_fixed"}}/>
         <br/>

@@ -6,18 +6,12 @@
 
 <script lang="ts">
     import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
-
+    export let value: string = null;
     export let ui: boolean=false;
-    export let selected: string = "";
-    export let settings: object={};
-
-    function setSelected(e) {
-        if (e.target.value) {
-            selected = e.target.value;
-        }
-    }
+    export let settings={};
+    export let popup:boolean = false;
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " dimmer"} data-settings={serialize(settings)} data-module_type="dimmer" {...otherProps($$restProps)} on:change={setSelected}>
+<div data-value={value} class={(ui?"ui ":"") + uiProps($$restProps) + " center"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
     <slot />
 </div>

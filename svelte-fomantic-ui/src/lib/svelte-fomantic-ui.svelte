@@ -85,16 +85,20 @@
     export {default as Ad} from './views/Ad.svelte';
     export {default as Card} from './views/Card.svelte';
     export {default as Cards} from './views/Cards.svelte';
+    export {default as Center} from './views/Center.svelte';
     export {default as Comment} from './views/Comment.svelte';
     export {default as Comments} from './views/Comments.svelte';
     export {default as Date} from './views/Date.svelte';
+    export {default as Event} from './views/Event.svelte';
     export {default as Feed} from './views/Feed.svelte';
+    export {default as Floated} from './views/Floated.svelte';
     export {default as Item} from './views/Item.svelte';
     export {default as Items} from './views/Items.svelte';
     export {default as Meta} from './views/Meta.svelte';
     export {default as Metadata} from './views/Metadata.svelte';
     export {default as Statistic} from './views/Statistic.svelte';
     export {default as Statistics} from './views/Statistics.svelte';
+    export {default as Summary} from './views/Summary.svelte';
     export {default as Value} from './views/Value.svelte';
 
     // Helper functions for modules

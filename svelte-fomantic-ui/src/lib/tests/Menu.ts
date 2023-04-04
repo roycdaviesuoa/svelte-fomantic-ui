@@ -700,7 +700,7 @@ const code = {
     `,
     active: `
 <Menu ui compact>
-    <Item disabled>
+    <Item active>
         Link
     </Item>
 </Menu>

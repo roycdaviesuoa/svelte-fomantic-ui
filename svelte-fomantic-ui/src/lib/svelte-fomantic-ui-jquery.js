@@ -47,6 +47,10 @@ export const reload = function()
                 }
                 $(this)[moduleType](settings);
                 break;
+            case "dimmer":
+                console.log(moduleType, settings)
+                $(this)[moduleType](settings);
+                break;
             case "progress": // Progress and Embed have the ability to activate on load
             case "embed":
                 let activate = this.attributes.activate?JSON.parse(this.attributes.activate.value):false;
@@ -151,7 +155,6 @@ export const update = function (...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function deserialize(serialized)
 {
-    console.log(serialized, typeof(serialized));
     let deserialized = {};
 
     try {

@@ -5,19 +5,11 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
-
+    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    export let meta: string = null;
     export let ui: boolean=false;
-    export let selected: string = "";
-    export let settings: object={};
-
-    function setSelected(e) {
-        if (e.target.value) {
-            selected = e.target.value;
-        }
-    }
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " dimmer"} data-settings={serialize(settings)} data-module_type="dimmer" {...otherProps($$restProps)} on:change={setSelected}>
+<span data-meta={meta} class={(ui?"ui ":"") + uiProps($$restProps) + " floated"} {...otherProps($$restProps)}>
     <slot />
-</div>
+</span>
