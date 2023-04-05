@@ -20,6 +20,7 @@
   import CheckboxIndeterminate from './lib/tests/CheckboxIndeterminate.svelte';
   import Comment from './lib/tests/Comment.svelte';
   import Container from './lib/tests/Container.svelte';
+  import Dimmer from './lib/tests/Dimmer.svelte';
   import Divider from './lib/tests/Divider.svelte';
   import Dropdown from './lib/tests/Dropdown.svelte';
   import Embed from './lib/tests/Embed.svelte';
@@ -79,6 +80,8 @@
       currentRoute = Comment; break;
     case '/Container':
       currentRoute = Container; break;
+    case '/Dimmer':
+      currentRoute = Dimmer; break;
     case '/Divider':
       currentRoute = Divider; break;
     case '/Dropdown':

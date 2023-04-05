@@ -22,6 +22,7 @@
     import CheckboxIndeterminate from './lib/tests/CheckboxIndeterminate.svelte';
     import Comment from './lib/tests/Comment.svelte';
     import Container from './lib/tests/Container.svelte';
+    import Dimmer from './lib/tests/Dimmer.svelte';
     import Divider from './lib/tests/Divider.svelte';
     import Dropdown from './lib/tests/Dropdown.svelte';
     import Embed from './lib/tests/Embed.svelte';
@@ -123,6 +124,7 @@
         <MenuFUI>
             <Link item on:click={()=>{currentPage=Accordion; doMenuToggle();}}>Accordion</Link>    
             <Link item on:click={()=>{currentPage=Calendar; doMenuToggle();}}>Calendar</Link>    
+            <Link item on:click={()=>{currentPage=Dimmer; doMenuToggle();}}>Dimmer</Link>    
             <Link item on:click={()=>{currentPage=Embed; doMenuToggle();}}>Embed</Link>    
             <Link item on:click={()=>{currentPage=Modal; doMenuToggle();}}>Modal</Link>    
             <Link item on:click={()=>{currentPage=Popup; doMenuToggle();}}>Popup</Link>    
