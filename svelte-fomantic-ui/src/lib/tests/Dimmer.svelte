@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Images, Image, Segment, Header, Buttons, Button, Icon } from "../svelte-fomantic-ui.svelte";
+    import { update, Images, Image, Segment, Header, Buttons, Button, Icon, Placeholder, Line, Paragraph } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dimmer';
@@ -32,7 +32,7 @@
                 <Image src="/images/image.png"/>
                 <Image src="/images/image.png"/>
             </Images>
-            <p></p>
+            <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
         </Segment>
 
         <Buttons ui icon>
