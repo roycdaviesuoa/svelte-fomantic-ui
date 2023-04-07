@@ -27,6 +27,7 @@
     import Dropdown from './lib/tests/Dropdown.svelte';
     import Embed from './lib/tests/Embed.svelte';
     import Emoji from './lib/tests/Emoji.svelte';
+    import Feed from './lib/tests/Feed.svelte';
     import Flag from './lib/tests/Flag.svelte';
     import Grid from './lib/tests/Grid.svelte';
     import Header from './lib/tests/Header.svelte';
@@ -114,7 +115,7 @@
             <Link item on:click={()=>{currentPage=Ad; doMenuToggle();}}>Advertisement</Link>    
             <Link item on:click={()=>{currentPage=Card; doMenuToggle();}}>Card</Link>    
             <Link item on:click={()=>{currentPage=Comment; doMenuToggle();}}>Comment</Link>    
-            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Feed</Link>    
+            <Link item on:click={()=>{currentPage=Feed; doMenuToggle();}}>Feed</Link>    
             <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Item</Link>    
             <Link item on:click={()=>{currentPage=Statistic; doMenuToggle();}}>Statistic</Link>    
         </MenuFUI>

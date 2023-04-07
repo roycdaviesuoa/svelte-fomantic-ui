@@ -25,6 +25,7 @@
   import Dropdown from './lib/tests/Dropdown.svelte';
   import Embed from './lib/tests/Embed.svelte';
   import Emoji from './lib/tests/Emoji.svelte';
+  import Feed from './lib/tests/Feed.svelte';
   import Flag from './lib/tests/Flag.svelte';
   import Grid from './lib/tests/Grid.svelte';
   import Header from './lib/tests/Header.svelte';
