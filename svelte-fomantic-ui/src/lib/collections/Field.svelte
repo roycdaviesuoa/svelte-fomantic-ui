@@ -12,9 +12,8 @@
     export let ui: boolean=false;
     export let settings: object=undefined;
     export let popup: boolean=false;
-    export let accordion: boolean=false;
 </script>
 
-<div class={classString(ui, $$restProps, "field")} data-settings={serialize(settings)} data-module_type={(popup?"popup":(accordion?"accordion":null))} {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "field")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
     <slot />
 </div>
