@@ -31,6 +31,7 @@
   import Header from './lib/tests/Header.svelte';
   import Icon from './lib/tests/Icon.svelte';
   import Image from './lib/tests/Image.svelte';
+  import Item from './lib/tests/Item.svelte';
   import Label from './lib/tests/Label.svelte';
   import List from './lib/tests/List.svelte';
   import Loader from './lib/tests/Loader.svelte';
@@ -91,6 +92,8 @@
       currentRoute = Embed; break;
     case '/Emoji':
       currentRoute = Emoji; break;
+    case '/Feed':
+      currentRoute = Feed; break;
     case '/Flag':
       currentRoute = Flag; break;
     case '/Grid':
@@ -103,6 +106,8 @@
       currentRoute = Image; break;
     case '/Input':
       currentRoute = Input; break;
+    case '/Item':
+      currentRoute = Item; break;
     case '/Label':
       currentRoute = Label; break;
     case '/List':

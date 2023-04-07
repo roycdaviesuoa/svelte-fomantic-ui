@@ -92,6 +92,7 @@
     export {default as Comments} from './views/Comments.svelte';
     export {default as Date} from './views/Date.svelte';
     export {default as Event} from './views/Event.svelte';
+    export {default as Extra} from './views/Extra.svelte';
     export {default as Feed} from './views/Feed.svelte';
     export {default as Floated} from './views/Floated.svelte';
     export {default as Item} from './views/Item.svelte';
@@ -102,6 +103,8 @@
     export {default as Statistics} from './views/Statistics.svelte';
     export {default as Summary} from './views/Summary.svelte';
     export {default as Value} from './views/Value.svelte';
+
+    export {default as Div} from './Div.svelte';
 
     // Helper functions for modules
     export { behavior } from './svelte-fomantic-ui-jquery';

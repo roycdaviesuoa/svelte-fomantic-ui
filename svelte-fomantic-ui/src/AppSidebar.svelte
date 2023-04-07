@@ -4,7 +4,7 @@
 ******************************************************************************************************************************************************
 -->
 <script lang="ts">
-    import { Link, Grid as GridFUI, Header as HeaderFUI, Menu as MenuFUI, Item, Image as ImageFUI, Icon as IconFUI, Button as ButtonFUI, Column } from "../src/lib/svelte-fomantic-ui.svelte";
+    import { Link, Header as HeaderSFU, Menu as MenuSFU, Item as ItemSFU, Image as ImageSFU, Icon as IconSFU } from "../src/lib/svelte-fomantic-ui.svelte";
 
     import Home from './Home.svelte';
     import ComingSoon from './ComingSoon.svelte';
@@ -33,6 +33,7 @@
     import Header from './lib/tests/Header.svelte';
     import Icon from './lib/tests/Icon.svelte';
     import Image from './lib/tests/Image.svelte';
+    import Item from './lib/tests/Item.svelte';
     import Label from './lib/tests/Label.svelte';
     import List from './lib/tests/List.svelte';
     import Loader from './lib/tests/Loader.svelte';
@@ -56,18 +57,18 @@
     export let doMenuToggle: any;
 </script>
 
-<MenuFUI ui vertical inverted style={"width:"+sidebarWidth+"px"}>
-    <Item>
-        <ImageFUI ui inline logo mini icon src="/images/SvelteFomanticUI.png"/>
+<MenuSFU ui vertical inverted style={"width:"+sidebarWidth+"px"}>
+    <ItemSFU>
+        <ImageSFU ui inline logo mini icon src="/images/SvelteFomanticUI.png"/>
         <b>&nbsp;Svelte Fomantic UI</b>
-    </Item>
+    </ItemSFU>
     <Link item header on:click={()=>{currentPage=Home; doMenuToggle();}}>
-        <IconFUI home/>
+        <IconSFU home/>
         Home
     </Link>
-    <Item>
-        <HeaderFUI ui mini inverted>Elements</HeaderFUI>
-        <MenuFUI>
+    <ItemSFU>
+        <HeaderSFU ui mini inverted>Elements</HeaderSFU>
+        <MenuSFU>
             <Link item on:click={()=>{currentPage=Button; doMenuToggle();}}>Button</Link>    
             <Link item on:click={()=>{currentPage=ButtonInteractive; doMenuToggle();}}>Interactive Buttons</Link>    
             <Link item on:click={()=>{currentPage=Container; doMenuToggle();}}>Container</Link>    
@@ -86,20 +87,20 @@
             <Link item on:click={()=>{currentPage=Segment; doMenuToggle();}}>Segment</Link>    
             <Link item on:click={()=>{currentPage=Step; doMenuToggle();}}>Step</Link>    
             <Link item on:click={()=>{currentPage=Text; doMenuToggle();}}>Text</Link>    
-        </MenuFUI>
-    </Item>
-    <Item>
-        <HeaderFUI ui mini inverted>Inputs</HeaderFUI>
-        <MenuFUI>
+        </MenuSFU>
+    </ItemSFU>
+    <ItemSFU>
+        <HeaderSFU ui mini inverted>Inputs</HeaderSFU>
+        <MenuSFU>
             <Link item on:click={()=>{currentPage=Checkbox; doMenuToggle();}}>Checkbox, Radio, Toggle, Slider, Textarea</Link>    
             <Link item on:click={()=>{currentPage=CheckboxIndeterminate; doMenuToggle();}}>Indeterminate Checkbox</Link>    
             <Link item on:click={()=>{currentPage=Input; doMenuToggle();}}>Input</Link>    
             <Link item on:click={()=>{currentPage=Dropdown; doMenuToggle();}}>Dropdown</Link>    
-        </MenuFUI>
-    </Item>
-    <Item>
-        <HeaderFUI ui mini inverted>Collections</HeaderFUI>
-        <MenuFUI>
+        </MenuSFU>
+    </ItemSFU>
+    <ItemSFU>
+        <HeaderSFU ui mini inverted>Collections</HeaderSFU>
+        <MenuSFU>
             <Link item on:click={()=>{currentPage=Breadcrumb; doMenuToggle();}}>Breadcrumb</Link>    
             <Link item on:click={()=>{currentPage=BreadcrumbInteractive; doMenuToggle();}}>Interactive Breadcrumb</Link>    
             <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Form</Link>    
@@ -107,22 +108,22 @@
             <Link item on:click={()=>{currentPage=Menu; doMenuToggle();}}>Menu</Link>    
             <Link item on:click={()=>{currentPage=Message; doMenuToggle();}}>Message</Link>    
             <Link item on:click={()=>{currentPage=Table; doMenuToggle();}}>Table</Link>    
-        </MenuFUI>
-    </Item>
-    <Item>
-        <HeaderFUI ui mini inverted>Views</HeaderFUI>
-        <MenuFUI>
+        </MenuSFU>
+    </ItemSFU>
+    <ItemSFU>
+        <HeaderSFU ui mini inverted>Views</HeaderSFU>
+        <MenuSFU>
             <Link item on:click={()=>{currentPage=Ad; doMenuToggle();}}>Advertisement</Link>    
             <Link item on:click={()=>{currentPage=Card; doMenuToggle();}}>Card</Link>    
             <Link item on:click={()=>{currentPage=Comment; doMenuToggle();}}>Comment</Link>    
             <Link item on:click={()=>{currentPage=Feed; doMenuToggle();}}>Feed</Link>    
-            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Item</Link>    
+            <Link item on:click={()=>{currentPage=Item; doMenuToggle();}}>Item</Link>    
             <Link item on:click={()=>{currentPage=Statistic; doMenuToggle();}}>Statistic</Link>    
-        </MenuFUI>
-    </Item>
-    <Item>
-        <HeaderFUI ui mini inverted>Modules</HeaderFUI>
-        <MenuFUI>
+        </MenuSFU>
+    </ItemSFU>
+    <ItemSFU>
+        <HeaderSFU ui mini inverted>Modules</HeaderSFU>
+        <MenuSFU>
             <Link item on:click={()=>{currentPage=Accordion; doMenuToggle();}}>Accordion</Link>    
             <Link item on:click={()=>{currentPage=Calendar; doMenuToggle();}}>Calendar</Link>    
             <Link item on:click={()=>{currentPage=Dimmer; doMenuToggle();}}>Dimmer</Link>    
@@ -139,6 +140,6 @@
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Tab</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Toast</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Transition</Link>    
-        </MenuFUI>
-    </Item>
-</MenuFUI>
+        </MenuSFU>
+    </ItemSFU>
+</MenuSFU>
