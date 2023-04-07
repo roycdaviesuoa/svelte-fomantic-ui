@@ -185,6 +185,26 @@ const code = {
     <p>You may now log-in with the username you have chosen</p>
 </Message>
     `,
+    negative_errpr : `
+<Message ui negative>
+    <Icon close icon/>
+    <Header>
+        We're sorry we can't apply that discount
+    </Header>
+    <p>That offer has expired</p>
+</Message>
+
+<Message ui error>
+    <Icon close icon/>
+    <Header>
+        There were some errors with your submission
+    </Header>
+    <List ui bulleted>
+        <Item>You must include both a upper and lower case letters in your password.</Item>
+        <Item>You need to select your home country.</Item>
+    </List>
+</Message>
+    `,
     colored: `
 {#each ["Red", "Orange", "Yellow", "Olive", "Green", "Teal", "BLue", "Violet", "Purple", "Pink", "Brown", "Black"] as color}
     <Message ui _={color.toLowerCase()}>{color}</Message>
