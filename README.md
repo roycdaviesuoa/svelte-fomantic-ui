@@ -59,17 +59,17 @@ Note that in essence all these do already work (except for the Modules) because 
 |  - Interactive | X | X | [/BreadcrumbInteractive](./svelte-fomantic-ui/src/lib/tests/BreadcrumbInteractive.svelte)
 | Form | X |  |
 | Grid | X | X | [/Grid](./svelte-fomantic-ui/src/lib/tests/Grid.svelte) | [Grid](https://fomantic-ui.com/collections/grid.html) 
-| Menu | X | _ | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Menu](https://fomantic-ui.com/collections/menu.html)
-| Message | X |  | 
+| Menu | X | X | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Menu](https://fomantic-ui.com/collections/menu.html)
+| Message | X | X | [/Message](./svelte-fomantic-ui/src/lib/tests/Message.svelte) | [Message](https://fomantic-ui.com/collections/message.html)
 | Table | X | X | [/Table](./svelte-fomantic-ui/src/lib/tests/Table.svelte) | [Table](https://fomantic-ui.com/collections/table.html)
 
 | Views            | Implemented | Tested and Documented | Example Code | Fomantic UI page |
 |------------------|:-----------:|:---------------------:|--------------|------------------|
 | Advertisement | X | _ | [/Ad](./svelte-fomantic-ui/src/lib/tests/Ad.svelte) | [Ad](https://fomantic-ui.com/views/advertisement.html)
-| Card | X | _ | [/Card](./svelte-fomantic-ui/src/lib/tests/Card.svelte) | [Card](https://fomantic-ui.com/views/card.html)
-| Comment | X | _ | [/Comment](./svelte-fomantic-ui/src/lib/tests/Comment.svelte) | [Comment](https://fomantic-ui.com/views/comment.html) 
-| Feed | X |  |
-| Item | X |  |
+| Card | X | X | [/Card](./svelte-fomantic-ui/src/lib/tests/Card.svelte) | [Card](https://fomantic-ui.com/views/card.html)
+| Comment | X | X | [/Comment](./svelte-fomantic-ui/src/lib/tests/Comment.svelte) | [Comment](https://fomantic-ui.com/views/comment.html) 
+| Feed | X | X | [/Feed](./svelte-fomantic-ui/src/lib/tests/Feed.svelte) | [Feed](https://fomantic-ui.com/views/feed.html)
+| Item | X | X | [/Item](./svelte-fomantic-ui/src/lib/tests/Item.svelte) | [Item](https://fomantic-ui.com/views/item.html)
 | Statistic | X | X | [/Statistic](./svelte-fomantic-ui/src/lib/tests/Statistic.svelte) | [Statistic](https://fomantic-ui.com/views/statistic.html) 
 
 | Modules          | Implemented | Tested and Documented | Example Code | Fomantic UI page |
