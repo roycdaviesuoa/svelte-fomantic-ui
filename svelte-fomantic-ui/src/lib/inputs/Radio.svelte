@@ -5,9 +5,9 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {classString, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
-    export let id: string=null;
+    export let id: string=undefined;
     export let group: string="";
     export let value: string="";
     export let label: string="";
@@ -18,12 +18,12 @@
 </script>
 
 {#if label}
-    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} data-module_type="checkbox" {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox")} data-module_type="checkbox" {...otherProps($$restProps)}>
         <input type="radio" {id} {name} {value} bind:group {disabled}>
         <label for={id} class="ui radio">{label}</label>
     </div>
 {:else}
-    <div class={(ui?"ui ":"") + (disabled?"disabled ":"") + uiProps($$restProps) + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox"} data-module_type="checkbox" {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox")} data-module_type="checkbox" {...otherProps($$restProps)}>
         <input type="radio" {id} {name} {value} bind:group {disabled}>
         <slot/>
     </div>

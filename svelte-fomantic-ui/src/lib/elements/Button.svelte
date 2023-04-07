@@ -5,16 +5,16 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
 
     export let ui: boolean=false;
     export let toggle: boolean=false;
-    export let id: string = "";
+    export let id: string = undefined
     export let active: boolean = false;
     export let on_style: string = "";
     export let off_style: string = "";
     export let popup: boolean = false;
-    export let settings: object={};
+    export let settings: object=undefined;
 
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -33,7 +33,7 @@
 
 <!-- The Toggle button functionality -->
 {#if toggle}
-    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " " + (active?on_style:off_style) + " button"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, (active?on_style:off_style) + " button")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         {#if active}
             <slot name="on"/>
         {:else}
@@ -42,7 +42,7 @@
     </div>
 {:else}
 <!-- An ordinary, clickable button -->
-    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={(ui?"ui ":"") + uiProps($$restProps) + " button"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, "button")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

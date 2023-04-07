@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Card, Cards, Feed, Event, Summary, Dimmer, Center, Image, Link, Content, Description, Header, Icon, Meta, Date, Input, Floated, Buttons, Button } from "../svelte-fomantic-ui.svelte";
+    import { Card, Cards, Feed, Event, Category, Rating, Text, Segment, Author, Summary, Dimmer, Center, Image, Link, Content, Description, Header, Icon, Meta, Date, Input, Floated, Buttons, Button, Placeholder, Line, Paragraph, Grid, Column } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Card';
@@ -32,6 +32,33 @@
             image: "/images/elyse.png",
             group: "Coworker",
             description: "Elyse is a copywriter working in New York.",
+            num_friends: 151,
+            joined: 2014
+        }
+    ]
+
+    let cardsData2 = [
+        {
+            name: "Elliot Fu",
+            image: "/images/elliot.png",
+            group: "Friend",
+            description: "Elliot Fu is a film-maker from New York. ",
+            num_friends: 75,
+            joined: 2013
+        },
+        {
+            name: "Veronika Ossi",
+            image: "/images/veronika.png",
+            group: "Friend",
+            description: "Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.",
+            num_friends: 35,
+            joined: 2011
+        },
+        {
+            name: "Jenny Hess",
+            image: "/images/jenny.png",
+            group: "Friend",
+            description: "Jenny is a student studying Media Management at the New School.",
             num_friends: 151,
             joined: 2014
         }
@@ -252,8 +279,8 @@
 
         <Cards ui special>
             <Card>
-                <Image blurring dimmable>
-                    <Dimmer ui>
+                <Image ui blurring dimmable let:mouseover>
+                    <Dimmer ui active={mouseover}>
                         <Content>
                             <Center>
                                 <Button ui inverted>Add Friend</Button>
@@ -276,8 +303,8 @@
                 </Content>
             </Card>
             <Card>
-                <Image blurring dimmable>
-                    <Dimmer ui inverted>
+                <Image ui blurring dimmable let:mouseover>
+                    <Dimmer ui inverted active={mouseover}>
                         <Content>
                             <Center>
                                 <Button ui primary>Add Friend</Button>
@@ -307,11 +334,25 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Header -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Header" code = {Code.header}>
 
-
+        <Cards ui>
+            {#each cardsData2 as theCard}
+                <Card>
+                    <Content>
+                        <Header>{theCard.name}</Header>
+                        <Meta>
+                            <Link>{theCard.group}</Link>
+                        </Meta>
+                        <Description>
+                            {theCard.description}
+                        </Description>
+                    </Content>
+                </Card>
+            {/each}
+        </Cards>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -319,11 +360,22 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Metadata -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Metadata" code = {Code.metadata}>
 
-
+        <Card ui>
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>
+                    <span>2 days ago</span>
+                    <Link>Animals</Link>
+                </Meta>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -331,11 +383,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Link -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Link" code = {Code.link}>
 
-
+        <Card ui>
+            <Link image href="#">
+                <Image src="/images/steve.jpg"/>
+            </Link>
+            <Content>
+                <Link header href="#">Steve Jobes</Link>
+                <Meta>
+                    <Link>Last Seen 2 days ago</Link>
+                </Meta>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -343,11 +405,29 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Buttons -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Buttons" code = {Code.buttons}>
 
-
+        <Cards ui>
+            {#each cardsData2 as theCard}
+                <Card>
+                    <Content>
+                        <Header>{theCard.name}</Header>
+                        <Meta>
+                            <Link>{theCard.group}</Link>
+                        </Meta>
+                        <Description>
+                            {theCard.description}
+                        </Description>
+                    </Content>
+                    <Button ui>
+                        <Icon add/>
+                        Add Friend
+                    </Button>
+                </Card>
+            {/each}
+        </Cards>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -355,11 +435,30 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Approval -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Approval" code = {Code.approval}>
 
-
+        <Card ui>
+            <Content>
+                <Icon right floated like/>
+                <Icon right floated star/>
+                <Header>Cute Dog</Header>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+            <Content extra>
+                <Floated left>
+                    <Icon like/>
+                    Like
+                </Floated>
+                <Floated right>
+                    <Icon star/>
+                    Favorite
+                </Floated>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -367,11 +466,22 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Description -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Description" code = {Code.description}>
 
-
+        <Card ui>
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>
+                    <span>2 days ago</span>
+                </Meta>
+                <Description>
+                    <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+                    <p>Many people also have their own barometers for what makes a cute dog.</p>
+                </Description>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -379,11 +489,26 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Extra content -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Extra content" code = {Code.extra_content}>
 
-
+        <Card ui>
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>
+                    <span>2 days ago</span>
+                </Meta>
+                <Description>
+                    <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+                    <p>Many people also have their own barometers for what makes a cute dog.</p>
+                </Description>
+            </Content>
+            <Content extra>
+                <Icon check/>
+                121 Votes
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -391,11 +516,27 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Disabled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Disabled" code = {Code.disabled}>
 
-
+        <Card ui disabled>
+            <Content>
+                <Link header>Kristy</Link>
+                <Meta>
+                    <Date>Joined in 2013</Date>
+                </Meta>
+                <Description>
+                    Kristy is an art director living in New York.
+                </Description>
+            </Content>
+            <Content extra>
+                <Link>
+                    <Icon user/>
+                    22 Friends
+                </Link>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -403,11 +544,63 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Loading -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Loading" code = {Code.loading}>
 
+        <Card ui loading>
+            <Content>
+                <Link header>Kristy</Link>
+                <Meta>
+                    <Date>Joined in 2013</Date>
+                </Meta>
+                <Description>
+                    Kristy is an art director living in New York.
+                </Description>
+            </Content>
+            <Content extra>
+                <Link>
+                    <Icon user/>
+                    22 Friends
+                </Link>
+            </Content>
+        </Card>
 
+        <Card ui brown double loading>
+            <Content>
+                <Link header>Kristy</Link>
+                <Meta>
+                    <Date>Joined in 2013</Date>
+                </Meta>
+                <Description>
+                    Kristy is an art director living in New York.
+                </Description>
+            </Content>
+            <Content extra>
+                <Link>
+                    <Icon user/>
+                    22 Friends
+                </Link>
+            </Content>
+        </Card>
+
+        <Card ui brown usual double loading>
+            <Content>
+                <Link header>Kristy</Link>
+                <Meta>
+                    <Date>Joined in 2013</Date>
+                </Meta>
+                <Description>
+                    Kristy is an art director living in New York.
+                </Description>
+            </Content>
+            <Content extra>
+                <Link>
+                    <Icon user/>
+                    22 Friends
+                </Link>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -415,11 +608,42 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Fluid -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Fluid" code = {Code.fluid}>
 
-
+        <Grid ui three column>
+            <Column>
+                <Card ui fluid>
+                    <Image>
+                        <Image src="/images/daniel.jpg"/>
+                    </Image>
+                    <Content>
+                        <Link header>Daniel Louise</Link>
+                    </Content>
+                </Card>
+            </Column>
+            <Column>
+                <Card ui fluid>
+                    <Image>
+                        <Image src="/images/helen.jpg"/>
+                    </Image>
+                    <Content>
+                        <Link header>Helen Troy</Link>
+                    </Content>
+                </Card>
+            </Column>
+            <Column>
+                <Card ui fluid>
+                    <Image>
+                        <Image src="/images/elliot.jpg"/>
+                    </Image>
+                    <Content>
+                        <Link header>Elliot Fu</Link>
+                    </Content>
+                </Card>
+            </Column>
+        </Grid>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -427,11 +651,18 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Centered -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Centered" code = {Code.centered}>
 
-
+        <Card ui centered>
+            <Image>
+                <Image src="/images/elyse.png"/>
+            </Image>
+            <Content>
+                <Link header>Elyse</Link>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -439,11 +670,55 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Horizontal -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Horizontal" code = {Code.horizontal}>
 
+        <Card ui horizontal>
+            <Image>
+                <Image src="/images/elyse.png"/>
+            </Image>
+            <Content>
+                <Link header>Cute dog</Link>
+                <Meta>
+                    <Category>Cute dog</Category>
+                </Meta>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+        </Card>
 
+        <Cards ui horizontal>
+            <Card ui>
+                <Image>
+                    <Image src="/images/matthew.png"/>
+                </Image>
+                <Content>
+                    <Link header>Matt Giampietro</Link>
+                    <Meta>
+                        <Category>Friends</Category>
+                    </Meta>
+                    <Description>
+                        Matthew is an interior designer living in New York. 
+                    </Description>
+                </Content>
+            </Card>
+            <Card ui>
+                <Image>
+                    <Image src="/images/molly.png"/>
+                </Image>
+                <Content>
+                    <Link header>Molly</Link>
+                    <Meta>
+                        <Category>Coworker</Category>
+                    </Meta>
+                    <Description>
+                        Molly is a personal assistant living in Paris. 
+                    </Description>
+                </Content>
+            </Card>
+        </Cards>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -451,14 +726,288 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Raised card -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Raised card" code = {Code.raised_card}>
 
+        <Card ui raised>
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>Animals</Meta>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+            <Content extra>
+                <Floated right>
+                  <Image ui avatar src="/images/matt.jpg"/> Matt
+                </Floated>
+            </Content>
+        </Card>
 
+        <Card ui raised link>
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>Animals</Meta>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+            <Content extra>
+                <Floated right>
+                  <Image ui avatar src="/images/matt.jpg"/> Matt
+                </Floated>
+            </Content>
+        </Card>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Link card -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Link card" code = {Code.link_card}>
+
+        <Link card ui href="https://www.dog.com">
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>Animals</Meta>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+            <Content extra>
+                <Floated right>
+                  <Image ui avatar src="/images/matt.jpg"/> Matt
+                </Floated>
+            </Content>
+        </Link>
+
+        <Card ui link>
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>Animals</Meta>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+            <Content extra>
+                <Floated right>
+                  <Image ui avatar src="/images/matt.jpg"/> Matt
+                </Floated>
+            </Content>
+        </Card>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Floated content -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Floated content" code = {Code.floated_content}>
+
+        <Card ui>
+            <Content>
+                <Header>Cute Dog</Header>
+                <Meta>Animals</Meta>
+                <Description>
+                    <Placeholder ui fluid> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+                </Description>
+            </Content>
+            <Content extra>
+                <Floated right>
+                  <Image ui avatar src="/images/matt.jpg"/> Matt
+                </Floated>
+            </Content>
+        </Card>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Text alignment -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Text alignment" code = {Code.text_alignment}>
+
+        <Card ui>
+            <Content>
+                <Header center aligned>Jenny Hess</Header>
+                <Description center aligned>
+                    <p>Jenny is a student studying Media Management at the New School</p>
+                </Description>
+            </Content>
+            <Content extra>
+                <Author center aligned>
+                    <Image ui avatar src="/images/jenny.jpg"/> Jenny
+                </Author>
+            </Content>
+        </Card>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Inverted -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inverted" code = {Code.inverted}>
+
+        <Segment ui inverted>
+            <Cards ui inverted>
+                {#each cardsData as theCard}
+                    <Card>
+                        <Image>
+                            <Image src={theCard.image}/>
+                        </Image>
+                        <Content>
+                            <Header>{theCard.name}</Header>
+                            <Meta>
+                                <Link>{theCard.group}</Link>
+                            </Meta>
+                            <Description>
+                                {theCard.description}
+                            </Description>
+                        </Content>
+                        <Content extra>
+                            <Floated right>
+                                Joined in {theCard.joined}
+                            </Floated>
+                            <span>
+                                <Icon user/>
+                                {theCard.num_friends} Friends
+                            </span>
+                        </Content>
+                    </Card>
+                {/each}
+            </Cards>
+        </Segment>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Colored -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Colored" code = {Code.colored}>
+
+        <Cards ui four>
+            {#each ["Primary", "Secondary", "Red", "Orange", "Yellow", "Olive", "Green", "Teal", "Blue", "Violet", "Purple", "Pink", "Brown", "Grey", "Black"] as color}
+                <Link card _={color.toLowerCase()}>
+                    <Image>
+                        <Image src="/images/image.png"/>
+                    </Image>
+                    <Content>
+                        <Text ui _={color.toLowerCase()}>{color}</Text>
+                    </Content>
+                </Link>
+            {/each}
+        </Cards>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Basic -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Basic" code = {Code.basic}>
+
+        <p>Something not right here - not getting the color...</p>
+
+        <Cards ui four basic>
+            {#each ["Primary", "Secondary", "Red", "Orange", "Yellow", "Olive", "Green", "Teal", "Blue", "Violet", "Purple", "Pink", "Brown", "Grey", "Black"] as color}
+                <Link _={color.toLowerCase() + " card"}>
+                    <Image>
+                        <Image ui wireframe src="/images/white-image.png" _={color.toLowerCase()}/>
+                    </Image>
+                </Link>
+            {/each}
+        </Cards>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Column count -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Column count" code = {Code.column_count}>
+
+        <Cards ui four>
+            {#each [4, 2, 3, 4, 3, 3, 4, 4] as stars}
+                <Card>
+                    <Image>
+                        <Image src="/images/image.png"/>
+                    </Image>
+                    <Content extra>
+                        Rating: 
+                        <Rating ui yellow data-rating={stars}/>
+                    </Content>
+                </Card>
+            {/each}
+        </Cards>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Stackable -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Stackable" code = {Code.stackable}>
+
+        <Cards ui three stackable>
+            {#each ["elliot", "helen", "jenny", "veronika", "stevie", "steve"] as name}
+                <Card>
+                    <Image>
+                        <Image src={"/images/" + name + ".jpg"}/>
+                    </Image>
+                </Card>
+            {/each}
+        </Cards>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Doubling -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Doubling" code = {Code.doubling}>
+
+        <Cards ui six doubling>
+            {#each ["elliot", "helen", "jenny", "veronika", "stevie", "steve"] as name}
+                <Card>
+                    <Image>
+                        <Image src={"/images/" + name + ".jpg"}/>
+                    </Image>
+                </Card>
+            {/each}
+        </Cards>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
 
 
 </Examples>

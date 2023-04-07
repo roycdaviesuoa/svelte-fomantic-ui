@@ -5,13 +5,13 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
     
     export let ui: boolean=false;
-    export let id: string = "";
-    export let settings: object={};
+    export let id: string = undefined;
+    export let settings: object=undefined;
     export let selected: string = "";
 
     import { createEventDispatcher } from 'svelte';
@@ -26,6 +26,6 @@
 
 </script>
 
-<div {id} class={(ui?"ui ":"") + uiProps($$restProps) + " dropdown"} data-settings={serialize(settings)} data-module_type="dropdown" {...otherProps($$restProps)} on:click={setSelected}>
+<div {id} class={classString(ui, $$restProps, "dropdown")} data-settings={serialize(settings)} data-module_type="dropdown" {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

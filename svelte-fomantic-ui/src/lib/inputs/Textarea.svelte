@@ -5,10 +5,10 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {classString, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
     export let value: string="";
     export let popup: boolean=false;
 </script>
 
-<textarea class={(ui?"ui ":"") + uiProps($$restProps)} bind:value={value} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
+<textarea class={classString(ui, $$restProps, "")} bind:value={value} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>

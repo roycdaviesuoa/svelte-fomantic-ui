@@ -5,13 +5,13 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
     
     export let ui: boolean=false;
     export let selected: string = "";
-    export let settings: object={};
+    export let settings: object=undefined;
 
     function setSelected(e) {
         if (e.target.value) {
@@ -21,6 +21,10 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " calendar"} data-settings={serialize(settings)} data-module_type="calendar" {...otherProps($$restProps)} on:change={setSelected}>
+<!-- <div class={classString(ui, $$restProps, "calendar")} data-settings={serialize(settings)} data-module_type="calendar" {...otherProps($$restProps)} on:change={setSelected}>
+    <slot />
+</div> -->
+
+<div class={classString(ui, $$restProps, "calendar")} data-settings={serialize(settings)} data-module_type="calendar" {...otherProps($$restProps)} on:change={setSelected}>
     <slot />
 </div>

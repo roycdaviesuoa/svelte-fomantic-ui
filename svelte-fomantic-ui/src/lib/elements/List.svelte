@@ -5,10 +5,10 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {classString, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
     export let selection: boolean=false;
-    export let id: string="";
+    export let id: string=undefined;
     export let popup: boolean=false;
 
     import { createEventDispatcher } from 'svelte';
@@ -21,11 +21,11 @@
 </script>
 
 {#if selection}
-    <div {id} class={(ui?"ui ":"") + uiProps($$restProps) + " list"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup >
+    <div {id} class={classString(ui, $$restProps, "list")} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup >
         <slot />
     </div>
 {:else}
-    <div {id} class={(ui?"ui ":"") + uiProps($$restProps) + " list"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div {id} class={classString(ui, $$restProps, "list")} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

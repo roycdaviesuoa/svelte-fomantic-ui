@@ -5,13 +5,13 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
     
     export let ui: boolean=false;
     export let selected: string = "";
-    export let settings: object={};
+    export let settings: object=undefined;
 
     function setSelected(e) {
         if (e.target.attributes["value"]) {
@@ -21,6 +21,6 @@
 
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " accordion"} data-settings={serialize(settings)} data-module_type={(ui?"accordion":"")} {...otherProps($$restProps)} on:click={setSelected}>
+<div class={classString(ui, $$restProps, "accordion")} data-settings={serialize(settings)} data-module_type={(ui?"accordion":"")} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

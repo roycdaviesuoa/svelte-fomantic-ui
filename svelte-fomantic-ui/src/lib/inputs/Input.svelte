@@ -5,13 +5,13 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {classString, otherProps} from "../svelte-fomantic-ui"
     import { createEventDispatcher } from 'svelte';
 
     export let value: string="";
     export let checked: boolean=false;
     export let group: string="";
-    export let id: string=null;
+    export let id: string=undefined;
     export let ui: boolean=false;
     export let popup: boolean=false;
 
@@ -24,13 +24,13 @@
 </script>
 
 {#if ui}
-    <div class={"ui " + uiProps($$restProps) + " input"} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, "input")} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot/>
     </div>
 {:else if otherProps($$restProps).hasOwnProperty("type") && otherProps($$restProps)["type"] == "checkbox"}
-    <input type="checkbox" {id} class={uiProps($$restProps) + " input"} bind:group bind:checked bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
+    <input type="checkbox" {id} class={classString(ui, $$restProps, "input")} bind:group bind:checked bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
 {:else if otherProps($$restProps).hasOwnProperty("type") && otherProps($$restProps)["type"] == "radio"}
-    <input type="radio" {id} class={uiProps($$restProps) + " input"} bind:group bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
+    <input type="radio" {id} class={classString(ui, $$restProps, "input")} bind:group bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
 {:else}
-    <input {id} class={uiProps($$restProps) + " input"} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
+    <input {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
 {/if}

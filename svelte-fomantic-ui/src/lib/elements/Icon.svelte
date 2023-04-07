@@ -5,13 +5,13 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
     import { createEventDispatcher } from 'svelte';
 
     export let ui: boolean=false;
     export let link: boolean=false;
-    export let id: string="";
-    export let settings = {};
+    export let id: string=undefined;
+    export let settings: object=undefined;
     export let popup: boolean = false;
 
     const dispatch = createEventDispatcher();
@@ -24,11 +24,11 @@
 </script>
 
 {#if link}
-    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} on:click={doClick} on:keydown on:keypress on:keyup data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <i {id} class={classString(ui, $$restProps, "icon")} on:click={doClick} on:keydown on:keypress on:keyup data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {:else}
-    <i {id} class={(ui?"ui ":"") + uiProps($$restProps) + " icon"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <i {id} class={classString(ui, $$restProps, "icon")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {/if}

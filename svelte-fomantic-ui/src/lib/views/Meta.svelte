@@ -5,11 +5,11 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {classString, otherProps} from "../svelte-fomantic-ui"
     export let meta: string = null;
     export let ui: boolean=false;
 </script>
 
-<div data-meta={meta} class={(ui?"ui ":"") + uiProps($$restProps) + " meta"} {...otherProps($$restProps)}>
+<div data-meta={meta} class={classString(ui, $$restProps, "meta")} {...otherProps($$restProps)}>
     <slot />
 </div>

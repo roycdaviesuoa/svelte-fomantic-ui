@@ -7,18 +7,22 @@ TODO: support svg images
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
+
     export let ui: boolean = false;
-    export let alt: string = "";
-    export let src: string = "";
-    export let settings = {};
+    export let alt: string = undefined;
+    export let src: string = undefined;
+    export let settings: object = undefined;
     export let popup: boolean = false;
+
+    let mouseover = false;
+
 </script>
 
-{#if src !== ""}
-    <img {src} class={(ui?"ui ":"") + uiProps($$restProps) + " image"} {alt} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
+{#if src}
+    <img {src} class={classString(ui, $$restProps, "image")} {alt} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}/>
 {:else}
-    <div class={(ui?"ui ":"") + uiProps($$restProps) + " image"} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
-        <slot />
+    <div class={classString(ui, $$restProps, "image")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} on:mouseenter={()=>{mouseover=true;}} on:mouseleave={()=>{mouseover=false;}} on:focus>
+        <slot {mouseover}/>
     </div>
 {/if}

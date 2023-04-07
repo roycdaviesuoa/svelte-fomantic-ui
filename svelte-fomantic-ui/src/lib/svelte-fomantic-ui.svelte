@@ -83,8 +83,10 @@
 
     // Views
     export {default as Ad} from './views/Ad.svelte';
+    export {default as Author} from './views/Author.svelte';
     export {default as Card} from './views/Card.svelte';
     export {default as Cards} from './views/Cards.svelte';
+    export {default as Category} from './views/Category.svelte';
     export {default as Center} from './views/Center.svelte';
     export {default as Comment} from './views/Comment.svelte';
     export {default as Comments} from './views/Comments.svelte';

@@ -2,12 +2,15 @@
 // * By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
 // ******************************************************************************************************************************************************
 
+
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Convert the props that are sent into an svelte tag that are not named directly into a string that can be used as class attributes.
 // Also, if there is an underscore property, add the words in that to the class attributes.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-export function uiProps (restProps:{}):string {
-    let the_class = "";
+export function classString (ui: boolean, restProps:{}, mainClass: string):string {
+    // Start with 'ui' if appropriate
+    let the_class = (ui?"ui ":"");
+
     Object.keys(restProps).forEach((key, i) => {
         // Properties that are boolean are used for the class details for Fomantic-UI.
         // The class is only included if the property is true - this makes it possible to switch on and off a class programmatically.
@@ -23,7 +26,14 @@ export function uiProps (restProps:{}):string {
     {
         the_class = the_class + " " + restProps["_"]
     }
-    return(the_class);
+
+    // Add the main class
+    the_class += " " + mainClass;
+
+    // Trim any leading or trailing spaces and return
+
+    let return_class = the_class.trim();
+    return((return_class==="")?undefined:return_class);
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -44,7 +54,7 @@ export function otherProps (restProps:{}):{} {
         }
         else {
             // Find all the non-boolean properties.
-            if (typeof(restProps[key]) !== "boolean") {
+            if ((typeof(restProps[key]) !== "boolean") && (key != "_")) {
                 other_props[key] = restProps[key];
             }
         }
@@ -59,6 +69,8 @@ export function otherProps (restProps:{}):{} {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function serialize(obj:any)
 {
+    if (!obj) return undefined;
+    
     // Create a new object to hold the serialized version
     const serialized = {};
 

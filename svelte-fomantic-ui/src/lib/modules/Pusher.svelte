@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {classString, otherProps} from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
     
@@ -16,6 +16,6 @@
     export let offsetHeight: number=0;
 </script>
 
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " pusher"} bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "pusher")} bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight {...otherProps($$restProps)}>
     <slot />
 </div>

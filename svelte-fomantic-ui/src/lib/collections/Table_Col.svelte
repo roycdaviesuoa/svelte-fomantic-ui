@@ -5,18 +5,17 @@
 -->
 
 <script lang="ts">
-    import {uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {classString, otherProps} from "../svelte-fomantic-ui"
     export let ui: boolean=false;
     export let head: boolean = false;
-    let the_class = (ui?"ui ":"") + uiProps($$restProps);
 </script>
 
 {#if head}
-    <th class={the_class===""?null:the_class} {...otherProps($$restProps)}>
+    <th class={classString(ui, $$restProps, "")} {...otherProps($$restProps)}>
         <slot />
     </th>
 {:else}
-    <td class={the_class===""?null:the_class} {...otherProps($$restProps)}>
+    <td class={classString(ui, $$restProps, "")} {...otherProps($$restProps)}>
         <slot />
     </td>
 {/if}

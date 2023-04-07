@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import {serialize, uiProps, otherProps} from "../svelte-fomantic-ui"
+    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
     
@@ -13,7 +13,7 @@
     // export let settings: object=null;
 </script>
 
-<!-- <div class={(ui?"ui ":"") + uiProps($$restProps) + " popup"} data-settings={settings===null?null:JSON.stringify(settings)} data-module_type="popup" {...otherProps($$restProps)}> -->
-<div class={(ui?"ui ":"") + uiProps($$restProps) + " popup"}  {...otherProps($$restProps)}>
-        <slot />
+<!-- <div class={classString(ui, $$restProps, "popup")} data-settings={settings===null?null:JSON.stringify(settings)} data-module_type="popup" {...otherProps($$restProps)}> -->
+<div class={classString(ui, $$restProps, "popup")}  {...otherProps($$restProps)}>
+    <slot />
 </div>

@@ -25,6 +25,48 @@ export const reload = function()
     // Initialise the Tablesort code
     tableSort();
 
+    // $("[data-module]").each(function() {
+    //     let module = $(this).data("module");
+    //     if (module)
+    //     {
+    //         let array = Object.keys(module).filter(function(value, index, arr){
+    //             return value !== "activate";
+    //         });
+
+    //         let moduleType = array[0];
+    //         if (moduleType) {
+    //             let serialized = $(this).attr('data-module');
+    //             let settings = deserialize(serialized)[moduleType];
+    //             console.log(moduleType, settings);
+
+    //             switch (moduleType) {
+    //                 case "": break; // Sometimes, there may be elements with blank module names
+    //                 case "calendar" : // We have to do something special for calendar
+    //                     if (typeof settings === 'object' && (settings)) {
+    //                         if (settings.hasOwnProperty("startCalendar")) {
+    //                             settings.startCalendar = $("#"+settings.startCalendar);
+    //                         }
+    //                         if (settings.hasOwnProperty("endCalendar")) {
+    //                             settings.endCalendar = $("#"+settings.endCalendar);
+    //                         }
+    //                     }
+    //                     $(this)[moduleType](settings);
+    //                     break;
+    //                 case "progress": // Progress and Embed have the ability to activate on load
+    //                 case "embed":
+    //                     let activate = settings.hasOwnProperty("activate")?settings.activate:false;
+    //                     if (activate) {
+    //                         $(this)[moduleType](settings);
+    //                     }
+    //                     break;
+    //                 default : // Everything else
+    //                     $(this)[moduleType](settings);
+    //                     break;
+    //             }
+    //         }
+    //     }
+    // });
+
     // Find each element that has a dete-module_type value - these are all the ones that need initialising
     $("[data-module_type]").each(function() {
         // Grab the module type
@@ -45,10 +87,6 @@ export const reload = function()
                         settings.endCalendar = $("#"+settings.endCalendar);
                     }
                 }
-                $(this)[moduleType](settings);
-                break;
-            case "dimmer":
-                console.log(moduleType, settings)
                 $(this)[moduleType](settings);
                 break;
             case "progress": // Progress and Embed have the ability to activate on load
