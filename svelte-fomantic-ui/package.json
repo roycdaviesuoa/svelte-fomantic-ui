@@ -4,12 +4,12 @@
   "main": "src/lib/svelte-fomantic-ui.svelte",
   "svelte": "src/lib/svelte-fomantic-ui.svelte",
   "private": false,
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 8080 --host",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "repository": {
@@ -22,7 +22,7 @@
     "code"
   ],
   "author": "Roy C. Davies",
-  "homepage": "http://13.54.120.106:8080/",
+  "homepage": "http://13.54.202.240:8080/",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
