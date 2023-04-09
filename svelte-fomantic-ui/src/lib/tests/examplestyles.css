@@ -37,7 +37,7 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
-    width: calc(100%-40px);
+    width: calc(100% - 40px);
     border: 1px;
     border-color: lightgrey;
     border-style:solid;
