@@ -2,7 +2,7 @@
 
 ### This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
 ### If you are interested in the project, feel free to download, assess, and give me frank feedback...
-### Latest update (14 Mar, 2023): This is getting close to being functionally complete - a few more modules, and there will be enough for most projects and I will move this to Release Candidate 1.  Another few days...
+### Latest update (10 Apr, 2023): This is getting close to being functionally complete - a few more modules, and there will be enough for most projects and I will move this to Release Candidate 1.  Another few days...
 
 ---
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
@@ -82,7 +82,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Dropdown | X | X | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
 | Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Embed](https://fomantic-ui.com/modules/embed.html)
 | Flyout |  |  |
-| Modal | X | X | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Popup](https://fomantic-ui.com/modules/modal.html)
+| Modal | X | X | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Modal](https://fomantic-ui.com/modules/modal.html)
 | Nag |  |  |
 | Popup | X | X | [/Popup](./svelte-fomantic-ui/src/lib/tests/Popup.svelte) | [Popup](https://fomantic-ui.com/modules/popup.html)
 | Progress | X | X | [/Progress](./svelte-fomantic-ui/src/lib/tests/Progress.svelte) | [Progress](https://fomantic-ui.com/modules/progress.html)
