@@ -1,16 +1,17 @@
 <!--
 ******************************************************************************************************************************************************
-* By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
+* By Dr. Roy C. Davies, April 2023, roy.c.davies@ieee.org
 ******************************************************************************************************************************************************
 -->
 
 <script lang="ts">
-    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
-    export let ui: boolean=false;
-    export let settings: object=undefined;
-    export let popup:boolean=false;
+    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
+
+    export let ui: boolean = false;
+    export let popup: object | boolean = undefined;
+    
 </script>
 
-<div class={classString(ui, $$restProps, "rail")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "rail")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
     <slot />
 </div>

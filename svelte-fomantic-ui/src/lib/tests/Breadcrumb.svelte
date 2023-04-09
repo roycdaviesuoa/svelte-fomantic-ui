@@ -22,7 +22,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Standard" code = {Code.standard}>
 
-        <Breadcrumb ui>
+        <Breadcrumb ui popup settings={{content: "Choose a link", position: "bottom center"}}>
             <Link section>Home</Link>
             <Divider>/</Divider>
             <Link section>Store</Link>
@@ -164,6 +164,24 @@
             <Link section>Registration</Link>
             <Icon right chevron divider/>
             <Section active>Personal Information</Section>
+        </Breadcrumb>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- With popup -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "With popup" code = {Code.with_popup}>
+
+        <Breadcrumb ui popup={{content: "Choose something", position: "bottom center", variation: "basic"}}>
+            <Link section>Home</Link>
+            <Divider>/</Divider>
+            <Link section>Store</Link>
+            <Divider>/</Divider>
+            <Section active>T-shirt</Section>
         </Breadcrumb>
 
     </Example>

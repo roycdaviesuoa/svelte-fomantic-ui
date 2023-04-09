@@ -29,6 +29,7 @@
     import Emoji from './lib/tests/Emoji.svelte';
     import Feed from './lib/tests/Feed.svelte';
     import Flag from './lib/tests/Flag.svelte';
+    import Form from './lib/tests/Form.svelte';
     import Grid from './lib/tests/Grid.svelte';
     import Header from './lib/tests/Header.svelte';
     import Icon from './lib/tests/Icon.svelte';
@@ -92,7 +93,7 @@
     <ItemSFU>
         <HeaderSFU ui mini inverted>Inputs</HeaderSFU>
         <MenuSFU>
-            <Link item on:click={()=>{currentPage=Checkbox; doMenuToggle();}}>Checkbox, Radio, Toggle, Slider, Textarea</Link>    
+            <Link item on:click={()=>{currentPage=Checkbox; doMenuToggle();}}>Checkbox, Radio, Toggle, Slider</Link>    
             <Link item on:click={()=>{currentPage=CheckboxIndeterminate; doMenuToggle();}}>Indeterminate Checkbox</Link>    
             <Link item on:click={()=>{currentPage=Input; doMenuToggle();}}>Input</Link>    
             <Link item on:click={()=>{currentPage=Dropdown; doMenuToggle();}}>Dropdown</Link>    
@@ -103,7 +104,7 @@
         <MenuSFU>
             <Link item on:click={()=>{currentPage=Breadcrumb; doMenuToggle();}}>Breadcrumb</Link>    
             <Link item on:click={()=>{currentPage=BreadcrumbInteractive; doMenuToggle();}}>Interactive Breadcrumb</Link>    
-            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Form</Link>    
+            <Link item on:click={()=>{currentPage=Form; doMenuToggle();}}>Form</Link>    
             <Link item on:click={()=>{currentPage=Grid; doMenuToggle();}}>Grid</Link>    
             <Link item on:click={()=>{currentPage=Menu; doMenuToggle();}}>Menu</Link>    
             <Link item on:click={()=>{currentPage=Message; doMenuToggle();}}>Message</Link>    

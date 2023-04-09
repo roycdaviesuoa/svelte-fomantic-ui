@@ -27,6 +27,7 @@
   import Emoji from './lib/tests/Emoji.svelte';
   import Feed from './lib/tests/Feed.svelte';
   import Flag from './lib/tests/Flag.svelte';
+  import Form from './lib/tests/Form.svelte';
   import Grid from './lib/tests/Grid.svelte';
   import Header from './lib/tests/Header.svelte';
   import Icon from './lib/tests/Icon.svelte';
@@ -96,6 +97,8 @@
       currentRoute = Feed; break;
     case '/Flag':
       currentRoute = Flag; break;
+    case '/Form':
+      currentRoute = Form; break;
     case '/Grid':
       currentRoute = Grid; break;
     case '/Header':

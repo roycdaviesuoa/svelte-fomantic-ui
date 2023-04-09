@@ -127,7 +127,7 @@
 
         <Checkbox ui slider name="newsletter" label="Accept terms and conditions"/>
         <br/>
-        <Form>
+        <Form ui>
             <Fields grouped>
                 <Label>Outbound Throughput</Label>
                 <Field> <Radio ui slider value="1" bind:group={throughput} label="20 mbps max"/></Field>
@@ -227,7 +227,6 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Right aligned" code = {Code.right_aligned} narrow>
 
-        <span>Not working correctly for some reason - the active area is still on the left...</span>
         <Form ui>
             <Fields grouped>
                 <Field>

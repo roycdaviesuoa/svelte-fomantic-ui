@@ -5,10 +5,13 @@
 -->
 
 <script lang="ts">
-    import {classString, otherProps} from "../svelte-fomantic-ui"
-    export let ui: boolean=false;
+    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
+
+    export let ui: boolean = false;
+    export let popup: object | boolean = undefined;
+    
 </script>
 
-<tbody class={classString(ui, $$restProps, "")} {...otherProps($$restProps)}>
+<tbody class={classString(ui, $$restProps, "")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
     <slot />
 </tbody>

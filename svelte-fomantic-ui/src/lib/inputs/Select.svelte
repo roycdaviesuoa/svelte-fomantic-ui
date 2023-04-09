@@ -5,12 +5,12 @@
 -->
 
 <script lang="ts">
-    import {classString, otherProps} from "../svelte-fomantic-ui"
+    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
 
     export let ui: boolean=false;
     export let value: string = "";
     export let id: string = undefined;
-    export let popup: boolean=false;
+    export let popup: object | boolean = undefined;
 
     import { createEventDispatcher } from 'svelte';
 
@@ -21,7 +21,7 @@
     }
 </script>
 
-<select {id} class={classString(ui, $$restProps, "")} bind:value on:click={doClick} on:keydown on:keypress on:keyup data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+<select {id} class={classString(ui, $$restProps, "")} bind:value on:click={doClick} on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
     <slot/>
 </select>
 

@@ -8,11 +8,10 @@
     import {serialize, classString, otherProps} from "./svelte-fomantic-ui"
     export let value: string = null;
     export let ui: boolean=false;
-    export let settings: object=undefined;
-    export let popup:boolean = false;
+    export let popup: object | boolean = undefined;
     export let name: string = "";
 </script>
 
-<div data-value={value} class={classString(ui, $$restProps, name)} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+<div data-value={value} class={classString(ui, $$restProps, name)} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
     <slot />
 </div>

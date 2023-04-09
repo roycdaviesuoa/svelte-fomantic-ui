@@ -112,6 +112,15 @@ const code = {
     <Icon right chevron divider/>
     <Section active>Personal Information</Section>
 </Breadcrumb>
+    `,
+    with_popup : `
+<Breadcrumb ui popup settings={{content: "Choose something", position: "bottom center", variation: "basic"}}>
+    <Link section>Home</Link>
+    <Divider>/</Divider>
+    <Link section>Store</Link>
+    <Divider>/</Divider>
+    <Section active>T-shirt</Section>
+</Breadcrumb>
     `
 }
 

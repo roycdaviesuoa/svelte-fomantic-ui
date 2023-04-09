@@ -24,12 +24,12 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Standard" code = {Code.standard}>
 
-        <Accordion ui>
-            <Title active>
+        <Accordion ui popup={{content: "A popup on an accordion"}}>
+            <Title active popup={{content: "A popup on a title"}}>
                 <Icon dropdown/>
                 What is a dog?
             </Title>
-            <Content active>
+            <Content active popup={{content: "A popup on a content"}}>
                 <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
             </Content>
             <Title>

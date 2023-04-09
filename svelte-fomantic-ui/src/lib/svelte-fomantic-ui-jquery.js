@@ -1,5 +1,3 @@
-// @ts-ignore
-
 // ******************************************************************************************************************************************************
 // * By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
 //
@@ -25,81 +23,43 @@ export const reload = function()
     // Initialise the Tablesort code
     tableSort();
 
-    // $("[data-module]").each(function() {
-    //     let module = $(this).data("module");
-    //     if (module)
-    //     {
-    //         let array = Object.keys(module).filter(function(value, index, arr){
-    //             return value !== "activate";
-    //         });
+    // Go through each of the modules
+    $("[data-module]").each(function() {
+        let modules = get_settings($(this).data("module"));
 
-    //         let moduleType = array[0];
-    //         if (moduleType) {
-    //             let serialized = $(this).attr('data-module');
-    //             let settings = deserialize(serialized)[moduleType];
-    //             console.log(moduleType, settings);
-
-    //             switch (moduleType) {
-    //                 case "": break; // Sometimes, there may be elements with blank module names
-    //                 case "calendar" : // We have to do something special for calendar
-    //                     if (typeof settings === 'object' && (settings)) {
-    //                         if (settings.hasOwnProperty("startCalendar")) {
-    //                             settings.startCalendar = $("#"+settings.startCalendar);
-    //                         }
-    //                         if (settings.hasOwnProperty("endCalendar")) {
-    //                             settings.endCalendar = $("#"+settings.endCalendar);
-    //                         }
-    //                     }
-    //                     $(this)[moduleType](settings);
-    //                     break;
-    //                 case "progress": // Progress and Embed have the ability to activate on load
-    //                 case "embed":
-    //                     let activate = settings.hasOwnProperty("activate")?settings.activate:false;
-    //                     if (activate) {
-    //                         $(this)[moduleType](settings);
-    //                     }
-    //                     break;
-    //                 default : // Everything else
-    //                     $(this)[moduleType](settings);
-    //                     break;
-    //             }
-    //         }
-    //     }
-    // });
-
-    // Find each element that has a dete-module_type value - these are all the ones that need initialising
-    $("[data-module_type]").each(function() {
-        // Grab the module type
-        let moduleType = $(this).data("module_type");
-        // Grab the settings, if there are any
-        let serialized = $(this).attr('data-settings');
-        // Deserialize the settings
-        let settings = deserialize(serialized);
-
-        switch (moduleType) {
-            case "": break; // Sometimes, there may be elements with blank module names
-            case "calendar" : // We have to do something special for calendar
-                if (typeof settings === 'object' && (settings)) {
-                    if (settings.hasOwnProperty("startCalendar")) {
-                        settings.startCalendar = $("#"+settings.startCalendar);
-                    }
-                    if (settings.hasOwnProperty("endCalendar")) {
-                        settings.endCalendar = $("#"+settings.endCalendar);
-                    }
+        $.each(modules, (_, module) => 
+        {
+            let moduleType = module["type"];
+            let activate = module["activate"];
+    
+            if (moduleType) {
+                let settings = module["settings"]?module["settings"]:{};
+    
+                switch (moduleType) {
+                    case "": break; // Sometimes, there may be elements with blank module names
+                    case "calendar" : // We have to do something special for calendar
+                        if (typeof settings === 'object' && (settings)) {
+                            if (settings.hasOwnProperty("startCalendar")) {
+                                settings.startCalendar = $("#"+settings.startCalendar);
+                            }
+                            if (settings.hasOwnProperty("endCalendar")) {
+                                settings.endCalendar = $("#"+settings.endCalendar);
+                            }
+                        }
+                        $(this)[moduleType](settings);
+                        break;
+                    case "progress": // Progress and Embed have the ability to activate on load
+                    case "embed":
+                        if (activate) {
+                            $(this)[moduleType](settings);
+                        }
+                        break;
+                    default : // Everything else
+                        $(this)[moduleType](settings);
+                        break;
                 }
-                $(this)[moduleType](settings);
-                break;
-            case "progress": // Progress and Embed have the ability to activate on load
-            case "embed":
-                let activate = this.attributes.activate?JSON.parse(this.attributes.activate.value):false;
-                if (activate) {
-                    $(this)[moduleType](settings);
-                }
-                break;
-            default : // Everything else
-                $(this)[moduleType](settings);
-                break;
-        }
+            }
+        });
     });
 };
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,7 +88,8 @@ function construct_jquery_command(firstarg) {
     // Now we need to find the type, ie the sort of element, eg modal or accordion
     let theType = "";
     if (firstarg.hasOwnProperty("id")) {
-        theType = $("#"+firstarg.id).data("module_type");
+        let settings = get_settings($("#"+firstarg.id).data("module"));
+        let theType = extract_module_type_from_settings(settings);
         if (!theType) {
             theType = firstarg.type;
         }
@@ -162,16 +123,82 @@ export const behavior = function(...args) {
     let returnvalue;
     if (typeof firstarg === 'object')
     {
+        // Data sent in is in the form of an object
         returnvalue = eval (construct_jquery_command(firstarg));
     }
-    else {
+    else
+    {
+        // Data sent in is in the form of several parameters which args puts into an array
+        // The first is always the id of the item to be worked with
         let id = firstarg;
-        let command = $("#"+id).data("module_type");
+        // Now, let's find out the data on the module itself
+        // let settings = $("#"+id).data("module");
+        let settings = get_settings($("#"+id).data("module"));
+        let command = extract_module_type_from_settings(settings);
         if (command && id && ($("#"+id)[command])) {
             returnvalue = $("#"+id)[command](...args);
         }
     }
     return returnvalue;
+}
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+// Given the data-module info, give back a deserialized array of objects
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+function get_settings(settings)
+{
+    let return_settings = [];
+    if (settings) {
+        if (Array.isArray(settings))
+        {
+            settings.forEach((setting) => {
+                if (typeof(setting) === "string")
+                {
+                    return_settings.push(deserialize(setting));
+                }
+                else
+                {
+                    return_settings.push(setting);
+                }
+            });
+        }
+        else
+        {
+            return_settings.push(settings);
+        }
+    }
+    return return_settings;
+}
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+// Give an array of settings or a single setting, find the module name
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+function extract_module_type_from_settings(settings) {
+    let command = undefined;
+    if (Array.isArray(settings)) {
+        settings.forEach((setting) => {
+            if (setting["type"] !== "popup")
+            {
+                command = setting["type"];
+            }
+        });
+        // The module is the popup module, not one with popup added
+        if (!command && (settings.length>0))
+        {
+            command = "popup";
+        }
+    }
+    else
+    {
+        command = settings["type"];
+    }
+    return command;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 

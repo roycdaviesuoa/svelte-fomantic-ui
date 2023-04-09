@@ -54,7 +54,7 @@
 {#if narrow}
     <div class="example" id={deCapitalizeAndReplace(title)} >
         <h4 class="example-header">
-            <Button ui icon mini basic left floated style="margin-top: -5px;" data-position="top left" data-tooltip="back to top" on:click={(e)=>{scrollToSection("_top")}}><Icon home/></Button>
+            <Button ui icon mini basic left floated style="margin-top: -5px;" popup={{content:"back to top", position: "top left"}} on:click={(e)=>{scrollToSection("_top")}}><Icon home/></Button>
             {title}
         </h4>
         <div class="centered">
@@ -66,7 +66,7 @@
             <Title>
                 <Menu ui text>
                     <Menu right>
-                        <Button ui item data-tooltip="view source code" data-position="top right">
+                        <Button ui item popup={{content:"view source code", position: "top right"}}>
                             <Icon fitted chevron left small/><Text ui medium>/</Text><Icon fitted chevron right small/>
                         </Button>
                     </Menu>

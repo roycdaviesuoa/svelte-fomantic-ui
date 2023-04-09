@@ -5,27 +5,50 @@
 -->
 
 <script lang="ts">
-    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
+    import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
     import 'fomantic-ui-css/semantic.css';
     import 'fomantic-ui-css/semantic.js';
     
-    export let ui: boolean=false;
+    export let ui: boolean = false;
     export let id: string = undefined;
-    export let settings: object=undefined;
-    export let selected: string = "";
-
+    export let settings: object = undefined;
+    export let selected: any;
+    export let popup: object | boolean = undefined;
+        
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
+    const multiple = $$restProps["multiple"];
+
     function setSelected(e) {
+        console.log(e);
         if (e.target.attributes["data-value"]) {
             selected = e.target.attributes["data-value"].value;
             dispatch('click', {id: id, target: e.target, value: selected});
         }
     }
 
+    // function toggleSelection(e) {
+    //     console.log(inputDiv);
+    //     if (e.target.attributes["data-value"]) {
+    //         let value:string = e.target.attributes["data-value"].value;
+    //         console.log(value);
+    //         if (Array.isArray(selected)) {
+    //             if (selected.includes(value)) {
+    //                 selected = selected.filter(f => f !== value);
+    //             } else {
+    //                 selected = [...selected, value];
+    //             }
+    //         }
+    //         else {
+    //             selected = value;
+    //         }
+    //     }
+    // }
+
 </script>
 
-<div {id} class={classString(ui, $$restProps, "dropdown")} data-settings={serialize(settings)} data-module_type="dropdown" {...otherProps($$restProps)} on:click={setSelected}>
+<div {id} {multiple} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), popup)])} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>
+

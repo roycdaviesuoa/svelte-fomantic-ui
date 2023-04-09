@@ -36,6 +36,25 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Grids with popups -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Grids with popups" code = {Code.grids_with_popups}>
+
+        <Grid ui popup={{content: "Whole Grid popup", position: "top center", variation: "basic"}}>
+            <Row popup={{content: "Row", position: "right center"}}>
+                <Column four wide popup={{content: "Column 1", position: "bottom center"}}><Box/></Column>
+                <Column four wide popup={{content: "Column 2", position: "bottom center"}}><Box/></Column>
+                <Column four wide popup={{content: "Column 3", position: "bottom center"}}><Box/></Column>
+                <Column four wide popup={{content: "Column 4", position: "bottom center"}}><Box/></Column>
+            </Row>
+        </Grid>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Columns -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Columns" code = {Code.columns}>

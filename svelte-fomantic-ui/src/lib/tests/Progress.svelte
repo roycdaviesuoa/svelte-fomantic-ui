@@ -27,7 +27,7 @@
     <Example title = "Activate on event" code = {Code.activate_on_event}>
 
         <Button ui blue fluid on:click={()=>{update("example1"); example1_value = behavior("example1", "get percent")}}>Update</Button>
-        <Progress ui teal data-percent={74} id="example1">
+        <Progress ui teal data-percent={74} id="example1" popup={{content:"A Popup on a progress bar"}}>
             <Bar/>
             <Label>{example1_value}% Funded</Label>
         </Progress>

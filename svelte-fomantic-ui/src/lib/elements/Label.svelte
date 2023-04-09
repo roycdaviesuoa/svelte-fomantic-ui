@@ -5,25 +5,27 @@
 -->
 
 <script lang="ts">
-    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
+    import { serialize, classString, otherProps } from "../svelte-fomantic-ui"
     export let ui: boolean = false;
     export let checkbox: boolean = false;
-    export let _for: string="";
-    export let settings: object=undefined;
-    export let popup: boolean=false;
+    export let input: boolean = false;
+    export let radio: boolean = false;
+    export let _for: string = "";
+    export let popup: object | boolean = undefined;
+    
 </script>
 
 {#if _for}
-    <label class={classString(ui, $$restProps, "label")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)} for={_for}>
+    <label class={classString(ui, $$restProps, "label")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} for={_for}>
         <slot />
     </label>
-{:else if checkbox}
+{:else if checkbox || input || radio}
     <!-- Used with Checkbox -->
     <label>
         <slot />
     </label>
 {:else}
-    <div class={classString(ui, $$restProps, "label")} data-settings={serialize(settings)} data-module_type={(popup?"popup":null)} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, "label")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

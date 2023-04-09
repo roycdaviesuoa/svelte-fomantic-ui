@@ -5,18 +5,19 @@
 -->
 
 <script lang="ts">
-    import {serialize, classString, otherProps} from "../svelte-fomantic-ui"
+    import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
     import { fade } from 'svelte/transition';
 
-    export let ui: boolean=false;
-    export let settings: object=undefined;
+    export let ui: boolean = false;
+    export let settings: object = undefined;
     export let active: boolean = false;
-
+    export let popup: object | boolean = undefined;
+    
 </script>
 
 {#if active}
     <div transition:fade>
-        <div class={classString(ui, $$restProps, "active dimmer")} data-settings={serialize(settings)} data-module_type="dimmer" {...otherProps($$restProps)}>
+        <div class={classString(ui, $$restProps, "active dimmer")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("dimmer", settings)])} {...otherProps($$restProps)}>
             <slot/>
         </div>
     </div>

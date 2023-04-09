@@ -67,9 +67,29 @@ export function otherProps (restProps:{}):{} {
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-export function serialize(obj:any)
+export function serialize(...parameters:any[])
 {
-    if (!obj) return undefined;
+    let obj: object = {};
+
+    if (parameters.length >= 3)
+    {
+        if (!parameters[0]) { return undefined; }
+        else { obj = {type: parameters[0], settings: parameters[1], activate: parameters[2]}; }
+    }
+    else if (parameters.length >= 2)
+    {
+        if (!parameters[0]) { return undefined; }
+        else { obj = {type: parameters[0], settings: parameters[1]}; }
+    }
+    else if (parameters.length >= 1)
+    {
+        if (!parameters[0]) { return undefined; }
+        else { obj = {type: parameters[0], settings: {}}; }
+    }
+    else
+    {
+        return undefined;
+    }
     
     // Create a new object to hold the serialized version
     const serialized = {};
@@ -93,3 +113,12 @@ export function serialize(obj:any)
     return JSON.stringify(serialized);
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+export function rationalize(anArray:any[])
+{
+    let aNewArray = anArray.filter(item => item !== undefined);
+    if (aNewArray.length === 0) { return undefined; }
+    else { return (JSON.stringify(aNewArray)); }
+}

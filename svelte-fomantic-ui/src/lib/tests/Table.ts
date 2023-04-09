@@ -1338,12 +1338,12 @@ const code = {
 {/each}
     `,
     sortable: `
-<Table ui sortable celled>
+    <Table ui sortable celled popup={{content: "The columns in this table can be sorted by clicking on the header.", position: "top center", variation: "basic"}}>
     <Table_Head>
         <Table_Row>
-            <Table_Col head>Name</Table_Col>
-            <Table_Col head>Status</Table_Col>
-            <Table_Col head>Notes</Table_Col>
+            <Table_Col head popup={{content: "sort by name", position: "top left"}}>Name</Table_Col>
+            <Table_Col head popup={{content: "sort by status", position: "top left"}}>Status</Table_Col>
+            <Table_Col head popup={{content: "sort by notes", position: "top left"}}>Notes</Table_Col>
         </Table_Row>
     </Table_Head>
     <Table_Body>
