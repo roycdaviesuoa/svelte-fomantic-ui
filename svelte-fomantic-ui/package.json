@@ -4,7 +4,7 @@
   "main": "src/lib/svelte-fomantic-ui.svelte",
   "svelte": "src/lib/svelte-fomantic-ui.svelte",
   "private": false,
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -22,7 +22,7 @@
     "code"
   ],
   "author": "Roy C. Davies",
-  "homepage": "https://github.com/roycdaviesuoa/svelte-fomantic-ui",
+  "homepage": "http://13.54.120.106:8080/",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
