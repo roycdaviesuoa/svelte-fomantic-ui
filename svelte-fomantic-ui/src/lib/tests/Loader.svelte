@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Loader, Segment, Dimmer, Placeholder, Paragraph, Line, Button, Content } from "../svelte-fomantic-ui.svelte";
+    import { Loader, Segment, Dimmer, Placeholder, Paragraph, Line, Button, Content, Image } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Loader';
@@ -28,12 +28,14 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Loader" code = {Code.loader}>
 
+
         <Segment ui>
-            <br/><br/><br/>
+            <Image ui wireframe src="/images/short-paragraph.png"/>
             <Dimmer ui active>
-              <Loader ui/>
+                <Loader ui active/>
             </Dimmer>
         </Segment>
+
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
