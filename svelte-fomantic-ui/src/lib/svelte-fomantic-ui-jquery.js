@@ -77,44 +77,51 @@ export const reload = function()
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function construct_jquery_command(firstarg) {
     console.log(firstarg);
-    // Jquery commands always begin with a $
-    var jquery_command = "$";
+    var jquery_command = "";
 
-    // If there is an id parameter, then the jquery command is for a specific element.  Sometimes, though it is a general setup,
-    // in which case there is no id, unles there is a class.
+    // First, find the element type, eg modal or accordion
+    let element = "";
     if (firstarg.hasOwnProperty("id")) {
-        jquery_command += "(\'#" + firstarg.id + "\')";
-    }
-    else if(firstarg.hasOwnProperty("class")) {
-        jquery_command += "(\'." + firstarg.class + "\')";
-    }
-
-    // Now we need to find the type, ie the sort of element, eg modal or accordion
-    let theType = "";
-    if (firstarg.hasOwnProperty("id")) {
-        // First, let's see if this is a module
+        // First, let's see if the DOM element being refered to is a module wih settings
         let settings = get_settings($("#"+firstarg.id).data("module"));
-        console.log(settings);
-        
-        let theType = extract_module_type_from_settings(settings);
-        if (!theType) {
-            theType = firstarg.type;
-        }
+
+        // Extract the module type / name
+        let element = extract_module_type_from_settings(settings);
+
+        // If there wasn't one, grab it from the object parameter
+        if (!element) { element = firstarg.type; }
     }
     else {
-        theType = firstarg.type;
+        // Otherwise, we have to include that in the object parameter explicitly
+        element = firstarg.type;
     }
-    console.log("the Type", theType);
 
-    // If there is a settings parameter, use that as the settings to send in, otherwise empty brackets.
-    jquery_command += ("." + theType + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
+    if (element)
+    {
+        console.log("Element type :", element);
 
-    // If there are additional commands, add those to the end.
-    firstarg.commands.forEach ((command) => {
-        jquery_command += "." + theType + "(\'" + command + "\')";
-    })
-
-    console.log(jquery_command);
+        // Jquery commands always begin with a $
+        jquery_command += "$";
+    
+        // If there is an id parameter, then the jquery command is for a specific element.  Sometimes, though it is a general setup,
+        // in which case there is no id, unles there is a class.
+        if (firstarg.hasOwnProperty("id")) {
+            jquery_command += "(\'#" + firstarg.id + "\')";
+        }
+        else if(firstarg.hasOwnProperty("class")) {
+            jquery_command += "(\'." + firstarg.class + "\')";
+        }
+    
+        // If there is a settings parameter, use that as the settings to send in, otherwise empty brackets.
+        jquery_command += ("." + element + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
+    
+        // If there are additional commands, add those to the end.
+        firstarg.commands.forEach ((command) => {
+            jquery_command += "." + element + "(\'" + command + "\')";
+        })
+    
+        console.log(jquery_command);
+    }
 
     // Finally, return the completed jquery command as a string
     return jquery_command;
