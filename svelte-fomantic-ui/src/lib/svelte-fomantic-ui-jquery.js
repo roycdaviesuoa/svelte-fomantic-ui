@@ -85,18 +85,24 @@ function construct_jquery_command(firstarg) {
         // First, let's see if the DOM element being refered to is a module wih settings
         let settings = get_settings($("#"+firstarg.id).data("module"));
 
+        console.log(settings);
+
         // Extract the module type / name
-        let element = extract_module_type_from_settings(settings);
+        element = extract_module_type_from_settings(settings);
+
+        console.log(element);
 
         // If there wasn't one, grab it from the object parameter
-        if (!element) { element = firstarg.type; }
+        if (element === "") { element = firstarg.type; }
     }
     else {
         // Otherwise, we have to include that in the object parameter explicitly
         element = firstarg.type;
     }
 
-    if (element)
+    console.log(element);
+
+    if (element !== "")
     {
         console.log("Element type :", element);
 

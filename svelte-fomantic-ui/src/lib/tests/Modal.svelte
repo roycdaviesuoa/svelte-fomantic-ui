@@ -56,7 +56,7 @@
 
         <Button ui fluid blue on:click={()=>{behavior("example2", "show")}}>Activate</Button>
 
-        <Modal ui small id="example2" settings={{}}>
+        <Modal ui small id="example2">
             <Icon close/>
             <Header>
                 Modal Title
