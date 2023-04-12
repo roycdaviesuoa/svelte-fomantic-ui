@@ -76,19 +76,26 @@ export const reload = function()
 // {id: "example1", commands: ['show'], settings:{ ... various parameters ...}}
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function construct_jquery_command(firstarg) {
+    console.log(firstarg);
     // Jquery commands always begin with a $
     var jquery_command = "$";
 
-    // If there is an id parameter, then the jquery command is for a specific element.  Sometime, though it is a general setup,
-    // in which case there is no id
+    // If there is an id parameter, then the jquery command is for a specific element.  Sometimes, though it is a general setup,
+    // in which case there is no id, unles there is a class.
     if (firstarg.hasOwnProperty("id")) {
         jquery_command += "(\'#" + firstarg.id + "\')";
+    }
+    else if(firstarg.hasOwnProperty("class")) {
+        jquery_command += "(\'." + firstarg.class + "\')";
     }
 
     // Now we need to find the type, ie the sort of element, eg modal or accordion
     let theType = "";
     if (firstarg.hasOwnProperty("id")) {
+        // First, let's see if this is a module
         let settings = get_settings($("#"+firstarg.id).data("module"));
+        console.log(settings);
+        
         let theType = extract_module_type_from_settings(settings);
         if (!theType) {
             theType = firstarg.type;
@@ -97,6 +104,7 @@ function construct_jquery_command(firstarg) {
     else {
         theType = firstarg.type;
     }
+    console.log("the Type", theType);
 
     // If there is a settings parameter, use that as the settings to send in, otherwise empty brackets.
     jquery_command += ("." + theType + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
@@ -105,6 +113,8 @@ function construct_jquery_command(firstarg) {
     firstarg.commands.forEach ((command) => {
         jquery_command += "." + theType + "(\'" + command + "\')";
     })
+
+    console.log(jquery_command);
 
     // Finally, return the completed jquery command as a string
     return jquery_command;
@@ -124,7 +134,9 @@ export const behavior = function(...args) {
     if (typeof firstarg === 'object')
     {
         // Data sent in is in the form of an object
-        returnvalue = eval (construct_jquery_command(firstarg));
+        // returnvalue = eval (construct_jquery_command(firstarg));
+        let newFunction = new Function(construct_jquery_command(firstarg));
+        returnvalue = newFunction();
     }
     else
     {
@@ -238,7 +250,8 @@ function deserialize(serialized)
             const val = deserialized[key];
             if (typeof val === 'string' && (val.startsWith('function') || (val.startsWith('(') && (val.indexOf('=>') > -1)))) {
                 // If the property is a function string, convert it back into a function
-                obj[key] = eval('('+val+')');
+                // obj[key] = eval('('+val+')');
+                obj[key] = new Function(val);
             } else {
                 // Otherwise, add the property to the deserialized object
                 obj[key] = val;

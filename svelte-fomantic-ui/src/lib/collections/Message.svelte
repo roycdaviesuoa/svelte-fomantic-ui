@@ -6,8 +6,6 @@
 
 <script lang="ts">
     import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
-    import 'fomantic-ui-css/semantic.css';
-    import 'fomantic-ui-css/semantic.js';
     import { fade } from 'svelte/transition';
 
     export let ui: boolean = false;

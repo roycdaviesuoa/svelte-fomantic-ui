@@ -6,8 +6,6 @@
 
 <script lang="ts">
     import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
-    import 'fomantic-ui-css/semantic.css';
-    import 'fomantic-ui-css/semantic.js';
     
     export let ui: boolean = false;
     export let id: string = undefined;

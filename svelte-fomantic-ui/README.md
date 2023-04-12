@@ -2,7 +2,7 @@
 
 ### This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
 ### If you are interested in the project, feel free to download, assess, and give me frank feedback...
-### Latest update (8 April, 2023): This is getting close to being functionally complete - a few more modules, and there will be enough for most projects and I will move this to Release Candidate 1.  Another few days...
+### Latest update (13 April, 2023): Still more to test before RC1...  Getting there, but slowly.
 ----
 
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
@@ -154,10 +154,12 @@ This has been packaged for installation with `yarn`, but should also work with `
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
 <script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui-jquery.js"></script>
 ```
 
-Notice that JQuery is being included in this project as fomantic UI depends on it.
+Notice that JQuery is being included in this project as fomantic UI depends on it.  If you prefer, you can also include the jquery and fomantic / semantic ui css and js files locally and link to them there.
 
 ## Usage
 
@@ -176,7 +178,7 @@ To use fomantic UI in your project, import the required elements in the script s
 
 ## Modules
 
-Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery, as mentioned above.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.  **These won't work without the two lines above being included in your index.html head section.**
+Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery, as mentioned above.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.  **These won't work without the lines above being included in your index.html head section.**
 
 ### The `update` function
 

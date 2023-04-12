@@ -104,6 +104,7 @@
     export {default as Summary} from './views/Summary.svelte';
     export {default as Value} from './views/Value.svelte';
 
+    // A generic div
     export {default as Div} from './Div.svelte';
 
     // Helper functions for modules
