@@ -75,32 +75,25 @@ export const reload = function()
 // {commands:['show'], settings:{ ... various parameters ...}}
 // {id: "example1", commands: ['show'], settings:{ ... various parameters ...}}
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-function construct_jquery_command(firstarg) {
-    console.log(firstarg);
+function construct_jquery_command(parameters) {
     var jquery_command = "";
 
     // First, find the element type, eg modal or accordion
     let element = "";
-    if (firstarg.hasOwnProperty("id")) {
+    if (parameters.hasOwnProperty("id")) {
         // First, let's see if the DOM element being refered to is a module wih settings
-        let settings = get_settings($("#"+firstarg.id).data("module"));
-
-        console.log(settings);
+        let settings = get_settings($("#"+parameters.id).data("module"));
 
         // Extract the module type / name
         element = extract_module_type_from_settings(settings);
 
-        console.log(element);
-
         // If there wasn't one, grab it from the object parameter
-        if (element === "") { element = firstarg.type; }
+        if (element === "") { element = parameters.type; }
     }
     else {
         // Otherwise, we have to include that in the object parameter explicitly
-        element = firstarg.type;
+        element = parameters.type;
     }
-
-    console.log(element);
 
     if (element !== "")
     {
@@ -111,20 +104,22 @@ function construct_jquery_command(firstarg) {
     
         // If there is an id parameter, then the jquery command is for a specific element.  Sometimes, though it is a general setup,
         // in which case there is no id, unles there is a class.
-        if (firstarg.hasOwnProperty("id")) {
-            jquery_command += "(\'#" + firstarg.id + "\')";
+        if (parameters.hasOwnProperty("id")) {
+            jquery_command += "(\'#" + parameters.id + "\')";
         }
-        else if(firstarg.hasOwnProperty("class")) {
-            jquery_command += "(\'." + firstarg.class + "\')";
+        else if(parameters.hasOwnProperty("class")) {
+            jquery_command += "(\'." + parameters.class + "\')";
         }
     
         // If there is a settings parameter, use that as the settings to send in, otherwise empty brackets.
-        jquery_command += ("." + element + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
+        jquery_command += ("." + element + (parameters.hasOwnProperty("settings")?"("+JSON.stringify(parameters.settings)+")":"()"));
     
         // If there are additional commands, add those to the end.
-        firstarg.commands.forEach ((command) => {
-            jquery_command += "." + element + "(\'" + command + "\')";
-        })
+        if (parameters.hasOwnProperty("commands")) {
+            parameters.commands.forEach ((command) => {
+                jquery_command += "." + element + "(\'" + command + "\')";
+            })
+        }
     
         console.log(jquery_command);
     }
@@ -148,8 +143,13 @@ export const behavior = function(...args) {
     {
         // Data sent in is in the form of an object
         // returnvalue = eval (construct_jquery_command(firstarg));
-        let newFunction = new Function(construct_jquery_command(firstarg));
-        returnvalue = newFunction();
+        let function_string = construct_jquery_command(firstarg);
+        if (function_string === "") {
+            return 0;
+        } else {
+            let newFunction = new Function(construct_jquery_command(firstarg));
+            return (newFunction());
+        }
     }
     else
     {
@@ -163,8 +163,10 @@ export const behavior = function(...args) {
         if (command && id && ($("#"+id)[command])) {
             returnvalue = $("#"+id)[command](...args);
         }
+        else {
+            return null;
+        }
     }
-    return returnvalue;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
