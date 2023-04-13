@@ -22,6 +22,15 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Popup" code = {Code.popup}>
 
+        <Button ui icon popup={{content:"Add users to your feed"}}>
+            <Icon add/>
+        </Button>
+        <Button ui icon popup settings={{content:"Add users to your feed"}}>
+            <Icon add/>
+        </Button>
+        <Button ui icon popup data={{content:"Add users to your feed"}}>
+            <Icon add/>
+        </Button>
         <Button ui icon popup data-content="Add users to your feed">
             <Icon add/>
         </Button>
