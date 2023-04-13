@@ -12,7 +12,7 @@
     export let settings: object = undefined;
     export let popup: object | boolean = undefined;
         
-    function setSelected(e) {
+    function setSelected(e: any) {
         if (e.target.attributes["value"]) {
             selected = e.target.attributes["value"].value;
         }

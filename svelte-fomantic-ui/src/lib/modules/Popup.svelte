@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
+    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
     
     export let ui: boolean = false;
     export let settings: object = undefined;

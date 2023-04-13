@@ -18,7 +18,7 @@
 
     const multiple = $$restProps["multiple"];
 
-    function setSelected(e) {
+    function setSelected(e: any) {
         console.log(e);
         if (e.target.attributes["data-value"]) {
             selected = e.target.attributes["data-value"].value;

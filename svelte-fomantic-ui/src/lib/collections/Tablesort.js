@@ -31,7 +31,7 @@ export const tableSort = function() {
 				sortBy = th.data().sortBy,
 				sortedMap = [];
 
-			var unsortedValues = cells.map(function(idx, cell) {
+			var unsortedValues = cells.map(function(_idx, cell) {
 				if (sortBy)
 					return (typeof sortBy === 'function') ? sortBy($(th), $(cell), self) : sortBy;
 				return ($(this).data().sortValue != null ? $(this).data().sortValue : $(this).text());

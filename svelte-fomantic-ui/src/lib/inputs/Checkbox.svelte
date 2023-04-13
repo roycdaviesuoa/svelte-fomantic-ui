@@ -7,9 +7,6 @@
 <script lang="ts">
     import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
     import { onMount, afterUpdate } from 'svelte';
-    import { createEventDispatcher } from 'svelte';
-
-    const dispatch = createEventDispatcher();
 
     export let ui: boolean = false;
     export let id: string = null;
@@ -28,7 +25,7 @@
     // If no ID is given, generate a 6 letter random one
     id=(id?id:Math.random().toString(36).substring(2, 6));
 
-    let inputElement;
+    let inputElement : any;
 
     onMount(() => {
 		inputElement.indeterminate = indeterminate;

@@ -15,7 +15,7 @@
     const dispatch = createEventDispatcher();
 
 
-    function doClick(event) {
+    function doClick(event:any) {
         dispatch('click', {id: id, target:event.target})
     }
 </script>

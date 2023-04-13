@@ -62,7 +62,7 @@
     <ItemSFU>
         <ImageSFU ui inline logo mini icon src="/images/SvelteFomanticUI.png"/>
         <b>&nbsp;Svelte Fomantic UI</b>
-        <span> 0.1.7</span>
+        <span> 0.2.0</span>
     </ItemSFU>
     <Link item header on:click={()=>{currentPage=Home; doMenuToggle();}}>
         <IconSFU home/>
