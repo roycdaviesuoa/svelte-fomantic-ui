@@ -85,7 +85,7 @@
     <Example title = "Reuse DOM" code = {Code.reuse_dom}>
 
         <p>Note again here the use of behavior with an object rather than a set of parameters, but this time with an id.</p>
-        <Button ui fluid green on:click={()=>{behavior({id: 'example3', commands: ['show', 'is active'], settings: example3}); console.log(behavior({id: 'example3', commands: ['can fit']}))}}>Activate</Button>
+        <Button ui fluid green on:click={()=>{behavior({id: 'example3', commands: ['show', 'is active'], settings: example3}); console.log(behavior({id: 'example3', commands: ['can fit']})); console.log(behavior('example3', 'can fit'))}}>Activate</Button>
 
         <Modal ui id="example3">
             <Header />
