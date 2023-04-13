@@ -75,58 +75,53 @@ export const reload = function()
 // {commands:['show'], settings:{ ... various parameters ...}}
 // {id: "example1", commands: ['show'], settings:{ ... various parameters ...}}
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-function construct_jquery_command(firstarg) {
-    console.log(firstarg);
+function construct_jquery_command(params) {
     var jquery_command = "";
 
     // First, find the element type, eg modal or accordion
     let element = "";
-    if (firstarg.hasOwnProperty("id")) {
+    if (params.hasOwnProperty("id")) {
         // First, let's see if the DOM element being refered to is a module wih settings
-        let settings = get_settings($("#"+firstarg.id).data("module"));
-
-        console.log(settings);
+        let settings = get_settings($("#"+params.id).data("module"));
 
         // Extract the module type / name
         element = extract_module_type_from_settings(settings);
 
-        console.log(element);
-
         // If there wasn't one, grab it from the object parameter
-        if (element === "") { element = firstarg.type; }
+        if (!element || (element === "")) { element = params.type; }
     }
     else {
         // Otherwise, we have to include that in the object parameter explicitly
-        element = firstarg.type;
+        element = params.type;
     }
-
-    console.log(element);
 
     if (element !== "")
     {
-        console.log("Element type :", element);
-
         // Jquery commands always begin with a $
         jquery_command += "$";
     
         // If there is an id parameter, then the jquery command is for a specific element.  Sometimes, though it is a general setup,
         // in which case there is no id, unles there is a class.
-        if (firstarg.hasOwnProperty("id")) {
-            jquery_command += "(\'#" + firstarg.id + "\')";
+        if (params.hasOwnProperty("id")) {
+            jquery_command += "(\'#" + params.id + "\')";
         }
-        else if(firstarg.hasOwnProperty("class")) {
-            jquery_command += "(\'." + firstarg.class + "\')";
+        else if(params.hasOwnProperty("class")) {
+            jquery_command += "(\'." + params.class + "\')";
         }
     
         // If there is a settings parameter, use that as the settings to send in, otherwise empty brackets.
-        jquery_command += ("." + element + (firstarg.hasOwnProperty("settings")?"("+JSON.stringify(firstarg.settings)+")":"()"));
+        if (params.hasOwnProperty("settings")) {
+            jquery_command += ("." + element + "(" + JSON.stringify(params.settings) + ")");
+        }
     
-        // If there are additional commands, add those to the end.
-        firstarg.commands.forEach ((command) => {
-            jquery_command += "." + element + "(\'" + command + "\')";
-        })
-    
-        console.log(jquery_command);
+        if (params.hasOwnProperty("commands")) {
+            // If there are additional commands, add those to the end.
+            params.commands.forEach ((command) => {
+                jquery_command += "." + element + "(\'" + command + "\')";
+            })
+        } else {
+            jquery_command += "." + element + "()";
+        }
     }
 
     // Finally, return the completed jquery command as a string
@@ -147,9 +142,7 @@ export const behavior = function(...args) {
     if (typeof firstarg === 'object')
     {
         // Data sent in is in the form of an object
-        // returnvalue = eval (construct_jquery_command(firstarg));
-        let newFunction = new Function(construct_jquery_command(firstarg));
-        returnvalue = newFunction();
+        returnvalue = eval(construct_jquery_command(firstarg));
     }
     else
     {
@@ -206,23 +199,24 @@ function get_settings(settings)
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function extract_module_type_from_settings(settings) {
     let command = undefined;
-    if (Array.isArray(settings)) {
+
+    if (settings.hasOwnProperty("type")) {
+        command = settings["type"];
+    } else {
         settings.forEach((setting) => {
             if (setting["type"] !== "popup")
             {
                 command = setting["type"];
             }
+
+            // The module is the popup module, not one with popup added
+            if (!command && (settings.length>0))
+            {
+                command = "popup";
+            }
         });
-        // The module is the popup module, not one with popup added
-        if (!command && (settings.length>0))
-        {
-            command = "popup";
-        }
-    }
-    else
-    {
-        command = settings["type"];
-    }
+    };
+
     return command;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
