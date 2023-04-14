@@ -8,15 +8,19 @@ const code = {
 <Button ui icon popup={{content:"Add users to your feed"}}>
     <Icon add/>
 </Button>
+
 <Button ui icon popup data={{content:"Add users to your feed"}}>
     <Icon add/>
 </Button>
+
 <Button ui icon popup data-content="Add users to your feed">
     <Icon add/>
 </Button>
+
 <Button ui icon popup data-tooltip="Add users to your feed" data-position="top left">
     <Icon add/>
 </Button>
+
 <Button ui icon popup>
     <Icon add/>
 </Button>
