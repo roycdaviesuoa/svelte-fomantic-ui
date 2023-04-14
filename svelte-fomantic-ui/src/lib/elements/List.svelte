@@ -22,11 +22,11 @@
 </script>
 
 {#if selection}
-    <div {id} class={classString(ui, $$restProps, "list")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup >
+    <div {id} class={classString(ui, $$restProps, "list")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup >
         <slot />
     </div>
 {:else}
-    <div {id} class={classString(ui, $$restProps, "list")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <div {id} class={classString(ui, $$restProps, "list")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

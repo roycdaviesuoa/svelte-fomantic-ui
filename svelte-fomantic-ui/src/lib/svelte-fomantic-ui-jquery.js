@@ -29,11 +29,11 @@ export const reload = function()
 
         $.each(modules, (_, module) => 
         {
-            let moduleType = module["type"];
-            let activate = module["activate"];
     
-            if (moduleType) {
-                let settings = module["settings"]?module["settings"]:{};
+            if (module.hasOwnProperty("type")) {
+                let moduleType = module["type"];
+                let activate = module.hasOwnProperty("activate")?module["activate"]:false;
+                let settings = module.hasOwnProperty("settings")?module["settings"]:{};
     
                 switch (moduleType) {
                     case "": break; // Sometimes, there may be elements with blank module names
@@ -46,6 +46,12 @@ export const reload = function()
                                 settings.endCalendar = $("#"+settings.endCalendar);
                             }
                         }
+                        $(this)[moduleType](settings);
+                        break;
+                    case "popup":
+                        console.log("POPUP", moduleType, settings);
+                        console.log(module);
+                        console.log("$(this)." + moduleType + "(" + JSON.stringify(settings) + ")");
                         $(this)[moduleType](settings);
                         break;
                     case "progress": // Progress and Embed have the ability to activate on load
@@ -177,6 +183,7 @@ function get_settings(settings)
         if (Array.isArray(settings))
         {
             settings.forEach((setting) => {
+                console.log("SETTING", setting);
                 if (typeof(setting) === "string")
                 {
                     return_settings.push(deserialize(setting));
@@ -189,6 +196,7 @@ function get_settings(settings)
         }
         else
         {
+            console.log("SETTINGS", settings);
             return_settings.push(settings);
         }
     }

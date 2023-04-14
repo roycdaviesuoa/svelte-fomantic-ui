@@ -12,6 +12,6 @@
     
 </script>
 
-<div class={classString(ui, $$restProps, "grid")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} on:click on:change>
+<div class={classString(ui, $$restProps, "grid")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click on:change>
     <slot />
 </div>

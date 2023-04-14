@@ -12,6 +12,6 @@
     
 </script>
 
-<span class={classString(ui, $$restProps, "floated")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+<span class={classString(ui, $$restProps, "floated")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot />
 </span>

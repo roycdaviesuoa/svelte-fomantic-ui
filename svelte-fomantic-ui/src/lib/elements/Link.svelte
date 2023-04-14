@@ -20,6 +20,6 @@
     }
 </script>
 
-<a {id} class={classString(ui, $$restProps, "")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
+<a {id} class={classString(ui, $$restProps, "")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
     <slot />
 </a>

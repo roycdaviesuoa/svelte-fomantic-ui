@@ -21,7 +21,7 @@
     }
 </script>
 
-<select {id} class={classString(ui, $$restProps, "")} bind:value on:click={doClick} on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+<select {id} class={classString(ui, $$restProps, "")} bind:value on:click={doClick} on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot/>
 </select>
 

@@ -19,11 +19,11 @@
 </script>
 
 {#if selected}
-    <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} on:click={setSelected} on:change>
+    <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={setSelected} on:change>
         <slot />
     </div>
 {:else}
-    <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} on:change>
+    <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:change>
         <slot />
     </div>
 {/if}

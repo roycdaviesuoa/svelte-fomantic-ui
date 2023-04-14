@@ -5,9 +5,24 @@
 
 const code = {
     popup : `
+<Button ui icon popup={{content:"Add users to your feed"}}>
+    <Icon add/>
+</Button>
+<Button ui icon popup data={{content:"Add users to your feed"}}>
+    <Icon add/>
+</Button>
 <Button ui icon popup data-content="Add users to your feed">
     <Icon add/>
 </Button>
+<Button ui icon popup data-tooltip="Add users to your feed" data-position="top left">
+    <Icon add/>
+</Button>
+<Button ui icon popup>
+    <Icon add/>
+</Button>
+<Popup ui>
+    <Content>Add users to your feed</Content>
+</Popup>
     `,
 titled : `
 <Image ui avatar popup src="/images/elliot.jpg" data={{title : "Elliot Fu", content : "Elliot has been a member since July 2012"}}/>

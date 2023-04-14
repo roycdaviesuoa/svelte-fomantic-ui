@@ -16,6 +16,6 @@
     export let offsetHeight: number=0;
 </script>
 
-<div class={classString(ui, $$restProps, "pusher")} data-module={serialize((popup?"popup":null), popup)} bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "pusher")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight {...otherProps($$restProps)}>
     <slot />
 </div>

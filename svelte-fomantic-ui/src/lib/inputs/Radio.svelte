@@ -22,12 +22,12 @@
 </script>
 
 {#if label}
-    <div class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("checkbox", settings)])} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("checkbox", settings)])} {...otherProps($$restProps)}>
         <input type="radio" {id} {name} {value} bind:group {disabled}>
         <label for={id} class="ui radio">{label}</label>
     </div>
 {:else}
-    <div class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("checkbox", settings)])} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":" radio")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("checkbox", settings)])} {...otherProps($$restProps)}>
         <input type="radio" {id} {name} {value} bind:group {disabled}>
         <slot/>
     </div>

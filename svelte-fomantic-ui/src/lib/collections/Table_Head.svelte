@@ -12,6 +12,6 @@
     
 </script>
 
-<thead class={classString(ui, $$restProps, "")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+<thead class={classString(ui, $$restProps, "")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot />
 </thead>

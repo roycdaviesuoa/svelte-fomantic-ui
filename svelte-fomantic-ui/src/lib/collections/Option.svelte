@@ -13,6 +13,6 @@
     
 </script>
 
-<option class={classString(ui, $$restProps, "")} {value} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+<option class={classString(ui, $$restProps, "")} {value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot />
 </option>

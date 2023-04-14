@@ -12,6 +12,6 @@
     export let name: string = "";
 </script>
 
-<div data-value={value} class={classString(ui, $$restProps, name)} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+<div data-value={value} class={classString(ui, $$restProps, name)} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot />
 </div>

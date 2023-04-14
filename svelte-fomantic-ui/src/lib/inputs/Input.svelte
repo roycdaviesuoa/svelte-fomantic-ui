@@ -41,65 +41,65 @@
 </script>
 
 {#if (ui && file)}
-    <div class={classString(ui, $$restProps, "file input")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, "file input")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot/>
     </div>
 {:else if ui}
-    <div class={classString(ui, $$restProps, "input")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, "input")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot/>
     </div>
 {:else if text}
-    <input type="text" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="text" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if password}
-    <input type="password" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="password" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if hidden}
-    <input type="hidden" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="hidden" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if number}
-    <input type="number" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="number" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if email}
-    <input type="email" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="email" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if tel}
-    <input type="tel" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="tel" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if date}
-    <input type="date" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="date" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if time}
-    <input type="time" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="time" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if color}
-    <input type="color" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="color" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if file}
-    <input type="file" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="file" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if search}
-    <input type="search" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="search" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if range}
-    <input type="range" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="range" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if week}
-    <input type="week" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="week" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if month}
-    <input type="month" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="month" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if year}
-    <input type="year" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="year" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if checkbox}
-    <input type="checkbox" {id} class={classString(ui, $$restProps, "input")} bind:group bind:checked bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="checkbox" {id} class={classString(ui, $$restProps, "input")} bind:group bind:checked bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if radio}
-    <input type="radio" {id} class={classString(ui, $$restProps, "input")} bind:group bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input type="radio" {id} class={classString(ui, $$restProps, "input")} bind:group bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else}
-    <input {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <input {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {/if}

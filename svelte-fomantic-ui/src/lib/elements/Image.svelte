@@ -19,9 +19,9 @@ TODO: support svg images
 </script>
 
 {#if src}
-    <img {src} class={classString(ui, $$restProps, "image")} {alt} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+    <img {src} class={classString(ui, $$restProps, "image")} {alt} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
 {:else}
-    <div class={classString(ui, $$restProps, "image")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} on:mouseenter={()=>{mouseover=true;}} on:mouseleave={()=>{mouseover=false;}} on:focus>
+    <div class={classString(ui, $$restProps, "image")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:mouseenter={()=>{mouseover=true;}} on:mouseleave={()=>{mouseover=false;}} on:focus>
         <slot {mouseover}/>
     </div>
 {/if}

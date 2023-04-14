@@ -12,11 +12,11 @@
 </script>
 
 {#if ui}
-    <span class={classString(ui, $$restProps, "text")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <span class={classString(ui, $$restProps, "text")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </span>
 {:else}
-    <div class={classString(ui, $$restProps, "text")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, "text")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

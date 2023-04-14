@@ -18,6 +18,6 @@
 
 </script>
 
-<div class={classString(ui, $$restProps, "sidebar")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("sidebar", settings)])} bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "sidebar")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("sidebar", settings)])} bind:clientWidth bind:clientHeight bind:offsetWidth bind:offsetHeight {...otherProps($$restProps)}>
     <slot />
 </div>

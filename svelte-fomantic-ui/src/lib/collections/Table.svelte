@@ -14,6 +14,6 @@
 
 </script>
 
-<table class={classString(ui, $$restProps, "table")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize((sortable?"tablesort":null))])} {...otherProps($$restProps)}>
+<table class={classString(ui, $$restProps, "table")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize((sortable?"tablesort":null))])} {...otherProps($$restProps)}>
         <slot />
 </table>

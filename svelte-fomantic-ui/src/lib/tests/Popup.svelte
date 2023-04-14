@@ -22,10 +22,9 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Popup" code = {Code.popup}>
 
+        <p>Five different ways to do popups...</p>
+
         <Button ui icon popup={{content:"Add users to your feed"}}>
-            <Icon add/>
-        </Button>
-        <Button ui icon popup settings={{content:"Add users to your feed"}}>
             <Icon add/>
         </Button>
         <Button ui icon popup data={{content:"Add users to your feed"}}>
@@ -34,6 +33,15 @@
         <Button ui icon popup data-content="Add users to your feed">
             <Icon add/>
         </Button>
+        <Button ui icon popup data-tooltip="Add users to your feed" data-position="top left">
+            <Icon add/>
+        </Button>
+        <Button ui icon popup>
+            <Icon add/>
+        </Button>
+        <Popup ui>
+            <Content>Add users to your feed</Content>
+        </Popup>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

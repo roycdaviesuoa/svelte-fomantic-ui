@@ -81,8 +81,8 @@ Note that in essence all these do already work (except for the Modules) because 
 | Calendar | X | X | [/Calendar](./svelte-fomantic-ui/src/lib/tests/Calendar.svelte) | [Calendar](https://fomantic-ui.com/modules/calendar.html)
 | Checkbox | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
 |  - Indeterminate | X | X | [/CheckboxIndeterminate](./svelte-fomantic-ui/src/lib/tests/CheckboxIndeterminate.svelte)
-| Dimmer | X |  |
-| Dropdown | X | X | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
+| Dimmer | X | _ | [/Dimmer](./svelte-fomantic-ui/src/lib/tests/Dimmer.svelte) | [Dimmer](https://fomantic-ui.com/modules/dimmer.html)
+| Dropdown | X | _ | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
 | Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Embed](https://fomantic-ui.com/modules/embed.html)
 | Flyout |  |  |
 | Modal | X | X | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Modal](https://fomantic-ui.com/modules/modal.html)

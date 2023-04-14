@@ -16,7 +16,7 @@
 </script>
 
 {#if _for}
-    <label class={classString(ui, $$restProps, "label")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)} for={_for}>
+    <label class={classString(ui, $$restProps, "label")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} for={_for}>
         <slot />
     </label>
 {:else if checkbox || input || radio}
@@ -25,7 +25,7 @@
         <slot />
     </label>
 {:else}
-    <div class={classString(ui, $$restProps, "label")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, "label")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

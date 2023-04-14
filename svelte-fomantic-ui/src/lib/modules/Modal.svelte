@@ -13,6 +13,6 @@
     
 </script>
 
-<div class={classString(ui, $$restProps, "modal")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("modal", settings)])} {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "modal")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("modal", settings)])} {...otherProps($$restProps)}>
     <slot />
 </div>

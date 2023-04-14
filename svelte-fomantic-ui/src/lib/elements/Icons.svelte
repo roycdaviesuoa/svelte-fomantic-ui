@@ -12,6 +12,6 @@
     
 </script>
 
-<i class={classString(ui, $$restProps, "icons")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+<i class={classString(ui, $$restProps, "icons")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot />
 </i>

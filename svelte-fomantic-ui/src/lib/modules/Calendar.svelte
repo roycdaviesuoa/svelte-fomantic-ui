@@ -20,6 +20,6 @@
 
 </script>
 
-<div class={classString(ui, $$restProps, "calendar")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("calendar", settings)])} {...otherProps($$restProps)} on:change={setSelected}>
+<div class={classString(ui, $$restProps, "calendar")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("calendar", settings)])} {...otherProps($$restProps)} on:change={setSelected}>
     <slot />
 </div>

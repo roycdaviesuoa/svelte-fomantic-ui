@@ -29,12 +29,12 @@
 
 {#if link} 
     <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
-        data-emoji = {classString(false, $$restProps, "")} on:click={doClick} on:keydown on:keyup on:keypress data-module={serialize((popup?"popup":null), popup)}> 
+        data-emoji = {classString(false, $$restProps, "")} on:click={doClick} on:keydown on:keyup on:keypress data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)}> 
         <slot />
     </em>
 {:else}
     <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
-        data-emoji = {classString(false, $$restProps, "")} data-module={serialize((popup?"popup":null), popup)}> 
+        data-emoji = {classString(false, $$restProps, "")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)}> 
         <slot />
     </em>
 {/if}

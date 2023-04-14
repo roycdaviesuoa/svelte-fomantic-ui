@@ -23,11 +23,11 @@
 </script>
 
 {#if link}
-    <i {id} class={classString(ui, $$restProps, "icon")} on:click={doClick} on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <i {id} class={classString(ui, $$restProps, "icon")} on:click={doClick} on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {:else}
-    <i {id} class={classString(ui, $$restProps, "icon")} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+    <i {id} class={classString(ui, $$restProps, "icon")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {/if}

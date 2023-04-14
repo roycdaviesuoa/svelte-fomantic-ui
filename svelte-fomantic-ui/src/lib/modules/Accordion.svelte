@@ -20,6 +20,6 @@
 
 </script>
 
-<div class={classString(ui, $$restProps, "accordion")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize((ui?"accordion":null), settings)])} {...otherProps($$restProps)} on:click={setSelected}>
+<div class={classString(ui, $$restProps, "accordion")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize((ui?"accordion":null), settings)])} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

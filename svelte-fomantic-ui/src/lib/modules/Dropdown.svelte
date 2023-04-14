@@ -46,7 +46,7 @@
 
 </script>
 
-<div {id} {multiple} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), popup)])} {...otherProps($$restProps)} on:click={setSelected}>
+<div {id} {multiple} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>
 

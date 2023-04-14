@@ -13,4 +13,4 @@
     
 </script>
 
-<textarea class={classString(ui, $$restProps, "")} bind:value={value} data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}/>
+<textarea class={classString(ui, $$restProps, "")} bind:value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>

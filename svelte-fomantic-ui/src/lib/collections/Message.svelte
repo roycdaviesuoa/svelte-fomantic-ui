@@ -13,6 +13,6 @@
     
 </script>
 
-<div class={classString(ui, $$restProps, "message")} transition:fade data-module={serialize((popup?"popup":null), popup)} {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "message")} transition:fade data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot />
 </div>

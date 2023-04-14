@@ -16,11 +16,11 @@
 </script>
 
 {#if active}
-    <div transition:fade class={classString(ui, $$restProps, "active dimmer")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("dimmer", settings)])} {...otherProps($$restProps)}>
+    <div transition:fade class={classString(ui, $$restProps, "active dimmer")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("dimmer", settings)])} {...otherProps($$restProps)}>
         <slot/>
     </div>
 {:else}
-    <div class={classString(ui, $$restProps, "dimmer")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("dimmer", settings)])} {...otherProps($$restProps)}>
+    <div class={classString(ui, $$restProps, "dimmer")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("dimmer", settings)])} {...otherProps($$restProps)}>
         <slot/>
     </div>
 {/if}

@@ -69,6 +69,8 @@ export function otherProps (restProps:{}):{} {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function serialize(...parameters:any[])
 {
+    console.log("SERIALIZE in", parameters);
+
     let obj: object = {};
 
     if (parameters.length >= 3)
@@ -99,15 +101,20 @@ export function serialize(...parameters:any[])
         if (obj.hasOwnProperty(key)) 
         {
             const val = obj[key];
-            if (typeof val === 'function') {
-                // If the property is a function, convert it to a string
-                serialized[key] = val.toString();
-            } else {
-                // Otherwise, add the property to the serialized object
-                serialized[key] = val;
+            if ((val !== undefined) && (val !== null))
+            {
+                if (typeof val === 'function') {
+                    // If the property is a function, convert it to a string
+                    serialized[key] = val.toString();
+                } else {
+                    // Otherwise, add the property to the serialized object
+                    serialized[key] = val;
+                }
             }
         }
     }
+
+    console.log("SERIALIZE OUT", serialized);
 
     // Return the serialized object
     return JSON.stringify(serialized);
@@ -116,9 +123,13 @@ export function serialize(...parameters:any[])
 
 
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+// Go through the array of serialized data and remove any entries that are null or undefined, and then stringify it
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function rationalize(anArray:any[])
 {
-    let aNewArray = anArray.filter(item => item !== undefined);
+    let aNewArray = anArray.filter(item => ((item !== undefined) && (item !== null)));
     if (aNewArray.length === 0) { return undefined; }
     else { return (JSON.stringify(aNewArray)); }
 }
+// ------------------------------------------------------------------------------------------------------------------------------------------------------

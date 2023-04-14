@@ -14,6 +14,6 @@
     
 </script>
 
-<div class={classString(ui, $$restProps, "embed")} data-module={rationalize([serialize("embed", settings, activate), serialize((popup?"popup":null), popup)])} {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "embed")} data-module={rationalize([serialize("embed", settings, activate), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
     <slot />
 </div>

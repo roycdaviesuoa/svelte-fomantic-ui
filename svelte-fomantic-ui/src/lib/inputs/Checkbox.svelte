@@ -37,12 +37,12 @@
 </script>
 
 {#if label!==null}
-    <div id={id+"_div"} class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":"")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("checkbox", settings)])} {...otherProps($$restProps)} on:click on:keydown on:keypress on:keyup>
+    <div id={id+"_div"} class={classString(ui, $$restProps, (disabled?"disabled ":"") + (toggle?" toggle":(slider?" slider":"")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("checkbox", settings)])} {...otherProps($$restProps)} on:click on:keydown on:keypress on:keyup>
         <input type="checkbox" {id} {name} {value} bind:group bind:checked {disabled} bind:this={inputElement}>
         <label for={id} class="ui checkbox">{label}</label>
     </div>
 {:else}
-    <div id={id+"_div"} class={classString(ui, $$restProps, (toggle?" toggle":(slider?" slider":"")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), popup), serialize("checkbox", settings)])} on:click on:keydown on:keypress on:keyup>
+    <div id={id+"_div"} class={classString(ui, $$restProps, (toggle?" toggle":(slider?" slider":"")) + " checkbox")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("checkbox", settings)])} on:click on:keydown on:keypress on:keyup>
         <input type="checkbox" {id} {name} {value} bind:group bind:checked {disabled} bind:this={inputElement} tabindex="0">
         <slot/>
     </div>
