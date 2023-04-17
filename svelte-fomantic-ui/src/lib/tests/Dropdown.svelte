@@ -5,11 +5,12 @@
 -->
 
 <script lang="ts">
-    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag } from "../svelte-fomantic-ui.svelte";
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag, Image } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dropdown';
     import countries from './Countries';
+    import states from './USStates';
 
     import { onMount } from 'svelte';
     
@@ -36,6 +37,8 @@
     let ex2value = "";
     let ex3value = "";
     let ex4value = "";
+    let ex5value = "";
+    let ex6value = "";
 
 </script>
 
@@ -131,6 +134,39 @@
             Menu option chosen: {ex3value===""?"":animals[ex3value]}
         </Segment>
 
+        <Dropdown ui fluid selection bind:selected={ex5value}>
+            <Icon dropdown/>
+            <Text default>Select Friend</Text>
+            <Menu>
+                <Item value="jenny">
+                    <Image ui mini avatar src="/images/jenny.jpg"/>
+                    Jenny Hess
+                </Item>
+                <Item value="elliot">
+                    <Image ui mini avatar src="/images/elliot.jpg"/>
+                    Elliot Fu
+                </Item>
+                <Item value="stevie">
+                    <Image ui mini avatar src="/images/stevie.jpg"/>
+                    Stevie Feliciano
+                </Item>
+                <Item value="christian">
+                    <Image ui mini avatar src="/images/christian.jpg"/>
+                    Christian
+                </Item>
+                <Item value="matt">
+                    <Image ui mini avatar src="/images/matt.jpg"/>
+                    Matt
+                </Item>
+                <Item value="justen">
+                    <Image ui mini avatar src="/images/justen.jpg"/>
+                    Justen Kitsune
+                </Item>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex5value}
+        </Segment>
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
         
@@ -154,6 +190,15 @@
             Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()} : {ex4value===""?"":countries[ex4value]}
         </Segment>
 
+        <Select ui search dropdown bind:value={ex6value}>
+            <Option value="">State</Option>
+            {#each Object.keys(states) as key}
+                <Option value={key}>{states[key]}</Option>
+            {/each}
+        </Select>
+        <Segment ui basic>
+            Menu option chosen: {ex6value===""?"":ex6value} : {ex6value===""?"":states[ex6value]}
+        </Segment>
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
         
