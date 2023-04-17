@@ -45,7 +45,7 @@
 
 <Examples
     title = "Form examples and tests"
-    description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/collections/form.html'>here</a>"
+    description = "To check these are correct, compare with standard FomanticUI, <a href='https:/fomantic-ui.com/collections/form.html'>here</a>"
     code = {Code}>
 
 
@@ -474,27 +474,27 @@
                     <Text default>Saved Contacts</Text>
                     <Menu>
                         <Item data-value="jenny" data-text="Jenny">
-                            <Image ui mini avatar src="/images//jenny.jpg"/>
+                            <Image ui mini avatar src="/images/jenny.jpg"/>
                             Jenny Hess
                         </Item>
                         <Item data-value="elliot" data-text="Elliot">
-                            <Image ui mini avatar src="/images//elliot.jpg"/>
+                            <Image ui mini avatar src="/images/elliot.jpg"/>
                             Elliot Fu
                         </Item>
                         <Item data-value="stevie" data-text="Stevie">
-                            <Image ui mini avatar src="/images//stevie.jpg"/>
+                            <Image ui mini avatar src="/images/stevie.jpg"/>
                             Stevie Feliciano
                         </Item>
                         <Item data-value="christian" data-text="Christian">
-                            <Image ui mini avatar src="/images//christian.jpg"/>
+                            <Image ui mini avatar src="/images/christian.jpg"/>
                             Christian
                         </Item>
                         <Item data-value="matt" data-text="Matt">
-                            <Image ui mini avatar src="/images//matt.jpg"/>
+                            <Image ui mini avatar src="/images/matt.jpg"/>
                             Matt
                         </Item>
                         <Item data-value="justen" data-text="Justen">
-                            <Image ui mini avatar src="/images//justen.jpg"/>
+                            <Image ui mini avatar src="/images/justen.jpg"/>
                             Justen Kitsune
                         </Item>
                     </Menu>

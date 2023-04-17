@@ -5,7 +5,7 @@
 
 const code = {
     definition_example : `
-<Table ui celled>
+<Table ui celled popup={{content: "A table with a popup...", position: "top center", variation: "basic"}}>
     <Table_Head>
         <Table_Row>
             <Table_Col head>Name</Table_Col>

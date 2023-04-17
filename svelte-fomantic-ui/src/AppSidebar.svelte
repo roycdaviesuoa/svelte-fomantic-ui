@@ -53,6 +53,8 @@
     import Text from './lib/tests/Text.svelte';
     import Input from './lib/tests/Input.svelte';
 
+    import {version} from '../package.json';
+
     export let currentPage: any;
     export let sidebarWidth: number;
     export let doMenuToggle: any;
@@ -62,7 +64,7 @@
     <ItemSFU>
         <ImageSFU ui inline logo mini icon src="/images/SvelteFomanticUI.png"/>
         <b>&nbsp;Svelte Fomantic UI</b>
-        <span> 0.2.0</span>
+        <span> {version}</span>
     </ItemSFU>
     <Link item header on:click={()=>{currentPage=Home; doMenuToggle();}}>
         <IconSFU home/>

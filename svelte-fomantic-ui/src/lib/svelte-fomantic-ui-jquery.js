@@ -48,12 +48,6 @@ export const reload = function()
                         }
                         $(this)[moduleType](settings);
                         break;
-                    case "popup":
-                        console.log("POPUP", moduleType, settings);
-                        console.log(module);
-                        console.log("$(this)." + moduleType + "(" + JSON.stringify(settings) + ")");
-                        $(this)[moduleType](settings);
-                        break;
                     case "progress": // Progress and Embed have the ability to activate on load
                     case "embed":
                         if (activate) {
@@ -183,7 +177,6 @@ function get_settings(settings)
         if (Array.isArray(settings))
         {
             settings.forEach((setting) => {
-                console.log("SETTING", setting);
                 if (typeof(setting) === "string")
                 {
                     return_settings.push(deserialize(setting));
@@ -196,7 +189,6 @@ function get_settings(settings)
         }
         else
         {
-            console.log("SETTINGS", settings);
             return_settings.push(settings);
         }
     }

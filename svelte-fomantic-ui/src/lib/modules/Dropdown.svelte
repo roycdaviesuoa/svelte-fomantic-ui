@@ -10,19 +10,37 @@
     export let ui: boolean = false;
     export let id: string = undefined;
     export let settings: object = undefined;
-    export let selected: any;
+    export let selected: any = null;
+    export let value: any = null;
     export let popup: object | boolean = undefined;
+
+    function changed (e) {
+        console.log(e);
+    }
         
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
-    const multiple = $$restProps["multiple"];
+    // const multiple = $$restProps["multiple"];
 
     function setSelected(e: any) {
-        console.log(e);
         if (e.target.attributes["data-value"]) {
             selected = e.target.attributes["data-value"].value;
-            dispatch('click', {id: id, target: e.target, value: selected});
+            value = e.target.attributes["data-value"].value;
+            if (id) {
+                dispatch('change', {id: id, target: e.target, value: selected});
+            }
+            else {
+                dispatch('change', {target: e.target, value: selected});
+            }
+        }
+        else {
+            if (id) {
+                dispatch('change', {id: id, target: e.target});
+            }
+            else {
+                dispatch('change', {target: e.target});
+            }
         }
     }
 
@@ -46,7 +64,7 @@
 
 </script>
 
-<div {id} {multiple} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
+<div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>
 

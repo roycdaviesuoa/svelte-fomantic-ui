@@ -69,8 +69,6 @@ export function otherProps (restProps:{}):{} {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function serialize(...parameters:any[])
 {
-    console.log("SERIALIZE in", parameters);
-
     let obj: object = {};
 
     if (parameters.length >= 3)
@@ -113,8 +111,6 @@ export function serialize(...parameters:any[])
             }
         }
     }
-
-    console.log("SERIALIZE OUT", serialized);
 
     // Return the serialized object
     return JSON.stringify(serialized);

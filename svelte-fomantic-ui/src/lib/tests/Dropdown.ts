@@ -4,6 +4,94 @@
 
 
 const code = {
+    dropdown: `
+<Dropdown ui popup={{content: "Do something..."}} on:change={(e) => { if(e.detail.value) ex1value = e.detail.value; }}>
+    <Text default>File</Text>
+    <Icon dropdown/>
+    <Menu>
+        <Item value="new" popup={{content: "Create new file", position: "right center"}}>New</Item>
+        <Item value="open" popup={{content: "Open file", position: "right center"}}>
+            <span class="description">ctrl + o</span>
+            Open...
+        </Item>
+        <Item value="save as" popup={{content: "Save file as", position: "right center"}}> 
+            <span class="description">ctrl + s</span>
+            Save as...
+        </Item>
+        <Item value="rename" popup={{content: "Rename file", position: "right center"}}>
+            <span class="description">ctrl + r</span>
+            Rename
+        </Item>
+        <Item value="copy" popup={{content: "Copy file", position: "right center"}}>Make a copy</Item>
+        <Item value="move to folder">
+            <Icon folder/>
+            Move to folder
+        </Item>
+        <Item value="move to trash" popup={{content: "Move to trash", position: "right center"}}>
+            <Icon trash/>
+            Move to trash
+        </Item>
+        <Divider/>
+        <Item value="download as" popup={{content: "Download file", position: "right center"}}>Download As...</Item>
+        <Item>
+            <Icon dropdown/>
+            Publish To Web
+            <Menu>
+                <Item value="publish to google docs" popup={{content: "Publish to google docs", position: "right center"}}>Google Docs</Item>
+                <Item value="publish to google drive" popup={{content: "Publish to google drive", position: "right center"}}>Google Drive</Item>
+                <Item value="publish to dropbox" popup={{content: "Publish to dropbox", position: "right center"}}>Dropbox</Item>
+                <Item value="publish to adobe creative cloud" popup={{content: "Publish to adobe creative cloud", position: "right center"}}>Adobe Creative Cloud</Item>
+                <Item value="publish to private ftp" popup={{content: "Publish to private ftp", position: "right center"}}>Private FTP</Item>
+                <Item value="publish to another service" popup={{content: "Publish to another service", position: "right center"}}>Another Service...</Item>
+            </Menu>
+        </Item>
+        <Item value="email collaborators" popup={{content: "Send by email", position: "right center"}}>E-mail Collaborators</Item>
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex1value}
+</Segment>
+    `,
+    selection: `
+<Dropdown ui selection bind:selected={ex2value}>
+    <Icon dropdown/>
+    <Text default>Pet</Text>
+    <Menu scrollhint>
+        {#each animals as animal, i}
+            <Item value={i}>{animal}</Item>
+        {/each}
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex2value===""?"":animals[ex2value]}
+</Segment>
+
+<Select ui selection dropdown bind:value={ex3value}>
+    <Option value="">Pet</Option>
+    {#each animals as animal, i}
+        <Option value={i}>{animal}</Option>
+    {/each}
+</Select>
+<Segment ui basic>
+    Menu option chosen: {ex3value===""?"":animals[ex3value]}
+</Segment>
+    `,
+    search_selection: `
+<Dropdown ui fluid search selection bind:selected={ex4value}>
+    <Icon dropdown/>
+    <Text default>Select Country</Text>
+    <Menu>
+        {#each Object.keys(countries) as key}
+            <Item value={key}><Flag _={key}/>{countries[key]}</Item>
+        {/each}
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()} : {ex4value===""?"":countries[ex4value]}
+</Segment>
+
+Where countries = {"af": "Afghanistan", ... "zw": "Zimbabwe"}
+    `,
     simple : `
 <Dropdown ui >
     <Input type="hidden" id="gender"/>

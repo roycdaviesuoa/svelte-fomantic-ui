@@ -5,10 +5,13 @@
 -->
 
 <script lang="ts">
-    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider } from "../svelte-fomantic-ui.svelte";
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dropdown';
+    import countries from './Countries';
+
+    import { onMount } from 'svelte';
     
     let changed = {test:false, test2:false};
     let test="male";
@@ -26,6 +29,14 @@
       }
       changed[id]=!changed[id];
     }
+
+    let animals = ["Cat", "Dog", "Bird", "Rabbit", "Squiral", "Horse", "Turtle", "Parrot"];
+
+    let ex1value = "";
+    let ex2value = "";
+    let ex3value = "";
+    let ex4value = "";
+
 </script>
 
 
@@ -40,49 +51,52 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Dropdown" code = {Code.dropdown}>
 
-        <Dropdown ui popup={{content: "Do something..."}}>
-            <Text>File</Text>
+        <Dropdown ui popup={{content: "Do something..."}} on:change={(e) => { if(e.detail.value) ex1value = e.detail.value; }}>
+            <Text default>File</Text>
             <Icon dropdown/>
             <Menu>
-                <Item>New</Item>
-                <Item>
+                <Item value="new" popup={{content: "Create new file", position: "right center"}}>New</Item>
+                <Item value="open" popup={{content: "Open file", position: "right center"}}>
                     <span class="description">ctrl + o</span>
                     Open...
                 </Item>
-                <Item>
+                <Item value="save as" popup={{content: "Save file as", position: "right center"}}> 
                     <span class="description">ctrl + s</span>
                     Save as...
                 </Item>
-                <Item>
+                <Item value="rename" popup={{content: "Rename file", position: "right center"}}>
                     <span class="description">ctrl + r</span>
                     Rename
                 </Item>
-                <Item>Make a copy</Item>
-                <Item>
+                <Item value="copy" popup={{content: "Copy file", position: "right center"}}>Make a copy</Item>
+                <Item value="move to folder" popup={{content: "Move to folder", position: "right center"}}>
                     <Icon folder/>
                     Move to folder
                 </Item>
-                <Item>
+                <Item value="move to trash" popup={{content: "Move to trash", position: "right center"}}>
                     <Icon trash/>
                     Move to trash
                 </Item>
                 <Divider/>
-                <Item>Download As...</Item>
+                <Item value="download as" popup={{content: "Download file", position: "right center"}}>Download As...</Item>
                 <Item>
                     <Icon dropdown/>
                     Publish To Web
                     <Menu>
-                        <Item>Google Docs</Item>
-                        <Item>Google Drive</Item>
-                        <Item>Dropbox</Item>
-                        <Item>Adobe Creative Cloud</Item>
-                        <Item>Private FTP</Item>
-                        <Item>Another Service...</Item>
+                        <Item value="publish to google docs" popup={{content: "Publish to google docs", position: "right center"}}>Google Docs</Item>
+                        <Item value="publish to google drive" popup={{content: "Publish to google drive", position: "right center"}}>Google Drive</Item>
+                        <Item value="publish to dropbox" popup={{content: "Publish to dropbox", position: "right center"}}>Dropbox</Item>
+                        <Item value="publish to adobe creative cloud" popup={{content: "Publish to adobe creative cloud", position: "right center"}}>Adobe Creative Cloud</Item>
+                        <Item value="publish to private ftp" popup={{content: "Publish to private ftp", position: "right center"}}>Private FTP</Item>
+                        <Item value="publish to another service" popup={{content: "Publish to another service", position: "right center"}}>Another Service...</Item>
                     </Menu>
                 </Item>
-                <Item>E-mail Collaborators</Item>
+                <Item value="email collaborators" popup={{content: "Send by email", position: "right center"}}>E-mail Collaborators</Item>
             </Menu>
         </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex1value}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -94,21 +108,28 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Selection" code = {Code.selection}>
 
-        <Dropdown ui selection>
-            <Input type="hidden" name="pet"/>
+        <Dropdown ui selection bind:selected={ex2value}>
             <Icon dropdown/>
             <Text default>Pet</Text>
             <Menu scrollhint>
-                <Item data-value="0">Cat</Item>
-                <Item data-value="1">Dog</Item>
-                <Item data-value="2">Bird</Item>
-                <Item data-value="3">Rabbit</Item>
-                <Item data-value="4">Squirrel</Item>
-                <Item data-value="5">Horse</Item>
-                <Item data-value="6">Turtle</Item>
-                <Item data-value="7">Parrot</Item>
+                {#each animals as animal, i}
+                    <Item value={i}>{animal}</Item>
+                {/each}
             </Menu>
         </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex2value===""?"":animals[ex2value]}
+        </Segment>
+
+        <Select ui selection dropdown bind:value={ex3value}>
+            <Option value="">Pet</Option>
+            {#each animals as animal, i}
+                <Option value={i}>{animal}</Option>
+            {/each}
+        </Select>
+        <Segment ui basic>
+            Menu option chosen: {ex3value===""?"":animals[ex3value]}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -116,11 +137,22 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Search selection -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Search selection" code = {Code.search_selection}>
 
-
+        <Dropdown ui fluid search selection bind:selected={ex4value}>
+            <Icon dropdown/>
+            <Text default>Select Country</Text>
+            <Menu>
+                {#each Object.keys(countries) as key}
+                    <Item value={key}><Flag _={key}/>{countries[key]}</Item>
+                {/each}
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()} : {ex4value===""?"":countries[ex4value]}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
