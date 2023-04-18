@@ -90,7 +90,51 @@ const code = {
     Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()} : {ex4value===""?"":countries[ex4value]}
 </Segment>
 
-Where countries = {"af": "Afghanistan", ... "zw": "Zimbabwe"}
+<Select ui search dropdown bind:value={ex6value}>
+    <Option value="">State</Option>
+    {#each Object.keys(states) as key}
+        <Option value={key}>{states[key]}</Option>
+    {/each}
+</Select>
+<Segment ui basic>
+    Menu option chosen: {ex6value===""?"":ex6value} : {ex6value===""?"":states[ex6value]}
+</Segment>
+
+Where countries = {"af": "Afghanistan", ... "zw": "Zimbabwe"} and
+states = {"AL": "Alabama", ... "WY": "Wyoming"}
+    `,
+    ignore_diacritics: `
+<Dropdown ui search selection id="diacriticsexample" settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}}>
+    <Icon dropdown/>
+    <Text default>Search diacritics by only typing usual vowels</Text>
+    <Menu>
+        <Item>André</Item>
+        <Item>Bokmål</Item>
+        <Item>café</Item>
+        <Item>cafetería</Item>
+        <Item>château</Item>
+        <Item>décolleté</Item>
+        <Item>Élysée</Item>
+        <Item>Fräulein</Item>
+        <Item>garçon</Item>
+        <Item>háček</Item>
+        <Item>inrō</Item>
+        <Item>jūjutsu</Item>
+        <Item>kroužek</Item>
+        <Item>La Niña</Item>
+        <Item>Māori</Item>
+        <Item>négligée</Item>
+        <Item>pączki</Item>
+        <Item>Québec</Item>
+        <Item>ragoût</Item>
+        <Item>Škoda</Item>
+        <Item>takahē</Item>
+        <Item>über</Item>
+        <Item>voilà</Item>
+        <Item>whekī</Item>
+        <Item>c Zoë</Item>
+    </Menu>
+</Dropdown>
     `,
     simple : `
 <Dropdown ui >

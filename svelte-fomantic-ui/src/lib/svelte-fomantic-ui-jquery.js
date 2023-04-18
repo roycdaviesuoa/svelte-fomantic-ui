@@ -259,17 +259,35 @@ function deserialize(serialized)
         if (deserialized.hasOwnProperty(key))
         {
             const val = deserialized[key];
-            if (typeof val === 'string' && (val.startsWith('function') || (val.startsWith('(') && (val.indexOf('=>') > -1)))) {
+
+            if (key === "settings")
+            {
+                obj["settings"] = {};
+
+                for (const key2 in val)
+                {
+                    const val2 = val[key2];
+                    if (typeof val2 === 'string' && (val2.startsWith('function') || val2.indexOf('=>') > -1)) {
+                        // If the property is a function string, convert it back into a function
+                        obj["settings"][key2] = eval('('+val2+')');
+                        // obj[key] = new Function(val);
+                    } else {
+                        // Otherwise, add the property to the deserialized object
+                        obj["settings"][key2] = val2;
+                    }
+                }
+            }
+            else if (typeof val === 'string' && (val.startsWith('function') || val.indexOf('=>') > -1)) {
                 // If the property is a function string, convert it back into a function
-                // obj[key] = eval('('+val+')');
-                obj[key] = new Function(val);
+                obj[key] = eval('('+val+')');
+                // obj[key] = new Function(val);
             } else {
                 // Otherwise, add the property to the deserialized object
                 obj[key] = val;
             }
         }
     }
-
+    
     // Return the deserialized object
     return obj;
 }

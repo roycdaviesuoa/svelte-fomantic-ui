@@ -5,13 +5,14 @@
 -->
 
 <script lang="ts">
-    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
 
     export let ui: boolean=false;
     export let value: string = "";
     // export let selected: string = "";
     export let id: string = undefined;
     export let popup: object | boolean = undefined;
+    export let settings: object = undefined;
     export let multiple: boolean = false;
 
     // import { createEventDispatcher } from 'svelte';
@@ -41,11 +42,11 @@
 </script>
 
 {#if multiple}
-    <select {id} multiple class={classString(ui, $$restProps, "")} bind:value on:change on:click on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+    <select {id} multiple class={classString(ui, $$restProps, "")} bind:value on:change on:click on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
         <slot/>
     </select>
 {:else}
-    <select {id} class={classString(ui, $$restProps, "")} bind:value on:change on:click on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+    <select {id} class={classString(ui, $$restProps, "")} bind:value on:change on:click on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
         <slot/>
     </select>
 {/if}

@@ -13,6 +13,7 @@
     export let selected: any = null;
     export let value: any = null;
     export let popup: object | boolean = undefined;
+    export let multiple: boolean = false;
 
     function changed (e) {
         console.log(e);
@@ -24,6 +25,7 @@
     // const multiple = $$restProps["multiple"];
 
     function setSelected(e: any) {
+        console.log(e);
         if (e.target.attributes["data-value"]) {
             selected = e.target.attributes["data-value"].value;
             value = e.target.attributes["data-value"].value;
@@ -43,6 +45,23 @@
             }
         }
     }
+
+    // let _selected = selected.bind(this);
+
+    const additionalSettings = {
+        onAdd: (addedValue, addedText, $addedChoice) =>
+        { 
+            console.log("Adding ", addedValue, addedText, $addedChoice)
+            // console.log(_selected);
+            // _selected += "," + addedValue;
+        },
+        onRemove: (removedValue, removedText, $removedChoice) =>
+        {
+            console.log("Removing ", removedValue, removedText, $removedChoice)  
+        }
+    }
+
+
 
     // function toggleSelection(e) {
     //     console.log(inputDiv);
@@ -64,7 +83,13 @@
 
 </script>
 
-<div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", settings), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
-    <slot />
-</div>
+{#if multiple}
+    <div {id} class={classString(ui, $$restProps, "multiple dropdown")} data-module={rationalize([serialize("dropdown", {...settings, ...additionalSettings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
+        <slot />
+    </div>
+{:else}
+    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
+        <slot />
+    </div>
+{/if}
 

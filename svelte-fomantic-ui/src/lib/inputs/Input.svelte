@@ -5,13 +5,14 @@
 -->
 
 <script lang="ts">
-    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
     import { createEventDispatcher } from 'svelte';
 
     export let value: string = "";
     export let checked: boolean = false;
     export let group: string = "";
     export let id: string = undefined;
+    export let settings: object = undefined;
     export let ui: boolean = false;
     export let popup: boolean = false;
     export let text: boolean = false;
@@ -94,10 +95,10 @@
     <input type="year" {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if checkbox}
-    <input type="checkbox" {id} class={classString(ui, $$restProps, "input")} bind:group bind:checked bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
+    <input type="checkbox" {id} class={classString(ui, $$restProps, "input")} bind:group bind:checked bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("checkbox", settings)])} {...otherProps($$restProps)} {...otherProps($$restProps)}/>
     <slot/>
 {:else if radio}
-    <input type="radio" {id} class={classString(ui, $$restProps, "input")} bind:group bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
+    <input type="radio" {id} class={classString(ui, $$restProps, "input")} bind:group bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("checkbox", settings)])} {...otherProps($$restProps)} {...otherProps($$restProps)}/>
     <slot/>
 {:else}
     <input {id} class={classString(ui, $$restProps, "input")} bind:value on:click={doClick} on:change on:keydown on:keypress on:keyup data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>

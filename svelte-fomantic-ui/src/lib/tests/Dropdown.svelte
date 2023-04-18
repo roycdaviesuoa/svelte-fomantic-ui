@@ -39,6 +39,8 @@
     let ex4value = "";
     let ex5value = "";
     let ex6value = "";
+    let ex7value = "";
+    let ex8value = "dutch,english,french";
 
 </script>
 
@@ -199,6 +201,52 @@
         <Segment ui basic>
             Menu option chosen: {ex6value===""?"":ex6value} : {ex6value===""?"":states[ex6value]}
         </Segment>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+        
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Ignore diacritics -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Ignore diacritics" code = {Code.ignore_diacritics}>
+
+        <Dropdown ui search selection id="diacriticsexample" settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}}>
+            <Icon dropdown/>
+            <Text default>Search diacritics by only typing usual vowels</Text>
+            <Menu>
+                <Item>André</Item>
+                <Item>Bokmål</Item>
+                <Item>café</Item>
+                <Item>cafetería</Item>
+                <Item>château</Item>
+                <Item>décolleté</Item>
+                <Item>Élysée</Item>
+                <Item>Fräulein</Item>
+                <Item>garçon</Item>
+                <Item>háček</Item>
+                <Item>inrō</Item>
+                <Item>jūjutsu</Item>
+                <Item>kroužek</Item>
+                <Item>La Niña</Item>
+                <Item>Māori</Item>
+                <Item>négligée</Item>
+                <Item>pączki</Item>
+                <Item>Québec</Item>
+                <Item>ragoût</Item>
+                <Item>Škoda</Item>
+                <Item>takahē</Item>
+                <Item>über</Item>
+                <Item>voilà</Item>
+                <Item>whekī</Item>
+                <Item>c Zoë</Item>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex7value===""?"":ex7value}
+        </Segment>
+
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
         
@@ -209,19 +257,37 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "XXXX" code = {Code.XXXX}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-        
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+    <Dropdown ui clearable multiple selection>
+        <Input hidden name="language" bind:value={ex8value}/>
+        <Icon dropdown/>
+        <Text default>Select Languages</Text>
+        <Menu>
+            <Item value="arabic">Arabic</Item>
+            <Item value="chinese">Chinese</Item>
+            <Item value="danish">Danish</Item>
+            <Item value="dutch">Dutch</Item>
+            <Item value="english">English</Item>
+            <Item value="french">French</Item>
+            <Item value="german">German</Item>
+            <Item value="greek">Greek</Item>
+            <Item value="hungarian">Hungarian</Item>
+            <Item value="italian">Italian</Item>
+            <Item value="japanese">Japanese</Item>
+            <Item value="korean">Korean</Item>
+            <Item value="lithuanian">Lithuanian</Item>
+            <Item value="persian">Persian</Item>
+            <Item value="polish">Polish</Item>
+            <Item value="portuguese">Portuguese</Item>
+            <Item value="russian">Russian</Item>
+            <Item value="spanish">Spanish</Item>
+            <Item value="swedish">Swedish</Item>
+            <Item value="turkish">Turkish</Item>
+            <Item value="vietnamese">Vietnamese</Item>
+        </Menu>
+    </Dropdown>
+    <Segment ui basic>
+        Menu option chosen: {ex8value===""?"":ex8value}
+    </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

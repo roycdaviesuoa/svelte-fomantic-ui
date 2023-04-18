@@ -70,7 +70,7 @@ export function otherProps (restProps:{}):{} {
 export function serialize(...parameters:any[])
 {
     let obj: object = {};
-
+    
     if (parameters.length >= 3)
     {
         if (!parameters[0]) { return undefined; }
@@ -101,13 +101,36 @@ export function serialize(...parameters:any[])
             const val = obj[key];
             if ((val !== undefined) && (val !== null))
             {
-                if (typeof val === 'function') {
-                    // If the property is a function, convert it to a string
-                    serialized[key] = val.toString();
-                } else {
-                    // Otherwise, add the property to the serialized object
-                    serialized[key] = val;
+                if (key === "settings")
+                {
+                    serialized[key] = {};
+                    for (const key2 in obj[key]) {
+                        if (obj[key].hasOwnProperty(key2)) 
+                        {
+                            const val2 = obj[key][key2];
+                            if ((val2 !== undefined) && (val2 !== null))
+                            {
+                                if (typeof val2 === 'function') {
+                                    // If the property is a function, convert it to a string
+                                    serialized[key][key2] = val2.toString();
+                                } else {
+                                    // Otherwise, add the property to the serialized object
+                                    serialized[key][key2] = val2;
+                                }
+                            }
+                        }
+                    }
                 }
+                else
+                {
+                    if (typeof val === 'function') {
+                        // If the property is a function, convert it to a string
+                        serialized[key] = val.toString();
+                    } else {
+                        // Otherwise, add the property to the serialized object
+                        serialized[key] = val;
+                    }
+                } 
             }
         }
     }
