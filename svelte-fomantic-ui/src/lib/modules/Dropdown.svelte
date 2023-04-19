@@ -14,10 +14,7 @@
     export let value: any = null;
     export let popup: object | boolean = undefined;
     export let multiple: boolean = false;
-
-    function changed (e) {
-        console.log(e);
-    }
+    
         
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -26,8 +23,9 @@
 
     function setSelected(e: any) {
         console.log(e);
+        selected = e.target.value;
+
         if (e.target.attributes["data-value"]) {
-            selected = e.target.attributes["data-value"].value;
             value = e.target.attributes["data-value"].value;
             if (id) {
                 dispatch('change', {id: id, target: e.target, value: selected});
@@ -45,50 +43,14 @@
             }
         }
     }
-
-    // let _selected = selected.bind(this);
-
-    const additionalSettings = {
-        onAdd: (addedValue, addedText, $addedChoice) =>
-        { 
-            console.log("Adding ", addedValue, addedText, $addedChoice)
-            // console.log(_selected);
-            // _selected += "," + addedValue;
-        },
-        onRemove: (removedValue, removedText, $removedChoice) =>
-        {
-            console.log("Removing ", removedValue, removedText, $removedChoice)  
-        }
-    }
-
-
-
-    // function toggleSelection(e) {
-    //     console.log(inputDiv);
-    //     if (e.target.attributes["data-value"]) {
-    //         let value:string = e.target.attributes["data-value"].value;
-    //         console.log(value);
-    //         if (Array.isArray(selected)) {
-    //             if (selected.includes(value)) {
-    //                 selected = selected.filter(f => f !== value);
-    //             } else {
-    //                 selected = [...selected, value];
-    //             }
-    //         }
-    //         else {
-    //             selected = value;
-    //         }
-    //     }
-    // }
-
 </script>
 
 {#if multiple}
-    <div {id} class={classString(ui, $$restProps, "multiple dropdown")} data-module={rationalize([serialize("dropdown", {...settings, ...additionalSettings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
+    <div {id} class={classString(ui, $$restProps, "multiple dropdown")} data-selected={selected} data-module={rationalize([serialize("dropdown", {settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:change={setSelected}>
         <slot />
     </div>
 {:else}
-    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={setSelected}>
+    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:change={setSelected}>
         <slot />
     </div>
 {/if}

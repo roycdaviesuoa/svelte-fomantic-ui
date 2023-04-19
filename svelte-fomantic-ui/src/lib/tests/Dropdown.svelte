@@ -212,7 +212,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Ignore diacritics" code = {Code.ignore_diacritics}>
 
-        <Dropdown ui search selection id="diacriticsexample" settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}}>
+        <Dropdown ui search selection id="diacriticsexample" settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}} bind:selected={ex7value}>
             <Icon dropdown/>
             <Text default>Search diacritics by only typing usual vowels</Text>
             <Menu>
@@ -257,7 +257,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "XXXX" code = {Code.XXXX}>
 
-    <Dropdown ui clearable multiple selection>
+    <Dropdown ui clearable multiple selection bind:selected={ex8value}>
         <Input hidden name="language" bind:value={ex8value}/>
         <Icon dropdown/>
         <Text default>Select Languages</Text>

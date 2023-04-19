@@ -11,7 +11,7 @@
     "build": "vite build",
     "preview": "vite preview --port 8080 --host",
     "check": "svelte-check --tsconfig ./tsconfig.json"
-  },
+},
   "repository": {
     "type": "git",
     "url": "https://github.com/roycdaviesuoa/svelte-fomantic-ui.git"
@@ -29,8 +29,8 @@
     "@sveltejs/vite-plugin-svelte": "latest",
     "@tsconfig/svelte": "latest",
     "svelte": "latest",
-    "svelte-check": "latest",
-    "typescript": "latest",
+    "svelte-check": "^3.2.0",
+    "typescript": "^5.0.4",
     "vite": "latest"
   },
   "dependencies": {
