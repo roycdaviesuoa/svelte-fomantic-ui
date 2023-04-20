@@ -42,6 +42,7 @@
     let ex7value = "";
     let ex8value = "dutch,english,french";
     let ex9value = "";
+    let ex10value = "node";
 
 </script>
 
@@ -289,7 +290,7 @@
     <Example title = "Clearable selection" code = {Code.clearable_selection}>
 
         <Dropdown ui clearable multiple selection bind:selected={ex8value}>
-            <Input hidden name="language" bind:value={ex8value}/>
+            <Input hidden bind:value={ex8value}/>
             <Icon dropdown/>
             <Text default>Select Languages</Text>
             <Menu>
@@ -326,11 +327,35 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Multiple selection -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Multiple selection" code = {Code.multiple_selection}>
 
-
+        <Select ui fluid multiple dropdown bind:selected={ex10value}>
+            <Input hidden bind:value={ex10value}/>
+            <Option value="">Skills</Option>
+            <Option value="angular">Angular</Option>
+            <Option value="css">CSS</Option>
+            <Option value="design">Graphic Design</Option>
+            <Option value="ember">Ember</Option>
+            <Option value="html">HTML</Option>
+            <Option value="ia">Information Architecture</Option>
+            <Option value="javascript">Javascript</Option>
+            <Option value="mech">Mechanical Engineering</Option>
+            <Option value="meteor">Meteor</Option>
+            <Option value="node">NodeJS</Option>
+            <Option value="plumbing">Plumbing</Option>
+            <Option value="python">Python</Option>
+            <Option value="rails">Rails</Option>
+            <Option value="react">React</Option>
+            <Option value="repair">Kitchen Repair</Option>
+            <Option value="ruby">Ruby</Option>
+            <Option value="ui">UI Design</Option>
+            <Option value="ux">User Experience</Option>
+        </Select>
+        <Segment ui basic>
+            Menu options chosen: {ex10value}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
