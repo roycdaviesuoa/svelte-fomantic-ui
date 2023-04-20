@@ -136,7 +136,7 @@
             Menu option chosen: {ex3value===""?"":animals[ex3value]}
         </Segment>
 
-        <Dropdown ui fluid selection bind:selected={ex5value}>
+        <Dropdown ui fluid selection bind:value={ex5value}>
             <Icon dropdown/>
             <Text default>Select Friend</Text>
             <Menu>
@@ -169,6 +169,7 @@
         <Segment ui basic>
             Menu option chosen: {ex5value}
         </Segment>
+
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
         
@@ -189,7 +190,7 @@
             </Menu>
         </Dropdown>
         <Segment ui basic>
-            Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()} : {ex4value===""?"":countries[ex4value]}
+            Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()}{ex4value===""?"":" : " + countries[ex4value]}
         </Segment>
 
         <Select ui search dropdown bind:value={ex6value}>
@@ -199,7 +200,7 @@
             {/each}
         </Select>
         <Segment ui basic>
-            Menu option chosen: {ex6value===""?"":ex6value} : {ex6value===""?"":states[ex6value]}
+            Menu option chosen: {ex6value}{ex6value===""?"":" : " + states[ex6value]}
         </Segment>
 
     </Example>
@@ -245,7 +246,7 @@
             </Menu>
         </Dropdown>
         <Segment ui basic>
-            Menu option chosen: {ex7value===""?"":ex7value}
+            Menu option chosen: {ex7value}
         </Segment>
 
     </Example>
@@ -254,41 +255,41 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Clearable selection -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Clearable selection" code = {Code.clearable_selection}>
 
-    <Dropdown ui clearable multiple selection bind:selected={ex8value}>
-        <Input hidden name="language" bind:value={ex8value}/>
-        <Icon dropdown/>
-        <Text default>Select Languages</Text>
-        <Menu>
-            <Item value="arabic">Arabic</Item>
-            <Item value="chinese">Chinese</Item>
-            <Item value="danish">Danish</Item>
-            <Item value="dutch">Dutch</Item>
-            <Item value="english">English</Item>
-            <Item value="french">French</Item>
-            <Item value="german">German</Item>
-            <Item value="greek">Greek</Item>
-            <Item value="hungarian">Hungarian</Item>
-            <Item value="italian">Italian</Item>
-            <Item value="japanese">Japanese</Item>
-            <Item value="korean">Korean</Item>
-            <Item value="lithuanian">Lithuanian</Item>
-            <Item value="persian">Persian</Item>
-            <Item value="polish">Polish</Item>
-            <Item value="portuguese">Portuguese</Item>
-            <Item value="russian">Russian</Item>
-            <Item value="spanish">Spanish</Item>
-            <Item value="swedish">Swedish</Item>
-            <Item value="turkish">Turkish</Item>
-            <Item value="vietnamese">Vietnamese</Item>
-        </Menu>
-    </Dropdown>
-    <Segment ui basic>
-        Menu option chosen: {ex8value===""?"":ex8value}
-    </Segment>
+        <Dropdown ui clearable multiple selection bind:selected={ex8value}>
+            <Input hidden name="language" bind:value={ex8value}/>
+            <Icon dropdown/>
+            <Text default>Select Languages</Text>
+            <Menu>
+                <Item value="arabic">Arabic</Item>
+                <Item value="chinese">Chinese</Item>
+                <Item value="danish">Danish</Item>
+                <Item value="dutch">Dutch</Item>
+                <Item value="english">English</Item>
+                <Item value="french">French</Item>
+                <Item value="german">German</Item>
+                <Item value="greek">Greek</Item>
+                <Item value="hungarian">Hungarian</Item>
+                <Item value="italian">Italian</Item>
+                <Item value="japanese">Japanese</Item>
+                <Item value="korean">Korean</Item>
+                <Item value="lithuanian">Lithuanian</Item>
+                <Item value="persian">Persian</Item>
+                <Item value="polish">Polish</Item>
+                <Item value="portuguese">Portuguese</Item>
+                <Item value="russian">Russian</Item>
+                <Item value="spanish">Spanish</Item>
+                <Item value="swedish">Swedish</Item>
+                <Item value="turkish">Turkish</Item>
+                <Item value="vietnamese">Vietnamese</Item>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex8value}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

@@ -53,7 +53,7 @@ const code = {
 </Segment>
     `,
     selection: `
-<Dropdown ui selection bind:selected={ex2value}>
+<Dropdown ui selection bind:value={ex2value}>
     <Icon dropdown/>
     <Text default>Pet</Text>
     <Menu scrollhint>
@@ -75,6 +75,40 @@ const code = {
 <Segment ui basic>
     Menu option chosen: {ex3value===""?"":animals[ex3value]}
 </Segment>
+
+<Dropdown ui fluid selection bind:value={ex5value}>
+    <Icon dropdown/>
+    <Text default>Select Friend</Text>
+    <Menu>
+        <Item value="jenny">
+            <Image ui mini avatar src="/images/jenny.jpg"/>
+            Jenny Hess
+        </Item>
+        <Item value="elliot">
+            <Image ui mini avatar src="/images/elliot.jpg"/>
+            Elliot Fu
+        </Item>
+        <Item value="stevie">
+            <Image ui mini avatar src="/images/stevie.jpg"/>
+            Stevie Feliciano
+        </Item>
+        <Item value="christian">
+            <Image ui mini avatar src="/images/christian.jpg"/>
+            Christian
+        </Item>
+        <Item value="matt">
+            <Image ui mini avatar src="/images/matt.jpg"/>
+            Matt
+        </Item>
+        <Item value="justen">
+            <Image ui mini avatar src="/images/justen.jpg"/>
+            Justen Kitsune
+        </Item>
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex5value}
+</Segment>
     `,
     search_selection: `
 <Dropdown ui fluid search selection bind:selected={ex4value}>
@@ -87,7 +121,7 @@ const code = {
     </Menu>
 </Dropdown>
 <Segment ui basic>
-    Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()} : {ex4value===""?"":countries[ex4value]}
+    Menu option chosen: {ex4value===""?"":ex4value.toUpperCase()}{ex4value===""?"":" : " + countries[ex4value]}
 </Segment>
 
 <Select ui search dropdown bind:value={ex6value}>
@@ -97,44 +131,83 @@ const code = {
     {/each}
 </Select>
 <Segment ui basic>
-    Menu option chosen: {ex6value===""?"":ex6value} : {ex6value===""?"":states[ex6value]}
+    Menu option chosen: {ex6value}{ex6value===""?"":" : " + states[ex6value]}
 </Segment>
 
 Where countries = {"af": "Afghanistan", ... "zw": "Zimbabwe"} and
 states = {"AL": "Alabama", ... "WY": "Wyoming"}
     `,
     ignore_diacritics: `
-<Dropdown ui search selection id="diacriticsexample" settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}}>
+<Dropdown ui search selection settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}} bind:selected={ex7value}>
+    <Input hidden/>
     <Icon dropdown/>
     <Text default>Search diacritics by only typing usual vowels</Text>
     <Menu>
-        <Item>André</Item>
-        <Item>Bokmål</Item>
-        <Item>café</Item>
-        <Item>cafetería</Item>
-        <Item>château</Item>
-        <Item>décolleté</Item>
-        <Item>Élysée</Item>
-        <Item>Fräulein</Item>
-        <Item>garçon</Item>
-        <Item>háček</Item>
-        <Item>inrō</Item>
-        <Item>jūjutsu</Item>
-        <Item>kroužek</Item>
-        <Item>La Niña</Item>
-        <Item>Māori</Item>
-        <Item>négligée</Item>
-        <Item>pączki</Item>
-        <Item>Québec</Item>
-        <Item>ragoût</Item>
-        <Item>Škoda</Item>
-        <Item>takahē</Item>
-        <Item>über</Item>
-        <Item>voilà</Item>
-        <Item>whekī</Item>
-        <Item>c Zoë</Item>
+        <Item value={"André"}>André</Item>
+        <Item value={"Bokmål"}>Bokmål</Item>
+        <Item value={"Bokmål"}>café</Item>
+        <Item value={"cafetería"}>cafetería</Item>
+        <Item value={"château"}>château</Item>
+        <Item value={"décolleté"}>décolleté</Item>
+        <Item value={"Élysée"}>Élysée</Item>
+        <Item value={"Fräulein"}>Fräulein</Item>
+        <Item value={"garçon"}>garçon</Item>
+        <Item value={"háček"}>háček</Item>
+        <Item value={"inrō"}>inrō</Item>
+        <Item value={"jūjutsu"}>jūjutsu</Item>
+        <Item value={"kroužek"}>kroužek</Item>
+        <Item value={"Niña"}>La Niña</Item>
+        <Item value={"Māori"}>Māori</Item>
+        <Item value={"négligée"}>négligée</Item>
+        <Item value={"pączki"}>pączki</Item>
+        <Item value={"Québec"}>Québec</Item>
+        <Item value={"ragoût"}>ragoût</Item>
+        <Item value={"Škoda"}>Škoda</Item>
+        <Item value={"takahē"}>takahē</Item>
+        <Item value={"über"}>über</Item>
+        <Item value={"voilà"}>voilà</Item>
+        <Item value={"whekī"}>whekī</Item>
+        <Item value={"Zoë"}>c Zoë</Item>
     </Menu>
 </Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex7value}
+</Segment>
+    `,
+    clearable_selection: `
+Note here the tie between the Dropdown and Input elements through the bound values.
+
+<Dropdown ui clearable multiple selection bind:selected={ex8value}>
+    <Input hidden name="language" bind:value={ex8value}/>
+    <Icon dropdown/>
+    <Text default>Select Languages</Text>
+    <Menu>
+        <Item value="arabic">Arabic</Item>
+        <Item value="chinese">Chinese</Item>
+        <Item value="danish">Danish</Item>
+        <Item value="dutch">Dutch</Item>
+        <Item value="english">English</Item>
+        <Item value="french">French</Item>
+        <Item value="german">German</Item>
+        <Item value="greek">Greek</Item>
+        <Item value="hungarian">Hungarian</Item>
+        <Item value="italian">Italian</Item>
+        <Item value="japanese">Japanese</Item>
+        <Item value="korean">Korean</Item>
+        <Item value="lithuanian">Lithuanian</Item>
+        <Item value="persian">Persian</Item>
+        <Item value="polish">Polish</Item>
+        <Item value="portuguese">Portuguese</Item>
+        <Item value="russian">Russian</Item>
+        <Item value="spanish">Spanish</Item>
+        <Item value="swedish">Swedish</Item>
+        <Item value="turkish">Turkish</Item>
+        <Item value="vietnamese">Vietnamese</Item>
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex8value}
+</Segment>
     `,
     simple : `
 <Dropdown ui >

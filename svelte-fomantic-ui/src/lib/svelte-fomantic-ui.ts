@@ -70,7 +70,7 @@ export function otherProps (restProps:{}):{} {
 export function serialize(...parameters:any[])
 {
     let obj: object = {};
-    
+
     if (parameters.length >= 3)
     {
         if (!parameters[0]) { return undefined; }
@@ -79,7 +79,7 @@ export function serialize(...parameters:any[])
     else if (parameters.length >= 2)
     {
         if (!parameters[0]) { return undefined; }
-        else { obj = {type: parameters[0], settings: parameters[1]}; }
+        else { obj = {type: parameters[0], settings: parameters[1]};}
     }
     else if (parameters.length >= 1)
     {

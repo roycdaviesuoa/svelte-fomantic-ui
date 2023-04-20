@@ -33,7 +33,7 @@ export const reload = function()
             if (module.hasOwnProperty("type")) {
                 let moduleType = module["type"];
                 let activate = module.hasOwnProperty("activate")?module["activate"]:false;
-                let settings = module.hasOwnProperty("settings")?module["settings"]["settings"]:{};
+                let settings = module.hasOwnProperty("settings")?(module["settings"].hasOwnProperty("settings")?module["settings"]["settings"]:module["settings"]):{};
     
                 switch (moduleType) {
                     case "": break; // Sometimes, there may be elements with blank module names
@@ -48,8 +48,7 @@ export const reload = function()
                         }
                         $(this)[moduleType](settings);
                         break;
-                    case "dropdown": 
-                    console.log(module);
+                    case "dropdown":
                         console.log(JSON.stringify(settings));
                         $(this)[moduleType](settings);
                         break;
