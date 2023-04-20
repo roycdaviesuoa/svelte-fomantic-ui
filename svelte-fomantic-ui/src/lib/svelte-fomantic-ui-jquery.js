@@ -29,7 +29,7 @@ export const reload = function()
 
         $.each(modules, (_, module) => 
         {
-    
+            console.log(module);
             if (module.hasOwnProperty("type")) {
                 let moduleType = module["type"];
                 let activate = module.hasOwnProperty("activate")?module["activate"]:false;
@@ -51,6 +51,11 @@ export const reload = function()
                     case "dropdown":
                         console.log(JSON.stringify(settings));
                         $(this)[moduleType](settings);
+                        break;
+                    case "select":
+
+                        console.log(JSON.stringify(settings));
+                        $(this).dropdown(settings);
                         break;
                     case "progress": // Progress and Embed have the ability to activate on load
                     case "embed":
