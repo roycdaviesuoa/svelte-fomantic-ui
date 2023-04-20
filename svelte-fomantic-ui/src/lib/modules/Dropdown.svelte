@@ -14,57 +14,33 @@
     export let value: any = null;
     export let popup: object | boolean = undefined;
     export let multiple: boolean = false;
-
         
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
-    // const multiple = $$restProps["multiple"];
-
-    function doChange(e: any) {
-        console.log(e);
-        selected = e.target.value;
-
-        if (e.target.attributes["data-value"]){
+    function doClick(e: any) {
+        if (e.target.attributes["data-value"]) {
             value = e.target.attributes["data-value"].value;
+            selected = value;
             if (id) {
-                dispatch('change', {id: id, target: e.target, value: selected});
+                dispatch('change', {id: id, target: e.target, value: value});
             }
             else {
-                dispatch('change', {target: e.target, value: selected});
-            }
-        }
-        else {
-            if (id) {
-                dispatch('change', {id: id, target: e.target});
-            }
-            else {
-                dispatch('change', {target: e.target});
+                dispatch('change', {target: e.target, value: value});
             }
         }
     }
 
-    // function doClick(e: any) {
-    //     console.log(e);
-
-    //     if (e.target.attributes["data-value"]) {
-    //         value = e.target.attributes["data-value"].value;
-    //         if (id) {
-    //             dispatch('click', {id: id, target: e.target, value: selected});
-    //         }
-    //         else {
-    //             dispatch('click', {target: e.target, value: selected});
-    //         }
-    //     }
-    //     else {
-    //         if (id) {
-    //             dispatch('click', {id: id, target: e.target});
-    //         }
-    //         else {
-    //             dispatch('click', {target: e.target});
-    //         }
-    //     }
-    // }
+    function doChange(e: any) {
+        selected = e.target.value;
+        value = selected;
+        if (id) {
+            dispatch('change', {id: id, target: e.target, value: value});
+        }
+        else {
+            dispatch('change', {target: e.target, value: value});
+        }
+    }
 </script>
 
 {#if multiple}
@@ -72,7 +48,7 @@
         <slot />
     </div>
 {:else}
-    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:change={doChange}>
+    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={doClick}>
         <slot />
     </div>
 {/if}

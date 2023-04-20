@@ -113,7 +113,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Selection" code = {Code.selection}>
 
-        <Dropdown ui selection bind:selected={ex2value}>
+        <Dropdown ui selection bind:value={ex2value}>
             <Icon dropdown/>
             <Text default>Pet</Text>
             <Menu scrollhint>
@@ -212,35 +212,36 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Ignore diacritics" code = {Code.ignore_diacritics}>
 
-        <Dropdown ui search selection id="diacriticsexample" settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}} bind:selected={ex7value}>
+        <Dropdown ui search selection settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}} bind:selected={ex7value}>
+            <Input hidden/>
             <Icon dropdown/>
             <Text default>Search diacritics by only typing usual vowels</Text>
             <Menu>
-                <Item>André</Item>
-                <Item>Bokmål</Item>
-                <Item>café</Item>
-                <Item>cafetería</Item>
-                <Item>château</Item>
-                <Item>décolleté</Item>
-                <Item>Élysée</Item>
-                <Item>Fräulein</Item>
-                <Item>garçon</Item>
-                <Item>háček</Item>
-                <Item>inrō</Item>
-                <Item>jūjutsu</Item>
-                <Item>kroužek</Item>
-                <Item>La Niña</Item>
-                <Item>Māori</Item>
-                <Item>négligée</Item>
-                <Item>pączki</Item>
-                <Item>Québec</Item>
-                <Item>ragoût</Item>
-                <Item>Škoda</Item>
-                <Item>takahē</Item>
-                <Item>über</Item>
-                <Item>voilà</Item>
-                <Item>whekī</Item>
-                <Item>c Zoë</Item>
+                <Item value={"André"}>André</Item>
+                <Item value={"Bokmål"}>Bokmål</Item>
+                <Item value={"Bokmål"}>café</Item>
+                <Item value={"cafetería"}>cafetería</Item>
+                <Item value={"château"}>château</Item>
+                <Item value={"décolleté"}>décolleté</Item>
+                <Item value={"Élysée"}>Élysée</Item>
+                <Item value={"Fräulein"}>Fräulein</Item>
+                <Item value={"garçon"}>garçon</Item>
+                <Item value={"háček"}>háček</Item>
+                <Item value={"inrō"}>inrō</Item>
+                <Item value={"jūjutsu"}>jūjutsu</Item>
+                <Item value={"kroužek"}>kroužek</Item>
+                <Item value={"Niña"}>La Niña</Item>
+                <Item value={"Māori"}>Māori</Item>
+                <Item value={"négligée"}>négligée</Item>
+                <Item value={"pączki"}>pączki</Item>
+                <Item value={"Québec"}>Québec</Item>
+                <Item value={"ragoût"}>ragoût</Item>
+                <Item value={"Škoda"}>Škoda</Item>
+                <Item value={"takahē"}>takahē</Item>
+                <Item value={"über"}>über</Item>
+                <Item value={"voilà"}>voilà</Item>
+                <Item value={"whekī"}>whekī</Item>
+                <Item value={"Zoë"}>c Zoë</Item>
             </Menu>
         </Dropdown>
         <Segment ui basic>
