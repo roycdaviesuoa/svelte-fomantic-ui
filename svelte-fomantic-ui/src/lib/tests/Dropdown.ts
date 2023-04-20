@@ -137,6 +137,25 @@ const code = {
 Where countries = {"af": "Afghanistan", ... "zw": "Zimbabwe"} and
 states = {"AL": "Alabama", ... "WY": "Wyoming"}
     `,
+    unfilterable_search_selection: `
+<Dropdown ui search selection bind:selected={ex9value}>
+    <Input hidden/>
+    <Icon dropdown/>
+    <Text default>States</Text>
+    <Menu>
+      <Item unfilterable value="AL">Alabama (unfilterable)</Item>
+      <Item value="AK">Alaska</Item>
+      <Item unfilterable value="AZ">Arizona (unfilterable)</Item>
+      <Item unfilterable value="AR">Arkansas (unfilterable)</Item>
+      <Item value="CA">California</Item>
+      <Item value="OH">Ohio</Item>
+      <Item value="OK">Oklahoma</Item>
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex9value}{ex9value===""?"":" : " + states[ex9value]}
+</Segment>
+    `,
     ignore_diacritics: `
 <Dropdown ui search selection settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}} bind:selected={ex7value}>
     <Input hidden/>
