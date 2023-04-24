@@ -267,7 +267,6 @@ Note here the tie between the Dropdown and Input elements through the bound valu
 </Segment>
 
 <Dropdown ui fluid multiple search selection bind:selected={ex12value}>
-    <Input hidden bind:selected={ex12value}/>
     <Icon dropdown/>
     <Text default>Select Country</Text>
     <Menu>
@@ -308,6 +307,123 @@ Note here the tie between the Dropdown and Input elements through the bound valu
         <Item value="Vietnamese">Vietnamese</Item>
     </Menu>
 </Dropdown>
+    `,
+    search_in_menu: `
+<Dropdown ui floating labeled icon button bind:selected={ex14value}>
+    <Icon filter/>
+    <Text>Filter Posts</Text>
+    <Menu>
+        <Input ui icon search>
+            <Icon search/>
+            <Input text placeholder="Search tags..."/>
+        </Input>
+        <Divider/>
+        <Header>
+            <Icon tags/>
+            Tag Label
+        </Header>
+        <Menu scrolling>
+            <Item value="Important">
+                <Label ui red empty circular/>
+                Important
+            </Item>
+            <Item value="Announcement">
+                <Label ui blue empty circular/>
+                Announcement
+            </Item>
+            <Item value="Cannot Fix">
+                <Label ui black empty circular/>
+                Cannot Fix
+            </Item>
+            <Item value="News">
+                <Label ui purple empty circular/>
+                News
+            </Item>
+            <Item value="Enhancement">
+                <Label ui orange empty circular/>
+                Enhancement
+            </Item>
+            <Item value="Change Declined">
+                <Label ui empty circular/>
+                Change Declined
+            </Item>
+            <Item value="Off Topic">
+                <Label ui yellow empty circular/>
+                Off Topic
+            </Item>
+            <Item value="Interesting">
+                <Label ui pink empty circular/>
+                Interesting
+            </Item>
+            <Item value="Discussion">
+                <Label ui green empty circular/>
+                Discussion
+            </Item>
+        </Menu>
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu option chosen: {ex14value}
+</Segment>
+
+There seems to be a bug when searching that means that the search text disappears but still reduces the number of options after selecting and deleting options.  This bug is in the original as well.
+
+<Dropdown ui multiple bind:selected={ex15value}>
+    <Icon filter/>
+    <Text>Filter Posts</Text>
+    <Menu>
+        <Input ui icon search>
+            <Icon search/>
+            <Input text placeholder="Search tags..."/>
+        </Input>
+        <Divider/>
+        <Header>
+            <Icon tags/>
+            Tag Label
+        </Header>
+        <Menu scrolling>
+            <Item value="Important">
+                <Label ui red empty circular/>
+                Important
+            </Item>
+            <Item value="Announcement">
+                <Label ui blue empty circular/>
+                Announcement
+            </Item>
+            <Item value="Cannot Fix">
+                <Label ui black empty circular/>
+                Cannot Fix
+            </Item>
+            <Item value="News">
+                <Label ui purple empty circular/>
+                News
+            </Item>
+            <Item value="Enhancement">
+                <Label ui orange empty circular/>
+                Enhancement
+            </Item>
+            <Item value="Change Declined">
+                <Label ui empty circular/>
+                Change Declined
+            </Item>
+            <Item value="Off Topic">
+                <Label ui yellow empty circular/>
+                Off Topic
+            </Item>
+            <Item value="Interesting">
+                <Label ui pink empty circular/>
+                Interesting
+            </Item>
+            <Item value="Discussion">
+                <Label ui green empty circular/>
+                Discussion
+            </Item>
+        </Menu>
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu options chosen: {ex15value}
+</Segment>
     `,
     simple : `
 <Dropdown ui >

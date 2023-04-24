@@ -47,6 +47,7 @@
     let ex12value = "";
     let ex13value = "";
     let ex14value = "";
+    let ex15value = "";
 
 </script>
 
@@ -220,7 +221,6 @@
     <Example title = "Unfilterable search selection" code = {Code.unfilterable_search_selection}>
 
         <Dropdown ui search selection bind:selected={ex9value}>
-            <Input hidden/>
             <Icon dropdown/>
             <Text default>States</Text>
             <Menu>
@@ -248,7 +248,6 @@
     <Example title = "Ignore diacritics" code = {Code.ignore_diacritics}>
 
         <Dropdown ui search selection settings={{ignoreDiacritics: true, sortSelect: true, fullTextSearch:'exact'}} bind:selected={ex7value}>
-            <Input hidden/>
             <Icon dropdown/>
             <Text default>Search diacritics by only typing usual vowels</Text>
             <Menu>
@@ -382,7 +381,6 @@
         </Segment>
 
         <Dropdown ui fluid multiple search selection bind:selected={ex12value}>
-            <Input hidden bind:selected={ex12value}/>
             <Icon dropdown/>
             <Text default>Select Country</Text>
             <Menu>
@@ -501,6 +499,63 @@
         </Dropdown>
         <Segment ui basic>
             Menu option chosen: {ex14value}
+        </Segment>
+
+        <Dropdown ui multiple bind:selected={ex15value}>
+            <Icon filter/>
+            <Text>Filter Posts</Text>
+            <Menu>
+                <Input ui icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search tags..."/>
+                </Input>
+                <Divider/>
+                <Header>
+                    <Icon tags/>
+                    Tag Label
+                </Header>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Cannot Fix">
+                        <Label ui black empty circular/>
+                        Cannot Fix
+                    </Item>
+                    <Item value="News">
+                        <Label ui purple empty circular/>
+                        News
+                    </Item>
+                    <Item value="Enhancement">
+                        <Label ui orange empty circular/>
+                        Enhancement
+                    </Item>
+                    <Item value="Change Declined">
+                        <Label ui empty circular/>
+                        Change Declined
+                    </Item>
+                    <Item value="Off Topic">
+                        <Label ui yellow empty circular/>
+                        Off Topic
+                    </Item>
+                    <Item value="Interesting">
+                        <Label ui pink empty circular/>
+                        Interesting
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu options chosen: {ex15value}
         </Segment>
 
     </Example>
