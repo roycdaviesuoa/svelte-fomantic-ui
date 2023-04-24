@@ -16,6 +16,7 @@
 
 
     function doClick(event:any) {
+        console.log("HERE");
         dispatch('click', {id: id, target:event.target})
     }
 </script>

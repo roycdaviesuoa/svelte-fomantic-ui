@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag, Image } from "../svelte-fomantic-ui.svelte";
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag, Image, Label } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dropdown';
@@ -42,7 +42,11 @@
     let ex7value = "";
     let ex8value = "dutch,english,french";
     let ex9value = "";
-    let ex10value = "node";
+    let ex10value = "";
+    let ex11value = "";
+    let ex12value = "";
+    let ex13value = "";
+    let ex14value = "";
 
 </script>
 
@@ -318,7 +322,7 @@
             </Menu>
         </Dropdown>
         <Segment ui basic>
-            Menu option chosen: {ex8value}
+            Menu options chosen: {ex8value}
         </Segment>
 
     </Example>
@@ -363,11 +367,74 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Multiple search selection -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Multiple search selection" code = {Code.multiple_search_selection}>
+
+        <Select ui fluid search dropdown multiple bind:selected={ex11value}>
+            <Option value="">State</Option>
+            {#each Object.keys(states) as key}
+                <Option value={key}>{states[key]}</Option>
+            {/each}
+        </Select>
+        <Segment ui basic>
+            Menu options chosen: {ex11value}
+        </Segment>
+
+        <Dropdown ui fluid multiple search selection bind:selected={ex12value}>
+            <Input hidden bind:selected={ex12value}/>
+            <Icon dropdown/>
+            <Text default>Select Country</Text>
+            <Menu>
+                {#each Object.keys(countries) as key}
+                    <Item value={key}><Flag _={key}/>{countries[key]}</Item>
+                {/each}
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu options chosen: {ex12value}
+        </Segment>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+        
 
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Search dropdown -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Search dropdown" code = {Code.search_dropdown}>
+
+        <Dropdown ui floating labeled search icon button bind:selected={ex13value}>
+            <Icon world/>
+            <Text>Select Language</Text>
+            <Menu>
+                <Item value="Arabic">Arabic</Item>
+                <Item value="Chinese">Chinese</Item>
+                <Item value="Danish">Danish</Item>
+                <Item value="Dutch">Dutch</Item>
+                <Item value="English">English</Item>
+                <Item value="French">French</Item>
+                <Item value="German">German</Item>
+                <Item value="Greek">Greek</Item>
+                <Item value="Hungarian">Hungarian</Item>
+                <Item value="Italian">Italian</Item>
+                <Item value="Japanese">Japanese</Item>
+                <Item value="Korean">Korean</Item>
+                <Item value="Lithuanian">Lithuanian</Item>
+                <Item value="Persian">Persian</Item>
+                <Item value="Polish">Polish</Item>
+                <Item value="Portuguese">Portuguese</Item>
+                <Item value="Russian">Russian</Item>
+                <Item value="Spanish">Spanish</Item>
+                <Item value="Swedish">Swedish</Item>
+                <Item value="Turkish">Turkish</Item>
+                <Item value="Vietnamese">Vietnamese</Item>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex13value}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -377,21 +444,64 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- XXXX -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "XXXX" code = {Code.search_in_menu}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-        
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Dropdown ui floating labeled icon button bind:selected={ex14value}>
+            <Icon filter/>
+            <Text>Filter Posts</Text>
+            <Menu>
+                <Input ui icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search tags..."/>
+                </Input>
+                <Divider/>
+                <Header>
+                    <Icon tags/>
+                    Tag Label
+                </Header>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Cannot Fix">
+                        <Label ui black empty circular/>
+                        Cannot Fix
+                    </Item>
+                    <Item value="News">
+                        <Label ui purple empty circular/>
+                        News
+                    </Item>
+                    <Item value="Enhancement">
+                        <Label ui orange empty circular/>
+                        Enhancement
+                    </Item>
+                    <Item value="Change Declined">
+                        <Label ui empty circular/>
+                        Change Declined
+                    </Item>
+                    <Item value="Off Topic">
+                        <Label ui yellow empty circular/>
+                        Off Topic
+                    </Item>
+                    <Item value="Interesting">
+                        <Label ui pink empty circular/>
+                        Interesting
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex14value}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

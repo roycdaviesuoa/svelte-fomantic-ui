@@ -197,7 +197,7 @@ states = {"AL": "Alabama", ... "WY": "Wyoming"}
 Note here the tie between the Dropdown and Input elements through the bound values.
 
 <Dropdown ui clearable multiple selection bind:selected={ex8value}>
-    <Input hidden name="language" bind:value={ex8value}/>
+    <Input hidden bind:value={ex8value}/>
     <Icon dropdown/>
     <Text default>Select Languages</Text>
     <Menu>
@@ -225,8 +225,89 @@ Note here the tie between the Dropdown and Input elements through the bound valu
     </Menu>
 </Dropdown>
 <Segment ui basic>
-    Menu option chosen: {ex8value}
+    Menu options chosen: {ex8value}
 </Segment>
+    `,
+    multiple_selection: `
+<Select ui fluid multiple dropdown bind:selected={ex10value}>
+    <Input hidden bind:value={ex10value}/>
+    <Option value="">Skills</Option>
+    <Option value="angular">Angular</Option>
+    <Option value="css">CSS</Option>
+    <Option value="design">Graphic Design</Option>
+    <Option value="ember">Ember</Option>
+    <Option value="html">HTML</Option>
+    <Option value="ia">Information Architecture</Option>
+    <Option value="javascript">Javascript</Option>
+    <Option value="mech">Mechanical Engineering</Option>
+    <Option value="meteor">Meteor</Option>
+    <Option value="node">NodeJS</Option>
+    <Option value="plumbing">Plumbing</Option>
+    <Option value="python">Python</Option>
+    <Option value="rails">Rails</Option>
+    <Option value="react">React</Option>
+    <Option value="repair">Kitchen Repair</Option>
+    <Option value="ruby">Ruby</Option>
+    <Option value="ui">UI Design</Option>
+    <Option value="ux">User Experience</Option>
+</Select>
+<Segment ui basic>
+    Menu options chosen: {ex10value}
+</Segment>
+    `,
+    multiple_search_selection: `
+<Select ui fluid search dropdown multiple bind:selected={ex11value}>
+    <Option value="">State</Option>
+    {#each Object.keys(states) as key}
+        <Option value={key}>{states[key]}</Option>
+    {/each}
+</Select>
+<Segment ui basic>
+    Menu options chosen: {ex11value}
+</Segment>
+
+<Dropdown ui fluid multiple search selection bind:selected={ex12value}>
+    <Input hidden bind:selected={ex12value}/>
+    <Icon dropdown/>
+    <Text default>Select Country</Text>
+    <Menu>
+        {#each Object.keys(countries) as key}
+            <Item value={key}><Flag _={key}/>{countries[key]}</Item>
+        {/each}
+    </Menu>
+</Dropdown>
+<Segment ui basic>
+    Menu options chosen: {ex12value}
+</Segment>
+    `,
+    search_dropdown: `
+<Dropdown ui floating labeled search icon button>
+    <Icon world/>
+    <Text>Select Language</Text>
+    <Menu>
+        <Item value="Arabic">Arabic</Item>
+        <Item value="Chinese">Chinese</Item>
+        <Item value="Danish">Danish</Item>
+        <Item value="Dutch">Dutch</Item>
+        <Item value="English">English</Item>
+        <Item value="French">French</Item>
+        <Item value="German">German</Item>
+        <Item value="Greek">Greek</Item>
+        <Item value="Hungarian">Hungarian</Item>
+        <Item value="Italian">Italian</Item>
+        <Item value="Japanese">Japanese</Item>
+        <Item value="Korean">Korean</Item>
+        <Item value="Lithuanian">Lithuanian</Item>
+        <Item value="Persian">Persian</Item>
+        <Item value="Polish">Polish</Item>
+        <Item value="Portuguese">Portuguese</Item>
+        <Item value="Russian">Russian</Item>
+        <Item value="Spanish">Spanish</Item>
+        <Item value="Swedish">Swedish</Item>
+        <Item value="Turkish">Turkish</Item>
+        <Item value="Vietnamese">Vietnamese</Item>
+    </Menu>
+</Dropdown>
     `,
     simple : `
 <Dropdown ui >
