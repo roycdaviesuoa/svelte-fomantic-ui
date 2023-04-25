@@ -8,11 +8,20 @@
     import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
 
     export let ui: boolean = false;
+    export let id: string = undefined;
     export let value: any = null;
     export let popup: object | boolean = undefined;
+
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
+
+    function doClick(event:any) {
+        dispatch('click', {id: id, target:event.target})
+    }
     
 </script>
 
-<div class={classString(ui, $$restProps, "item")} data-value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+<div class={classString(ui, $$restProps, "item")} data-value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
     <slot />
 </div>

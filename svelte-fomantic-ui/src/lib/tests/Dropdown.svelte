@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag, Image, Label } from "../svelte-fomantic-ui.svelte";
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag, Image, Label, Content, Link } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dropdown';
@@ -48,6 +48,12 @@
     let ex13value = "";
     let ex14value = "";
     let ex15value = "";
+    let ex16value = "";
+    let ex17value = "";
+    let ex18value = "";
+    let ex19value = "";
+    let ex20value = "";
+    let ex21value = "";
 
 </script>
 
@@ -253,7 +259,7 @@
             <Menu>
                 <Item value={"André"}>André</Item>
                 <Item value={"Bokmål"}>Bokmål</Item>
-                <Item value={"Bokmål"}>café</Item>
+                <Item value={"café"}>café</Item>
                 <Item value={"cafetería"}>cafetería</Item>
                 <Item value={"château"}>château</Item>
                 <Item value={"décolleté"}>décolleté</Item>
@@ -440,9 +446,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Search in menu -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.search_in_menu}>
+    <Example title = "Search in menu" code = {Code.search_in_menu}>
 
         <Dropdown ui floating labeled icon button bind:selected={ex14value}>
             <Icon filter/>
@@ -564,11 +570,61 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Inline -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Inline" code = {Code.inline}>
 
+        Show me posts by 
+        <Dropdown ui inline bind:value={ex16value}>
+            <Icon dropdown/>
+            <Text default>Select Friend</Text>
+            <Menu>
+                <Item value="jenny">
+                    <Image ui mini avatar src="/images/jenny.jpg"/>
+                    Jenny Hess
+                </Item>
+                <Item value="elliot">
+                    <Image ui mini avatar src="/images/elliot.jpg"/>
+                    Elliot Fu
+                </Item>
+                <Item value="stevie">
+                    <Image ui mini avatar src="/images/stevie.jpg"/>
+                    Stevie Feliciano
+                </Item>
+                <Item value="christian">
+                    <Image ui mini avatar src="/images/christian.jpg"/>
+                    Christian
+                </Item>
+                <Item value="matt">
+                    <Image ui mini avatar src="/images/matt.jpg"/>
+                    Matt
+                </Item>
+                <Item value="justen">
+                    <Image ui mini avatar src="/images/justen.jpg"/>
+                    Justen Kitsune
+                </Item>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex16value}
+        </Segment>
 
+        <Header ui h4>
+            <Icon trophy/>
+            <Content>
+              Trending repos
+                <Dropdown ui inline>
+                    <Text>today</Text>
+                    <Icon dropdown/>
+                    <Menu>
+                        <Header>Adjust time span</Header>
+                        <Item active value="today">Today</Item>
+                        <Item value="this week">This Week</Item>
+                        <Item value="this month">This Month</Item>
+                    </Menu>
+                </Dropdown>
+            </Content>
+          </Header>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -576,11 +632,78 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Pointing -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Pointing" code = {Code.pointing}>
 
+        <Menu ui>
+            <Link item on:click={()=>ex18value="home"}>
+                Home
+            </Link>
+            <Dropdown ui pointing link item settings={{"action":"select"}} bind:value={ex18value}>
+                <Text ui>Shopping</Text>
+                <Icon dropdown/>
+                <Menu>
+                    <Header>Categories</Header>
+                    <Item>
+                        <Icon dropdown/>
+                        <Text>Clothing</Text>
+                        <Menu>
+                            <Header>Mens</Header>
+                            <Item value="shirts">Shirts</Item>
+                            <Item value="pants">Pants</Item>
+                            <Item value="jeans">Jeans</Item>
+                            <Item value="shoes">Shoes</Item>
+                            <Divider/>
+                            <Header>Womens</Header>
+                            <Item value="dresses">Dresses</Item>
+                            <Item value="womens shoes">Shoes</Item>
+                            <Item value="bags">Bags</Item>
+                        </Menu>
+                    </Item>
+                    <Item value="home goods">Home Goods</Item>
+                    <Item value="bedroom">Bedroom</Item>
+                    <Divider/>
+                    <Header>Order</Header>
+                    <Item value="status">Status</Item>
+                    <Item value="cancellations">Cancellations</Item>
+                </Menu>
+            </Dropdown>
+            <Item link on:click={()=>ex18value="forums"}>
+                Forums
+            </Item>
+            <Item link on:click={()=>ex18value="contact us"}>
+                Contact Us
+            </Item>
+        </Menu>
+        <Segment ui basic>
+            Menu option chosen: {ex18value}
+        </Segment>
 
+        <Menu ui vertical>
+            <Item link>
+              Home
+            </Item>
+            <Dropdown ui left pointing item link>
+                <Icon dropdown/>
+                Messages
+                <Menu>
+                    <Item>Inbox</Item>
+                    <Item>Starred</Item>
+                    <Item>Sent Mail</Item>
+                    <Item>Drafts (143)</Item>
+                    <Divider/>
+                    <Item>Spam (1009)</Item>
+                    <Item>Trash</Item>
+                </Menu>
+            </Dropdown>
+            <Item link>
+                Browse
+            </Item>
+            <Item link>
+                Help
+            </Item>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
