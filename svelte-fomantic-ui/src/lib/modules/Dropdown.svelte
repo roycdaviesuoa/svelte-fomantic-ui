@@ -56,8 +56,8 @@
 
     function doClick(e: any) {
         console.log(e);
-        if (e.target.attributes["data-value"]) {
-            value = e.target.attributes["data-value"].value;
+        if (e.target.attributes["value"]) {
+            value = e.target.attributes["value"].value;
             selected = value;
             if (id) {
                 dispatch('change', {id: id, target: e.target, value: value});
@@ -65,6 +65,7 @@
             else {
                 dispatch('change', {target: e.target, value: value});
             }
+            console.log("SETTING DROPDOWN VALUE", value);
         }
     }
 

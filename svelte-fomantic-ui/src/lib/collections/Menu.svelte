@@ -9,21 +9,25 @@
 
     export let ui: boolean = false;
     export let selected: string = undefined;
+    export let value: string = undefined;
     export let popup: object | boolean = undefined;
 
     function setSelected(e:any) {
+        console.log(e);
         if (e.target.attributes["value"]) {
             selected = e.target.attributes["value"].value;
+            value = selected;
+            console.log("SETTING MENU VALUE", value);
         }
     }
 </script>
 
-{#if selected}
+<!-- {#if selected} -->
     <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={setSelected} on:change>
         <slot />
     </div>
-{:else}
+<!-- {:else}
     <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:change>
         <slot />
     </div>
-{/if}
+{/if} -->

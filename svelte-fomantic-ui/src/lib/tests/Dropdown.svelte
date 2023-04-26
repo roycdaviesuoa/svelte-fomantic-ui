@@ -69,7 +69,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Dropdown" code = {Code.dropdown}>
 
-        <Dropdown ui popup={{content: "Do something..."}} on:change={(e) => { if(e.detail.value) ex1value = e.detail.value; }}>
+        <Dropdown ui popup={{content: "Do something..."}} bind:value={ex1value}>
             <Text default>File</Text>
             <Icon dropdown/>
             <Menu>
@@ -636,8 +636,8 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Pointing" code = {Code.pointing}>
 
-        <Menu ui>
-            <Link item on:click={()=>ex18value="home"}>
+        <Menu ui bind:value={ex18value}>
+            <Link item value="home">
                 Home
             </Link>
             <Dropdown ui pointing link item settings={{"action":"select"}} bind:value={ex18value}>
@@ -669,10 +669,10 @@
                     <Item value="cancellations">Cancellations</Item>
                 </Menu>
             </Dropdown>
-            <Item link on:click={()=>ex18value="forums"}>
+            <Item link value="forums">
                 Forums
             </Item>
-            <Item link on:click={()=>ex18value="contact us"}>
+            <Item link value="contact us">
                 Contact Us
             </Item>
         </Menu>
@@ -680,30 +680,33 @@
             Menu option chosen: {ex18value}
         </Segment>
 
-        <Menu ui vertical>
-            <Item link>
+        <Menu ui vertical bind:value={ex19value}>
+            <Link item value="home">
               Home
-            </Item>
-            <Dropdown ui left pointing item link>
+            </Link>
+            <Dropdown ui left pointing item link bind:value={ex19value}>
                 <Icon dropdown/>
                 Messages
                 <Menu>
-                    <Item>Inbox</Item>
-                    <Item>Starred</Item>
-                    <Item>Sent Mail</Item>
-                    <Item>Drafts (143)</Item>
+                    <Item value="inbox">Inbox</Item>
+                    <Item value="starred">Starred</Item>
+                    <Item value="send mail">Sent Mail</Item>
+                    <Item value="drafts">Drafts (143)</Item>
                     <Divider/>
-                    <Item>Spam (1009)</Item>
-                    <Item>Trash</Item>
+                    <Item value="spam">Spam (1009)</Item>
+                    <Item value="trash">Trash</Item>
                 </Menu>
             </Dropdown>
-            <Item link>
+            <Item link value="browse">
                 Browse
             </Item>
-            <Item link>
+            <Item link value="help">
                 Help
             </Item>
         </Menu>
+        <Segment ui basic>
+            Menu option chosen: {ex19value}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
