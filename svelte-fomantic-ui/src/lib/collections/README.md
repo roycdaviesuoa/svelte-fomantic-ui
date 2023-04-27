@@ -5,7 +5,7 @@ In this folder, are various ways to collect content such as forms and tables, an
 
 Each of the modules can have popups associated with them, as can the sub modules, so for example a table might be as follows:
 
-```html
+```xml
 <Table ui sortable celled popup={{content: "The columns in this table can be sorted by clicking on the header.", position: "top center", variation: "basic"}}>
     <Table_Head>
         <Table_Row>
@@ -41,4 +41,6 @@ Each of the modules can have popups associated with them, as can the sub modules
 </Table>
 ```
 
-Note also that the ebove example shows how the sortable table works, and how the sorting functionality is easily included through the 'sortable' property.
+Note that the ebove example shows how the sortable table works, and how the sorting functionality is easily included through the 'sortable' property.
+
+Also note that the <Form> module can take a settings property which is used to initialise the form as per the Fomantic UI [form behavior setting](https://fomantic-ui.com/behaviors/form.html): `$(.ui.form).form(/settings/)`
