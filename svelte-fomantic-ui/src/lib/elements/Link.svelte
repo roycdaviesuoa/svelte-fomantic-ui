@@ -9,6 +9,7 @@
 
     export let ui: boolean=false;
     export let id: string = undefined;
+    export let value: any = undefined;
     export let popup: object | boolean = undefined;
         
     import { createEventDispatcher } from 'svelte';
@@ -16,10 +17,16 @@
 
 
     function doClick(event:any) {
-        dispatch('click', {id: id, target:event.target})
+        if (event.target.attributes["data-value"]) {
+            value = event.target.attributes["data-value"].value;
+            dispatch('click', {id: id, target: event.target, value: value});
+        }
+        else {
+            dispatch('click', {id: id, target: event.target});
+        }
     }
 </script>
 
-<a {id} class={classString(ui, $$restProps, "")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
+<a {id} class={classString(ui, $$restProps, "")} data-value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
     <slot />
 </a>

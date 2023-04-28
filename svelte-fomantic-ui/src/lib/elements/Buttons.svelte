@@ -9,6 +9,7 @@
 
     export let ui: boolean = false;
     export let id: string = undefined;
+    export let value: any = undefined;
     export let popup: object | boolean = undefined;
 
     import { createEventDispatcher } from 'svelte';
@@ -16,7 +17,15 @@
 
     // Return a click event
     function doClick(event: any) {
-        dispatch('click', {id: id, target: event.target});
+        if (event.target.attributes["data-value"]) {
+            value = event.target.attributes["data-value"].value;
+            if (id) {
+                dispatch('click', {id: id, target: event.target, value: value});
+            }
+            else {
+                dispatch('click', {id: id, target: event.target});
+            }
+        }
     }
 </script>
 

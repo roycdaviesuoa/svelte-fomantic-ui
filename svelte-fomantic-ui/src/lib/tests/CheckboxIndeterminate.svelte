@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Checkbox, List, Item } from "../svelte-fomantic-ui.svelte";
+    import { Checkbox, List, Item, Segment } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './CheckboxIndeterminate';
@@ -20,9 +20,11 @@
         { id: "pineapple", name: 'Pineapple', selected: false },
     ];
 
+    // Go through each of the fruits, and if they are all true, the result is true, otherwise it is false.
     let checked: boolean;
     $: checked = fruits.reduce((acc, fruit):boolean => (acc && fruit.selected), true);
 
+    // Go through each of the fruits, and if any one is true, but they are not all true, then it is in an intermediate state.
     let indeterminate: boolean;
     $: indeterminate = !checked && fruits.reduce((acc, fruit):boolean => (acc || fruit.selected), false);
 
@@ -39,16 +41,23 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Indeterminate" code = {Code.indeterminate}>
 
-        <List ui celled relaxed>
-            <Item>
-                <Checkbox ui {indeterminate} bind:checked label="Fruits" on:click={()=>{fruits.forEach((fruit) => {fruit.selected = !checked})}}/>
-                <List>
-                    {#each fruits as fruit}
-                        <Item> <Checkbox ui id={fruit.id} bind:checked={fruit.selected} label={fruit.name}/> </Item>
-                    {/each}
-                </List>
-            </Item>
-        </List>
+        <Segment ui>
+            <List ui relaxed>
+                <Item>
+                    <!-- The intermediate state is calculated above, but the value of checked is bound to the variable 'checked'.  However, if this is clicked, all the sub-checkboxes are set or unset -->
+                    <Checkbox ui {indeterminate} bind:checked label="Fruits" on:click={ () => fruits.forEach(fruit => fruit.selected = !checked) }/>
+                    <Segment ui>
+                        <List>
+                            {#each fruits as fruit}
+                                <Item>
+                                    <Checkbox ui id={fruit.id} bind:checked={fruit.selected} label={fruit.name}/>
+                                </Item>
+                            {/each}
+                        </List>
+                    </Segment>
+                </Item>
+            </List>
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

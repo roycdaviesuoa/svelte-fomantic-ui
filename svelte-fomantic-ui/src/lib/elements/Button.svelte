@@ -13,6 +13,7 @@
     export let active: boolean = false;
     export let on_style: string = "";
     export let off_style: string = "";
+    export let value: any = undefined;
     export let popup: object | boolean = undefined;
         
     import { createEventDispatcher } from 'svelte';
@@ -20,19 +21,32 @@
 
     // Return a click event
     function doClick(event: any) {
-        dispatch('click', {id: id, target: event.target});
+        if (event.target.attributes["data-value"]) {
+            value = event.target.attributes["data-value"].value;
+            dispatch('click', {id: id, target: event.target, value: value});
+        }
+        else {
+            dispatch('click', {id: id, target: event.target});
+        }
     }
 
     // Return a toggle event
     function doToggle(event: any) {
         active = !active;
-        dispatch('toggle', {id: id, active: active, target: event.target})
+        if (event.target.attributes["data-value"]) {
+            value = event.target.attributes["data-value"].value;
+            dispatch('toggle', {id: id, active: active, target: event.target, value: value})
+        }
+        else {
+            value = active;
+            dispatch('toggle', {id: id, active: active, target: event.target})
+        }
     }
 </script>
 
 <!-- The Toggle button functionality -->
 {#if toggle}
-    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, (active?on_style:off_style) + " button")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+    <div {id} on:click={doToggle} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, (active?on_style:off_style) + " button")} data-value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         {#if active}
             <slot name="on"/>
         {:else}
@@ -41,7 +55,7 @@
     </div>
 {:else}
 <!-- An ordinary, clickable button -->
-    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, "button")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+    <div {id} on:click={doClick} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, "button")} data-value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </div>
 {/if}

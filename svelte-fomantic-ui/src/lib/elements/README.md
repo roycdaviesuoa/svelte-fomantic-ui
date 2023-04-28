@@ -1,10 +1,10 @@
-// ******************************************************************************************************************************************************
-// * By Dr. Roy C. Davies, March 2023, roy.c.davies@ieee.org
-// ******************************************************************************************************************************************************
+## Elements
 
+This folder contains all the core elements, and in some cases, groups of elements (like buttons and icons).  Many of these items are interactable, and all can have the additional option of a popup attached to them.
 
-const code = {
-    interactive_buttons : `
+An example of some of these being used is below.  Note also the different ways that events such as on:click and bindings such as bind:active and bind:value can be used.
+
+```xml
 <script lang="ts">
     import { Button, Buttons, Content, Header, Segment, Icon } from "svelte-fomantic-ui";
 
@@ -14,7 +14,6 @@ const code = {
     let output: string = "";
     let output2: string = "";
     let toggled: boolean = false;
-    let toggled2: boolean = false;
 
     $: output = 'Toggled ' + (toggled ? "on" : "off");
     $: output2 = 'align ' + alignment;
@@ -50,9 +49,6 @@ const code = {
 </Buttons>
 
 <Segment ui>
-    <Header>Value of button clicked: <b>{selected}</b> | Alignment: <b>{output2}</b> | Align button value: <b>{selected2}</b> | Toggle button state: <b>{output}</b> | Second toggle button state: <b>{toggled2}</b></Header>
+    <Header>Value of button clicked: <b>{selected}</b> | Alignment: <b>{output2}</b> | Align button value: <b>{selected2}</b> | Toggle button state: <b>{output}</b></Header>
 </Segment>
-    `
-}
-
-export default code;
+```

@@ -1,7 +1,8 @@
-### Collections
-
+## Collections
 
 In this folder, are various ways to collect content such as forms and tables, and the sub modules such as options, rows, sections and table columns, rows, headers and footers.
+
+The `<Form>` module can take a settings property which is used to initialise the form as per the Fomantic UI [form behavior setting](https://fomantic-ui.com/behaviors/form.html): `$(.ui.form).form({ `*`settings`*` })`.
 
 Each of the modules can have popups associated with them, as can the sub modules, so for example a table might be as follows:
 
@@ -42,5 +43,3 @@ Each of the modules can have popups associated with them, as can the sub modules
 ```
 
 Note that the ebove example shows how the sortable table works, and how the sorting functionality is easily included through the 'sortable' property.
-
-Also note that the `<Form>` module can take a settings property which is used to initialise the form as per the Fomantic UI [form behavior setting](https://fomantic-ui.com/behaviors/form.html): `$(.ui.form).form(/settings/)`
