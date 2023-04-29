@@ -46,6 +46,7 @@
     export {default as Radio} from './inputs/Radio.svelte';
     export {default as Results} from './inputs/Results.svelte';
     export {default as Textarea} from './inputs/Textarea.svelte';
+    export {default as Dropdown} from './inputs/Dropdown.svelte';
     
     // Collections
     export {default as Breadcrumb} from './collections/Breadcrumb.svelte';
@@ -72,7 +73,6 @@
     export {default as Bar} from './modules/Bar.svelte';
     export {default as Calendar} from './modules/Calendar.svelte';
     export {default as Dimmer} from './modules/Dimmer.svelte';
-    export {default as Dropdown} from './modules/Dropdown.svelte';
     export {default as Embed} from './modules/Embed.svelte';
     export {default as Modal} from './modules/Modal.svelte';
     export {default as Popup} from './modules/Popup.svelte';
