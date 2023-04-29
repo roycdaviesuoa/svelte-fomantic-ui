@@ -43,7 +43,7 @@ This folder groups all the input-related modules.  Some of these modules have sp
 </Segment>
 ```
 
-Here is another example showing how you can bind value or selected, and the simnilarities between Select and Dropdown:
+Here is another example showing how you can bind value or selected, and the differences between Select and Dropdown:
 ```xml
 <Dropdown ui fluid search selection bind:selected={ex4value}>
     <Icon dropdown/>
@@ -69,7 +69,7 @@ Here is another example showing how you can bind value or selected, and the simn
 </Segment>
 ```
 Where
-```json
+```code
 countries = {"af": "Afghanistan", ... "zw": "Zimbabwe"} and
 states = {"AL": "Alabama", ... "WY": "Wyoming"}
 ```

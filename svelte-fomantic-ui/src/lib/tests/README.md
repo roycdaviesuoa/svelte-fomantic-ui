@@ -1,0 +1,3 @@
+## Unit and UX tests
+
+The code in this folder is designed both to test the functionality by comparing against the Fomantic UI examples on their website, and to give worked examples of how these function in Svelte.  Each main module has a testing file appropriately named, and laid out to hopefully make it easy to read both directly from the code, and when this site is actually used as a website in itself.
