@@ -48,7 +48,7 @@ export const reload = function()
                         $(this)[moduleType](settings);
                         break;
                     case "dropdown":
-                        console.log(settings);
+                        // console.log(settings);
                         $(this)[moduleType](settings);
                         break;
                     case "progress": // Progress and Embed have the ability to activate on load
@@ -241,7 +241,7 @@ export const update = function (...args) {
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-// This is called above when getting the settings.  Note that the Svelte parameter passing process has already converted it bcak from serialised object
+// This is called above when getting the settings.  Note that the Svelte parameter passing process has already converted it back from serialised object
 // to an object, but we still have to reconvert back the functions.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function deserialize(serialized)

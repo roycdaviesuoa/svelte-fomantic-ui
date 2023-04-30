@@ -11,10 +11,11 @@
     export let ui: boolean = false;
     export let id: string = undefined;
     export let settings: object = undefined;
-    export let selected: any = null;
-    export let value: any = null;
+    export let selected: any = undefined;
+    export let value: any = undefined;
     export let popup: object | boolean = undefined;
     export let multiple: boolean = false;
+    export let values: boolean = false;
         
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -56,8 +57,8 @@
 
     function doClick(e: any) {
         console.log(e);
-        if (e.target.attributes["data-value"] || e.target.attributes["value"]) {
-            value = e.target.attributes["data-value"] ? e.target.attributes["data-value"].value : e.target.attributes["value"].value;
+        if (e.target.attributes.hasOwnProperty("data-value") || e.target.attributes.hasOwnProperty("value") || (!values && e.target.innerText)) {
+            value = e.target.attributes.hasOwnProperty("data-value") ? e.target.attributes["data-value"].value : ( e.target.attributes.hasOwnProperty("value").value ? e.target.attributes["value"].value : ( values ? undefined : e.target.innerText.trim() ) );
             selected = value;
             if (id) {
                 dispatch('change', {id: id, target: e.target, value: value});
@@ -65,7 +66,6 @@
             else {
                 dispatch('change', {target: e.target, value: value});
             }
-            console.log("SETTING DROPDOWN VALUE", value);
         }
     }
 

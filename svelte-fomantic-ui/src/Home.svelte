@@ -16,12 +16,6 @@
 >
     <div class="example">
         <p />
-        <h4>Latest update (11 Apr, 2023)</h4>
-        <p>
-            This is getting close to being functionally complete - a few more
-            modules, and there will be enough for most projects and I will move
-            this to Release Candidate 1. Another few days...
-        </p>
         <h4>Fomantic UI</h4>
         <p>
             To learn about Fomantic UI, see here: <a

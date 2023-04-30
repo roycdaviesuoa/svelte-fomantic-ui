@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Divider, Segment, Select, Option, Flag, Image, Label, Content, Link } from "../svelte-fomantic-ui.svelte";
+    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Buttons, Divider, Segment, Select, Option, Flag, Image, Label, Content, Link } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dropdown';
@@ -54,6 +54,10 @@
     let ex19value = "";
     let ex20value = "";
     let ex21value = "";
+    let ex22value = "";
+    let ex23value = "";
+    let ex24value = "";
+    let ex25value = "";
 
 </script>
 
@@ -613,7 +617,7 @@
             <Icon trophy/>
             <Content>
               Trending repos
-                <Dropdown ui inline>
+                <Dropdown ui inline bind:value={ex17value}>
                     <Text>today</Text>
                     <Icon dropdown/>
                     <Menu>
@@ -625,6 +629,9 @@
                 </Dropdown>
             </Content>
           </Header>
+          <Segment ui basic>
+            Menu option chosen: {ex17value}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -636,11 +643,14 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Pointing" code = {Code.pointing}>
 
-        <Menu ui bind:value={ex18value}>
+        <p>Besides the pointing dropdown syntax, we show also here the addition of the 'values' property, which is not present in Fomantic UI.  If 'values' is used, only Items with a value return a value to the binding, otherwise the innerText will be returned if there is no specified value.</p>
+
+        <p>Another trick to note is the using of <b>settings=&#123;&#123;"action":"select"&#125;&#125;</b> to ensure the dropdown top line doesn't change to the selected item.  In the Fomantic UI examples, this is not specified, but thye default behavior is to change the top line to the selection.</p>
+        <Menu ui values bind:selected={ex18value}>
             <Link item value="home">
                 Home
             </Link>
-            <Dropdown ui pointing link item settings={{"action":"select"}} bind:value={ex18value}>
+            <Dropdown ui pointing link item settings={{"action":"select"}}>
                 <Text ui>Shopping</Text>
                 <Icon dropdown/>
                 <Menu>
@@ -680,11 +690,11 @@
             Menu option chosen: {ex18value}
         </Segment>
 
-        <Menu ui vertical bind:value={ex19value}>
+        <Menu ui vertical values bind:value={ex19value}>
             <Link item value="home">
               Home
             </Link>
-            <Dropdown ui left pointing item link bind:value={ex19value}>
+            <Dropdown ui left pointing item link>
                 <Icon dropdown/>
                 Messages
                 <Menu>
@@ -708,6 +718,245 @@
             Menu option chosen: {ex19value}
         </Segment>
 
+        <Dropdown ui icon top left pointing button bind:value={ex20value}>
+            <Icon wrench/>
+            <Menu>
+                <Header>Display Density</Header>
+                <Item>Comfortable</Item>
+                <Item>Cozy</Item>
+                <Item>Compact</Item>
+                <Divider ui/>
+                <Item>Settings</Item>
+                <Item>
+                    <Icon dropdown/>
+                    <Text>Upload Settings</Text>
+                    <Menu>
+                        <Item>
+                            <Icon check />
+                            Convert Uploaded Files to PDF
+                        </Item>
+                        <Item>
+                            <Icon check />
+                            Digitize Text from Uploaded Files
+                        </Item>
+                    </Menu>
+                </Item>
+                <Item>Manage Apps</Item>
+                <Item>Keyboard Shortcuts</Item>
+                <Item>Help</Item>
+            </Menu>
+        </Dropdown>
+
+        <Dropdown ui icon bottom left pointing button bind:value={ex20value}>
+            <Icon wrench/>
+            <Menu>
+                <Item>
+                    <Icon dropdown/>
+                    <Text>New</Text>
+                    <Menu>
+                        <Item>Document</Item>
+                        <Item>Image</Item>
+                    </Menu>
+                </Item>
+                <Item>Save As...</Item>
+                <Item>Edit</Item>
+            </Menu>
+        </Dropdown>
+
+        <Dropdown ui icon bottom right pointing button bind:value={ex20value}>
+            <Icon wrench/>
+            <Menu>
+                <Item>
+                    <Icon dropdown/>
+                    <Text>New</Text>
+                    <Menu>
+                        <Item>Document</Item>
+                        <Item>Image</Item>
+                    </Menu>
+                </Item>
+                <Item>Save As...</Item>
+                <Item>Edit</Item>
+            </Menu>
+        </Dropdown>
+
+        <Segment ui basic>
+            Menu option chosen: {ex20value}
+        </Segment>
+
+        <Dropdown ui labeled icon top left pointing button values bind:selected={ex21value} settings={{"action":"select"}}>
+            <Icon filter/>
+            <Text>Filter Posts</Text>
+            <Menu>
+                <Input ui icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search tags..."/>
+                </Input>
+                <Divider/>
+                <Header>
+                    <Icon tags/>
+                    Tag Label
+                </Header>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Cannot Fix">
+                        <Label ui black empty circular/>
+                        Cannot Fix
+                    </Item>
+                    <Item value="News">
+                        <Label ui purple empty circular/>
+                        News
+                    </Item>
+                    <Item value="Enhancement">
+                        <Label ui orange empty circular/>
+                        Enhancement
+                    </Item>
+                    <Item value="Change Declined">
+                        <Label ui empty circular/>
+                        Change Declined
+                    </Item>
+                    <Item value="Off Topic">
+                        <Label ui yellow empty circular/>
+                        Off Topic
+                    </Item>
+                    <Item value="Interesting">
+                        <Label ui pink empty circular/>
+                        Interesting
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
+
+        <Dropdown ui labeled icon top left pointing button values bind:selected={ex21value}>
+            <Icon filter/>
+            <Text>Filter Posts</Text>
+            <Menu>
+                <Input ui icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search tags..."/>
+                </Input>
+                <Divider/>
+                <Header>
+                    <Icon tags/>
+                    Tag Label
+                </Header>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Cannot Fix">
+                        <Label ui black empty circular/>
+                        Cannot Fix
+                    </Item>
+                    <Item value="News">
+                        <Label ui purple empty circular/>
+                        News
+                    </Item>
+                    <Item value="Enhancement">
+                        <Label ui orange empty circular/>
+                        Enhancement
+                    </Item>
+                    <Item value="Change Declined">
+                        <Label ui empty circular/>
+                        Change Declined
+                    </Item>
+                    <Item value="Off Topic">
+                        <Label ui yellow empty circular/>
+                        Off Topic
+                    </Item>
+                    <Item value="Interesting">
+                        <Label ui pink empty circular/>
+                        Interesting
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex21value}
+        </Segment>
+
+        <Dropdown ui labeled icon right pointing button values bind:selected={ex22value} settings={{"action":"select"}}>
+            <Icon filter/>
+            <Text>Filter Posts</Text>
+            <Menu>
+                <Input ui icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search tags..."/>
+                </Input>
+                <Divider/>
+                <Header>
+                    <Icon tags/>
+                    Tag Label
+                </Header>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
+
+        <Dropdown ui labeled icon left pointing button values bind:selected={ex22value} settings={{"action":"select"}}>
+            <Icon filter/>
+            <Text>Filter Posts</Text>
+            <Menu>
+                <Input ui icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search tags..."/>
+                </Input>
+                <Divider/>
+                <Header>
+                    <Icon tags/>
+                    Tag Label
+                </Header>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
+        <Segment ui basic>
+            Menu option chosen: {ex22value}
+        </Segment>
+
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
         
@@ -718,7 +967,20 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "XXXX" code = {Code.XXXX}>
 
-
+        <Buttons ui teal>
+            <Button ui on:click={() => ex24value = (ex23value === "" ? "Saving" : "Saving with " + ex23value)}>Save</Button>
+            <Dropdown ui floating button icon bind:selected={ex23value} on:change={() => ex24value=""}>
+                <Icon dropdown/>
+                <Menu>
+                    <Item active={ex23value==="Edit Post"}><Icon edit/> Edit Post</Item>
+                    <Item active={ex23value==="Remove Post"}><Icon delete/> Remove Post</Item>
+                    <Item active={ex23value==="Hide Post"}><Icon hide/> Hide Post</Item>
+                </Menu>
+            </Dropdown>
+        </Buttons>
+        <Segment ui basic>
+            Menu option chosen: <b>{ex24value ? ex24value : ex23value ? ex23value : ""}</b>
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

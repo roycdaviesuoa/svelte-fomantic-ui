@@ -37,7 +37,13 @@
 
     // Return a click event for icons that have a link tag
     function doClick(event:any) {
-        dispatch('click', {id: id, target: event.target});
+        if (checkbox) {
+            dispatch('click', {id: id, target: event.target, checked: checked, value: value});
+        } else if (radio) {
+            dispatch('click', {id: id, target: event.target, group: group, value: value});
+        } else {
+            dispatch('click', {id: id, target: event.target, value: value});
+        }
     }
 </script>
 

@@ -8,16 +8,15 @@
     import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
 
     export let ui: boolean = false;
-    export let selected: string = undefined;
-    export let value: string = undefined;
+    export let selected: any = undefined;
+    export let value: any = undefined;
     export let popup: object | boolean = undefined;
+    export let values: boolean = false;
 
     function setSelected(e:any) {
-        console.log(e);
-        if (e.target.attributes["value"]) {
-            selected = e.target.attributes["value"].value;
-            value = selected;
-            console.log("SETTING MENU VALUE", value);
+        if (e.target.attributes.hasOwnProperty("data-value") || e.target.attributes.hasOwnProperty("value") || (!values && e.target.innerText)) {
+            value = e.target.attributes.hasOwnProperty("data-value") ? e.target.attributes["data-value"].value : ( e.target.attributes.hasOwnProperty("value").value ? e.target.attributes["value"].value : ( values ? undefined : e.target.innerText.trim() ) );
+            selected = value;
         }
     }
 </script>
