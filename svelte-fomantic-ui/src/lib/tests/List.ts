@@ -414,26 +414,29 @@ const code = {
 </Segment>
     `,
     selection : `
-<List ui middle aligned selection>
-    <Item>
+<List ui middle aligned selection bind:selected={selectExmaple}>
+    <Item data="helen">
         <Image ui avatar src="/images/helen.jpg"/>
         <Content>
             <Header>Helen</Header>
         </Content>
     </Item>
-    <Item>
+    <Item data="christian">
         <Image ui avatar src="/images/christian.jpg"/>
         <Content>
             <Header>Christian</Header>
         </Content>
     </Item>
-    <Item>
+    <Item data="daniel">
         <Image ui avatar src="/images/daniel.jpg"/>
         <Content>
             <Header>Daniel</Header>
         </Content>
     </Item>
 </List>
+<Segment ui basic>
+    Option chosen: {selectExmaple}
+</Segment>
     `,
     animated : `
 <List ui middle aligned animated>

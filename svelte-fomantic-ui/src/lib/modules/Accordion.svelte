@@ -15,7 +15,7 @@
         
     function setSelected(e: any) {
         if (e.target.attributes.hasOwnProperty("data-value") || e.target.attributes.hasOwnProperty("value") || e.target.innerText) {
-            value = e.target.attributes.hasOwnProperty("data-value") ? e.target.attributes["data-value"].value : ( e.target.attributes.hasOwnProperty("value").value ? e.target.attributes["value"].value : e.target.innerText );
+            value = e.target.attributes.hasOwnProperty("data-value") ? e.target.attributes["data-value"].value : ( e.target.attributes.hasOwnProperty("value").value ? e.target.attributes["value"].value : e.target.innerText.trim() );
             selected = value;
         }
     }
