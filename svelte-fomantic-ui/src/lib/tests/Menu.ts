@@ -592,7 +592,7 @@ const code = {
         <Icon dropdown/>
     </Link>
 </Menu>
-<Popup ui flowing>
+<Popup ui fluid>
     <Grid ui four column relaxed equal height divided>
         <Column>
             <Header ui h4>Fabrics</Header>
@@ -1054,13 +1054,13 @@ const code = {
     `,
     centered: `
 <Menu ui centered>
-    <Link bug popup icon item active={ex39===0} on:click={()=>ex39=0}>
+    <Link bug icon item active={ex39===0} on:click={()=>ex39=0}>
         <Icon edit/>
     </Link>
-    <Link bug popup icon item active={ex39===1} on:click={()=>ex39=1}>
+    <Link bug icon item active={ex39===1} on:click={()=>ex39=1}>
         <Icon bug/>
     </Link>
-    <Link github popup icon item active={ex39===2} on:click={()=>ex39=2}>
+    <Link github icon item active={ex39===2} on:click={()=>ex39=2}>
         <Icon alternate github/>
     </Link>
 </Menu>
@@ -1085,13 +1085,13 @@ const code = {
     `,
     centered_fluid: `
 <Menu ui centered fluid>
-    <Link bug popup icon item active={ex41===0} on:click={()=>ex41=0}>
+    <Link bug icon item active={ex41===0} on:click={()=>ex41=0}>
         <Icon edit/>
     </Link>
-    <Link bug popup icon item active={ex41===1} on:click={()=>ex41=1}>
+    <Link bug icon item active={ex41===1} on:click={()=>ex41=1}>
         <Icon bug/>
     </Link>
-    <Link github popup icon item active={ex41===2} on:click={()=>ex41=2}>
+    <Link github icon item active={ex41===2} on:click={()=>ex41=2}>
         <Icon alternate github/>
     </Link>
 </Menu>
