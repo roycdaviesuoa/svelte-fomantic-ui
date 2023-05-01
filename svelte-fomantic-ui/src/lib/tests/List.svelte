@@ -11,9 +11,8 @@
     import Code from './List';
 
     let sizes = ["mini", "tiny", "small", "medium", "large", "big", "huge", "massive"];
-    function doSelect(e) {
-        console.log(e);
-    }
+    
+    let selectExmaple = "";
 </script>
 
 
@@ -544,26 +543,29 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Selection" code = {Code.selection}>
 
-        <List ui middle aligned selection on:click={doSelect}>
-            <Item id="helen">
+        <List ui middle aligned selection bind:selected={selectExmaple}>
+            <Item data="helen">
                 <Image ui avatar src="/images/helen.jpg"/>
                 <Content>
                     <Header>Helen</Header>
                 </Content>
             </Item>
-            <Item id="christian">
+            <Item data="christian">
                 <Image ui avatar src="/images/christian.jpg"/>
                 <Content>
                     <Header>Christian</Header>
                 </Content>
             </Item>
-            <Item id="daniel">
+            <Item data="daniel">
                 <Image ui avatar src="/images/daniel.jpg"/>
                 <Content>
                     <Header>Daniel</Header>
                 </Content>
             </Item>
         </List>
+        <Segment ui basic>
+            Option chosen: {selectExmaple}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

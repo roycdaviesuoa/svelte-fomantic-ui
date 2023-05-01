@@ -18,6 +18,7 @@
     let ex3search = "";
     let ex4search = "";
     let ex5search = "";
+    let popupMenu = "";
 
     let selectedCourse = '';
     let selectedTopic = '';
@@ -788,18 +789,18 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example narrow title = "Popup" code = {Code.popup}>
 
-        <Menu ui popup settings={{hoverable: true, position: 'bottom left', onHide: printMessage}} >
+        <Menu ui popup={{hoverable: true, position: 'bottom left'}}>
             <Link browse item>
                 Browse
                 <Icon dropdown/>
             </Link>
         </Menu>
-        <Popup ui fluid>
+        <Popup ui fluid settings={{hoverable: true, position: 'bottom left'}}>
             <Grid ui four column relaxed equal height divided>
                 <Column>
                     <Header ui h4>Fabrics</Header>
-                    <List ui link>
-                        <Link item active={ex20===0} on:click={()=>ex20=0}>Cashmere</Link>
+                    <List ui link bind:value={popupMenu}>
+                        <Link value="cashmere" item active={ex20===0} on:click={()=>ex20=0}>Cashmere</Link>
                         <Link item active={ex20===1} on:click={()=>ex20=1}>Linen</Link>
                         <Link item active={ex20===2} on:click={()=>ex20=2}>Cotton</Link>
                         <Link item active={ex20===3} on:click={()=>ex20=3}>Viscose</Link>
@@ -807,7 +808,7 @@
                 </Column>
                 <Column>
                     <Header ui h4>Size</Header>
-                    <List ui link>
+                    <List ui link bind:value={popupMenu}>
                         <Link item active={ex20===4} on:click={()=>ex20=4}>Small</Link>
                         <Link item active={ex20===5} on:click={()=>ex20=5}>Medium</Link>
                         <Link item active={ex20===6} on:click={()=>ex20=6}>Large</Link>
@@ -816,7 +817,7 @@
                 </Column>
                 <Column>
                     <Header ui h4>Colored</Header>
-                    <List ui link>
+                    <List ui link bind:value={popupMenu}>
                         <Link item active={ex20===8} on:click={()=>ex20=8}>Neutrals</Link>
                         <Link item active={ex20===9} on:click={()=>ex20=9}>Brights</Link>
                         <Link item active={ex20===10} on:click={()=>ex20=10}>Pastels</Link>
@@ -824,7 +825,7 @@
                 </Column>
                 <Column>
                     <Header ui h4>Types</Header>
-                    <List ui link>
+                    <List ui link bind:value={popupMenu}>
                         <Link item active={ex20===11} on:click={()=>ex20=11}>Knitwear</Link>
                         <Link item active={ex20===12} on:click={()=>ex20=12}>Outerwear</Link>
                         <Link item active={ex20===13} on:click={()=>ex20=13}>Pants</Link>
@@ -833,6 +834,9 @@
                 </Column>
             </Grid>
         </Popup>
+        <Segment ui basic>
+            {ex20} {popupMenu}
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
