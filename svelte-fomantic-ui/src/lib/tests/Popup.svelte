@@ -371,9 +371,9 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Fluid -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Fluid" code = {Code.fluid}>
+    <Example title = "Fluid" code = {Code.fluid} narrow>
 
-    <Button ui popup>Show fluid popup</Button>
+    <Button ui popup={{ hoverable: true }}>Show fluid popup</Button>
     <Popup ui fluid>
         <Grid ui four column divided center aligned>
             <Column>1</Column>
@@ -393,7 +393,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Flowing" code = {Code.flowing}>
 
-        <Button ui popup>Show flowing popup</Button>
+        <Button ui popup={{ hoverable: true }}>Show flowing popup</Button>
         <Popup ui flowing>
             <Grid ui three column divided center aligned>
                 <Column>

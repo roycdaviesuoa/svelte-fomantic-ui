@@ -47,6 +47,10 @@ export const reload = function()
                         }
                         $(this)[moduleType](settings);
                         break;
+                    case "popup":
+                        const extraSettings = { delay: { show: 100, hide: 500 }, hoverable: true };
+                        $(this)[moduleType]({...extraSettings, ...settings});
+                        break;
                     case "dropdown":
                         // console.log(settings);
                         $(this)[moduleType](settings);
