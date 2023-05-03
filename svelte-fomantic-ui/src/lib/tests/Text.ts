@@ -29,6 +29,9 @@ const code = {
     <p>then growing to <Text ui huge red>huge</Text> text</p>
     <p>to finally become <Text ui red massive>massive</Text> text</p>
 </Segment>
+    `,
+    popup : `
+<p>Some Text with <Text ui red popup={{content: "Hello World", position: "top right"}}>a popup</Text></p>
     `
 }
 
