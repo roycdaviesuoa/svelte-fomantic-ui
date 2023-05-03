@@ -74,6 +74,7 @@
     export {default as Calendar} from './modules/Calendar.svelte';
     export {default as Dimmer} from './modules/Dimmer.svelte';
     export {default as Embed} from './modules/Embed.svelte';
+    export {default as Flyout} from './modules/Flyout.svelte';
     export {default as Modal} from './modules/Modal.svelte';
     export {default as Popup} from './modules/Popup.svelte';
     export {default as Progress} from './modules/Progress.svelte';

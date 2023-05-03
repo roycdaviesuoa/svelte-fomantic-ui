@@ -84,9 +84,9 @@ Note that in essence all these do already work (except for the Modules) because 
 | Dimmer | X | _ | [/Dimmer](./svelte-fomantic-ui/src/lib/tests/Dimmer.svelte) | [Dimmer](https://fomantic-ui.com/modules/dimmer.html)
 | Dropdown | X | _ | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
 | Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Embed](https://fomantic-ui.com/modules/embed.html)
-| Flyout |  |  |
+| Flyout | X | X | [/Flyout](./svelte-fomantic-ui/src/lib/tests/Flyout.svelte) | [Flyout](https://fomantic-ui.com/modules/flyout.html)
 | Modal | X | X | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Modal](https://fomantic-ui.com/modules/modal.html)
-| Nag |  |  |
+| Nag |  |  | 
 | Popup | X | X | [/Popup](./svelte-fomantic-ui/src/lib/tests/Popup.svelte) | [Popup](https://fomantic-ui.com/modules/popup.html)
 | Progress | X | X | [/Progress](./svelte-fomantic-ui/src/lib/tests/Progress.svelte) | [Progress](https://fomantic-ui.com/modules/progress.html)
 | Radio | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)

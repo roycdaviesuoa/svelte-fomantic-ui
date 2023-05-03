@@ -29,6 +29,7 @@
     import Emoji from './lib/tests/Emoji.svelte';
     import Feed from './lib/tests/Feed.svelte';
     import Flag from './lib/tests/Flag.svelte';
+    import Flyout from './lib/tests/Flyout.svelte';
     import Form from './lib/tests/Form.svelte';
     import Grid from './lib/tests/Grid.svelte';
     import Header from './lib/tests/Header.svelte';
@@ -132,6 +133,7 @@
             <Link item on:click={()=>{currentPage=Calendar; doMenuToggle();}}>Calendar</Link>    
             <Link item on:click={()=>{currentPage=Dimmer; doMenuToggle();}}>Dimmer</Link>    
             <Link item on:click={()=>{currentPage=Embed; doMenuToggle();}}>Embed</Link>    
+            <Link item on:click={()=>{currentPage=Flyout; doMenuToggle();}}>Flyout</Link>    
             <Link item on:click={()=>{currentPage=Modal; doMenuToggle();}}>Modal</Link>    
             <Link item on:click={()=>{currentPage=Popup; doMenuToggle();}}>Popup</Link>    
             <Link item on:click={()=>{currentPage=Progress; doMenuToggle();}}>Progress</Link>    

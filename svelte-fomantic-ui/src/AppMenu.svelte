@@ -48,7 +48,7 @@
     <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui settings={{silent:false, dimPage: false, delaySetup: true, closable: true}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
-    <Pusher style={pusherStyle}>
+    <Pusher style={pusherStyle} id="main">
         <Menu ui inverted top fixed>
             <Item>
                 <Button ui icon secondary on:click={doMenuToggle}>
@@ -67,7 +67,7 @@
     <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu" ui visible settings={{silent:true, dimPage: false, delaySetup: true, closable: false}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
-    <Pusher style={pusherStyle}>
+    <Pusher style={pusherStyle} id="main">
         <svelte:component this={currentPage}/>
     </Pusher>
 {/if}
