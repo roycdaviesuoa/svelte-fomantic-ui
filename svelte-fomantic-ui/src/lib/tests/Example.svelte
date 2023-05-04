@@ -13,6 +13,7 @@
     export let title: string = "";
     export let code: string = "";
     export let narrow: boolean = false;
+    export let id: string = undefined;
 
     let message="copy code to clipboard";
 
@@ -72,7 +73,7 @@
                     </Menu>
                 </Menu>
             </Title>
-            <Content>
+            <Content {id}>
                 <Menu ui centered fluid text>
                     <Link item style="background-color: rgb(249, 249, 249); border-top-left-radius: 1em; border-top-right-radius: 1em;" data-tooltip={message} data-variation="basic">
                         <Icon copy link on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}/>
@@ -101,7 +102,7 @@
                     </Menu>
                 </Menu>
             </Title>
-            <Content>
+            <Content {id}>
                 <div style="margin-bottom:-40px; text-align: center;">
                     <Link data-tooltip={message} data-variation="basic" on:click={()=>{copyToClipboard(code); message="copied..."; setTimeout(() => {message="copy code to clipboard"}, 2000)}}>
                         <Icon ui grey copy/>

@@ -9,11 +9,6 @@
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Nag';
-
-    const nagSettings = {
-        onHide: () => { behavior({id: 'mainmenu', type: 'sidebar', commands: ['show']}); behavior({id: 'mainmenu_mobile', type: 'sidebar', commands: ['show']})}, 
-        onShow: () => { behavior({id: 'mainmenu', type: 'sidebar', commands: ['hide']}); behavior({id: 'mainmenu_mobile', type: 'sidebar', commands: ['hide']})}
-    }
 </script>
 
 
@@ -28,7 +23,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Nag" code = {Code.nag}>
 
-        <Button ui red on:click={() => {behavior({id: 'nag1', type: 'nag', commands: ['clear']}); reload(); }}>Reset Nag to appear again.</Button>
+        <Button ui red on:click={() => {behavior({id: 'nag1', commands: ['clear']}); reload(); }}>Reset Nag to appear again.</Button>
         <Divider ui/>
         <Nag ui id="nag1" settings={{samesite: true, storageMethod: "localstorage", key: "nag1"}}>
             Look, I am a nag!
@@ -45,9 +40,9 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Title" code = {Code.title}>
 
-        <Button ui red on:click={() => {behavior({id: 'nag2', type: 'nag', commands: ['clear']}); reload(); }}>Reset Nag to appear again.</Button>
+        <Button ui red on:click={() => {behavior({id: 'nag2', commands: ['clear']}); reload(); }}>Reset Nag to appear again.</Button>
         <Divider ui/>
-        <Nag ui id="nag2" settings={{samesite: true, storageMethod: "localstorage", key: "nag2", context: "#app"}}>
+        <Nag ui id="nag2" settings={{samesite: true, storageMethod: "localstorage", key: "nag2"}}>
             <Title>Welcome to the nag module</Title>
             <Text>Look, I am a nag!</Text>
             <Icon close/>
@@ -63,9 +58,11 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Fixed" code = {Code.fixed}>
 
-        <Button ui red on:click={() => {behavior({id: 'fixednag', type: 'nag', commands: ['clear']}); reload(); }}>Reset Nag to appear again.</Button>
+        <p>Look at the top of the page for the nag...</p>
+
+        <Button ui red on:click={() => {behavior({id: 'fixednag', commands: ['clear']}); reload(); }}>Reset Nag to appear again.</Button>
         <Divider ui/>
-        <Nag ui fixed id="fixednag" settings={{samesite: true, storageMethod: "localstorage", key: "fixednag"}} style="margin-left:0 ">
+        <Nag ui id="fixednag" fixed settings={{samesite: true, storageMethod: "localstorage", key: "fixednag", detachable: true}} style="z-index:2000;" >
             <Text>Look, I am a fixed nag!</Text>
             <Icon close/>
         </Nag>

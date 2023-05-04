@@ -69,7 +69,6 @@
 <Examples
     title = "Card examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/views/card.html'>here</a>"
-    disclaimer = "More to come..."
     code = {Code}>
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>

@@ -60,7 +60,7 @@ Note that in essence all these do already work (except for the Modules) because 
 |------------------|:-----------:|:---------------------:|--------------|------------------|
 | Breadcrumb | X | X | [/Breadcrumb](./svelte-fomantic-ui/src/lib/tests/Breadcrumb.svelte) | [Breadcrumb](https://fomantic-ui.com/collections/breadcrumb.html) 
 |  - Interactive | X | X | [/BreadcrumbInteractive](./svelte-fomantic-ui/src/lib/tests/BreadcrumbInteractive.svelte)
-| Form | X |  |
+| Form | X | _ | [/Form](./svelte-fomantic-ui/src/lib/tests/Form.svelte) | [Form](https://fomantic-ui.com/collections/form.html)
 | Grid | X | X | [/Grid](./svelte-fomantic-ui/src/lib/tests/Grid.svelte) | [Grid](https://fomantic-ui.com/collections/grid.html) 
 | Menu | X | X | [/Menu](./svelte-fomantic-ui/src/lib/tests/Menu.svelte) | [Menu](https://fomantic-ui.com/collections/menu.html)
 | Message | X | X | [/Message](./svelte-fomantic-ui/src/lib/tests/Message.svelte) | [Message](https://fomantic-ui.com/collections/message.html)
@@ -86,7 +86,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Embed](https://fomantic-ui.com/modules/embed.html)
 | Flyout | X | X | [/Flyout](./svelte-fomantic-ui/src/lib/tests/Flyout.svelte) | [Flyout](https://fomantic-ui.com/modules/flyout.html)
 | Modal | X | X | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Modal](https://fomantic-ui.com/modules/modal.html)
-| Nag |  |  | 
+| Nag | X | _ | [/Nag](./svelte-fomantic-ui/src/lib/tests/Nag.svelte) | [Nag](https://fomantic-ui.com/modules/nag.html)
 | Popup | X | X | [/Popup](./svelte-fomantic-ui/src/lib/tests/Popup.svelte) | [Popup](https://fomantic-ui.com/modules/popup.html)
 | Progress | X | X | [/Progress](./svelte-fomantic-ui/src/lib/tests/Progress.svelte) | [Progress](https://fomantic-ui.com/modules/progress.html)
 | Radio | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
