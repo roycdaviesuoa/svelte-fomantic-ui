@@ -42,6 +42,7 @@
   import Menu_fixed_vertical from './lib/tests/Menu_fixed_vertical.svelte';
   import Message from './lib/tests/Message.svelte';
   import Modal from './lib/tests/Modal.svelte';
+  import Nag from './lib/tests/Nag.svelte';
   import Placeholder from './lib/tests/Placeholder.svelte';
   import Popup from './lib/tests/Popup.svelte';
   import Progress from './lib/tests/Progress.svelte';
@@ -130,6 +131,8 @@
       currentRoute = Message; break;
     case '/Modal':
       currentRoute = Modal; break;
+    case '/Nag':
+      currentRoute = Nag; break;
     case '/Placeholder':
       currentRoute = Placeholder; break;
     case '/Popup':

@@ -42,6 +42,7 @@
     import Message from './lib/tests/Message.svelte';
     import Menu from './lib/tests/Menu.svelte';
     import Modal from './lib/tests/Modal.svelte';
+    import Nag from './lib/tests/Nag.svelte';
     import Placeholder from './lib/tests/Placeholder.svelte';
     import Popup from './lib/tests/Popup.svelte';
     import Progress from './lib/tests/Progress.svelte';
@@ -135,6 +136,7 @@
             <Link item on:click={()=>{currentPage=Embed; doMenuToggle();}}>Embed</Link>    
             <Link item on:click={()=>{currentPage=Flyout; doMenuToggle();}}>Flyout</Link>    
             <Link item on:click={()=>{currentPage=Modal; doMenuToggle();}}>Modal</Link>    
+            <Link item on:click={()=>{currentPage=Nag; doMenuToggle();}}>Nag</Link>    
             <Link item on:click={()=>{currentPage=Popup; doMenuToggle();}}>Popup</Link>    
             <Link item on:click={()=>{currentPage=Progress; doMenuToggle();}}>Progress</Link>    
             <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Rating</Link>    

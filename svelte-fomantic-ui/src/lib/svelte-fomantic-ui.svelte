@@ -76,6 +76,7 @@
     export {default as Embed} from './modules/Embed.svelte';
     export {default as Flyout} from './modules/Flyout.svelte';
     export {default as Modal} from './modules/Modal.svelte';
+    export {default as Nag} from './modules/Nag.svelte';
     export {default as Popup} from './modules/Popup.svelte';
     export {default as Progress} from './modules/Progress.svelte';
     export {default as Pusher} from './modules/Pusher.svelte';
