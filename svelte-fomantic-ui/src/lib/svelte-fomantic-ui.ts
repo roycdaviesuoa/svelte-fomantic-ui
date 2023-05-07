@@ -158,7 +158,6 @@ export function rationalize(anArray:any[])
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Contextual Functions
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-
 function contextualFunction (ID: string, id: string, funcName: string, names: string[], parameters: string[]) {
     let newParameters = "{";
     names.forEach((name, index) => {
