@@ -47,6 +47,7 @@
   import Popup from './lib/tests/Popup.svelte';
   import Progress from './lib/tests/Progress.svelte';
   import Rail from './lib/tests/Rail.svelte';
+  import Rating from './lib/tests/Rating.svelte';
   import Reveal from './lib/tests/Reveal.svelte';
   import Segment from './lib/tests/Segment.svelte';
   import Statistic from './lib/tests/Statistic.svelte';
@@ -143,6 +144,8 @@
       currentRoute = Reveal; break;
     case '/Rail':
       currentRoute = Rail; break;
+    case '/Rating':
+      currentRoute = Rating; break;
     case '/Segment':
       currentRoute = Segment; break;
     case '/Statistic':

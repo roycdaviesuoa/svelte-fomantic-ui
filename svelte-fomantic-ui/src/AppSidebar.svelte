@@ -47,6 +47,7 @@
     import Popup from './lib/tests/Popup.svelte';
     import Progress from './lib/tests/Progress.svelte';
     import Rail from './lib/tests/Rail.svelte';
+    import Rating from './lib/tests/Rating.svelte';
     import Reveal from './lib/tests/Reveal.svelte';
     import Segment from './lib/tests/Segment.svelte';
     import Statistic from './lib/tests/Statistic.svelte';
@@ -139,7 +140,7 @@
             <Link item on:click={()=>{currentPage=Nag; doMenuToggle();}}>Nag</Link>    
             <Link item on:click={()=>{currentPage=Popup; doMenuToggle();}}>Popup</Link>    
             <Link item on:click={()=>{currentPage=Progress; doMenuToggle();}}>Progress</Link>    
-            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Rating</Link>    
+            <Link item on:click={()=>{currentPage=Rating; doMenuToggle();}}>Rating</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Search</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Shape</Link>    
             <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Sidebar</Link>    
