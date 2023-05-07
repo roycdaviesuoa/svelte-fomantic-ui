@@ -5,16 +5,21 @@
 -->
 
 <script lang="ts">
-    import { Text, Rating } from "../svelte-fomantic-ui.svelte";
+    import { behavior, Text, Rating, Icon, Button } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Rating';
 
-    let rating2settings = [{color: "yellow", icon: "star"}, {color: "red", icon: "heart"}, {color: "purple", icon: "female"}, {color: "blue", icon: "male"}, {color: "grey", icon: "cloud"}, {color: "pink", icon: "cat"}, {color: "orange", icon: "circle"}];
+    let rating2settings = [{color: "yellow", icon: "star"}, {color: "red", icon: "Icon heart"}, {color: "purple", icon: "female"}, {color: "blue", icon: "male"}, {color: "grey", icon: "cloud"}, {color: "pink", icon: "cat"}, {color: "orange", icon: "circle"}];
+    let colors = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"];
     let rating1value = 0;
     let rating2values = {};
+    let rating3values = {};
+    let rating4value = 0;
+    let rating5value = 0;
 
     rating2settings.forEach((setting) => { rating2values[setting.color + "_" + setting.icon] = 2; });
+    colors.forEach((_, index) => { rating3values[index] = index<6?index+1:13-index; });
 </script>
 
 
@@ -38,12 +43,12 @@
     
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Icon -->
+    <!-- -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Icon" code = {Code.icon}>
 
         {#each rating2settings as setting, i} 
-            <Rating ui id="iconrating" _={setting.color} data-icon={setting.icon} data-rating=2 
+            <Rating ui id="iconrating" _={setting.color} data-icon={setting.icon} data-rating = 2 
                 functions={{
                     onRate: {
                         rating: null,
@@ -61,11 +66,22 @@
     
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Color -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Color" code = {Code.color}>
 
+        {#each colors as color, count}
+            <Rating ui _={color} data={{icon:"star", "max-rating": 7, rating: rating3values[count]}}
+            functions={{
+                onRate: {
+                    rating: null,
+                    index: count,
 
+                    _: (data) => { rating3values[data.index] = data.rating; }
+                }
+            }}/>
+            <Text>Rating value = {rating3values[count]}</Text><br/>
+        {/each}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -73,11 +89,25 @@
     
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Partial -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Partial" code = {Code.partial}>
 
-
+        <Rating ui black data-rating="0.5" data-max-rating="5"/>
+        <p/><p/>
+        <Rating ui pink data-rating="1.25" data-max-rating="5"/>
+        <p/><p/>
+        <Rating ui red data-rating="1.775" data-max-rating="5"/>
+        <p/><p/>
+        <Rating ui yellow data-rating="2.5" data-max-rating="5"/>
+        <p/><p/>
+        <Rating ui green data-rating="3.225" data-max-rating="5"/>
+        <p/><p/>
+        <Rating ui purple data-rating="3.65" data-max-rating="5"/>
+        <p/><p/>
+        <Rating ui blue data-rating="4.375" data-max-rating="5"/>
+        <p/><p/>
+        <Rating ui brown data-rating="4.75" data-max-rating="5"/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -85,11 +115,11 @@
     
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Disabled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Disabled" code = {Code.disabled}>
 
-
+        <Rating ui yellow disabled data={{rating: "3", "max-rating": "5"}}/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -97,11 +127,14 @@
     
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Size -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Size" code = {Code.size}>
 
-
+        {#each ["mini", "tiny", "small", "", "large", "huge", "massive"] as size}
+            <Rating ui yellow _={size} data-rating = 3/>
+            <p/><p/>
+        {/each}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -109,11 +142,11 @@
     
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Metadata -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Metadata" code = {Code.metadata}>
 
-
+        <Rating ui data-icon="circle" data-rating="3" data-max-rating="5"/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -121,14 +154,58 @@
     
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Javascript -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Javascript" code = {Code.javascript}>
 
-
+        <Rating ui settings={{icon: "circle", initialRating: 3, maxRating: 5}}/>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Functions -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Functions" code = {Code.functions}>
+
+        <Rating ui settings={{icon: "circle", initialRating: rating4value, maxRating: 5}} functions={{ onRate: { rating: null, _: (data) => { rating4value = data.rating; } } }}/>
+        <Text>Rating value = {rating4value}</Text>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Without javascript -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Without javascript" code = {Code.without_javascript}>
+
+        <Rating ui red disabled>
+            <Icon heart active/>
+            <Icon heart active/>
+            <Icon heart active/>
+            <Icon heart/>
+            <Icon heart/>
+        </Rating>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Behaviors -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Behaviors" code = {Code.behaviors}>
+
+        <Rating ui blue id="rating5" settings={{icon: "heart", initialRating: rating5value, maxRating: 5}}/>
+        <Button ui on:click={() => {rating5value = behavior("rating5", "get rating")}}>Get Rating</Button>
+        <Text>Rating value = {rating5value}</Text>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 </Examples>
