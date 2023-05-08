@@ -2,7 +2,7 @@
 
 ### This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
 ### If you are interested in the project, feel free to download, assess, and give me frank feedback...
-### Latest update (7th of May, 2023): Still more to test before RC1...  Getting there, but slowly.  Currently working through Dropdown examples, with breaks for other modules.
+### Latest update (9th of May, 2023): Still more to test before RC1...  Getting there, but slowly.  Currently working through Dropdown examples, with breaks for other modules.
 ----
 
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
@@ -237,6 +237,8 @@ The second function is `behavior`, which can be used to both send behavior comma
 Both the `update` and `behavior` functions take one or more parameters, where the first parameter is always the `id` of the module.  The second parameter, if required, is usually the behavior, and subsequent parameters are the  parameters of that behavior.  For example `behavior("example1", "set percent", 30)`.
 
 Sometimes, the module can be sent settings on initialisation, for example - see the `Progress` module html below.  Settings are sent via the `settings` prop.  Similarly, some modules allow JSON settings to be sent when being updated, so the `update` function allows that possibility as well.
+
+Note that when defining the settings for a Fomantic UI element, callback functions won't execute in the context of the calling module.  See [this document](./Functions.md) for a way to set up such functions.
 
 ```html
 <script lang="ts">
