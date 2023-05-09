@@ -5,10 +5,10 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps, initialise, functionise, decommission } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
     
     export let ui: boolean=false;
-    export let id: string = "";
+    export let id: string = undefined;
     export let selected: any = undefined;
     export let value: any = undefined;
     export let settings: object = undefined;
@@ -28,6 +28,6 @@
 
 </script>
 
-<div {id} class={classString(ui, $$restProps, "accordion")} data-value={value} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize((ui?"accordion":null), {...functionise(ID, id, functions), ...settings})])} {...otherProps($$restProps)} on:click={setSelected}>
+<div {id} class={classString(ui, $$restProps, "accordion")} data-value={value} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize((ui?"accordion":null), {...functionize(ID, id, functions), ...settings})])} {...otherProps($$restProps)} on:click={setSelected}>
     <slot />
 </div>

@@ -207,7 +207,7 @@ export function initialise(id: string = "", functions: {} ) {
 }
 
 // Set up the code to send results from running the given function in the correct context back to the 
-export function functionise(ID: string, id: string = "", functions: {}) {
+export function functionize(ID: string, id: string = "", functions: {}) {
     let functionSettings = [];
 
     // Create the function that will send the event

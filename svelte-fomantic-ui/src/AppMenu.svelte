@@ -48,7 +48,7 @@
 </script>
 
 {#if isNarrow }
-    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui settings={{silent:false, dimPage: false, delaySetup: true, closable: true}}>
+    <Sidebar ui bind:clientWidth={sidebarWidth} id="mainmenu_mobile"  settings={{silent:true, dimPage: false, delaySetup: true, closable: true}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
     <Segment style={pusherStyle} id="main">
@@ -67,10 +67,10 @@
         </div>
     </Segment>
 {:else}
-    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu" ui vertical inverted visible menu left settings={{silent:true, dimPage: false, delaySetup: true, closable: false}}>
+    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu" ui left vertical inverted visible menu settings={{silent:true, dimPage: false, delaySetup: true, closable: false}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
-    <Segment style={pusherStyle} id="main">
+    <Segment ui left attached style={pusherStyle} id="main">
         <svelte:component this={currentPage}/>
     </Segment>
 {/if}

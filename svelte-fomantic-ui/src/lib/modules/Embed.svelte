@@ -5,15 +5,21 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
     
     export let ui: boolean = false;
+    export let id: string = undefined;
     export let settings: object = undefined;
     export let activate: boolean = false;
     export let popup: object | boolean = undefined;
-    
+    export let functions : object = undefined;
+
+    import { onDestroy } from "svelte";
+    const ID = initialise(id, functions);
+    onDestroy(() => { decommission(ID, id, functions); });
+
 </script>
 
-<div class={classString(ui, $$restProps, "embed")} data-module={rationalize([serialize("embed", settings, activate), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
+<div {id} class={classString(ui, $$restProps, "embed")} data-module={rationalize([serialize("embed", {...functionize(ID, id, functions), ...settings}, activate), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
     <slot />
 </div>
