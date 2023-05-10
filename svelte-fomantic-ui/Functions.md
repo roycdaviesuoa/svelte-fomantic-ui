@@ -93,7 +93,7 @@ with
 ```javascript
 let nagMessage = "Nag has been hidden";
 
-$(.ui.nag).nag({
+$('.ui.nag').nag({
     onHide: () => console.log(nagMessage)
 })
 ```

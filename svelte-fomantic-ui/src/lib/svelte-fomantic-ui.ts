@@ -174,11 +174,10 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 // When an event is received, the given function is called with the parameters from the function call.
 // id is the unique id of the DOM element
 // functions is an object where the keys are the names of the Fomantic UI functions, and each value is an object where the keys/value pairs represent the
-// parameters to the function.  The kay/value parameters represent the parameters to the Fomantic UI function, and the values for each of these should be null.
+// parameters to the function - the values for each of these should be null.
 // Optionally, additional key/value pairs may contain other data, in particular to functions or data that are in the setup code's context.
-// Finally, there has to be a key called "_" which is called when the Fomantic UI function is called.  It has one parameter, which is an object with the
+// Finally, there has to be a key named "_" which is called once the Fomantic UI function has executed.  It has one parameter, which is an object with the
 // keys as specified in this data structure.  Here is an example below.
-
 // functions={{
 //     onRate: {
 //         rating: __,
@@ -189,6 +188,8 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 //         },
 //     }
 // }}
+
+// Set up the event listeners, and return the unique ID.
 export function initialise(id: string = "", functions: {} ) {
     // Create a fairly unique ID.  We use this just in case the id is blank or null.
     let ID = [...Array(12)].map(i=>(~~(Math.random()*36)).toString(36)).join('');
@@ -220,6 +221,7 @@ export function functionize(ID: string, id: string = "", functions: {}) {
     return functionSettings;
 }
 
+// Remove the event listeners - should be called in the onDestroy function of the svelte module
 export function decommission(ID:string, id:string, functions: {}) {
     // Remove the event listeners.  This should be called in the onDestroy function of the svelte module
     if (functions !== undefined) {

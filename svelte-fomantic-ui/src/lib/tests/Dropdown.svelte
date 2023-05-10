@@ -380,6 +380,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Multiple search selection" code = {Code.multiple_search_selection}>
 
+        <Input hidden bind:value={ex11value}/>
         <Select ui fluid search dropdown multiple bind:selected={ex11value}>
             <Option value="">State</Option>
             {#each Object.keys(states) as key}
@@ -391,6 +392,7 @@
         </Segment>
 
         <Dropdown ui fluid multiple search selection bind:selected={ex12value}>
+            <Input hidden bind:value={ex12value}/>
             <Icon dropdown/>
             <Text default>Select Country</Text>
             <Menu>

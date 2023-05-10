@@ -267,6 +267,7 @@ Note here the tie between the Dropdown and Input elements through the bound valu
 </Segment>
 
 <Dropdown ui fluid multiple search selection bind:selected={ex12value}>
+    <Input hidden bind:value={ex12value}/>
     <Icon dropdown/>
     <Text default>Select Country</Text>
     <Menu>
