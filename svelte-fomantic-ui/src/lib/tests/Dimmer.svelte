@@ -105,9 +105,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Active -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Active" code = {Code.active}>
 
         <Segment ui id="ex4">
             <!-- Dimmer Generated Automatically No Need to Include !-->
@@ -136,11 +136,23 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Disabled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Disabled" code = {Code.disabled}>
 
-
+        <Segment ui disabled id="ex5">
+            <!-- Dimmer Generated Automatically No Need to Include !-->
+            <Header ui h3>
+                Overlayable Section
+            </Header>
+            <Images ui small>
+                <Image src="/images/image.png"/>
+                <Image src="/images/image.png"/>
+                <Image src="/images/image.png"/>
+            </Images>
+            <Placeholder ui fluid> <Header image> <Line/> <Line/> </Header> <Paragraph> <Line/> <Line/> <Line/> <Line/> <Line/> </Paragraph> </Placeholder>
+        </Segment>
+        <Button ui icon on:click={()=>{update({id: "ex5", type: "dimmer", commands: ["show"]})}}><Icon ui plus/> You can press this as much as you like but nothing will happen...</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
