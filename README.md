@@ -81,7 +81,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Calendar | X | X | [/Calendar](./svelte-fomantic-ui/src/lib/tests/Calendar.svelte) | [Calendar](https://fomantic-ui.com/modules/calendar.html)
 | Checkbox | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
 |  - Indeterminate | X | X | [/CheckboxIndeterminate](./svelte-fomantic-ui/src/lib/tests/CheckboxIndeterminate.svelte)
-| Dimmer | X | _ | [/Dimmer](./svelte-fomantic-ui/src/lib/tests/Dimmer.svelte) | [Dimmer](https://fomantic-ui.com/modules/dimmer.html)
+| Dimmer | X | X | [/Dimmer](./svelte-fomantic-ui/src/lib/tests/Dimmer.svelte) | [Dimmer](https://fomantic-ui.com/modules/dimmer.html)
 | Dropdown | X | _ | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
 | Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Embed](https://fomantic-ui.com/modules/embed.html)
 | Flyout | X | X | [/Flyout](./svelte-fomantic-ui/src/lib/tests/Flyout.svelte) | [Flyout](https://fomantic-ui.com/modules/flyout.html)
@@ -93,8 +93,8 @@ Note that in essence all these do already work (except for the Modules) because 
 | Rating | X | X | [/Rating](./svelte-fomantic-ui/src/lib/tests/Rating.svelte) | [Rating](https://fomantic-ui.com/modules/rating.html)
 | Search | X |  |
 | Shape |  |  |
-| Sidebar | X |  |
-| Slider | X |  |
+| Sidebar | X | _ |
+| Slider | X | _ |
 | Sticky |  |  |
 | Tab |  |  |
 | Toast |  |  |

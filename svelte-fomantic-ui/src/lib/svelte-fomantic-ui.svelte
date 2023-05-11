@@ -83,6 +83,7 @@
     export {default as Pusher} from './modules/Pusher.svelte';
     export {default as Rating} from './modules/Rating.svelte';
     export {default as Sidebar} from './modules/Sidebar.svelte';
+    export {default as Slider} from './modules/Slider.svelte';
 
     // Views
     export {default as Ad} from './views/Ad.svelte';
@@ -114,21 +115,4 @@
     export { behavior } from './svelte-fomantic-ui-jquery';
     export { update } from './svelte-fomantic-ui-jquery';
     export { reload } from './svelte-fomantic-ui-jquery';
-
-    // Channel functions for getting around context problems
-    export function newID () { return [...Array(12)].map(i=>(~~(Math.random()*36)).toString(36)).join(''); };
-    export function setUp (ID: string, id:string, funcName: string, func: Function) { document.removeEventListener(ID+id, ()=>{}); document.addEventListener(ID+id, (v: any) => func(v.detail[funcName])); };
-    export function cleanUp (ID: string, id:string) { document.removeEventListener(ID+id, ()=>{}); };
-
-    export function contextualFunction (ID: string, id: string, funcName: string, names, ...parameters) {
-        let newParameters = "{";
-        names.forEach((name: string, index: number) => {
-            newParameters += name + ":" + ((index >= (names.length - parameters.length)) ? parameters[index - (names.length - parameters.length)] : name) + (index < name.length-1 ? ",":"");
-        });
-        newParameters += "}";
-
-        let functionString = `document.dispatchEvent( new CustomEvent("` + ID+id + `", { detail: {`+ funcName + ":" + newParameters + `} } ) )`;
-
-        return new Function(...names, functionString);
-    }
 </script>

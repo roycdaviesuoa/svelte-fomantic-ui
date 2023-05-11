@@ -50,6 +50,7 @@
   import Rating from './lib/tests/Rating.svelte';
   import Reveal from './lib/tests/Reveal.svelte';
   import Segment from './lib/tests/Segment.svelte';
+  import Slider from './lib/tests/Slider.svelte';
   import Statistic from './lib/tests/Statistic.svelte';
   import Step from './lib/tests/Step.svelte';
   import Table from './lib/tests/Table.svelte';
@@ -148,8 +149,10 @@
       currentRoute = Rating; break;
     case '/Segment':
       currentRoute = Segment; break;
+    case '/Slider':
+      currentRoute = Slider; break;
     case '/Statistic':
-        currentRoute = Statistic; break;
+      currentRoute = Statistic; break;
     case '/Step':
       currentRoute = Step; break;
     case '/Table':

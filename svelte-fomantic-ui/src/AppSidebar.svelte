@@ -50,6 +50,7 @@
     import Rating from './lib/tests/Rating.svelte';
     import Reveal from './lib/tests/Reveal.svelte';
     import Segment from './lib/tests/Segment.svelte';
+    import Slider from './lib/tests/Slider.svelte';
     import Statistic from './lib/tests/Statistic.svelte';
     import Step from './lib/tests/Step.svelte';
     import Table from './lib/tests/Table.svelte';
@@ -141,10 +142,10 @@
             <Link item on:click={()=>{currentPage=Popup; doMenuToggle();}}>Popup</Link>    
             <Link item on:click={()=>{currentPage=Progress; doMenuToggle();}}>Progress</Link>    
             <Link item on:click={()=>{currentPage=Rating; doMenuToggle();}}>Rating</Link>    
-            <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Search</Link>    
+            <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Search</Link>
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Shape</Link>    
             <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Sidebar</Link>    
-            <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Slider</Link>    
+            <Link item on:click={()=>{currentPage=Slider; doMenuToggle();}}>Slider</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Sticky</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Tab</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Toast</Link>    

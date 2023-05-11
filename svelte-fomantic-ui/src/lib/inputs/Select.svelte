@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps, initialise, functionise, decommission } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
 
     export let ui: boolean=false;
     export let selected: any = undefined;
@@ -61,11 +61,11 @@
 </script>
 
 {#if multiple}
-    <select {id} multiple class={classString(ui, $$restProps, "")} on:change={doChange} on:click on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionise(ID, id, {...functions, ...moreFunctions}), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
+    <select {id} multiple class={classString(ui, $$restProps, "")} on:change={doChange} on:click on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionize(ID, id, {...functions, ...moreFunctions}), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
         <slot/>
     </select>
 {:else}
-    <select {id} class={classString(ui, $$restProps, "")} bind:value on:change on:click={doClick} on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionise(ID, id, functions), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
+    <select {id} class={classString(ui, $$restProps, "")} bind:value on:change on:click={doClick} on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionize(ID, id, functions), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
         <slot/>
     </select>
 {/if}
