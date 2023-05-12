@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Calendar, Input, Icon, Form, Fields, Field, Label, Popup, Button, Content } from "../svelte-fomantic-ui.svelte";
+    import { Calendar, Input, Icon, Form, Fields, Field, Label, Popup, Button, Divider, Content } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Calendar';
@@ -28,7 +28,7 @@
                 <Input placeholder="Date/Time"/>
             </Input>
         </Calendar>
-
+        <Divider ui/>
         <Input ui fluid left icon popup>
             <Icon calendar/>
             <Input placeholder="Date/Time"/>
