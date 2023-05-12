@@ -53,7 +53,10 @@
   import Slider from './lib/tests/Slider.svelte';
   import Statistic from './lib/tests/Statistic.svelte';
   import Step from './lib/tests/Step.svelte';
+  import Sticky from './lib/tests/Sticky.svelte';
+  import Sticky_outer from './lib/tests/Sticky_outer.svelte';
   import Table from './lib/tests/Table.svelte';
+  import Test from './lib/tests/Test.svelte';
   import Text from './lib/tests/Text.svelte';
   import Input from './lib/tests/Input.svelte';
 
@@ -155,8 +158,14 @@
       currentRoute = Statistic; break;
     case '/Step':
       currentRoute = Step; break;
+    case '/Sticky':
+      currentRoute = Sticky; break;
+    case '/Sticky_outer':
+      currentRoute = Sticky_outer; break;
     case '/Table':
       currentRoute = Table; break;
+    case '/Test':
+      currentRoute = Test; break;
     case '/Text':
       currentRoute = Text; break;
     default:

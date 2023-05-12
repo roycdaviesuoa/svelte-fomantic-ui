@@ -23,7 +23,12 @@
     let isNarrow: boolean= false;
     let narrowWidth = 768;
 
-    const handleResize = () => { windowWidth = window.innerWidth; mainmenu_open = windowWidth >= narrowWidth; isNarrow = windowWidth < narrowWidth; pusherStyle = "width:"+(isNarrow?windowWidth:((mainmenu_open)?windowWidth-sidebarWidth:windowWidth))+"px"; };
+    const handleResize = () => { 
+        windowWidth = window.innerWidth; 
+        mainmenu_open = windowWidth >= narrowWidth; 
+        isNarrow = windowWidth < narrowWidth; 
+        pusherStyle = "width:"+(isNarrow?windowWidth:((mainmenu_open)?windowWidth-sidebarWidth:windowWidth))+"px"; 
+    };
     onMount(() => { window.addEventListener('resize', handleResize); });
     onDestroy(() => { window.removeEventListener('resize', handleResize); });
 
@@ -32,8 +37,6 @@
 
     $: isNarrow = windowWidth < narrowWidth;
     $: pusherStyle = "width:"+(isNarrow?windowWidth:((mainmenu_open)?windowWidth-sidebarWidth:windowWidth))+"px";
-
-    console.log(mainmenu_open, windowWidth, sidebarWidth, pusherStyle);
 
     function doMenuToggle() {
         if (isNarrow)
@@ -48,10 +51,10 @@
 </script>
 
 {#if isNarrow }
-    <Sidebar ui bind:clientWidth={sidebarWidth} id="mainmenu_mobile" settings={{silent:true, dimPage: false, delaySetup: true, closable: true}}>
+    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui vertical inverted menu settings={{silent:true, dimPage: false, delaySetup: true, closable: true}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
-    <Segment style={pusherStyle} id="main">
+    <Segment pusher style={pusherStyle} id="main">
         <Menu ui inverted top fixed>
             <Item>
                 <Button ui icon secondary on:click={doMenuToggle}>
@@ -67,12 +70,14 @@
         </div>
     </Segment>
 {:else}
-    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu" ui left vertical inverted visible menu settings={{silent:true, dimPage: false, delaySetup: true, closable: false}}>
+    <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu" ui vertical inverted visible menu settings={{silent:true, dimPage: false, delaySetup: true, closable: false}}>
         <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
     </Sidebar>
-    <Segment ui left attached style={pusherStyle} id="main">
-        <svelte:component this={currentPage}/>
-    </Segment>
+    <Pusher style={pusherStyle} >
+        <Segment ui left attached id="main">
+            <svelte:component this={currentPage}/>
+        </Segment>
+    </Pusher>
 {/if}
 
 <style>

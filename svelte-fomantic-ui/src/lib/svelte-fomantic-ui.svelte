@@ -84,6 +84,7 @@
     export {default as Rating} from './modules/Rating.svelte';
     export {default as Sidebar} from './modules/Sidebar.svelte';
     export {default as Slider} from './modules/Slider.svelte';
+    export {default as Sticky} from './modules/Sticky.svelte';
 
     // Views
     export {default as Ad} from './views/Ad.svelte';
