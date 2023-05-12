@@ -16,8 +16,8 @@
 <Examples
     title = "Sticky examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/sticky.html'>here</a>"
+    disclaimer = "Note that here the page is embedded inside an iFrame, so is not including the Menu."
     code = {Code}>
-
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- XXXX -->

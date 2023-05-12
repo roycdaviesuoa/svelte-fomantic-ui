@@ -7,13 +7,15 @@
 <script lang="ts">
     import { Embed } from "../svelte-fomantic-ui.svelte";
 
+    export let element = "";
+
     let innerHeight = 0;
     $: height = innerHeight - 30;
 
 </script>
 
 <svelte:window bind:innerHeight={innerHeight}/>
-<Embed ui activate data={{url : "/Sticky"}} style={"height: " + height + "px;"}/>
+<Embed ui activate data={{url : "/" + element}} style={"height: " + height + "px;"}/>
     
 
 

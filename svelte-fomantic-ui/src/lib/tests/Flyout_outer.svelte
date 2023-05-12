@@ -13,7 +13,7 @@
 </script>
 
 <svelte:window bind:innerHeight={innerHeight}/>
-<Embed ui activate data={{url : "/Sticky"}} style={"height: " + height + "px;"}/>
+<Embed ui activate data={{url : "/Flyout"}} style={"height: " + height + "px;"}/>
     
 
 

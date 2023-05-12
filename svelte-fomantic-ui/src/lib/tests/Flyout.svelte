@@ -10,11 +10,6 @@
     import Examples from "./Examples.svelte";
     import Code from './Flyout';
 
-    const flyoutSettings = {
-        onHide: () => { behavior({id: 'mainmenu', type: 'sidebar', commands: ['show']}); behavior({id: 'mainmenu_mobile', type: 'sidebar', commands: ['show']})}, 
-        onShow: () => { behavior({id: 'mainmenu', type: 'sidebar', commands: ['hide']}); behavior({id: 'mainmenu_mobile', type: 'sidebar', commands: ['hide']})}
-    }
-
     const tempFlyout = {
         debug: true,
         verbose: true,
@@ -34,15 +29,15 @@
 <Examples
     title = "Flyout examples and tests"
     description = "To check these are correct, compare with standard FomanticUI, <a href='https://fomantic-ui.com/modules/flyout.html'>here</a>"
+    disclaimer = "Note that here the page is embedded inside an iFrame, so is not including the Menu."
     code = {Code}>
-
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Flyout -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Flyout" code = {Code.flyout}>
 
-        <Flyout ui id="flyout1" settings={flyoutSettings}>
+        <Flyout ui id="flyout1">
             <Icon close/>
             <Header ui>
                 <Icon question/>
@@ -78,18 +73,18 @@
     <Example title = "Width" code = {Code.width}>
 
         <Segment ui basic>
-            <Button ui red on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'very thin'}, ...flyoutSettings}})}>Toggle Very Thin Flyout</Button>
-            <Button ui orange on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'thin'}, ...flyoutSettings}})}>Toggle Thin Flyout</Button>
-            <Button ui yellow on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:''}, ...flyoutSettings}})}>Toggle Normal Flyout</Button>
-            <Button ui green on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'wide'}, ...flyoutSettings}})}>Toggle Wide Flyout</Button>
-            <Button ui blue on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'very wide'}, ...flyoutSettings}})}>Toggle Very Wide Flyout</Button>    
+            <Button ui red on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'very thin'}}})}>Toggle Very Thin Flyout</Button>
+            <Button ui orange on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'thin'}}})}>Toggle Thin Flyout</Button>
+            <Button ui yellow on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:''}}})}>Toggle Normal Flyout</Button>
+            <Button ui green on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'wide'}}})}>Toggle Wide Flyout</Button>
+            <Button ui blue on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'very wide'}}})}>Toggle Very Wide Flyout</Button>    
         </Segment>
 
         <Segment ui basic>
-            <Button ui red on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'two wide'}, ...flyoutSettings}})}>Toggle Two Wide Flyout</Button>
-            <Button ui orange on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'five wide'}, ...flyoutSettings}})}>Toggle Five Wide Flyout</Button>
-            <Button ui yellow on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'eight wide'}, ...flyoutSettings}})}>Toggle Eight Wide Flyout</Button>
-            <Button ui green on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'twelve wide'}, ...flyoutSettings}})}>Toggle Twelve Wide Flyout</Button>
+            <Button ui red on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'two wide'}}})}>Toggle Two Wide Flyout</Button>
+            <Button ui orange on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'five wide'}}})}>Toggle Five Wide Flyout</Button>
+            <Button ui yellow on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'eight wide'}}})}>Toggle Eight Wide Flyout</Button>
+            <Button ui green on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'twelve wide'}}})}>Toggle Twelve Wide Flyout</Button>
         </Segment>
 
     </Example>
@@ -102,10 +97,10 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Position" code = {Code.position}>
 
-        <Button ui red on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'left'}, ...flyoutSettings}})}>Toggle Left Flyout</Button>
-        <Button ui orange on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'right'}, ...flyoutSettings}})}>Toggle Right Flyout</Button>
-        <Button ui yellow on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'top'}, ...flyoutSettings}})}>Toggle Top Flyout</Button>
-        <Button ui green on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'bottom'}, ...flyoutSettings}})}>Toggle Bottom Flyout</Button>
+        <Button ui red on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'left'}}})}>Toggle Left Flyout</Button>
+        <Button ui orange on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'right'}}})}>Toggle Right Flyout</Button>
+        <Button ui yellow on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'top'}}})}>Toggle Top Flyout</Button>
+        <Button ui green on:click={() => behavior({type: 'flyout', commands: ['toggle'], settings: {...tempFlyout, ...{class:'bottom'}}})}>Toggle Bottom Flyout</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -117,7 +112,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Fullscreen" code = {Code.fullscreen}>
 
-        <Flyout ui fullscreen id="flyout2" settings={flyoutSettings}>
+        <Flyout ui fullscreen id="flyout2">
             <Icon close/>
             <Header ui>
                 <Content>
@@ -155,7 +150,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Center aligned" code = {Code.center_aligned}>
 
-        <Flyout ui id="flyout3" settings={flyoutSettings}>
+        <Flyout ui id="flyout3">
             <Header ui center aligned>Header is centered</Header>
             <Content center aligned>
                 <p>Content is centered</p>
@@ -178,7 +173,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Left actions" code = {Code.left_actions}>
 
-        <Flyout ui id="flyout4" settings={flyoutSettings}>
+        <Flyout ui id="flyout4">
             <Header ui>Look at the Actions</Header>
             <Content>
                 <p>They are aligned to the left</p>
@@ -201,7 +196,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Basic header and actions" code = {Code.basic_header_and_actions}>
 
-        <Flyout ui id="flyout5" settings={flyoutSettings}>
+        <Flyout ui id="flyout5">
             <Header ui basic>Basic Header</Header>
             <Content>
                 <p>Basic Actions below</p>
