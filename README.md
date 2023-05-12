@@ -2,7 +2,7 @@
 
 ### This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
 ### If you are interested in the project, feel free to download, assess, and give me frank feedback...
-### Latest update (3rd of May, 2023): Still more to test before RC1...  Getting there, but slowly.  Currently working through Dropdown examples.
+### Latest update (12th of May, 2023): Still more to test before RC1...  Getting there, but slowly.  Currently working through Dropdown examples.
 
 ---
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
@@ -94,7 +94,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Search | X |  |
 | Shape |  |  |
 | Sidebar | X | _ |
-| Slider | X | _ |
+| Slider | X | X | [/Slider](./svelte-fomantic-ui/src/lib/tests/Slider.svelte) | [Slider](https://fomantic-ui.com/modules/slider.html)
 | Sticky |  |  |
 | Tab |  |  |
 | Toast |  |  |

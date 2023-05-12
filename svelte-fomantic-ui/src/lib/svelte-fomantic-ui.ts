@@ -161,12 +161,13 @@ export function rationalize(anArray:any[])
 function contextualFunction (ID: string, id: string, funcName: string, names: string[], parameters: string[]) {
     let newParameters = "{";
     names.forEach((name, index) => {
-        newParameters += name + ":" + ((index >= (names.length - parameters.length)) ? parameters[index - (names.length - parameters.length)] : name) + (index < name.length-1 ? ",":"");
+        newParameters += name + ":" + ((index >= (names.length - parameters.length)) ? parameters[index - (names.length - parameters.length)] : name) + ",";
     });
-    newParameters += "}";
+    newParameters = newParameters.replace(/,\s*$/, '') + "}";
 
     let functionString = `document.dispatchEvent( new CustomEvent("` + ID+id+funcName + `", { detail: {`+ funcName + ":" + newParameters + `} } ) )`;
 
+    // console.log(functionString);
     return new Function(...names, functionString);
 }
 
@@ -193,12 +194,15 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 export function initialise(id: string = "", functions: {} ) {
     // Create a fairly unique ID.  We use this just in case the id is blank or null.
     let ID = [...Array(12)].map(i=>(~~(Math.random()*36)).toString(36)).join('');
-
+    // console.log(functions);
+    
     // For each function named, set up an event listener, after removing one if one existed from before - highly unlikely, but just in case.
     if (functions !== undefined) {
-        Object.keys(functions).forEach ((key) => {
-            document.removeEventListener(ID+id+key, ()=>{}); 
-            document.addEventListener(ID+id+key, (v) => functions[key]._(v["detail"][key]));
+        Object.keys(functions).forEach ((funcName) => {
+            document.removeEventListener(ID+id+funcName, ()=>{}); 
+            document.addEventListener(ID+id+funcName, (v) => {
+                let returnValue = functions[funcName]._(v["detail"][funcName]);
+            });
         });
     }
 
@@ -206,18 +210,20 @@ export function initialise(id: string = "", functions: {} ) {
     return ID;
 }
 
-// Set up the code to send results from running the given function in the correct context back to the 
+// Set up the code to send results from running the given function in the correct context back to the module
 export function functionize(ID: string, id: string = "", functions: {}) {
     let functionSettings = [];
 
     // Create the function that will send the event
     if (functions !== undefined) {
-        Object.keys(functions).forEach ((key) => {
-            let params = Object.keys(functions[key]).filter(key2 => key2.charAt(0) !== '_');
-            let values = Object.keys(functions[key]).filter(key2 => ((key2.charAt(0) !== '_') && functions[key][key2])).map(key2 => "\"" + functions[key][key2].toString() + "\"");
-            functionSettings[key] = contextualFunction(ID, id, key, params, values);
+        Object.keys(functions).forEach ((funcName) => {
+            let params = Object.keys(functions[funcName]).filter(key2 => key2.charAt(0) !== '_');
+            let values = Object.keys(functions[funcName]).filter(key2 => ((key2.charAt(0) !== '_') && functions[funcName][key2])).map(key2 => "\"" + functions[funcName][key2].toString() + "\"");
+            functionSettings[funcName] = contextualFunction(ID, id, funcName, params, values);
         });
     }
+
+    // console.log(functionSettings);
     return functionSettings;
 }
 

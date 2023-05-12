@@ -10,6 +10,7 @@
 
     export let ui: boolean = false;
     export let id: string = undefined;
+    export let range: boolean = undefined;
     export let settings: object = undefined;
     export let popup: object | boolean = undefined;
     export let functions : object = undefined;
@@ -22,7 +23,7 @@
     id=(id?id:Math.random().toString(36).substring(2, 6));
 
     $: {
-        if (prevValue != value) {
+        if ((prevValue != value) && !range) {
             prevValue = value;
             update(id, "set value", value, false);
         }
@@ -32,7 +33,7 @@
         start:  value
     }
 
-    const moreFunctions = {
+    const singleValue = {
         onChange : {
             value: null,
 
@@ -40,7 +41,17 @@
         }
     }
 
-    let allFunctions = {...functions, ...moreFunctions};
+    const rangeValues = {
+        onChange : {
+            length: null,
+            start: null,
+            end: null,
+
+            _: (data) => {value = data; selected = data;}
+        }
+    }
+
+    let allFunctions = range ? {...functions, ...rangeValues} : {...functions, ...singleValue};
 
     import { onDestroy } from "svelte";
     const ID = initialise(id, allFunctions);
@@ -48,6 +59,12 @@
 
 </script>
 
-<div {id} class={classString(ui, $$restProps, "slider")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("slider", {...functionize(ID, id, allFunctions), ...settings, ...moreSettings})])} {...otherProps($$restProps)}>
-    <slot />
-</div>
+{#if range}
+    <div {id} class={classString(ui, $$restProps, "range slider")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("slider", {...functionize(ID, id, allFunctions), ...settings})])} {...otherProps($$restProps)}>
+        <slot />
+    </div>
+{:else}
+    <div {id} class={classString(ui, $$restProps, "slider")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("slider", {...functionize(ID, id, allFunctions), ...settings, ...moreSettings})])} {...otherProps($$restProps)}>
+        <slot />
+    </div>
+{/if}
