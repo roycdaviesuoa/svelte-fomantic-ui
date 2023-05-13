@@ -26,8 +26,8 @@
 
         <Segment ui id="sticky1">
             <Rail left ui>
-                <Placeholder ui>
-                    {#each new Array(3) as _unused}
+                <Placeholder ui fluid>
+                    {#each {length: 3} as _}
                         <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
                     {/each}
                 </Placeholder>
@@ -43,8 +43,8 @@
                     <Image ui src="/images/image.png"/>
                 </Sticky>
             </Rail>
-            <Placeholder ui>
-                {#each new Array(20) as _unused}
+            <Placeholder ui fluid>
+                {#each {length: 20} as _}
                     <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
                 {/each}
             </Placeholder>
@@ -58,7 +58,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Pushing -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Pushing" code = {Code.pushng} narrow>
+    <Example title = "Pushing" code = {Code.pushing} narrow>
 
         <Segment ui id="sticky2">
             <Rail left ui>
@@ -68,10 +68,10 @@
                 </Sticky>
             </Rail>
             <Rail right ui>
-                <Placeholder ui>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                <Placeholder ui fluid>
+                    {#each {length: 3} as _}
+                        <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                    {/each}
                 </Placeholder>
                 <p></p>
                 <Sticky ui style={"width: 272px !important; height: 262.672px !important; left: 567px;"} settings={{context:"#sticky2", pushing: true}}>
@@ -79,27 +79,10 @@
                     <Image ui src="/images/image.png"/>
                 </Sticky>
             </Rail>
-            <Placeholder ui>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+            <Placeholder ui fluid>
+                {#each {length: 20} as _}
+                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                {/each}
             </Placeholder>
         </Segment>
 
@@ -118,23 +101,17 @@
                 <Sticky ui style={"width: 272px !important; height: 262.672px !important; left: 567px;"} settings={{context:"#sticky3"}}>
                     <Header ui h3>Stuck Content</Header>
                     <Items ui divided>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
-                        <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
+                        {#each new Array(10) as _}
+                            <Item> <Image ui tiny> <Image src="/images/image.png"/> </Image> <Content middle aligned> <Header link>Followup Article</Header> <Meta> <Author>By <Link>Author</Link></Author> </Meta> </Content> </Item>
+                        {/each}
                     </Items>
                 </Sticky>
             </Rail>
             <Rail right ui>
-                <Placeholder ui>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                <Placeholder ui fluid>
+                    {#each {length: 3} as _}
+                        <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                    {/each}
                 </Placeholder>
                 <p></p>
                 <Sticky ui style={"width: 272px !important; height: 262.672px !important; left: 567px;"} settings={{context:"#sticky3"}}>
@@ -142,22 +119,10 @@
                     <Image ui src="/images/image.png"/>
                 </Sticky>
             </Rail>
-            <Placeholder ui>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+            <Placeholder ui fluid>
+                {#each {length: 15} as _}
+                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                {/each}
             </Placeholder>
         </Segment>
 
@@ -180,27 +145,10 @@
                 </Menu>
             </Sticky>
             <div class="ui active tab">
-                <Placeholder ui>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
-                    <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                <Placeholder ui fluid>
+                    {#each {length: 20} as _}
+                        <Paragraph> <Line/> <Line/> <Line/> <Line/> </Paragraph>
+                    {/each}
                 </Placeholder>
             </div>
         </Segment>
