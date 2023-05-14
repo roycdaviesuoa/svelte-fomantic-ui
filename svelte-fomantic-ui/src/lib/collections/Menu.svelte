@@ -5,13 +5,23 @@
 -->
 
 <script lang="ts">
-    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
 
     export let ui: boolean = false;
+    export let id: string = undefined;
     export let selected: any = undefined;
     export let value: any = undefined;
+    export let settings: object = undefined;
     export let popup: object | boolean = undefined;
     export let values: boolean = false;
+    export let functions : object = undefined;
+
+    // If no ID is given, generate a 6 letter random one
+    id=(id?id:Math.random().toString(36).substring(2, 6));
+
+    import { onDestroy } from "svelte";
+    const ID = initialise(id, functions);
+    onDestroy(() => { decommission(ID, id, functions); });
 
     function setSelected(e:any) {
         if (e.target.attributes.hasOwnProperty("data-value") || e.target.attributes.hasOwnProperty("value") || (!values && e.target.innerText)) {
@@ -21,12 +31,6 @@
     }
 </script>
 
-<!-- {#if selected} -->
-    <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={setSelected} on:change>
-        <slot />
-    </div>
-<!-- {:else}
-    <div class={classString(ui, $$restProps, "menu")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:change>
-        <slot />
-    </div>
-{/if} -->
+<div {id} class={classString(ui, $$restProps, "menu")} data-module={rationalize([serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup), serialize("menu", {...functionize(ID, id, functions), ...settings})])} {...otherProps($$restProps)} on:click={setSelected} on:change>
+    <slot />
+</div>

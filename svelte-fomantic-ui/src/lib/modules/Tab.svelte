@@ -1,0 +1,18 @@
+<!--
+******************************************************************************************************************************************************
+* By Dr. Roy C. Davies, May 2023, roy.c.davies@ieee.org
+* Note that for tabs, the magic is in the Menu component, which sits above Tab component and is linked by the data-tab attribute.
+******************************************************************************************************************************************************
+-->
+
+<script lang="ts">
+    import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
+
+    export let ui: boolean = false;
+    export let popup: object | boolean = undefined;
+    
+</script>
+
+<div class={classString(ui, $$restProps, "tab")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+    <slot />
+</div>

@@ -35,6 +35,7 @@
     import Header from './lib/tests/Header.svelte';
     import Icon from './lib/tests/Icon.svelte';
     import Image from './lib/tests/Image.svelte';
+    import Input from './lib/tests/Input.svelte';
     import Item from './lib/tests/Item.svelte';
     import Label from './lib/tests/Label.svelte';
     import List from './lib/tests/List.svelte';
@@ -54,9 +55,10 @@
     import Statistic from './lib/tests/Statistic.svelte';
     import Step from './lib/tests/Step.svelte';
     import Sticky from './lib/tests/Sticky_outer.svelte';
+    import Tab from './lib/tests/Tab.svelte';
     import Table from './lib/tests/Table.svelte';
     import Text from './lib/tests/Text.svelte';
-    import Input from './lib/tests/Input.svelte';
+    import Toast from './lib/tests/Toast.svelte';
 
     import {version} from '../package.json';
 
@@ -148,8 +150,8 @@
             <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Sidebar</Link>    
             <Link item on:click={()=>{currentPage=Slider; doMenuToggle();}}>Slider</Link>    
             <Link item on:click={()=>{currentPage=Sticky; doMenuToggle();}}>Sticky</Link>    
-            <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Tab</Link>    
-            <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Toast</Link>    
+            <Link item on:click={()=>{currentPage=Tab; doMenuToggle();}}>Tab</Link>    
+            <Link item on:click={()=>{currentPage=Toast; doMenuToggle();}}>Toast</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Transition</Link>    
         </MenuSFU>
     </ItemSFU>

@@ -56,9 +56,11 @@
   import Step from './lib/tests/Step.svelte';
   import Sticky from './lib/tests/Sticky.svelte';
   import Sticky_outer from './lib/tests/Sticky_outer.svelte';
+  import Tab from './lib/tests/Tab.svelte';
   import Table from './lib/tests/Table.svelte';
   import Test from './lib/tests/Test.svelte';
   import Text from './lib/tests/Text.svelte';
+  import Toast from './lib/tests/Toast.svelte';
   import Input from './lib/tests/Input.svelte';
 
 
@@ -165,12 +167,16 @@
       currentRoute = Sticky; break;
     case '/Sticky_outer':
       currentRoute = Sticky_outer; break;
+    case '/Tab':
+      currentRoute = Tab; break;
     case '/Table':
       currentRoute = Table; break;
     case '/Test':
       currentRoute = Test; break;
     case '/Text':
       currentRoute = Text; break;
+    case '/Toast':
+      currentRoute = Toast; break;
     default:
       break;
       // currentRoute = NotFound;

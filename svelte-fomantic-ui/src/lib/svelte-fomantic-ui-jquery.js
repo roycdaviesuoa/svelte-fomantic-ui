@@ -23,6 +23,16 @@ export const reload = function()
     // Initialise the Tablesort code
     tableSort();
 
+    // // Go through each of the tabs
+    // $("[data-tab]").each(function() {
+    //     $(this).tab($(this).attr('id'));
+
+    //     // if ($(this).hasClass('active')) {
+    //     //     console.log($(this).data('tab'));
+    //     //     $(this).tab('change tab', $(this).data('tab'));
+    //     // }
+    // });
+
     // Go through each of the modules
     $("[data-module]").each(function() {
         let modules = get_settings($(this).data("module"));
@@ -36,6 +46,12 @@ export const reload = function()
     
                 switch (moduleType) {
                     case "": break; // Sometimes, there may be elements with blank module names
+                    case "menu" :
+                        // Silence the errors because the menu might not be using tabs
+                        $('#'+$(this).attr('id') + " .item").tab({silent: true, ...settings});
+                        break;
+                    case "tab" : 
+                        break;
                     case "calendar" : // We have to do something special for calendar
                         if (typeof settings === 'object' && (settings)) {
                             if (settings.hasOwnProperty("startCalendar")) {
@@ -126,11 +142,13 @@ function construct_jquery_command(params) {
             params.commands.forEach ((command) => {
                 jquery_command += "." + element + "(\'" + command + "\')";
             })
-        } else {
+        } 
+        else if (!params.hasOwnProperty("settings")){
             jquery_command += "." + element + "()";
         }
     }
 
+    console.log(jquery_command);
     // Finally, return the completed jquery command as a string
     return jquery_command;
 }

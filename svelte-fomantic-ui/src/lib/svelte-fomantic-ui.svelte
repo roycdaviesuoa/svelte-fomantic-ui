@@ -85,6 +85,8 @@
     export {default as Sidebar} from './modules/Sidebar.svelte';
     export {default as Slider} from './modules/Slider.svelte';
     export {default as Sticky} from './modules/Sticky.svelte';
+    export {default as Tab} from './modules/Tab.svelte';
+    export {default as Toast} from './modules/Toast.svelte';
 
     // Views
     export {default as Ad} from './views/Ad.svelte';
@@ -116,4 +118,5 @@
     export { behavior } from './svelte-fomantic-ui-jquery';
     export { update } from './svelte-fomantic-ui-jquery';
     export { reload } from './svelte-fomantic-ui-jquery';
+    export { jquery } from './svelte-fomantic-ui';
 </script>
