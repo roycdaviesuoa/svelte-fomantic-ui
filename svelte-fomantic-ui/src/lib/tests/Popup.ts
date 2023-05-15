@@ -226,7 +226,7 @@ titled : `
 <Icon circular heart link popup data-content="Hello. This is a very wide pop-up which allows for lots of content with additional space. You can fit a lot of words here and the paragraphs will be pretty wide." data-variation="very wide"/>
     `,
     fluid : `
-<Button ui popup>Show fluid popup</Button>
+<Button ui popup={{ hoverable: true }}>Show fluid popup</Button>
 <Popup ui fluid>
     <Grid ui four column divided center aligned>
         <Column>1</Column>
@@ -237,7 +237,7 @@ titled : `
 </Popup>
     `,
     flowing : `
-<Button ui popup>Show flowing popup</Button>
+<Button ui popup={{ hoverable: true }}>Show flowing popup</Button>
 <Popup ui flowing>
     <Grid ui three column divided center aligned>
         <Column>

@@ -28,7 +28,9 @@
                 <Input placeholder="Date/Time"/>
             </Input>
         </Calendar>
+
         <Divider ui/>
+        
         <Input ui fluid left icon popup>
             <Icon calendar/>
             <Input placeholder="Date/Time"/>

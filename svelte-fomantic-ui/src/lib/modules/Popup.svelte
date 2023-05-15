@@ -16,6 +16,8 @@
     const ID = initialise(id, functions);
     onDestroy(() => { decommission(ID, id, functions); });
 
+    console.log(serialize("popup", {...functionize(ID, id, functions), ...settings}));
+
 </script>
 
 <div {id} class={classString(ui, $$restProps, "popup")} data-module={serialize("popup", {...functionize(ID, id, functions), ...settings})} {...otherProps($$restProps)}>

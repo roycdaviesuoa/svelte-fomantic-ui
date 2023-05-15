@@ -61,6 +61,7 @@ export const reload = function()
                         break;
                     case "popup":
                         const extraSettings = { delay: { show: 100, hide: 300 } };
+                        console.log($(this), moduleType, {...extraSettings, ...settings});
                         $(this)[moduleType]({...extraSettings, ...settings});
                         break;
                     case "dropdown":
