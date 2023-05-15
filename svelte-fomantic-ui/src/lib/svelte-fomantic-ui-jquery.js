@@ -4,6 +4,8 @@
 // Load the various modules required by Fomantic UI.
 // ******************************************************************************************************************************************************
 import { tableSort } from './collections/Tablesort';
+import { super_stringify } from "./super_stringify";
+
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -22,16 +24,6 @@ export const reload = function()
 {
     // Initialise the Tablesort code
     tableSort();
-
-    // // Go through each of the tabs
-    // $("[data-tab]").each(function() {
-    //     $(this).tab($(this).attr('id'));
-
-    //     // if ($(this).hasClass('active')) {
-    //     //     console.log($(this).data('tab'));
-    //     //     $(this).tab('change tab', $(this).data('tab'));
-    //     // }
-    // });
 
     // Go through each of the modules
     $("[data-module]").each(function() {
@@ -62,6 +54,10 @@ export const reload = function()
                             }
                         }
                         $(this)[moduleType](settings);
+                        break;
+                    case "flyout":
+                        const extraSettings1 = { silent: true };
+                        $(this)[moduleType]({...extraSettings1, ...settings});
                         break;
                     case "popup":
                         const extraSettings = { delay: { show: 100, hide: 300 } };
@@ -134,7 +130,9 @@ function construct_jquery_command(params) {
     
         // If there is a settings parameter, use that as the settings to send in, otherwise empty brackets.
         if (params.hasOwnProperty("settings")) {
-            jquery_command += ("." + element + "(" + JSON.stringify(params.settings) + ")");
+            // jquery_command += ("." + element + "(" + JSON.stringify(params.settings) + ")");
+            let serialized = super_stringify(params.settings);
+            jquery_command += ("." + element + "(" + serialized + ")");
         }
     
         if (params.hasOwnProperty("commands")) {
@@ -148,7 +146,7 @@ function construct_jquery_command(params) {
         }
     }
 
-    console.log(jquery_command);
+    // console.log(jquery_command);
     // Finally, return the completed jquery command as a string
     return jquery_command;
 }

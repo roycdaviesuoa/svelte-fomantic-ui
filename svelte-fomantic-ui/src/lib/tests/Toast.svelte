@@ -9,6 +9,12 @@
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Toast';
+
+    import { super_stringify } from "../super_stringify";
+
+    let colors = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"];
+    let currentColor = 0;
+    let randomColor = () => colors[Math.floor(Math.random() * colors.length)];
 </script>
 
 
@@ -23,9 +29,9 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Minimal" code = {Code.minimal}>
 
-        <Button ui on:click={() => { behavior( {type:"toast", settings:{
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             message: 'I am a toast, nice to meet you !'
-        }})}}>Minimal</Button>
+        }})}>Minimal</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -37,7 +43,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Titled" code = {Code.titled}>
 
-        <Button ui on:click={() => { behavior( {type:"toast", settings:{
+        <Button ui _={randomColor()} on:click={() => { behavior( {type:"toast", settings:{
             title: 'Better ?',
             message: 'Hey look, I have a title !'
         }})}}>Titled</Button>
@@ -52,134 +58,228 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Progress bar" code = {Code.progress_bar}>
 
-        <Button ui on:click={() => { behavior( {type:"toast", settings:{
+        <Button ui grey on:click={() => behavior( {type:"toast", settings:{
+            title: 'LOOK',
+            message: 'See, how long I will last',
+            showProgress: "bottom"
+        }})}>Progress Bar</Button>
+
+        <Button ui red on:click={() => behavior( {type:"toast", settings:{
             title: 'LOOK',
             message: 'See, how long I will last',
             showProgress: "bottom",
-            displayTime: 10000
-        }})}}>Progress Bar</Button>
-
-    <Button ui on:click={() => { behavior( {type:"toast", settings:{
-        title: 'LOOK',
-        message: 'See, how long I will last',
-        showProgress: "bottom",
-        classProgress: 'red'
-    }})}}>Colored Progress Bar</Button>
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>    
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-        <Button ui on:click={() => { behavior( {type:"toast", settings:{
-            title: 'LOOK',
-            message: 'See, how long I will last',
-            showProgress: 'bottom',
             classProgress: 'red'
-        }})}}>Run Code</Button>
+        }})}>Colored Progress Bar</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Variations -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Variations" code = {Code.variations}>
+
+        <Button ui green on:click={() => behavior( {type:"toast", settings:{
+            class: 'success',
+            message: `You're using the good framework !`
+        }})}>Success</Button>
 
 
+        <Button ui red on:click={() => behavior( {type:"toast", settings:{
+            class: 'error',
+            message: `An error occurred !`
+        }})}>Error</Button>
+
+
+        <Button ui yellow on:click={() => behavior( {type:"toast", settings:{
+            class: 'warning',
+            message: `Behind you !`
+        }})}>Warning</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Position -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Position" code = {Code.position}>
+
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            position: 'bottom right',
+            message: `It's pretty cold down there...`
+        }})}>Bottom Right</Button>
 
 
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            position: 'top left',
+            message: `Look, I'm here !`
+        }})}>Top Left</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Attached -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Attached" code = {Code.attached}>
 
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            position: 'top attached',
+            title: 'Watch out!',
+            message: `I am a top attached toast`
+        }})}>Top Attached</Button>
 
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            position: 'bottom attached',
+            title: 'Watch out!',
+            message: `I am a bottom attached toast`,
+            newestOnTop: true
+        }})}>Bottom Attached</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Direction -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Direction" code = {Code.direction}>
 
-
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            horizontal: true,
+            position: 'top left',
+            message: `Next one will open to the right`
+        }})}>Directional</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Duration -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Duration" code = {Code.duration}>
 
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            displayTime: 5000,
+            message: `You will see me for 5 seconds.`
+        }})}>Five seconds</Button>
 
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            displayTime: 0,
+            message: `I'll stay here until you click on me !`
+        }})}>Click to remove</Button>
+
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            displayTime: 'auto',
+            showProgress: 'top',
+            classProgress: 'blue',
+            message: 'The display time of this toast is calculated by its amount of containing words.<br>You can adjust the calculation by modifying the default values for <span class="ui label">minDisplayTime</span> and <span class="ui label">wordsPerMinute</span>'
+        }})}>Automatic duration calculation</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Message style -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Message style" code = {Code.message_style}>
 
-
+        <Button ui purple on:click={() => behavior( {type:"toast", settings:{
+            title: 'Awesome',
+            message: 'I got my style from the message class',
+            class : 'purple',
+            className: {
+                toast: 'ui message'
+            }
+        }})}>Styled toast message</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Increasing progress -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Increasing progress" code = {Code.increasing_progress}>
 
-
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            title: 'LOOK',
+            message: 'See, how long i will last',
+            showProgress: 'top',
+            progressUp: true
+        }})}>Increasing progress</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Color -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Color" code = {Code.color}>
 
-
+        <Button ui _={colors[currentColor]} on:click={() => {
+            behavior( {type:"toast", settings:{
+                message: `I am a colorful toast`,
+                class : colors[currentColor],   //cycle through all colors
+                showProgress: 'bottom'
+            }});
+            currentColor = (currentColor + 1) % colors.length;
+            }}>Many colors</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Inverted color -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Inverted color" code = {Code.inverted_color}>
+
+        <Button ui _={colors[currentColor]} on:click={() => {
+            behavior( {type:"toast", settings:{
+                message: `I am an inverted colorful toast`,
+                class : 'inverted ' + colors[currentColor],   //cycle through all colors
+                showProgress: 'bottom'
+            }});
+            currentColor = (currentColor + 1) % colors.length;
+            }}>Many inverted colors</Button>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>    
 
 
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Actions -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Actions" code = {Code.actions}>
+
+        <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
+            message: 'Do you really want to star Fomantic-UI?',
+            displayTime: 0,
+            class: 'black',
+            actions:	[{
+                text: 'Yes',
+                icon: 'check',
+                class: 'green',
+                click: () => { behavior( {type:"toast", settings:{message:'You clicked "yes", toast closes by default'}})}
+            },{
+                icon: 'ban',
+                class: 'icon red'
+            },{
+                text: '?',
+                class: 'blue',
+                click: () => {
+                    behavior( {type:"toast", settings:{message:'Returning false from the click handler avoids closing the toast '}});
+                    return false;
+                }
+            }]
+        }})}>Complex actions</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    

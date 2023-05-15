@@ -1,7 +1,7 @@
 // ******************************************************************************************************************************************************
 // * By Dr. Roy C. Davies, February 2023, roy.c.davies@ieee.org
 // ******************************************************************************************************************************************************
-
+import { super_stringify } from "./super_stringify";
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Convert the props that are sent into an svelte tag that are not named directly into a string that can be used as class attributes.
@@ -90,53 +90,57 @@ export function serialize(...parameters:any[])
     {
         return undefined;
     }
-    
-    // Create a new object to hold the serialized version
-    const serialized = {};
+    // // Create a new object to hold the serialized version
+    // let serialized = {};
 
-    // Iterate over the object's properties
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key)) 
-        {
-            const val = obj[key];
-            if ((val !== undefined) && (val !== null))
-            {
-                if (key === "settings")
-                {
-                    serialized[key] = {};
-                    for (const key2 in obj[key]) {
-                        if (obj[key].hasOwnProperty(key2)) 
-                        {
-                            const val2 = obj[key][key2];
-                            if ((val2 !== undefined) && (val2 !== null))
-                            {
-                                if (typeof val2 === 'function') {
-                                    // If the property is a function, convert it to a string
-                                    serialized[key][key2] = val2.toString();
-                                } else {
-                                    // Otherwise, add the property to the serialized object
-                                    serialized[key][key2] = val2;
-                                }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if (typeof val === 'function') {
-                        // If the property is a function, convert it to a string
-                        serialized[key] = val.toString();
-                    } else {
-                        // Otherwise, add the property to the serialized object
-                        serialized[key] = val;
-                    }
-                } 
-            }
-        }
-    }
+    // // Iterate over the object's properties
+    // for (const key in obj) {
+    //     if (obj.hasOwnProperty(key)) 
+    //     {
+    //         const val = obj[key];
+    //         if ((val !== undefined) && (val !== null))
+    //         {
+    //             if (key === "settings")
+    //             {
+    //                 serialized[key] = {};
+    //                 for (const key2 in obj[key]) {
+    //                     if (obj[key].hasOwnProperty(key2)) 
+    //                     {
+    //                         const val2 = obj[key][key2];
+    //                         if ((val2 !== undefined) && (val2 !== null))
+    //                         {
+    //                             if (typeof val2 === 'function') {
+    //                                 // If the property is a function, convert it to a string
+    //                                 serialized[key][key2] = val2.toString();
+    //                             } else {
+    //                                 // Otherwise, add the property to the serialized object
+    //                                 serialized[key][key2] = val2;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //             else
+    //             {
+    //                 if (typeof val === 'function') {
+    //                     // If the property is a function, convert it to a string
+    //                     serialized[key] = val.toString();
+    //                 } else {
+    //                     // Otherwise, add the property to the serialized object
+    //                     serialized[key] = val;
+    //                 }
+    //             } 
+    //         }
+    //     }
+    // }
 
+    let serialized = super_stringify(obj, true);
+    // console.log(super_stringify(obj, true));
+    // console.log(JSON.stringify(serialized));
     // Return the serialized object
-    return JSON.stringify(serialized);
+    // return JSON.stringify(serialized);
+
+    return (serialized);
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 

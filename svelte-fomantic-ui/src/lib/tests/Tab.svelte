@@ -54,7 +54,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Javascript -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Javascript" code = {Code.Javascript}>
+    <Example title = "Javascript" code = {Code.javascript}>
 
         <Menu ui top attached tabular>
             <Item active={example2tab===0} on:click={()=> {example2tab = 0; behavior("example2", "change tab", "example2tab1"); }}>Tab1</Item>
