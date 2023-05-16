@@ -9,7 +9,6 @@
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Sticky';
-    import { onDestroy, onMount } from "svelte";
 </script>
 
 

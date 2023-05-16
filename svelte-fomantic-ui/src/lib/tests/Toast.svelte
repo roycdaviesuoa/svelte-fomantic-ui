@@ -5,18 +5,29 @@
 -->
 
 <script lang="ts">
-    import { Button, behavior, Toast, Content, Header, Image, Message, Actions, Icon, Card, Description, Category, Meta } from "../svelte-fomantic-ui.svelte";
+    import { initialise, functionize, decommission, behavior, Button, Toast, Content, Header, Image, Message, Actions, Icon, Card, Description, Category, Meta } from "../svelte-fomantic-ui.svelte";
+
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Toast';
+    import { onDestroy } from "svelte";
 
-    import { super_stringify } from "../super_stringify";
+    let id=Math.random().toString(36).substring(2, 6);
+
+    let myToast: any;
+    let functions = {
+        onHide: {
+            _: () => { myToast = null }
+        }
+    }
+
+    const ID = initialise(id, functions);
+    onDestroy(() => { decommission(ID, id, functions); });
 
     let colors = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"];
     let currentColor = 0;
     let randomColor = () => colors[Math.floor(Math.random() * colors.length)];
 
-    let myToast: any;
 </script>
 
 
@@ -84,19 +95,19 @@
 
         <Button ui green on:click={() => behavior( {type:"toast", settings:{
             class: 'success',
-            message: `You're using the good framework !`
+            message: 'You\'re using the good framework !'
         }})}>Success</Button>
 
 
         <Button ui red on:click={() => behavior( {type:"toast", settings:{
             class: 'error',
-            message: `An error occurred !`
+            message: 'An error occurred !'
         }})}>Error</Button>
 
 
         <Button ui yellow on:click={() => behavior( {type:"toast", settings:{
             class: 'warning',
-            message: `Behind you !`
+            message: 'Behind you !'
         }})}>Warning</Button>
 
     </Example>
@@ -110,13 +121,13 @@
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             position: 'bottom right',
-            message: `It's pretty cold down there...`
+            message: 'It\'s pretty cold down there...'
         }})}>Bottom Right</Button>
 
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             position: 'top left',
-            message: `Look, I'm here !`
+            message: 'Look, I\'m here !'
         }})}>Top Left</Button>
 
     </Example>
@@ -124,20 +135,20 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Attached -->
+    <!-- Window attached -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Attached" code = {Code.attached}>
+    <Example title = "Window attached" code = {Code.window_attached}>
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             position: 'top attached',
             title: 'Watch out!',
-            message: `I am a top attached toast`
+            message: 'I am a top attached toast'
         }})}>Top Attached</Button>
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             position: 'bottom attached',
             title: 'Watch out!',
-            message: `I am a bottom attached toast`,
+            message: 'I am a bottom attached toast',
             newestOnTop: true
         }})}>Bottom Attached</Button>
 
@@ -153,7 +164,7 @@
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             horizontal: true,
             position: 'top left',
-            message: `Next one will open to the right`
+            message: 'Next one will open to the right'
         }})}>Directional</Button>
 
     </Example>
@@ -184,12 +195,12 @@
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             displayTime: 5000,
-            message: `You will see me for 5 seconds.`
+            message: 'You will see me for 5 seconds.'
         }})}>Five seconds</Button>
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             displayTime: 0,
-            message: `I'll stay here until you click on me !`
+            message: 'I\'ll stay here until you click on me !'
         }})}>Click to remove</Button>
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
@@ -244,12 +255,12 @@
 
         <Button ui _={colors[currentColor]} on:click={() => {
             behavior( {type:"toast", settings:{
-                message: `I am a colorful toast`,
+                message: 'I am a colorful toast',
                 class : colors[currentColor],   //cycle through all colors
                 showProgress: 'bottom'
             }});
             currentColor = (currentColor + 1) % colors.length;
-            }}>Many colors</Button>
+        }}>Many colors</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
@@ -262,12 +273,12 @@
 
         <Button ui _={colors[currentColor]} on:click={() => {
             behavior( {type:"toast", settings:{
-                message: `I am an inverted colorful toast`,
+                message: 'I am an inverted colorful toast',
                 class : 'inverted ' + colors[currentColor],   //cycle through all colors
                 showProgress: 'bottom'
             }});
             currentColor = (currentColor + 1) % colors.length;
-            }}>Many inverted colors</Button>
+        }}>Many inverted colors</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>    
@@ -475,14 +486,14 @@
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             showImage: '/images/veronika.jpg',
             classImage: 'avatar',
-            message: `Veronika has joined the Fomantic-UI community`
+            message: 'Veronika has joined the Fomantic-UI community'
         }})}>Avatar image</Button>
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             showImage: '/images/veronika.jpg',
             class: 'image',
             classImage: 'tiny',
-            message: `Veronika has joined the Fomantic-UI community`
+            message: 'Veronika has joined the Fomantic-UI community'
         }})}>Image</Button>
 
     </Example>
@@ -533,9 +544,9 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Center attached actions -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.center_attached_actions}>
+    <Example title = "Center attached actions" code = {Code.center_attached_actions}>
 
         <Button ui _={randomColor()} on:click={() => behavior( {type:"toast", settings:{
             title: 'Centered top attached',
@@ -704,52 +715,57 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Access created toast -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Access created toast" code = {Code.access_created_toast}>
 
-        <Toast ui pink id="pinktoast">
-            <Content>
-                This pink toast stays for a long time. It is returned as object when created, so you can interact with it via Javascript
-            </Content>
-        </Toast>
-        <Button ui pink on:click={() => { behavior( {type:"toast", id: "pinktoast", settings:{
-            displayTime: 120000,
-            class: 'pink',
-            showProgress: 'top'
-        }})}}>Open pink toast first</Button>
+        <Button ui pink on:click={() => { myToast = behavior( {type:"toast", 
+            settings: {
+                displayTime: 120000, class: 'pink', showProgress: 'top',
+                message: 'This pink toast stays for a long time. It is returned as object when created, so you can interact with it via Javascript',
+                ...functionize(ID, id, functions)
+            }, 
+        })}}>Open pink toast first</Button>
 
         <Button ui on:click={() => {
-            let remainingTime = behavior({"id": "pinktoast", type:"toast", actions:['get remainingTime']});
-            console.log(remainingTime);
-            // if (myToast) {
-            //     let remainingTime = behavior({"id": "pinktoast", actions:['get remainingTime']});
-            //     console.log(remainingTime);
-                // if (remainingTime <= 3000) {
-                //     myToast = null;
-                //     behavior( {type:"toast", settings: {
-                //         class: 'warning',
-                //         showIcon: 'warning',
-                //         message: "Please open the pink toast first!"
-                //     }}); 
-                // } else {
-                //     behavior( {type:"toast", settings: {
-                //         class: 'teal',
-                //         showIcon: 'info',
-                //         message: Math.round(remainingTime / 1000).toString() + " seconds left"
-                //     }});
-                // }
-            // } else {
-            //     myToast = null;
-            //     behavior( {type:"toast", settings: {
-            //         class: 'warning',
-            //         showIcon: 'warning',
-            //         message: "Please open the pink toast first!"
-            //     }});
-            // }
+            if (myToast) {
+                behavior( {type:"toast", settings: {
+                    class: 'teal', showIcon: 'info',
+                    message: Math.round(myToast.toast('get remainingTime') / 1000).toString() + " seconds left"
+                }}); 
+            } else {
+                behavior( {type:"toast", settings: {
+                    class: 'warning', showIcon: 'warning',
+                    message: "Please open the pink toast first!"
+                }});
+            }
         }}>Remaining display time?</Button>
-        
 
+        <Button ui on:click={() => {
+            if (myToast) {
+                let numToasts = myToast.toast('get toasts').length;
+                behavior( {type:"toast", settings: {
+                    class: 'teal', showIcon: 'info',
+                    message: numToasts.toString() + " toast" + (numToasts>1?"s are ":" is ") + "currently shown (without this one!)"
+                }}); 
+            } else {
+                behavior( {type:"toast", settings: {
+                    class: 'warning', showIcon: 'warning',
+                    message: "Please open the pink toast first!"
+                }});
+            }
+        }}>How many toasts displayed?</Button>
+        
+        <Button ui on:click={() => {
+            if (myToast) {
+                myToast.toast('close');
+            } else {
+                behavior( {type:"toast", settings: {
+                    class: 'warning', showIcon: 'warning',
+                    message: "Please open the pink toast first!"
+                }});
+            }
+        }}>Close toast</Button>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
