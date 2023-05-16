@@ -97,5 +97,5 @@ Note that in essence all these do already work (except for the Modules) because 
 | Slider | X | X | [/Slider](./svelte-fomantic-ui/src/lib/tests/Slider.svelte) | [Slider](https://fomantic-ui.com/modules/slider.html)
 | Sticky | X | X | [/Sticky](./svelte-fomantic-ui/src/lib/tests/Sticky.svelte) | [Sticky](https://fomantic-ui.com/modules/sticky.html)
 | Tab | X | X | [/Tab](./svelte-fomantic-ui/src/lib/tests/Tab.svelte) | [Tab](https://fomantic-ui.com/modules/tab.html)
-| Toast | X | _ | [/Toast](./svelte-fomantic-ui/src/lib/tests/Toast.svelte) | [Toast](https://fomantic-ui.com/modules/toast.html)
+| Toast | X | X | [/Toast](./svelte-fomantic-ui/src/lib/tests/Toast.svelte) | [Toast](https://fomantic-ui.com/modules/toast.html)
 | Transition |  |  |
