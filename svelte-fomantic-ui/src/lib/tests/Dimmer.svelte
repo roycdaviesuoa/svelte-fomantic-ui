@@ -57,7 +57,6 @@
     <Example title = "Content" code = {Code.content}>
 
         <Segment ui id="ex2">
-            <!-- Dimmer Generated Automatically No Need to Include !-->
             <Header ui h3>
                 Overlayable Section
             </Header>
