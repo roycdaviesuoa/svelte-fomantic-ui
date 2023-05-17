@@ -92,10 +92,10 @@ Note that in essence all these do already work (except for the Modules) because 
 | Radio | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
 | Rating | X | X | [/Rating](./svelte-fomantic-ui/src/lib/tests/Rating.svelte) | [Rating](https://fomantic-ui.com/modules/rating.html)
 | Search | X | _ | [/Search](./svelte-fomantic-ui/src/lib/tests/Search.svelte) | [Search](https://fomantic-ui.com/modules/search.html)
-| Shape |  |  |
+| Shape | X | X | [/Shape](./svelte-fomantic-ui/src/lib/tests/Shape.svelte) | [Shape](https://fomantic-ui.com/modules/shape.html)
 | Sidebar | X | _ | [/Sidebar](./svelte-fomantic-ui/src/lib/tests/sidebar.svelte) | [Sidebar](https://fomantic-ui.com/modules/sidebar.html)
 | Slider | X | X | [/Slider](./svelte-fomantic-ui/src/lib/tests/Slider.svelte) | [Slider](https://fomantic-ui.com/modules/slider.html)
 | Sticky | X | X | [/Sticky](./svelte-fomantic-ui/src/lib/tests/Sticky.svelte) | [Sticky](https://fomantic-ui.com/modules/sticky.html)
 | Tab | X | X | [/Tab](./svelte-fomantic-ui/src/lib/tests/Tab.svelte) | [Tab](https://fomantic-ui.com/modules/tab.html)
 | Toast | X | X | [/Toast](./svelte-fomantic-ui/src/lib/tests/Toast.svelte) | [Toast](https://fomantic-ui.com/modules/toast.html)
-| Transition |  |  |
+| Transition | X | X | [/Transition](./svelte-fomantic-ui/src/lib/tests/Transition.svelte) | [Transition](https://fomantic-ui.com/modules/transition.html)

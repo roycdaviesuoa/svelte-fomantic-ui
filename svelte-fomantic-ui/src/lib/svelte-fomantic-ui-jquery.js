@@ -56,6 +56,7 @@ export const reload = function()
                         $(this)[moduleType](settings);
                         break;
                     case "flyout":
+                    case "sidebar":
                         const extraSettings1 = { silent: true };
                         $(this)[moduleType]({...extraSettings1, ...settings});
                         break;

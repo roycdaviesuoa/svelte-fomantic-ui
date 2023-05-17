@@ -3,6 +3,7 @@
 // * The goal of this function is to produce a string that looks exactly like the javascript object input, just as a string.  This is needed, for example
 // * when converting an object into a string for putting into a command for jquery.
 // ******************************************************************************************************************************************************
+import {parseScript} from 'esprima';
 
 export function super_stringify (item:any, validJSON: boolean = false) : string {
     let answer = "";
@@ -44,4 +45,36 @@ export function super_stringify (item:any, validJSON: boolean = false) : string 
     }
 
     return answer;
+}
+
+export function deFunction(aFunction: (...parameters : any) => {}) {
+    console.log(aFunction.toString());
+
+    const ast = parseScript(aFunction.toString());
+
+    console.log(JSON.stringify(ast));
+
+    // // Find the function declaration node
+    const functionDeclaration = ast.body.find(node => node.type === 'FunctionDeclaration');
+
+    if (functionDeclaration) {
+        const functionName = functionDeclaration.id.name;
+        console.log(functionName);
+    }
+
+    console.log(functionDeclaration);
+
+    // // Extract function name
+    // const functionName = functionDeclaration.declarations[0].id.name;
+
+    // // Extract parameters and parameter types
+    // const parameters = functionDeclaration.declarations[0].init.params;
+    // const parameterList = parameters.map(parameter => parameter.name);
+
+    // // Extract function code
+    // const functionCode = functionDeclaration.declarations[0].init.body.body[0].argument.body;
+
+    // console.log('Function Name:', functionName);
+    // console.log('Parameters:', parameterList);
+    // console.log('Function Code:', functionCode);
 }

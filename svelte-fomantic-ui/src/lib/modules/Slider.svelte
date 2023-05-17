@@ -57,8 +57,6 @@
     const ID = initialise(id, allFunctions);
     onDestroy(() => { decommission(ID, id, allFunctions); });
 
-    console.log({...functionize(ID, id, allFunctions), ...settings, ...moreSettings});
-
 </script>
 
 {#if range}

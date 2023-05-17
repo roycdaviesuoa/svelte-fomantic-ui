@@ -82,6 +82,9 @@
     export {default as Progress} from './modules/Progress.svelte';
     export {default as Pusher} from './modules/Pusher.svelte';
     export {default as Rating} from './modules/Rating.svelte';
+    export {default as Shape} from './modules/Shape.svelte';
+    export {default as Side} from './modules/Side.svelte';
+    export {default as Sides} from './modules/Sides.svelte';
     export {default as Sidebar} from './modules/Sidebar.svelte';
     export {default as Slider} from './modules/Slider.svelte';
     export {default as Sticky} from './modules/Sticky.svelte';

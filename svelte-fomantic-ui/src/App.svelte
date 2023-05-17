@@ -51,6 +51,9 @@
   import Rating from './lib/tests/Rating.svelte';
   import Reveal from './lib/tests/Reveal.svelte';
   import Segment from './lib/tests/Segment.svelte';
+  import Shape from './lib/tests/Shape.svelte';
+  import Sidebar from './lib/tests/Sidebar.svelte';
+  import Sidebar_outer from './lib/tests/Sidebar_outer.svelte';
   import Slider from './lib/tests/Slider.svelte';
   import Statistic from './lib/tests/Statistic.svelte';
   import Step from './lib/tests/Step.svelte';
@@ -61,6 +64,7 @@
   import Test from './lib/tests/Test.svelte';
   import Text from './lib/tests/Text.svelte';
   import Toast from './lib/tests/Toast.svelte';
+  import Transition from './lib/tests/Transition.svelte';
   import Input from './lib/tests/Input.svelte';
 
 
@@ -157,6 +161,12 @@
       currentRoute = Rating; break;
     case '/Segment':
       currentRoute = Segment; break;
+    case '/Shape':
+      currentRoute = Shape; break;
+    case '/Sidebar':
+      currentRoute = Sidebar; break;
+    case '/Sidebar':
+      currentRoute = Sidebar_outer; break;
     case '/Slider':
       currentRoute = Slider; break;
     case '/Statistic':
@@ -177,6 +187,8 @@
       currentRoute = Text; break;
     case '/Toast':
       currentRoute = Toast; break;
+    case '/Transition':
+      currentRoute = Transition; break;
     default:
       break;
       // currentRoute = NotFound;

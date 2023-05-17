@@ -51,6 +51,8 @@
     import Rating from './lib/tests/Rating.svelte';
     import Reveal from './lib/tests/Reveal.svelte';
     import Segment from './lib/tests/Segment.svelte';
+    import Shape from './lib/tests/Shape.svelte';
+    import Sidebar from './lib/tests/Sidebar_outer.svelte';
     import Slider from './lib/tests/Slider.svelte';
     import Statistic from './lib/tests/Statistic.svelte';
     import Step from './lib/tests/Step.svelte';
@@ -59,6 +61,7 @@
     import Table from './lib/tests/Table.svelte';
     import Text from './lib/tests/Text.svelte';
     import Toast from './lib/tests/Toast.svelte';
+    import Transition from './lib/tests/Transition.svelte';
 
     import {version} from '../package.json';
 
@@ -146,13 +149,13 @@
             <Link item on:click={()=>{currentPage=Progress; doMenuToggle();}}>Progress</Link>    
             <Link item on:click={()=>{currentPage=Rating; doMenuToggle();}}>Rating</Link>    
             <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Search</Link>
-            <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Shape</Link>    
-            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Sidebar</Link>    
+            <Link item on:click={()=>{currentPage=Shape; doMenuToggle();}}>Shape</Link>    
+            <Link item on:click={()=>{currentPage=Sidebar; doMenuToggle();}}>Sidebar</Link>    
             <Link item on:click={()=>{currentPage=Slider; doMenuToggle();}}>Slider</Link>    
             <Link item on:click={()=>{currentPage=Sticky; doMenuToggle();}}>Sticky</Link>    
             <Link item on:click={()=>{currentPage=Tab; doMenuToggle();}}>Tab</Link>    
             <Link item on:click={()=>{currentPage=Toast; doMenuToggle();}}>Toast</Link>    
-            <Link item on:click={()=>{currentPage=NotYet; doMenuToggle();}}>Transition</Link>    
+            <Link item on:click={()=>{currentPage=Transition; doMenuToggle();}}>Transition</Link>    
         </MenuSFU>
     </ItemSFU>
 <!-- </MenuSFU> -->
