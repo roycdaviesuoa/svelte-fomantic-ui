@@ -30,10 +30,6 @@ const code = {
     <Item link><Icon smile/> Friends</Item>
 </Sidebar>
 
-<Sidebar ui inverted menu visible top id="sidebar3" settings={{dimPage: false, transition: "scale"}}>
-    <Item link>Initially Visible</Item>
-</Sidebar>
-
 <Sidebar ui top inverted menu id="sidebar4"><Item>Top</Item></Sidebar>
 <Sidebar ui bottom inverted menu id="sidebar5"><Item>Bottom</Item></Sidebar>
 <Sidebar ui left inverted menu id="sidebar6"><Item>Left</Item></Sidebar>
@@ -46,8 +42,7 @@ const code = {
 <Buttons ui spaced wrapping>
     <Button ui on:click={()=>{behavior("sidebar1", "toggle")}}>Link menu items</Button>
     <Button ui on:click={()=>{behavior("sidebar2", "toggle")}}>Link icons</Button>
-    <Button ui on:click={()=>{behavior("sidebar3", "toggle")}}>Toggle visible top bar</Button>
-    <Button ui on:click={()=>{behavior("sidebar3", "hide"); behavior("sidebar4", "toggle"); behavior("sidebar5", "toggle"); behavior("sidebar6", "toggle"); behavior("sidebar7", "toggle")}}>Toggle directional sidebars</Button>
+    <Button ui on:click={()=>{behavior("sidebar4", "toggle"); behavior("sidebar5", "toggle"); behavior("sidebar6", "toggle"); behavior("sidebar7", "toggle")}}>Toggle directional sidebars</Button>
     {#each ["very thin", "thin", "", "wide", "very wide"] as width, i}
         <Button ui on:click={()=>{behavior("sidebar"+(8+i), "toggle")}}>Toggle {width}</Button>
     {/each}
@@ -82,6 +77,79 @@ const code = {
 <Button ui disabled={direction === "top" || direction === "bottom"} on:click={() => sidebar13_transition(direction, dimPage, "uncover")}>Uncover</Button>
 <Button ui disabled={direction === "top" || direction === "bottom"} on:click={() => sidebar13_transition(direction, dimPage, "slide along")}>Slide along</Button>
 <Button ui disabled={direction === "top" || direction === "bottom"} on:click={() => sidebar13_transition(direction, dimPage, "slide out")}>Slide out</Button>
+    `,
+    custom_context : `
+<Menu ui top attached demo>
+    <Link item on:click={() => behavior('sidebar14', 'toggle')}>
+      <Icon sidebar/>
+      Menu
+    </Link>
+</Menu>
+<Segment ui bottom attached pushable id="sidebar14content">
+    <Sidebar ui inverted labeled icon left inline vertical menu id="sidebar14" settings={{"context":"#sidebar14content"}}>
+        <Item link><Icon home/> Home </Item>
+        <Item link><Icon block layout/> Topics</Item>
+        <Item link><Icon smile/> Friends</Item>
+    </Sidebar>
+    <Pusher>
+        <Segment ui basic>
+            <Placeholder ui fluid>
+                <Header image>
+                    <Line/>
+                    <Line/>
+                </Header>
+                <Paragraph>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                </Paragraph>
+            </Placeholder>
+        </Segment>
+    </Pusher>
+</Segment>
+    `,
+    starting_visible : `
+<Menu ui top attached demo>
+    <Link item on:click={() => behavior('sidebar15', 'toggle')}>
+      <Icon sidebar/>
+      Menu
+    </Link>
+</Menu>
+<Segment ui bottom attached pushable id="sidebar15content">
+    <Sidebar ui visible inverted left vertical menu id="sidebar15" settings={{"context":"#sidebar15content"}}>
+        <Item link><Icon home/> Home </Item>
+        <Item link><Icon block layout/> Topics</Item>
+        <Item link><Icon smile/> Friends</Item>
+        <Item link><Icon calendar/>History</Item>
+    </Sidebar>
+    <Pusher>
+        <Segment ui basic>
+            <Placeholder ui fluid>
+                <Header image>
+                    <Line/>
+                    <Line/>
+                </Header>
+                <Paragraph>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                    <Line/>
+                </Paragraph>
+            </Placeholder>
+        </Segment>
+    </Pusher>
+</Segment>
     `
 }
 
