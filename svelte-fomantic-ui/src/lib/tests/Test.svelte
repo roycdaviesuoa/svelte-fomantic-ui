@@ -5,17 +5,13 @@
 -->
 
 <script lang="ts">
-    import { Slider } from "../svelte-fomantic-ui.svelte";
-    import {deFunction} from "../super_stringify";
-    const aFunction = (a:number = 0,b: number = 1,c: number = 2) => {return a+b+c};
-
-    function bFunction (a:number = 0,b: number = 1,c: number = 2) {
-        return a+b+c;
-    }
-
-    deFunction (aFunction);
-    deFunction (bFunction);
+    import { Input, Icon, Popup, Content, Calendar } from "../svelte-fomantic-ui.svelte";
 </script>
 
-<Slider ui/>
-
+<Input ui fluid left icon popup={{position :"bottom right", hoverable: true}}>
+    <Icon calendar/>
+    <Input placeholder="Date/Time"/>
+</Input>
+<Popup ui settings={{position :"bottom right", hoverable: true}}>
+    <Content><Calendar ui></Calendar></Content>
+</Popup>

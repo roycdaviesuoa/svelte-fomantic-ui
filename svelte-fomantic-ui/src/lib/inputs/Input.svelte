@@ -5,8 +5,8 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
-    import { createEventDispatcher } from 'svelte';
+    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
+    import { createEventDispatcher, onDestroy } from 'svelte';
 
     export let value: string = "";
     export let checked: boolean = false;
@@ -14,7 +14,6 @@
     export let id: string = undefined;
     export let settings: object = undefined;
     export let ui: boolean = false;
-    export let popup: boolean = false;
     export let text: boolean = false;
     export let password: boolean = false;
     export let hidden: boolean = false;
@@ -32,6 +31,12 @@
     export let week: boolean = false;
     export let month: boolean = false;
     export let year: boolean = false;
+
+    export let popup: object | boolean = undefined;
+    export let functions : object = undefined;
+
+    const ID = initialise(id, functions);
+    onDestroy(() => { decommission(ID, id, functions); });
 
     const dispatch = createEventDispatcher();
 
