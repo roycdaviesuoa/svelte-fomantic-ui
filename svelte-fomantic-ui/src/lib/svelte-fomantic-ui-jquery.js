@@ -25,6 +25,13 @@ export const reload = function()
     // Initialise the Tablesort code
     tableSort();
 
+    $("[data-module2]").each(function() {
+        console.log($(this));
+        console.log($(this).attr("data-module2"));
+        console.log($(this).attr("settings"));
+    });
+
+
     // Go through each of the modules
     $("[data-module]").each(function() {
         let modules = get_settings($(this).data("module"));

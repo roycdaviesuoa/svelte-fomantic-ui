@@ -35,12 +35,9 @@
         }
         return {functions: functions, non_functions: non_functions};
     }
-
-    // let module_functions = settings?(settings.hasOwnProperty("callbacks")?settings["callbacks"]:{}):{};
     
     let {functions: module_functions={}, non_functions: module_settings={}} = extract_functions(settings);
     let {functions: popup_functions={}, non_functions: popup_settings={}} = extract_functions(popup);
-    // let popup_functions = (typeof(popup) === "boolean")?{}:(popup?(popup.hasOwnProperty("callbacks")?popup["callbacks"]:{}):{});
 
     console.log(module_functions, module_settings);
 

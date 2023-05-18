@@ -66,6 +66,7 @@ export function otherProps (restProps:{}):{} {
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
+// Take a set of parameters that can 1, 2 or 3 parameters, create an object, then stringify that.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export function serialize(...parameters:any[])
 {
@@ -73,74 +74,33 @@ export function serialize(...parameters:any[])
 
     if (parameters.length >= 3)
     {
+        // There has to be at least a type
         if (!parameters[0]) { return undefined; }
+        // Type, settings and the activate parameter
         else { obj = {type: parameters[0], settings: parameters[1], activate: parameters[2]}; }
     }
     else if (parameters.length >= 2)
     {
+        // There has to be at least a type
         if (!parameters[0]) { return undefined; }
+        // Type and settings
         else { obj = {type: parameters[0], settings: parameters[1]};}
     }
     else if (parameters.length >= 1)
     {
+        // There has to be at least a type
         if (!parameters[0]) { return undefined; }
+        // Type and empty settings
         else { obj = {type: parameters[0], settings: {}}; }
     }
     else
     {
+        // Less that 1 parameter, so no type either...
         return undefined;
     }
-    // // Create a new object to hold the serialized version
-    // let serialized = {};
 
-    // // Iterate over the object's properties
-    // for (const key in obj) {
-    //     if (obj.hasOwnProperty(key)) 
-    //     {
-    //         const val = obj[key];
-    //         if ((val !== undefined) && (val !== null))
-    //         {
-    //             if (key === "settings")
-    //             {
-    //                 serialized[key] = {};
-    //                 for (const key2 in obj[key]) {
-    //                     if (obj[key].hasOwnProperty(key2)) 
-    //                     {
-    //                         const val2 = obj[key][key2];
-    //                         if ((val2 !== undefined) && (val2 !== null))
-    //                         {
-    //                             if (typeof val2 === 'function') {
-    //                                 // If the property is a function, convert it to a string
-    //                                 serialized[key][key2] = val2.toString();
-    //                             } else {
-    //                                 // Otherwise, add the property to the serialized object
-    //                                 serialized[key][key2] = val2;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //             else
-    //             {
-    //                 if (typeof val === 'function') {
-    //                     // If the property is a function, convert it to a string
-    //                     serialized[key] = val.toString();
-    //                 } else {
-    //                     // Otherwise, add the property to the serialized object
-    //                     serialized[key] = val;
-    //                 }
-    //             } 
-    //         }
-    //     }
-    // }
-
-    let serialized = super_stringify(obj, true);
-    // console.log(super_stringify(obj, true));
-    // console.log(JSON.stringify(serialized));
-    // Return the serialized object
-    // return JSON.stringify(serialized);
-
-    return (serialized);
+    // Create and return a new object to hold the serialized version, as valid JSON.
+    return (super_stringify(obj, true));
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -153,7 +113,8 @@ export function rationalize(anArray:any[])
 {
     let aNewArray = anArray.filter(item => ((item !== undefined) && (item !== null)));
     if (aNewArray.length === 0) { return undefined; }
-    else { return (JSON.stringify(aNewArray)); }
+    else { return (super_stringify(aNewArray, true)); }
+    // else { return (JSON.stringify(aNewArray)); }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -171,7 +132,6 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 
     let functionString = `document.dispatchEvent( new CustomEvent("` + ID+id+funcName + `", { detail: {`+ funcName + ":" + newParameters + `} } ) )`;
 
-    // console.log(functionString);
     return new Function(...names, functionString);
 }
 
@@ -205,7 +165,7 @@ export function initialise(id: string = "", functions: {} ) {
         Object.keys(functions).forEach ((funcName) => {
             document.removeEventListener(ID+id+funcName, ()=>{}); 
             document.addEventListener(ID+id+funcName, (v) => {
-                let returnValue = functions[funcName]._(v["detail"][funcName]);
+                functions[funcName]._(v["detail"][funcName]);
             });
         });
     }
