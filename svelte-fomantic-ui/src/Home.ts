@@ -88,7 +88,7 @@ behavior : `<script lang="ts">
     <Bar/>
     <Label>{example1_value}% Funded</Label>
 </Progress>`,
-initialise : `<script lang="ts">
+initialize : `<script lang="ts">
     import { update, behavior, Progress, Button, Label, Grid, Row, Column, Bar } from "svelte-fomantic-ui";
 </script>
 

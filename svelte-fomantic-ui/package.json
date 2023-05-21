@@ -34,7 +34,6 @@
     "vite": "latest"
   },
   "dependencies": {
-    "flatted": "^3.2.7",
     "svelte-preprocess": "^5.0.3",
     "svelte-prism": "latest",
     "vite-plugin-svelte": "latest"

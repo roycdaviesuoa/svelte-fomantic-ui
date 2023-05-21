@@ -5,17 +5,31 @@
 -->
 
 <script lang="ts">
-    import { update, behavior, Progress, Segment, Div } from "../svelte-fomantic-ui.svelte";
-    import {parse, stringify, toJSON, fromJSON} from 'flatted';
+    import { update, behavior, parameter, Progress, Segment, Grid, Row, Column, Button, Bar, Label } from "../svelte-fomantic-ui.svelte";
 
-    console.log(stringify({a:3, b:5, c:[1,2,3,4,5]}));
+    const exampleData = {total: 3, value:0, onChange: {
+                percent: parameter,
+                value: parameter,
+                total: parameter,
+                
+                _:(data)=>{console.log(data);}
+            }};
 </script>
 
 <Segment ui>
 
-<Div ui name={"text"} settings={{a:3, b:5, c:[1,2,3,4,5]}}>
-    Hello World
-</Div>
+    <Grid ui>
+        <Row two column>
+            <Column><Button ui green fluid on:click={()=>{update("example4", exampleData)}}>Reset</Button></Column>
+            <Column><Button ui orange fluid on:click={()=>{behavior("example4", 'increment')}}>Increment</Button></Column>
+        </Row>
+    </Grid>
+    <Progress ui teal activate id="example4" settings={exampleData}>
+        <Bar>
+            <Progress />
+        </Bar>
+        <Label>Adding Photos</Label>
+    </Progress>
 
 </Segment>
 

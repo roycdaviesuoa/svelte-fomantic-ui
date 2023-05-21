@@ -175,7 +175,7 @@
             in turn relies on JQuery, as mentioned above. The sveltised versions
             wrap this in a simple format that removes the need to use JQuery in
             your Svelte code. These modules, if used in ordinary Javascript,
-            need to be initialised before they will work. This is done
+            need to be initialized before they will work. This is done
             automatically for you. <strong
                 >These won&#39;t work without the two lines above being included
                 in your index.html head section.</strong
@@ -232,12 +232,12 @@
             allow JSON settings to be sent when being updated, so the
             <code>update</code> function allows that possibility as well.
         </p>
-        <SourceCode language="svelte" source={Code.initialise} />
+        <SourceCode language="svelte" source={Code.initialize} />
 
         <h5>The <code>reload</code> function</h5>
         <p>
             The third function is <code>reload</code>, which is useful when you
-            need to re-initialise the javascript modules on a page, for example
+            need to re-initialize the javascript modules on a page, for example
             when changing a part of a page that is a svelte element which
             contains fomantic-ui modules:
         </p>

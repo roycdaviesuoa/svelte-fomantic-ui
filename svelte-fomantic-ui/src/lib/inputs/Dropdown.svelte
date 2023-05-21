@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
 
     export let ui: boolean = false;
     export let id: string = undefined;
@@ -31,7 +31,7 @@
     };
 
     import { onDestroy } from "svelte";
-    const ID = initialise(id, functions);
+    const ID = initialize(id, functions);
     onDestroy(() => { decommission(ID, id, functions); });
 
 

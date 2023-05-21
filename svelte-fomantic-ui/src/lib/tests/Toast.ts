@@ -429,7 +429,7 @@ const code = {
     // can access the myToast variable that is in the context of the calling function.
     // Read more about this here: https://github.com/roycdaviesuoa/svelte-fomantic-ui/blob/main/svelte-fomantic-ui/Functions.md
 
-    import { initialise, functionize, decommission, behavior } from "svelte-fomantic-ui";
+    import { initialize, functionize, decommission, behavior } from "svelte-fomantic-ui";
     import { onDestroy } from "svelte";
 
     let id=Math.random().toString(36).substring(2, 6);
@@ -441,7 +441,7 @@ const code = {
         }
     }
 
-    const ID = initialise(id, functions);
+    const ID = initialize(id, functions);
     onDestroy(() => { decommission(ID, id, functions); });
 </script>
 

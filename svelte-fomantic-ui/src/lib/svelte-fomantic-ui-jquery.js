@@ -18,19 +18,12 @@ $(() =>
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-// (Re)load the modules, which mostly is required to initialise each of the modules once the page is loaded.
+// (Re)load the modules, which mostly is required to initialize each of the modules once the page is loaded.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const reload = function()
 {
-    // Initialise the Tablesort code
+    // Initialize the Tablesort code
     tableSort();
-
-    $("[data-module2]").each(function() {
-        console.log($(this));
-        console.log($(this).attr("data-module2"));
-        console.log($(this).attr("settings"));
-    });
-
 
     // Go through each of the modules
     $("[data-module]").each(function() {
@@ -42,6 +35,7 @@ export const reload = function()
                 let moduleType = module["type"];
                 let activate = module.hasOwnProperty("activate")?module["activate"]:false;
                 let settings = module.hasOwnProperty("settings")?(module["settings"].hasOwnProperty("settings")?module["settings"]["settings"]:module["settings"]):{};
+                console.log(moduleType, settings);
     
                 switch (moduleType) {
                     case "": break; // Sometimes, there may be elements with blank module names

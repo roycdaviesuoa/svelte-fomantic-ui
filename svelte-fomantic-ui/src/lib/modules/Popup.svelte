@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { serialize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
+    import { serialize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
     
     export let ui: boolean = false;
     export let id: string = undefined;
@@ -13,7 +13,7 @@
     export let functions : object = undefined;
 
     import { onDestroy } from "svelte";
-    const ID = initialise(id, functions);
+    const ID = initialize(id, functions);
     onDestroy(() => { decommission(ID, id, functions); });
 
     console.log(serialize("popup", {...functionize(ID, id, functions), ...settings}));

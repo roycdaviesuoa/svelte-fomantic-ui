@@ -155,7 +155,7 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 // }}
 
 // Set up the event listeners, and return the unique ID.
-export function initialise(id: string = "", functions: {} ) {
+export function initialize(id: string = "", functions: {} ) {
     // Create a fairly unique ID.  We use this just in case the id is blank or null.
     let ID = [...Array(12)].map(i=>(~~(Math.random()*36)).toString(36)).join('');
     // console.log(functions);
@@ -189,6 +189,33 @@ export function functionize(ID: string, id: string = "", functions: {}) {
 
     // console.log(functionSettings);
     return functionSettings;
+}
+
+// Divide an object into two objects, one with the functions and one with the settings
+export function categorize(input_obj:any): {f: {}, s: {}} {
+    // Initialise the return objects
+    let f = {}; let s = {};
+
+    // If the object being passed in is not null or undefined, and is actually an object
+    if (input_obj && (typeof input_obj === "object")) {
+
+        // Loop through the keys in the object
+        for (let key in input_obj) {
+
+            // If the value is a function, add it to the functions object, otherwise to the settings object
+            if ((typeof input_obj[key] === "object") && input_obj[key].hasOwnProperty("_"))
+            {
+                f[key] = input_obj[key];
+            }
+            else
+            {
+                s[key] = input_obj[key];
+            }
+        }
+    }
+
+    // Return the objects
+    return {f: f, s: s};
 }
 
 // Remove the event listeners - should be called in the onDestroy function of the svelte module

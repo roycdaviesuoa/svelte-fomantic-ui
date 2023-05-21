@@ -122,7 +122,9 @@
     export { update } from './svelte-fomantic-ui-jquery';
     export { reload } from './svelte-fomantic-ui-jquery';
     export { jquery } from './svelte-fomantic-ui';
-    export { initialise } from './svelte-fomantic-ui';
+    export { initialize } from './svelte-fomantic-ui';
     export { functionize } from './svelte-fomantic-ui';
+    export { categorize } from './svelte-fomantic-ui';
     export { decommission } from './svelte-fomantic-ui';
+    export let parameter=null;
 </script>

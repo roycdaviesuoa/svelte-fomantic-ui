@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { initialise, functionize, decommission, behavior, Button, Toast, Content, Header, Image, Message, Actions, Icon, Card, Description, Category, Meta } from "../svelte-fomantic-ui.svelte";
+    import { initialize, functionize, decommission, behavior, Button, Toast, Content, Header, Image, Message, Actions, Icon, Card, Description, Category, Meta } from "../svelte-fomantic-ui.svelte";
 
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
@@ -21,7 +21,7 @@
         }
     }
 
-    const ID = initialise(id, functions);
+    const ID = initialize(id, functions);
     onDestroy(() => { decommission(ID, id, functions); });
 
     let colors = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"];
