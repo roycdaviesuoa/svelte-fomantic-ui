@@ -130,7 +130,7 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
     });
     newParameters = newParameters.replace(/,\s*$/, '') + "}";
 
-    let functionString = `document.dispatchEvent( new CustomEvent("` + ID+id+funcName + `", { detail: {`+ funcName + ":" + newParameters + `} } ) )`;
+    let functionString = `document.dispatchEvent(new CustomEvent("` + ID+id+funcName + `",{detail:{`+ funcName + ":" + newParameters + `}}))`;
 
     return new Function(...names, functionString);
 }
@@ -187,7 +187,7 @@ export function functionize(ID: string, id: string = "", functions: {}) {
         });
     }
 
-    // console.log(functionSettings);
+    console.log(functionSettings);
     return functionSettings;
 }
 

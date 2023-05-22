@@ -108,6 +108,7 @@ function construct_jquery_command(params) {
 
         // Extract the module type / name
         element = extract_module_type_from_settings(settings);
+        console.log(settings, element);
 
         // If there wasn't one, grab it from the object parameter
         if (!element || (element === "")) { element = params.type; }
@@ -163,10 +164,13 @@ function construct_jquery_command(params) {
 export const behavior = function(...args) {
     // Grab the first argument - this should either be an object with settings, or the first of an array of string, being the ID of the element the
     // commands are for.
+    console.log(args);
     let firstarg = args.shift();
     let returnvalue;
     if (typeof firstarg === 'object')
     {
+        console.log(firstarg);
+        console.log(construct_jquery_command(firstarg));
         // Data sent in is in the form of an object
         returnvalue = eval(construct_jquery_command(firstarg));
     }

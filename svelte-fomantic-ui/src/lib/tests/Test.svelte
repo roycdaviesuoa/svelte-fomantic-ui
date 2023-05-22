@@ -21,7 +21,7 @@
     <Grid ui>
         <Row two column>
             <Column><Button ui green fluid on:click={()=>{update("example4", exampleData)}}>Reset</Button></Column>
-            <Column><Button ui orange fluid on:click={()=>{behavior("example4", 'increment')}}>Increment</Button></Column>
+            <Column><Button ui orange fluid on:click={()=>{behavior({id:"example4", type:'progress', commands:['increment']})}}>Increment</Button></Column>
         </Row>
     </Grid>
     <Progress ui teal activate id="example4" settings={exampleData}>
