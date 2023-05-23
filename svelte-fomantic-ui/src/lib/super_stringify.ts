@@ -11,8 +11,8 @@ export function super_stringify (item:any, validJSON: boolean = false) : string 
 
     if (typeof item === 'string') {
         // Convert a string, but watch out for quotes inside the string.  Add a back-slash in front of them.
-        // answer += "\"" + item.replace(/"/g, '\\"').replace(/'/g, "\\'") + "\"";
-        answer += "\"" + item + "\"";
+        answer += "\"" + item.replace(/"/g, '\\"').replace(/'/g, "\\'") + "\"";
+        // answer += "\"" + item + "\"";
     }
     else if (Array.isArray(item)) {
         // Recursively convert elements of an array.
@@ -28,7 +28,7 @@ export function super_stringify (item:any, validJSON: boolean = false) : string 
     else if (typeof item === "function") {
         // Convert a function, and remove extraneous tabs, newlines and linefeeds.
         let theFunction = item.toString().replace(/[\n\t\r](?=(?:(?:[^"]*"){2})*[^"]*$)/g, "");
-        // Add a backslah in front of single and double quotes.
+        // Add a backslah in front of single and double quotes if the function is going to be enclosed in quotes.
         if(validJSON) theFunction = theFunction.replace(/"/g, '\\"').replace(/'/g, "\\'");
         // Put quotes around the function string if required.
         answer += (validJSON?"\"":"") + theFunction + (validJSON?"\"":"");
