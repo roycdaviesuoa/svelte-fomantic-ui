@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
     import { update } from "../svelte-fomantic-ui.svelte";
 
     export let ui: boolean = false;
@@ -13,7 +13,7 @@
     export let range: boolean = undefined;
     export let settings: object = undefined;
     export let popup: object | boolean = undefined;
-    export let functions : object = undefined;
+    export let callbacks : object = undefined;
     export let value: any = undefined;
     export let selected: any = undefined;
 
@@ -51,10 +51,10 @@
         }
     }
 
-    let allFunctions = range ? {...functions, ...rangeValues} : {...functions, ...singleValue};
+    let allFunctions = range ? {...callbacks, ...rangeValues} : {...callbacks, ...singleValue};
 
     import { onDestroy } from "svelte";
-    const ID = initialise(id, allFunctions);
+    const ID = initialize(id, allFunctions);
     onDestroy(() => { decommission(ID, id, allFunctions); });
 
 </script>

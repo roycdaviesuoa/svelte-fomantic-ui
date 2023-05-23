@@ -33,7 +33,7 @@ Settings can be of two different formats, namely JSON, or a sequence of strings.
 
 ### Module functions
 
-Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery, as mentioned above.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.  **These won't work without the lines above being included in your index.html head section.**
+Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery, as mentioned above.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialized before they will work.  This is done automatically for you.  **These won't work without the lines above being included in your index.html head section.**
 
 #### The `update` function
 
@@ -114,7 +114,7 @@ Sometimes, the module can be sent settings on initialisation, for example - see 
 
 #### The `reload` function
 
-The third function is `reload`, which is useful when you need to re-initialise the javascript modules on a page, for example when changing a part of a page that is a svelte element which contains fomantic-ui modules:
+The third function is `reload`, which is useful when you need to re-initialize the javascript modules on a page, for example when changing a part of a page that is a svelte element which contains fomantic-ui modules:
 
 ```html
 <script lang="ts">

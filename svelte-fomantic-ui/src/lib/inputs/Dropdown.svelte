@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { serialize, rationalize, classString, otherProps, initialise, functionize, decommission } from "../svelte-fomantic-ui";
+    import { serialize, rationalize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
 
     export let ui: boolean = false;
     export let id: string = undefined;
@@ -15,7 +15,7 @@
     export let popup: object | boolean = undefined;
     export let multiple: boolean = false;
     export let values: boolean = false;
-    export let functions : object = {};
+    export let callbacks : object = {};
         
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -31,12 +31,11 @@
     };
 
     import { onDestroy } from "svelte";
-    const ID = initialise(id, functions);
-    onDestroy(() => { decommission(ID, id, functions); });
+    const ID = initialize(id, callbacks);
+    onDestroy(() => { decommission(ID, id, callbacks); });
 
 
     function doClick(e: any) {
-        console.log(e);
         if (e.target.attributes.hasOwnProperty("data-value") || e.target.attributes.hasOwnProperty("value") || (!values && e.target.innerText)) {
             value = e.target.attributes.hasOwnProperty("data-value") ? e.target.attributes["data-value"].value : ( e.target.attributes.hasOwnProperty("value").value ? e.target.attributes["value"].value : ( values ? undefined : e.target.innerText.trim() ) );
             selected = value;
@@ -50,7 +49,6 @@
     }
 
     function doChange(e: any) {
-        console.log(e.target.value);
         selected = e.target.value;
         value = selected;
         if (id) {
@@ -63,11 +61,11 @@
 </script>
 
 {#if multiple}
-    <div {id} class={classString(ui, $$restProps, "multiple dropdown")} data-selected={selected} data-module={rationalize([serialize("dropdown", {...functionize(ID, id, {...functions, ...moreFunctions}), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:change={doChange}>
+    <div {id} class={classString(ui, $$restProps, "multiple dropdown")} data-selected={selected} data-module={rationalize([serialize("dropdown", {...functionize(ID, id, {...callbacks, ...moreFunctions}), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:change={doChange}>
         <slot />
     </div>
 {:else}
-    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {...functionize(ID, id, functions), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={doClick}>
+    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {...functionize(ID, id, callbacks), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={doClick}>
         <slot />
     </div>
 {/if}

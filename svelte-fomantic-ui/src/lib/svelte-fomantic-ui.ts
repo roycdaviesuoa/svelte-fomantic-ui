@@ -90,55 +90,8 @@ export function serialize(...parameters:any[])
     {
         return undefined;
     }
-    // // Create a new object to hold the serialized version
-    // let serialized = {};
-
-    // // Iterate over the object's properties
-    // for (const key in obj) {
-    //     if (obj.hasOwnProperty(key)) 
-    //     {
-    //         const val = obj[key];
-    //         if ((val !== undefined) && (val !== null))
-    //         {
-    //             if (key === "settings")
-    //             {
-    //                 serialized[key] = {};
-    //                 for (const key2 in obj[key]) {
-    //                     if (obj[key].hasOwnProperty(key2)) 
-    //                     {
-    //                         const val2 = obj[key][key2];
-    //                         if ((val2 !== undefined) && (val2 !== null))
-    //                         {
-    //                             if (typeof val2 === 'function') {
-    //                                 // If the property is a function, convert it to a string
-    //                                 serialized[key][key2] = val2.toString();
-    //                             } else {
-    //                                 // Otherwise, add the property to the serialized object
-    //                                 serialized[key][key2] = val2;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //             else
-    //             {
-    //                 if (typeof val === 'function') {
-    //                     // If the property is a function, convert it to a string
-    //                     serialized[key] = val.toString();
-    //                 } else {
-    //                     // Otherwise, add the property to the serialized object
-    //                     serialized[key] = val;
-    //                 }
-    //             } 
-    //         }
-    //     }
-    // }
 
     let serialized = super_stringify(obj, true);
-    // console.log(super_stringify(obj, true));
-    // console.log(JSON.stringify(serialized));
-    // Return the serialized object
-    // return JSON.stringify(serialized);
 
     return (serialized);
 }
@@ -171,19 +124,18 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 
     let functionString = `document.dispatchEvent( new CustomEvent("` + ID+id+funcName + `", { detail: {`+ funcName + ":" + newParameters + `} } ) )`;
 
-    // console.log(functionString);
     return new Function(...names, functionString);
 }
 
 // Set up an event channel for each function on the main document and return a unique ID to be used in the other functions.
 // When an event is received, the given function is called with the parameters from the function call.
 // id is the unique id of the DOM element
-// functions is an object where the keys are the names of the Fomantic UI functions, and each value is an object where the keys/value pairs represent the
+// callbacks is an object where the keys are the names of the Fomantic UI callbacks, and each value is an object where the keys/value pairs represent the
 // parameters to the function - the values for each of these should be null.
-// Optionally, additional key/value pairs may contain other data, in particular to functions or data that are in the setup code's context.
+// Optionally, additional key/value pairs may contain other data, in particular to callbacks or data that are in the setup code's context.
 // Finally, there has to be a key named "_" which is called once the Fomantic UI function has executed.  It has one parameter, which is an object with the
 // keys as specified in this data structure.  Here is an example below.
-// functions={{
+// callbacks={{
 //     onRate: {
 //         rating: __,
 //         name: setting.color + "_" + setting.icon,
@@ -195,17 +147,16 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 // }}
 
 // Set up the event listeners, and return the unique ID.
-export function initialise(id: string = "", functions: {} ) {
+export function initialize(id: string = "", callbacks: {} ) {
     // Create a fairly unique ID.  We use this just in case the id is blank or null.
     let ID = [...Array(12)].map(i=>(~~(Math.random()*36)).toString(36)).join('');
-    // console.log(functions);
     
     // For each function named, set up an event listener, after removing one if one existed from before - highly unlikely, but just in case.
-    if (functions !== undefined) {
-        Object.keys(functions).forEach ((funcName) => {
+    if (callbacks !== undefined) {
+        Object.keys(callbacks).forEach ((funcName) => {
             document.removeEventListener(ID+id+funcName, ()=>{}); 
             document.addEventListener(ID+id+funcName, (v) => {
-                let returnValue = functions[funcName]._(v["detail"][funcName]);
+                let returnValue = callbacks[funcName]._(v["detail"][funcName]);
             });
         });
     }
@@ -215,27 +166,26 @@ export function initialise(id: string = "", functions: {} ) {
 }
 
 // Set up the code to send results from running the given function in the correct context back to the module
-export function functionize(ID: string, id: string = "", functions: {}) {
+export function functionize(ID: string, id: string = "", callbacks: {}) {
     let functionSettings = [];
 
     // Create the function that will send the event
-    if (functions !== undefined) {
-        Object.keys(functions).forEach ((funcName) => {
-            let params = Object.keys(functions[funcName]).filter(key2 => key2.charAt(0) !== '_');
-            let values = Object.keys(functions[funcName]).filter(key2 => ((key2.charAt(0) !== '_') && functions[funcName][key2])).map(key2 => "\"" + functions[funcName][key2].toString() + "\"");
+    if (callbacks !== undefined) {
+        Object.keys(callbacks).forEach ((funcName) => {
+            let params = Object.keys(callbacks[funcName]).filter(key2 => key2.charAt(0) !== '_');
+            let values = Object.keys(callbacks[funcName]).filter(key2 => ((key2.charAt(0) !== '_') && callbacks[funcName][key2])).map(key2 => "\"" + callbacks[funcName][key2].toString() + "\"");
             functionSettings[funcName] = contextualFunction(ID, id, funcName, params, values);
         });
     }
 
-    // console.log(functionSettings);
     return functionSettings;
 }
 
 // Remove the event listeners - should be called in the onDestroy function of the svelte module
-export function decommission(ID:string, id:string, functions: {}) {
+export function decommission(ID:string, id:string, callbacks: {}) {
     // Remove the event listeners.  This should be called in the onDestroy function of the svelte module
-    if (functions !== undefined) {
-        Object.keys(functions).forEach ((key) => {
+    if (callbacks !== undefined) {
+        Object.keys(callbacks).forEach ((key) => {
             document.removeEventListener(ID+id+key, ()=>{});
         });
     }

@@ -429,27 +429,27 @@ const code = {
     // can access the myToast variable that is in the context of the calling function.
     // Read more about this here: https://github.com/roycdaviesuoa/svelte-fomantic-ui/blob/main/svelte-fomantic-ui/Functions.md
 
-    import { initialise, functionize, decommission, behavior } from "svelte-fomantic-ui";
+    import { initialize, functionize, decommission, behavior } from "svelte-fomantic-ui";
     import { onDestroy } from "svelte";
 
     let id=Math.random().toString(36).substring(2, 6);
 
     let myToast: any;
-    let functions = {
+    let callbacks = {
         onHide: {
             _: () => { myToast = null }
         }
     }
 
-    const ID = initialise(id, functions);
-    onDestroy(() => { decommission(ID, id, functions); });
+    const ID = initialize(id, callbacks);
+    onDestroy(() => { decommission(ID, id, callbacks); });
 </script>
 
 <Button ui pink on:click={() => { myToast = behavior( {type:"toast", 
     settings: {
         displayTime: 120000, class: 'pink', showProgress: 'top',
         message: 'This pink toast stays for a long time. It is returned as object when created, so you can interact with it via Javascript',
-        ...functionize(ID, id, functions)
+        ...functionize(ID, id, callbacks)
     }, 
 })}}>Open pink toast first</Button>
 

@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { initialise, functionize, decommission, behavior, Button, Toast, Content, Header, Image, Message, Actions, Icon, Card, Description, Category, Meta } from "../svelte-fomantic-ui.svelte";
+    import { initialize, functionize, decommission, behavior, Button, Toast, Content, Header, Image, Message, Actions, Icon, Card, Description, Category, Meta } from "../svelte-fomantic-ui.svelte";
 
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
@@ -15,14 +15,14 @@
     let id=Math.random().toString(36).substring(2, 6);
 
     let myToast: any;
-    let functions = {
+    let callbacks = {
         onHide: {
             _: () => { myToast = null }
         }
     }
 
-    const ID = initialise(id, functions);
-    onDestroy(() => { decommission(ID, id, functions); });
+    const ID = initialize(id, callbacks);
+    onDestroy(() => { decommission(ID, id, callbacks); });
 
     let colors = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"];
     let currentColor = 0;
@@ -723,7 +723,7 @@
             settings: {
                 displayTime: 120000, class: 'pink', showProgress: 'top',
                 message: 'This pink toast stays for a long time. It is returned as object when created, so you can interact with it via Javascript',
-                ...functionize(ID, id, functions)
+                ...functionize(ID, id, callbacks)
             }, 
         })}}>Open pink toast first</Button>
 

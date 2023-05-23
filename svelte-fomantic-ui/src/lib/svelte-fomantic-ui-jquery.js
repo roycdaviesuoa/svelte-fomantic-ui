@@ -18,11 +18,11 @@ $(() =>
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-// (Re)load the modules, which mostly is required to initialise each of the modules once the page is loaded.
+// (Re)load the modules, which mostly is required to initialize each of the modules once the page is loaded.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const reload = function()
 {
-    // Initialise the Tablesort code
+    // initialize the Tablesort code
     tableSort();
 
     // Go through each of the modules
@@ -62,11 +62,9 @@ export const reload = function()
                         break;
                     case "popup":
                         const extraSettings = { delay: { show: 100, hide: 300 } };
-                        console.log($(this), moduleType, {...extraSettings, ...settings});
                         $(this)[moduleType]({...extraSettings, ...settings});
                         break;
                     case "dropdown":
-                        // console.log(settings);
                         $(this)[moduleType](settings);
                         break;
                     case "progress": // Progress and Embed have the ability to activate on load
@@ -148,7 +146,6 @@ function construct_jquery_command(params) {
         }
     }
 
-    // console.log(jquery_command);
     // Finally, return the completed jquery command as a string
     return jquery_command;
 }

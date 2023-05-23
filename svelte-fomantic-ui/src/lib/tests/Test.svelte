@@ -30,7 +30,7 @@
             <Column><Button ui orange fluid on:click={()=>{behavior({id:"example4", type:'progress', commands:['increment']})}}>Increment</Button></Column>
         </Row>
     </Grid>
-    <Progress ui teal activate id="example4" settings={exampleData} functions={callBacks}>
+    <Progress ui teal activate id="example4" settings={exampleData} callbacks={callBacks}>
         <Bar>
             <Progress />
         </Bar>

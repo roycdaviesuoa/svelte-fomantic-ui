@@ -49,14 +49,14 @@ parameters = [{color: "yellow", icon: "star"}, {color: "red", icon: "heart"}]
 In this case, an error will occur when the rating UI is clicked with the mouse and the onRate callback function is invoked.  The error will state that param.color and param.icon are unknown variables.
 This is because the function itself, due to the way that Svelte stringifies and de-stringifies properties, is executing in a different context (in particular, not the context of this module).
 
-To get around this, we introduce an additional property structure called 'functions' to be used in addition to 'settings'.
+To get around this, we introduce an additional property structure called 'callbacks' to be used in addition to 'settings'.
 
-The above example, using the functions structure would be as follows:
+The above example, using the callbacks structure would be as follows:
 
 ```xml
 {#each parameters as param, i} 
     <Rating ui _={param.color} data-icon={param.icon} data-rating = 2 
-        functions = {{
+        callbacks = {{
             onRate: {
                 rating: null,
                 color: param.color,
@@ -101,16 +101,16 @@ $('.ui.nag').nag({
 would become:
 
 ```xml
-<Nag ui functions = {{ onHide: { message: nagMessage,  _: (data) => console.log(data.message); } }}>
+<Nag ui callbacks = {{ onHide: { message: nagMessage,  _: (data) => console.log(data.message); } }}>
     Look, I'm a nag!
     <Icon close/>
 </Nag>
 ```
 
-Note that you can using `settings` and `functions` together, for example:
+Note that you can using `settings` and `callbacks` together, for example:
 
 ```xml
-<Nag ui settings = {{displayTime: 1000, samesite: true, onShow: () => console.log("Nag is now showing") }} functions = {{ onHide: { message: nagMessage,  _: (data) => console.log(data.message); } }}>
+<Nag ui settings = {{displayTime: 1000, samesite: true, onShow: () => console.log("Nag is now showing") }} callbacks = {{ onHide: { message: nagMessage,  _: (data) => console.log(data.message); } }}>
     Look, I'm a nag!
     <Icon close/>
 </Nag>
@@ -121,7 +121,7 @@ In the above example, the onShow function is defined in settings because it does
 Another example showing how the callback function sets a variable in the local context so it can be displayed in the line below.
 
 ```xml
-<Rating ui settings={{icon: "circle", initialRating: rating4value, maxRating: 5}} functions={{ onRate: { rating: null, _: (data) => { rating4value = data.rating; } } }}/>
+<Rating ui settings={{icon: "circle", initialRating: rating4value, maxRating: 5}} callbacks={{ onRate: { rating: null, _: (data) => { rating4value = data.rating; } } }}/>
 <Text>Rating value = {rating4value}</Text>
 ```
   

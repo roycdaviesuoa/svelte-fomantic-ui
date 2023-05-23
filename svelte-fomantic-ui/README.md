@@ -178,7 +178,7 @@ To use fomantic UI in your project, import the required elements in the script s
 
 ## Modules
 
-Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery, as mentioned above.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialised before they will work.  This is done automatically for you.  **These won't work without the lines above being included in your index.html head section.**
+Many of the Fomantic UI modules rely on javascript to work, and this in turn relies on JQuery, as mentioned above.  The sveltised versions wrap this in a simple format that removes the need to use JQuery in your Svelte code.  These modules, if used in ordinary Javascript, need to be initialized before they will work.  This is done automatically for you.  **These won't work without the lines above being included in your index.html head section.**
 
 ### The `update` function
 
@@ -238,7 +238,7 @@ Both the `update` and `behavior` functions take one or more parameters, where th
 
 Sometimes, the module can be sent settings on initialisation, for example - see the `Progress` module html below.  Settings are sent via the `settings` prop.  Similarly, some modules allow JSON settings to be sent when being updated, so the `update` function allows that possibility as well.
 
-Note that when defining the settings for a Fomantic UI element, callback functions won't execute in the context of the calling module.  See [this document](./Functions.md) for a way to set up such functions.
+Note that when defining the settings for a Fomantic UI element, callback functions won't execute in the context of the calling module.  See [this document](./Functions.md) for a way to set up such callbacks.
 
 ```html
 <script lang="ts">
@@ -261,7 +261,7 @@ Note that when defining the settings for a Fomantic UI element, callback functio
 
 ### The `reload` function
 
-The third function is `reload`, which is useful when you need to re-initialise the javascript modules on a page, for example when changing a part of a page that is a svelte element which contains fomantic-ui modules:
+The third function is `reload`, which is useful when you need to re-initialize the javascript modules on a page, for example when changing a part of a page that is a svelte element which contains fomantic-ui modules:
 
 ```html
 <script lang="ts">

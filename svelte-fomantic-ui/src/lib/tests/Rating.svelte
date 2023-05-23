@@ -34,7 +34,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Rating" code = {Code.rating}>
 
-        <Rating ui data-max-rating="1" functions={{ onRate: { rating: null, _: (data) => { rating1value = data.rating; } } }}/>
+        <Rating ui data-max-rating="1" callbacks={{ onRate: { rating: null, _: (data) => { rating1value = data.rating; } } }}/>
         <Text>Rating value = {rating1value}</Text>
 
     </Example>
@@ -49,7 +49,7 @@
 
         {#each rating2settings as setting, i} 
             <Rating ui id="iconrating" _={setting.color} data-icon={setting.icon} data-rating = 2 
-                functions={{
+                callbacks={{
                     onRate: {
                         rating: null,
                         name: setting.color + "_" + setting.icon,
@@ -72,7 +72,7 @@
 
         {#each colors as color, count}
             <Rating ui _={color} data={{icon:"star", "max-rating": 7, rating: rating3values[count]}}
-            functions={{
+            callbacks={{
                 onRate: {
                     rating: null,
                     index: count,
@@ -168,9 +168,9 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Functions -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Functions" code = {Code.functions}>
+    <Example title = "Functions" code = {Code.callbacks}>
 
-        <Rating ui settings={{icon: "circle", initialRating: rating4value, maxRating: 5}} functions={{ onRate: { rating: null, _: (data) => { rating4value = data.rating; } } }}/>
+        <Rating ui settings={{icon: "circle", initialRating: rating4value, maxRating: 5}} callbacks={{ onRate: { rating: null, _: (data) => { rating4value = data.rating; } } }}/>
         <Text>Rating value = {rating4value}</Text>
 
     </Example>

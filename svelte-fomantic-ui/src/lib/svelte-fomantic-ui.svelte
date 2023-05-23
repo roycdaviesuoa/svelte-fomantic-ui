@@ -5,6 +5,8 @@
 -->
 
 <script context="module" lang="ts">
+    import Paragraph from './elements/Paragraph.svelte';
+
     // Elements
     export {default as Button} from './elements/Button.svelte';
     export {default as Buttons} from './elements/Buttons.svelte';
@@ -122,7 +124,8 @@
     export { update } from './svelte-fomantic-ui-jquery';
     export { reload } from './svelte-fomantic-ui-jquery';
     export { jquery } from './svelte-fomantic-ui';
-    export { initialise } from './svelte-fomantic-ui';
+    export { initialize } from './svelte-fomantic-ui';
     export { functionize } from './svelte-fomantic-ui';
     export { decommission } from './svelte-fomantic-ui';
+    export var parameter = null;
 </script>
