@@ -7,13 +7,17 @@
 <script lang="ts">
     import { update, behavior, parameter, Progress, Segment, Grid, Row, Column, Button, Bar, Label } from "../svelte-fomantic-ui.svelte";
 
-    const exampleData = {total: 3, value:0, onChange: {
+    const exampleData = {
+        total: 3, 
+        value: 0, 
+        onChange: {
                 percent: parameter,
                 value: parameter,
                 total: parameter,
                 
                 _:(data)=>{console.log(data);}
-            }};
+            }
+        };
 </script>
 
 <Segment ui>

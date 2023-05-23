@@ -13,9 +13,9 @@ export function classString (ui: boolean, restProps:{}, mainClass: string):strin
 
     Object.keys(restProps).forEach((key, i) => {
         // Properties that are boolean are used for the class details for Fomantic-UI.
-        // The class is only included if the property is true - this makes it possible to switch on and off a class programmatically.
+        // The class is only included if the property is true - this makes it is possible to switch on and off a class programmatically.
         // This works fine until you actually want to send a boolean data prop that you don't want to be used as a class name.
-        // So far, this hasn't been a problem...
+        // So far, this hasn't been a problem because you can just name that specifically as an exported property.
         if ((typeof(restProps[key]) === "boolean") && restProps[key]) {
             the_class = the_class + ((i>0?" ":"") + key);
         }
@@ -30,9 +30,11 @@ export function classString (ui: boolean, restProps:{}, mainClass: string):strin
     // Add the main class
     the_class += " " + mainClass;
 
-    // Trim any leading or trailing spaces and return
+    // Trim any leading or trailing spaces and double spaces
+    let return_class = the_class.trim().replace(/\s{2,}/g, ' ');
 
-    let return_class = the_class.trim();
+    // Return undefined if blank, or the resulting class otherwise.
+    // Undefined makes sure there are no class="" attributes in the divs.
     return((return_class==="")?undefined:return_class);
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,7 +116,6 @@ export function rationalize(anArray:any[])
     let aNewArray = anArray.filter(item => ((item !== undefined) && (item !== null)));
     if (aNewArray.length === 0) { return undefined; }
     else { return (super_stringify(aNewArray, true)); }
-    // else { return (JSON.stringify(aNewArray)); }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -123,15 +124,19 @@ export function rationalize(anArray:any[])
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Contextual Functions
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-function contextualFunction (ID: string, id: string, funcName: string, names: string[], parameters: string[]) {
+function contextualFunction (ID: string, id: string, funcName: string, names: string[], parameters: string[])
+{
+    // Create an array of the parameters to the function
     let newParameters = "{";
     names.forEach((name, index) => {
         newParameters += name + ":" + ((index >= (names.length - parameters.length)) ? parameters[index - (names.length - parameters.length)] : name) + ",";
     });
     newParameters = newParameters.replace(/,\s*$/, '') + "}";
 
+    // Create a function (string) to send an event on the document object of the DOM, which the module is listening for.
     let functionString = `document.dispatchEvent(new CustomEvent("` + ID+id+funcName + `",{detail:{`+ funcName + ":" + newParameters + `}}))`;
 
+    // Create the actual function.
     return new Function(...names, functionString);
 }
 
@@ -145,7 +150,7 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 // keys as specified in this data structure.  Here is an example below.
 // functions={{
 //     onRate: {
-//         rating: __,
+//         rating: _,
 //         name: setting.color + "_" + setting.icon,
 
 //         _: (data) => {
@@ -158,14 +163,14 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 export function initialize(id: string = "", functions: {} ) {
     // Create a fairly unique ID.  We use this just in case the id is blank or null.
     let ID = [...Array(12)].map(i=>(~~(Math.random()*36)).toString(36)).join('');
-    // console.log(functions);
     
-    // For each function named, set up an event listener, after removing one if one existed from before - highly unlikely, but just in case.
+    // For each function named, set up an event listener, after removing one if it existed from before - highly unlikely, but just in case.
     if (functions !== undefined) {
         Object.keys(functions).forEach ((funcName) => {
             document.removeEventListener(ID+id+funcName, ()=>{}); 
-            document.addEventListener(ID+id+funcName, (v) => {
-                functions[funcName]._(v["detail"][funcName]);
+            document.addEventListener(ID+id+funcName, (event) => {
+                // Call the callback function '_' with the event details
+                functions[funcName]._(event["detail"][funcName]);
             });
         });
     }
@@ -182,12 +187,11 @@ export function functionize(ID: string, id: string = "", functions: {}) {
     if (functions !== undefined) {
         Object.keys(functions).forEach ((funcName) => {
             let params = Object.keys(functions[funcName]).filter(key2 => key2.charAt(0) !== '_');
-            let values = Object.keys(functions[funcName]).filter(key2 => ((key2.charAt(0) !== '_') && functions[funcName][key2])).map(key2 => "\"" + functions[funcName][key2].toString() + "\"");
+            let values = Object.keys(functions[funcName]).filter(key2 => ((key2.charAt(0) !== '_') && functions[funcName][key2])).map(key2 => '"' + functions[funcName][key2].toString() + '"');
             functionSettings[funcName] = contextualFunction(ID, id, funcName, params, values);
         });
     }
 
-    console.log(functionSettings);
     return functionSettings;
 }
 
@@ -202,7 +206,7 @@ export function categorize(input_obj:any): {f: {}, s: {}} {
         // Loop through the keys in the object
         for (let key in input_obj) {
 
-            // If the value is a function, add it to the functions object, otherwise to the settings object
+            // If the value is a 'function', add it to the functions object, otherwise to the settings object
             if ((typeof input_obj[key] === "object") && input_obj[key].hasOwnProperty("_"))
             {
                 f[key] = input_obj[key];

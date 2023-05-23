@@ -202,6 +202,7 @@ export const behavior = function(...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function get_settings(settings)
 {
+    console.log(settings);
     let return_settings = [];
     if (settings) {
         if (Array.isArray(settings))
@@ -280,6 +281,8 @@ function deserialize(serialized)
     } catch (e) {
       // Oh well, but whatever...
     }
+
+    console.log(serialized, deserialized);
 
     // Create a new object to hold the deserialized version
     const obj = {};
