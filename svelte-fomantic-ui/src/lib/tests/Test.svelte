@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, behavior, parameter, Progress, Segment, Grid, Row, Column, Button, Bar, Label } from "../svelte-fomantic-ui.svelte";
+    import { update, behavior, parameter, reset, Progress, Segment, Grid, Row, Column, Button, Bar, Label } from "../svelte-fomantic-ui.svelte";
 
     const exampleData = {
         total: 3, 
@@ -26,7 +26,7 @@
 
     <Grid ui>
         <Row two column>
-            <Column><Button ui green fluid on:click={()=>{update("example4", exampleData)}}>Reset</Button></Column>
+            <Column><Button ui green fluid on:click={()=>{update("example4", exampleData); reset("example4")}}>Reset</Button></Column>
             <Column><Button ui orange fluid on:click={()=>{behavior({id:"example4", type:'progress', commands:['increment']})}}>Increment</Button></Column>
         </Row>
     </Grid>

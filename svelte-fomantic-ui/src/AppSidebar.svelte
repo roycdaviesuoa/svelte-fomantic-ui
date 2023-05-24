@@ -66,7 +66,7 @@
     import {version} from '../package.json';
 
     export let currentPage: any;
-    export let sidebarWidth: number;
+    // export let sidebarWidth: number;
     export let doMenuToggle: any;
 </script>
 

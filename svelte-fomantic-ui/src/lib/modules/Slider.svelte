@@ -6,7 +6,7 @@
 
 <script lang="ts">
     import { serialize, rationalize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
-    import { update } from "../svelte-fomantic-ui.svelte";
+    import { behavior } from "../svelte-fomantic-ui.svelte";
 
     export let ui: boolean = false;
     export let id: string = undefined;
@@ -25,7 +25,7 @@
     $: {
         if ((prevValue != value) && !range) {
             prevValue = value;
-            update(id, "set value", value, false);
+            behavior(id, "set value", value, false);
         }
     }
 

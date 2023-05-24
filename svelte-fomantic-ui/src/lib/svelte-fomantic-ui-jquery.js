@@ -27,60 +27,64 @@ export const reload = function()
 
     // Go through each of the modules
     $("[data-module]").each(function() {
-        let modules = get_settings($(this).data("module"));
-
-        $.each(modules, (_, module) => 
-        {
-            if (module.hasOwnProperty("type")) {
-                let moduleType = module["type"];
-                let activate = module.hasOwnProperty("activate")?module["activate"]:false;
-                let settings = module.hasOwnProperty("settings")?(module["settings"].hasOwnProperty("settings")?module["settings"]["settings"]:module["settings"]):{};
-    
-                switch (moduleType) {
-                    case "": break; // Sometimes, there may be elements with blank module names
-                    case "menu" :
-                        // Silence the errors because the menu might not be using tabs
-                        $('#'+$(this).attr('id') + " .item").tab({silent: true, ...settings});
-                        break;
-                    case "tab" : 
-                        break;
-                    case "calendar" : // We have to do something special for calendar
-                        if (typeof settings === 'object' && (settings)) {
-                            if (settings.hasOwnProperty("startCalendar")) {
-                                settings.startCalendar = $("#"+settings.startCalendar);
-                            }
-                            if (settings.hasOwnProperty("endCalendar")) {
-                                settings.endCalendar = $("#"+settings.endCalendar);
-                            }
-                        }
-                        $(this)[moduleType](settings);
-                        break;
-                    case "flyout":
-                    case "sidebar":
-                        const extraSettings1 = { silent: true };
-                        $(this)[moduleType]({...extraSettings1, ...settings});
-                        break;
-                    case "popup":
-                        const extraSettings = { delay: { show: 100, hide: 300 } };
-                        $(this)[moduleType]({...extraSettings, ...settings});
-                        break;
-                    case "dropdown":
-                        $(this)[moduleType](settings);
-                        break;
-                    case "progress": // Progress and Embed have the ability to activate on load
-                    case "embed":
-                        if (activate) {
-                            $(this)[moduleType](settings);
-                        }
-                        break;
-                    default : // Everything else
-                        $(this)[moduleType](settings);
-                        break;
-                }
-            }
-        });
+        reload_module(this);
     });
 };
+
+const reload_module = function(self) {
+    let modules = get_settings($(self).data("module"));
+
+    $.each(modules, (_, module) => 
+    {
+        if (module.hasOwnProperty("type")) {
+            let moduleType = module["type"];
+            let activate = module.hasOwnProperty("activate")?module["activate"]:false;
+            let settings = module.hasOwnProperty("settings")?(module["settings"].hasOwnProperty("settings")?module["settings"]["settings"]:module["settings"]):{};
+
+            switch (moduleType) {
+                case "": break; // Sometimes, there may be elements with blank module names
+                case "menu" :
+                    // Silence the errors because the menu might not be using tabs
+                    $('#'+$(self).attr('id') + " .item").tab({silent: true, ...settings});
+                    break;
+                case "tab" : 
+                    break;
+                case "calendar" : // We have to do something special for calendar
+                    if (typeof settings === 'object' && (settings)) {
+                        if (settings.hasOwnProperty("startCalendar")) {
+                            settings.startCalendar = $("#"+settings.startCalendar);
+                        }
+                        if (settings.hasOwnProperty("endCalendar")) {
+                            settings.endCalendar = $("#"+settings.endCalendar);
+                        }
+                    }
+                    $(self)[moduleType](settings);
+                    break;
+                case "flyout":
+                case "sidebar":
+                    const extraSettings1 = { silent: true };
+                    $(self)[moduleType]({...extraSettings1, ...settings});
+                    break;
+                case "popup":
+                    const extraSettings = { delay: { show: 100, hide: 300 } };
+                    $(self)[moduleType]({...extraSettings, ...settings});
+                    break;
+                case "dropdown":
+                    $(self)[moduleType](settings);
+                    break;
+                case "progress": // Progress and Embed have the ability to activate on load
+                case "embed":
+                    if (activate) {
+                        $(self)[moduleType](settings);
+                    }
+                    break;
+                default : // Everything else
+                    $(self)[moduleType](settings);
+                    break;
+            }
+        }
+    });
+}
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -254,6 +258,16 @@ function extract_module_type_from_settings(settings) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const update = function (...args) {
     behavior(...args);
+}
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+// Reset the named module
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+export const reset = function (id) {
+    if (id) reload_module($("#"+id).get(0));
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
