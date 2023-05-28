@@ -26,12 +26,12 @@
   "homepage": "http://13.54.202.240",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "latest",
+    "@sveltejs/vite-plugin-svelte": "^2.4.1",
     "@tsconfig/svelte": "latest",
-    "svelte": "latest",
+    "svelte": "^3.59.1",
     "svelte-check": "^3.2.0",
     "typescript": "^5.0.4",
-    "vite": "latest"
+    "vite": "^4.3.9"
   },
   "dependencies": {
     "esprima": "^4.0.1",
