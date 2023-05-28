@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, behavior, parameter, reset, Progress, Segment, Grid, Row, Column, Button, Bar, Label } from "../svelte-fomantic-ui.svelte";
+    import { update, behavior, reset, parameter, Progress, Segment, Grid, Row, Column, Button, Bar, Label } from "../svelte-fomantic-ui.svelte";
 
     const exampleData = {
         total: 3, 
