@@ -330,7 +330,6 @@ const code = {
     <Label>Waiting for you to press the button</Label>
 </Progress>
 <Button ui basic red icon style={"width:100px"} on:click={()=>{
-    // reset("example12");
     update("example12", { text: {active: '{value} of {total} done'} , total: 200, value: 0});
     repeater = setInterval(()=>{
         behavior("example12", "increment", 10);
