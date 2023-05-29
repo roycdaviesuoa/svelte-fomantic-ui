@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { update, behavior, Progress, Label, Bar, Button, Grid, Row, Column, Segment, Card, Image, Content, Link, Meta, Icon, Date } from "../svelte-fomantic-ui.svelte";
+    import { update, behavior, reset, Progress, Label, Bar, Button, Buttons, Text, Grid, Row, Column, Segment, Card, Image, Content, Link, Meta, Icon, Date } from "../svelte-fomantic-ui.svelte";
     import Value from "../views/Value.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
@@ -14,6 +14,8 @@
     let example1_value = 0;
     let example2_value = 74;
     let example3_value = 0;
+
+    let example12_value = 0;
 
     let repeater;
 
@@ -332,26 +334,26 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Indeterminate" code = {Code.indeterminate}>
 
-    <Progress ui blue activate indeterminate>
-        <Bar>
-            <Progress>Pulsating (default)</Progress>
-        </Bar>
-    </Progress>
-    <Progress ui blue activate filling indeterminate>
-        <Bar>
-            <Progress>Filling</Progress>
-        </Bar>
-    </Progress>
-    <Progress ui blue activate sliding indeterminate>
-        <Bar>
-            <Progress>Sliding</Progress>
-        </Bar>
-    </Progress>
-    <Progress ui blue activate swinging indeterminate>
-        <Bar>
-            <Progress>Swinging</Progress>
-        </Bar>
-    </Progress>
+        <Progress ui blue activate indeterminate>
+            <Bar>
+                <Progress>Pulsating (default)</Progress>
+            </Bar>
+        </Progress>
+        <Progress ui blue activate filling indeterminate>
+            <Bar>
+                <Progress>Filling</Progress>
+            </Bar>
+        </Progress>
+        <Progress ui blue activate sliding indeterminate>
+            <Bar>
+                <Progress>Sliding</Progress>
+            </Bar>
+        </Progress>
+        <Progress ui blue activate swinging indeterminate>
+            <Bar>
+                <Progress>Swinging</Progress>
+            </Bar>
+        </Progress>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -489,8 +491,10 @@
                 <Label>{size}</Label>
             </Progress>
         {/each}
-        <Button ui basic red icon on:click={()=>{sizes.forEach(size => behavior("example9" + size, "decrement"))}}><Icon minus/></Button>
-        <Button ui basic green icon on:click={()=>{sizes.forEach(size => behavior("example9" + size, "increment"))}}><Icon plus/></Button>
+        <Buttons ui>
+            <Button ui basic red icon on:click={()=>{sizes.forEach(size => behavior("example9" + size, "decrement"))}}><Icon minus/></Button>
+            <Button ui basic green icon on:click={()=>{sizes.forEach(size => behavior("example9" + size, "increment"))}}><Icon plus/></Button>
+        </Buttons>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -506,8 +510,10 @@
                 <Bar/>
             </Progress>
         {/each}
-        <Button ui basic red icon on:click={()=>{colors.forEach(color => behavior("example10" + color, "decrement"))}}><Icon minus/></Button>
-        <Button ui basic green icon on:click={()=>{colors.forEach(color => behavior("example10" + color, "increment"))}}><Icon plus/></Button>
+        <Buttons ui>
+            <Button ui basic red icon on:click={()=>{colors.forEach(color => behavior("example10" + color, "decrement"))}}><Icon minus/></Button>
+            <Button ui basic green icon on:click={()=>{colors.forEach(color => behavior("example10" + color, "increment"))}}><Icon plus/></Button>
+        </Buttons>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -526,54 +532,45 @@
                     </Bar>
                 </Progress>
             {/each}
-            <Button ui basic red icon on:click={()=>{colors.forEach(color => behavior("example11" + color, "decrement"))}}><Icon minus/></Button>
-            <Button ui basic green icon on:click={()=>{colors.forEach(color => behavior("example11" + color, "increment"))}}><Icon plus/></Button>
+            <Buttons ui>
+                <Button ui basic red icon on:click={()=>{colors.forEach(color => behavior("example11" + color, "decrement"))}}><Icon minus/></Button>
+                <Button ui basic green icon on:click={()=>{colors.forEach(color => behavior("example11" + color, "increment"))}}><Icon plus/></Button>
+            </Buttons>
         </Segment>
-
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Automated -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Automated" code = {Code.automated}>
 
-        <Progress ui indicating data-value="1" data-total="200" id="example12" settings={{
-                duration : 200,
-                total    : 200,
-                value    : 0.1,
-                text     : {
-                    active: '{value} of {total} done'
-                }
-            }}
-            callbacks={{
-                onSuccess: {
-                    _: () => clearInterval(repeater)
-                },
-            }}>
+        <Progress ui indicating id="example12">
             <Bar>
                 <Progress/>
             </Bar>
             <Label>Waiting for you to press the button</Label>
         </Progress>
-        <Button ui basic red icon on:click={()=>{
-            // update("example12", {
-            //     duration : 200,
-            //     total    : 200,
-            //     Value    : 1,
-            //     text     : {
-            //         active: '{value} of {total} done'
-            //     }
-            // });
-            behavior("example12", "reset");
-            repeater = setInterval(()=>{behavior("example12", "increment", 0.1)}, 10);
-
-        }}><Icon minus/></Button>
+        <Button ui basic red style={"width:100px"} icon on:click={()=>{
+            // reset("example12");
+            update("example12", { text: {active: '{value} of {total} done'} , total: 200, value: 0});
+            repeater = setInterval(()=>{
+                behavior("example12", "increment", 10);
+                example12_value = behavior("example12", "get value");
+                if (behavior("example12", "is complete"))
+                {
+                    update("example12", {text: {active: 'Waiting for you to press the button again'}})
+                    clearInterval(repeater);
+                }
+            }, 500);
+        }}>{example12_value}</Button>
+        {#if (example12_value === 0) || (example12_value === 200)}
+            <Label ui transition looping pulsating green><Icon left arrow/> PRESS HERE</Label>
+        {/if}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
 
 </Examples>
