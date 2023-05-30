@@ -17,7 +17,7 @@
     export let values: boolean = false;
     export let callbacks : object = undefined;
         
-    import { createEventDispatcher } from 'svelte';
+    import { createEventDispatcher, onDestroy } from 'svelte';
     const dispatch = createEventDispatcher();
 
     const moreFunctions = {
@@ -30,9 +30,10 @@
         }
     };
 
-    import { onDestroy } from "svelte";
-    const ID = initialize(id, callbacks);
-    onDestroy(() => { decommission(ID, id, callbacks); });
+    let allCallbacks = multiple ? {...callbacks, ...moreFunctions} : callbacks;
+
+    const ID = initialize(id, allCallbacks);
+    onDestroy(() => { decommission(ID, id, allCallbacks); });
 
 
     function doClick(e: any) {
@@ -61,11 +62,11 @@
 </script>
 
 {#if multiple}
-    <select {id} multiple class={classString(ui, $$restProps, "")} on:change={doChange} on:click on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionize(ID, id, {...callbacks, ...moreFunctions}), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
+    <select {id} multiple class={classString(ui, $$restProps, "")} on:change={doChange} on:click on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionize(ID, id, allCallbacks), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
         <slot/>
     </select>
 {:else}
-    <select {id} class={classString(ui, $$restProps, "")} bind:value on:change on:click={doClick} on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionize(ID, id, callbacks), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
+    <select {id} class={classString(ui, $$restProps, "")} bind:value on:change on:click={doClick} on:keydown on:keypress on:keyup data-module={rationalize([serialize("dropdown", {...functionize(ID, id, allCallbacks), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)}>
         <slot/>
     </select>
 {/if}

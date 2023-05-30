@@ -5,14 +5,12 @@
 -->
 
 <script lang="ts">
-    import { update, Dropdown, Input, Text, Menu, Icon, Item, Header, Button, Buttons, Divider, Segment, Select, Option, Flag, Image, Label, Content, Link } from "../svelte-fomantic-ui.svelte";
+    import { update, parameter, Dropdown, Input, Text, Menu, Icon, Item, Message, Header, Description, Button, Buttons, Divider, Segment, Select, Option, Flag, Image, Label, Content, Link, behavior } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Dropdown';
     import countries from './Countries';
     import states from './USStates';
-
-    import { onMount } from 'svelte';
     
     let changed = {test:false, test2:false};
     let test="male";
@@ -457,6 +455,7 @@
     <Example title = "Search in menu" code = {Code.search_in_menu}>
 
         <Dropdown ui floating labeled icon button bind:selected={ex14value}>
+            <Input hidden bind:value={ex14value}/>
             <Icon filter/>
             <Text>Filter Posts</Text>
             <Menu>
@@ -514,6 +513,7 @@
         </Segment>
 
         <Dropdown ui multiple bind:selected={ex15value}>
+            <Input hidden bind:value={ex15value}/>
             <Icon filter/>
             <Text>Filter Posts</Text>
             <Menu>
@@ -643,11 +643,11 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Pointing -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "Pointing" code = {Code.pointing}>
+    <Example title = "Pointing" code = {Code.pointing} narrow>
 
         <p>Besides the pointing dropdown syntax, we show also here the addition of the 'values' property, which is not present in Fomantic UI.  If 'values' is used, only Items with a value return a value to the binding, otherwise the innerText will be returned if there is no specified value.</p>
 
-        <p>Another trick to note is the using of <b>settings=&#123;&#123;"action":"select"&#125;&#125;</b> to ensure the dropdown top line doesn't change to the selected item.  In the Fomantic UI examples, this is not specified, but thye default behavior is to change the top line to the selection.</p>
+        <p>Another trick to note is the using of <b>settings=&#123;&#123;"action":"select"&#125;&#125;</b> to ensure the dropdown top line doesn't change to the selected item.  In the Fomantic UI examples, this is not specified, but the default behavior is to change the top line to the selection.</p>
         <Menu ui values bind:selected={ex18value}>
             <Link item value="home">
                 Home
@@ -990,23 +990,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- No javascript -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "No javascript" code = {Code.no_javascript}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-        
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Menu ui compact>
+            <Dropdown ui simple item>
+                Dropdown
+                <Icon dropdown/>
+                <Menu>
+                    <Item>Choice 1</Item>
+                    <Item>Choice 2</Item>
+                    <Item>Choice 3</Item>
+                </Menu>
+            </Dropdown>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1014,11 +1012,29 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Header -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Header" code = {Code.header}>
 
-
+        <Dropdown ui floating labeled icon button>
+            <Icon filter/>
+            <Text>Filter</Text>
+            <Menu>
+                <Header>
+                    <Icon tags/>
+                    Filter by tag
+                </Header>
+                <Item>
+                    Important
+                </Item>
+                <Item>
+                    Announcement
+                </Item>
+                <Item>
+                    Discussion
+                </Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1026,11 +1042,30 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Divider -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Divider" code = {Code.divider}>
 
-
+        <Dropdown ui floating labeled icon button>
+            <Icon filter/>
+            <Text>Filter</Text>
+            <Menu>
+                <Header>
+                    <Icon tags/>
+                    Filter by tag
+                </Header>
+                <Divider/>
+                <Item>
+                    Important
+                </Item>
+                <Item>
+                    Announcement
+                </Item>
+                <Item>
+                    Discussion
+                </Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1038,11 +1073,33 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Icon -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Icon" code = {Code.icon}>
 
-
+        <Dropdown ui floating labeled icon button>
+            <Icon filter/>
+            <Text>Filter</Text>
+            <Menu>
+                <Header>
+                    <Icon tags/>
+                    Filter by tag
+                </Header>
+                <Divider/>
+                <Item>
+                    <Icon attention/>
+                    Important
+                </Item>
+                <Item>
+                    <Icon comment/>
+                    Announcement
+                </Item>
+                <Item>
+                    <Icon conversation/>
+                    Discussion
+                </Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1050,11 +1107,33 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Description -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Description" code = {Code.description}>
 
-
+        <Dropdown ui floating labeled icon button style={"width:200px"}>
+            <Icon filter/>
+            <Text>Filter Tags</Text>
+            <Menu>
+                <Header>
+                    <Icon tags/>
+                    Filter by tag
+                </Header>
+                <Divider/>
+                <Item>
+                    <Description>2 new</Description>
+                    Important
+                </Item>
+                <Item>
+                    <Description>10 new</Description>
+                    Announcement
+                </Item>
+                <Item>
+                    <Description>5 new</Description>
+                    Discussion
+                </Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1062,11 +1141,39 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Label -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Label" code = {Code.label}>
 
-
+        <Dropdown ui floating labeled icon button>
+            <Icon filter/>
+            <Text>Filter</Text>
+            <Menu>
+                <Header>Search issues</Header>
+                <Input ui left icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search..."/>
+                </Input>
+                <Header>
+                    <Icon tags/>
+                    Filter by tag
+                </Header>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1074,11 +1181,20 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Message -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Message" code = {Code.message}>
 
-
+        <Dropdown ui floating labeled icon button>
+            <Icon filter/>
+            <Text>Login</Text>
+            <Menu>
+                <Message ui error>
+                    <Header>Error</Header>
+                    <p>You must log-in to see all categories</p>
+                </Message>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1086,11 +1202,28 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Floated -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Floated" code = {Code.floated}>
 
-
+        <Dropdown ui fluid selection>
+            <Icon dropdown/>
+            <Text default>Select Type</Text>
+            <Menu>
+                <Item>
+                    <Icon attention right floated/>
+                    Important
+                </Item>
+                <Item>
+                    <Icon comment right floated/>
+                    Announcement
+                </Item>
+                <Item>
+                    <Icon conversation right floated/>
+                    Discussion
+                </Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1098,11 +1231,40 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Input -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Input" code = {Code.input}>
 
-
+        <Dropdown ui floating labeled icon button>
+            <Icon filter/>
+            <Text>Filter</Text>
+            <Menu>
+                <Header>Search issues</Header>
+                <Input ui left icon search>
+                    <Icon search/>
+                    <Input text placeholder="Search..."/>
+                </Input>
+                <Header>
+                    <Icon tags/>
+                    Filter by tag
+                </Header>
+                <Divider/>
+                <Menu scrolling>
+                    <Item value="Important">
+                        <Label ui red empty circular/>
+                        Important
+                    </Item>
+                    <Item value="Announcement">
+                        <Label ui blue empty circular/>
+                        Announcement
+                    </Item>
+                    <Item value="Discussion">
+                        <Label ui green empty circular/>
+                        Discussion
+                    </Item>
+                </Menu>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1110,11 +1272,46 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Image -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Image" code = {Code.image}>
 
-
+        <Dropdown ui floating labeled icon button>
+            <Icon add user/>
+            <Text>Add User</Text>
+            <Menu>
+                <Header>
+                    People You Might Know
+                </Header>
+                <Item>
+                    <Image ui avatar src="/images/jenny.jpg"/>
+                    Jenny Hess
+                </Item>
+                <Item>
+                    <Image ui avatar src="/images/elliot.jpg"/>
+                    Elliot Fu
+                </Item>
+                <Item>
+                    <Image ui avatar src="/images/stevie.jpg"/>
+                    Stevie Feliciano
+                </Item>
+                <Header>
+                    Your Friends' Friends
+                </Header>
+                <Item>
+                    <Image ui avatar src="/images/christian.jpg"/>
+                    Christian
+                </Item>
+                <Item>
+                    <Image ui avatar src="/images/matt.jpg"/>
+                    Matt
+                </Item>
+                <Item>
+                    <Image ui avatar src="/images/justen.jpg"/>
+                    Justen Kitsune
+                </Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1122,11 +1319,32 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Actionable -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Actionable" code = {Code.actionable}>
 
+        <Dropdown ui selection settings={{collapseOnActionable: false}} callbacks={{
+            onActionable: {
+                value: parameter,
+                text: parameter,
+                $selected: parameter,
 
+                _: (data) => {
+                    let type = data["text"].split(":")[0];
+                    behavior({type:"toast", settings: {title: type + " Reveal", message: "You need to know: " + data["value"]}})
+                }
+            }
+        }}>
+            <Input hidden/>
+            <Icon dropdown/>
+            <Text default>Open me and select actionable items</Text>
+            <Menu>
+                <Item actionable data-value="abcdef">SECRET: Select me</Item>
+                <Item actionable data-value="21">TRUTH: Select me</Item>
+                <Item actionable data-value="0==1">LIE: Select me</Item>
+                <Item>I am a selectable entry only</Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1134,11 +1352,27 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Error -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Error" code = {Code.error}>
 
+        <Dropdown ui floating dropdown>
+            Dropdown <Icon dropdown/>
+            <Menu>
+                <Item>Choice 1</Item>
+                <Item>Choice 2</Item>
+                <Item>Choice 3</Item>
+            </Menu>
+        </Dropdown>
 
+        <Dropdown ui selection dropdown>
+            Dropdown <Icon dropdown/>
+            <Menu>
+                <Item>Choice 1</Item>
+                <Item>Choice 2</Item>
+                <Item>Choice 3</Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1146,11 +1380,17 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Active -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Active" code = {Code.active}>
 
-
+        <Dropdown ui simple active dropdown>
+            Dropdown <Icon dropdown/>
+            <Menu>
+                <Item>Choice 1</Item>
+                <Item>Choice 2</Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1158,11 +1398,27 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Disabled -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Disabled" code = {Code.disabled}>
 
+        <Dropdown ui disabled dropdown>
+            Dropdown <Icon dropdown/>
+            <Menu>
+                <Item>Choice 1</Item>
+                <Item>Choice 2</Item>
+                <Item>Choice 3</Item>
+            </Menu>
+        </Dropdown>
 
+        <Dropdown ui dropdown>
+            Dropdown <Icon dropdown/>
+            <Menu>
+                <Item>Choice 1</Item>
+                <Item disabled>Choice 2</Item>
+                <Item>Choice 3</Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1170,11 +1426,18 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Read only -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Read only" code = {Code.read_only}>
 
-
+        <Dropdown ui read-only dropdown>
+            Dropdown <Icon dropdown/>
+            <Menu>
+                <Item>Choice 1</Item>
+                <Item>Choice 2</Item>
+                <Item>Choice 3</Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1182,11 +1445,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Size -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Size" code = {Code.size}>
 
-
+        {#each ["mini", "tiny", "small", "medium", "large"] as size}
+            <Dropdown ui _={size} selection>
+                <Input hidden name="gender"/>
+                <Icon dropdown/>
+                <Text default>{size.charAt(0).toUpperCase() + size.slice(1)}</Text>
+                <Menu>
+                    <Item data-value="1">Male</Item>
+                    <Item data-value="0">Female</Item>
+                </Menu>
+            </Dropdown>
+        {/each}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1194,11 +1467,19 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Scrolling -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Scrolling" code = {Code.scrolling}>
 
-
+        <Dropdown ui scrolling>
+            <Text default>Select choice</Text>
+            <Icon dropdown/>
+            <Menu>
+                {#each Array.from({length: 15}, (_, i) => i + 1) as choice}
+                    <Item>Choice {choice}</Item>
+                {/each}
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1206,11 +1487,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Inverted -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Inverted" code = {Code.inverted}>
 
-
+        <Segment ui inverted>
+            <Dropdown ui selection inverted>
+                <Text default>Select choice</Text>
+                <Icon dropdown/>
+                <Menu>
+                    {#each Array.from({length: 9}, (_, i) => i + 1) as choice}
+                        <Item>Choice {choice}</Item>
+                    {/each}
+                </Menu>
+            </Dropdown>
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1218,11 +1509,26 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Fluid -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Fluid" code = {Code.fluid}>
 
-
+        <Menu ui vertical>
+            <Link item>Link 1</Link>
+            <Link item>Link 2</Link>
+            <Header item>All Sections</Header>
+            <Item ui>
+                <Dropdown ui fluid selection>
+                    <Text>More</Text>
+                    <Icon dropdown/>
+                    <Menu>
+                        <Item>Choice 1</Item>
+                        <Item>Choice 2</Item>
+                        <Item>Choice 3</Item>
+                    </Menu>
+                </Dropdown>
+            </Item>
+        </Menu>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1230,11 +1536,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Height -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Height" code = {Code.height}>
 
+        <Select ui search long dropdown multiple>
+            {#each Object.keys(states) as key}
+                <Option value={key}>{states[key]}</Option>
+            {/each}
+        </Select>
 
+        <Select ui search very long dropdown multiple>
+            {#each Object.keys(states) as key}
+                <Option value={key}>{states[key]}</Option>
+            {/each}
+        </Select>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1242,11 +1558,67 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Direction -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Direction" code = {Code.direction}>
 
+        <Dropdown ui floating labeled icon button>
+            <Icon dropdown/>
+            <Text>Menu</Text>
+            <Menu>
+                <Item>
+                    <Icon left dropdown/>
+                    <Text>Left</Text>
+                    <Menu left>
+                        <Item>1</Item>
+                        <Item>2</Item>
+                        <Item>3</Item>
+                    </Menu>
+                </Item>
+                <Item>
+                    <Icon dropdown/>
+                    <Text>Right</Text>
+                    <Menu right>
+                        <Item>1</Item>
+                        <Item>2</Item>
+                        <Item>3</Item>
+                    </Menu>
+                </Item>
+            </Menu>
+        </Dropdown>
 
+        <Dropdown ui floating labeled icon button>
+            <Icon dropdown/>
+            <Text>Menu</Text>
+            <Menu left>
+                <Item>
+                    <Icon dropdown/>
+                    <Text>Left</Text>
+                    <Menu>
+                        <Item>
+                            <Icon dropdown/>
+                            <Text>Still Left</Text>
+                            <Menu>
+                                <Item>1</Item>
+                                <Item>2</Item>
+                                <Item>3</Item>
+                            </Menu>
+                        </Item>
+                        <Item>2</Item>
+                        <Item>3</Item>
+                    </Menu>
+                </Item>
+                <Item>
+                    <Icon dropdown/>
+                    <Text>Left 2</Text>
+                    <Menu>
+                        <Item>1</Item>
+                        <Item>2</Item>
+                        <Item>3</Item>
+                    </Menu>
+                </Item>
+            </Menu>
+        </Dropdown>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -1254,15 +1626,45 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Columnar menu -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Columnar menu" code = {Code.columnar_menu}>
 
+        <Select ui two column dropdown multiple>
+            <Option value="1">one</Option>
+            <Option value="2">two</Option>
+            <Option value="3">three</Option>
+            <Option value="4">four</Option>
+            <Option value="5">five</Option>
+            <Option value="6">six</Option>
+            <Option value="7">seven</Option>
+            <Option value="8">eight</Option>
+            <Option value="9">nine</Option>
+            <Option value="10">ten</Option>
+            <Option value="0">zero</Option>
+        </Select>
 
+        <Select ui fluid search three column dropdown multiple>
+            {#each Object.keys(states) as key}
+                <Option value={key}>{states[key]}</Option>
+            {/each}
+        </Select>
+
+        <Select ui fluid search four column dropdown multiple>
+            {#each Object.keys(states) as key}
+                <Option value={key}>{states[key]}</Option>
+            {/each}
+        </Select>
+
+        <Select ui fluid search five column dropdown multiple>
+            {#each Object.keys(states) as key}
+                <Option value={key}>{states[key]}</Option>
+            {/each}
+        </Select>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
+        
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
