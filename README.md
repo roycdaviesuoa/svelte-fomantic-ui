@@ -1,8 +1,8 @@
 # Svelte Fomantic UI Wrapper
 
-### This is very much a work in progress, and is not suitable yet for using in any project as fundamental changes will occur...
-### If you are interested in the project, feel free to download, assess, and give me frank feedback...
-### Latest update (16th of May, 2023): Still more to test before RC1...  Getting there, but slowly.  Currently working through Dropdown examples.
+### This is now at late Beta stage.  The code is proving robust according to the testing done so far.
+### Feel free to use cautiously in projects, and please give feedback.
+### Latest update (31st of May, 2023): We're almost there...  Just the Forms element to test out now.  And Search.
 
 ---
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
@@ -82,7 +82,7 @@ Note that in essence all these do already work (except for the Modules) because 
 | Checkbox | X | X | [/Checkbox](./svelte-fomantic-ui/src/lib/tests/Checkbox.svelte) | [Checkbox](https://fomantic-ui.com/modules/checkbox.html)
 |  - Indeterminate | X | X | [/CheckboxIndeterminate](./svelte-fomantic-ui/src/lib/tests/CheckboxIndeterminate.svelte)
 | Dimmer | X | X | [/Dimmer](./svelte-fomantic-ui/src/lib/tests/Dimmer.svelte) | [Dimmer](https://fomantic-ui.com/modules/dimmer.html)
-| Dropdown | X | _ | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
+| Dropdown | X | X | [/Dropdown](./svelte-fomantic-ui/src/lib/tests/Dropdown.svelte) | [Dropdown](https://fomantic-ui.com/modules/dropdown.html)
 | Embed | X | X | [/Embed](./svelte-fomantic-ui/src/lib/tests/Embed.svelte) | [Embed](https://fomantic-ui.com/modules/embed.html)
 | Flyout | X | X | [/Flyout](./svelte-fomantic-ui/src/lib/tests/Flyout.svelte) | [Flyout](https://fomantic-ui.com/modules/flyout.html)
 | Modal | X | X | [/Modal](./svelte-fomantic-ui/src/lib/tests/Modal.svelte) | [Modal](https://fomantic-ui.com/modules/modal.html)
