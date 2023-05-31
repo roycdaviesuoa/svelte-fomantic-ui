@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Form, Field, Fields, Input, Label, Checkbox, Button, Header, Select, Option, Menu, Item, Flag, Dropdown, Icon, Text, Image, Segment, Message, Textarea, Radio } from "../svelte-fomantic-ui.svelte";
+    import { Form, Field, Fields, Input, Label, Checkbox, Button, Header, Select, Option, Menu, Item, Flag, Dropdown, Icon, Text, Image, Segment, Message, Textarea, Radio, Calendar, List } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Form';
@@ -45,6 +45,8 @@
 
     let radio_ex1 = "";
     let radio_ex2 = "";
+    let fruit = "";
+    let fruit2 = "";
 </script>
 
 
@@ -412,24 +414,20 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Multiple select -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Multiple select" code = {Code.multiple_select}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Form ui>
+            <Field>
+                <Select ui multiple dropdown>
+                    <Label>Country</Label>
+                    {#each Object.keys(countries) as key}
+                        <Option value={key}><Flag _={key}/>{countries[key]}</Option>
+                    {/each}
+                </Select>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -438,24 +436,19 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- HTML select -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Html select" code = {Code.html_select}>
 
-
-
-    </Example>
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-
-
-
-
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
-    <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
-
-
+        <Form ui>
+            <Field>
+                <Select>
+                    <Option value="">Gender</Option>
+                    <Option value="1">Male</Option>
+                    <Option value="0">Female</Option>
+                </Select>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -464,11 +457,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Calendar -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Calendar" code = {Code.calendar}>
 
-
+        <Form ui>
+            <Field>
+                <Label>Date</Label>
+                <Calendar ui>
+                    <Input ui icon left>
+                        <Icon calendar/>
+                        <Input text placeholder="Pick a date" name="date"/>
+                    </Input>
+                </Calendar>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -477,11 +480,19 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Message -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Message" code = {Code.message}>
 
-
+        <Form ui>
+            <Message ui>
+                <Header>We had some issues</Header>
+                <List>
+                    <Item>Please enter your first name</Item>
+                    <Item>Please enter your last name</Item>
+                </List>
+            </Message>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -490,11 +501,24 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Loading -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Loading" code = {Code.loading}>
 
-
+        <Form ui loading>
+            <Field>
+                <Label>E-mail</Label>
+                <Input email placeholder="joe@schmoe.com"/>
+            </Field>
+            <Button ui submit>Submit</Button>
+        </Form>
+        <Form ui blue double loading>
+            <Field>
+                <Label>E-mail</Label>
+                <Input email placeholder="joe@schmoe.com"/>
+            </Field>
+            <Button ui submit>Submit</Button>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -503,11 +527,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Success -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Success" code = {Code.success}>
 
-
+        <Form ui success>
+            <Field>
+                <Label>E-mail</Label>
+                <Input email placeholder="joe@schmoe.com"/>
+            </Field>
+            <Message ui success>
+                <Header>Form Completed</Header>
+                <p>You're all signed up for the newsletter.</p>
+            </Message>
+            <Button ui submit>Submit</Button>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -516,11 +550,21 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Error -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Error" code = {Code.error}>
 
-
+        <Form ui error>
+            <Field>
+                <Label>E-mail</Label>
+                <Input email placeholder="joe@schmoe.com"/>
+            </Field>
+            <Message ui error>
+                <Header>Action Forbidden</Header>
+                <p>You can only sign up for an account once with a given e-mail address.</p>
+            </Message>
+            <Button ui submit>Submit</Button>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -529,11 +573,23 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Warning -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Warning" code = {Code.warning}>
 
-
+        <Form ui warning>
+            <Field>
+                <Label>E-mail</Label>
+                <Input email placeholder="joe@schmoe.com"/>
+            </Field>
+            <Message ui warning>
+                <Header>Could you check something!</Header>
+                <List>
+                    <Item>That e-mail has been subscribed, but you have not yet clicked the verification link in your e-mail.</Item>
+                </List>
+            </Message>
+            <Button ui submit>Submit</Button>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -542,11 +598,23 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Info -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Info" code = {Code.info}>
 
-
+        <Form ui info>
+            <Field>
+                <Label>E-mail</Label>
+                <Input email placeholder="joe@schmoe.com"/>
+            </Field>
+            <Message ui info>
+                <Header>Requirements</Header>
+                <List>
+                    <Item>Password must contain at least 8 characters</Item>
+                </List>
+            </Message>
+            <Button ui submit>Submit</Button>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -555,11 +623,37 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Field error -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Field error" code = {Code.field_error}>
 
-
+        <Form ui>
+            <Fields two>
+                <Field error>
+                    <Label>First Name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field>
+                    <Label>Last Name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+            <Field error>
+                <Label>Gender</Label>
+                <Dropdown ui selection>
+                    <Text default>Select</Text>
+                    <Icon dropdown/>
+                    <Input hidden name="gender"/>
+                    <Menu>
+                        <Item data-value="male">Male</Item>
+                        <Item class="item" data-value="female">Female</Item>
+                    </Menu>
+                </Dropdown>
+            </Field>
+            <Field inline error>
+                <Checkbox ui label="I agree to the Terms and Conditions"/>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -568,11 +662,37 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Field warning -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Field warning" code = {Code.field_warning}>
 
-
+        <Form ui>
+            <Fields two>
+                <Field warning>
+                    <Label>First Name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field>
+                    <Label>Last Name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+            <Field warning>
+                <Label>Gender</Label>
+                <Dropdown ui selection>
+                    <Text default>Select</Text>
+                    <Icon dropdown/>
+                    <Input hidden name="gender"/>
+                    <Menu>
+                        <Item data-value="male">Male</Item>
+                        <Item class="item" data-value="female">Female</Item>
+                    </Menu>
+                </Dropdown>
+            </Field>
+            <Field inline warning>
+                <Checkbox ui label="I agree to the Terms and Conditions"/>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -581,11 +701,37 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Field success -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Field success" code = {Code.field_success}>
 
-
+        <Form ui>
+            <Fields two>
+                <Field success>
+                    <Label>First Name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field>
+                    <Label>Last Name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+            <Field success>
+                <Label>Gender</Label>
+                <Dropdown ui selection>
+                    <Text default>Select</Text>
+                    <Icon dropdown/>
+                    <Input hidden name="gender"/>
+                    <Menu>
+                        <Item data-value="male">Male</Item>
+                        <Item class="item" data-value="female">Female</Item>
+                    </Menu>
+                </Dropdown>
+            </Field>
+            <Field inline success>
+                <Checkbox ui label="I agree to the Terms and Conditions"/>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -594,11 +740,37 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Field info -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Field info" code = {Code.field_info}>
 
-
+        <Form ui>
+            <Fields two>
+                <Field info>
+                    <Label>First Name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field>
+                    <Label>Last Name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+            <Field info>
+                <Label>Gender</Label>
+                <Dropdown ui selection>
+                    <Text default>Select</Text>
+                    <Icon dropdown/>
+                    <Input hidden name="gender"/>
+                    <Menu>
+                        <Item data-value="male">Male</Item>
+                        <Item class="item" data-value="female">Female</Item>
+                    </Menu>
+                </Dropdown>
+            </Field>
+            <Field inline info>
+                <Checkbox ui label="I agree to the Terms and Conditions"/>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -607,11 +779,22 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Disabled field -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Disabled field" code = {Code.disabled_field}>
 
-
+        <Form ui>
+            <Fields two>
+                <Field disabled>
+                    <Label>First Name</Label>
+                    <Input text disabled placeholder="First name" tabindex="-1"/>
+                </Field>
+                <Field disabled>
+                    <Label>Last Name</Label>
+                    <Input text disabled placeholder="Last name" tabindex="-1"/>
+                </Field>
+            </Fields>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -620,11 +803,22 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Readonly field -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Readonly field" code = {Code.readonly_field}>
 
-
+        <Form ui>
+            <Fields two>
+                <Field readonly>
+                    <Label>First Name</Label>
+                    <Input text readonly placeholder="First name" tabindex="-1"/>
+                </Field>
+                <Field readonly>
+                    <Label>Last Name</Label>
+                    <Input text readonly placeholder="Last name" tabindex="-1"/>
+                </Field>
+            </Fields>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -633,11 +827,26 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Size -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Size" code = {Code.size}>
 
-
+        {#each ["mini", "tiny", "small", "large", "big", "huge", "massive"] as size}
+            <Form ui _={size}>
+                <Fields two>
+                    <Field>
+                        <Label>First Name</Label>
+                        <Input text placeholder="First name" tabindex="-1"/>
+                    </Field>
+                    <Field>
+                        <Label>Last Name</Label>
+                        <Input text placeholder="Last name" tabindex="-1"/>
+                    </Field>
+                </Fields>
+            </Form>
+            <Button ui submit>Submit</Button>
+            <br/><br/>
+        {/each}
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -646,11 +855,36 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Equal width -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Equal width" code = {Code.equal_width}>
 
-
+        <Form ui equal width>
+            <Fields>
+                <Field>
+                    <Label>Username</Label>
+                    <Input text placeholder="Username"/>
+                </Field>
+                <Field>
+                    <Label>Password</Label>
+                    <Input password/>
+                </Field>
+            </Fields>
+            <Fields>
+                <Field>
+                    <Label>First name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field>
+                    <Label>Middle name</Label>
+                    <Input text placeholder="Middle Name"/>
+                </Field>
+                <Field>
+                    <Label>Last name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -659,11 +893,25 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Inverted -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Inverted" code = {Code.inverted}>
 
-
+        <Segment ui inverted>
+            <Form ui inverted>
+                <Fields two>
+                    <Field>
+                        <Label>First Name</Label>
+                        <Input text placeholder="First name" tabindex="-1"/>
+                    </Field>
+                    <Field>
+                        <Label>Last Name</Label>
+                        <Input text placeholder="Last name" tabindex="-1"/>
+                    </Field>
+                </Fields>
+            </Form>
+            <Button ui submit>Submit</Button>
+        </Segment>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -672,11 +920,16 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Inline field -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Inline field" code = {Code.inline_field}>
 
-
+        <Form ui>
+            <Field inline>
+              <Label>Last name</Label>
+              <Input text placeholder="Full Name"/>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -685,11 +938,48 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Width -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Width" code = {Code.width}>
 
-
+        <Form ui>
+            <Fields>
+                <Field six wide>
+                    <Label>First name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field four wide>
+                    <Label>Middle</Label>
+                    <Input text placeholder="Middle Name"/>
+                </Field>
+                <Field six wide>
+                    <Label>Last name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+            <Fields>
+                <Field two wide>
+                    <Input text placeholder="2 Wide"/>
+                </Field>
+                <Field twelve wide>
+                    <Input text placeholder="12 Wide"/>
+                </Field>
+                <Field two wide>
+                    <Input text placeholder="2 Wide"/>
+                </Field>
+            </Fields>
+            <Fields>
+                <Field eight wide>
+                    <Input text placeholder="8 Wide"/>
+                </Field>
+                <Field six wide>
+                    <Input text placeholder="6 Wide"/>
+                </Field>
+                <Field two wide>
+                    <Input text placeholder="2 Wide"/>
+                </Field>
+            </Fields>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -698,11 +988,19 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Required -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Required" code = {Code.required}>
 
-
+        <Form ui>
+            <Field required>
+                <Label>Last name</Label>
+                <Input text placeholder="Full Name"/>
+            </Field>
+            <Field inline required>
+                <Checkbox label="I agree to the terms and conditions"/>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -711,11 +1009,16 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Transparent textarea -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Transparent textarea" code = {Code.transparent_textarea}>
 
-
+        <Form ui>
+            <Field>
+                <Label>Description</Label>
+                <Textarea transparent placeholder="Transparent textarea" cols="30" rows="3"/>
+            </Field>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -724,14 +1027,121 @@
 
 
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- XXXX -->
+    <!-- Evenly divided -->
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
-    <Example title = "XXXX" code = {Code.XXXX}>
+    <Example title = "Evenly divided" code = {Code.evenly_divided}>
 
-
+        <Form ui>
+            <Fields three>
+                <Field>
+                    <Label>First name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field>
+                    <Label>Middle name</Label>
+                    <Input text placeholder="Middle Name"/>
+                </Field>
+                <Field>
+                    <Label>Last name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+        </Form>
 
     </Example>
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Grouped fields -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Grouped fields" code = {Code.grouped_fields}>
+
+        <Form ui>
+            <Fields grouped>
+                <Field> <Radio ui value="1" bind:group={fruit} label="Apples"/> </Field>
+                <Field> <Radio ui value="2" bind:group={fruit} label="Oranges"/> </Field>
+                <Field> <Radio ui value="3" bind:group={fruit} label="Pears"/> </Field>
+                <Field> <Radio ui value="4" bind:group={fruit} label="Grapefruit"/> </Field>
+            </Fields>
+        </Form>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Equal width fields -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Equal width fields" code = {Code.equal_width_fields}>
+
+        <Form ui>
+            <Fields>
+                <Field>
+                    <Label>Username</Label>
+                    <Input text placeholder="Username"/>
+                </Field>
+                <Field>
+                    <Label>Password</Label>
+                    <Input password/>
+                </Field>
+            </Fields>
+            <Fields equal width>
+                <Field>
+                    <Label>First name</Label>
+                    <Input text placeholder="First Name"/>
+                </Field>
+                <Field>
+                    <Label>Middle name</Label>
+                    <Input text placeholder="Middle Name"/>
+                </Field>
+                <Field>
+                    <Label>Last name</Label>
+                    <Input text placeholder="Last Name"/>
+                </Field>
+            </Fields>
+        </Form>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Inline fields -->
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <Example title = "Inline fields" code = {Code.inline_fields}>
+
+        <Form ui>
+            <Fields inline>
+                <Label>Phone Number&nbsp;&nbsp;</Label>
+                <Field>
+                    <Input text placeholder="(xxx)"/>
+                </Field>
+                <Field>
+                    <Input text placeholder="xxx"/>
+                </Field>
+                <Field>
+                    <Input text placeholder="xxxx"/>
+                </Field>
+            </Fields>
+        </Form>
+
+        <Form ui>
+            <Fields inline>
+                <Label>What's your favorite fruit?&nbsp;&nbsp;</Label>
+                <Field> <Radio ui value="1" bind:group={fruit2} label="Apples"/> </Field>
+                <Field> <Radio ui value="2" bind:group={fruit2} label="Oranges"/> </Field>
+                <Field> <Radio ui value="3" bind:group={fruit2} label="Pears"/> </Field>
+                <Field> <Radio ui value="4" bind:group={fruit2} label="Grapefruit"/> </Field>
+            </Fields>
+        </Form>
+
+    </Example>
+    <!------------------------------------------------------------------------------------------------------------------------------------------------>
 
 </Examples>
