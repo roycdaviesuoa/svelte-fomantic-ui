@@ -4,7 +4,7 @@
   "main": "src/lib/svelte-fomantic-ui.svelte",
   "svelte": "src/lib/svelte-fomantic-ui.svelte",
   "private": false,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -34,7 +34,6 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "esprima": "^4.0.1",
     "svelte-preprocess": "^5.0.3",
     "svelte-prism": "latest",
     "vite-plugin-svelte": "latest"
