@@ -18,11 +18,11 @@ To see this working, follow [this link](http://13.54.202.240). If for some reaso
 ## Roadmap
 
 1. Minimum set of features complete - enough for a working website - all the Elements, Collections and Views - will work with pure css.
-    * To date: implementation of features is at about 90%, and I'm about three quarters of the way through testing and documentation.
+    * To date: implementation of features is at about 90%, and I'm about nine tenths of the way through testing and documentation.
 1. Main features complete - as above, but also the Modules.
-    * A couple of modules have been completed, tested and documented.
-1. All features complete - as above, but also the Behaviours and Theming.
-    * This hasn't been looked at yet (but it might work - see below).
+    * All modules are now completed, tested and documented.
+1. All features complete - as above, but also the Behaviors and Theming.
+    * Starting on behaviors - no reason to expect they won't work, but need testing of course.
 
 Note that in essence all these do already work (except for the Modules) because you can include Fomantic UI directly into your code using classes as with any javascript.
 

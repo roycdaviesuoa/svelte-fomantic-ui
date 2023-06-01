@@ -23,7 +23,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Advertisement" code = {Code.advertisement}>
 
-        <Ad ui medium rectangle style="display: none !important; min-height: 0px !important; height: 0px !important;" hidden="">
+        <Ad ui medium rectangle style="display: none !important; min-height: 0px !important; height: 0px !important;" hidden>
                 <!-- Ad Code Goes Here
                 <ins class="adsbygoogle"
                     style="display:inline-block;width:300px;height:250px"
@@ -34,7 +34,7 @@
                 </script>
                 !-->
           </Ad>
-          <Ad ui leaderboardstyle="display: none !important; min-height: 0px !important; height: 0px !important;" hidden="">
+          <Ad ui leaderboard style="display: none !important; min-height: 0px !important; height: 0px !important;" hidden>
             <!-- Leaderboard
             <ins class="adsbygoogle"
                 style="display:inline-block;width:728px;height:90px"
@@ -45,7 +45,7 @@
             </script>
             !-->
           </Ad>
-          <Ad ui banner style="display: none !important; min-height: 0px !important; height: 0px !important;" hidden="">
+          <Ad ui banner style="display: none !important; min-height: 0px !important; height: 0px !important;" hidden>
             <!-- Banner
             <ins class="adsbygoogle"
                 style="display:inline-block;width:468px;height:60px"
