@@ -90,7 +90,7 @@ titled : `
     <Icon add/>
 </Button>
 <Button ui icon data={{tooltip : "Add users to your feed", inverted : ""}}>
-<Icon add/>
+    <Icon add/>
 </Button>
     `,
     tooltip_position : `

@@ -12,7 +12,7 @@
 <Examples
     title="Svelte Fomantic UI"
     description="A Svelte wrapper for Fomantic UI.  If you are interested in the project, feel free to download, assess, and give me frank feedback..."
-    disclaimer="This is very much a work in progress, and is not yet suitable yet for using in any project as fundamental changes will occur..."
+    disclaimer="This is still a work in progress, but nearing testing completion.  Changes may yet occur at a fundamental level.  Use at your own risk."
 >
     <div class="example">
         <p />
