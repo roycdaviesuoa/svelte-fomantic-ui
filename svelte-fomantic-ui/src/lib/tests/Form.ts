@@ -669,11 +669,15 @@ const code = {
     required : `
 <Form ui>
     <Field required>
-        <Label>Last name</Label>
+        <Label input>Full name</Label>
         <Input text placeholder="Full Name"/>
     </Field>
-    <Field required inline>
-        <Checkbox label="I agree to the terms and conditions"/>
+    <Field inline required>
+        <Checkbox ui required>
+            <Label checkbox>
+                I agree to the terms and conditions
+            </Label>
+        </Checkbox>
     </Field>
 </Form>
     `,
