@@ -34,6 +34,7 @@
   import Header from './lib/tests/Header.svelte';
   import Icon from './lib/tests/Icon.svelte';
   import Image from './lib/tests/Image.svelte';
+  import Input from './lib/tests/Input.svelte';
   import Item from './lib/tests/Item.svelte';
   import Label from './lib/tests/Label.svelte';
   import List from './lib/tests/List.svelte';
@@ -65,7 +66,7 @@
   import Text from './lib/tests/Text.svelte';
   import Toast from './lib/tests/Toast.svelte';
   import Transition from './lib/tests/Transition.svelte';
-  import Input from './lib/tests/Input.svelte';
+  import Validation from './lib/tests/Validation.svelte';
 
 
   let currentRoute: any;
@@ -189,6 +190,8 @@
       currentRoute = Toast; break;
     case '/Transition':
       currentRoute = Transition; break;
+    case '/Validation':
+      currentRoute = Validation; break;
     default:
       break;
       // currentRoute = NotFound;

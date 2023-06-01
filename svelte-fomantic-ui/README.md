@@ -2,7 +2,7 @@
 
 ### This is now at late Beta stage.  The code is proving robust according to the testing done so far.
 ### Feel free to use cautiously in projects, and please give feedback.
-### Latest update (31st of May, 2023): We're almost there...  Just the Forms element to test out now.  And Search.
+### Latest update (2nd of June, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
 ----
 
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.

@@ -3,8 +3,6 @@
 // * The goal of this function is to produce a string that looks exactly like the javascript object input, just as a string.  This is needed, for example
 // * when converting an object into a string for putting into a command for jquery.
 // ******************************************************************************************************************************************************
-import {parseScript} from 'esprima';
-
 export function super_stringify (item:any, validJSON: boolean = false) : string {
     let answer = "";
 

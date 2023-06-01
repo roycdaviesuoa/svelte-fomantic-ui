@@ -167,7 +167,7 @@ const code = {
     <Segment ui>
         <Field>
             <Checkbox ui toggle name="gift" tabindex="0" bind:checked={form2.receipt.noreceipt}>
-                <Label>Do not include a receipt in the package</Label>
+                <Label input>Do not include a receipt in the package</Label>
             </Checkbox>
         </Field>
     </Segment>
@@ -178,7 +178,7 @@ const code = {
     field : `
 <Form ui>
     <Field>
-      <Label>User Input</Label>
+      <Label input>User Input</Label>
       <Input text/>
     </Field>
 </Form>
@@ -187,15 +187,15 @@ const code = {
 <Form ui>
     <Fields>
         <Field>
-            <Label>First name</Label>
+            <Label input>First name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Middle name</Label>
+            <Label input>Middle name</Label>
             <Input text placeholder="Middle Name"/>
         </Field>
         <Field>
-            <Label>Last name</Label>
+            <Label input>Last name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
@@ -204,15 +204,15 @@ const code = {
 <Form ui>
     <Fields three>
         <Field>
-            <Label>First name</Label>
+            <Label input>First name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Middle name</Label>
+            <Label input>Middle name</Label>
             <Input text placeholder="Middle Name"/>
         </Field>
         <Field>
-            <Label>Last name</Label>
+            <Label input>Last name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
@@ -221,7 +221,7 @@ const code = {
 <Form ui>
     <Fields inline>
         <Field eight wide>
-            <Label>Name</Label>
+            <Label input>Name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field three wide>
@@ -236,11 +236,11 @@ const code = {
     text_area : `
 <Form ui>
     <Field>
-        <Label>Text</Label>
+        <Label input>Text</Label>
         <Textarea/>
     </Field>
     <Field>
-        <Label>Short Text</Label>
+        <Label input>Short Text</Label>
         <Textarea rows="2"/>
     </Field>
 </Form>
@@ -280,7 +280,7 @@ const code = {
     dropdown : `
 <Form ui>
     <Field>
-        <Label>Gender</Label>
+        <Label input>Gender</Label>
         <Dropdown ui selection>
             <Icon dropdown/>
             <Text default>Gender</Text>
@@ -296,7 +296,7 @@ const code = {
 <Form ui>
     <Field>
         <Select ui multiple dropdown>
-            <Label>Country</Label>
+            <Label input>Country</Label>
             {#each Object.keys(countries) as key}
                 <Option value={key}><Flag _={key}/>{countries[key]}</Option>
             {/each}
@@ -318,8 +318,8 @@ const code = {
     calendar : `
 <Form ui>
     <Field>
-        <Label>Date</Label>
-        <Calendar ui>
+        <Label input>Date</Label>
+        <Calendar ui settings={{type:"date"}}>
             <Input ui icon left>
                 <Icon calendar/>
                 <Input text placeholder="Pick a date" name="date"/>
@@ -342,14 +342,14 @@ const code = {
     loading : `
 <Form ui loading>
     <Field>
-        <Label>E-mail</Label>
+        <Label input>E-mail</Label>
         <Input email placeholder="joe@schmoe.com"/>
     </Field>
     <Button ui submit>Submit</Button>
 </Form>
 <Form ui blue double loading>
     <Field>
-        <Label>E-mail</Label>
+        <Label input>E-mail</Label>
         <Input email placeholder="joe@schmoe.com"/>
     </Field>
     <Button ui submit>Submit</Button>
@@ -358,7 +358,7 @@ const code = {
     success : `
 <Form ui success>
     <Field>
-        <Label>E-mail</Label>
+        <Label input>E-mail</Label>
         <Input email placeholder="joe@schmoe.com"/>
     </Field>
     <Message ui success>
@@ -371,7 +371,7 @@ const code = {
     error : `
 <Form ui error>
     <Field>
-        <Label>E-mail</Label>
+        <Label input>E-mail</Label>
         <Input email placeholder="joe@schmoe.com"/>
     </Field>
     <Message ui error>
@@ -384,7 +384,7 @@ const code = {
     warning : `
 <Form ui warning>
     <Field>
-        <Label>E-mail</Label>
+        <Label input>E-mail</Label>
         <Input email placeholder="joe@schmoe.com"/>
     </Field>
     <Message ui warning>
@@ -399,7 +399,7 @@ const code = {
     info : `
 <Form ui info>
     <Field>
-        <Label>E-mail</Label>
+        <Label input>E-mail</Label>
         <Input email placeholder="joe@schmoe.com"/>
     </Field>
     <Message ui info>
@@ -415,16 +415,16 @@ const code = {
 <Form ui>
     <Fields two>
         <Field error>
-            <Label>First Name</Label>
+            <Label input>First Name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Last Name</Label>
+            <Label input>Last Name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
     <Field error>
-        <Label>Gender</Label>
+        <Label input>Gender</Label>
         <Dropdown ui selection>
             <Text default>Select</Text>
             <Icon dropdown/>
@@ -444,16 +444,16 @@ const code = {
 <Form ui>
     <Fields two>
         <Field warning>
-            <Label>First Name</Label>
+            <Label input>First Name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Last Name</Label>
+            <Label input>Last Name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
     <Field warning>
-        <Label>Gender</Label>
+        <Label input>Gender</Label>
         <Dropdown ui selection>
             <Text default>Select</Text>
             <Icon dropdown/>
@@ -473,16 +473,16 @@ const code = {
 <Form ui>
     <Fields two>
         <Field success>
-            <Label>First Name</Label>
+            <Label input>First Name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Last Name</Label>
+            <Label input>Last Name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
     <Field success>
-        <Label>Gender</Label>
+        <Label input>Gender</Label>
         <Dropdown ui selection>
             <Text default>Select</Text>
             <Icon dropdown/>
@@ -502,16 +502,16 @@ const code = {
 <Form ui>
     <Fields two>
         <Field info>
-            <Label>First Name</Label>
+            <Label input>First Name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Last Name</Label>
+            <Label input>Last Name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
     <Field info>
-        <Label>Gender</Label>
+        <Label input>Gender</Label>
         <Dropdown ui selection>
             <Text default>Select</Text>
             <Icon dropdown/>
@@ -531,11 +531,11 @@ const code = {
 <Form ui>
     <Fields two>
         <Field disabled>
-            <Label>First Name</Label>
+            <Label input>First Name</Label>
             <Input text disabled placeholder="First name" tabindex="-1"/>
         </Field>
         <Field disabled>
-            <Label>Last Name</Label>
+            <Label input>Last Name</Label>
             <Input text disabled placeholder="Last name" tabindex="-1"/>
         </Field>
     </Fields>
@@ -545,11 +545,11 @@ const code = {
 <Form ui>
     <Fields two>
         <Field readonly>
-            <Label>First Name</Label>
+            <Label input>First Name</Label>
             <Input text readonly placeholder="First name" tabindex="-1"/>
         </Field>
         <Field readonly>
-            <Label>Last Name</Label>
+            <Label input>Last Name</Label>
             <Input text readonly placeholder="Last name" tabindex="-1"/>
         </Field>
     </Fields>
@@ -560,11 +560,11 @@ const code = {
     <Form ui _={size}>
         <Fields two>
             <Field>
-                <Label>First Name</Label>
+                <Label input>First Name</Label>
                 <Input text placeholder="First name" tabindex="-1"/>
             </Field>
             <Field>
-                <Label>Last Name</Label>
+                <Label input>Last Name</Label>
                 <Input text placeholder="Last name" tabindex="-1"/>
             </Field>
         </Fields>
@@ -577,25 +577,25 @@ const code = {
 <Form ui equal width>
     <Fields>
         <Field>
-            <Label>Username</Label>
+            <Label input>Username</Label>
             <Input text placeholder="Username"/>
         </Field>
         <Field>
-            <Label>Password</Label>
+            <Label input>Password</Label>
             <Input password/>
         </Field>
     </Fields>
     <Fields>
         <Field>
-            <Label>First name</Label>
+            <Label input>First name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Middle name</Label>
+            <Label input>Middle name</Label>
             <Input text placeholder="Middle Name"/>
         </Field>
         <Field>
-            <Label>Last name</Label>
+            <Label input>Last name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
@@ -606,11 +606,11 @@ const code = {
     <Form ui inverted>
         <Fields two>
             <Field>
-                <Label>First Name</Label>
+                <Label input>First Name</Label>
                 <Input text placeholder="First name" tabindex="-1"/>
             </Field>
             <Field>
-                <Label>Last Name</Label>
+                <Label input>Last Name</Label>
                 <Input text placeholder="Last name" tabindex="-1"/>
             </Field>
         </Fields>
@@ -621,7 +621,7 @@ const code = {
     inline_field : `
 <Form ui>
     <Field inline>
-      <Label>Last name</Label>
+      <Label input>Last name</Label>
       <Input text placeholder="Full Name"/>
     </Field>
 </Form>
@@ -630,15 +630,15 @@ const code = {
 <Form ui>
     <Fields>
         <Field six wide>
-            <Label>First name</Label>
+            <Label input>First name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field four wide>
-            <Label>Middle</Label>
+            <Label input>Middle</Label>
             <Input text placeholder="Middle Name"/>
         </Field>
         <Field six wide>
-            <Label>Last name</Label>
+            <Label input>Last name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
@@ -684,7 +684,7 @@ const code = {
     transparent_textarea : `
 <Form ui>
     <Field>
-        <Label>Description</Label>
+        <Label input>Description</Label>
         <Textarea transparent placeholder="Transparent textarea" cols="30" rows="3"/>
     </Field>
 </Form>
@@ -693,15 +693,15 @@ const code = {
 <Form ui>
     <Fields three>
         <Field>
-            <Label>First name</Label>
+            <Label input>First name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Middle name</Label>
+            <Label input>Middle name</Label>
             <Input text placeholder="Middle Name"/>
         </Field>
         <Field>
-            <Label>Last name</Label>
+            <Label input>Last name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
@@ -721,25 +721,25 @@ const code = {
 <Form ui>
     <Fields>
         <Field>
-            <Label>Username</Label>
+            <Label input>Username</Label>
             <Input text placeholder="Username"/>
         </Field>
         <Field>
-            <Label>Password</Label>
+            <Label input>Password</Label>
             <Input password/>
         </Field>
     </Fields>
     <Fields equal width>
         <Field>
-            <Label>First name</Label>
+            <Label input>First name</Label>
             <Input text placeholder="First Name"/>
         </Field>
         <Field>
-            <Label>Middle name</Label>
+            <Label input>Middle name</Label>
             <Input text placeholder="Middle Name"/>
         </Field>
         <Field>
-            <Label>Last name</Label>
+            <Label input>Last name</Label>
             <Input text placeholder="Last Name"/>
         </Field>
     </Fields>
@@ -748,7 +748,7 @@ const code = {
     inline_fields : `
 <Form ui>
     <Fields inline>
-        <Label>Phone Number&nbsp;&nbsp;</Label>
+        <Label input>Phone Number</Label>
         <Field>
             <Input text placeholder="(xxx)"/>
         </Field>
@@ -763,7 +763,7 @@ const code = {
 
 <Form ui>
     <Fields inline>
-        <Label>What's your favorite fruit?&nbsp;&nbsp;</Label>
+        <Label input>What's your favorite fruit?</Label>
         <Field> <Radio ui value="1" bind:group={fruit2} label="Apples"/> </Field>
         <Field> <Radio ui value="2" bind:group={fruit2} label="Oranges"/> </Field>
         <Field> <Radio ui value="3" bind:group={fruit2} label="Pears"/> </Field>

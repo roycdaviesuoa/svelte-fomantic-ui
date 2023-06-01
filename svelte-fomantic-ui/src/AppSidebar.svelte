@@ -62,6 +62,7 @@
     import Text from './lib/tests/Text.svelte';
     import Toast from './lib/tests/Toast.svelte';
     import Transition from './lib/tests/Transition.svelte';
+    import Validation from './lib/tests/Validation.svelte';
 
     import {version} from '../package.json';
 
@@ -156,6 +157,14 @@
             <Link item on:click={()=>{currentPage=Tab; doMenuToggle();}}>Tab</Link>    
             <Link item on:click={()=>{currentPage=Toast; doMenuToggle();}}>Toast</Link>    
             <Link item on:click={()=>{currentPage=Transition; doMenuToggle();}}>Transition</Link>    
+        </MenuSFU>
+    </ItemSFU>
+    <ItemSFU>
+        <HeaderSFU ui mini inverted>Behaviors</HeaderSFU>
+        <MenuSFU>
+            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>API</Link>    
+            <Link item on:click={()=>{currentPage=Validation; doMenuToggle();}}>Form Validation</Link>    
+            <Link item on:click={()=>{currentPage=ComingSoon; doMenuToggle();}}>Visibility</Link>      
         </MenuSFU>
     </ItemSFU>
 <!-- </MenuSFU> -->

@@ -223,7 +223,7 @@
             <Segment ui>
                 <Field>
                     <Checkbox ui toggle name="gift" tabindex="0" bind:checked={form2.receipt.noreceipt}>
-                        <Label>Do not include a receipt in the package</Label>
+                        <Label input>Do not include a receipt in the package</Label>
                     </Checkbox>
                 </Field>
             </Segment>
@@ -243,7 +243,7 @@
 
         <Form ui>
             <Field>
-              <Label>User Input</Label>
+              <Label input>User Input</Label>
               <Input text/>
             </Field>
         </Form>
@@ -262,15 +262,15 @@
         <Form ui>
             <Fields>
                 <Field>
-                    <Label>First name</Label>
+                    <Label input>First name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Middle name</Label>
+                    <Label input>Middle name</Label>
                     <Input text placeholder="Middle Name"/>
                 </Field>
                 <Field>
-                    <Label>Last name</Label>
+                    <Label input>Last name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
@@ -279,15 +279,15 @@
         <Form ui>
             <Fields three>
                 <Field>
-                    <Label>First name</Label>
+                    <Label input>First name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Middle name</Label>
+                    <Label input>Middle name</Label>
                     <Input text placeholder="Middle Name"/>
                 </Field>
                 <Field>
-                    <Label>Last name</Label>
+                    <Label input>Last name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
@@ -296,7 +296,7 @@
         <Form ui>
             <Fields inline>
                 <Field eight wide>
-                    <Label>Name</Label>
+                    <Label input>Name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field three wide>
@@ -321,11 +321,11 @@
 
         <Form ui>
             <Field>
-                <Label>Text</Label>
+                <Label input>Text</Label>
                 <Textarea/>
             </Field>
             <Field>
-                <Label>Short Text</Label>
+                <Label input>Short Text</Label>
                 <Textarea rows="2"/>
             </Field>
         </Form>
@@ -395,7 +395,7 @@
 
         <Form ui>
             <Field>
-                <Label>Gender</Label>
+                <Label input>Gender</Label>
                 <Dropdown ui selection>
                     <Icon dropdown/>
                     <Text default>Gender</Text>
@@ -421,7 +421,7 @@
         <Form ui>
             <Field>
                 <Select ui multiple dropdown>
-                    <Label>Country</Label>
+                    <Label input>Country</Label>
                     {#each Object.keys(countries) as key}
                         <Option value={key}><Flag _={key}/>{countries[key]}</Option>
                     {/each}
@@ -463,8 +463,8 @@
 
         <Form ui>
             <Field>
-                <Label>Date</Label>
-                <Calendar ui>
+                <Label input>Date</Label>
+                <Calendar ui settings={{type:"date"}}>
                     <Input ui icon left>
                         <Icon calendar/>
                         <Input text placeholder="Pick a date" name="date"/>
@@ -507,14 +507,14 @@
 
         <Form ui loading>
             <Field>
-                <Label>E-mail</Label>
+                <Label input>E-mail</Label>
                 <Input email placeholder="joe@schmoe.com"/>
             </Field>
             <Button ui submit>Submit</Button>
         </Form>
         <Form ui blue double loading>
             <Field>
-                <Label>E-mail</Label>
+                <Label input>E-mail</Label>
                 <Input email placeholder="joe@schmoe.com"/>
             </Field>
             <Button ui submit>Submit</Button>
@@ -533,7 +533,7 @@
 
         <Form ui success>
             <Field>
-                <Label>E-mail</Label>
+                <Label input>E-mail</Label>
                 <Input email placeholder="joe@schmoe.com"/>
             </Field>
             <Message ui success>
@@ -556,7 +556,7 @@
 
         <Form ui error>
             <Field>
-                <Label>E-mail</Label>
+                <Label input>E-mail</Label>
                 <Input email placeholder="joe@schmoe.com"/>
             </Field>
             <Message ui error>
@@ -579,7 +579,7 @@
 
         <Form ui warning>
             <Field>
-                <Label>E-mail</Label>
+                <Label input>E-mail</Label>
                 <Input email placeholder="joe@schmoe.com"/>
             </Field>
             <Message ui warning>
@@ -604,7 +604,7 @@
 
         <Form ui info>
             <Field>
-                <Label>E-mail</Label>
+                <Label input>E-mail</Label>
                 <Input email placeholder="joe@schmoe.com"/>
             </Field>
             <Message ui info>
@@ -630,16 +630,16 @@
         <Form ui>
             <Fields two>
                 <Field error>
-                    <Label>First Name</Label>
+                    <Label input>First Name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Last Name</Label>
+                    <Label input>Last Name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
             <Field error>
-                <Label>Gender</Label>
+                <Label input>Gender</Label>
                 <Dropdown ui selection>
                     <Text default>Select</Text>
                     <Icon dropdown/>
@@ -669,16 +669,16 @@
         <Form ui>
             <Fields two>
                 <Field warning>
-                    <Label>First Name</Label>
+                    <Label input>First Name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Last Name</Label>
+                    <Label input>Last Name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
             <Field warning>
-                <Label>Gender</Label>
+                <Label input>Gender</Label>
                 <Dropdown ui selection>
                     <Text default>Select</Text>
                     <Icon dropdown/>
@@ -708,16 +708,16 @@
         <Form ui>
             <Fields two>
                 <Field success>
-                    <Label>First Name</Label>
+                    <Label input>First Name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Last Name</Label>
+                    <Label input>Last Name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
             <Field success>
-                <Label>Gender</Label>
+                <Label input>Gender</Label>
                 <Dropdown ui selection>
                     <Text default>Select</Text>
                     <Icon dropdown/>
@@ -747,16 +747,16 @@
         <Form ui>
             <Fields two>
                 <Field info>
-                    <Label>First Name</Label>
+                    <Label input>First Name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Last Name</Label>
+                    <Label input>Last Name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
             <Field info>
-                <Label>Gender</Label>
+                <Label input>Gender</Label>
                 <Dropdown ui selection>
                     <Text default>Select</Text>
                     <Icon dropdown/>
@@ -786,11 +786,11 @@
         <Form ui>
             <Fields two>
                 <Field disabled>
-                    <Label>First Name</Label>
+                    <Label input>First Name</Label>
                     <Input text disabled placeholder="First name" tabindex="-1"/>
                 </Field>
                 <Field disabled>
-                    <Label>Last Name</Label>
+                    <Label input>Last Name</Label>
                     <Input text disabled placeholder="Last name" tabindex="-1"/>
                 </Field>
             </Fields>
@@ -810,11 +810,11 @@
         <Form ui>
             <Fields two>
                 <Field readonly>
-                    <Label>First Name</Label>
+                    <Label input>First Name</Label>
                     <Input text readonly placeholder="First name" tabindex="-1"/>
                 </Field>
                 <Field readonly>
-                    <Label>Last Name</Label>
+                    <Label input>Last Name</Label>
                     <Input text readonly placeholder="Last name" tabindex="-1"/>
                 </Field>
             </Fields>
@@ -835,16 +835,16 @@
             <Form ui _={size}>
                 <Fields two>
                     <Field>
-                        <Label>First Name</Label>
+                        <Label input>First Name</Label>
                         <Input text placeholder="First name" tabindex="-1"/>
                     </Field>
                     <Field>
-                        <Label>Last Name</Label>
+                        <Label input>Last Name</Label>
                         <Input text placeholder="Last name" tabindex="-1"/>
                     </Field>
                 </Fields>
             </Form>
-            <Button ui submit>Submit</Button>
+            <Button ui _={size} submit>Submit</Button>
             <br/><br/>
         {/each}
 
@@ -862,25 +862,25 @@
         <Form ui equal width>
             <Fields>
                 <Field>
-                    <Label>Username</Label>
+                    <Label input>Username</Label>
                     <Input text placeholder="Username"/>
                 </Field>
                 <Field>
-                    <Label>Password</Label>
+                    <Label input>Password</Label>
                     <Input password/>
                 </Field>
             </Fields>
             <Fields>
                 <Field>
-                    <Label>First name</Label>
+                    <Label input>First name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Middle name</Label>
+                    <Label input>Middle name</Label>
                     <Input text placeholder="Middle Name"/>
                 </Field>
                 <Field>
-                    <Label>Last name</Label>
+                    <Label input>Last name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
@@ -901,11 +901,11 @@
             <Form ui inverted>
                 <Fields two>
                     <Field>
-                        <Label>First Name</Label>
+                        <Label input>First Name</Label>
                         <Input text placeholder="First name" tabindex="-1"/>
                     </Field>
                     <Field>
-                        <Label>Last Name</Label>
+                        <Label input>Last Name</Label>
                         <Input text placeholder="Last name" tabindex="-1"/>
                     </Field>
                 </Fields>
@@ -926,7 +926,7 @@
 
         <Form ui>
             <Field inline>
-              <Label>Last name</Label>
+              <Label input>Last name</Label>
               <Input text placeholder="Full Name"/>
             </Field>
         </Form>
@@ -945,15 +945,15 @@
         <Form ui>
             <Fields>
                 <Field six wide>
-                    <Label>First name</Label>
+                    <Label input>First name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field four wide>
-                    <Label>Middle</Label>
+                    <Label input>Middle</Label>
                     <Input text placeholder="Middle Name"/>
                 </Field>
                 <Field six wide>
-                    <Label>Last name</Label>
+                    <Label input>Last name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
@@ -1019,7 +1019,7 @@
 
         <Form ui>
             <Field>
-                <Label>Description</Label>
+                <Label input>Description</Label>
                 <Textarea transparent placeholder="Transparent textarea" cols="30" rows="3"/>
             </Field>
         </Form>
@@ -1038,15 +1038,15 @@
         <Form ui>
             <Fields three>
                 <Field>
-                    <Label>First name</Label>
+                    <Label input>First name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Middle name</Label>
+                    <Label input>Middle name</Label>
                     <Input text placeholder="Middle Name"/>
                 </Field>
                 <Field>
-                    <Label>Last name</Label>
+                    <Label input>Last name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
@@ -1086,25 +1086,25 @@
         <Form ui>
             <Fields>
                 <Field>
-                    <Label>Username</Label>
+                    <Label input>Username</Label>
                     <Input text placeholder="Username"/>
                 </Field>
                 <Field>
-                    <Label>Password</Label>
+                    <Label input>Password</Label>
                     <Input password/>
                 </Field>
             </Fields>
             <Fields equal width>
                 <Field>
-                    <Label>First name</Label>
+                    <Label input>First name</Label>
                     <Input text placeholder="First Name"/>
                 </Field>
                 <Field>
-                    <Label>Middle name</Label>
+                    <Label input>Middle name</Label>
                     <Input text placeholder="Middle Name"/>
                 </Field>
                 <Field>
-                    <Label>Last name</Label>
+                    <Label input>Last name</Label>
                     <Input text placeholder="Last Name"/>
                 </Field>
             </Fields>
@@ -1122,7 +1122,7 @@
 
         <Form ui>
             <Fields inline>
-                <Label>Phone Number&nbsp;&nbsp;</Label>
+                <Label input>Phone Number</Label>
                 <Field>
                     <Input text placeholder="(xxx)"/>
                 </Field>
@@ -1137,7 +1137,7 @@
 
         <Form ui>
             <Fields inline>
-                <Label>What's your favorite fruit?&nbsp;&nbsp;</Label>
+                <Label input>What's your favorite fruit?</Label>
                 <Field> <Radio ui value="1" bind:group={fruit2} label="Apples"/> </Field>
                 <Field> <Radio ui value="2" bind:group={fruit2} label="Oranges"/> </Field>
                 <Field> <Radio ui value="3" bind:group={fruit2} label="Pears"/> </Field>
@@ -1224,7 +1224,7 @@
                     <Input text placeholder="First Name" name="name"/>
                 </Field>
                 <Field>
-                    <Label>Gender</Label>
+                    <Label input>Gender</Label>
                     <Select ui dropdown name="gender">
                         <Option value="">Gender</Option>
                         <Option value="male">Male</Option>
@@ -1234,16 +1234,16 @@
             </Fields>
             <Fields two>
                 <Field>
-                    <Label>Username</Label>
+                    <Label input>Username</Label>
                     <Input text placeholder="Username" name="username"/>
                 </Field>
                 <Field>
-                    <Label>Password</Label>
+                    <Label input>Password</Label>
                     <Input password name="password"/>
                 </Field>
             </Fields>
             <Field>
-                <Label>Skills</Label>
+                <Label input>Skills</Label>
                 <Select ui dropdown name="skills" multiple>
                     <Option value="">Select Skills</Option>
                     <Option value="css">CSS</Option>
@@ -1287,7 +1287,7 @@
             }
           }}>
             <Field>
-                <Label>Color</Label>
+                <Label input>Color</Label>
                 <Input text placeholder="Enter rgb" name="color" value="rgb(255, 255, 255)"/>
             </Field>
             <Button ui primary submit>Submit</Button>

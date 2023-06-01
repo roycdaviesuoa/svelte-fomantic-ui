@@ -2,7 +2,7 @@
 
 ### This is now at late Beta stage.  The code is proving robust according to the testing done so far.
 ### Feel free to use cautiously in projects, and please give feedback.
-### Latest update (31st of May, 2023): We're almost there...  Just the Forms element to test out now.  And Search.
+### Latest update (2nd of June, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
 
 ---
 A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
@@ -99,3 +99,9 @@ Note that in essence all these do already work (except for the Modules) because 
 | Tab | X | X | [/Tab](./svelte-fomantic-ui/src/lib/tests/Tab.svelte) | [Tab](https://fomantic-ui.com/modules/tab.html)
 | Toast | X | X | [/Toast](./svelte-fomantic-ui/src/lib/tests/Toast.svelte) | [Toast](https://fomantic-ui.com/modules/toast.html)
 | Transition | X | X | [/Transition](./svelte-fomantic-ui/src/lib/tests/Transition.svelte) | [Transition](https://fomantic-ui.com/modules/transition.html)
+
+| Behaviors        | Implemented | Tested and Documented | Example Code | Fomantic UI page |
+|------------------|:-----------:|:---------------------:|--------------|------------------|
+| API |  |  |  | [API](https://fomantic-ui.com/behaviors/api.html) 
+| Form validation | X | _ | [/Validation](./svelte-fomantic-ui/src/lib/tests/Validation.svelte) | [Form validation](https://fomantic-ui.com/behaviors/form.html) 
+| Visibility |  |  |  | [Visibility](https://fomantic-ui.com/behaviors/visibility.html) 
