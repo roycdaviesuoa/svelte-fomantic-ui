@@ -14,7 +14,7 @@
             color: {
                 identifier: 'color',
                 rules: [{
-                    type: `regExp[/rgb\\((\\d{1,3}), (\\d{1,3}), (\\d{1,3})\\)/i]`,
+                    type: `regExp[/rgb\\\\((\\\\d{1,3}), (\\\\d{1,3}), (\\\\d{1,3})\\\\)/i]`,
                     prompt: 'Incorrect format',
                 }]
             }
