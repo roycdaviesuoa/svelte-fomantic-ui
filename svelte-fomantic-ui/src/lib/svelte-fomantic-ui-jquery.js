@@ -198,6 +198,7 @@ export const behavior = function(...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function get_settings(settings)
 {
+    console.log(settings);
     let return_settings = [];
     if (settings) {
         if (Array.isArray(settings))
@@ -218,6 +219,7 @@ function get_settings(settings)
             return_settings.push(settings);
         }
     }
+    console.log(return_settings);
     return return_settings;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Form, Field, Fields, Input, Label, Checkbox, Button, Select, Option } from "../svelte-fomantic-ui.svelte";
+    import { Form, Field, Fields, Input, Label, Checkbox, Button, Select, Option, Message } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Validation';
@@ -148,8 +148,8 @@
               color: {
                 identifier: 'color',
                 rules: [{
-                  type: 'regExp',
-                  value: /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/i,
+                    type: `regExp[/rgb\\\\((\\\\d{1,3}), (\\\\d{1,3}), (\\\\d{1,3})\\\\)/i]`,
+                    prompt: "Invalid color",
                 }]
               }
             }
@@ -158,6 +158,7 @@
                 <Label input>Color</Label>
                 <Input text placeholder="Enter rgb" name="color" value="rgb(255, 255, 255)"/>
             </Field>
+            <Message ui error/>
             <Button ui primary submit>Submit</Button>
         </Form>
 

@@ -5,37 +5,50 @@
 -->
 
 <script lang="ts">
-    import { update, behavior, reset, parameter, Progress, Segment, Grid, Row, Column, Button, Bar, Label } from "../svelte-fomantic-ui.svelte";
-
-    const exampleData = {
-        total: 3, 
-        value: 0
-    };
-    const callBacks = {
-        onChange: {
-                percent: parameter,
-                value: parameter,
-                total: parameter,
-                
-                _:(data)=>{console.log(data);}
-            }
-        };
+    import { behavior, Form, Field, Label, Input, Button, Message } from "../svelte-fomantic-ui.svelte";
 </script>
 
-<Segment ui>
+<Form ui segment settings={{
+        shouldTrim: false,
+        fields: {
+            color: {
+                identifier: 'color',
+                rules: [{
+                    type: `regExp[/rgb\\((\\d{1,3}), (\\d{1,3}), (\\d{1,3})\\)/i]`,
+                    prompt: 'Incorrect format',
+                }]
+            }
+        }
+    }}>
+    <Field>
+        <Label input>Color</Label>
+        <Input type="text" placeholder="Enter rgb" name="color" value="rgb(255, 255, 255)"/>
+    </Field>
+    <Button ui primary submit>Submit</Button>
+    <Message ui error/>
+</Form>
 
-    <Grid ui>
-        <Row two column>
-            <Column><Button ui green fluid on:click={()=>{update("example4", exampleData); reset("example4")}}>Reset</Button></Column>
-            <Column><Button ui orange fluid on:click={()=>{behavior({id:"example4", type:'progress', commands:['increment']})}}>Increment</Button></Column>
-        </Row>
-    </Grid>
-    <Progress ui teal activate id="example4" settings={exampleData} callbacks={callBacks}>
-        <Bar>
-            <Progress />
-        </Bar>
-        <Label>Adding Photos</Label>
-    </Progress>
-
-</Segment>
+<Form ui segment id="ex4">
+    <Field>
+        <Label input>Color</Label>
+        <Input text placeholder="Enter rgb" name="color4" value="rgb(255, 255, 255)"/>
+    </Field>
+    <Button ui primary submit on:click={() => {
+        behavior({id: "ex4", type: "form", settings: {
+            shouldTrim: false,
+            fields: {
+                regex: {
+                    identifier: 'color4',
+                    rules: [{
+                        type: `regExp[/rgb\\\\((\\\\d{1,3}), (\\\\d{1,3}), (\\\\d{1,3})\\\\)/i]`,
+                        prompt: 'Incorrect format',
+                    }]
+                }
+            }
+            }
+        });
+        // behavior({id: "ex4", type: "form", commands: ["validate form"]});
+    }}>Submit</Button>
+    <Message ui error/>
+</Form>
 

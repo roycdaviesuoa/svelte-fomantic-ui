@@ -10,6 +10,8 @@
     export let ui: boolean = false;
     export let settings: object = undefined;
     export let popup: object | boolean = undefined;
+
+    console.log(settings);
     
 </script>
 
