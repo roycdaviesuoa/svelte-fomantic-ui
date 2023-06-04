@@ -881,20 +881,18 @@ const code = {
 {/each}
     `,
     icon: `
-<Menu ui icon labeled>
-    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
-        <Link item active={ex29===i} on:click={()=>ex29=i}>
-            <Icon _={icon.i}/>
-            {icon.n}
+<Menu ui icon>
+    {#each ['gamepad', 'video camera', 'play'] as icon, i}
+        <Link item active={ex28===i} on:click={()=>ex28=i}>
+            <Icon _={icon}/>
         </Link>
     {/each}
 </Menu>
 
-<Menu ui icon vertical labeled>
-    {#each [{i: 'gamepad', n: 'Games'}, {i: 'video camera', n: 'Channels'}, {i: 'play', n: 'Videos'}] as icon, i}
-        <Link item active={ex29===i} on:click={()=>ex29=i}>
-            <Icon _={icon.i}/>
-            {icon.n}
+<Menu ui icon vertical>
+    {#each ['gamepad', 'video camera', 'play'] as icon, i}
+        <Link item active={ex28===i} on:click={()=>ex28=i}>
+            <Icon _={icon}/>
         </Link>
     {/each}
 </Menu>
