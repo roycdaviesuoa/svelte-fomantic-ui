@@ -47,7 +47,7 @@
         {#if visibility[0]==="select"}
             <Fields>
                 {#each items as item}
-                <Field> <Checkbox ui name={item} value={item} bind:group={selectedOption} label={item}/> </Field>
+                    <Field> <Checkbox ui name={item} value={item} bind:group={selectedOption} label={item}/> </Field>
                 {/each}
             </Fields>
         {/if}
