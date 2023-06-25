@@ -169,6 +169,8 @@ export const behavior = function(...args) {
     {
         // Data sent in is in the form of an object
         returnvalue = eval(construct_jquery_command(firstarg));
+        // const jqueryFunction = new Function(construct_jquery_command(firstarg));
+        // returnvalue = jqueryFunction();
     }
     else
     {
@@ -198,7 +200,7 @@ export const behavior = function(...args) {
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 function get_settings(settings)
 {
-    console.log(settings);
+    // console.log(settings);
     let return_settings = [];
     if (settings) {
         if (Array.isArray(settings))
@@ -219,7 +221,7 @@ function get_settings(settings)
             return_settings.push(settings);
         }
     }
-    console.log(return_settings);
+    // console.log(return_settings);
     return return_settings;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -308,7 +310,11 @@ function deserialize(serialized)
                     if (typeof val2 === 'string' && (val2.startsWith('function') || val2.indexOf('=>') > -1)) {
                         // If the property is a function string, convert it back into a function
                         obj["settings"][key2] = eval('('+val2+')');
-                        // obj[key] = new Function(val);
+                        // console.log(val2);
+                        // const objFunction2 = new Function("value", val2);
+                        // console.log(objFunction2);
+                        // console.log(eval('('+val2+')'));
+                        // obj["settings"][key2] = objFunction2;
                     } else {
                         // Otherwise, add the property to the deserialized object
                         obj["settings"][key2] = val2;
@@ -317,8 +323,9 @@ function deserialize(serialized)
             }
             else if (typeof val === 'string' && (val.startsWith('function') || val.indexOf('=>') > -1)) {
                 // If the property is a function string, convert it back into a function
-                obj[key] = eval('('+val+')');
-                // obj[key] = new Function(val);
+                obj[key] = eval(val);
+                // const objFunction = new Function('('+val+')');
+                // obj[key] = objFunction;
             } else {
                 // Otherwise, add the property to the deserialized object
                 obj[key] = val;

@@ -8,7 +8,7 @@ export function super_stringify (item:any, validJSON: boolean = false) : string 
 
     if (typeof item === 'string') {
         // Convert a string, but watch out for quotes inside the string.
-        console.log(item);
+        // console.log(item);
         answer += "\"" + item.replace(/"/g, '\\"').replace(/'/g, "\\'") + "\"";
     }
     else if (Array.isArray(item)) {
