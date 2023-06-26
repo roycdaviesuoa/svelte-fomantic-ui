@@ -20,15 +20,21 @@ $(() =>
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // (Re)load the modules, which mostly is required to initialize each of the modules once the page is loaded.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-export const reload = function()
+export const reload = function(id = null)
 {
     // initialize the Tablesort code
     tableSort();
 
     // Go through each of the modules
-    $("[data-module]").each(function() {
-        reload_module(this);
-    });
+    if (id === null) {
+        $("[data-module]").each(function() {
+            reload_module(this);
+        });
+    } else {
+        $("#"+id).find("[data-module]").each(function() {
+            reload_module(this);
+        });
+    }
 };
 
 const reload_module = function(self) {
@@ -168,9 +174,9 @@ export const behavior = function(...args) {
     if (typeof firstarg === 'object')
     {
         // Data sent in is in the form of an object
-        returnvalue = eval(construct_jquery_command(firstarg));
-        // const jqueryFunction = new Function(construct_jquery_command(firstarg));
-        // returnvalue = jqueryFunction();
+        // returnvalue = eval(construct_jquery_command(firstarg));
+        const jqueryFunction = new Function(construct_jquery_command(firstarg));
+        returnvalue = jqueryFunction();
     }
     else
     {
