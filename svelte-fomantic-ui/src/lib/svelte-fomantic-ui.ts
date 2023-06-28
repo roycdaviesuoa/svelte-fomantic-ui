@@ -92,7 +92,6 @@ export function serialize(...parameters:any[])
     }
 
     let serialized = super_stringify(obj, true);
-    // console.log(parameters, serialized);
     return (serialized);
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------

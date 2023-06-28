@@ -5,10 +5,17 @@
 -->
 
 <script lang="ts">
-    import { Form, Field, Fields, Input, Label, Checkbox, Button, Select, Option, Message } from "../svelte-fomantic-ui.svelte";
+    import { behavior, Form, Field, Fields, Input, Label, Checkbox, Button, Select, Option, Message } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Validation';
+
+    function ex3Function (value) {
+        if (value == 'dog') {
+            return 'I told you to put cat, not dog!';
+        }
+        return 'That is not cat';
+    }
 </script>
 
 
@@ -193,17 +200,12 @@
                     rules: [
                         {
                             type   : 'isExactly[cat]',
-                            prompt : (value) => {
-                                if (value == 'dog') {
-                                    return 'I told you to put cat, not dog!';
-                                }
-                                return 'That is not cat';
-                            }
+                            prompt : (data) => {return "wrong"}
                         }
                     ]
                 },
             }
-          }}>
+        }}>
             <Fields two>
                 <Field>
                     <Label input>Field 1</Label>

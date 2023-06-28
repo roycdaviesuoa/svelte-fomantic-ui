@@ -8,7 +8,6 @@ export function super_stringify (item:any, validJSON: boolean = false) : string 
 
     if (typeof item === 'string') {
         // Convert a string, but watch out for quotes inside the string.
-        // console.log(item);
         answer += "\"" + item.replace(/"/g, '\\"').replace(/'/g, "\\'") + "\"";
     }
     else if (Array.isArray(item)) {
@@ -24,6 +23,7 @@ export function super_stringify (item:any, validJSON: boolean = false) : string 
     else if (typeof item === "function") {
         // Convert a function, and remove extraneous tabs, newlines and linefeeds.
         let theFunction = item.toString().replace(/[\n\t\r](?=(?:(?:[^"]*"){2})*[^"]*$)/g, "");
+
         if(validJSON) theFunction = theFunction.replace(/"/g, '\\"').replace(/'/g, "\\'");
         answer += (validJSON?"\"":"") + theFunction + (validJSON?"\"":"");
     }
