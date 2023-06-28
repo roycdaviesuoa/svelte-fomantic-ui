@@ -297,6 +297,12 @@ The third function is `reload`, which is useful when you need to re-initialize t
 </Accordion>
 ```
 
+You can also pass a string to the reload function that is the id of an element.  That object and all it's children are then reloaded.
+
+```html
+    reload("login_form")
+```
+
 ## Examples and testing
 
 This project contains examples and tests.
