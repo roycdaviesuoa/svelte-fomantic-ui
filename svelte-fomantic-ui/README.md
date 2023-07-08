@@ -1,11 +1,11 @@
-# Svelte Fomantic UI Wrapper
+# Svelte Fomantic UI Wrapper for Client-Side WebApps
 
 ### This is now at late Beta stage.  The code is proving robust according to the testing done so far.
 ### Feel free to use cautiously in projects, and please give feedback.
-### Latest update (2nd of June, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
+### Latest update (9th of July, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
 ----
 
-A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
+A simple Svelte wrapper for Fomantic UI for creating client-side WebApps.  Note that this does not (yet) work with Server Side Rendering.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
 
 ----
 ## Progress
@@ -149,8 +149,16 @@ is equivalent to:
 
 This has been packaged for installation with `yarn`, but should also work with `npm` (testing yet to be conducted).  Presently, you can install in the following way:
 
-1. Install the svelte fomantic UI with `yarn add svelte-fomantic-ui`
-1. Add the following lines to your index.html head section:
+1. First create your App Framework - here we are using vite to create a client-side webapp:
+
+```bash
+yarn create vite my-app --template svelte-ts
+cd my-app
+yarn
+yarn add svelte-fomantic-ui
+```
+
+2. Add the following lines to your index.html head section:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
@@ -160,6 +168,8 @@ This has been packaged for installation with `yarn`, but should also work with `
 ```
 
 Notice that JQuery is being included in this project as fomantic UI depends on it.  If you prefer, you can also include the jquery and fomantic / semantic ui css and js files locally and link to them there.
+
+3. You can test the app using `yarn run dev` or build it using `yarn run build`.
 
 ## Usage
 

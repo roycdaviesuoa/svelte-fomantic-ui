@@ -1,11 +1,11 @@
-# Svelte Fomantic UI Wrapper
+# Svelte Fomantic UI Wrapper for Client-Side WebApps
 
 ### This is now at late Beta stage.  The code is proving robust according to the testing done so far.
 ### Feel free to use cautiously in projects, and please give feedback.
-### Latest update (2nd of June, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
+### Latest update (9th of July, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
 
 ---
-A simple Svelte wrapper for Fomantic UI.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
+A simple Svelte wrapper for Fomantic UI for creating client-side WebApps.  Note that this does not (yet) work with Server Side Rendering.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.
 
 ---
 For more details, look inside the svelte-fomantic-ui folder, and in particular, check the [README](./svelte-fomantic-ui/README.md)
@@ -13,7 +13,7 @@ For more details, look inside the svelte-fomantic-ui folder, and in particular, 
 The source code is found in the folder `src/lib`.  There are some examples and tests in the `src/lib/tests` folder.
 
 ## Live Test site
-To see this working, follow [this link](http://13.54.202.240). If for some reason it isn't working, then node has probably crashed.  I'll replace this soon with a more robust solution.
+To see this working, follow [this link](http://13.54.202.240).
 
 ## Roadmap
 
