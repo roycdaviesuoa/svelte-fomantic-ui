@@ -9,10 +9,24 @@ import { super_stringify } from "./super_stringify";
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-$(() =>
-{
+// if (window.jQuery) {  
+    // jQuery is loaded
+    // $(() =>
+    // {
+    //     // initialize the Tablesort code
+    //     tableSort();
+
+    //     // Initialize the modules
+    //     reload();
+    // });
+// } else {
+//     // jQuery is not loaded
+//     console.log("No jQuery");
+// }
+
+document.addEventListener("DOMContentLoaded", function(){
     // initialize the Tablesort code
-    tableSort();
+    if (window.jQuery) tableSort();
 
     // Initialize the modules
     reload();
@@ -26,15 +40,17 @@ $(() =>
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const reload = function(id = null)
 {
-    // Go through each of the modules
-    if (id === null) {
-        $("[data-module]").each(function() {
-            reload_module(this);
-        });
-    } else {
-        $("#"+id).find("[data-module]").each(function() {
-            reload_module(this);
-        });
+    if (window.jQuery) {
+        // Go through each of the modules
+        if (id === null) {
+            $("[data-module]").each(function() {
+                reload_module(this);
+            });
+        } else {
+            $("#"+id).find("[data-module]").each(function() {
+                reload_module(this);
+            });
+        }
     }
 };
 
@@ -168,35 +184,40 @@ function construct_jquery_command(params) {
 // Send a behaviour to an item, and optionally return a result
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const behavior = function(...args) {
-    // Grab the first argument - this should either be an object with settings, or the first of an array of string, being the ID of the element the
-    // commands are for.
-    let firstarg = args.shift();
-    let returnvalue;
-    if (typeof firstarg === 'object')
-    {
-        // Data sent in is in the form of an object
-        // returnvalue = eval(construct_jquery_command(firstarg));
-        const jqueryFunction = new Function(construct_jquery_command(firstarg));
-        returnvalue = jqueryFunction();
-    }
-    else
-    {
-        // Data sent in is in the form of several parameters which args puts into an array
-        // The first is always the id of the item to be worked with
-        let id = firstarg;
-        // Now, let's find out the data on the module itself
-        // let settings = $("#"+id).data("module");
-        let settings = get_settings($("#"+id).data("module"));
-        let command = extract_module_type_from_settings(settings);
-        if (command && id && ($("#"+id)[command])) {
-            returnvalue = $("#"+id)[command](...args);
+    if (window.jQuery) {
+        // Grab the first argument - this should either be an object with settings, or the first of an array of string, being the ID of the element the
+        // commands are for.
+        let firstarg = args.shift();
+        let returnvalue;
+        if (typeof firstarg === 'object')
+        {
+            // Data sent in is in the form of an object
+            // returnvalue = eval(construct_jquery_command(firstarg));
+            const jqueryFunction = new Function(construct_jquery_command(firstarg));
+            returnvalue = jqueryFunction();
         }
-        else {
-            return null;
+        else
+        {
+            // Data sent in is in the form of several parameters which args puts into an array
+            // The first is always the id of the item to be worked with
+            let id = firstarg;
+            // Now, let's find out the data on the module itself
+            // let settings = $("#"+id).data("module");
+            let settings = get_settings($("#"+id).data("module"));
+            let command = extract_module_type_from_settings(settings);
+            if (command && id && ($("#"+id)[command])) {
+                returnvalue = $("#"+id)[command](...args);
+            }
+            else {
+                return null;
+            }
         }
-    }
 
-    return returnvalue;
+        return returnvalue;
+    }
+    else {
+        return null;
+    }
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -208,7 +229,7 @@ export const behavior = function(...args) {
 function get_settings(settings)
 {
     let return_settings = [];
-    if (settings) {
+    if (window.jQuery && settings) {
         if (Array.isArray(settings))
         {
             settings.forEach((setting) => {
@@ -239,22 +260,24 @@ function get_settings(settings)
 function extract_module_type_from_settings(settings) {
     let command = undefined;
 
-    if (settings.hasOwnProperty("type")) {
-        command = settings["type"];
-    } else {
-        settings.forEach((setting) => {
-            if (setting["type"] !== "popup")
-            {
-                command = setting["type"];
-            }
-
-            // The module is the popup module, not one with popup added
-            if (!command && (settings.length>0))
-            {
-                command = "popup";
-            }
-        });
-    };
+    if (window.jQuery) {
+        if (settings.hasOwnProperty("type")) {
+            command = settings["type"];
+        } else {
+            settings.forEach((setting) => {
+                if (setting["type"] !== "popup")
+                {
+                    command = setting["type"];
+                }
+    
+                // The module is the popup module, not one with popup added
+                if (!command && (settings.length>0))
+                {
+                    command = "popup";
+                }
+            });
+        };
+    }
 
     return command;
 }
@@ -276,7 +299,7 @@ export const update = function (...args) {
 // Reset the named module
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const reset = function (id) {
-    if (id) reload_module($("#"+id).get(0));
+    if (window.jQuery && id) reload_module($("#"+id).get(0));
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -299,41 +322,43 @@ function deserialize(serialized)
     // Create a new object to hold the deserialized version
     const obj = {};
 
-    // Iterate over the serialized object's properties
-    for (const key in deserialized) {
-        if (deserialized.hasOwnProperty(key))
-        {
-            const val = deserialized[key];
-
-            if (key === "settings")
+    if (window.jQuery) {
+        // Iterate over the serialized object's properties
+        for (const key in deserialized) {
+            if (deserialized.hasOwnProperty(key))
             {
-                obj["settings"] = {};
+                const val = deserialized[key];
 
-                for (const key2 in val)
+                if (key === "settings")
                 {
-                    const val2 = val[key2];
-                    if (typeof val2 === 'string' && (val2.startsWith('function') || val2.indexOf('=>') > -1)) {
-                        // If the property is a function string, convert it back into a function
-                        obj["settings"][key2] = eval('('+val2+')');
-                        // console.log(val2);
-                        // const objFunction2 = new Function("value", val2);
-                        // console.log(objFunction2);
-                        // console.log(eval('('+val2+')'));
-                        // obj["settings"][key2] = objFunction2;
-                    } else {
-                        // Otherwise, add the property to the deserialized object
-                        obj["settings"][key2] = val2;
+                    obj["settings"] = {};
+
+                    for (const key2 in val)
+                    {
+                        const val2 = val[key2];
+                        if (typeof val2 === 'string' && (val2.startsWith('function') || val2.indexOf('=>') > -1)) {
+                            // If the property is a function string, convert it back into a function
+                            obj["settings"][key2] = eval('('+val2+')');
+                            // console.log(val2);
+                            // const objFunction2 = new Function("value", val2);
+                            // console.log(objFunction2);
+                            // console.log(eval('('+val2+')'));
+                            // obj["settings"][key2] = objFunction2;
+                        } else {
+                            // Otherwise, add the property to the deserialized object
+                            obj["settings"][key2] = val2;
+                        }
                     }
                 }
-            }
-            else if (typeof val === 'string' && (val.startsWith('function') || val.indexOf('=>') > -1)) {
-                // If the property is a function string, convert it back into a function
-                obj[key] = eval(val);
-                // const objFunction = new Function('('+val+')');
-                // obj[key] = objFunction;
-            } else {
-                // Otherwise, add the property to the deserialized object
-                obj[key] = val;
+                else if (typeof val === 'string' && (val.startsWith('function') || val.indexOf('=>') > -1)) {
+                    // If the property is a function string, convert it back into a function
+                    obj[key] = eval(val);
+                    // const objFunction = new Function('('+val+')');
+                    // obj[key] = objFunction;
+                } else {
+                    // Otherwise, add the property to the deserialized object
+                    obj[key] = val;
+                }
             }
         }
     }
