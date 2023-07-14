@@ -59,7 +59,13 @@ sending1 : `<Button ui data={{inverted : "", tooltip : "Add users to your feed",
 sending2 : `<Button ui data-inverted="" data-tooltip="Add users to your feed" data-position="top left">
     Top Left
 </Button>`,
+yarn: `yarn create vite my-app --template svelte-ts
+cd my-app
+yarn
+yarn add svelte-fomantic-ui`,
 html : `<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
 <script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui-jquery.js"></script>`,
 usage : `<script lang="ts">
     import { Button } from "svelte-fomantic-ui";

@@ -27,6 +27,9 @@
             I am working on this daily, so check back often. However, my day job
             and family do sometimes get in the way of progress...
         </p>
+        <p>
+            Latest update: Works, somewhat, without jQuery - see installation instructions below.
+        </p>
         <h4 id="examples-and-testing">Examples and testing</h4>
         <p>This project contains examples and tests.</p>
         <ol>
@@ -148,18 +151,19 @@
             Presently, you can install in the following way:
         </p>
         <ol>
-            <li>
-                Install the svelte fomantic UI with <code
-                    >yarn add svelte-fomantic-ui</code
-                >
-            </li>
+            <li>First create your App Framework - here we are using vite to create a client-side webapp:</li>
+            <SourceCode language="svelte" source={Code.yarn} />
+
             <li>Add the following lines to your index.html head section:</li>
+            <SourceCode language="html" source={Code.html} />
         </ol>
-        <SourceCode language="html" source={Code.html} />
 
         <p>
             Notice that JQuery is being included in this project as fomantic UI
-            depends on it.
+            depends on it.  If you prefer, you can also include the jquery and fomantic / semantic ui css and js files locally and link to them there.
+        </p>
+        <p>
+            If you wish to use this without jQuery, only include lines 2 and 4 above.  This will use then solely the css part of Fomantic UI, together with some functionality coded in Svelte.  Note however, that most of the fomantic UI modules will not work, nor will anything that depends on jQuery (such as sorted tables).
         </p>
         <h4 id="usage">Usage</h4>
         <p>
@@ -177,8 +181,8 @@
             your Svelte code. These modules, if used in ordinary Javascript,
             need to be initialized before they will work. This is done
             automatically for you. <strong
-                >These won&#39;t work without the two lines above being included
-                in your index.html head section.</strong
+                >These won&#39;t work without the lines above being included
+                in your index.html head section, however, to use just the css part of fomantic UI, include only lines 2 and 4.</strong
             >
         </p>
         <h5 id="the-update-function">The <code>update</code> function</h5>
