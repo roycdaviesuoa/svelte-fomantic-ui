@@ -2,7 +2,7 @@
 
 ### This is now at late Beta stage.  The code is proving robust according to the testing done so far.
 ### Feel free to use cautiously in projects, and please give feedback.
-### Latest update (9th of July, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
+### Latest update (15th of July, 2023): We're almost there...  Search and Ad need testing, and then onto behaviors...
 
 ---
 A simple Svelte wrapper for Fomantic UI for creating client-side WebApps.  Note that this does not (yet) work with Server Side Rendering.  This is a very shallow and light layer on top of the standard fomantic UI as found at https://fomantic-ui.com.

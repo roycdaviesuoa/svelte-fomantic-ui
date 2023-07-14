@@ -169,6 +169,8 @@ yarn add svelte-fomantic-ui
 
 Notice that JQuery is being included in this project as fomantic UI depends on it.  If you prefer, you can also include the jquery and fomantic / semantic ui css and js files locally and link to them there.
 
+If you wish to use this without jQuery, only include lines 2 and 4 above.  This will use then solely the css part of Fomantic UI, together with some functionality coded in Svelte.  Note however, that most of the fomantic UI modules will not work, nor will anything that depends on jQuery (such as sorted tables).
+
 3. You can test the app using `yarn run dev` or build it using `yarn run build`.
 
 ## Usage
