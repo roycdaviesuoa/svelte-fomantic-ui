@@ -246,6 +246,8 @@
             contains fomantic-ui modules:
         </p>
         <SourceCode language="svelte" source={Code.reload} />
+        <p>You can also pass a string to the reload function that is the id of an element.  Only that object and all it's children are then reloaded.</p>
+        <code>reload("login_form")</code>
     </div>
 </Examples>
 
