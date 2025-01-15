@@ -13,7 +13,7 @@ For more details, look inside the svelte-fomantic-ui folder, and in particular, 
 The source code is found in the folder `src/lib`.  There are some examples and tests in the `src/lib/tests` folder.
 
 ## Live Test site
-To see this working, follow [this link](http://13.54.202.240).
+To see this working, follow [this link](https://roycdaviesuoa.github.io).
 
 ## Roadmap
 
