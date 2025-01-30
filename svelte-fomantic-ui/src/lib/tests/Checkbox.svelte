@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts">
-    import { Checkbox, Form, Field, Fields, Divider, Label, Header, Segment, Radio, List, Item } from "../svelte-fomantic-ui.svelte";
+    import { Checkbox, Form, Field, Fields, Divider, Label, Header, Segment, Radio } from "../svelte-fomantic-ui.svelte";
     import Example from "./Example.svelte";
     import Examples from "./Examples.svelte";
     import Code from './Checkbox';
