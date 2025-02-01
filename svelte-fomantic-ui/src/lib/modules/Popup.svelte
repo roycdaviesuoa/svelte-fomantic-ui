@@ -8,9 +8,9 @@
     import { serialize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
     
     export let ui: boolean = false;
-    export let id: string = undefined;
-    export let settings: object = undefined;
-    export let callbacks : object = undefined;
+    export let id: any = undefined;
+    export let settings: object | undefined = undefined;
+    export let callbacks : any = undefined;
 
     import { onDestroy } from "svelte";
     const ID = initialize(id, callbacks);

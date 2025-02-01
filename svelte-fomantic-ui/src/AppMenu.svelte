@@ -52,7 +52,7 @@
 
 {#if isNarrow }
     <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu_mobile" ui vertical inverted menu settings={{silent:true, dimPage: false, delaySetup: true, closable: true}}>
-        <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
+        <AppSidebar bind:currentPage {doMenuToggle}/>
     </Sidebar>
     <Segment pusher style={pusherStyle} id="main">
         <Menu ui inverted top fixed>
@@ -71,7 +71,7 @@
     </Segment>
 {:else}
     <Sidebar bind:clientWidth={sidebarWidth} id="mainmenu" ui vertical inverted visible menu settings={{silent:true, dimPage: false, delaySetup: true, closable: false}}>
-        <AppSidebar bind:currentPage {sidebarWidth} {doMenuToggle}/>
+        <AppSidebar bind:currentPage {doMenuToggle}/>
     </Sidebar>
     <Pusher style={pusherStyle} >
         <Segment ui left attached id="main">

@@ -66,7 +66,7 @@
         <p>Note the underscore before the 'for' in the label.  This is due to not being able to use the reserved word 'for' as a variable in typescript.</p>
 
         <Input ui file invisible>
-            <Input type="file" id="invisibleupload1" on:change={(e) => {filename1 = e.target.files[0].name; } }/>
+            <Input type="file" id="invisibleupload1" on:change={(e: any) => {filename1 = e.target.files[0].name; } }/>
         </Input>
         <Label ui red icon button _for="invisibleupload1">
             <Icon file/>
@@ -75,7 +75,7 @@
         <Header h4>File name chosen is: {filename1}</Header>
         
         <Input ui file invisible>
-            <Input type="file" id="invisibleupload2" on:change={(e) => {filename2 = e.target.files[0].name; } }/>
+            <Input type="file" id="invisibleupload2" on:change={(e: any) => {filename2 = e.target.files[0].name; } }/>
         </Input>
         <Label ui placeholder segment _for="invisibleupload2">
             <Header ui icon>

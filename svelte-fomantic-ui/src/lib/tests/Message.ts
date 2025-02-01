@@ -185,7 +185,7 @@ const code = {
     <p>You may now log-in with the username you have chosen</p>
 </Message>
     `,
-    negative_errpr : `
+    negative_error : `
 <Message ui negative>
     <Icon close icon/>
     <Header>

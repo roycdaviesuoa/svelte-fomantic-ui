@@ -11,7 +11,7 @@
     export let input: boolean = false;
     export let radio: boolean = false;
     export let _for: string = "";
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     
 </script>
 

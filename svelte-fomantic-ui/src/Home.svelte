@@ -15,7 +15,7 @@
     disclaimer="This is still a work in progress, but nearing testing completion.  Changes may yet occur at a fundamental level.  Use at your own risk."
 >
     <div class="example">
-        <p />
+        <p></p>
         <h4>Fomantic UI</h4>
         <p>
             To learn about Fomantic UI, see here: <a

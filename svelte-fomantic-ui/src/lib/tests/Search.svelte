@@ -5,8 +5,8 @@
 -->
 
 <script lang="ts">
-    import {  } from "../src/lib/svelte-fomantic-ui.svelte";
-    import Examples from "../src/lib/tests/Examples.svelte";    
+    import {  } from "../svelte-fomantic-ui.svelte";
+    import Examples from "./Examples.svelte";    
 </script>
 
 

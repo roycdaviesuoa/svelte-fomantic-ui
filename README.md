@@ -13,7 +13,7 @@ For more details, look inside the svelte-fomantic-ui folder, and in particular, 
 The source code is found in the folder `src/lib`.  There are some examples and tests in the `src/lib/tests` folder.
 
 ## Live Test site
-To see this working, follow [this link](https://roycdaviesuoa.github.io).
+To see this working, follow [this link](https://roycdaviesuoa.github.io).  It's also being used at [reality2.ai](https://reality2.ai), [imersia.com](https://imersia.com) and [my professional site](https://roycdavies.github.io)
 
 ## Roadmap
 

@@ -8,9 +8,9 @@
     import { serialize, classString, otherProps } from "../svelte-fomantic-ui"
 
     export let ui: boolean = false;
-    export let id: string = undefined;
+    export let id: string | undefined= undefined;
     export let value: any = undefined;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
 
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -29,6 +29,6 @@
     }
 </script>
 
-<div {id} on:click={doClick} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, "buttons")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+<div {id} role="button" tabindex={0} on:click={doClick} on:keydown on:keypress on:keyup class={classString(ui, $$restProps, "buttons")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
     <slot />
 </div>

@@ -11,8 +11,8 @@
     export let value: string = "";
     export let checked: boolean = false;
     export let group: string = "";
-    export let id: string = undefined;
-    export let settings: object = undefined;
+    export let id: any = undefined;
+    export let settings: object | undefined = undefined;
     export let ui: boolean = false;
     export let text: boolean = false;
     export let password: boolean = false;
@@ -32,8 +32,8 @@
     export let month: boolean = false;
     export let year: boolean = false;
 
-    export let popup: object | boolean = undefined;
-    export let callbacks : object = undefined;
+    export let popup: object | boolean | undefined = undefined;
+    export let callbacks : any = undefined;
 
     const ID = initialize(id, callbacks);
     onDestroy(() => { decommission(ID, id, callbacks); });

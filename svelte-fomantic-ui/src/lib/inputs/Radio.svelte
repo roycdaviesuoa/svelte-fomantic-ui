@@ -8,16 +8,16 @@
     import { serialize, rationalize, classString, otherProps } from "../svelte-fomantic-ui";
 
     export let ui: boolean = false;
-    export let id: string = undefined;
+    export let id: string | undefined = undefined;
     export let group: string = "";
     export let value: string = "";
     export let label: string = "";
-    export let name: string = null;
+    export let name: string | null = null;
     export let slider: boolean = false;
     export let toggle: boolean = false;
     export let disabled: boolean = false;
-    export let settings: object = undefined;
-    export let popup: object | boolean = undefined;
+    export let settings: object | undefined = undefined;
+    export let popup: object | boolean | undefined = undefined;
     
 </script>
 

@@ -17,7 +17,7 @@
 
     let example12_value = 0;
 
-    let repeater;
+    let repeater: any;
 
     const colors = ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'];
     const sizes = ['tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive'];

@@ -8,10 +8,10 @@
     import { serialize, classString, otherProps } from "../svelte-fomantic-ui";
 
     export let ui: boolean=false;
-    export let id: string=undefined;
+    export let id: string | undefined = undefined;
     export let value: any = undefined;
     export let selected: any = undefined;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     export let values: boolean = false;
 
     import { createEventDispatcher } from 'svelte';
@@ -35,7 +35,7 @@
         <slot />
     </div>
 {:else} -->
-    <div {id} class={classString(ui, $$restProps, "list")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
+    <div role="link" tabindex={0} {id} class={classString(ui, $$restProps, "list")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)} on:click={doClick} on:keydown on:keypress on:keyup>
         <slot />
     </div>
 <!-- {/if} -->

@@ -13,7 +13,7 @@ A simple Svelte wrapper for Fomantic UI for creating client-side WebApps.  Note 
 I am working on this daily, so check back often.  However, my day job and family do sometimes get in the way of progress... 
 [Click here to check on progress so far](https://github.com/roycdaviesuoa/svelte-fomantic-ui)
 
-Latest update: Now works, somewhat, without jQuery.  See installation instructions below.
+Latest update: Recently updated for the latest svelte, jquery and fomanticui.  See installation instructions below.
 
 ## Overview
 
@@ -163,9 +163,9 @@ yarn add svelte-fomantic-ui
 2. Add the following lines to your index.html head section:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
-<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.js"></script>
 <script type="module" src="node_modules/svelte-fomantic-ui/src/lib/svelte-fomantic-ui-jquery.js"></script>
 ```
 

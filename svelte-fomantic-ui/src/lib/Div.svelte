@@ -6,9 +6,9 @@
 
 <script lang="ts">
     import {serialize, classString, otherProps} from "./svelte-fomantic-ui"
-    export let value: string = null;
+    export let value: string | null = null;
     export let ui: boolean=false;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     export let name: string = "";
 </script>
 

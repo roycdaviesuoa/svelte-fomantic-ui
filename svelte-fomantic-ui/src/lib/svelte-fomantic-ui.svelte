@@ -5,8 +5,7 @@
 -->
 
 <script context="module" lang="ts">
-    import Paragraph from './elements/Paragraph.svelte';
-
+    
     // Elements
     export {default as Button} from './elements/Button.svelte';
     export {default as Buttons} from './elements/Buttons.svelte';

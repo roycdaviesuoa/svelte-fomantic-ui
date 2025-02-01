@@ -1,4 +1,4 @@
-const states = {
+const states: any = {
     "AL": "Alabama",
     "AK": "Alaska",
     "AZ": "Arizona",

@@ -14,7 +14,7 @@
     export let h4: boolean = false;
     export let h5: boolean = false;
     export let h6: boolean = false;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     
 </script>
 

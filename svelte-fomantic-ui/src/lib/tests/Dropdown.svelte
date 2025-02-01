@@ -12,7 +12,7 @@
     import countries from './Countries';
     import states from './USStates';
     
-    let changed = {test:false, test2:false};
+    let changed:any = {test:false, test2:false};
     let test="male";
     let test2="female";
 
@@ -29,33 +29,33 @@
       changed[id]=!changed[id];
     }
 
-    let animals = ["Cat", "Dog", "Bird", "Rabbit", "Squiral", "Horse", "Turtle", "Parrot"];
+    let animals = ["Cat", "Dog", "Bird", "Rabbit", "Squirel", "Horse", "Turtle", "Parrot"];
 
-    let ex1value = "";
-    let ex2value = "";
-    let ex3value = "";
-    let ex4value = "";
-    let ex5value = "";
-    let ex6value = "";
-    let ex7value = "";
+    let ex1value: any = "";
+    let ex2value: any = "";
+    let ex3value: any = "";
+    let ex4value: any = "";
+    let ex5value: any = "";
+    let ex6value: any = "";
+    let ex7value: any = "";
     let ex8value = "dutch,english,french";
-    let ex9value = "";
-    let ex10value = "";
-    let ex11value = "";
-    let ex12value = "";
-    let ex13value = "";
-    let ex14value = "";
-    let ex15value = "";
-    let ex16value = "";
-    let ex17value = "";
-    let ex18value = "";
-    let ex19value = "";
-    let ex20value = "";
-    let ex21value = "";
-    let ex22value = "";
-    let ex23value = "";
-    let ex24value = "";
-    let ex25value = "";
+    let ex9value: any = "";
+    let ex10value: any = "";
+    let ex11value: any = "";
+    let ex12value: any = "";
+    let ex13value: any = "";
+    let ex14value: any = "";
+    let ex15value: any = "";
+    let ex16value: any = "";
+    let ex17value: any = "";
+    let ex18value: any = "";
+    let ex19value: any = "";
+    let ex20value: any = "";
+    let ex21value: any = "";
+    let ex22value: any = "";
+    let ex23value: any = "";
+    let ex24value: any = "";
+    let ex25value: any = "";
 
 </script>
 
@@ -1329,7 +1329,7 @@
                 text: parameter,
                 $selected: parameter,
 
-                _: (data) => {
+                _: (data: any) => {
                     let type = data["text"].split(":")[0];
                     behavior({type:"toast", settings: {title: type + " Reveal", message: "You need to know: " + data["value"]}})
                 }

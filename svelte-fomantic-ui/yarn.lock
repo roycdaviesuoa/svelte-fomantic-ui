@@ -269,7 +269,7 @@
   dependencies:
     debug "^4.3.7"
 
-"@sveltejs/vite-plugin-svelte@^5.0.3":
+"@sveltejs/vite-plugin-svelte@5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-5.0.3.tgz#50f425c677243e00fda0402c049f28b489c7ab81"
   integrity sha512-MCFS6CrQDu1yGwspm4qtli0e63vaPCehf6V7pIMP15AsWgMKrqDGCPFF/0kn4SP0ii4aySu4Pa62+fIRGFMjgw==
@@ -310,6 +310,11 @@ axobject-query@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-4.1.0.tgz#28768c76d0e3cff21bc62a9e2d0b6ac30042a1ee"
   integrity sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==
+
+browser-polyfill@^3.20.2:
+  version "3.20.2"
+  resolved "https://registry.yarnpkg.com/browser-polyfill/-/browser-polyfill-3.20.2.tgz#012e7c3958f431996dfafa28ba5df38d38fb7f84"
+  integrity sha512-61Jc1vtn5WtmQFwbahyb05+8DcEry62VpHxO8YCOCQ+cRo9ZQCmvXgdpKpAUlC6hdb3qQoTq9rG8gVI0LCG8fA==
 
 chokidar@^4.0.1:
   version "4.0.3"
@@ -377,11 +382,6 @@ esrap@^1.4.3:
   integrity sha512-Xddc1RsoFJ4z9nR7W7BFaEPIp4UXoeQ0+077UdWLxbafMQFyU79sQJMk7kxNgRwQ9/aVgaKacCHC2pUACGwmYw==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.15"
-
-estree-walker@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.6.1.tgz#53049143f40c6eb918b23671d1fe3219f3a1b362"
-  integrity sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==
 
 fdir@^6.2.0:
   version "6.4.3"
@@ -461,27 +461,6 @@ readdirp@^4.0.1:
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.1.1.tgz#bd115327129672dc47f87408f05df9bd9ca3ef55"
   integrity sha512-h80JrZu/MHUZCyHu5ciuoI0+WxsCxzxJTILn6Fs8rxSnFPh+UVHYfeIxK1nVGugMqkfC4vJcBOYbkfkwYK0+gw==
 
-require-relative@^0.8.7:
-  version "0.8.7"
-  resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
-  integrity sha512-AKGr4qvHiryxRb19m3PsLRGuKVAbJLUD7E6eOaHkfKhwc+vSgVOCY5xNvm9EkolBKTOf0GrQAZKLimOCz81Khg==
-
-rollup-plugin-svelte@^6.1.0:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-svelte/-/rollup-plugin-svelte-6.1.1.tgz#66362cf0500fb7a848283ebcf19d289a60ef0871"
-  integrity sha512-ijnm0pH1ScrY4uxwaNXBpNVejVzpL2769hIEbAlnqNUWZrffLspu5/k9/l/Wsj3NrEHLQ6wCKGagVJonyfN7ow==
-  dependencies:
-    require-relative "^0.8.7"
-    rollup-pluginutils "^2.8.2"
-    sourcemap-codec "^1.4.8"
-
-rollup-pluginutils@^2.8.2:
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
-  integrity sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
-  dependencies:
-    estree-walker "^0.6.1"
-
 rollup@^4.23.0:
   version "4.32.1"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-4.32.1.tgz#95309604d92c3d21cbf06c3ee46a098209ce13a4"
@@ -522,11 +501,6 @@ source-map-js@^1.2.1:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
 
-sourcemap-codec@^1.4.8:
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
-  integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
-
 svelte-check@^4.1.4:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-4.1.4.tgz#59ec6f08d23647ec508ff01584ef6d191c77c9e1"
@@ -538,17 +512,12 @@ svelte-check@^4.1.4:
     picocolors "^1.0.0"
     sade "^1.7.4"
 
-svelte-hmr@^0.11.3:
-  version "0.11.6"
-  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.11.6.tgz#67f0498e2cdce9e1039631d820c1951bd01caa3f"
-  integrity sha512-XUYcp7W26q/fF8tABZfCYGklwL4TDH48gc1KOjuBQNlTiMW63l/+rRqmfVOE/qKG5vns0J2NPo3zFjdahkwoHA==
-
 svelte-preprocess@6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-6.0.3.tgz#fdc1f9dc41b6f22bf8b1f059e9f21eaaae181eeb"
   integrity sha512-PLG2k05qHdhmRG7zR/dyo5qKvakhm8IJ+hD2eFRQmMLHp7X3eJnjeupUtvuRpbNiF31RjVw45W+abDwHEmP5OA==
 
-svelte-prism@latest:
+svelte-prism@1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/svelte-prism/-/svelte-prism-1.1.6.tgz#a9ab00576d4a66e69be688540c1df65bb2ed2701"
   integrity sha512-FEVBqD1wcSKYwRpgaMGRfEIQPquKMwo+vl91lnFHhQCtTivxgkCS6ZWNOyvZGRsNbWk50fYZOWOp3xXIBWNeSw==
@@ -556,10 +525,10 @@ svelte-prism@latest:
     prism-svelte "^0.4.7"
     prismjs "^1.27.0"
 
-svelte@5.19.5:
-  version "5.19.5"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-5.19.5.tgz#fc9c169a25eb9809eda737bf93ed2c5471f0e30c"
-  integrity sha512-vVAntseegJX80sgbY8CxQISSE/VoDSfP7VZHoQaf2+z+2XOPOz/N+k455HJmO9O0g8oxTtuE0TBhC/5LAP4lPg==
+svelte@^5.19.6:
+  version "5.19.6"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-5.19.6.tgz#ce02a28e0cad899aa120ae17dc16e8db3c93278f"
+  integrity sha512-6ydekB3qyqUal+UhfMjmVOjRGtxysR8vuiMhi2nwuBtPJWnctVlsGspjVFB05qmR+TXI1emuqtZt81c0XiFleA==
   dependencies:
     "@ampproject/remapping" "^2.3.0"
     "@jridgewell/sourcemap-codec" "^1.5.0"
@@ -581,15 +550,7 @@ typescript@^5.0.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.3.tgz#919b44a7dbb8583a9b856d162be24a54bf80073e"
   integrity sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==
 
-vite-plugin-svelte@latest:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/vite-plugin-svelte/-/vite-plugin-svelte-3.0.1.tgz#416ef91210fbf8aa9a2710d25aaae87590c04512"
-  integrity sha512-R4XFM4pmeJ9GwKs5mcDDDQs1e6xvCrBumGLnApPdYarS6+kfDqeC0U1WOLp6LLUx1sUdv7poywnr9eNKenQfkg==
-  dependencies:
-    rollup-plugin-svelte "^6.1.0"
-    svelte-hmr "^0.11.3"
-
-vite@6.0.11:
+vite@^6.0.11:
   version "6.0.11"
   resolved "https://registry.yarnpkg.com/vite/-/vite-6.0.11.tgz#224497e93e940b34c3357c9ebf2ec20803091ed8"
   integrity sha512-4VL9mQPKoHy4+FE0NnRE/kbY51TOfaknxAjt3fJbGJxhIpBZiqVzlZDEesWWsuREXHwNdAoOFZ9MkPEVXczHwg==

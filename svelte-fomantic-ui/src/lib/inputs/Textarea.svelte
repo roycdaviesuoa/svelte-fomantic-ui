@@ -9,8 +9,8 @@
 
     export let ui: boolean = false;
     export let value: string="";
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     
 </script>
 
-<textarea class={classString(ui, $$restProps, "")} bind:value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}/>
+<textarea class={classString(ui, $$restProps, "")} bind:value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}></textarea>

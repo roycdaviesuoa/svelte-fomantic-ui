@@ -9,7 +9,7 @@
     import { fade } from 'svelte/transition';
 
     export let ui: boolean = false;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     
 </script>
 

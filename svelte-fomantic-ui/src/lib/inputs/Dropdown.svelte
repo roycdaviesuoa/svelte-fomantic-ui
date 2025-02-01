@@ -8,11 +8,11 @@
     import { serialize, rationalize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
 
     export let ui: boolean = false;
-    export let id: string = undefined;
-    export let settings: object = undefined;
+    export let id: any = undefined;
+    export let settings: object | undefined = undefined;
     export let selected: any = undefined;
     export let value: any = undefined;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     export let multiple: boolean = false;
     export let values: boolean = false;
     export let callbacks : object = {};
@@ -26,7 +26,7 @@
             text: null,
             $choice: null,
 
-            _: (data) => { console.log(data); selected = data.value; value = selected; }
+            _: (data: any) => { console.log(data); selected = data.value; value = selected; }
         }
     };
 
@@ -66,7 +66,7 @@
         <slot />
     </div>
 {:else}
-    <div {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {...functionize(ID, id, allCallbacks), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={doClick}>
+    <div role="link" tabindex={0} {id} class={classString(ui, $$restProps, "dropdown")} data-module={rationalize([serialize("dropdown", {...functionize(ID, id, allCallbacks), ...settings}), serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)])} {...otherProps($$restProps)} on:click={doClick}>
         <slot />
     </div>
 {/if}

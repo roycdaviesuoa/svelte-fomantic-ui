@@ -7,7 +7,7 @@ import { super_stringify } from "./super_stringify";
 // Convert the props that are sent into an svelte tag that are not named directly into a string that can be used as class attributes.
 // Also, if there is an underscore property, add the words in that to the class attributes.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-export function classString (ui: boolean, restProps:{}, mainClass: string):string {
+export function classString (ui: boolean, restProps:any, mainClass: string):string | undefined {
     // Start with 'ui' if appropriate
     let the_class = (ui?"ui ":"");
 
@@ -22,7 +22,7 @@ export function classString (ui: boolean, restProps:{}, mainClass: string):strin
     });
 
     // Sometimes class details are sent in via the underscore property as text.
-    if (restProps.hasOwnProperty("_"))
+    if ("_" in restProps)
     {
         the_class = the_class + " " + restProps["_"]
     }
@@ -43,8 +43,8 @@ export function classString (ui: boolean, restProps:{}, mainClass: string):strin
 // Return an object with any props that are not booleans to be included in the remaining props for the Fomantic UI tag.
 // If a prop is required that is a boolean, name it and include it specifically in the svelte tag definition as an exported prop.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-export function otherProps (restProps:{}):{} {
-    let other_props = {};
+export function otherProps (restProps:any):{} {
+    let other_props: any = {};
     Object.keys(restProps).forEach((key) => {
         if (key === "data") {
             // Syntactic sugar for collecting data- properties into one JSON object.  Here we unwrap that back into data- properties.
@@ -146,7 +146,7 @@ function contextualFunction (ID: string, id: string, funcName: string, names: st
 // }}
 
 // Set up the event listeners, and return the unique ID.
-export function initialize(id: string = "", callbacks: {} ) {
+export function initialize(id: string = "", callbacks: any ) {
     // Create a fairly unique ID.  We use this just in case the id is blank or null.
     let ID = [...Array(12)].map(i=>(~~(Math.random()*36)).toString(36)).join('');
     
@@ -154,7 +154,7 @@ export function initialize(id: string = "", callbacks: {} ) {
     if (callbacks !== undefined) {
         Object.keys(callbacks).forEach ((funcName) => {
             document.removeEventListener(ID+id+funcName, ()=>{}); 
-            document.addEventListener(ID+id+funcName, (v) => {
+            document.addEventListener(ID+id+funcName, (v: any) => {
                 let returnValue = callbacks[funcName]._(v["detail"][funcName]);
             });
         });
@@ -165,8 +165,8 @@ export function initialize(id: string = "", callbacks: {} ) {
 }
 
 // Set up the code to send results from running the given function in the correct context back to the module
-export function functionize(ID: string, id: string = "", callbacks: {}) {
-    let functionSettings = [];
+export function functionize(ID: string, id: string = "", callbacks: any) {
+    let functionSettings: any = [];
 
     // Create the function that will send the event
     if (callbacks !== undefined) {

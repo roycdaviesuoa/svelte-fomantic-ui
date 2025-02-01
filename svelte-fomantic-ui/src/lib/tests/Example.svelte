@@ -13,7 +13,7 @@
     export let title: string = "";
     export let code: string = "";
     export let narrow: boolean = false;
-    export let id: string = undefined;
+    export let id: string | undefined = undefined;
 
     let message="copy code to clipboard";
 
@@ -24,14 +24,18 @@
         el.style.position = 'absolute';
         el.style.left = '-9999px';
         document.body.appendChild(el);
-        const selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-        if (selected)
+        const getSelection = document.getSelection();
+        if (getSelection !== null)
         {
-            document.getSelection().removeAllRanges();
-            document.getSelection().addRange(selected);
+            const selected = getSelection.rangeCount > 0 ? getSelection.getRangeAt(0) : false;
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            if (selected)
+            {
+                getSelection.removeAllRanges();
+                getSelection.addRange(selected);
+            }
         }
     }
 

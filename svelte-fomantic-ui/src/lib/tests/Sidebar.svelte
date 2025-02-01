@@ -13,7 +13,7 @@
     let dimPage = true;
     let direction = "left";
 
-    function sidebar13_transition(direction, dimPage, animation) {
+    function sidebar13_transition(direction:any, dimPage:any, animation:any) {
         behavior({id: "sidebar13"+direction, type: "sidebar", settings: {dimPage: dimPage, transition: animation, }})
         behavior("sidebar13"+direction, "toggle");
     }

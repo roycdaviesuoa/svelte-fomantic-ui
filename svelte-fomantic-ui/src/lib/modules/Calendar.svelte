@@ -8,11 +8,11 @@
     import { serialize, rationalize, classString, otherProps, initialize, functionize, decommission } from "../svelte-fomantic-ui";
     
     export let ui: boolean=false;
-    export let id: string = undefined;
+    export let id: any = undefined;
     export let selected: string = "";
-    export let settings: object = undefined;
-    export let popup: object | boolean = undefined;
-    export let callbacks : object = undefined;
+    export let settings: object | undefined = undefined;
+    export let popup: object | boolean | undefined = undefined;
+    export let callbacks : any = undefined;
 
     import { onDestroy } from "svelte";
     const ID = initialize(id, callbacks);

@@ -10,12 +10,12 @@
     export let ui: boolean=false;
     export let selected: any = undefined;
     export let value: any = undefined;
-    export let id: string = undefined;
-    export let popup: object | boolean = undefined;
-    export let settings: object = undefined;
+    export let id: any = undefined;
+    export let popup: object | boolean | undefined = undefined;
+    export let settings: object | undefined = undefined;
     export let multiple: boolean = false;
     export let values: boolean = false;
-    export let callbacks : object = undefined;
+    export let callbacks : any = undefined;
         
     import { createEventDispatcher, onDestroy } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -26,7 +26,7 @@
             text: null,
             $choice: null,
 
-            _: (data) => { selected = data.value; value = selected; }
+            _: (data: any) => { selected = data.value; value = selected; }
         }
     };
 

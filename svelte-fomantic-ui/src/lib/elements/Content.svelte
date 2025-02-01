@@ -9,7 +9,7 @@
 
     export let ui: boolean = false;
     export let value: any = undefined;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
     
 </script>
 

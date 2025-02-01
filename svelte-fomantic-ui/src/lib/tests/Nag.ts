@@ -85,7 +85,7 @@ const code = {
 <Divider ui/>
 {#each ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "black"] as color}
     <Nag ui _={color} id="colorednags"><Title>{color.charAt(0).toUpperCase() + color.slice(1)}</Title><Icon close/></Nag>
-    <p/><p/>
+    <p></p><p></p>
 {/each}
     `,
     inverted : `
@@ -93,7 +93,7 @@ const code = {
 <Divider ui/>
 {#each ["", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "black"] as color}
     <Nag ui inverted _={color} id="invertednags"><Title>{color===""?"no color":color.charAt(0).toUpperCase() + color.slice(1)}</Title><Icon close/></Nag>
-    <p/><p/>
+    <p></p><p></p>
 {/each}
     `,
     size : `
@@ -101,7 +101,7 @@ const code = {
 <Divider ui/>
 {#each ["mini", "tiny", "small", "large", "big", "huge", "massive"] as size}
     <Nag ui _={size} id="sizenags"><Title>{size.charAt(0).toUpperCase() + size.slice(1)}</Title><Icon close/></Nag>
-    <p/><p/>
+    <p></p><p></p>
 {/each}
     `,
     cookie : `
@@ -114,7 +114,7 @@ const code = {
     </Title>
     <Icon close/>
 </Nag>
-<p/><p/>
+<p></p><p></p>
     `
 }
 

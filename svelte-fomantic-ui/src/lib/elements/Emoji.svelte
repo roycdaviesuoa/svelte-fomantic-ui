@@ -15,8 +15,8 @@
     export let large: boolean = false;
     export let big: boolean = false;
     export let link: boolean = false;
-    export let id: string = undefined;
-    export let popup: object | boolean = undefined;
+    export let id: string | undefined = undefined;
+    export let popup: object | boolean | undefined = undefined;
     
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
@@ -28,10 +28,10 @@
 </script>
 
 {#if link} 
-    <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
+    <div role="link" tabindex={0} {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
         data-emoji = {classString(false, $$restProps, "")} on:click={doClick} on:keydown on:keyup on:keypress data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)}> 
         <slot />
-    </em>
+    </div>
 {:else}
     <em {id} class = {(ui?"ui ":"") + (disabled?"disabled ":"") + (loading?"loading ":"") + (small?"small ":"") + (medium?"medium ":"") + (large?"large ":"") + (big?"big ":"") + (link?"link ":"")} 
         data-emoji = {classString(false, $$restProps, "")} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)}> 

@@ -10,9 +10,9 @@
 
     export let ui: boolean = false;
     export let link: boolean = false;
-    export let id: string = undefined;
+    export let id: string | undefined = undefined;
     export let value: any = undefined;
-    export let popup: object | boolean = undefined;
+    export let popup: object | boolean | undefined = undefined;
         
     const dispatch = createEventDispatcher();
 
@@ -30,7 +30,7 @@
 </script>
 
 {#if link}
-    <i {id} class={classString(ui, $$restProps, "icon")} on:click={doClick} on:keydown on:keypress on:keyup data-value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
+    <i {id} role="link" tabindex={0} class={classString(ui, $$restProps, "icon")} on:click={doClick} on:keydown on:keypress on:keyup data-value={value} data-module={serialize((popup?"popup":null), (typeof(popup) === "boolean")?undefined:popup)} {...otherProps($$restProps)}>
         <slot />
     </i>
 {:else}

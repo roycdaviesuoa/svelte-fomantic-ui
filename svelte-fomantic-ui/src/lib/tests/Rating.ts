@@ -42,19 +42,19 @@ rating2settings = [{color: "yellow", icon: "star"}, {color: "red", icon: "heart"
     `,
     partial : `
 <Rating ui black data-rating="0.5" data-max-rating="5"/>
-<p/><p/>
+<p></p><p></p>
 <Rating ui pink data-rating="1.25" data-max-rating="5"/>
-<p/><p/>
+<p></p><p></p>
 <Rating ui red data-rating="1.775" data-max-rating="5"/>
-<p/><p/>
+<p></p><p></p>
 <Rating ui yellow data-rating="2.5" data-max-rating="5"/>
-<p/><p/>
+<p></p><p></p>
 <Rating ui green data-rating="3.225" data-max-rating="5"/>
-<p/><p/>
+<p></p><p></p>
 <Rating ui purple data-rating="3.65" data-max-rating="5"/>
-<p/><p/>
+<p></p><p></p>
 <Rating ui blue data-rating="4.375" data-max-rating="5"/>
-<p/><p/>
+<p></p><p></p>
 <Rating ui brown data-rating="4.75" data-max-rating="5"/>
     `,
     disabled : `
@@ -63,7 +63,7 @@ rating2settings = [{color: "yellow", icon: "star"}, {color: "red", icon: "heart"
     size : `
 {#each ["mini", "tiny", "small", "", "large", "huge", "massive"] as size}
     <Rating ui yellow _={size} data-rating = 3/>
-    <p/><p/>
+    <p></p><p></p>
 {/each}
     `,
     metadata : `

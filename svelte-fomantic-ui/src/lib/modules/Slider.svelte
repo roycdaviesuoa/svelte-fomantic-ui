@@ -9,14 +9,13 @@
     import { behavior } from "../svelte-fomantic-ui.svelte";
 
     export let ui: boolean = false;
-    export let id: string = undefined;
-    export let range: boolean = undefined;
-    export let settings: object = undefined;
-    export let popup: object | boolean = undefined;
-    export let callbacks : object = undefined;
+    export let id: any = undefined;
+    export let settings: object | undefined = undefined;
+    export let popup: object | boolean | undefined = undefined;
+    export let callbacks : any = undefined;
+    export let range: boolean | undefined = undefined;
     export let value: any = undefined;
     export let selected: any = undefined;
-
     let prevValue: any = value;
 
     // If no ID is given, generate a 6 letter random one
@@ -37,7 +36,7 @@
         onChange : {
             value: null,
 
-            _: (data) => {value=data.value; selected=data.value;}
+            _: (data:any) => {value=data.value; selected=data.value;}
         }
     }
 
@@ -47,7 +46,7 @@
             start: null,
             end: null,
 
-            _: (data) => {value = data; selected = data;}
+            _: (data:any) => {value = data; selected = data;}
         }
     }
 

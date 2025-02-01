@@ -12,11 +12,11 @@
 
     let rating2settings = [{color: "yellow", icon: "star"}, {color: "red", icon: "Icon heart"}, {color: "purple", icon: "female"}, {color: "blue", icon: "male"}, {color: "grey", icon: "cloud"}, {color: "pink", icon: "cat"}, {color: "orange", icon: "circle"}];
     let colors = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"];
-    let rating1value = 0;
-    let rating2values = {};
-    let rating3values = {};
-    let rating4value = 0;
-    let rating5value = 0;
+    let rating1value: any = 0;
+    let rating2values: any = {};
+    let rating3values: any = {};
+    let rating4value: any = 0;
+    let rating5value: any = 0;
 
     rating2settings.forEach((setting) => { rating2values[setting.color + "_" + setting.icon] = 2; });
     colors.forEach((_, index) => { rating3values[index] = index<6?index+1:13-index; });
@@ -34,7 +34,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Rating" code = {Code.rating}>
 
-        <Rating ui data-max-rating="1" callbacks={{ onRate: { rating: null, _: (data) => { rating1value = data.rating; } } }}/>
+        <Rating ui data-max-rating="1" callbacks={{ onRate: { rating: null, _: (data:any) => { rating1value = data.rating; } } }}/>
         <Text>Rating value = {rating1value}</Text>
 
     </Example>
@@ -54,7 +54,7 @@
                         rating: null,
                         name: setting.color + "_" + setting.icon,
 
-                        _: (data) => { rating2values[data.name] = data.rating; }
+                        _: (data:any) => { rating2values[data.name] = data.rating; }
                     }
                 }}/>
             <Text>Rating value = {rating2values[setting.color + "_" + setting.icon]}</Text><br/>
@@ -77,7 +77,7 @@
                     rating: null,
                     index: count,
 
-                    _: (data) => { rating3values[data.index] = data.rating; }
+                    _: (data:any) => { rating3values[data.index] = data.rating; }
                 }
             }}/>
             <Text>Rating value = {rating3values[count]}</Text><br/>
@@ -94,19 +94,19 @@
     <Example title = "Partial" code = {Code.partial}>
 
         <Rating ui black data-rating="0.5" data-max-rating="5"/>
-        <p/><p/>
+        <p></p><p></p>
         <Rating ui pink data-rating="1.25" data-max-rating="5"/>
-        <p/><p/>
+        <p></p><p></p>
         <Rating ui red data-rating="1.775" data-max-rating="5"/>
-        <p/><p/>
+        <p></p><p></p>
         <Rating ui yellow data-rating="2.5" data-max-rating="5"/>
-        <p/><p/>
+        <p></p><p></p>
         <Rating ui green data-rating="3.225" data-max-rating="5"/>
-        <p/><p/>
+        <p></p><p></p>
         <Rating ui purple data-rating="3.65" data-max-rating="5"/>
-        <p/><p/>
+        <p></p><p></p>
         <Rating ui blue data-rating="4.375" data-max-rating="5"/>
-        <p/><p/>
+        <p></p><p></p>
         <Rating ui brown data-rating="4.75" data-max-rating="5"/>
 
     </Example>
@@ -133,7 +133,7 @@
 
         {#each ["mini", "tiny", "small", "", "large", "huge", "massive"] as size}
             <Rating ui yellow _={size} data-rating = 3/>
-            <p/><p/>
+            <p></p><p></p>
         {/each}
 
     </Example>
@@ -170,7 +170,7 @@
     <!------------------------------------------------------------------------------------------------------------------------------------------------>
     <Example title = "Functions" code = {Code.callbacks}>
 
-        <Rating ui settings={{icon: "circle", initialRating: rating4value, maxRating: 5}} callbacks={{ onRate: { rating: null, _: (data) => { rating4value = data.rating; } } }}/>
+        <Rating ui settings={{icon: "circle", initialRating: rating4value, maxRating: 5}} callbacks={{ onRate: { rating: null, _: (data:any) => { rating4value = data.rating; } } }}/>
         <Text>Rating value = {rating4value}</Text>
 
     </Example>

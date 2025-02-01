@@ -6,6 +6,11 @@
 -->
 
 <script lang='ts'>
+  let page = "/" + window.location.hash.replace("#", "") || "Home";
+  window.addEventListener("hashchange", () => {
+      page = "/" + window.location.hash.replace("#", "") || "Home";
+  });
+
   import AppMenu from './AppMenu.svelte';
   import Home from './Home.svelte';
 
@@ -71,8 +76,9 @@
 
   let currentRoute: any;
 
-  switch (window.location.pathname) {
-    case '/':
+  // switch (window.location.pathname) {
+  switch (page) {
+      case '/':
       currentRoute = AppMenu; break;
     case '/Home':
       currentRoute = Home; break;
@@ -165,8 +171,9 @@
     case '/Shape':
       currentRoute = Shape; break;
     case '/Sidebar':
+      console.log("SLIDER");
       currentRoute = Sidebar; break;
-    case '/Sidebar':
+    case '/Sidebar_outer':
       currentRoute = Sidebar_outer; break;
     case '/Slider':
       currentRoute = Slider; break;
