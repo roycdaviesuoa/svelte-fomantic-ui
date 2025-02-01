@@ -42,7 +42,7 @@ And this will work fine because the value is coming from the onRate function, an
 
 where 
 
-```json
+```bash
 parameters = [{color: "yellow", icon: "star"}, {color: "red", icon: "heart"}]
 ```
 
