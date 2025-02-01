@@ -252,7 +252,7 @@ Both the `update` and `behavior` functions take one or more parameters, where th
 
 Sometimes, the module can be sent settings on initialisation, for example - see the `Progress` module html below.  Settings are sent via the `settings` prop.  Similarly, some modules allow JSON settings to be sent when being updated, so the `update` function allows that possibility as well.
 
-Note that when defining the settings for a Fomantic UI element, callback functions won't execute in the context of the calling module.  See [this document](./Functions.md) for a way to set up such callbacks.
+Note that when defining the settings for a Fomantic UI element, callback functions won't execute in the context of the calling module.  See [this document](./svelte-fomantic-ui/Functions.md) for a way to set up such callbacks.
 
 ```html
 <script lang="ts">
