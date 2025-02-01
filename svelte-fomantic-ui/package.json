@@ -4,7 +4,7 @@
   "main": "src/lib/svelte-fomantic-ui.svelte",
   "svelte": "src/lib/svelte-fomantic-ui.svelte",
   "private": false,
-  "version": "0.3.8",
+  "version": "0.3.9",
   "type": "module",
   "scripts": {
     "dev": "vite",
