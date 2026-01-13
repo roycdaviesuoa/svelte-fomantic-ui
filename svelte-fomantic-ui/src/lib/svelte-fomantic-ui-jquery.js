@@ -4,7 +4,7 @@
 // Load the various modules required by Fomantic UI.
 // ******************************************************************************************************************************************************
 import { tableSort } from './collections/Tablesort';
-import { super_stringify } from "./super_stringify";
+import { super_stringify, lookupFunction } from "./super_stringify";
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Runs when the page is loaded to set up the items
@@ -25,6 +25,10 @@ import { super_stringify } from "./super_stringify";
 // }
 
 document.addEventListener("DOMContentLoaded", function(){
+    if (!window.jQuery) {
+        console.warn('[svelte-fomantic-ui] jQuery not detected. CSS-only components will work, but interactive modules (accordion, modal, slider, dropdown, etc.) require jQuery + Fomantic UI JS to be loaded first.');
+    }
+
     // initialize the Tablesort code
     if (window.jQuery) tableSort();
 
@@ -38,19 +42,28 @@ document.addEventListener("DOMContentLoaded", function(){
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // (Re)load the modules, which mostly is required to initialize each of the modules once the page is loaded.
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
+// Track if we've warned about missing jQuery in reload() to avoid spamming
+let _reloadWarned = false;
+
 export const reload = function(id = null)
 {
-    if (window.jQuery) {
-        // Go through each of the modules
-        if (id === null) {
-            $("[data-module]").each(function() {
-                reload_module(this);
-            });
-        } else {
-            $("#"+id).find("[data-module]").each(function() {
-                reload_module(this);
-            });
+    if (!window.jQuery) {
+        if (!_reloadWarned) {
+            console.warn('[svelte-fomantic-ui] reload() called but jQuery is not loaded. Interactive modules will not initialize.');
+            _reloadWarned = true;
         }
+        return;
+    }
+
+    // Go through each of the modules
+    if (id === null) {
+        $("[data-module]").each(function() {
+            reload_module(this);
+        });
+    } else {
+        $("#"+id).find("[data-module]").each(function() {
+            reload_module(this);
+        });
     }
 };
 
@@ -184,40 +197,39 @@ function construct_jquery_command(params) {
 // Send a behaviour to an item, and optionally return a result
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 export const behavior = function(...args) {
-    if (window.jQuery) {
-        // Grab the first argument - this should either be an object with settings, or the first of an array of string, being the ID of the element the
-        // commands are for.
-        let firstarg = args.shift();
-        let returnvalue;
-        if (typeof firstarg === 'object')
-        {
-            // Data sent in is in the form of an object
-            // returnvalue = eval(construct_jquery_command(firstarg));
-            const jqueryFunction = new Function(construct_jquery_command(firstarg));
-            returnvalue = jqueryFunction();
-        }
-        else
-        {
-            // Data sent in is in the form of several parameters which args puts into an array
-            // The first is always the id of the item to be worked with
-            let id = firstarg;
-            // Now, let's find out the data on the module itself
-            // let settings = $("#"+id).data("module");
-            let settings = get_settings($("#"+id).data("module"));
-            let command = extract_module_type_from_settings(settings);
-            if (command && id && ($("#"+id)[command])) {
-                returnvalue = $("#"+id)[command](...args);
-            }
-            else {
-                return null;
-            }
-        }
-
-        return returnvalue;
-    }
-    else {
+    if (!window.jQuery) {
+        const moduleType = args[0]?.type || 'unknown';
+        console.warn(`[svelte-fomantic-ui] behavior() called but jQuery is not loaded. Cannot execute behavior for module: ${moduleType}`);
         return null;
     }
+
+    // Grab the first argument - this should either be an object with settings, or the first of an array of string, being the ID of the element the
+    // commands are for.
+    let firstarg = args.shift();
+    let returnvalue;
+    if (typeof firstarg === 'object')
+    {
+        // Data sent in is in the form of an object
+        const jqueryFunction = new Function(construct_jquery_command(firstarg));
+        returnvalue = jqueryFunction();
+    }
+    else
+    {
+        // Data sent in is in the form of several parameters which args puts into an array
+        // The first is always the id of the item to be worked with
+        let id = firstarg;
+        // Now, let's find out the data on the module itself
+        let settings = get_settings($("#"+id).data("module"));
+        let command = extract_module_type_from_settings(settings);
+        if (command && id && ($("#"+id)[command])) {
+            returnvalue = $("#"+id)[command](...args);
+        }
+        else {
+            return null;
+        }
+    }
+
+    return returnvalue;
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -336,25 +348,29 @@ function deserialize(serialized)
                     for (const key2 in val)
                     {
                         const val2 = val[key2];
-                        if (typeof val2 === 'string' && (val2.startsWith('function') || val2.indexOf('=>') > -1)) {
-                            // If the property is a function string, convert it back into a function
-                            obj["settings"][key2] = eval('('+val2+')');
-                            // console.log(val2);
-                            // const objFunction2 = new Function("value", val2);
-                            // console.log(objFunction2);
-                            // console.log(eval('('+val2+')'));
-                            // obj["settings"][key2] = objFunction2;
+                        if (typeof val2 === 'string' && val2.startsWith('__fn_')) {
+                            // Look up the function from the registry (no eval needed)
+                            const fn = lookupFunction(val2);
+                            if (fn) {
+                                obj["settings"][key2] = fn;
+                            } else {
+                                // Function not found in registry, keep as string
+                                obj["settings"][key2] = val2;
+                            }
                         } else {
                             // Otherwise, add the property to the deserialized object
                             obj["settings"][key2] = val2;
                         }
                     }
                 }
-                else if (typeof val === 'string' && (val.startsWith('function') || val.indexOf('=>') > -1)) {
-                    // If the property is a function string, convert it back into a function
-                    obj[key] = eval(val);
-                    // const objFunction = new Function('('+val+')');
-                    // obj[key] = objFunction;
+                else if (typeof val === 'string' && val.startsWith('__fn_')) {
+                    // Look up the function from the registry (no eval needed)
+                    const fn = lookupFunction(val);
+                    if (fn) {
+                        obj[key] = fn;
+                    } else {
+                        obj[key] = val;
+                    }
                 } else {
                     // Otherwise, add the property to the deserialized object
                     obj[key] = val;
